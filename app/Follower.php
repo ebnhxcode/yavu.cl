@@ -12,4 +12,8 @@ class Follower extends Model
     return $this->belongsTo(Empresa::class, 'empresa_id')->select('id', 'nombre', 'imagen_perfil');
   }
 
+	public function getUserFollow(){
+		return $this->belongsTo(User::class, 'user_id')->select('id', 'nombre', 'imagen_perfil');
+	}
+
 }

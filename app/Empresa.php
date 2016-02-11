@@ -58,6 +58,9 @@ class Empresa extends Model implements AuthenticatableContract,
         return $this->hasMany(Follower::class, 'empresa_id');
     }
 
+    public function isFollowedBy($user_id){
+        return $this->hasMany(Follower::class, 'empresa_id')->select('user_id')->where('user_id', $user_id)->get();
+    }
     public function sorteos(){
         return $this->hasMany(Sorteo::class, 'empresa_id')->select('empresa_id')->where('estado_sorteo', 'Activo');
     }

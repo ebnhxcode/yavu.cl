@@ -12,7 +12,7 @@
         </div><!-- /div .col-lg12-md12-sm12-xs12 -->
 
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <div class="list-group" >
+          <div class="list-group">
             {!!Form::model($bannerdata, ['method'=>'PUT', 'route' => ['admins_banner_put_path', $bannerdata->id], 'files' => true , 'id' => 'FormBanner'])!!}
 
               <input type="hidden" name="banner_data_id" value="{!! $bannerdata->id !!}">
@@ -28,12 +28,39 @@
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 
 
+          <div class="list-group" >
+            {{--
+            {!!Form::model($bannerdata->linksBannerData, ['method'=>'PUT', 'route' => ['admins_banner_put_path', $bannerdata->id], 'files' => true , 'id' => 'FormLinkBanner'])!!}
 
+              <input type="hidden" name="banner_data_id" value="{!! $bannerdata->id !!}">
+
+              @include('admins.banneradmin.forms.fieldsBannerPartial.linkbannerdataFields')
+
+              {!!Form::submit('Guardar', ['class'=>'btn btn-primary btn-success'])!!}
+
+            {!!Form::close()!!}
+            --}}
+          </div><!-- /div .list-group -->
 
         </div><!-- /div .col-lg4-md4-sm4-xs12 -->
 
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <!-- section right --> section right
+
+
+          <div class="list-group" >
+            {{--
+            {!!Form::model($bannerdata->linksBannerData, ['method'=>'PUT', 'route' => ['admins_banner_put_path', $bannerdata->id], 'files' => true , 'id' => 'FormLinkBanner'])!!}
+
+              <input type="hidden" name="banner_data_id" value="{!! $bannerdata->id !!}">
+
+              @include('admins.banneradmin.forms.fieldsBannerPartial.categorybannerdataFields')
+
+              {!!Form::submit('Guardar', ['class'=>'btn btn-primary btn-success'])!!}
+
+            {!!Form::close()!!}
+            --}}
+          </div><!-- /div .list-group -->
+
         </div><!-- /div .col-lg4-md4-sm4-xs12 -->
 
       </div>

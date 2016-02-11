@@ -65,11 +65,10 @@ class FollowerController extends Controller{
     return response()->json('Acceso denegado');
   }
   public function SeguirEmpresa(Request $request){
-      $empresa_id = addslashes($request->empresa_id);
 
-      $ExisteSeguimiento = Follower::where('user_id', Auth::user()->get()->id)->where('empresa_id', $empresa_id)->first();
+      $ExisteSeguimiento = Follower::where('user_id', Auth::user()->get()->id)->where('empresa_id', addslashes($request->empresa_id))->first();
       if (!$ExisteSeguimiento){
-        DB::table('followers')->insert(['user_id' => Auth::user()->get()->id,'empresa_id' => $empresa_id,'estado' => 'activo','created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
+        DB::table('followers')->insert(['user_id' => Auth::user()->get()->id,'empresa_id' => addslashes($request->empresa_id),'estado' => 'activo','created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
       }
       return response()->json(
         'Estado: Siguiendo'

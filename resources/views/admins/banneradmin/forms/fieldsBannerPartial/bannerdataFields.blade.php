@@ -12,7 +12,6 @@
     {!!Form::label('Descripción:')!!}
     {!!Form::textarea('descripcion_banner',null,['class'=>'form-control','placeholder'=>'Agregue una breve descripción para su banner', 'maxlength'=>'999', 'rows'=>'5', 'id'=>'descripción', 'required'])!!}
   </div><!-- /div .form-group .has-feedback .has-feedback-left -->
-
 </div><!-- /div .list-group-item -->
 
 
