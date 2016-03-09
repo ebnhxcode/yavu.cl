@@ -21,10 +21,15 @@
 		//console.log(String.fromCharCode(e.keyCode));
 		//console.log(String.fromCharCode(112));
 		//console.log(e.keyCode);
+
 		if(e.keyCode !== 32 && e.currentTarget.value.indexOf(String.fromCharCode(32)) > -1 )
 		{
 			Busqueda = e.currentTarget.value;
 			Busqueda = ReemplazarVacios(Busqueda);
+		}
+		else
+		{
+			Busqueda = e.currentTarget.value;
 		}
 
 		function ReemplazarVacios(Busqueda)
@@ -61,6 +66,7 @@
 			{
 				Busqueda = Busqueda.substring(1, Busqueda.length);
 			}
+
 
 			console.log(Busqueda);
 			//BUSCAR!

@@ -31,30 +31,43 @@ class SorteoController extends Controller
 
     }
 
-    public function BuscarSorteos($nombre){
-    	//$nombre = str_replace('+', ' ', $nombre);
-    	$nombre = addslashes($nombre);
-    	//$nombre = addcslashes($nombre, 'A..z');
-    	$nombreCompleto="";
-    	$nombre = explode('+', $nombre);
-    	//dd($nombreCompleto);
-    	$sqlAdd = "SELECT * FROM (SELECT id, estado_sorteo,imagen_sorteo, nombre_sorteo, descripcion FROM sorteos)newTable";
-    	foreach ($nombre as $key => $value) {
-    		$nombreCompleto .= $value.' ';
-    		if ($key === 0)
-    		{
-    			$sqlAdd .= " WHERE newTable.nombre_sorteo like '%".$value."%' OR newTable.descripcion like '%".$value."%' OR newTable.estado_sorteo like '%".$value."%'";
-    		}
-    		else
-    		{
-    			$sqlAdd .= " OR newTable.nombre_sorteo like '%".$value."%' OR newTable.descripcion like '%".$value."%' OR newTable.estado_sorteo like '%".$value."%'";
-    		}
+    public function BuscarSorteos($nombre = null){
+    	if(isset($nombre))
+    	{
+				$nombre = addslashes($nombre);
+	    	//$nombre = addcslashes($nombre, 'A..z');
+	    	$nombreCompleto="";
+	    	$nombre = explode('+', $nombre);
+	    	//dd($nombreCompleto);
+	    	$sqlAdd = "SELECT * FROM (SELECT id, estado_sorteo,imagen_sorteo, nombre_sorteo, descripcion FROM sorteos)newTable";
+	    	foreach ($nombre as $key => $value) {
+	    		$nombreCompleto .= $value.' ';
+	    		if ($key === 0)
+	    		{
+	    			$sqlAdd .= " WHERE newTable.nombre_sorteo like '%".$value."%' OR newTable.descripcion like '%".$value."%' OR newTable.estado_sorteo like '%".$value."%'";
+	    		}
+	    		else
+	    		{
+	    			$sqlAdd .= " OR newTable.nombre_sorteo like '%".$value."%' OR newTable.descripcion like '%".$value."%' OR newTable.estado_sorteo like '%".$value."%'";
+	    		}
+	    	}
+	    	$sqlAdd .= " OR newTable.nombre_sorteo like '%".$nombreCompleto."%' OR newTable.descripcion like '%".$nombreCompleto."%' OR newTable.estado_sorteo like '%".$nombreCompleto."%'";
+
+	    	$sqlAdd .= "ORDER BY newTable.nombre_sorteo DESC";
+
+	    	$sorteos = DB::select($sqlAdd);
     	}
-    	$sqlAdd .= " OR newTable.nombre_sorteo like '%".$nombreCompleto."%' OR newTable.descripcion like '%".$nombreCompleto."%' OR newTable.estado_sorteo like '%".$nombreCompleto."%'";
+    	else
+    	{
+		   	$sqlAdd = 'SELECT * FROM (SELECT id, estado_sorteo,imagen_sorteo, nombre_sorteo, descripcion FROM sorteos)newTable WHERE newTable.nombre_sorteo like "%sorteo%" OR newTable.descripcion like "%sorteo%" OR newTable.estado_sorteo like "%activo%" ';
 
-    	$sqlAdd .= "ORDER BY newTable.nombre_sorteo DESC";
-
-    	$sorteos = DB::select($sqlAdd);
+				$sorteos = DB::select($sqlAdd);
+        return response()->json(
+            $sorteos
+        );    		
+    	}
+    	//$nombre = str_replace('+', ' ', $nombre);
+    	
       
 
       
