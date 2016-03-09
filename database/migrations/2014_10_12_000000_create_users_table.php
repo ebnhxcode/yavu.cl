@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('password', 100);
             $table->string('estado',30);
             $table->string('referido', 100);
+            $table->string('referente', 100);
             $table->string('tipo_usuario',20);
             $table->string('imagen_perfil');
             $table->string('imagen_portada'); 
