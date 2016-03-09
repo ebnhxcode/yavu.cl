@@ -38,7 +38,7 @@
 
 			   <div class="list-group">
 				   <div class="list-group-item-full-header">
-					   <h6>CREAR MI EMPRESA</h6>
+					   <h6>CREAR EMPRESA</h6>
 				   </div>
 				   <a href="{!!URL::to('/empresas/create')!!}" style="text-align:center;" class="list-group-item list-group-item-warning">
 				   		<span style="font-size: 6em;" class="glyphicon glyphicon-briefcase"></span>	
@@ -72,9 +72,6 @@
 				   <div class="list-group-item-full-header">
 					   <h6>CONFIGURACION</h6>
 				   </div>
-				   <div class="list-group-item">
-					   Revisa algunas configuraciones de seguridad para ti.					   
-				   </div>
 				   <a href="#" style="text-align: center;" class="list-group-item list-group-item-info">				   		
 				   		<span style="font-size: 6em;" class="glyphicon glyphicon-cog"></span>
 				   	</a>
@@ -84,15 +81,35 @@
 				   <div class="list-group-item-full-header">
 					   <h6>INFORMES</h6>
 				   </div>
-				   <div class="list-group-item">
-					   Revisa las estadisticas
-				   </div>
 				   <a href="{!!URL::to('/reports')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
 				   		<span style="font-size: 6em;" class="glyphicon glyphicon-list-alt"></span>
 				   </a>
 
 			   </div>
 
+
+
+			   <div class="list-group" >
+				   <div class="list-group-item-full-header">
+					   <h6>TICKETS</h6>
+				   </div>
+				   <a href="{!!URL::to('/tickets')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
+				   		<span style="font-size: 6em;" class="glyphicon glyphicon-bookmark"></span>
+				   </a>
+
+			   </div>			   
+
+				<div class="list-group" >
+					<div class="list-group-item-full-header">
+						<h6>SORTEOS</h6>
+					</div>
+					<a href="{{URL::to('/sorteos')}}" style="text-align:center;" class="list-group-item list-group-item-warning">
+						<span style="font-size: 6em;" class="glyphicon glyphicon-certificate"></span>
+					</a>
+
+				</div>
+
+			   <!--
 				<div class="list-group">					
 					<div class="list-group-item-full-header">
 						<h6>RESUMEN DE GARGAS DE COINS</h6>
@@ -105,7 +122,7 @@
 						
 					</div>
 				</div>					   
-
+				-->
 			   <!--
 			   <div class="list-group" >
 					<div class="list-group-item-full-header">

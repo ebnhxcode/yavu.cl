@@ -13,6 +13,7 @@ use yavu\Estado;
 use Illuminate\Routing\Route;
 use DB;
 use RUT;
+use Carbon\Carbon;
 use Malahierba\ChileRut\ChileRut;
 class UserController extends Controller
 {
@@ -53,7 +54,16 @@ class UserController extends Controller
   }
   public function store(UserCreateRequest $request)
   {
-    User::create($request->all());
+    //User::create($request->all());
+    User::create([
+      'nombre' => $request->nombre,
+      'apellido' => $request->apellido,
+      'email' => $request->email,
+      'password' => $request->password,
+      'referente' => Carbon::now()->second.Carbon::now()->minute.Carbon::now()->hour.Carbon::now()->year.Carbon::now()->month.Carbon::now()->day."RY",
+      'ciudad' => $request->ciudad
+      ])->save();
+
     Session::flash('message', 'Usuario creado correctamente');
     return Redirect::to('/usuarios');
   }
