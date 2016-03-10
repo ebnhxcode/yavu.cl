@@ -31,7 +31,7 @@
     <div class='row' >
       <div class='col-sm-4'>
         <div class="panel panel-default">
-          <img src="//placehold.it/450X300/ededed" class="img-responsive">
+          <img src="" class="img-responsive">
           <div class="panel-body">
             <p class='lead'>Card Example</p>
           </div>

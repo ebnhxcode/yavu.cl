@@ -53,8 +53,7 @@
 									Campo : {{$e->direccion}}<br>
 									Campo : {{$e->ciudad}}<br>
 									<p>
-										<a href="#!" class="btn btn-primary btn-xs" role="button">Button</a> 
-										<a href="#!" class="btn btn-default btn-xs" role="button">Button</a>
+										<a href="#!" class="btn btn-primary btn-xs" id="seguir" value="{!! $e->id !!}" role="button">Seguir</a> 
 									</p>
 
 								</div>
