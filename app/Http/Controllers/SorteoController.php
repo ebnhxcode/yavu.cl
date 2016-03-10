@@ -34,7 +34,7 @@ class SorteoController extends Controller
     public function BuscarSorteos($nombre = null){
     	if(isset($nombre))
     	{
-				$nombre = addslashes($nombre);
+			$nombre = addslashes($nombre);
 	    	//$nombre = addcslashes($nombre, 'A..z');
 	    	$nombreCompleto="";
 	    	$nombre = explode('+', $nombre);

@@ -48,6 +48,37 @@ class PopController extends Controller
                     ->limit('20')
                     ->get(); 
             }  
+            //dd($pops);
+            if (!$pops)
+            {
+                if ((int) $idUltima == "0")
+                {
+                    $pops = DB::table('pops')                    
+                        ->join('users'  , 'users.id', '=', 'pops.user_id')
+                        ->select('pops.*', 'users.nombre as nombreUsu', 'users.imagen_perfil as imagen_perfil_usuario')    
+                        ->where('pops.id', '>', (int) $idUltima)
+                        ->where('pops.user_id', '=', $user_id)
+                        ->orderBy('pops.created_at','desc')   
+                        ->limit('20')
+                        ->get(); 
+                }
+                elseif((int) $idUltima <> "0")
+                {
+                $pops = DB::table('pops')                    
+                    ->join('users'  , 'users.id', '=', 'pops.user_id')
+                    ->select('pops.*', 'users.nombre as nombreUsu', 'users.imagen_perfil as imagen_perfil_usuario')    
+                    ->where('pops.id', '<', (int) $idUltima)
+                    ->where('pops.user_id', '=', $user_id)
+                    ->orderBy('pops.created_at','desc')   
+                    ->limit('20')
+                    ->get(); 
+                }
+
+                 
+
+
+            }
+
             $this->MarcarVistas($user_id);
 
         }elseif ($tipo === 'novistas') {

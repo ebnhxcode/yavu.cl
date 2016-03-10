@@ -1,5 +1,6 @@
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/GestionarEstadosEmpresa.js')!!}
+{!!Html::script('js/ajax/SeguirEmpresa.js')!!}
 <!--{!!Html::script('js/ajax/GestionarCoinsEmpresa.js')!!}-->
 <!--{!!Html::script('js/ajax/InteraccionPublicacionesEmpresa.js')!!}-->
 @extends('layouts.front')
@@ -52,16 +53,25 @@
 									Campo : {{$e->email}}<br>
 									Campo : {{$e->direccion}}<br>
 									Campo : {{$e->ciudad}}<br>
-									<p>
-										<a href="#!" class="btn btn-primary btn-xs" id="seguir" value="{!! $e->id !!}" role="button">Seguir</a> 
-									</p>
+									
+									@if (Auth::user()->check())
+										<p>
+											<span class="btn btn-primary btn-xs" id="seguir" value="{!! $e->id !!}" role="button">Seguir</span> 
+											<input type="text" class="btn-xs" id="seguidores" size="1" disabled >
+										</p>
+									@else
+										<p>
+											<a href="{!! URL::to('/usuarios/create') !!}" class="btn btn-primary btn-xs" role="button">Seguir</a> 
+										</p>
+										<small>Para seguir a esta empresa debes registrarte</small>
+									@endif
 
 								</div>
 							</div>
 						</div>
 
 					</div>
-
+					{!!Form::hidden('empresa_id', $e->id, ['id'=>'empresa_id'])!!}
 				@if(isset(Auth::user()->get()->id) && Auth::user()->get()->id===$e->user_id)
 					@if($e->user_id == Auth::user()->get()->id)
 						<div class="list-group">
@@ -75,7 +85,7 @@
 								@else
 									{!!Form::hidden('user_id', $e->user_id, ['id'=>'user_id'])!!}
 								@endif
-									{!!Form::hidden('empresa_id', $e->id, ['id'=>'empresa_id'])!!}
+									
 								<input type="hidden" name="_token" value="{{csrf_token()}}" id="token" />
 							<div class="list-group-item">							
 									{!!link_to('#!', $title="Publicar estado", $attributes = ['id'=>'publicar', 'class'=>'btn btn-success btn-xs'], $secure = null)!!}

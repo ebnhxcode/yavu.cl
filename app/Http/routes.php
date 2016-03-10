@@ -155,6 +155,13 @@ Route::resource('interacciones', 'InteraccionController');
 Route::resource('intereses', 'InteresController');
 /*Gestión de Interes */
 
+/*Gestión de  Followers */
+Route::get('seguirempresa/{empresa_id}/{user_id}', 'FollowerController@SeguirEmpresa');
+Route::get('noseguirempresa/{empresa_id}/{user_id}', 'FollowerController@NoSeguirEmpresa');
+Route::get('contarseguidores/{empresa_id}/{user_id}','FollowerController@ContarSeguidores');
+Route::get('verificarseguidores/{empresa_id}/{user_id}','FollowerController@VerificarSeguidores');
+/*Gestión de Followers */
+
 /*Gestión de  Rut */
 Route::get('validarrutusuario/{rut}', 'UserController@ValidarRutUsuario');
 Route::get('validarrutempresa/{rut}', 'EmpresaController@ValidarRutEmpresa');

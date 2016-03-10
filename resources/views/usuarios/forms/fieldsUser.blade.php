@@ -207,8 +207,18 @@
 	@endif
 <!--</div>-->
 <script>
+
 	$("#rut").change(function(){
 		ValidarRut($("#rut").val());
+	});
+	$("#rut").keyup(function(e){
+		if (e.keyCode === 13)
+		{
+			ValidarRut($("#rut").val());
+		}
+	});
+	$(".form-control").keyup(function(e){
+
 	});
 	function ValidarRut(rut){
 		console.log("click");
@@ -218,11 +228,14 @@
 			
 			if(res !== 'false'){
 				$("#rut").val(res);
+				return true;
 				//console.log(res);
 			}else{
+				
 				$("#rut").val("");
 				$("#rut").focus();
 				alert('Formato de rut invalido');
+				return false;
 			}
 		});
 		
