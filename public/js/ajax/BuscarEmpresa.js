@@ -1,10 +1,12 @@
 	$(document).ready(function(){	
-	/*DECLARACIÓN DE VARIABLES GLOBALES*/
+	/*DECLARACIÓ DE VARIABLES GLOBALES*/
+	var Busqueda = "";
+	var letter = "";
 	/*DECLARACIÓN DE VARIABLES GLOBALES*/
 
 	/*MÉTODOS CONSTRUCTORES*/
 	$("#BuscarEmpresa").click(function(e){
-		BuscarEmpresa();
+		//BuscarSorteo();
 		e.preventDefault();
 	});
 	/*MÉTODOS CONSTRUCTORES*/
@@ -15,11 +17,71 @@
 	        BuscarUsuario();
 	    }
 	});	*/
-	$('#empresa').keydown(function (e)
+	$('.buscar').keyup(function(e){
+		//console.log(String.fromCharCode(e.keyCode));
+		//console.log(String.fromCharCode(112));
+		//console.log(e.keyCode);
+
+		if(e.keyCode !== 32 && e.currentTarget.value.indexOf(String.fromCharCode(32)) > -1 )
+		{
+			Busqueda = e.currentTarget.value;
+			Busqueda = ReemplazarVacios(Busqueda);
+		}
+		else
+		{
+			Busqueda = e.currentTarget.value;
+		}
+
+		function ReemplazarVacios(Busqueda)
+		{
+			Busqueda = Busqueda.replace(String.fromCharCode(32), '+');
+			Busqueda = Busqueda.replace('     ', '+');
+			Busqueda = Busqueda.replace('    ', '+');
+			Busqueda = Busqueda.replace('   ', '+');
+			Busqueda = Busqueda.replace('  ', '+');
+			Busqueda = Busqueda.replace('+++++', '+');
+			Busqueda = Busqueda.replace('++++', '+');
+			Busqueda = Busqueda.replace('+++', '+');
+			Busqueda = Busqueda.replace('++', '+');
+			Busqueda = Busqueda.replace('=', '');
+			Busqueda = Busqueda.replace("'or'", '');
+			Busqueda = Busqueda.replace("'and'", '');
+			Busqueda = Busqueda.replace("script", '');
+			Busqueda = Busqueda.replace("/", '');
+			Busqueda = Busqueda.replace("'", '');
+			Busqueda = Busqueda.replace('<', '');
+			Busqueda = Busqueda.replace('>', '');
+
+			if(Busqueda.indexOf(String.fromCharCode(32)) > -1 || Busqueda.indexOf(String.fromCharCode(219)) > -1 || Busqueda.indexOf(String.fromCharCode(48)) > -1 || Busqueda.indexOf(String.fromCharCode(16)) > -1)
+			{          
+				return ReemplazarVacios(Busqueda);
+			}
+			return Busqueda;
+		}
+	
+
+		if(e.keyCode === 13)
+		{
+			if(Busqueda.substring(0,1) === '+')
+			{
+				Busqueda = Busqueda.substring(1, Busqueda.length);
+			}
+
+
+			console.log(Busqueda);
+			//BUSCAR!
+			BuscarEmpresaThumb(Busqueda);
+
+		}
+
+
+	});
+
+	$('#nombre').keydown(function (e)
 	{
-	    if(e.keyCode == 13 && $("#empresa").val())
+	    if(e.keyCode == 13 && $("#nombre").val())
 	    {
-	        BuscarEmpresa();
+	        //BuscarSorteo();
 
 	    }
 
@@ -30,7 +92,7 @@
 	{
 	    if(e.keyCode == 13 && $("#empresathumb").val())
 	    {
-	        BuscarEmpresaThumb();
+	        //BuscarSorteoThumb();
 
 	    }
 
@@ -70,11 +132,12 @@
 			});
 		});						
 	}	
+
 	/*FUNCIONES Y PROCEDIMIENTOS*/
+
+
 });
 
-
-	/*FUNCIONES Y PROCEDIMIENTOS*/
 
 	function BuscarEmpresaThumb(){
 		
@@ -130,3 +193,5 @@ $(document).ready(function () {
                 });
             });
         });    
+
+
