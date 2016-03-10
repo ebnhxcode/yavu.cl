@@ -134,7 +134,7 @@
 					<div class="list-group">                    
 						<div class="list-group-item">
 							<h6>CODIGO REFERIDO</h6>
-							<h6>{!!strtoupper('RY-'. Auth::user()->get()->id. Auth::user()->get()->referente)!!}
+							<h6>{!!strtoupper(Auth::user()->get()->id. Auth::user()->get()->referente)!!}
 						</div>
 						
 					</div>   

@@ -55,16 +55,58 @@ class UserController extends Controller
   public function store(UserCreateRequest $request)
   {
     //User::create($request->all());
-    User::create([
+    $existeReferente = User::where('referente', $request->referido)->first();
+
+    if ($existeReferente){
+
+      User::create([
       'nombre' => $request->nombre,
       'apellido' => $request->apellido,
       'email' => $request->email,
       'password' => $request->password,
+      'referido' => $request ->referido,
+      'referente' => Carbon::now()->second.Carbon::now()->minute.Carbon::now()->hour.Carbon::now()->year.Carbon::now()->month.Carbon::now()->day."RY",
+      'ciudad' => $request->ciudad
+      ])->first()->save();
+
+      $usuario = User::where('email', $request->email)->first();
+
+      echo $usuario->id;
+
+      if($usuario){
+        DB::table('pops')->insert(
+                  ['user_id' => $usuario->id, 
+                  'empresa_id' => 1,
+                  'tipo' => 'referido', 
+                  'estado'   => 'pendiente',
+                  'contenido' => 'Se cargaron coins por código de referido! ',
+                  'created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),
+                  'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]
+              );    
+
+        Session::flash('message', 'Usuario creado correctamente');
+        return Redirect::to('/usuarios');        
+      }
+      
+    
+    }else{
+
+       User::create([
+      'nombre' => $request->nombre,
+      'apellido' => $request->apellido,
+      'email' => $request->email,
+      'password' => $request->password,
+      'referido' => '',
       'referente' => Carbon::now()->second.Carbon::now()->minute.Carbon::now()->hour.Carbon::now()->year.Carbon::now()->month.Carbon::now()->day."RY",
       'ciudad' => $request->ciudad
       ])->save();
 
-    Session::flash('message', 'Usuario creado correctamente');
+      Session::flash('message', 'Usuario creado correctamente');
+      return Redirect::to('/usuarios');       
+     
+    }
+   
+    Session::flash('error', 'Ocurrio un error inesperado');
     return Redirect::to('/usuarios');
   }
   public function show($id)
