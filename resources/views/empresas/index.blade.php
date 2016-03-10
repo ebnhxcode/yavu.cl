@@ -16,11 +16,11 @@
 
   				@if(Auth::admin()->check())
 
-				 {!!Form::text('nombre',null,['class' => 'form-control', 'placeholder' => 'Nombre de empresa','id'=>'empresa'])!!}
+				 {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'Nombre de empresa','id'=>'empresa'])!!}
 
 				@elseif(Auth::user()->check() || !Auth::user()->check())
 
-				 {!!Form::text('nombre',null,['class' => 'form-control', 'placeholder' => 'Nombre de empresa','id'=>'empresathumb', 'role' => 'combobox'])!!}
+				 {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'Nombre de empresa','id'=>'empresathumb', 'role' => 'combobox'])!!}
 
 				 @endif
 

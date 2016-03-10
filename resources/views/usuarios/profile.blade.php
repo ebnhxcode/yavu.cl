@@ -129,7 +129,15 @@
 						{!!link_to_route('usuarios.edit', $title = 'Modificar datos de mi cuenta', $parameters = Auth::user()->get()->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}
 						<a href="{!!URL::to('dashboard')!!}" class="list-group-item list-group-item-warning">Volver a dashboard</a>
 						<a href="{!!URL::to('sitemap')!!}" class="list-group-item list-group-item-warning">Ir al Sitemap</a>
-					</div>  
+					</div> 
+
+					<div class="list-group">                    
+						<div class="list-group-item">
+							<h6>CODIGO REFERIDO</h6>
+							<h6>{!!strtoupper(Auth::user()->get()->id. Auth::user()->get()->referente)!!}
+						</div>
+						
+					</div>   
 				</div>
 		</div>
 	</div><!-- Fin del div id contentIn -->

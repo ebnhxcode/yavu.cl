@@ -100,6 +100,9 @@ class EmpresaController extends Controller
       return "false";
     }
   }
+ 
+/* Buscador básico 
+
    public function BuscarEmpresas($nombre){
     $empresas = DB::table('empresas')                    
                 ->select('*')    
@@ -115,6 +118,47 @@ class EmpresaController extends Controller
     );
   } 
   
+*/
+      public function BuscarEmpresas($nombre = null){
+      if(isset($nombre))
+      {
+        $nombre = addslashes($nombre);
+        //$nombre = addcslashes($nombre, 'A..z');
+        $nombreCompleto="";
+        $nombre = explode('+', $nombre);
+        //dd($nombreCompleto);
+        $sqlAdd = "SELECT * FROM (SELECT id, nombre, ciudad, estado FROM empresas)newTable";
+        foreach ($nombre as $key => $value) {
+          $nombreCompleto .= $value.' ';
+          if ($key === 0)
+          {
+            $sqlAdd .= " WHERE newTable.nombre like '%".$value."%' OR newTable.ciudad like '%".$value."%' OR newTable.estado like '%".$value."%'";
+          }
+          else
+          {
+            $sqlAdd .= " OR newTable.nombre like '%".$value."%' OR newTable.ciudad like '%".$value."%' OR newTable.estado like '%".$value."%'";
+          }
+        }
+        $sqlAdd .= " OR newTable.nombre like '%".$nombreCompleto."%' OR newTable.ciudad like '%".$nombreCompleto."%' OR newTable.estado like '%".$nombreCompleto."%'";
+
+        $sqlAdd .= "ORDER BY newTable.nombre DESC";
+
+        $empresas = DB::select($sqlAdd);
+      }
+      else
+      {
+        $sqlAdd = 'SELECT * FROM (SELECT id, estado, fono, nombre, direccion FROM empresas)newTable WHERE newTable.nombre like "%nombre%" OR newTable.ciudad like "%nombre%" OR newTable.estado like "%activo%" ';
+
+        $empresas = DB::select($sqlAdd);
+        return response()->json(
+            $empresas
+        );        
+      }
+
+        return response()->json(
+            $empresas
+        );
+    } 
   
 
   public function searchcat()
