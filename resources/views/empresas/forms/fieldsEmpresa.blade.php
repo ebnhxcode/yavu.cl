@@ -7,18 +7,18 @@
 		@if(Request::path() === 'empresas/create' && Auth::user()->check())			
 			<div class="form-group has-feedback has-feedback-left">
 				{!!Form::label('Nombre:')!!}
-				{!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese el nombre de la empresa',])!!}
+				{!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese el nombre de la empresa', 'maxlength' => '100'])!!}
 			</div>
 		@endif
 			<div class="form-group has-feedback has-feedback-left">
 				{!!Form::label('Email:')!!}
-				{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese email de la empresa',])!!}
+				{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese email de la empresa', 'maxlength' => '200'])!!}
 				<i class="form-control-feedback glyphicon glyphicon-user"></i>
 			</div>
 			<!--
 			<div class="form-group has-feedback has-feedback-left">
 				{!!Form::label('Clave:')!!}
-				{!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una clave'])!!}			
+				{!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una clave', 'maxlength' => '100'])!!}			
 				<i class="form-control-feedback glyphicon glyphicon-lock"></i>
 			</div>
 			-->
@@ -57,7 +57,7 @@
 					'Aysen' => 'Aysen',	
 					'Magallanes' => 'Magallanes',	
 					'otra' => 'otras...'], 
-					$selected = null, ['class' => 'form-control']) 
+					$selected = null, ['class' => 'form-control', 'maxlength' => '100']) 
 				!!}			
 			</div>	
 		</div>
@@ -69,7 +69,7 @@
 					{!!Form::label('Cambiar avatar:')!!}<br>
 					<div style="border: dashed; border-width: 1px;">
 						<span class="btn btn-primary btn-file btn-md">
-							Buscar imagen{!!Form::file('imagen_perfil', ['id' => 'imagen_perfil'])!!}
+							Buscar imagen{!!Form::file('imagen_perfil', ['id' => 'imagen_perfil',  'maxlength' => '255'])!!}
 						</span>
 						@if(Request::path() !== 'empresas/create')
 							@if($empresa->imagen_perfil==="")
@@ -87,7 +87,7 @@
 					{!!Form::label('Cambiar banner personal:')!!}<br>
 					<div style="border: dashed; border-width: 1px;">
 						<span class="btn btn-primary btn-file btn-md">
-							Buscar imagen{!!Form::file('imagen_portada', ['id' => 'imagen_portada'])!!}
+							Buscar imagen{!!Form::file('imagen_portada', ['id' => 'imagen_portada', 'maxlength' => '255'])!!}
 						</span>
 						@if(Request::path() !== 'empresas/create')
 							@if($empresa->imagen_portada==="")
@@ -115,13 +115,13 @@
 			<div class="list-group-item">
 				<div class="form-group has-feedback has-feedback-left">
 					{!!Form::label('Rut:')!!}
-					{!!Form::text('rut',null,['class'=>'form-control','placeholder'=>'Ingrese rut de la empresa', 'id' => 'rut'])!!}			
+					{!!Form::text('rut',null,['class'=>'form-control','placeholder'=>'Ingrese rut de la empresa', 'id' => 'rut',  'maxlength' => '16'])!!}			
 					<i class="form-control-feedback glyphicon glyphicon-user"></i>
 				</div>
 
 				<div class="form-group has-feedback has-feedback-left">
 					{!!Form::label('Dirección:')!!}
-					{!!Form::text('direccion',null,['class'=>'form-control','placeholder'=>'Ingrese dirección'])!!}
+					{!!Form::text('direccion',null,['class'=>'form-control','placeholder'=>'Ingrese dirección', 'maxlength' => '100'])!!}
 				</div>
 
 				<div class="form-group has-feedback has-feedback-left">
@@ -142,7 +142,7 @@
 						'XIII Región' => 'XIII Región',
 						'XVI Región' => 'XVI Región',
 						'XV Región' => 'XV Región'],
-						$selected = null, ['class' => 'form-control']) 
+						$selected = null, ['class' => 'form-control', 'maxlength' => '100']) 
 					!!}			
 				</div>
 
@@ -161,47 +161,47 @@
 						'Venezuela' => 'Venezuela',	
 						'Uruguay' => 'Uruguay',	
 						'Otro' => 'Otro'], 
-						$selected = null, ['class' => 'form-control']) 
+						$selected = null, ['class' => 'form-control', 'maxlength' => '100']) 
 					!!}	
 				</div>
 
 				<div class="form-group has-feedback has-feedback-left">
 					{!!Form::label('Teléfono Movil:')!!}
-					{!!Form::text('fono',null,['class'=>'form-control','placeholder'=>'Celular'])!!}
+					{!!Form::text('fono',null,['class'=>'form-control','placeholder'=>'Celular', 'maxlength' => '20'])!!}
 				</div>
 
 				<div class="form-group has-feedback has-feedback-left">
 					{!!Form::label('Teléfono Fijo:')!!}
-					{!!Form::text('fono_2',null,['class'=>'form-control','placeholder'=>'Teléfono fijo'])!!}
+					{!!Form::text('fono_2',null,['class'=>'form-control','placeholder'=>'Teléfono fijo', 'maxlength' => '20'])!!}
 				</div>
 
 				<div class="form-group has-feedback has-feedback-left">
 					{!!Form::label('Fecha de inicio:')!!}
-					{!!Form::date('fecha_creacion',null,['class'=>'form-control','placeholder'=>'Inicio de actividad'])!!}
+					{!!Form::date('fecha_creacion',null,['class'=>'form-control','placeholder'=>'Inicio de actividad', 'maxlength' => '100'])!!}
 				</div>
 
 				<div class="form-group has-feedback has-feedback-left">
 					{!!Form::label('Nombre del encargado:')!!}
-					{!!Form::text('nombre_ecargado',null,['class'=>'form-control','placeholder'=>'Encargado de la empresa'])!!}
+					{!!Form::text('nombre_ecargado',null,['class'=>'form-control','placeholder'=>'Encargado de la empresa', 'maxlength' => '100'])!!}
 				</div>
 				<div class="form-group has-feedback has-feedback-left">
 					{!!Form::label('tipo_servicio:')!!}
 					{!!Form::select('tipo_servicio', 
 						['Gratis' => 'Gratis',
 						'Pagado' => 'Pagado'], 
-						$selected = null, ['class' => 'form-control']) 
+						$selected = null, ['class' => 'form-control', 'maxlength' => '100']) 
 					!!}	
 				</div>
 				<div class="form-group has-feedback has-feedback-left">
 					{!!Form::label('Fecha de pago:')!!}
-					{!!Form::date('fecha_de_pago',null,['class'=>'form-control','placeholder'=>''])!!}
+					{!!Form::date('fecha_de_pago',null,['class'=>'form-control','placeholder'=>'', 'maxlength' => '100'])!!}
 				</div>
 
 					@if (Auth::admin()->check()) 
 
 				<div class="form-group has-feedback has-feedback-left">
 					{!!Form::label('Ingrese monto cancelado:')!!}
-					{!!Form::text('monto_pagado',null,['class'=>'form-control','placeholder'=>''])!!}
+					{!!Form::text('monto_pagado',null,['class'=>'form-control','placeholder'=>'', 'maxlength' => '100'])!!}
 				</div>
 
 					@endif	
@@ -211,7 +211,7 @@
 						{!!Form::hidden('user_id', Auth::user()->get()->id )!!}
 					</div>		
 					<div class="form-group has-feedback has-feedback-left">
-						{!!Form::hidden('estado', 'Activo')!!}	
+						{!!Form::hidden('estado', 'Activo', [ 'maxlength' => '30'])!!}	
 						<!-- con esto queda pendiente cada vez que se cambie la info-->
 					</div>						
 				@endif				
@@ -221,24 +221,24 @@
 	<!--</div>-->
 
 
-        	 <div class="form-group has-feedback has-feedback-left">
-            {!!Form::hidden('estado_sorteo', 'Pendiente')!!} 
-          </div>             
-       
-  		
-         		@if (Auth::admin()->check()) 
+  	 <div class="form-group has-feedback has-feedback-left">
+      {!!Form::hidden('estado_sorteo', 'Pendiente')!!} 
+    </div>             
+ 
 
-			<div class="form-group has-feedback has-feedback-left">
-				{!!Form::label('Estado Empresa:')!!}		
-				{!!Form::select('estado', 
-					['Pendiente' => 'Pendiente',	
-					'Aprobado' => 'Aprobado'], 
-					$selected = null, ['class' => 'form-control']) 
-				!!}	
+   		@if (Auth::admin()->check()) 
 
-			</div>
+				<div class="form-group has-feedback has-feedback-left">
+					{!!Form::label('Estado Empresa:')!!}		
+					{!!Form::select('estado', 
+						['Pendiente' => 'Pendiente',	
+						'Aprobado' => 'Aprobado'], 
+						$selected = null, ['class' => 'form-control', 'maxlength' => '30']) 
+					!!}	
 
-				@endif 
+				</div>
+
+			@endif 
 <script>
 	$("#rut").change(function(){
 		ValidarRut($("#rut").val());
@@ -246,6 +246,8 @@
 	function ValidarRut(rut){
 		console.log("click");
 		var route = "http://localhost:8000/validarrutempresa/"+rut+"";
+
+		//Si esto esta aqui valida el rut solo cuando la empresa se edita, tambien valida que el rut sea valido antes del registro
 		document.getElementById('FormEmpresa').onsubmit = function() {
 		    return false;
 		}
