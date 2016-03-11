@@ -10,7 +10,7 @@
 		@include('alerts.successMessage')
 		@include('alerts.warningMessage')			
 		<div class="row">
-			{!!Form::model($empresa, ['method'=>'PUT', 'route' => ['empresas.update', $empresa->id], 'files' => true ])!!}
+			{!!Form::model($empresa, ['method'=>'PUT', 'route' => ['empresas.update', $empresa->id], 'files' => true , 'id' => 'FormEmpresa'])!!}
 
 			@include('empresas.forms.fieldsEmpresa', array('empresa' => $empresa))
 
@@ -40,6 +40,7 @@
 							La solicitud se ha enviado al equipo de yavü.
 						</div>						
 					</div>
+					<!--
 					<div class="list-group-item">
 						<h6>Información completa al:</h6>
 						<div class="progress">
@@ -47,7 +48,8 @@
 						    99%
 						  </div>
 						</div>							
-					</div>						
+					</div>	
+					-->					
 				</div>				
 			</div><!--Este fin del div cierra el div que se abre en fieldsEmpresa-->		
 		</div>

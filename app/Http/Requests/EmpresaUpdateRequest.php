@@ -10,10 +10,8 @@ class EmpresaUpdateRequest extends Request
    public function rules()
    {
       return [
-         'rut' => 'required',
          'email' => 'required',
          //'login' => 'required',
-         'nombre' => 'required',
       ];
    }
 }

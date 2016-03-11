@@ -76,32 +76,40 @@
 
 			<div class="form-group has-feedback has-feedback-left">
 				{!!Form::label('Cambiar avatar:')!!}<br>
-				{!!Form::file('imagen_perfil', ['class' => 'btn'])!!}
-				<br>
-				@if(Request::path() !== 'usuarios/create' && Auth::user()->check())
-					@if(Auth::user()->get()->imagen_perfil === "")
-						<img width="15%" id="ImagenPerfil" class="thumbnail" src="https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png" alt="...">
+				<div style="border: dashed; border-width: 1px;">
+					<span class="btn btn-primary btn-file btn-md">
+						Buscar imagen{!!Form::file('imagen_perfil')!!}
+					</span>
+					@if(Request::path() !== 'usuarios/create' && Auth::user()->check())
+						@if(Auth::user()->get()->imagen_perfil === "")
+							<img width="15%" id="ImagenPerfil" class="thumbnail img-responsive-centered" src="https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png" alt="...">
+						@else
+							<img width="15%" id="ImagenPerfil" class="thumbnail img-responsive-centered" src="/img/users/{{Auth::user()->get()->imagen_perfil}}" alt="...">
+						@endif
 					@else
-						<img width="15%" id="ImagenPerfil" class="thumbnail" src="/img/users/{{Auth::user()->get()->imagen_perfil}}" alt="...">
+						<img width="15%" id="ImagenPerfil" class="thumbnail img-responsive-centered" src="https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png" alt="...">
 					@endif
-				@else
-					<img width="15%" id="ImagenPerfil" class="thumbnail" src="https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png" alt="...">
-				@endif
+				</div>
+					
+
 			</div>
 
 			<div class="form-group has-feedback has-feedback-left">
 				{!!Form::label('Cambiar banner personal:')!!}<br>
-				{!!Form::file('imagen_portada', ['class' => 'btn'])!!}
-				<br>
-				@if(Request::path() !== 'empresas/create' && Auth::user()->check())
-					@if(Auth::user()->get()->imagen_portada === "")
-						<img width="25%" id="ImagenPortada" class="thumbnail" src="http://medioambiente.nh-hoteles.es/themes/default/images/bgd-biodiversidad-00.png" alt="...">
+				<div style="border: dashed; border-width: 1px;">
+					<span class="btn btn-primary btn-file btn-md">
+						Buscar imagen{!!Form::file('imagen_portada')!!}
+					</span>
+					@if(Request::path() !== 'empresas/create' && Auth::user()->check())
+						@if(Auth::user()->get()->imagen_portada === "")
+							<img width="25%" id="ImagenPortada" class="thumbnail img-responsive-centered" src="http://medioambiente.nh-hoteles.es/themes/default/images/bgd-biodiversidad-00.png" alt="...">
+						@else
+							<img width="35%" id="ImagenPortada" class="thumbnail img-responsive-centered" src="/img/users/{{Auth::user()->get()->imagen_portada}}" alt="...">
+						@endif
 					@else
-						<img width="35%" id="ImagenPortada" class="thumbnail" src="/img/users/{{Auth::user()->get()->imagen_portada}}" alt="...">
+						<img width="25%" id="ImagenPortada" class="thumbnail img-responsive-centered" src="http://medioambiente.nh-hoteles.es/themes/default/images/bgd-biodiversidad-00.png" alt="...">
 					@endif
-				@else
-					<img width="25%" id="ImagenPortada" class="thumbnail" src="http://medioambiente.nh-hoteles.es/themes/default/images/bgd-biodiversidad-00.png" alt="...">
-				@endif
+				</div>
 			</div>						
 		</div>		
 
@@ -223,21 +231,34 @@
 	function ValidarRut(rut){
 		console.log("click");
 		var route = "http://localhost:8000/validarrutusuario/"+rut+"";
-
+		document.getElementById('FormUsuario').onsubmit = function() {
+		    return false;
+		}	
 		$.get(route, function(res){
 			
 			if(res !== 'false'){
 				$("#rut").val(res);
-				return true;
+				document.getElementById('FormUsuario').onsubmit = function() {
+				    return true;
+				}											
 				//console.log(res);
-			}else{
-				
+			}else{						
 				$("#rut").val("");
 				$("#rut").focus();
 				alert('Formato de rut invalido');
-				return false;
+				
 			}
 		});
-		
 	}
+	$("#imagen_perfil, #imagen_portada").change(function(){
+		var formato = this.value;
+		var formatosPermitidos = ["jpg", "jpeg", "png", "gif"];
+		formato = formato.split('.');
+		if(formatosPermitidos.indexOf(formato[1]) < 0)
+		{
+			this.value = "";
+			alert('Formato de imagen invalido, no se subirá');
+		}
+		console.log(this.value);
+	});		
 </script>

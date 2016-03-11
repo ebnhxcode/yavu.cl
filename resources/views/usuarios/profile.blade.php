@@ -40,8 +40,6 @@
 									{!!Auth::user()->get()->ciudad!!}
 
 									<p>
-										<a href="#!" class="btn btn-primary btn-xs" role="button">Button</a> 
-										<a href="#!" class="btn btn-default btn-xs" role="button">Button</a>
 									</p>
 
 								</div>

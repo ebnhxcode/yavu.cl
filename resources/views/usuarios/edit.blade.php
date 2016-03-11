@@ -9,7 +9,7 @@
 		@include('alerts.successMessage')
 		@include('alerts.warningMessage')	
 		<div class="row">
-			{!!Form::model($user, ['method'=>'PUT', 'route' => ['usuarios.update', $user->id], 'files' => true ])!!}
+			{!!Form::model($user, ['method'=>'PUT', 'route' => ['usuarios.update', $user->id], 'files' => true, 'id' => 'FormUsuario'])!!}
 			@include('usuarios.forms.fieldsUser')
 				<div class="list-group">
 					<div class="list-group-item">
@@ -26,6 +26,7 @@
 							{!!Form::close()!!}													
 						</div>	
 					</div>
+					<!--
 					<div class="list-group-item">
 						<h6>Información en tu perfil completa al:</h6>
 						<div class="progress">
@@ -34,6 +35,7 @@
 						  </div>
 						</div>							
 					</div>		
+					-->
 				</div>
 			</div><!--Este fin del div cierra el div que se abre en fieldsUser-->	
 		</div>

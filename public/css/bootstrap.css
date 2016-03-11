@@ -943,6 +943,16 @@ img {
   max-width: 100%;
   height: auto;
 }
+.img-responsive-centered,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  margin: 0 auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 .img-rounded {
   border-radius: 6px;
 }
@@ -2810,6 +2820,29 @@ select[multiple].form-group-lg .form-control {
   background-image: none;
   border: 0px solid transparent;
   border-radius: 2px;
+}
+/*
+AQUI SE DA FORMATO AL BOTON PARA SUBIR ARCHIVOS
+*/
+.btn-file {
+  position: relative;
+  overflow: hidden;
+  }
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
 }
 .btn:focus,
 .btn:active:focus,

@@ -45,7 +45,7 @@
           {!!Form::hidden('idUltima', "0", ['id'=>'idUltima'])!!}
           <div class="navbar-brand">
             <a href="#!"> 
-              <span id="Notificaciones" title="Notificaciones" data-toggle="popover" title="Popover title" data-placement="bottom"  class="glyphicon glyphicon-flash" style="font-size: 1em;" aria-hidden="true">
+              <span id="Notificaciones" title="Notificaciones" data-toggle="popover" title="Popover title" data-placement="bottom"  class="glyphicon glyphicon-globe" style="font-size: 1em;" aria-hidden="true">
                 <small><span id="CantidadNotificaciones" class="label label-danger"></span></small>
               </span>    
             </a>           
