@@ -4847,8 +4847,8 @@ a.badge:focus {
   margin-bottom: 20px;
   line-height: 1.42857143;
   background-color: #fff;
-  /*border: 1px solid #ddd;*/
-  border-radius: 0px 0px 4px 4px;
+  border: 1px solid #ddd;
+  border-radius: 1px 8px 5px 3px;
   -webkit-transition: border .2s ease-in-out;
        -o-transition: border .2s ease-in-out;
           transition: border .2s ease-in-out;
