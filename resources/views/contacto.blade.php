@@ -13,25 +13,25 @@
     <div class="panel panel-default">
    
       <div class="panel-body">
-             <td colspan="2">Haznos saber tus dudas, ¡Queremos entregarte el mejor servicio!</td>
+             <td colspan="2">Contactanos!</td>
              
         {!!Form::open()!!}
         <table class="table">
           <tr>
-            <td>Nombre</td>
+            <td>Nombre:</td>
             <td>
               {!!Form::text('name',null,['class'=>'form-control','placeholder'=>'Ingresa tu nombre', 'required'=>'required'])!!}
             </td>
           </tr>
           <tr>
-            <td>Email</td>
+            <td>Email:</td>
             <td>
               {!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingresa tu email', 'required'=>'required'])!!}
             </td>
 
           </tr>
           <tr>
-            <td>Mensaje</td>
+            <td>Mensaje:</td>
             <td>
               {!!Form::textarea('mensaje',null,['class'=>'form-control','placeholder'=>'Ingresa tu mensaje', 'required'=>'required','rows'=>'3'])!!}                      
             </td>
