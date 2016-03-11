@@ -9,20 +9,7 @@ Route::get('yavucoins','FrontController@yavucoins');
 Route::get('ysorteos','FrontController@ysorteos');
 
 Route::get('contacto','FrontController@contacto');
-Route::post('contacto', function () { 
-    $rules =  array('captcha' => ['required', 'captcha']); 
-    $validator = Validator::make( 
-        [ 'captcha' => Input::get('captcha') ], 
-        $rules, 
-        // Mensaje de error personalizado 
-        [ 'captcha' => 'El captcha incorrecto.' ]
-    ); 
-    if ($validator->passes()) { 
-        echo "Exito :)"; 
-    } else { 
-        return View::make('contacto')->withErrors($validator); 
-    } 
-});
+
 
 Route::get('listaempresas/{empresa}','EmpresaController@ListaEmpresas');
 Route::get('nosotros','FrontController@nosotros');
@@ -175,5 +162,10 @@ Route::get('verificartickets/{user_id}', 'TicketController@VerificarTickets');
 Route::get('contartickets', 'TicketController@ContarTickets');
 Route::get('usarticket/{user_id}/{sorteo_id}', 'SorteoController@UsarTicket');
 /*Gestión de tickets*/
+
+
+/*Gestión de correos*/
+Route::resource('mail', 'MailController');
+/*Gestión de correos*/
 
 

@@ -42,10 +42,5 @@ class FrontController extends Controller
         return view('yavucoins');        
     }
 
-    public function ysorteos()
-    {
-        return view('ysorteos');        
-    }
-
 
 }
