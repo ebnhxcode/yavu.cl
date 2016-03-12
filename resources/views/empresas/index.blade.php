@@ -13,21 +13,20 @@
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<div class="form-group">
-
   				@if(Auth::admin()->check())
-
-				 {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'Nombre de empresa','id'=>'empresa'])!!}
-
-				@elseif(Auth::user()->check() || !Auth::user()->check())
-
-				 {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'Nombre de empresa','id'=>'empresathumb', 'role' => 'combobox'])!!}
-
-				 @endif
-
+			      <div class="input-group input-group-lg">
+			          <span class="glyphicon glyphicon-search input-group-addon" id="sizing-addon1"></span>
+								{!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar...','id'=>'empresa', 'aria-describedby' => 'sizing-addon1'])!!}	              
+			      </div>
+					@elseif(Auth::user()->check() || !Auth::user()->check())
+			      <div class="input-group input-group-lg">
+			          <span class="glyphicon glyphicon-search input-group-addon" id="sizing-addon1"></span>
+								{!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar...','id'=>'empresathumb', 'role' => 'combobox', 'aria-describedby' => 'sizing-addon1'])!!} 
+			      </div>
+					@endif
 				</div>
 				@if(Auth::admin()->check())
 					<table class="table table-hover" id="EmpresaList">
-
 						<thead>
 							<th>Nombre</th>
 							<th>Correo</th>
@@ -37,7 +36,6 @@
 							<th>Encargado</th>
 							<th>Operaciones</th>
 						</thead>
-
 						@foreach($empresas as $empresa)	
 							<tbody>
 								<td>{{$empresa->nombre}}</td>
@@ -52,38 +50,37 @@
 						@endforeach
 					</table>	
 					{!!$empresas->render()!!}
-						
 				@elseif(Auth::user()->check() || !Auth::user()->check())
-
-
 					<div id="EmpresaListThumb">
-
-					@foreach($empresas as $empresa)	
-	        
+						@foreach($empresas as $empresa)	
 				        <div class="col-md-4">
-				          <div class="thumbnail">
-				          	@if($empresa->imagen_perfil !== "")
-				            	<img src="{!!URL::to('img/users/'.$empresa->imagen_perfil)!!}" alt="">
-				            @else
-				            	<img width="15%" id="ImagenPerfil" class="thumbnail" src="https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png" alt="...">
-				            @endif
+				          <div class="thumbnail card">
 
-				              <div class="caption">
-				                <h4>{{$empresa->nombre}}</h4>
-				            </div>
-				            <td>{{$empresa->ciudad}}</td>
-							<td>{{$empresa->fono}}</td>
+										@if($empresa->imagen_portada === "" )
+											<img id="ImagenPortada" src="http://medioambiente.nh-hoteles.es/themes/default/images/bgd-biodiversidad-00.png" alt="...">
+										@else
+											<img id="ImagenPortada" src="/img/users/{{$empresa->imagen_portada}}" alt="...">
+										@endif		
+
+				          	@if($empresa->imagen_perfil !== "")
+				            	<img width="40%" class="img-circle" src="{!!URL::to('img/users/'.$empresa->imagen_perfil)!!}" alt="">
+				            @else
+				            	<img width="40%" id="ImagenPerfil" class="img-circle" src="/images/pyme.jpg" alt="...">
+				            @endif
+			                <h4><a class="btn-link" href="/empresa/{{$empresa->nombre}}">{!!$empresa->nombre!!}</a></h4>
+
+											{{$empresa->ciudad}}
+											<br>
+											{{$empresa->fono}}											
+											<br>
+
+
 				          </div>
 				        </div>
-
-					@endforeach
-
+						@endforeach
 					</div>
-
 					{!!$empresas->render()!!}
 				@endif
-
-				
 			</div>
 		</div>
 	</div>

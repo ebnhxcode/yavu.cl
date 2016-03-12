@@ -24,7 +24,7 @@ class EmpresaController extends Controller
   public function index(Request $request)
   {
      
-      $empresas = Empresa::nombre($request->get('nombre'))->orderBy('id', 'DESC')->paginate();
+      $empresas = Empresa::nombre($request->get('nombre'))->orderBy('id', 'DESC')->paginate(10);
 
       return view('empresas.index', compact('empresas'));
   }
@@ -127,27 +127,27 @@ class EmpresaController extends Controller
         $nombreCompleto="";
         $nombre = explode('+', $nombre);
         //dd($nombreCompleto);
-        $sqlAdd = "SELECT * FROM (SELECT id, nombre, ciudad, estado FROM empresas)newTable";
+        $sqlAdd = "SELECT * FROM (SELECT id, user_id, rut, email, fono, nombre, direccion, ciudad, region, pais, estado, imagen_perfil, imagen_portada, created_at FROM empresas)newTable";
         foreach ($nombre as $key => $value) {
           $nombreCompleto .= $value.' ';
           if ($key === 0)
           {
-            $sqlAdd .= " WHERE newTable.nombre like '%".$value."%' OR newTable.ciudad like '%".$value."%' OR newTable.estado like '%".$value."%'";
+            $sqlAdd .= " WHERE newTable.user_id like '%".$value."%' OR newTable.rut like '%".$value."%' OR newTable.email like '%".$value."%' OR newTable.nombre like '%".$value."%' OR newTable.direccion like '%".$value."%' OR newTable.ciudad like '%".$value."%' OR newTable.region like '%".$value."%' OR newTable.pais like '%".$value."%' OR newTable.estado like '%".$value."%'";
           }
           else
           {
-            $sqlAdd .= " OR newTable.nombre like '%".$value."%' OR newTable.ciudad like '%".$value."%' OR newTable.estado like '%".$value."%'";
+            $sqlAdd .= " OR newTable.rut like '%".$value."%' OR newTable.email like '%".$value."%' OR newTable.nombre like '%".$value."%' OR newTable.direccion like '%".$value."%' OR newTable.ciudad like '%".$value."%' OR newTable.region like '%".$value."%' OR newTable.pais like '%".$value."%' OR newTable.estado like '%".$value."%'";
           }
         }
-        $sqlAdd .= " OR newTable.nombre like '%".$nombreCompleto."%' OR newTable.ciudad like '%".$nombreCompleto."%' OR newTable.estado like '%".$nombreCompleto."%'";
+        $sqlAdd .= " OR newTable.rut like '%".$nombreCompleto."%' OR newTable.email like '%".$nombreCompleto."%' OR newTable.nombre like '%".$nombreCompleto."%' OR newTable.direccion like '%".$nombreCompleto."%' OR newTable.ciudad like '%".$nombreCompleto."%' OR newTable.region like '%".$nombreCompleto."%' OR newTable.pais like '%".$nombreCompleto."%' OR newTable.estado like '%".$nombreCompleto."%'";
 
-        $sqlAdd .= "ORDER BY newTable.nombre DESC";
+        $sqlAdd .= "ORDER BY newTable.created_at DESC";
 
         $empresas = DB::select($sqlAdd);
       }
       else
       {
-        $sqlAdd = 'SELECT * FROM (SELECT id, estado, fono, nombre, direccion FROM empresas)newTable WHERE newTable.nombre like "%nombre%" OR newTable.ciudad like "%nombre%" OR newTable.estado like "%activo%" ';
+        $sqlAdd = 'SELECT * FROM (SELECT id, user_id, rut, email, fono, nombre, direccion, ciudad, region, pais, estado, imagen_perfil, imagen_portada, created_at FROM empresas)newTable WHERE newTable.rut like "%7%" OR newTable.email like "%@%" OR newTable.nombre like "%empresa%" OR newTable.estado like "%activo%" ';
 
         $empresas = DB::select($sqlAdd);
         return response()->json(

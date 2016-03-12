@@ -59,7 +59,7 @@ Route::resource('empresas','EmpresaController');
 Route::get('empresa/{empresa}/', 'EmpresaController@MostrarEmpresaPublica');
 Route::get('listaempresas', 'EmpresaController@ListaEmpresas');
 Route::get('solicitareliminacionempresa/{id}', 'EmpresaController@SolicitarEliminacion');
-Route::get('buscarempresa/{nombre}', 'EmpresaController@BuscarEmpresas');
+Route::get('buscarempresa/{nombre?}', 'EmpresaController@BuscarEmpresas');
 /*Gestión de Empresas*/
 /*Gestión de Servicios*/
 Route::resource('servicios','ServicioController');

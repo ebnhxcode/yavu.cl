@@ -152,24 +152,28 @@
 
 			$(res).each(function(key,value){
 				var ImagenPerfil = "/img/users/"+value.imagen_perfil;
-
+				var ImagenPortada = "/img/users/"+value.imagen_portada;
 				if (value.imagen_perfil === "")
 				{
-					ImagenPerfil = "https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png";
+					ImagenPerfil = "http://localhost:8000/images/pyme.jpg";
+				}
+				if (value.imagen_portada === "")
+				{
+					ImagenPortada = "http://medioambiente.nh-hoteles.es/themes/default/images/bgd-biodiversidad-00.png";
 				}
 
 				$("#EmpresaListThumb").append(
 						
-					'<div class="col-md-4">'
-				        +'<div class="thumbnail">'
-				            +'<img src="'+ImagenPerfil+'" alt="">'
-					            +'<div class="caption">'
-					                +'<h4>'+value.nombre+'</h4>'
-					            +'</div>'
-					        +'<td>'+value.ciudad+'</td>'
-							+'<td>'+value.fono+'</td>'
-					    +'</div>'					        
-					+'</div>'
+						'<div class="col-md-4">'
+				          	+'<div class="thumbnail card">'
+								+'<img src="'+ImagenPortada+'" alt="">'
+								+'<img class="img-circle" src="'+ImagenPerfil+'" alt="">'
+				                +'<h4><a class="btn-link" href="/empresa/'+value.nombre+'">'+value.nombre+'</a></h4>'
+				                +value.ciudad+'<br>'
+				                +value.fono+'<br>'
+				          +'</div>'
+				        +'</div>'
+
 				);								 
 			});
 			$("#EmpresaListThumb").append(

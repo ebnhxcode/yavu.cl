@@ -14,7 +14,12 @@
       <div class="panel-body">
         <div class="form-group">
           @if(Auth::admin()->check())
-            {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'Nombre de sorteo','id'=>'nombre_sorteo'])!!}
+
+            <div class="input-group input-group-lg">
+              <span class="glyphicon glyphicon-search input-group-addon" id="sizing-addon1"></span>
+              {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar...','id'=>'nombre_sorteo', 'aria-describedby' => 'sizing-addon1'])!!}
+            </div>
+
           @elseif(Auth::user()->check() || !Auth::user()->check())
 
             <div class="input-group input-group-lg">
@@ -22,7 +27,6 @@
               {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar...','id'=>'sorteothumb', 'aria-describedby' => 'sizing-addon1'])!!}
             </div>
 
-            
           @endif
         </div>
         @if(Auth::admin()->check())
@@ -53,17 +57,18 @@
                   @else
                     <img src="/img/users/{!! $sorteo->imagen_sorteo !!}" alt="" />  
                   @endif                
-                  <div class="card-content">
+                  <div class="card-content card">
                     <h5>Nombre Sorteo:</h5> {{$sorteo->nombre_sorteo}}
+                    <h5>Descripción del Sorteo:</h5>
+                    {{$sorteo->descripcion}}
+                    <h5>Estado del Sorteo:</h5>  
+                    {{$sorteo->estado_sorteo}}
                   </div>
-                  <h5>Descripción del Sorteo:</h5>
-                  {{$sorteo->descripcion}}
-                  @if(Auth::user()->check())
+                  
+                  @if(Auth::user()->check())                  
                     <input id="user_id" value="{!! Auth::user()->get()->id !!}" type="hidden" />
                     <input id="sorteo_id" value="{!! $sorteo->id !!}" type="hidden" />
                     <input type="hidden" name="_token" value="{{csrf_token()}}" id="token" />
-                    <h5>Estado del Sorteo:</h5>  
-                    {{$sorteo->estado_sorteo}}
                     <br>
                     <a  id='participar' href="{!! URL::to('#!') !!}" class="btn btn-primary participar" data-toggle="modal" data-target="#myModal" value="{!! $sorteo->id !!}" role="button">Participar!/<a> 
   
@@ -90,18 +95,16 @@
                     </div>
                     
                   @else 
-                    <td><a href="{!! URL::to('usuarios/create') !!}" class="btn btn-primary" role="button">Participar!</a></td>
+                    <a href="{!! URL::to('usuarios/create') !!}" class="btn btn-primary" role="button">Participar!</a>
                   @endif
                 </div>
               </div>
             
-          @endforeach
+            @endforeach
+            {!!$sorteos->render()!!}
           </div>
-
-          {!!$sorteos->render()!!}
-        
         @endif
-
+        {!!$sorteos->render()!!}
       </div>
     </div>
   </div>
