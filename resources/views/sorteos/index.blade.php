@@ -16,7 +16,13 @@
           @if(Auth::admin()->check())
             {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'Nombre de sorteo','id'=>'nombre_sorteo'])!!}
           @elseif(Auth::user()->check() || !Auth::user()->check())
-           {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'Nombre de sorteo','id'=>'sorteothumb'])!!}
+
+            <div class="input-group input-group-lg">
+              <span class="glyphicon glyphicon-search input-group-addon" id="sizing-addon1"></span>
+              {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar...','id'=>'sorteothumb', 'aria-describedby' => 'sizing-addon1'])!!}
+            </div>
+
+            
           @endif
         </div>
         @if(Auth::admin()->check())

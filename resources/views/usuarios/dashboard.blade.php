@@ -3,7 +3,7 @@
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
-	<div id="contentMiddle">
+	<div id="fullWidth">
 		@include('alerts.alertFields')
 		@include('alerts.errorsMessage')
 		@include('alerts.successMessage')
@@ -11,7 +11,7 @@
 		<h4 style="margin-top:-40px;"></h4>
 		<div class="row">
 
-		   <div class="col-sm-6 col-xs-6">
+		  <div class="col-md-4 col-sm-6 col-xs-12">
 
 				<div class="list-group" >
 					<div class="list-group-item-full-header">
@@ -35,6 +35,21 @@
 					</a>
 				</div>
 
+			</div>
+		  <div class="col-md-4 col-sm-6 col-xs-12">
+
+				        <div class="thumbnail">
+				          <img src="" alt="">
+			            <div class="caption">
+			            	<h6>MI EMPRESA</h6>	
+
+
+
+			            </div>
+					    	</div>
+
+
+
 
 			   <div class="list-group">
 				   <div class="list-group-item-full-header">
@@ -45,28 +60,23 @@
 				   </a>
 			   </div>
 
+			</div>
+			<div class="col-md-4 col-sm-6 col-xs-12">
 
-		
 
-
-
-					<div class="list-group" >
-						<div class="list-group-item-full-header">
-							<h6>NOTIFICACIONES</h6>
-						</div>
-						<a href="{{URL::to('/pops')}}" style="text-align:center;" class="list-group-item list-group-item-warning">
-							<span style="font-size: 6em;" class="glyphicon glyphicon-flash"></span>
-						</a>
-
+				<div class="list-group" >
+					<div class="list-group-item-full-header">
+						<h6>NOTIFICACIONES</h6>
 					</div>
-
-
-
-
+					<a href="{{URL::to('/pops')}}" style="text-align:center;" class="list-group-item list-group-item-warning">
+						<span style="font-size: 6em;" class="glyphicon glyphicon-flash"></span>
+					</a>
 
 				</div>
 
-		   <div class="col-sm-6 col-xs-6"><!--style="position:fixed;z-index:1000;"-->
+			</div>
+			
+		  <div class="col-md-4 col-sm-6 col-xs-12"><!--style="position:fixed;z-index:1000;"-->
 
 			   <div class="list-group" >
 				   <div class="list-group-item-full-header">
@@ -76,6 +86,10 @@
 				   		<span style="font-size: 6em;" class="glyphicon glyphicon-cog"></span>
 				   	</a>
 			   </div>
+
+			</div>
+			<div class="col-md-4 col-sm-6 col-xs-12">
+
 
 			   <div class="list-group" >
 				   <div class="list-group-item-full-header">
@@ -88,6 +102,8 @@
 			   </div>
 
 
+			</div>
+			<div class="col-md-4 col-sm-6 col-xs-12">
 
 			   <div class="list-group" >
 				   <div class="list-group-item-full-header">
@@ -97,7 +113,10 @@
 				   		<span style="font-size: 6em;" class="glyphicon glyphicon-bookmark"></span>
 				   </a>
 
-			   </div>			   
+			   </div>			 
+
+			</div>
+			<div class="col-md-4 col-sm-6 col-xs-12">
 
 				<div class="list-group" >
 					<div class="list-group-item-full-header">
@@ -108,6 +127,7 @@
 					</a>
 
 				</div>
+			</div>
 
 			   <!--
 				<div class="list-group">					
@@ -145,7 +165,9 @@
 				</div>
 			   -->
 
-		   </div>
+		  
+
+
 		</div>
 	</div><!-- Fin del div id contentIn -->
 </div>

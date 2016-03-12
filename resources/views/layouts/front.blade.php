@@ -12,13 +12,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         {!!Html::script('js/jquery.js')!!}
+        <script>$.ajaxSetup({ cache:true });</script>
         {!!Html::script('js/vendor/bootstrap.min.js')!!}
+        <!--{!!Html::style('css/bootstrap-theme.min.css')!!}-->
         {!!Html::script('js/plugins.js')!!}
         {!!Html::script('js/ajax/FrontNotificaciones.js')!!}
         {!!Html::style('css/bootstrap.css')!!}
         {!!Html::style('css/style.css')!!}
         <!-- {!!Html::style('css/main.css')!!} -->
-        {!!Html::style('css/bootstrap-theme.min.css')!!}
+        
         {!!Html::script('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')!!}
 
         <style>
@@ -64,14 +66,20 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">                
             <li>
+            @if (Auth::user()->check())
+              <a href="{!!URL::to('/dashboard')!!}">Dashboard</a>
+            @elseif (Auth::admin()->check())
               <a href="{!!URL::to('/')!!}">Inicio</a>
+            @else
+              <a href="{!!URL::to('/')!!}">Inicio</a>
+            @endif
             </li>
             @if (Auth::user()->check())
               <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><strong>{!!Auth::user()->get()->nombre!!}</strong>  <b class="caret"></b></a>                        
                 <ul class="dropdown-menu">
-                  <li><a href="{!!URL::to('#')!!}">Inicio</a></li>
-                  <li><a href="{!!URL::to('/dashboard')!!}">Dashboard</a></li>
                   <li><a href="{!!URL::to('/profile')!!}">Perfil</a></li>
+                  <li><a href="{!!URL::to('/sorteos')!!}">Sorteos</a></li>
+                  <li><a href="{!!URL::to('/empresas')!!}">Buscar empresas</a></li>
                   <li><a href="{!!URL::to('/logout')!!}">Cerrar sesión</a></li>
                 </ul>
               </li>                         

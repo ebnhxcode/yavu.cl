@@ -33,51 +33,51 @@ $(document).ready(function(){
 
 	/*SELECTORES*/
 
+/*
+		
+
+*/
+
+
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 
 	function CargarNotificaciones(){
+
 		var Notificaciones = $("#Notificacion"); 
 		Global_idUltimaNotificacion = $("#idUltima").val();
 		var user_id = $("#user_id").val();
 		var route = "http://localhost:8000/cargarpops/"+Global_idUltimaNotificacion+"/"+user_id+"/todas";
 		var Contador = 0;
-		$.get(route, function(res){
-			if(Global_Control){mostrarCargando();}
-			var ImagenPerfilEmpresa = "";
-			$(res).each(function(key,value){				
-				var TimeAgo = value.created_at;
-				Global_idUltimaNotificacion = value.id;		
+			var route = "http://localhost:8000/cargarpops/"+Global_idUltimaNotificacion+"/"+user_id+"/todas";
+			$.ajax({
+				url: route,
+				type: 'GET',
+				dataType: 'json',
+				cache: true,
+				jsonpCallback: 'mantener',
+				async: true,				
+				success: function success(data, status) {
+					if(Global_Control){mostrarCargando();}
+					var ImagenPerfilEmpresa = "";					
+					$(data).each(function(key,value){		
 
-				ImagenPerfilEmpresa = "/img/users/"+value.imagen_perfil_empresa;
+						var TimeAgo = value.created_at;
+						Global_idUltimaNotificacion = value.id;		
 
-				if (value.imagen_perfil_empresa === "" || value.imagen_perfil_empresa === null)
-				{
-					ImagenPerfilEmpresa = "https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png";
-				}
+						ImagenPerfilEmpresa = "/img/users/"+value.imagen_perfil_empresa;
 
-				if($.trim(value.tipo) === 'coins')
-				{
+						if (value.imagen_perfil_empresa === "" || value.imagen_perfil_empresa === null)
+						{
+							ImagenPerfilEmpresa = "https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png";
+						}
 
-					Notificaciones.append(
-						"<div id='notificacion"+value.id+"' class='list-group'>"
-							+"<div class='list-group-item'>"					
-								+"<img src='img/yavu007.png' style='width: 32px; height: 30px;' />&nbsp;"		
-								+value.contenido
-							+"</div>"
-							+"<div class='list-group-item-full panel-footer-small'>"	
-								+"<small>"
-									+"<span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
-								+"</small>"		
-							+"</div>"
-						+"</div>"								
-					);
-				}
-				else if($.trim(value.tipo) === 'activacion')
-				{
-						Notificaciones.append(
+						if($.trim(value.tipo) === 'coins')
+						{
+
+							Notificaciones.append(
 								"<div id='notificacion"+value.id+"' class='list-group'>"
-									+"<div class='list-group-item'>"							
-										+"<img src='img/yavu007.png' style='width: 32px; height: 32px;' />&nbsp;"	
+									+"<div class='list-group-item'>"					
+										+"<img src='img/yavu007.png' style='width: 32px; height: 30px;' />&nbsp;"		
 										+value.contenido
 									+"</div>"
 									+"<div class='list-group-item-full panel-footer-small'>"	
@@ -85,42 +85,65 @@ $(document).ready(function(){
 											+"<span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
 										+"</small>"		
 									+"</div>"
-								+"</div>"
-						);
-				}				
-				else //if(value.tipo === 'coins')
-				{
-						Notificaciones.append(
-								"<div id='notificacion"+value.id+"' class='list-group'>"
-									+"<div class='list-group-item'>"							
-										+value.contenido
-									+"</div>"
-									+"<div class='list-group-item-full panel-footer-small'>"	
-										+"<small>"
-											+"<span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
-										+"</small>"		
-									+"</div>"
-								+"</div>"
-						);
+								+"</div>"								
+							);
+						}
+						else if($.trim(value.tipo) === 'activacion')
+						{
+								Notificaciones.append(
+										"<div id='notificacion"+value.id+"' class='list-group'>"
+											+"<div class='list-group-item'>"							
+												+"<img src='img/yavu007.png' style='width: 32px; height: 32px;' />&nbsp;"	
+												+value.contenido
+											+"</div>"
+											+"<div class='list-group-item-full panel-footer-small'>"	
+												+"<small>"
+													+"<span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
+												+"</small>"		
+											+"</div>"
+										+"</div>"
+								);
+						}				
+						else //if(value.tipo === 'coins')
+						{
+								Notificaciones.append(
+										"<div id='notificacion"+value.id+"' class='list-group'>"
+											+"<div class='list-group-item'>"							
+												+value.contenido
+											+"</div>"
+											+"<div class='list-group-item-full panel-footer-small'>"	
+												+"<small>"
+													+"<span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
+												+"</small>"		
+											+"</div>"
+										+"</div>"
+								);
+						}
+					
+						document.getElementById("idUltima").value =  Global_idUltimaNotificacion;
+						Contador += 1;	
+						ContarInteracciones(value.id);
+
+					});
+
+					if(Contador < 5){	
+						if (Global_Control) { 
+							$("#msj-finPublicaciones").fadeIn();	
+							setTimeout(function() {
+							    $("#msj-finPublicaciones").fadeOut(3000);
+							},1000);		
+							Global_Control = false;	
+						}			
+					}
+					ocultarCargando();	
+					Global_ContadorCargaNotificaciones += 1 * 5;
+					return true;
+
 				}
-			
-				document.getElementById("idUltima").value =  Global_idUltimaNotificacion;
-				Contador += 1;	
-				ContarInteracciones(value.id);
-			});
-			if(Contador < 5){	
-				if (Global_Control) { 
-					$("#msj-finPublicaciones").fadeIn();	
-					setTimeout(function() {
-					    $("#msj-finPublicaciones").fadeOut(3000);
-					},1000);		
-					Global_Control = false;	
-				}			
-			}
-			ocultarCargando();	
-			Global_ContadorCargaNotificaciones += 1 * 5;
-			return true;
-		});						
+			});	
+
+
+				
 	}
 
   function ContarInteracciones(status_id)

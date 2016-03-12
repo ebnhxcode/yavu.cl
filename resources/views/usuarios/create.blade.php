@@ -14,7 +14,7 @@
 					<div class="list-group-item">
 						<div class="form-group has-feedback has-feedback-left">							
 							{!!Form::label('Registrar')!!}						
-							{!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success', 'style'=>'width:100%;'])!!}
+							{!!Form::submit('Registrar', ['class'=>'btn btn-success', 'style'=>'width:100%;'])!!}
 							{!!Form::close()!!}
 						</div>	
 					</div>

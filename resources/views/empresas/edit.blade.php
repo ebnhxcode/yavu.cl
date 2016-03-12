@@ -1,6 +1,6 @@
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/SolicitudEliminacionEmpresa.js')!!}
-@extends('layouts.frontadm')
+@extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
@@ -17,7 +17,7 @@
 				<div class="list-group">
 					<div class="list-group-item">				
 						<div class="form-group has-feedback has-feedback-left">
-							{!!Form::submit('Guardar', ['class'=>'btn btn-primary btn-success', 'style'=>'width:100%;'])!!}
+							{!!Form::submit('Guardar', ['class'=>'btn btn-success', 'style'=>'width:100%;'])!!}
 							{!!Form::close()!!}
 						</div>
 					</div>
@@ -25,9 +25,9 @@
 					<div class="list-group-item">		
 						<div class="form-group has-feedback has-feedback-left">
 							<!--  Reemplaza->{!!Form::open(['action'=> ['EmpresaController@destroy', $empresa->id], 'method'=>'DELETE'])!!}
-								{!!Form::submit('Solicitar eliminación', ['class'=>'btn btn-primary btn-danger', 'style'=>'width:100%;'])!!}
+								{!!Form::submit('Solicitar eliminación', ['class'=>'btn btn-danger', 'style'=>'width:100%;'])!!}
 							{!!Form::close()!!}-->
-							{!!Form::button('Solicitar eliminación', ['class'=>'btn btn-primary btn-danger', 'style'=>'width:100%;', 'id' => 'SolicitudEliminacion', 'value'=>$empresa->id])!!}
+							{!!Form::button('Solicitar eliminación', ['class'=>'btn btn-danger', 'style'=>'width:100%;', 'id' => 'SolicitudEliminacion', 'value'=>$empresa->id])!!}
 						</div>
 					</div>
 					<div class="list-group-item">		

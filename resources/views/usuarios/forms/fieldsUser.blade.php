@@ -14,7 +14,7 @@
 			</div>
 			<div class="form-group has-feedback has-feedback-left">
 				{!!Form::label('Email:')!!}
-				{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email', 'max,length' => '200'])!!}			
+				{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email', 'maxlength' => '200'])!!}			
 			</div>
 			<div class="form-group has-feedback has-feedback-left">
 				@if(Auth::user()->check() && Request::path() !== 'usuarios/create')
@@ -128,7 +128,7 @@
 				</div>
 				<div class="form-group has-feedback has-feedback-left">
 					{!!Form::label('Nickname:')!!}
-					{!!Form::text('login',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre de usuario' 'maxlength' => '100'])!!}			
+					{!!Form::text('login',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre de usuario', 'maxlength' => '100'])!!}			
 				</div>
 				<div class="form-group has-feedback has-feedback-left">
 					{!!Form::label('Dirección:')!!}

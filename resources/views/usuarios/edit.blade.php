@@ -14,7 +14,7 @@
 				<div class="list-group">
 					<div class="list-group-item">
 						<div class="form-group has-feedback has-feedback-left">
-							{!!Form::submit('Guardar', ['class'=>'btn btn-primary btn-success', 'style'=>'width:100%;', 'id'=>'guardar'])!!}
+							{!!Form::submit('Guardar', ['class'=>'btn btn-success', 'style'=>'width:100%;', 'id'=>'guardar'])!!}
 							<br>
 							{!!Form::close()!!}				
 						</div>
@@ -22,7 +22,7 @@
 					<div class="list-group-item">
 						<div class="form-group has-feedback has-feedback-left">
 							{!!Form::open(['action'=> ['UserController@destroy', $user->id], 'method'=>'DELETE'])!!}
-							{!!Form::submit('Eliminar', ['class'=>'btn btn-primary btn-danger', 'style'=>'width:100%;', 'id'=>'eliminar'])!!}﻿
+							{!!Form::submit('Eliminar', ['class'=>'btn btn-danger', 'style'=>'width:100%;', 'id'=>'eliminar'])!!}﻿
 							{!!Form::close()!!}													
 						</div>	
 					</div>
