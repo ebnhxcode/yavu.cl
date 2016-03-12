@@ -10,8 +10,8 @@
         "laravelcollective/html": "5.1.*",
         "kbwebs/multiauth": "~1.0",
         "nesbot/carbon": "^1.21",
-        "malahierba-lab/chile-rut": "5.1.*",
-        "mews/captcha": "^2.1"
+        "malahierba-lab/chile-rut": "5.1.*"
+       
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
