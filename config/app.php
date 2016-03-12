@@ -146,7 +146,7 @@ return [
         yavu\Providers\RouteServiceProvider::class,
         'Collective\Html\HtmlServiceProvider',
         Malahierba\ChileRut\ChileRutServiceProvider::class,
-        Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
+    
 
     ],
 
