@@ -41,7 +41,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/"><img id="LogoYavu" src="{{URL::to('img/yavu002.png')}}" style="transition: width 0.5s;" width="30%" /></a>
+          <a class="navbar-brand" href="/"><img id="LogoYavu" src="{{URL::to('img/yavu002.png')}}" style="transition: width 0.5s;width: 30%;" width="30%" /></a>
+
         @if(Auth::user()->check())
           {!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
           {!!Form::hidden('idUltima', "0", ['id'=>'idUltima'])!!}
@@ -62,29 +63,44 @@
           </div>
           -->
         @endif
+
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">                
-            <li>
-            @if (Auth::user()->check())
-              <a href="{!!URL::to('/dashboard')!!}">Dashboard</a>
-            @elseif (Auth::admin()->check())
-              <a href="{!!URL::to('/')!!}">Inicio</a>
-            @else
-              <a href="{!!URL::to('/')!!}">Inicio</a>
-            @endif
-            </li>
-            @if (Auth::user()->check())
-              <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><strong>{!!Auth::user()->get()->nombre!!}</strong>  <b class="caret"></b></a>                        
+          <ul class="nav navbar-nav"><!-- navbar-right -->
+            @if(Auth::user()->check())
+              <li class="dropdown">
+                <a href="#!" data-toggle="dropdown" class="dropdown-toggle">
+                  <strong>Inicio</strong>
+                  <b class="caret"></b>
+                </a> 
+                <ul class="dropdown-menu">
+                  @if (Auth::user()->check())
+                    <li><a href="{!!URL::to('/dashboard')!!}">Dashboard</a></li>
+                  @else
+                    <li><a href="{!!URL::to('/')!!}">Inicio</a></li>
+                  @endif
+                </ul>
+              </li>             
+              <li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><strong>{!!Auth::user()->get()->nombre!!}</strong>  <b class="caret"></b></a>                        
                 <ul class="dropdown-menu">
                   <li><a href="{!!URL::to('/profile')!!}">Perfil</a></li>
                   <li><a href="{!!URL::to('/sorteos')!!}">Sorteos</a></li>
                   <li><a href="{!!URL::to('/empresas')!!}">Buscar empresas</a></li>
                   <li><a href="{!!URL::to('/logout')!!}">Cerrar sesión</a></li>
+                  <li class="dropdown"><a href="!#" data-toggle="dropdown" class="dropdown-toggle">Nosotros<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{!!URL::to('/nosotros/')!!}">Nuestra empresa</a></li>
+                      <li><a href="{!!URL::to('/contacto/')!!}">Contacto</a></li>
+                      <li><a href="{!!URL::to('/terminos/')!!}">Terminos</a></li>
+                      <li><a href="{!!URL::to('/yavucoins/')!!}"><strong>YavuCoins</strong></a></li>    
+                    </ul>
+                  </li>                    
                 </ul>
               </li>                         
-            @elseif (Auth::admin()->check())
-              <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Admintración<b class="caret"></b></a>
+            @endif
+          </ul>
+            @if(Auth::admin()->check())
+              <li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle">Admintración<b class="caret"></b></a>
                 <ul class="dropdown-menu">      
                   <li><a href="{!!URL::to('/admins/create')!!}">Registro de Administradores</a></li>
                   <li><a href="{!!URL::to('/admins')!!}">Mostrar listado de Administradores</a></li>
@@ -94,19 +110,17 @@
                   <li><a href="{!!URL::to('/logout')!!}"><strong>Salir</strong></a></li>                  
                 </ul>
               </li>   
-            @elseif(Request::path() !== 'login')
-              <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Nosotros<b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="{!!URL::to('/nosotros/')!!}">Nuestra empresa</a></li>
-                  <li><a href="{!!URL::to('/contacto/')!!}">Contacto</a></li>
-                  <li><a href="{!!URL::to('/terminos/')!!}">Terminos</a></li>
-                  <li><a href="{!!URL::to('/yavucoins/')!!}"><strong>YavuCoins</strong></a></li>    
-                </ul>
-              </li> 
-              @if(!Auth::user()->check() && !Auth::empresa()->check() && !Auth::admin()->check())
-                <li class="dropdown"><a href="{!!URL::to('/login/')!!}">Inicia Sesión</a></li> 
-              @endif               
+            @endif
+            @if(Request::path() !== 'login')
+             
             @endif﻿  
+            @if(!Auth::user()->check() && !Auth::empresa()->check() && !Auth::admin()->check())
+              <li class="dropdown">
+                <a href="{!!URL::to('/login/')!!}">Inicia Sesión</a>
+              </li> 
+            @endif 
+
+
           </ul>         
         </div><!--/.navbar-collapse -->
       </div>

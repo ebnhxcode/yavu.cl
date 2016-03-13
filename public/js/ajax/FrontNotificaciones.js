@@ -181,7 +181,11 @@
 			cache: false,
 			async: true,
 			success: function success(data, status) {
-				$("#CantidadNotificaciones").text(data);
+				if (data > 0)
+					$("#CantidadNotificaciones").text(data);
+
+				$("#CantidadNotificaciones").css('style="left: 20px;"');
+
 			},
 			error: function error(xhr, textStatus, errorThrown) {
 			  alert('Remote sever unavailable. Please try later');

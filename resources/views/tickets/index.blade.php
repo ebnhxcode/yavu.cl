@@ -23,7 +23,7 @@
 	                </div>		                		
 					<div class="list-group-item">
 						<img alt="Ticket ya!" src= "{!!URL::to('images/ticket.png')!!}" height="100px" width="100px"/>
-						{!!Form::select('size', array('1' => '1'), null, ['placeholder' => 'Seleciona la cantidad...','id' => 'cantidadtickets']);!!}
+						{!!Form::select('size', array('1' => '1'), null, ['placeholder' => 'Seleciona la cantidad...','id' => 'cantidadtickets', 'class' => 'form-control']);!!}
 						<button type="button" id='comprar' class="btn btn-primary btn-sm">Comprar ticket</button>
 						<input type="hidden" name="_token" value="{{csrf_token()}}" id="token" />
 						<input type="hidden" value="{{Auth::user()->get()->id}}" id="user_id" />
