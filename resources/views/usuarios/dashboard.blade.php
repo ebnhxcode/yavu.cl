@@ -38,15 +38,13 @@
 			</div>
 		  <div class="col-md-4 col-sm-6 col-xs-12">
 
-				        <div class="thumbnail">
-				          <img src="" alt="">
-			            <div class="caption">
-			            	<h6>MI EMPRESA</h6>	
-
-
-
-			            </div>
-					    	</div>
+		        <div class="thumbnail">		        	
+		          	<img src="" alt="">
+		            <div class="caption">
+		            	<h6>MI EMPRESA</h6>	
+		            </div>
+		            @include('layouts.bannerFront')
+		    	</div>
 
 
 

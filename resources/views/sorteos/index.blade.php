@@ -72,7 +72,7 @@
                     <input id="sorteo_id" value="{!! $sorteo->id !!}" type="hidden" />
                     <input type="hidden" name="_token" value="{{csrf_token()}}" id="token" />
                     <br>
-                    <a  id='participar' href="{!! URL::to('#!') !!}" class="btn btn-primary participar btn-sm" data-toggle="modal" data-target="#myModal" value="{!! $sorteo->id !!}" role="button">Participar!<a> 
+                    <a  id='participar' href="{!! URL::to('#!') !!}" class="btn btn-primary participar btn-sm" data-toggle="modal" data-target="#myModal" value="{!! $sorteo->id !!}" role="button">Participar<a> 
   
                     <!-- Modal -->
                     <div class="modal fade card" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
