@@ -82,7 +82,7 @@ $(document).ready(function(){
 			status = limpiar(status);
 			var user_id = $("#user_id").val();
 			var token = $("#token").val();
-			var route = "http://localhost:8000/estados";
+			var route = "http://186.64.123.143/estados";
 			$.ajax({
 				url: route,
 				headers: {'X-CSRF-TOKEN': token},
@@ -131,7 +131,7 @@ $(document).ready(function(){
 	function ActualizarEstados(){
 		var EstadosUsuario = $("#Estados").val(); 
 		$("#Estados").value ="";
-		var route = "http://localhost:8000/estadosusuario";
+		var route = "http://186.64.123.143/estadosusuario";
 		var user_id = $("#user_id");
 		var Contador = 0;
 		$.get(route, function(res){
@@ -145,7 +145,7 @@ $(document).ready(function(){
 					"<div id='status' class='list-group'>"
 						+"<div class='list-group-item'>"	
 						  	+"<h4><a href='/profile' style='color:#3C5B28;'>"
-						  		+"<img class='media-object' src='http://localhost:8000/images/user.png' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
+						  		+"<img class='media-object' src='http://186.64.123.143/images/user.png' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
 								+value.nombre+" "+value.apellido
 							+"</a></h4>"
 							+"<small>"
@@ -285,7 +285,7 @@ $(document).ready(function(){
 	}
     function ContarInteracciones(status_id){
       status_id = status_id;
-      var route = "http://localhost:8000/contarinteracciones/"+status_id;
+      var route = "http://186.64.123.143/contarinteracciones/"+status_id;
       var user_id = $("#user_id").val();
       var Contador = 0;
       $.get(route, function(res){
@@ -302,7 +302,7 @@ $(document).ready(function(){
 	function CargarEstados(){
 		var EstadosUsuario = $("#Estados"); 
 		Global_idUltimaPublicacion = $("#idUltima").val();
-		var route = "http://localhost:8000/estadosusuario/"+Global_idUltimaPublicacion;
+		var route = "http://186.64.123.143/estadosusuario/"+Global_idUltimaPublicacion;
 		var user_id = $("#user_id");
 		var Contador = 0;
 		$.get(route, function(res){
@@ -326,7 +326,7 @@ $(document).ready(function(){
 								+'</ul>'
 							+'</div>'																	  	
 						  	+"<h4><a href='/profile' style='color:#3C5B28;'>"
-						  		+"<img class='media-object' src='http://localhost:8000/images/user.png' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
+						  		+"<img class='media-object' src='http://186.64.123.143/images/user.png' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
 								+value.nombre+" "+value.apellido+" Idp:("+Global_idUltimaPublicacion+")"
 							+"</a></h4>"
 							+"<small>"
@@ -373,7 +373,7 @@ $(document).ready(function(){
 	}
 	function ContarEstados(){
 		var CargarEstados = $("#CargarEstados"); 
-		var route = "http://localhost:8000/contarestados";
+		var route = "http://186.64.123.143/contarestados";
 		var user_id = $("#user_id");
 		var Contador = 0;
 		$.get(route, function(res){

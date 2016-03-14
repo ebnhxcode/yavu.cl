@@ -1,4 +1,4 @@
-	$(document).ready(function(){	
+$(document).ready(function(){	
 	/*DECLARACIÓN DE VARIABLES GLOBALES*/
 	/*DECLARACIÓN DE VARIABLES GLOBALES*/
 
@@ -15,8 +15,7 @@
 	$("#BuscarUsuario").click(function(e)
 	{
 		if($("#usuario").val())
-		{
-			BuscarUsuario();
+		{			BuscarUsuario();
 		}
 		e.preventDefault();
 	});
@@ -35,7 +34,7 @@
 	function BuscarUsuario(){
 		console.log("click");
 		var NombreUsuario = $("#usuario").val();
-		var route = "http://localhost:8000/buscarusuario/"+NombreUsuario+"";
+		var route = "http://186.64.123.143/buscarusuario/"+NombreUsuario+"";
 		$("#UserList").text("");
 		$.get(route, function(res){
 			$("#UserList").append(
