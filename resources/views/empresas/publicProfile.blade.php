@@ -1,8 +1,7 @@
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/GestionarEstadosEmpresa.js')!!}
 {!!Html::script('js/ajax/SeguirEmpresa.js')!!}
-<!--{!!Html::script('js/ajax/GestionarCoinsEmpresa.js')!!}-->
-<!--{!!Html::script('js/ajax/InteraccionPublicacionesEmpresa.js')!!}-->
+{!!Html::script('js/ajax/GestionarCoinsEmpresa.js')!!}
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">

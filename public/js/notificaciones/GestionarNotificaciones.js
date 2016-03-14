@@ -74,7 +74,7 @@ $(document).ready(function(){
 						if($.trim(value.tipo) === 'coins')
 						{
 
-							Notificaciones.append(
+							Notificaciones.hide().append(
 								"<div id='notificacion"+value.id+"' class='list-group'>"
 									+"<div class='list-group-item'>"					
 										+"<img src='img/yavu007.png' style='width: 32px; height: 30px;' />&nbsp;"		
@@ -86,11 +86,11 @@ $(document).ready(function(){
 										+"</small>"		
 									+"</div>"
 								+"</div>"								
-							);
+							).show('slow');
 						}
 						else if($.trim(value.tipo) === 'activacion')
 						{
-								Notificaciones.append(
+								Notificaciones.hide().append(
 										"<div id='notificacion"+value.id+"' class='list-group'>"
 											+"<div class='list-group-item'>"							
 												+"<img src='img/yavu007.png' style='width: 32px; height: 32px;' />&nbsp;"	
@@ -102,11 +102,11 @@ $(document).ready(function(){
 												+"</small>"		
 											+"</div>"
 										+"</div>"
-								);
+								).show('slow');
 						}				
 						else //if(value.tipo === 'coins')
 						{
-								Notificaciones.append(
+								Notificaciones.hide().append(
 										"<div id='notificacion"+value.id+"' class='list-group'>"
 											+"<div class='list-group-item'>"							
 												+value.contenido
@@ -117,7 +117,7 @@ $(document).ready(function(){
 												+"</small>"		
 											+"</div>"
 										+"</div>"
-								);
+								).show('slow');
 						}
 					
 						document.getElementById("idUltima").value =  Global_idUltimaNotificacion;

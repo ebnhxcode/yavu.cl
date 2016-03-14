@@ -11,7 +11,7 @@
   <div class = "carousel-inner">
     <div class = "item active">
       <!-- Set the first background image using inline CSS below. -->    
-      <div class="fill"><img style="background-size:cover;" src = "img/BannerFront/banner5.jpg" height=100% width=100%></div>
+      <div class="fill"><img style="background-size:cover;" src = "img/BannerFront/banner5.jpg" width=100%></div>
         <div class = "carousel-caption">
           <div class="title-slide"><br>            
             <h1 class="txt-responsive">YaVu</h1>
@@ -21,7 +21,7 @@
     </div>
     <div class = "item">
       <!-- Set the second background image using inline CSS below. -->    
-      <div class="fill"><img style="background-size:cover;" src = "img/BannerFront/banner1.jpg" height=100% width=100%></div>
+      <div class="fill"><img style="background-size:cover;" src = "img/BannerFront/banner1.jpg" width=100%></div>
         <div class = "carousel-caption">
           <div class="title-slide"><br>
               <h1 class="txt-responsive">YaVu</h1>
@@ -31,7 +31,7 @@
     </div>
     <div class = "item">
       <!-- Set the third background image using inline CSS below. -->    
-      <div class="fill"><img style="background-size:cover;" src = "img/BannerFront/banner2.jpg" height=100% width=100%></div>
+      <div class="fill"><img style="background-size:cover;" src = "img/BannerFront/banner2.jpg" width=100%></div>
         <div class = "carousel-caption">
           <div class="title-slide"><br>
               <h1 class="txt-responsive">YaVu</h1>
@@ -41,7 +41,7 @@
     </div>
     <div class = "item">
           <!-- Set the fourth background image using inline CSS below. -->    
-      <div class="fill"><img style="background-size:cover;" src = "img/BannerFront/banner3.jpg" height=100% width=100%></div>
+      <div class="fill"><img style="background-size:cover;" src = "img/BannerFront/banner3.jpg" width=100%></div>
         <div class = "carousel-caption">
           <div class="title-slide"><br>
               <h1 class="txt-responsive">YaVu</h1>
@@ -51,7 +51,7 @@
     </div>
     <div class = "item">
           <!-- Set the fifth background image using inline CSS below. -->    
-      <div class="fill"><img style="background-size:cover;" src = "img/BannerFront/banner4.jpg" height=100% width=100%></div>
+      <div class="fill"><img style="background-size:cover;" src = "img/BannerFront/banner4.jpg" width=100%></div>
         <div class = "carousel-caption">
           <div class="title-slide"><br>
             <h1 class="txt-responsive">YaVu</h1>

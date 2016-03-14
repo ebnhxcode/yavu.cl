@@ -123,7 +123,7 @@ $(document).ready(function(){
 						+"<div class='list-group-item panel-footer'>"
 						+"<span class='glyphicon glyphicon-hand-up'>&nbsp;</span>"
 							+"<a name='like' class='inter' role='button' id='estado_"+value.id+"' value='"+value.id+"' href='#!' style='color:#3C5B28;'>"
-							+"<span>Yo quiero</span></a>"
+							+"<span>Cobrar coins</span></a>"
 						+"</div>"
 					+"</div>";
 				EstadosUsuario.appendTo("#e").effects("highlight", {}, 12000);
@@ -152,7 +152,7 @@ $(document).ready(function(){
 				}
 
 
-				Estados.append(
+				Estados.hide().append(
 					"<div id='publicacion"+value.id+"' class='list-group'>"
 						+"<div class='list-group-item'>"	
 							/*
@@ -184,12 +184,12 @@ $(document).ready(function(){
 									+"<span class='glyphicon glyphicon-hand-up'>"
 										+"&nbsp;"
 									+"</span>"
-									+"Yo quiero"
+									+"Cobrar coins"
 								+"</span>"
 							+"</a>"
 						+"</div>"
 					+"</div>"
-				);				
+				).show('slow');				
 				document.getElementById("idUltima").value =  Global_idUltimaPublicacion;
 				Contador += 1;	
 				ContarInteracciones(value.id);

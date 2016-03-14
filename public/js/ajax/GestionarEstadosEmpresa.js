@@ -108,8 +108,7 @@ $(document).ready(function(){
 								+"<p>"+value.status+"</p>"
 						+"</div>"
 						+"<div class='list-group-item panel-footer'>"
-						+"<span class='glyphicon glyphicon-hand-up'>&nbsp;</span>"
-							+"<a name='like' class='inter' role='button' id='estado_"+value.id+"' value='"+value.id+"' href='#!' style='color:#3C5B28;'><span>Yo quiero</span></a>"
+							+"<a name='like' class='inter' role='button' id='estado_"+value.id+"' value='"+value.id+"' href='#!' style='color:#3C5B28;'><span>Cobrar coins</span></a>"
 						+"</div>"
 					+"</div>";
 
@@ -298,7 +297,7 @@ $(document).ready(function(){
 					ImagenPerfilEmpresa = "https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png";
 				}
 
-				Estados.append(
+				Estados.hide().append(
 					"<div id='publicacion"+value.id+"' class='list-group'>"
 						+"<div class='list-group-item'>"	
 							+'<div class="dropdown">'
@@ -324,15 +323,12 @@ $(document).ready(function(){
 							+"<span id='badge_"+value.id+"' class='label label-success'></span>"+"&nbsp;"
 							+"<a role='button' class='btn-lg btn' href='#!' style='color:#3C5B28'>"
 								+"<span name='megusta' onclick='Interactuar(this.id)' id='estado_"+value.id+"' value='"+value.id+"'>"
-									+"<span class='glyphicon glyphicon-hand-up'>"
-										+"&nbsp;"
-									+"</span>"
-									+"Yo quiero"
+									+"Cobrar coins"
 								+"</span>"
 							+"</a>"
 						+"</div>"
 					+"</div>"
-				);	
+				).show('slow');	
 				document.getElementById("idUltima").value =  Global_idUltimaPublicacion;
 				Contador += 1;	
 				ContarInteracciones(value.id);						
