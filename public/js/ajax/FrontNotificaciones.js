@@ -47,7 +47,7 @@
 		var pops = "";
 
 		$.ajax({
-			url: "http://186.64.123.143/cargarpops/"+Global_idUltimaNotificacion+"/"+user_id+"/todas",
+			url: "http://localhost:8000/cargarpops/"+Global_idUltimaNotificacion+"/"+user_id+"/todas",
 			type: 'GET',
 			dataType: 'json',
 			cache: false,
@@ -175,7 +175,7 @@
 		var user_id = $("#user_id").val();
 		var Contador = 0;
 		$.ajax({
-			url: "http://186.64.123.143/cargarpops/"+$("#idUltima").val()+"/"+user_id+"/novistas",
+			url: "http://localhost:8000/cargarpops/"+$("#idUltima").val()+"/"+user_id+"/novistas",
 			type: 'GET',
 			dataType: 'json',
 			cache: false,

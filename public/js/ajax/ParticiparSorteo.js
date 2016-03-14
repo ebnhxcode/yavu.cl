@@ -56,7 +56,7 @@
 	{
 		$('#myModal').modal('hide');
 		var user_id = $("#user_id").val();	
-		var route = "http://186.64.123.143/canjearticket/"+user_id;
+		var route = "http://localhost:8000/canjearticket/"+user_id;
 		$.ajax({
 			url: route,
 			headers: {'X-CSRF-TOKEN': token},
@@ -79,7 +79,7 @@
 		//este sorteo id hay que validarlo
 		//var sorteo_id = $("#sorteo_id").val();
 		console.log(sorteo_id);
-		var route = "http://186.64.123.143/usarticket/"+user_id+"/"+sorteo_id;
+		var route = "http://localhost:8000/usarticket/"+user_id+"/"+sorteo_id;
 		$.ajax({
 			url: route,
 			headers: {'X-CSRF-TOKEN': token},
@@ -97,7 +97,7 @@
 	function VerificarTickets()
 	{
 		var user_id = $("#user_id").val();
-		var route = "http://186.64.123.143/verificartickets/"+user_id;
+		var route = "http://localhost:8000/verificartickets/"+user_id;
 		$.get(route, function(res){
 			console.log(res);
 			if(res>0){
@@ -106,7 +106,7 @@
 		});			
 	}
 	function ContarCoins(){
-		var route = "http://186.64.123.143/contarcoins";
+		var route = "http://localhost:8000/contarcoins";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
 			$("#CantidadCoins").text("");
@@ -120,7 +120,7 @@
 		});						
 	}
 	function ContarTickets(){
-		var route = "http://186.64.123.143/contartickets";
+		var route = "http://localhost:8000/contartickets";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
 			$("#CantidadTickets").text("");

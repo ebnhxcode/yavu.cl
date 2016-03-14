@@ -18,7 +18,7 @@
 	function ListarEmpresasUsuarios()
 	{
 var user_id = $("#user_id").val();
-		var route = "http://186.64.123.143/infoempresas/"+user_id;
+		var route = "http://localhost:8000/infoempresas/"+user_id;
 		var Pendiente = false;
 		var Contador = 0;
 		$.get(route, function(res){

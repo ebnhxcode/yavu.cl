@@ -250,7 +250,7 @@
 	});
 	function ValidarRut(rut){
 		console.log("click");
-		var route = "http://186.64.123.143/validarrutempresa/"+rut+"";
+		var route = "http://localhost:8000/validarrutempresa/"+rut+"";
 
 		//Si esto esta aqui valida el rut solo cuando la empresa se edita, tambien valida que el rut sea valido antes del registro
 		document.getElementById('FormEmpresa').onsubmit = function() {
