@@ -131,11 +131,11 @@ OR newTable.nombre_sorteo like '%sorteo%'
                 ->where('user_id', $user_id)
                 ->sum('cantidad');     
 
-        if($coinsUsuario >= 1000){            
+        if($coinsUsuario >= 100){            
             DB::table('registro_coins')->insert(
                 ['user_id' => $user_id, 
                 'motivo' => 'Canje (compra) de ticket',
-                'cantidad' => '-1000',
+                'cantidad' => '-100',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()                  
                 ]
@@ -144,7 +144,7 @@ OR newTable.nombre_sorteo like '%sorteo%'
             DB::table('tickets')->insert(
                 ['user_id' => $user_id, 
                 'cantidad_tickets' => 1, 
-                'monto' => 1000,
+                'monto' => 100,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
                 ]
@@ -200,7 +200,7 @@ OR newTable.nombre_sorteo like '%sorteo%'
             DB::table('tickets')->insert(
                 ['user_id' => $user_id, 
                 'cantidad_tickets' => -1, 
-                'monto' => -1000,
+                'monto' => -100,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
                 ]

@@ -34,7 +34,7 @@ class LogController extends Controller
         if( $fechaRegistro !== $fechaActual ){
             DB::table('registro_coins')->insert(
                 ['user_id' => $id, 
-                'cantidad' => '100', 
+                'cantidad' => '10', 
                 'motivo'   => 'Inicio sesión',
                 'created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),
                 'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]
@@ -45,7 +45,7 @@ class LogController extends Controller
                 'empresa_id' => 1,
                 'tipo' => 'coins', 
                 'estado'   => 'pendiente',
-                'contenido' => 'Tienes una nueva carga!',
+                'contenido' => 'Tienes una nueva carga diaria!',
                 'created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),
                 'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]
             );

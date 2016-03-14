@@ -62,7 +62,7 @@
 			</div>	
 			<div class="form-group has-feedback has-feedback-left">
 				{!!Form::label('Descripción:')!!}
-				{!!Form::textarea('descripcion',null,['class'=>'form-control-stat','placeholder'=>'Agregue una breve descripción de su empresa', 'maxlength'=>'999', 'style'=>'resize:none;', 'rows'=>'5', 'id'=>'descripción'])!!}
+				{!!Form::textarea('descripcion',null,['class'=>'form-control','placeholder'=>'Agregue una breve descripción de su empresa', 'maxlength'=>'999', 'style'=>'resize:none;', 'rows'=>'5', 'id'=>'descripción'])!!}
 			</div>
 
 		</div>
@@ -271,6 +271,55 @@
 		});
 		
 	}
+	$(".form-control").keyup(function(e){
+		//console.log(e.keyCode);
+	});
+	$(".form-control").change(function(){
+		$(this).val(NormalizarInputs(SanearInputs($(this).val())));
+	});
+
+	function SanearInputs(Busqueda)
+	{
+		Busqueda = Busqueda.replace(String.fromCharCode(32), '+');
+		Busqueda = Busqueda.replace('     ', '');
+		Busqueda = Busqueda.replace('    ', '');
+		Busqueda = Busqueda.replace('   ', '');
+		Busqueda = Busqueda.replace('  ', '');
+		Busqueda = Busqueda.replace('+++', '');
+		Busqueda = Busqueda.replace('++', '');		
+		Busqueda = Busqueda.replace('=', '');
+		Busqueda = Busqueda.replace("'or'", '');
+		Busqueda = Busqueda.replace("'and'", '');
+		Busqueda = Busqueda.replace("script", '');
+		Busqueda = Busqueda.replace("/", '');
+		Busqueda = Busqueda.replace("'''", '');
+		Busqueda = Busqueda.replace("''", '');
+		Busqueda = Busqueda.replace("'", '');
+		Busqueda = Busqueda.replace('<', '');
+		Busqueda = Busqueda.replace('>', '');
+
+		if(Busqueda.indexOf(String.fromCharCode(32)) > -1 || Busqueda.indexOf(String.fromCharCode(219)) > -1 || Busqueda.indexOf(String.fromCharCode(48)) > -1 || Busqueda.indexOf(String.fromCharCode(16)) > -1)
+		{          
+			return SanearInputs(Busqueda);
+		}
+		
+		
+		
+		console.log(Busqueda.indexOf(String.fromCharCode(187)));
+
+		return Busqueda;
+	}
+	function NormalizarInputs(Busqueda)
+	{
+		if (Busqueda.indexOf('+') > -1)
+		{
+			Busqueda = Busqueda.replace('+', ' ');
+			return NormalizarInputs(Busqueda);
+		}
+		return Busqueda;
+	}
+
+
 	$("#imagen_perfil, #imagen_portada").change(function(){
 		var formato = this.value;
 		var formatosPermitidos = ["jpg", "jpeg", "png", "gif"];

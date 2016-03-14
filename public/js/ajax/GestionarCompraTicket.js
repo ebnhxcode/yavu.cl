@@ -43,7 +43,7 @@ $(document).ready(function(){
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 	function CalcularTotalCompra(cantidadtickets)
 	{
-		$("#ValorCompra").text(formatNumber.new(cantidadtickets*1000, "$ "));
+		$("#ValorCompra").text(formatNumber.new(cantidadtickets*100, "$ "));
 	}
 	function EfectuarCompra(cantidadtickets)
 	{

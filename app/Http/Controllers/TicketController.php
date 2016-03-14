@@ -49,7 +49,7 @@ class TicketController extends Controller
                 ->where('user_id', $user_id)
                 ->sum('cantidad');    
 
-        $valorCompra = (int) $cantidadtickets*1000;
+        $valorCompra = (int) $cantidadtickets*100;
 
         if((int) $coinsUsuario >= (int) $valorCompra ){            
             DB::table('registro_coins')->insert(
@@ -63,7 +63,7 @@ class TicketController extends Controller
             DB::table('tickets')->insert(
                 ['user_id' => $user_id, 
                 'cantidad_tickets' => $cantidadtickets, 
-                'monto' => ((int) $cantidadtickets * 1000),
+                'monto' => ((int) $cantidadtickets * 100),
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
                 ]

@@ -71,7 +71,15 @@ class UserController extends Controller
 
       $usuario = User::where('email', $request->email)->first();
 
-      echo $usuario->id;
+      //echo $usuario->id;
+
+      DB::table('registro_coins')->insert(
+          ['user_id' => $usuario->idid, 
+          'cantidad' => '70', 
+          'motivo'   => 'Uso de código referido',
+          'created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),
+          'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]
+      );
 
       if($usuario){
         DB::table('pops')->insert(

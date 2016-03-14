@@ -19,7 +19,7 @@
 	                    <h6>COMPRA TUS TICKET</h6>
 	                </div>		
 	                <div class="list-group-item-full-header">
-	                    El valor de cada ticket es de <span class="text-success">$1.000</span>
+	                    El valor de cada ticket es de <span class="text-success">$100</span>
 	                </div>		                		
 					<div class="list-group-item">
 						<img alt="Ticket ya!" src= "{!!URL::to('images/ticket.png')!!}" height="100px" width="100px"/>
