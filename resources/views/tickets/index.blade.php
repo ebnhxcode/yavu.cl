@@ -56,9 +56,10 @@
 	                 <div class="list-group-item">
 	                     <img src="{!!URL::to('images/ticket.png')!!}" width="16px" height="16px"> 
 	                     <span id="CantidadTickets" style="float:right;" class="label label-info">
-	                            
+	                    	
 	                     </span>
-	                 </div>
+	                     
+	                 </div>	                 
 	             </div>
 
 	         </div>

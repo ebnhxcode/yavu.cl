@@ -56,17 +56,19 @@
 									
 									@if (Auth::user()->check())
 										<p>
-											<span class="btn btn-primary btn-xs" id="seguir" value="{!! $e->id !!}" role="button">Seguir</span> 
-											<input type="text" class="btn-xs" id="seguidores" size="1" disabled >
+											<span class="btn btn-primary btn-sm" id="seguir" value="{!! $e->id !!}" role="button">Seguir</span> 
+											<input type="text" class="btn btn-sm text-success" id="seguidores" size="1" disabled >
 										</p>
 									@else
 										<p>
-											<a href="{!! URL::to('/usuarios/create') !!}" class="btn btn-primary btn-xs" role="button">Seguir</a> 
+											<a href="{!! URL::to('/usuarios/create') !!}" class="btn btn-primary btn-md" role="button">Seguir</a> 
 										</p>
 										<small>Para seguir a esta empresa debes registrarte</small>
 									@endif
 
 								</div>
+
+
 							</div>
 						</div>
 
@@ -88,8 +90,8 @@
 									
 								<input type="hidden" name="_token" value="{{csrf_token()}}" id="token" />
 							<div class="list-group-item">							
-									{!!link_to('#!', $title="Publicar estado", $attributes = ['id'=>'publicar', 'class'=>'btn btn-success btn-xs'], $secure = null)!!}
-									{!!link_to('#!', $title="Limpiar", $attributes = ['id'=>'limpiar', 'class'=>'btn btn-success btn-xs'], $secure = null)!!}											
+									{!!link_to('#!', $title="Publicar estado", $attributes = ['id'=>'publicar', 'class'=>'btn btn-success btn-sm'], $secure = null)!!}
+									{!!link_to('#!', $title="Limpiar", $attributes = ['id'=>'limpiar', 'class'=>'btn btn-success btn-sm'], $secure = null)!!}											
 						
 								{!!Form::close()!!}		
 

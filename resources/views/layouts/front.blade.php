@@ -41,7 +41,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/"><img id="LogoYavu" src="{{URL::to('img/yavu002.png')}}" style="transition: width 0.5s;width: 30%;" width="30%" /></a>
+          <a class="navbar-brand" href="/"><img id="LogoYavu" src="{{URL::to('img/yavu004.png')}}" style="transition: width 0.5s; " width="30%" /></a>
 
         @if(Auth::user()->check())
           {!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
@@ -67,6 +67,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav"><!-- navbar-right -->
+            @if(!Auth::user()->check() && !Auth::empresa()->check() && !Auth::admin()->check() && Request::path() !== 'login')
+              <li class="dropdown"><a href="{!!URL::to('/login/')!!}"><span role="button" style="background: transparent;" class="btn btn-default btn-xs">INICIA SESIÓN</span></a></li>                  
+            @endif 
             @if(Auth::user()->check())
               <li class="dropdown">
                 <a href="#!" data-toggle="dropdown" class="dropdown-toggle">
@@ -86,7 +89,7 @@
                   <li><a href="{!!URL::to('/profile')!!}">Perfil</a></li>
                   <li><a href="{!!URL::to('/sorteos')!!}">Sorteos</a></li>
                   <li><a href="{!!URL::to('/empresas')!!}">Buscar empresas</a></li>
-                  <li><a href="{!!URL::to('/logout')!!}">Cerrar sesión</a></li>
+                  <li><a class="btn-danger" style="background: transparent;" href="{!!URL::to('/logout')!!}">Cerrar sesión</a></li>
                   <li class="dropdown"><a href="!#" data-toggle="dropdown" class="dropdown-toggle">Nosotros<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                       <li><a href="{!!URL::to('/nosotros/')!!}">Nuestra empresa</a></li>
@@ -114,11 +117,7 @@
             @if(Request::path() !== 'login')
              
             @endif﻿  
-            @if(!Auth::user()->check() && !Auth::empresa()->check() && !Auth::admin()->check())
-              <li class="dropdown">
-                <a href="{!!URL::to('/login/')!!}">Inicia Sesión</a>
-              </li> 
-            @endif 
+
 
 
           </ul>         
@@ -198,7 +197,7 @@
             e=o.createElement(i);r=o.getElementsByTagName(i)[0];
             e.src='//www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');          
         </script>
     </body>
 </html>

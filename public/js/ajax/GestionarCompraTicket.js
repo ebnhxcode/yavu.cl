@@ -34,6 +34,10 @@ $(document).ready(function(){
 		EfectuarCompra();
 		e.preventDefault();
 	});
+	$("#ComprarMasTickets").click(function(e){
+		EfectuarCompra(1);
+		e.preventDefault();
+	});
 	/*SELECTORES*/
 
 	/*FUNCIONES Y PROCEDIMIENTOS*/
@@ -41,9 +45,10 @@ $(document).ready(function(){
 	{
 		$("#ValorCompra").text(formatNumber.new(cantidadtickets*1000, "$ "));
 	}
-	function EfectuarCompra()
+	function EfectuarCompra(cantidadtickets)
 	{
-		var cantidadtickets = $("#cantidadtickets").val();
+		cantidadtickets = (cantidadtickets === undefined) ? $("#cantidadtickets").val() : cantidadtickets;
+		//var cantidadtickets = $("#cantidadtickets").val();
 
 		if (cantidadtickets > 0){
 			var user_id = $("#user_id").val();

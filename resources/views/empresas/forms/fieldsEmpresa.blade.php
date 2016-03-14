@@ -60,6 +60,11 @@
 					$selected = null, ['class' => 'form-control', 'maxlength' => '100']) 
 				!!}			
 			</div>	
+			<div class="form-group has-feedback has-feedback-left">
+				{!!Form::label('Descripción:')!!}
+				{!!Form::textarea('descripcion',null,['class'=>'form-control-stat','placeholder'=>'Agregue una breve descripción de su empresa', 'maxlength'=>'999', 'style'=>'resize:none;', 'rows'=>'5', 'id'=>'descripción'])!!}
+			</div>
+
 		</div>
 		<!-- GESTION DE LAS FOTOS -->
 

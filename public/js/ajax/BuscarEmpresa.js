@@ -144,11 +144,12 @@
 		var NombreEmpresa = $("#empresathumb").val();
 		var route = "http://localhost:8000/buscarempresa/"+NombreEmpresa+"";
 		$("#EmpresaListThumb").text("");
+		var TarjetaEmpresa = "";
 		$.get(route, function(res){
 			console.log("clickthum");
-			$("#EmpresaListThumb").append(
+			TarjetaEmpresa +=
 				'<div class="container" id="tourpackages-carousel">'
-				+'<div class="row">');
+				+'<div class="row">';
 
 			$(res).each(function(key,value){
 				var ImagenPerfil = "/img/users/"+value.imagen_perfil;
@@ -162,7 +163,7 @@
 					ImagenPortada = "http://medioambiente.nh-hoteles.es/themes/default/images/bgd-biodiversidad-00.png";
 				}
 
-				$("#EmpresaListThumb").append(
+				TarjetaEmpresa += 
 						
 						'<div class="col-md-4">'
 				          	+'<div class="thumbnail card">'
@@ -174,11 +175,14 @@
 				          +'</div>'
 				        +'</div>'
 
-				);								 
+				;								 
 			});
-			$("#EmpresaListThumb").append(
+			TarjetaEmpresa +=
 					'</div>'
-				+'</div>');
+				+'</div>';
+
+			$("#EmpresaListThumb").hide().append(TarjetaEmpresa).show('slow');
+
 		});						
 	}	
 	/*FUNCIONES Y PROCEDIMIENTOS*/

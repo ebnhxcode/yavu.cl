@@ -224,9 +224,10 @@
 		$.get(route, function(res){
 			console.log("clickthum");
 			var ImagenSorteo = "";
-			$("#SorteoListThumb").append(
+			var TarjetaSorteo = "";
+			TarjetaSorteo =
 				'<div class="container" id="tourpackages-carousel">'
-				+'<div class="row">');
+				+'<div class="row">';
 			$(res).each(function(key,value){
 
 				ImagenSorteo = '/img/users/'+value.imagen_sorteo;
@@ -237,7 +238,7 @@
 				}
 
 
-				$("#SorteoListThumb").append(
+				TarjetaSorteo +=
 						
 					'<div class="col-md-4">'
 				        +'<div class="thumbnail">'
@@ -252,11 +253,13 @@
 					    +'</div>'					        
 					+'</div>'
 
-				);								 
+				;								 
 			});
-			$("#SorteoListThumb").append(
+			TarjetaSorteo +=
 					'</div>'
-				+'</div>');
+				+'</div>';
+			$("#SorteoListThumb").hide().append(TarjetaSorteo).show('slow');
+
 		});		
 		ContarParticipantes();				
 	}	

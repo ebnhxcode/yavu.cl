@@ -13,6 +13,7 @@ class CreateEmpresasTable extends Migration
             $table->string('email', 100)->unique();
             $table->string('login', 100);
             $table->string('nombre', 200);
+            $table->string('descripcion', 1000);
             $table->string('direccion', 100);
             $table->string('ciudad', 100);
             $table->string('region', 100);
