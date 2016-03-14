@@ -1,5 +1,6 @@
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/HistorialCoins.js')!!}
+{!!Html::script('js/ajax/EmpresasDashboardUsuario.js')!!}
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
@@ -10,6 +11,10 @@
 		@include('alerts.warningMessage')
 		<h4 style="margin-top:-40px;"></h4>
 		<div class="row">
+		@if(Auth::user()->check())
+			<input type="hidden" value="{!!Auth::user()->get()->id!!}" />
+		@endif
+
 
 		  <div class="col-md-4 col-sm-6 col-xs-12">
 
@@ -36,18 +41,23 @@
 				</div>
 
 			</div>
-		  <div class="col-md-4 col-sm-6 col-xs-12">
+		  	<div class="col-md-4 col-sm-6 col-xs-12">	
 
 		        <div class="thumbnail">		        	
 		          	<img src="" alt="">
 		            <div class="caption">
-		            	<h6>MI EMPRESA</h6>	
+		            	<h6>MI(S) EMPRESA(S)</h6>	
 		            </div>
 		            @include('layouts.bannerFront')
-		    	</div>
+		            <br>
+								<div class="panel-group" id="AccordionEmpresas" role="tablist" aria-multiselectable="true">
 
 
+								</div>
+		    		</div>
 
+		    </div>
+		    <div class="col-md-4 col-sm-6 col-xs-12">
 
 			   <div class="list-group">
 				   <div class="list-group-item-full-header">
