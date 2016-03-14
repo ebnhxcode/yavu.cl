@@ -18,6 +18,7 @@ use Malahierba\ChileRut\ChileRut;
 class UserController extends Controller
 {
   public function __construct(){
+
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
   }
   public function find(Route $route){
