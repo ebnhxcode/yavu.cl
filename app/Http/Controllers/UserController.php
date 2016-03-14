@@ -125,7 +125,6 @@ class UserController extends Controller
   public function InfoEmpresas($user_id)
   {
     $info = DB::table('empresas')     
-                ->join('followers', 'empresas.id', '=', 'followers.empresa_id')
                 ->select('*')    
                 ->where('user_id', '=', $user_id)   
                 ->orderBy('created_at','desc')   

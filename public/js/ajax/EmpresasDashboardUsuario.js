@@ -63,8 +63,9 @@ var user_id = $("#user_id").val();
 								    +'<div id="collapse'+Contador+'" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading'+Contador+'">'
 								      +'<div class="panel-body">'
 
-								        +"Informacion Informacion Informacion Informacion "
-								        +"Informacion Informacion Informacion Informacion "
+								        +"<span><a class='btn btn-primary btn-sm' href='http://localhost:8000/empresa/"+value.nombre+"/'>Perfil</a></span>&nbsp;"
+								        +"<span><a class='btn btn-primary btn-sm' href='http://localhost:8000/empresas/"+value.id+"/edit'>Editar información</a></span>&nbsp;"
+								        +"Informacion Informacion Informacion Informacion<br>"
 
 								        
 								      +'</div>'
