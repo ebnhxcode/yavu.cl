@@ -17,7 +17,7 @@
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 	function ListarEmpresasUsuarios()
 	{
-var user_id = $("#user_id").val();
+		var user_id = $("#user_id").val();
 		var route = "http://localhost:8000/infoempresas/"+user_id;
 		var Pendiente = false;
 		var Contador = 0;
@@ -39,10 +39,17 @@ var user_id = $("#user_id").val();
 						;
 				}else if(value.estado === "Activo"){
 
-					var ImagenPerfil = "/img/users/"+value.imagen_perfil;
-					if (value.imagen_perfil === "") 
+
+					var ImagenPerfil = "";
+					var ImagenPortada = "";
+
+					if (value.imagen_portada === "") 
 					{
-						ImagenPerfil = "https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png";
+						ImagenPortada = "";
+					}
+					else
+					{
+						ImagenPortada = "<img src='/img/users/"+value.imagen_portada+"' alt=''>";
 					}
 
 
@@ -55,7 +62,7 @@ var user_id = $("#user_id").val();
 								    +'<div class="panel-heading" role="tab" id="heading'+Contador+'">'
 								      +'<h4 class="panel-title">'
 								        +'<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse'+Contador+'" aria-expanded="true" aria-controls="collapse'+Contador+'">'
-								          +'<div class="btn-link">'+value.nombre+'</div>'
+								          +'<div class="btn-link">'+value.nombre+ImagenPerfil+'</div>'
 								        +'</a>'
 								      +'</h4>'
 								    +'</div>'
@@ -63,10 +70,12 @@ var user_id = $("#user_id").val();
 								    +'<div id="collapse'+Contador+'" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading'+Contador+'">'
 								      +'<div class="panel-body">'
 
-								        +"<span><a class='btn btn-primary btn-sm' href='http://localhost:8000/empresa/"+value.nombre+"/'>Perfil</a></span>&nbsp;"
-								        +"<span><a class='btn btn-primary btn-sm' href='http://localhost:8000/empresas/"+value.id+"/edit'>Editar información</a></span>&nbsp;"
-								        +"Informacion Informacion Informacion Informacion<br>"
-
+								      	+"<div class='thumbnail card' style='border: 0px;'>"
+									      	+ImagenPortada+"<br>"
+									        +"<span><a class='btn btn-primary btn-sm' href='http://localhost:8000/empresa/"+value.nombre+"/'>Perfil</a></span>&nbsp;"
+									        +"<span><a class='btn btn-primary btn-sm' href='http://localhost:8000/empresas/"+value.id+"/edit'>Editar información</a></span>&nbsp;"
+									        +"<p>...</p><br>"
+								        +"</div>"
 								        
 								      +'</div>'
 								    +'</div>'
