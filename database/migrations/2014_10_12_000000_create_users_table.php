@@ -25,9 +25,10 @@ class CreateUsersTable extends Migration
             $table->string('estado',30);
             $table->string('referido', 100);
             $table->string('referente', 100);
+            $table->string('validacion', 100);
             $table->string('tipo_usuario',20);
             $table->string('imagen_perfil');
-            $table->string('imagen_portada'); 
+            $table->string('imagen_portada');
             $table->rememberToken();
             $table->timestamps();
         });

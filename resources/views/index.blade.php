@@ -3,7 +3,7 @@
 @include('layouts.bannerFront')
 <div class="jumbotron">
   <div id="contentMiddle" class="container">
-
+    @include('alerts.errorsMessage')
     <div class="row">
       <div class="col-md-5">
 

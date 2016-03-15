@@ -13,6 +13,7 @@ use yavu\Estado;
 use Illuminate\Routing\Route;
 use DB;
 use RUT;
+use Mail;
 use Carbon\Carbon;
 use Malahierba\ChileRut\ChileRut;
 class UserController extends Controller
@@ -59,30 +60,46 @@ class UserController extends Controller
     $existeReferente = User::where('referente', $request->referido)->first();
 
     if ($existeReferente){
-
+      
+      $CodigoVerificacion = $this->getCodigoVerificacion();
+      
       User::create([
       'nombre' => $request->nombre,
       'apellido' => $request->apellido,
       'email' => $request->email,
       'password' => $request->password,
+      'estado' => 'inactivo',
       'referido' => $request ->referido,
       'referente' => Carbon::now()->second.Carbon::now()->minute.Carbon::now()->hour.Carbon::now()->year.Carbon::now()->month.Carbon::now()->day."RY",
+      'validacion' => $CodigoVerificacion,
       'ciudad' => $request->ciudad
-      ])->first()->save();
+      ])->first()->save();        
+ 
 
-      $usuario = User::where('email', $request->email)->first();
+      
+      Mail::send('emails.register', ['email' => \Input::get('email'), 'nombre' => \Input::get('nombre'), 'codigo' => $CodigoVerificacion ], function($msj){
+
+          $msj->subject('Correo de Contacto');
+
+          $msj->to(\Input::get('email'));
+
+      }); 
+      
+
+      $usuario = User::where('email', \Input::get('email'))->first();
 
       //echo $usuario->id;
 
-      DB::table('registro_coins')->insert(
-          ['user_id' => $usuario->idid, 
-          'cantidad' => '70', 
-          'motivo'   => 'Uso de código referido',
-          'created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),
-          'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]
-      );
-
       if($usuario){
+
+        DB::table('registro_coins')->insert(
+            ['user_id' => $usuario->id, 
+            'cantidad' => '70', 
+            'motivo'   => 'Uso de código referido',
+            'created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),
+            'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]
+        );
+
         DB::table('pops')->insert(
                   ['user_id' => $usuario->id, 
                   'empresa_id' => 1,
@@ -94,26 +111,46 @@ class UserController extends Controller
               );    
 
         Session::flash('message', 'Usuario creado correctamente');
-        return Redirect::to('/usuarios');        
+        return Redirect::to('/');        
       }
+
+
+
+
       
     
     }else{
+      //CUANDO NO EXISTE REFERENTE
+        $CodigoVerificacion = $this->getCodigoVerificacion();
+        Mail::send('emails.register', ['email' => \Input::get('email'), 'nombre' => \Input::get('nombre'), 'codigo' => $CodigoVerificacion ], function($msj){
 
+            $msj->subject('Correo de Contacto');
+
+            $msj->to(\Input::get('email'));
+
+        }); 
+        
+      
        User::create([
       'nombre' => $request->nombre,
       'apellido' => $request->apellido,
       'email' => $request->email,
       'password' => $request->password,
+      'estado' => 'inactivo',
       'referido' => '',
       'referente' => Carbon::now()->second.Carbon::now()->minute.Carbon::now()->hour.Carbon::now()->year.Carbon::now()->month.Carbon::now()->day."RY",
+      'validacion' => $CodigoVerificacion,
       'ciudad' => $request->ciudad
       ])->save();
 
+
+
+
       Session::flash('message', 'Usuario creado correctamente');
-      return Redirect::to('/usuarios');       
+      return Redirect::to('/');       
      
     }
+
    
     Session::flash('error', 'Ocurrio un error inesperado');
     return Redirect::to('/usuarios');
@@ -121,6 +158,13 @@ class UserController extends Controller
   public function show($id)
   {
 
+  }
+
+  public function getCodigoVerificacion()
+  {
+
+    $codigo = Carbon::now()->second.Carbon::now()->minute.Carbon::now()->hour."V";
+    return $codigo;
   }
 
   public function InfoEmpresas($user_id)
@@ -173,7 +217,21 @@ class UserController extends Controller
       return "false";
     }
   }
-  
+  public function VerificarUsuario($codigo)
+  {
+
+    if(User::where('validacion', $codigo)->first())
+    {
+      DB::table('users')
+              ->where('validacion', $codigo)
+              ->update(['estado' => 'activo']); 
+
+      Session::flash('message', 'Su cuenta ha sido verificada. Disfrute.');
+      return Redirect::to('/login');                 
+    }
+
+
+  }
   public function destroy($id)
   {
     $this->user->delete();
