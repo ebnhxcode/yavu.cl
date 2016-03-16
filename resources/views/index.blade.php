@@ -66,7 +66,6 @@
 	      </a>
 	      <br>
         <img src="img/cards/barra_separadora.png" class="img-responsive">
-<<<<<<< HEAD
       </div>
 	    <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
 			  <div class="modal-dialog" role="document">
@@ -89,31 +88,6 @@
 		                </div>
 		              {!!Form::close()!!}
 	              </div>
-=======
-        </div>
-
-
-
-
-        <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      
-      </div>
-      <div class="modal-body">
-
-      <div id="">
- 
-          @include('alerts.alertFields') 
-          <div>
-            {!!Form::open(['route'=>'usuarios.store', 'method'=>'POST'])!!}
-              @include('usuarios.forms.fieldsLanding')
-              <div class="form-group has-feedback has-feedback-left">
-
-                {!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success'])!!}
->>>>>>> d881fdff3cb7c538ad40d02d6a18e07ad230aad0
               </div>
             </div>
           </div><!-- /.modal-content -->
