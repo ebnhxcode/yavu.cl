@@ -91,7 +91,7 @@
       </div>
       <div class="modal-body">
 
-      <div id="" style="border: dashed; border-width: 2px; padding: 10px 10px 10px 10px;">
+      <div id="">
  
           @include('alerts.alertFields') 
           <div>
