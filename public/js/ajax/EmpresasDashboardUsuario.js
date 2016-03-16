@@ -18,7 +18,7 @@
 	function ListarEmpresasUsuarios()
 	{
 		var user_id = $("#user_id").val();
-		var route = "http://186.64.123.143/infoempresas/"+user_id;
+		var route = "http://localhost:8000/infoempresas/"+user_id;
 		var Pendiente = false;
 		var Contador = 0;
 		$.get(route, function(res){
@@ -72,8 +72,8 @@
 
 								      	+"<div class='thumbnail card' style='border: 0px;'>"
 									      	+ImagenPortada+"<br>"
-									        +"<span><a class='btn btn-primary btn-sm' href='http://186.64.123.143/empresa/"+value.nombre+"/'>Perfil</a></span>&nbsp;"
-									        +"<span><a class='btn btn-primary btn-sm' href='http://186.64.123.143/empresas/"+value.id+"/edit'>Editar información</a></span>&nbsp;"
+									        +"<span><a class='btn btn-primary btn-sm' href='http://localhost:8000/empresa/"+value.nombre+"/'>Perfil</a></span>&nbsp;"
+									        +"<span><a class='btn btn-primary btn-sm' href='http://localhost:8000/empresas/"+value.id+"/edit'>Editar información</a></span>&nbsp;"
 									        +"<p>...</p><br>"
 								        +"</div>"
 								        
