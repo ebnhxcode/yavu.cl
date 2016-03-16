@@ -6,17 +6,35 @@
     @include('alerts.errorsMessage')
     <div class="row">
       <div class="col-md-5">
+      <img src="/img/icono_que_es.png" class="img-responsive-centered">
 
-        
+
+
 
         <br /><br />    
 
       </div>
 
+
+      <div class='col-md-7' align='middle'>
+        <div class="panel panel-default">
+   
+          <div class="panel-body">
+            <hr>
+            <h3> ¿Qué es Yavu?</h3>
+            <h4>
+             Yavu.cl es el portal donde los comercios y los premios coexisten para entregar una amplia gama de beneficios tanto para usuarios como para Empresas. Regístrate hoy en nuestro sitio y podrás conocer empresas en tu ciudad y ver qué hablan en tiempo real, además conocer sus promociones y participar por premios, todo gracias a nuestro sistema de bonificación para nuestros usuarios por medio de las Yavu Coins.
+            </h4>
+          <hr>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEJAR EN EL FOOTER !!!!!!!!
       <div class="col-md-4">
         <div class="fb-page" data-href="https://www.facebook.com/Yavucl-1508348302804625/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-width="500" data-height="500" data-hide-cover="false" data-show-facepile="true"></div>        
       </div>
-
+      -->
      
 
     </div>
