@@ -59,7 +59,8 @@ $(document).ready(function(){
 				headers: {'X-CSRF-TOKEN': token},
 				type: 'GET',
 				dataType: 'json',
-				success:function(){
+				success:function(data){
+					if(data==='Exito'){$("#UsarTicket").fadeIn()}
 					ContarCoins();
 					ContarTickets();
 				}
