@@ -29,23 +29,7 @@
         <div class="fb-page" data-href="https://www.facebook.com/Yavucl-1508348302804625/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-width="500" data-height="500" data-hide-cover="false" data-show-facepile="true"></div>        
       </div>
 
-      <div class="col-md-2">
-
-          <img class="img-responsive-centered" width="50%" src="http://supercon.es/wp-content/uploads/2015/09/sorteo.png">
-          <img class="img-responsive-centered" width="50%" src="http://www.ratacas.com/wp-content/uploads/2014/02/tickets-1.png">
-          <img class="img-responsive-centered" width="50%" src="http://static.wixstatic.com/media/07bd1d_0c383f31b485424fadbc95b78c08b4b7.png_srz_310_310_85_22_0.50_1.20_0.00_png_srz">
-
-      </div>  
-      <div class="col-md-1">
-        <span style="font-size: 3em;" class="glyphicon glyphicon-globe"></span>
-        <span style="font-size: 3em;" class="glyphicon glyphicon-wrench"></span>
-        <span style="font-size: 3em;" class="glyphicon glyphicon-certificate"></span>
-        <span style="font-size: 3em;" class="glyphicon glyphicon-dashboard"></span>
-        <span style="font-size: 3em;" class="glyphicon glyphicon-pushpin"></span>
-        <span style="font-size: 3em;" class="glyphicon glyphicon-signal"></span>
-        <span style="font-size: 3em;" class="glyphicon glyphicon-tags"></span>
-        <span style="font-size: 3em;" class="glyphicon glyphicon-user"></span>        
-      </div>  
+     
 
     </div>
 
@@ -53,35 +37,41 @@
     <div class="row">
       
 
+        <img src="img/cards/barra_separadora.png" class="img-responsive">
+        <br>
 
-
-      <div class='col-md-4'>
+      <div class='col-md-4' align='middle'>
         <div class="panel panel-default">
-          <img src="//placehold.it/450X300/ededed" class="img-responsive">
+          <img src="img/cards/ico_descubre_comercios.png" class="img-responsive">
           <div class="panel-body">
-            <p class='lead'>Card Example</p>
+            <p class='lead'>Hay cientos de comercios esperando por ti!</p>
           </div>
         </div>
       </div>
 
-      <div class='col-md-4'>
+      <div class='col-md-4' align='middle'>
         <div class="panel panel-default">
-          <img src="//placehold.it/450X300/ededed" class="img-responsive">
+          <img src="img/cards/ico_descubre_panoramas.png" class="img-responsive">
           <div class="panel-body">
-            <p class='lead'>Card Example</p>
+            <p class='lead'>Conoce que comentan los comercios en tiempo real.</p>
           </div>
         </div>
       </div>
 
-      <div class='col-md-4'>
+      <div class='col-md-4' align='middle'>
         <div class="panel panel-default">
-          <img src="//placehold.it/450X300/ededed" class="img-responsive">
+          <img src="img/cards/ico_premios.png" class="img-responsive">
           <div class="panel-body">
-            <p class='lead'>Card Example</p>
+            <p class='lead'>Acumula Yavu Coins y accede a beneficios.</p>
           </div>
         </div>
       </div>
-
+        <br>
+        <div align="middle">
+        <img src="img/cards/registrate_01a.png" class="img-responsive" >
+        <br>
+        <img src="img/cards/barra_separadora.png" class="img-responsive">
+        </div>
 
     </div>
 
