@@ -87,12 +87,12 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="gridSystemModalLabel">Modal title</h4>
+       <div align="center"> <h4 class="modal-title" id="gridSystemModalLabel">Registrate gratis!</h4> </div>
       </div>
       <div class="modal-body">
 
       <div id="" style="border: dashed; border-width: 2px; padding: 10px 10px 10px 10px;">
-          <div align="center"><h1>Registrate gratis!</h1></div>
+ 
           @include('alerts.alertFields') 
           <div>
             {!!Form::open(['route'=>'usuarios.store', 'method'=>'POST'])!!}
