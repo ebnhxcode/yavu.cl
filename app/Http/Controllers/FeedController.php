@@ -26,6 +26,8 @@ class FeedController extends Controller
         return view('feeds.index');
     }
 
+    //select * from estado_empresas where empresa_id in (select empresa_id from followers where user_id = 18)
+
 	public function CargarFeeds($idUltima){
         if((int) $idUltima == "0"){
         $feeds = DB::table('estado_empresas')                    
