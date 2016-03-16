@@ -83,10 +83,14 @@ class LogController extends Controller
                 return Redirect::to('/login');
             }
         }else{
-            if(Auth::user()->attempt(['email' => Input::get('email'), 'password' => Input::get('password')])){
+            if(Auth::user()->attempt(['email' => Input::get('email'), 'password' => Input::get('password'), 'estado' => 'activo'])){
 
                 $this->CargarCoinSesion(Auth::user()->get()->id);
                 return Redirect::to('/dashboard');
+            }else{
+
+                Session::flash('message-error', 'Se requiere validar la cuenta');
+                return Redirect::to('/');
             }
         }
         Session::flash('message-error', 'Datos son incorrectos');

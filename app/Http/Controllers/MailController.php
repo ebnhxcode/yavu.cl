@@ -52,6 +52,28 @@ class MailController extends Controller
        return Redirect::to('/contacto');
     }
 
+
+
+
+
+
+
+
+
+
+
+    public function store(EnviarMailRequest $request)
+    {
+       Mail::send('emails.register', $request->all(), function($msj){
+            $msj->subject('Correo de Registro');
+            $msj->to('contacto@yavu.cl');
+
+        }); 
+
+       Session::flash('message', 'Debe verificar su correo para acceder a yavu.cl! )');
+       return Redirect::to('/contacto');
+    }
+
     /**
      * Display the specified resource.
      *

@@ -6,7 +6,9 @@
     @include('alerts.warningMessage')
     @include('alerts.errorsMessage')
     @include('alerts.alertFields')
+    @include('alerts.successMessage')
 
+    
       <div id="contentMiddle">
         <h1>Login</h1>
       </div>
