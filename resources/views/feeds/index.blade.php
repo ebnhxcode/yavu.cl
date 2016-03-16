@@ -36,7 +36,7 @@
 		var status_id = valor.replace('estado_','');
 		var user_id = $("#user_id").val();
 		var token = $("#token").val();
-		var route = "http://localhost:8000/interactuar";
+		var route = "http://186.64.123.143/interactuar";
 		$.ajax({
 			url: route,
 			headers: {'X-CSRF-TOKEN': token},
@@ -59,7 +59,7 @@
 
 	function ContarInteracciones(status_id){
 		status_id = status_id;
-		var route = "http://localhost:8000/contarinteracciones/"+status_id;
+		var route = "http://186.64.123.143/contarinteracciones/"+status_id;
 		var user_id = $("#user_id");
 		var Contador = 0;
 		$.get(route, function(res){

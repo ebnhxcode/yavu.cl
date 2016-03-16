@@ -190,7 +190,7 @@
 
 	function BuscarSorteo(Busqueda){
 		console.log("click");
-		var route = "http://localhost:8000/buscarsorteo/"+Busqueda+"";
+		var route = "http://186.64.123.143/buscarsorteo/"+Busqueda+"";
 		$("#SorteoList").text("");
 		$.get(route, function(res){
 			$("#SorteoList").append(
@@ -219,7 +219,7 @@
 
 	function BuscarSorteoThumb(Busqueda){
 		
-		var route = "http://localhost:8000/buscarsorteo/"+Busqueda+"";
+		var route = "http://186.64.123.143/buscarsorteo/"+Busqueda+"";
 		$("#SorteoListThumb").text("");
 		$.get(route, function(res){
 			console.log("clickthum");
@@ -268,7 +268,7 @@
 	function ContarParticipantes()
 	{
 		var sorteo_id = $("#sorteo_id").val();
-		var route = "http://localhost:8000/contarparticipantes/"+sorteo_id;
+		var route = "http://186.64.123.143/contarparticipantes/"+sorteo_id;
 		$.ajax({
 			url: route,
 			type: 'GET',

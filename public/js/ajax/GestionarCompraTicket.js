@@ -53,7 +53,7 @@ $(document).ready(function(){
 		if (cantidadtickets > 0){
 			var user_id = $("#user_id").val();
 			var token = $("#token").val();
-			var route = "http://localhost:8000/efectuarcompraticket/"+user_id+"/"+cantidadtickets;
+			var route = "http://186.64.123.143/efectuarcompraticket/"+user_id+"/"+cantidadtickets;
 			$.ajax({
 				url: route,
 				headers: {'X-CSRF-TOKEN': token},
@@ -68,7 +68,7 @@ $(document).ready(function(){
 		}
 	}
 	function ContarCoins(){
-		var route = "http://localhost:8000/contarcoins";
+		var route = "http://186.64.123.143/contarcoins";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
 			$("#CantidadCoins").text("");
@@ -82,7 +82,7 @@ $(document).ready(function(){
 		});						
 	}
 	function ContarTickets(){
-		var route = "http://localhost:8000/contartickets";
+		var route = "http://186.64.123.143/contartickets";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
 			$("#CantidadTickets").text("");
