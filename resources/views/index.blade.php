@@ -6,26 +6,18 @@
     @include('alerts.errorsMessage')
     <div class="row">
       <div class="col-md-5">
-      <img src="/img/icono_que_es.png" class="img-responsive-centered">
-
-
-
-
-        <br /><br />    
-
+        <img src="/img/icono_que_es.png" class="img-responsive-centered">
+        <br /><br />
       </div>
-
-
       <div class='col-md-7' align='middle'>
         <div class="panel panel-default">
-   
           <div class="panel-body">
             <hr>
             <h3> ¿Qué es Yavu?</h3>
             <h4>
              Yavu.cl es el portal donde los comercios y los premios coexisten para entregar una amplia gama de beneficios tanto para usuarios como para Empresas. Regístrate hoy en nuestro sitio y podrás conocer empresas en tu ciudad y ver qué hablan en tiempo real, además conocer sus promociones y participar por premios, todo gracias a nuestro sistema de bonificación para nuestros usuarios por medio de las Yavu Coins.
             </h4>
-          <hr>
+            <hr>
           </div>
         </div>
       </div>
@@ -35,17 +27,10 @@
         <div class="fb-page" data-href="https://www.facebook.com/Yavucl-1508348302804625/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-width="500" data-height="500" data-hide-cover="false" data-show-facepile="true"></div>        
       </div>
       -->
-     
-
     </div>
-
-
+	  <img src="img/cards/barra_separadora.png" class="img-responsive">
+	  <br>
     <div class="row">
-      
-
-        <img src="img/cards/barra_separadora.png" class="img-responsive">
-        <br>
-
       <div class='col-md-4' align='middle'>
         <div class="panel panel-default">
           <img src="img/cards/ico_descubre_comercios.png" class="img-responsive">
@@ -72,47 +57,44 @@
           </div>
         </div>
       </div>
-        <br>
-        <div align="middle">
-        <a data-toggle="modal" data-target="#gridSystemModal" role="button" href="#!"><img src="img/cards/registrate_01a.png" class="img-responsive" ></a>
-        <br>
-        <img src="img/cards/barra_separadora.png" class="img-responsive">
-        </div>
-
-
-
-
-        <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-       <div align="center"> <h4 class="modal-title" id="gridSystemModalLabel">Registrate gratis!</h4> </div>
-      </div>
-      <div class="modal-body">
-
-      <div id="" style="border: dashed; border-width: 2px; padding: 10px 10px 10px 10px;">
- 
-          @include('alerts.alertFields') 
-          <div>
-            {!!Form::open(['route'=>'usuarios.store', 'method'=>'POST'])!!}
-              @include('usuarios.forms.fieldsLanding')
-              <div class="form-group has-feedback has-feedback-left">
-
-                {!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success'])!!}
-              </div>
-            {!!Form::close()!!}                    
-          </div> 
-        </div>
-
-
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
     </div>
+      <br>
+	    @if(!Auth::user()->check())
+      <div align="middle">
+	      <a data-toggle="modal" data-target="#gridSystemModal" role="button" href="#!">
+		      <img src="img/cards/registrate_01a.png" class="img-responsive" >
+	      </a>
+	      <br>
+        <img src="img/cards/barra_separadora.png" class="img-responsive">
+      </div>
+	    <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+			  <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	              <span aria-hidden="true">&times;</span>
+              </button>
+              <div align="center"> <h4 class="modal-title" id="gridSystemModalLabel">Registrate gratis!</h4></div>
+            </div>
+            <div class="modal-body">
+              <div id="" style="border: dashed; border-width: 2px; padding: 10px 10px 10px 10px;">
+                @include('alerts.alertFields')
 
+	              <div>
+		              {!!Form::open(['route'=>'usuarios.store', 'method'=>'POST'])!!}
+		                @include('usuarios.forms.fieldsLanding')
+		                <div class="form-group has-feedback has-feedback-left">
+		                  {!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success'])!!}
+		                </div>
+		              {!!Form::close()!!}
+	              </div>
+              </div>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+	    @endif
+    </div><!-- /.row -->
   </div>
 </div>
 <div id="fb-root"></div>
