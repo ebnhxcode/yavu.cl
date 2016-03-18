@@ -11,8 +11,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        {!!Html::script('js/jquery.js')!!}
-        <script>$.ajaxSetup({ cache:true });</script>
+	      {!!Html::script('js/jquery.js')!!}
+	      <script>$.ajaxSetup({ cache:true });</script>
         {!!Html::script('js/vendor/bootstrap.min.js')!!}
         <!--{!!Html::style('css/bootstrap-theme.min.css')!!}-->
         {!!Html::script('js/plugins.js')!!}
@@ -20,7 +20,6 @@
         {!!Html::style('css/bootstrap.css')!!}
         {!!Html::style('css/style.css')!!}
         <!-- {!!Html::style('css/main.css')!!} -->
-        
         {!!Html::script('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')!!}
 
         <style>
@@ -41,34 +40,43 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/"><img id="LogoYavu" src="{{URL::to('img/yavu004.png')}}" style="transition: width 0.5s; " width="25%" /></a>
+	        <div class="navbar-brand">
+		        <img id="LogoYavu" src="{{URL::to('img/yavu004.png')}}" style="transition: width 0.5s;" width="25%" />
+					</div>
+	        <div class="navbar-brand">
+		        @if(Auth::user()->check())
+			        <a href="#!">
+									<span id="Notificaciones" title="Notificaciones" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-globe" style="font-size: 1.2em;" aria-hidden="true">
+			                <small>
+				                <span id="CantidadNotificaciones" class="label label-danger"></span>
+			                </small>
+		              </span>
+			        </a>
+			        {!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
+			        {!!Form::hidden('idUltimaNotificacion', "0", ['id'=>'idUltimaNotificacion'])!!}
+				        <!--
+								<div class="navbar-brand">
+									<a href="#!">
+										<span id="Mensajes" title="Mensajes" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-envelope" style="font-size: 1em;" aria-hidden="true">
+											<small><span id="CantidadMensajes" class="label label-danger"></span></small>
+										</span>
+									</a>
+								</div>
+								-->
+		        @endif
+	        </div>
 
-        @if(Auth::user()->check())
-          {!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
-          {!!Form::hidden('idUltima', "0", ['id'=>'idUltima'])!!}
-          <div class="navbar-brand">
-            <a href="#!"> 
-              <span id="Notificaciones" title="Notificaciones" data-toggle="popover" title="Popover title" data-placement="bottom"  class="glyphicon glyphicon-globe" style="font-size: 1em;" aria-hidden="true">
-                <small><span id="CantidadNotificaciones" class="label label-danger"></span></small>
-              </span>    
-            </a>           
-          </div>
-          <!--
-          <div class="navbar-brand">
-            <a href="#!">
-              <span id="Mensajes" title="Mensajes" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-envelope" style="font-size: 1em;" aria-hidden="true">
-                <small><span id="CantidadMensajes" class="label label-danger"></span></small>          
-              </span>
-            </a>
-          </div>
-          -->
-        @endif
 
         </div>
+
+
+
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav"><!-- navbar-right -->
+
+
             @if(!Auth::user()->check() && !Auth::empresa()->check() && !Auth::admin()->check() && Request::path() !== 'login')
-              <li class="dropdown"><a href="{!!URL::to('/login/')!!}"><span role="button" style="background: transparent;" class="btn btn-default btn-xs">INICIA SESIÓN</span></a></li>                  
+              <li class="dropdown"><a href="{!!URL::to('/login/')!!}"><span role="button" style="background: transparent;" class="btn btn-default btn-xs">INICIA SESIÓN</span></a></li>
             @endif 
             @if(Auth::user()->check())
               <li class="dropdown">
@@ -101,38 +109,30 @@
                 </ul>
               </li>                         
             @endif
-          </ul>
             @if(Auth::admin()->check())
-              
-            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Registrar empresa<b class="caret"></b></a>                        
-                <ul class="dropdown-menu">      
-                <li><a href="{!!URL::to('/empresas/create')!!}">Registro de empresas</a></li> 
-                  <li><a href="{!!URL::to('/empresas')!!}">Mostrar listado de empresas</a></li>
-                  <li><a href="{!!URL::to('/sorteos')!!}">Sorteos por confirmar</a></li>
-                </ul>
-              </li> 
-                  <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Pagos<b class="caret"></b></a>                        
-                <ul class="dropdown-menu">      
-                <li><a href="{!!URL::to('/empresas')!!}">Registrar pago</a></li> 
-                <li><a href="{!!URL::to('/empresas')!!}">Mostrar listado de deudores</a></li>
-                </ul>
-              </li> 
-              <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Admintración<b class="caret"></b></a>                        
-                <ul class="dropdown-menu">      
-              <li><a href="{!!URL::to('/admins/create')!!}">Registro de Administradores</a></li>
-                  <li><a href="{!!URL::to('/admins')!!}">Mostrar listado de Administradores</a></li>
-                </ul>
-
-                <li>
-              <a href="{!!URL::to('/logout')!!}">Salir</a>
-            </li>
-
-              </li>   
-              
+	            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Registrar empresa<b class="caret"></b></a>
+		            <ul class="dropdown-menu">
+		              <li><a href="{!!URL::to('/empresas/create')!!}">Registro de empresas</a></li>
+		              <li><a href="{!!URL::to('/empresas')!!}">Mostrar listado de empresas</a></li>
+		              <li><a href="{!!URL::to('/sorteos')!!}">Sorteos por confirmar</a></li>
+	              </ul>
+	            </li>
+		          <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Pagos<b class="caret"></b></a>
+	              <ul class="dropdown-menu">
+	                <li><a href="{!!URL::to('/empresas')!!}">Registrar pago</a></li>
+	                <li><a href="{!!URL::to('/empresas')!!}">Mostrar listado de deudores</a></li>
+	              </ul>
+	            </li>
+	            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Admintración<b class="caret"></b></a>
+	              <ul class="dropdown-menu">
+	                <li><a href="{!!URL::to('/admins/create')!!}">Registro de Administradores</a></li>
+	                <li><a href="{!!URL::to('/admins')!!}">Mostrar listado de Administradores</a></li>
+	              </ul>
+	            <li>
+	              <a href="{!!URL::to('/logout')!!}">Salir</a>
+	            </li>
             @endif
-            @if(Request::path() !== 'login')
-             
-            @endif﻿  
+
 
 
 
@@ -143,41 +143,37 @@
 
     @yield('content')
 
-     <div class="container">
+    <div class="container">
 
 <!-- footer -->
-<footer role="contentinfo" class="site-footer" id="colophon">
-  <div align='middle'>
-  <img alt="Imagen corfo" src= "{!!URL::to('img/footer/corfo.png')!!}" class="img-responsive"/></a>
-  </div>
-  <div class="row">
-
-    <div align="center"> 
-
-<table border="0"> 
-<tr> 
-<td><img  src= "{!!URL::to('img/footer/icono_facebook.png')!!}" class="img-responsive "/></a></td> 
-<td><img  src= "{!!URL::to('img/footer/icono_twitter.png')!!}" class="img-responsive"/></a></td> 
-<td> <img  src= "{!!URL::to('img/footer/ico_instagram.png')!!}" class="img-responsive"/></a></td> 
-<td><img  src= "{!!URL::to('img/footer/icono_youtube.png')!!}" class="img-responsive"/></a></td> 
-</tr> 
-</table> 
-<br>
- Copyright© ~ Yavu.cl 2016.
-</center> 
-</div> 
-      
-      
+			<footer role="contentinfo" class="site-footer" id="colophon">
 
 
 
+        <div class="row">
+	        <div class="col-md-12">
+		        <img alt="Imagen corfo" src= "{!!URL::to('img/footer/corfo.png')!!}" class="img-responsive"/></a>
+	        </div>
+	        <div class="col-md-4">
+
+	        </div>
+          <div class="col-md-1"">
+						<table border="0">
+						<tr>
+						<td><img  src= "{!!URL::to('img/footer/icono_facebook.png')!!}" class="img-responsive "/></a></td>
+						<td><img  src= "{!!URL::to('img/footer/icono_twitter.png')!!}" class="img-responsive"/></a></td>
+						<td><img  src= "{!!URL::to('img/footer/ico_instagram.png')!!}" class="img-responsive"/></a></td>
+						<td><img  src= "{!!URL::to('img/footer/icono_youtube.png')!!}" class="img-responsive"/></a></td>
+						</tr>
+						</table>
+						<br>
+            Copyright© ~ Yavu.cl 2016.
+
+					</div>
+		    </div>
 
 
-    </div>
-
-
-  
-</footer>
+			</footer>
 
 <!-- /footer -->
       

@@ -11,7 +11,7 @@
 		ContarNotificaciones();
 		setInterval(function(){
 			ContarNotificaciones();
-		},30000);		
+		},1000);
 	/*MÉTODOS CONSTRUCTORES*/
 
 	
@@ -21,17 +21,16 @@
   		var popover = $('[data-toggle="popover"]');
     	popover.popover({ html : true , trigger : 'manual'}); 
 
-		$('#Notificaciones, #CantidadNotificaciones').bind('click',function(){
+      $('#Notificaciones, #CantidadNotificaciones').bind('click',function(){
 
-			CargarNotificaciones();
+        CargarNotificaciones();
+      });
 
-		});
+      $('#Mensajes, #CantidadMensajes').bind('click',function(){
 
-		$('#Mensajes, #CantidadMensajes').bind('click',function(){
+        CargarMensajes();
 
-			CargarMensajes();
-
-		});
+      });
   	})
 
 
@@ -147,7 +146,7 @@
 
 			},
 			error: function error(xhr, textStatus, errorThrown) {
-			  alert('Remote sever unavailable. Please try later');
+			  //alert('Remote sever unavailable. Please try later');
 			}
 		});
 
@@ -175,7 +174,7 @@
 		var user_id = $("#user_id").val();
 		var Contador = 0;
 		$.ajax({
-			url: "http://localhost:8000/cargarpops/"+$("#idUltima").val()+"/"+user_id+"/novistas",
+			url: "http://localhost:8000/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
 			type: 'GET',
 			dataType: 'json',
 			cache: false,
@@ -183,12 +182,11 @@
 			success: function success(data, status) {
 				if (data > 0)
 					$("#CantidadNotificaciones").text(data);
-
-				$("#CantidadNotificaciones").css('style="left: 20px;"');
-
+        else
+          $("#CantidadNotificaciones").text("");
 			},
 			error: function error(xhr, textStatus, errorThrown) {
-			  alert('Remote sever unavailable. Please try later');
+			  //alert('Remote sever unavailable. Please try later');
 			}
 		});
 		return true;
