@@ -41,44 +41,50 @@
             <span class="icon-bar"></span>
           </button>
 	        <div class="navbar-brand">
-		        <img id="LogoYavu" src="{{URL::to('img/yavu004.png')}}" style="transition: width 0.5s;" width="25%" />
-					</div>
-	        <div class="navbar-brand">
-		        @if(Auth::user()->check())
-			        <a href="#!">
-									<span id="Notificaciones" title="Notificaciones" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-globe" style="font-size: 1.2em;" aria-hidden="true">
-			                <small>
-				                <span id="CantidadNotificaciones" class="label label-danger"></span>
-			                </small>
-		              </span>
-			        </a>
-			        {!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
-			        {!!Form::hidden('idUltimaNotificacion', "0", ['id'=>'idUltimaNotificacion'])!!}
-				        <!--
-								<div class="navbar-brand">
-									<a href="#!">
-										<span id="Mensajes" title="Mensajes" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-envelope" style="font-size: 1em;" aria-hidden="true">
-											<small><span id="CantidadMensajes" class="label label-danger"></span></small>
-										</span>
-									</a>
-								</div>
-								-->
-		        @endif
+		        <img id="LogoYavu" src="{{URL::to('img/yavu004.png')}}" style="transition: width 0.8s;" width="25%" />
 	        </div>
+
+
+
+
 
 
         </div>
 
 
 
+
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav"><!-- navbar-right -->
+          <ul class="nav navbar-nav navbar-right">
 
 
             @if(!Auth::user()->check() && !Auth::empresa()->check() && !Auth::admin()->check() && Request::path() !== 'login')
               <li class="dropdown"><a href="{!!URL::to('/login/')!!}"><span role="button" style="background: transparent;" class="btn btn-default btn-xs">INICIA SESIÓN</span></a></li>
             @endif 
             @if(Auth::user()->check())
+		            <li class="dropdown">
+			            <div class="" align="center" >
+				            <a href="#!">
+											<span id="Notificaciones" title="Notificaciones" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-globe" style="font-size: 1.2em;" aria-hidden="true">
+						                <span id="CantidadNotificaciones" style="" class=""></span>
+				              </span>
+				            </a>
+				            {!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
+				            {!!Form::hidden('idUltimaNotificacion', "0", ['id'=>'idUltimaNotificacion'])!!}
+					            <!--
+													<div class="navbar-brand">
+														<a href="#!">
+															<span id="Mensajes" title="Mensajes" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-envelope" style="font-size: 1em;" aria-hidden="true">
+																<small><span id="CantidadMensajes" class="label label-danger"></span></small>
+															</span>
+														</a>
+													</div>
+											-->
+			            </div>
+	              </li>
+
+
+
               <li class="dropdown">
                 <a href="#!" data-toggle="dropdown" class="dropdown-toggle">
                   <strong>Inicio</strong>
@@ -97,7 +103,7 @@
                   <li><a href="{!!URL::to('/profile')!!}">Perfil</a></li>
                   <li><a href="{!!URL::to('/sorteos')!!}">Sorteos</a></li>
                   <li><a href="{!!URL::to('/empresas')!!}">Buscar empresas</a></li>
-                  <li><a class="btn-danger" style="background: transparent;" href="{!!URL::to('/logout')!!}">Cerrar sesión</a></li>
+                  <li><a href="{!!URL::to('/logout')!!}">Cerrar sesión</a></li>
                   <li class="dropdown"><a href="!#" data-toggle="dropdown" class="dropdown-toggle">Nosotros<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                       <li><a href="{!!URL::to('/nosotros/')!!}">Nuestra empresa</a></li>
@@ -107,7 +113,7 @@
                     </ul>
                   </li>                    
                 </ul>
-              </li>                         
+              </li>
             @endif
             @if(Auth::admin()->check())
 	            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Registrar empresa<b class="caret"></b></a>
@@ -152,24 +158,30 @@
 
         <div class="row">
 	        <div class="col-md-12">
-		        <img alt="Imagen corfo" src= "{!!URL::to('img/footer/corfo.png')!!}" class="img-responsive"/></a>
+		        <img alt="Imagen corfo" src= "{!!URL::to('img/footer/corfo.png')!!}" class="img-responsive-centered"/></a>
 	        </div>
 	        <div class="col-md-4">
 
 	        </div>
-          <div class="col-md-1"">
-						<table border="0">
-						<tr>
-						<td><img  src= "{!!URL::to('img/footer/icono_facebook.png')!!}" class="img-responsive "/></a></td>
-						<td><img  src= "{!!URL::to('img/footer/icono_twitter.png')!!}" class="img-responsive"/></a></td>
-						<td><img  src= "{!!URL::to('img/footer/ico_instagram.png')!!}" class="img-responsive"/></a></td>
-						<td><img  src= "{!!URL::to('img/footer/icono_youtube.png')!!}" class="img-responsive"/></a></td>
-						</tr>
-						</table>
-						<br>
-            Copyright© ~ Yavu.cl 2016.
+          <div class="col-md-1">
+						<a href="#!"><img  src= "{!!URL::to('img/footer/icono_facebook.png')!!}" class="img-responsive-centered"/></a>
+					</div>
+	        <div class="col-md-1">
+		        <a href="#!"><img  src= "{!!URL::to('img/footer/icono_twitter.png')!!}" class="img-responsive-centered"/></a>
+	        </div>
+	        <div class="col-md-1">
+		        <a href="#!"><img  src= "{!!URL::to('img/footer/ico_instagram.png')!!}" class="img-responsive-centered"/></a>
+		      </div>
+	        <div class="col-md-1">
+		        <a href="#!"><img  src= "{!!URL::to('img/footer/icono_youtube.png')!!}" class="img-responsive-centered"/></a>
 
 					</div>
+	        <div class="col-md-4">
+
+	        </div>
+	        <div class="col-md-12" style="text-align: center;">
+		        <spam>Copyright© ~ Yavu.cl 2016.</spam>
+	        </div>
 		    </div>
 
 

@@ -180,10 +180,14 @@
 			cache: false,
 			async: true,
 			success: function success(data, status) {
-				if (data > 0)
-					$("#CantidadNotificaciones").text(data);
-        else
-          $("#CantidadNotificaciones").text("");
+				if (data > 0) {
+          $("#Notificaciones").text(data);
+          $("#Notificaciones").css('color','#F5A9A9');
+        }else{
+          $("#Notificaciones").text("");
+          $("#Notificaciones").css('color','');
+        }
+
 			},
 			error: function error(xhr, textStatus, errorThrown) {
 			  //alert('Remote sever unavailable. Please try later');
