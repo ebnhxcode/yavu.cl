@@ -44,26 +44,26 @@
 		        <img id="LogoYavu" src="{{URL::to('img/yavu004.png')}}" style="transition: width 0.8s;" width="25%" />
 	        </div>
 
-
-	        <div class="navbar-brand"  align="center" >
-		        <a href="#!">
-											<span id="Notificaciones" title="Notificaciones" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-globe" style="font-size: 1.2em;" aria-hidden="true">
-						                <span id="CantidadNotificaciones" style="" class=""></span>
-				              </span>
-		        </a>
-		        {!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
-		        {!!Form::hidden('idUltimaNotificacion', "0", ['id'=>'idUltimaNotificacion'])!!}
-			        <!--
-													<div class="navbar-brand">
-														<a href="#!">
-															<span id="Mensajes" title="Mensajes" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-envelope" style="font-size: 1em;" aria-hidden="true">
-																<small><span id="CantidadMensajes" class="label label-danger"></span></small>
-															</span>
-														</a>
-													</div>
-											-->
-	        </div>
-
+	        @if(Auth::user()->check())
+		        <div class="navbar-brand"  align="center" >
+			        <a href="#!">
+												<span id="Notificaciones" title="Notificaciones" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-globe" style="font-size: 1.2em;" aria-hidden="true">
+							                <span id="CantidadNotificaciones" style="" class=""></span>
+					              </span>
+			        </a>
+			        {!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
+			        {!!Form::hidden('idUltimaNotificacion', "0", ['id'=>'idUltimaNotificacion'])!!}
+				        <!--
+														<div class="navbar-brand">
+															<a href="#!">
+																<span id="Mensajes" title="Mensajes" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-envelope" style="font-size: 1em;" aria-hidden="true">
+																	<small><span id="CantidadMensajes" class="label label-danger"></span></small>
+																</span>
+															</a>
+														</div>
+												-->
+		        </div>
+					@endif
 
         </div>
         <div id="navbar" class="navbar-collapse collapse">
