@@ -22,7 +22,6 @@
     	popover.popover({ html : true , trigger : 'manual'}); 
 
       $('#Notificaciones, #CantidadNotificaciones').bind('click',function(){
-
         CargarNotificaciones();
       });
 
@@ -172,7 +171,6 @@
 	function ContarNotificaciones()
 	{
 		var user_id = $("#user_id").val();
-		var Contador = 0;
 		$.ajax({
 			url: "http://localhost:8000/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
 			type: 'GET',
@@ -187,7 +185,6 @@
           $("#Notificaciones").text("");
           $("#Notificaciones").css('color','');
         }
-
 			},
 			error: function error(xhr, textStatus, errorThrown) {
 			  //alert('Remote sever unavailable. Please try later');
@@ -203,9 +200,7 @@
 			data += "<div class='list-group-item'><a class='text-info' href='#!'>Mensaje 2</a></div>";
 			data += "<div class='list-group-item-full-header'><a class='text-warning' href='#!'>ver más</a></div>";
 			data += "</div>";
-
     	$('#Mensajes').attr('data-content', data);
-
     	if(Global_swap_mensajes){
     		$('#Mensajes').popover('show');	
     		$('#Notificaciones').popover('hide');

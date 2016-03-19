@@ -45,33 +45,15 @@
 	        </div>
 
 
-
-
-
-
-        </div>
-
-
-
-
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-
-
-            @if(!Auth::user()->check() && !Auth::empresa()->check() && !Auth::admin()->check() && Request::path() !== 'login')
-              <li class="dropdown"><a href="{!!URL::to('/login/')!!}"><span role="button" style="background: transparent;" class="btn btn-default btn-xs">INICIA SESIÓN</span></a></li>
-            @endif 
-            @if(Auth::user()->check())
-		            <li class="dropdown">
-			            <div class="" align="center" >
-				            <a href="#!">
+	        <div class="navbar-brand"  align="center" >
+		        <a href="#!">
 											<span id="Notificaciones" title="Notificaciones" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-globe" style="font-size: 1.2em;" aria-hidden="true">
 						                <span id="CantidadNotificaciones" style="" class=""></span>
 				              </span>
-				            </a>
-				            {!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
-				            {!!Form::hidden('idUltimaNotificacion', "0", ['id'=>'idUltimaNotificacion'])!!}
-					            <!--
+		        </a>
+		        {!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
+		        {!!Form::hidden('idUltimaNotificacion', "0", ['id'=>'idUltimaNotificacion'])!!}
+			        <!--
 													<div class="navbar-brand">
 														<a href="#!">
 															<span id="Mensajes" title="Mensajes" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-envelope" style="font-size: 1em;" aria-hidden="true">
@@ -80,10 +62,16 @@
 														</a>
 													</div>
 											-->
-			            </div>
-	              </li>
+	        </div>
 
 
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            @if(!Auth::user()->check() && !Auth::empresa()->check() && !Auth::admin()->check() && Request::path() !== 'login')
+              <li class="dropdown"><a href="{!!URL::to('/login/')!!}"><span role="button" style="background: transparent;" class="btn btn-default btn-xs">INICIA SESIÓN</span></a></li>
+            @endif 
+            @if(Auth::user()->check())
 
               <li class="dropdown">
                 <a href="#!" data-toggle="dropdown" class="dropdown-toggle">
@@ -98,7 +86,7 @@
                   @endif
                 </ul>
               </li>             
-              <li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><strong>{!!Auth::user()->get()->nombre!!}</strong>  <b class="caret"></b></a>                        
+              <li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><strong>{!!Auth::user()->get()->nombre!!}</strong>  <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="{!!URL::to('/profile')!!}">Perfil</a></li>
                   <li><a href="{!!URL::to('/sorteos')!!}">Sorteos</a></li>
