@@ -40,11 +40,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-	        <div class="navbar-brand" style="
-    width: 135px;
-    padding-right: 0px;
-    padding-left: 20px;
-">
+	        <div class="navbar-brand" style="width: 135px;padding-right: 0px;padding-left: 20px;">
 		        <img id="LogoYavu" src="{{URL::to('img/yavu004.png')}}" style="transition: width 0.8s;" width="50%" />
 	        </div>
 
@@ -55,8 +51,6 @@
 							                <span id="CantidadNotificaciones" style="" class=""></span>
 					              </span>
 			        </a>
-			        {!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
-			        {!!Form::hidden('idUltimaNotificacion', "0", ['id'=>'idUltimaNotificacion'])!!}
 				        <!--
 														<div class="navbar-brand">
 															<a href="#!">
@@ -76,7 +70,8 @@
               <li class="dropdown"><a href="{!!URL::to('/login/')!!}"><span role="button" style="background: transparent;" class="btn btn-default btn-xs">INICIA SESIÓN</span></a></li>
             @endif 
             @if(Auth::user()->check())
-
+		            {!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
+		            {!!Form::hidden('idUltimaNotificacion', "0", ['id'=>'idUltimaNotificacion'])!!}
               <li class="dropdown">
                 <a href="#!" data-toggle="dropdown" class="dropdown-toggle">
                   <strong>Inicio</strong>

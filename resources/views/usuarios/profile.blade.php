@@ -130,10 +130,15 @@
 
 					<div class="list-group">                    
 						<div class="list-group-item">
-							<h6>CODIGO REFERIDO</h6>
-							<h6>{!!strtoupper(Auth::user()->get()->id. Auth::user()->get()->referido)!!}
+
+
+
+							<button id="Info" type="button" class="btn btn-info btn-sm" data-container="body" data-toggle="popover" data-placement="top" data-content="Con este código tus amigos ganarán coins al registrarse!" data-original-title="Atención {{Auth::user()->get()->nombre}}" >
+								Info
+							</button>
+
 							<h6>CODIGO REFERENTE</h6>
-							<h6>{!!strtoupper(Auth::user()->get()->id. Auth::user()->get()->referente)!!}
+							<h6>{!!strtoupper(Auth::user()->get()->id. Auth::user()->get()->referente)!!}</h6>
 						</div>
 						
 					</div>   
@@ -144,11 +149,15 @@
 @stop
 <script>
 
-		function eliminarEstado(id){
-			$("#publicacion"+id).fadeOut();
-		}
 
-		function Interactuar(valor){
+
+			function eliminarEstado(id){
+				$("#publicacion"+id).fadeOut();
+
+				return true;
+			}
+
+			function Interactuar(valor){
 				var status_id = valor.replace('estado_','');
 				var user_id = $("#user_id").val();
 				var token = $("#token").val();
@@ -166,24 +175,27 @@
 						$('#'+valor).addClass("text-info").fadeIn();
 						console.log('exito');
 						ContarInteracciones(status_id);
-					}          
-				}); 
+					}
+				});
 				ContarInteracciones(status_id);
 				$('#'+valor).removeClass("text-info").fadeIn();
-			return true;
-		}  
+				return true;
+			}
 
-		function ContarInteracciones(status_id){
-			status_id = status_id;
-			var route = "http://localhost:8000/contarinteracciones/"+status_id;
-			var user_id = $("#user_id");
-			var Contador = 0;
-			$.get(route, function(res){
-				$(res).each(function(key,value){
+			function ContarInteracciones(status_id){
+				status_id = status_id;
+				var route = "http://localhost:8000/contarinteracciones/"+status_id;
+				var user_id = $("#user_id");
+				var Contador = 0;
+				$.get(route, function(res){
+					$(res).each(function(key,value){
 						Contador += 1;
-				});        
-				$("#badge_"+status_id).text(Contador);
-			});   
-		}    
+					});
+					$("#badge_"+status_id).text(Contador);
+				});
+				return true;
+			}
+
+
 
 </script>
