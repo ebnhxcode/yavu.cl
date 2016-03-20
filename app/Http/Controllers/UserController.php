@@ -203,7 +203,7 @@ class UserController extends Controller
       $this->user->fill($request->all());
       $this->user->save();
       Session::flash('message', 'Usuario editado correctamente');
-      return Redirect::to('/usuarios');      
+      return Redirect::to('/profile');
     }else{
       Session::flash('message-error', 'El rut ingresado no es válido.');
       return Redirect::to('/profile');   

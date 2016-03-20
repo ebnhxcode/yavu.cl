@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> 
+<!--[if gt IE 8]><!-->
 <html class="no-js" lang=""> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
@@ -72,25 +72,35 @@
             @if(Auth::user()->check())
 		            {!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
 		            {!!Form::hidden('idUltimaNotificacion', "0", ['id'=>'idUltimaNotificacion'])!!}
-              <li class="dropdown">
-                <a href="#!" data-toggle="dropdown" class="dropdown-toggle">
-                  <strong>Inicio</strong>
-                  <b class="caret"></b>
-                </a> 
-                <ul class="dropdown-menu">
-                  @if (Auth::user()->check())
-                    <li><a href="{!!URL::to('/dashboard')!!}">Dashboard</a></li>
-                  @else
-                    <li><a href="{!!URL::to('/')!!}">Inicio</a></li>
-                  @endif
-                </ul>
-              </li>             
-              <li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><strong>{!!Auth::user()->get()->nombre!!}</strong>  <b class="caret"></b></a>
+	              <li class="dropdown">
+	                <a href="{!!URL::to('/dashboard')!!}">
+	                  <strong>Inicio</strong>
+	                </a>
+	              </li>
+		            <li class="dropdown">
+			            <a href="{!!URL::to('/feeds')!!}">
+				            <strong>P</strong>ublicaciones
+			            </a>
+		            </li>
+		            <li class="dropdown">
+			            <a href="{!!URL::to('/empresas')!!}">
+				            <strong>E</strong>mpresas
+			            </a>
+		            </li>
+		            <li class="dropdown">
+			            <a href="{!!URL::to('/sorteos')!!}">
+				            <strong>S</strong>orteos
+			            </a>
+		            </li>
+
+
+		            <li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><strong>Mi cuenta</strong>  <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="{!!URL::to('/profile')!!}">Perfil</a></li>
-                  <li><a href="{!!URL::to('/sorteos')!!}">Sorteos</a></li>
-                  <li><a href="{!!URL::to('/empresas')!!}">Buscar empresas</a></li>
+                  <li><a href="{!!URL::to('/dashboard')!!}">Mis empresas</a></li>
                   <li><a href="{!!URL::to('/logout')!!}">Cerrar sesión</a></li>
+	                <!--
+									Esto va para el footer
                   <li class="dropdown"><a href="!#" data-toggle="dropdown" class="dropdown-toggle">Nosotros<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                       <li><a href="{!!URL::to('/nosotros/')!!}">Nuestra empresa</a></li>
@@ -98,7 +108,8 @@
                       <li><a href="{!!URL::to('/terminos/')!!}">Terminos</a></li>
                       <li><a href="{!!URL::to('/yavucoins/')!!}"><strong>YavuCoins</strong></a></li>    
                     </ul>
-                  </li>                    
+                  </li>
+                  -->
                 </ul>
               </li>
             @endif

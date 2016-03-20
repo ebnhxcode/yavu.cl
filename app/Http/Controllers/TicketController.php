@@ -75,7 +75,7 @@ class TicketController extends Controller
 
         }else{
             return response()->json(
-               'Sin salido para el servicio'               
+               'Sin saldo para el servicio'
             );                      
         }
         return true;

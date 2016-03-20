@@ -49,8 +49,7 @@ $(document).ready(function(){
 	{
 		cantidadtickets = (cantidadtickets === undefined) ? $("#cantidadtickets").val() : cantidadtickets;
 		//var cantidadtickets = $("#cantidadtickets").val();
-
-		if (cantidadtickets > 0){
+    if (cantidadtickets > 0){
 			var user_id = $("#user_id").val();
 			var token = $("#token").val();
 			var route = "http://localhost:8000/efectuarcompraticket/"+user_id+"/"+cantidadtickets;
@@ -60,11 +59,19 @@ $(document).ready(function(){
 				type: 'GET',
 				dataType: 'json',
 				success:function(data){
-					if(data==='Exito'){$("#UsarTicket").fadeIn()}
-					ContarCoins();
-					ContarTickets();
+          console.log(data);
+          if (data === 'Sin saldo para el servicio')
+          {
+            $('#CantidadTickets').fadeIn().html(data);
+          }
+          else
+          {
+            if(data==='Exito'){$("#UsarTicket").fadeIn()}
+            ContarCoins();
+            ContarTickets();
+          }
 				}
-			});	
+			});
 		}
 	}
 	function ContarCoins(){

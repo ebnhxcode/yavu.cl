@@ -133,7 +133,7 @@
 
 
 
-							<button id="Info" type="button" class="btn btn-info btn-sm" data-container="body" data-toggle="popover" data-placement="top" data-content="Con este código tus amigos ganarán coins al registrarse!" data-original-title="Atención {{Auth::user()->get()->nombre}}" >
+							<button id="Info" type="button" class="btn btn-info btn-sm" data-container="body" data-toggle="popover" data-placement="top" data-content="Con este código tus amigos ganarán coins al registrarse!" data-original-title="Atención {{Auth::user()->get()->nombre}} <button type='button' onclick='CloseInfo()' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button> " >
 								Info
 							</button>
 
@@ -149,11 +149,14 @@
 @stop
 <script>
 
-
+		function CloseInfo()
+		{
+			$('#Info').popover('hide');
+			return true;
+		}
 
 			function eliminarEstado(id){
 				$("#publicacion"+id).fadeOut();
-
 				return true;
 			}
 
