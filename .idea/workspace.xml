@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9b29a6e-80cf-49e0-9911-7f340db7a961" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/sorteos/forms/modalSorteo.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/sorteos/forms/vistaListaAdmin.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/sorteos/forms/vistaListaUsuario.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/ajax/GestionarCoins.js" afterPath="$PROJECT_DIR$/public/js/ajax/GestionarCoins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/ajax/GestionarCompraTicket.js" afterPath="$PROJECT_DIR$/public/js/ajax/GestionarCompraTicket.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/usuarios/profile.blade.php" afterPath="$PROJECT_DIR$/resources/views/usuarios/profile.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/sorteos/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/sorteos/index.blade.php" />
     </list>
     <ignored path="yavu.cl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,79 +28,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15317287">
-              <caret line="205" column="35" selection-start-line="205" selection-start-column="35" selection-end-line="205" selection-end-column="35" />
-              <folding>
-                <element signature="e#39#67#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/sorteos/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="105" column="85" selection-start-line="105" selection-start-column="81" selection-end-line="105" selection-end-column="85" />
+            <state vertical-scroll-proportion="-26.0">
+              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GestionarCompraTicket.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/ajax/GestionarCompraTicket.js">
+      <file leaf-file-name="vistaListaUsuario.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/sorteos/forms/vistaListaUsuario.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.039387308">
+              <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="162" column="85" selection-start-line="162" selection-start-column="85" selection-end-line="162" selection-end-column="85" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TicketController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TicketController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="77" column="23" selection-start-line="77" selection-start-column="23" selection-end-line="77" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FrontNotificaciones.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/ajax/FrontNotificaciones.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="204" column="8" selection-start-line="204" selection-start-column="8" selection-end-line="204" selection-end-column="40" />
-              <folding>
-                <marker date="1458422391985" expanded="true" signature="1780:2155" placeholder="..." />
-                <marker date="1458422391985" expanded="true" signature="1816:2137" placeholder="..." />
-                <marker date="1458422391985" expanded="false" signature="1867:1893" placeholder="..." />
-                <marker date="1458422391985" expanded="true" signature="1959:2117" placeholder="..." />
-                <marker date="1458422391985" expanded="true" signature="2273:2647" placeholder="..." />
-                <marker date="1458422391985" expanded="true" signature="2309:2629" placeholder="..." />
-                <marker date="1458422391985" expanded="false" signature="2360:2386" placeholder="..." />
-                <marker date="1458422391985" expanded="true" signature="2451:2609" placeholder="..." />
-                <marker date="1458422391985" expanded="true" signature="2724:3099" placeholder="..." />
-                <marker date="1458422391985" expanded="true" signature="2760:3081" placeholder="..." />
-                <marker date="1458422391985" expanded="false" signature="2811:2837" placeholder="..." />
-                <marker date="1458422391985" expanded="true" signature="2903:3061" placeholder="..." />
-                <marker date="1458422391985" expanded="false" signature="3313:3345" placeholder="..." />
-                <marker date="1458422391985" expanded="true" signature="3346:3472" placeholder="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -154,6 +95,10 @@
         <option value="$PROJECT_DIR$/public/js/ajax/GestionarCoins.js" />
         <option value="$PROJECT_DIR$/resources/views/usuarios/profile.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/front.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/sorteos/forms/ModalSorteo.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/sorteos/forms/vistaListaAdmin.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/sorteos/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/sorteos/forms/vistaListaUsuario.blade.php" />
       </list>
     </option>
   </component>
@@ -302,7 +247,55 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="sorteos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="empresas" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -594,34 +587,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/ajax/GestionarEstados.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="8.064348">
-          <caret line="375" column="38" selection-start-line="375" selection-start-column="38" selection-end-line="375" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/ajax/GestionarInteraccionesEstadosUsuario.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03130435">
-          <caret line="1" column="32" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/ajax/HistorialCoins.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.83304346">
-          <caret line="50" column="38" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/ajax/InteraccionPublicaciones.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/ajax/InteraccionPublicacionesEmpresa.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -872,6 +837,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.4040067">
           <caret line="5850" column="11" selection-start-line="5850" selection-start-column="11" selection-end-line="5850" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -879,68 +845,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="48" column="48" selection-start-line="48" selection-start-column="45" selection-end-line="48" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/ajax/FrontNotificaciones.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="204" column="8" selection-start-line="204" selection-start-column="8" selection-end-line="204" selection-end-column="40" />
-          <folding>
-            <marker date="1458422391985" expanded="true" signature="1780:2155" placeholder="..." />
-            <marker date="1458422391985" expanded="true" signature="1816:2137" placeholder="..." />
-            <marker date="1458422391985" expanded="false" signature="1867:1893" placeholder="..." />
-            <marker date="1458422391985" expanded="true" signature="1959:2117" placeholder="..." />
-            <marker date="1458422391985" expanded="true" signature="2273:2647" placeholder="..." />
-            <marker date="1458422391985" expanded="true" signature="2309:2629" placeholder="..." />
-            <marker date="1458422391985" expanded="false" signature="2360:2386" placeholder="..." />
-            <marker date="1458422391985" expanded="true" signature="2451:2609" placeholder="..." />
-            <marker date="1458422391985" expanded="true" signature="2724:3099" placeholder="..." />
-            <marker date="1458422391985" expanded="true" signature="2760:3081" placeholder="..." />
-            <marker date="1458422391985" expanded="false" signature="2811:2837" placeholder="..." />
-            <marker date="1458422391985" expanded="true" signature="2903:3061" placeholder="..." />
-            <marker date="1458422391985" expanded="false" signature="3313:3345" placeholder="..." />
-            <marker date="1458422391985" expanded="true" signature="3346:3472" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="162" column="85" selection-start-line="162" selection-start-column="85" selection-end-line="162" selection-end-column="85" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TicketController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="77" column="23" selection-start-line="77" selection-start-column="23" selection-end-line="77" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/ajax/GestionarCompraTicket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/usuarios/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/sorteos/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="105" column="85" selection-start-line="105" selection-start-column="81" selection-end-line="105" selection-end-column="85" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -991,11 +895,106 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15317287">
+        <state vertical-scroll-proportion="-5.185185">
           <caret line="205" column="35" selection-start-line="205" selection-start-column="35" selection-end-line="205" selection-end-column="35" />
           <folding>
             <element signature="e#39#67#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/ajax/GestionarCompraTicket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.120085016">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64551425">
+          <caret line="162" column="85" selection-start-line="162" selection-start-column="85" selection-end-line="162" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TicketController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36980307">
+          <caret line="77" column="23" selection-start-line="77" selection-start-column="23" selection-end-line="77" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/ajax/FrontNotificaciones.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.019128587">
+          <caret line="204" column="8" selection-start-line="204" selection-start-column="8" selection-end-line="204" selection-end-column="40" />
+          <folding>
+            <marker date="1458422391985" expanded="true" signature="1780:2155" placeholder="..." />
+            <marker date="1458422391985" expanded="true" signature="1816:2137" placeholder="..." />
+            <marker date="1458422391985" expanded="false" signature="1867:1893" placeholder="..." />
+            <marker date="1458422391985" expanded="true" signature="1959:2117" placeholder="..." />
+            <marker date="1458422391985" expanded="true" signature="2273:2647" placeholder="..." />
+            <marker date="1458422391985" expanded="true" signature="2309:2629" placeholder="..." />
+            <marker date="1458422391985" expanded="false" signature="2360:2386" placeholder="..." />
+            <marker date="1458422391985" expanded="true" signature="2451:2609" placeholder="..." />
+            <marker date="1458422391985" expanded="true" signature="2724:3099" placeholder="..." />
+            <marker date="1458422391985" expanded="true" signature="2760:3081" placeholder="..." />
+            <marker date="1458422391985" expanded="false" signature="2811:2837" placeholder="..." />
+            <marker date="1458422391985" expanded="true" signature="2903:3061" placeholder="..." />
+            <marker date="1458422391985" expanded="false" signature="3313:3345" placeholder="..." />
+            <marker date="1458422391985" expanded="true" signature="3346:3472" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/usuarios/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/sorteos/forms/modalSorteo.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-25.333334">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/sorteos/forms/vistaListaAdmin.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29540482">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/empresas/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27571115">
+          <caret line="14" column="75" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/sorteos/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.0">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/sorteos/forms/vistaListaUsuario.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.039387308">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
