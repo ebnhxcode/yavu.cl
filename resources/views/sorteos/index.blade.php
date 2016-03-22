@@ -30,7 +30,7 @@
         @if(Auth::admin()->check())
 					@include('sorteos.forms.vistaListaAdmin')
         @elseif(Auth::user()->check() || !Auth::user()->check())
-		      @include('sorteos.forms.vistaListaUsuario')
+		      @include('sorteos.forms.vistaListaUsuario', array('sorteos' => $sorteos))
         @endif
         {!!$sorteos->render()!!}
       </div>
