@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 	      {!!Html::script('js/jquery.js')!!}
-	      <script>$.ajaxSetup({ cache:true });</script>
+	      <script>$.ajaxSetup({ cache:false });</script>
         {!!Html::script('js/vendor/bootstrap.min.js')!!}
         <!--{!!Html::style('css/bootstrap-theme.min.css')!!}-->
         {!!Html::script('js/plugins.js')!!}

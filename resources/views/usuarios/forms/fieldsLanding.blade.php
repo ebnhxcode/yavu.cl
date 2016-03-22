@@ -1,28 +1,28 @@
 <div class="form-group has-feedback has-feedback-left">
-	{!!Form::label('Nombre:')!!}		
+	(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Nombre:')!!}
 	{!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre','required'=>'required'])!!}
 </div>		
 <div class="form-group has-feedback has-feedback-left">
-	{!!Form::label('Apellido:')!!}
+	(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Apellido:')!!}
 	{!!Form::text('apellido',null,['class'=>'form-control','placeholder'=>'Ingrese su apellido','required'=>'required'])!!}
 </div>
 <div class="form-group has-feedback has-feedback-left">
-	{!!Form::label('Email:')!!}
+	(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Email:')!!}
 	{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email','required'=>'required'])!!}			
 </div>
 <div class="form-group has-feedback has-feedback-left">
-	{!!Form::label('Clave:')!!}
-	{!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una clave'])!!}
+	(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Clave:')!!}
+	{!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una clave', 'required' => 'required'])!!}
 </div>
 
 <div class="form-group has-feedback has-feedback-left">
-	{!!Form::label('Codigo Referido:')!!}
+	(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Codigo Referido:')!!}
 	{!!Form::text('referido',null,['class'=>'form-control','placeholder'=>''])!!}
 </div>
 
 
 <div class="form-group has-feedback has-feedback-left">
-	{!!Form::label('Ciudad:')!!}
+	(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Ciudad:')!!}
 	{!!Form::select('ciudad', 
 		['Tarapacá' => 'Tarapacá',
 		'Parinacota' => 'Parinacota',
@@ -55,7 +55,7 @@
 		'Aysen' => 'Aysen',	
 		'Magallanes' => 'Magallanes',	
 		'otra' => 'otras...'], 
-		$selected = null, ['class' => 'form-control']) 
+		$selected = null, ['class' => 'form-control', 'required' => 'required'])
 	!!}					
 </div>
 <div class="form-group has-feedback has-feedback-left">
@@ -63,5 +63,5 @@
 </div>
 <div class="form-group has-feedback has-feedback-left">
 	{!!Form::hidden('estado', 'Activo')!!}	
-</div>	
+</div>
 

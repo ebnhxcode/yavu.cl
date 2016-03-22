@@ -10,13 +10,13 @@ class UserUpdateRequest extends Request
    public function rules()
    {
       return [
-         //'rut' => 'required',         
+         'rut' => 'required',
          'email' => 'required',
          //'login' => 'required',
          'nombre' => 'required',
          'apellido' => 'required',
+         'ciudad' => 'required',
          
-         //'PASSWORD_USUARIO' => 'required'
       ];
    }
 }

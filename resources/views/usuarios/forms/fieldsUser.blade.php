@@ -5,27 +5,27 @@
 		</div>
 		<div class="list-group-item">
 			<div class="form-group has-feedback has-feedback-left">
-				{!!Form::label('Nombre:')!!}
+				(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Nombre:')!!}
 				{!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre', 'maxlength' => '100'])!!}
 			</div>
 			<div class="form-group has-feedback has-feedback-left">
-				{!!Form::label('Apellido:')!!}
+				(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Apellido:')!!}
 				{!!Form::text('apellido',null,['class'=>'form-control','placeholder'=>'Ingrese su apellido', 'maxlength' => '100'])!!}
 			</div>
 			<div class="form-group has-feedback has-feedback-left">
-				{!!Form::label('Email:')!!}
+				(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Email:')!!}
 				{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email', 'maxlength' => '200'])!!}			
 			</div>
 			<div class="form-group has-feedback has-feedback-left">
 				@if(Auth::user()->check() && Request::path() !== 'usuarios/create')
-					{!!Form::label('Cambio de clave:')!!}		
+					(<strong><small><span class="requerido">Ingrese <i>solo</i> si desea cambiarla</span></small></strong>) {!!Form::label('Cambio de clave:')!!}
 				@else
-					{!!Form::label('Nueva clave:')!!}
+					{!!Form::label('Nueva password:')!!}
 				@endif
-				{!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una clave', 'maxlength' => '100'])!!}		
+				{!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una password', 'maxlength' => '100'])!!}
 			</div>
 			<div class="form-group has-feedback has-feedback-left">
-				{!!Form::label('Ciudad:')!!}		
+				(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Ciudad:')!!}
 				{!!Form::select('ciudad', 
 					['Tarapacá' => 'Tarapacá',
 					'Parinacota' => 'Parinacota',
@@ -75,7 +75,7 @@
 
 
 			<div class="form-group has-feedback has-feedback-left">
-				{!!Form::label('Cambiar avatar:')!!}<br>
+				(<strong><small><span class="requerido">Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar avatar:')!!}<span id="Perfil"></span><br>
 				<div style="border: dashed; border-width: 1px;">
 					<span class="btn btn-primary btn-file btn-md">
 						Buscar imagen{!!Form::file('imagen_perfil', ['id' => 'imagen_perfil',  'maxlength' => '255'])!!}
@@ -95,7 +95,7 @@
 			</div>
 
 			<div class="form-group has-feedback has-feedback-left">
-				{!!Form::label('Cambiar banner personal:')!!}<br>
+				(<strong><small><span class="requerido">Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar banner personal:')!!}<span id="Portada"></span><br>
 				<div style="border: dashed; border-width: 1px;">
 					<span class="btn btn-primary btn-file btn-md">
 						Buscar imagen{!!Form::file('imagen_portada', ['id' => 'imagen_portada',  'maxlength' => '255'])!!}
@@ -238,27 +238,45 @@
 			
 			if(res !== 'false'){
 				$("#rut").val(res);
-				document.getElementById('FormUsuario').onsubmit = function() {
+				document.getElementById("FormUsuario").onsubmit = function() {
 				    return true;
 				}											
-				//console.log(res);
-			}else{						
+			}else{
 				$("#rut").val("");
 				$("#rut").focus();
-				alert('Formato de rut invalido');
+				alert("Formato de rut invalido");
 				
 			}
 		});
 	}
-	$("#imagen_perfil, #imagen_portada").change(function(){
+	$("#imagen_perfil").change(function(){
 		var formato = this.value;
 		var formatosPermitidos = ["jpg", "jpeg", "png", "gif"];
 		formato = formato.split('.');
 		if(formatosPermitidos.indexOf(formato[1]) < 0)
 		{
-			this.value = "";
+			this.value.clear();
+			alert("Formato de imagen invalido, no se subirá");
+		}
+		else
+		{
+			$("#Perfil").addClass("btn btn-success btn-xs").text("ok");
+		}
+	});
+
+	$("#imagen_portada").change(function(){
+		var formato = this.value;
+		var formatosPermitidos = ["jpg", "jpeg", "png", "gif"];
+		formato = formato.split('.');
+		if(formatosPermitidos.indexOf(formato[1]) < 0)
+		{
+			this.value.clear();
 			alert('Formato de imagen invalido, no se subirá');
 		}
-		console.log(this.value);
-	});		
+		else
+		{
+			$("#Portada").addClass('btn btn-success btn-xs').text('ok');
+		}
+	});
+
 </script>

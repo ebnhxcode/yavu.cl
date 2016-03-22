@@ -6,15 +6,16 @@
 		<div class="list-group-item">
 		@if(Request::path() === 'empresas/create' && Auth::user()->check())			
 			<div class="form-group has-feedback has-feedback-left">
-				{!!Form::label('Nombre:')!!}
+				(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Nombre Único de empresa:')!!}
 				{!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese el nombre de la empresa', 'maxlength' => '100'])!!}
 			</div>
 		@endif
 			<div class="form-group has-feedback has-feedback-left">
-				{!!Form::label('Email:')!!}
+				(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Email:')!!}
 				{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese email de la empresa', 'maxlength' => '200'])!!}
 				<i class="form-control-feedback glyphicon glyphicon-user"></i>
 			</div>
+
 			<!--
 			<div class="form-group has-feedback has-feedback-left">
 				{!!Form::label('Clave:')!!}
@@ -24,7 +25,7 @@
 			-->
 
 			<div class="form-group has-feedback has-feedback-left">
-				{!!Form::label('Ciudad:')!!}		
+				(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Ciudad:')!!}
 				{!!Form::select('ciudad', 
 					['Tarapacá' => 'Tarapacá',
 					'Parinacota' => 'Parinacota',
@@ -61,22 +62,21 @@
 				!!}			
 			</div>	
 			<div class="form-group has-feedback has-feedback-left">
-				{!!Form::label('Descripción:')!!}
+				(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Descripción:')!!}
 				{!!Form::textarea('descripcion',null,['class'=>'form-control','placeholder'=>'Agregue una breve descripción de su empresa', 'maxlength'=>'999', 'style'=>'resize:none;', 'rows'=>'5', 'id'=>'descripción'])!!}
 			</div>
 
 		</div>
 		<!-- GESTION DE LAS FOTOS -->
 
-		@if(isset($empresa))
 			<div class="list-group-item">
 				<div class="form-group has-feedback has-feedback-left">
-					{!!Form::label('Cambiar avatar:')!!}<br>
+					(<strong><small><span class="requerido">Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar avatar: ')!!}<span id="Perfil" ></span><br>
 					<div style="border: dashed; border-width: 1px;">
-						<span class="btn btn-primary btn-file btn-md">
+						<span class="btn btn-primary btn-file btn-sm">
 							Buscar imagen{!!Form::file('imagen_perfil', ['id' => 'imagen_perfil',  'maxlength' => '255'])!!}
 						</span>
-						@if(Request::path() !== 'empresas/create')
+						@if(Request::path() !== 'empresas/create' && isset($empresa))
 							@if($empresa->imagen_perfil==="")
 								<img width="15%" id="ImagenPerfil" class="thumbnail img-responsive-centered" src="https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png" alt="...">
 							@else
@@ -89,12 +89,12 @@
 				</div>
 
 				<div class="form-group has-feedback has-feedback-left">
-					{!!Form::label('Cambiar banner personal:')!!}<br>
+					(<strong><small><span class="requerido">Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar banner personal: ')!!}<span id="Portada"></span><br>
 					<div style="border: dashed; border-width: 1px;">
-						<span class="btn btn-primary btn-file btn-md">
+						<span class="btn btn-primary btn-file btn-sm">
 							Buscar imagen{!!Form::file('imagen_portada', ['id' => 'imagen_portada', 'maxlength' => '255'])!!}
 						</span>
-						@if(Request::path() !== 'empresas/create')
+						@if(Request::path() !== 'empresas/create' && isset($empresa))
 							@if($empresa->imagen_portada==="")
 								<img width="25%" id="ImagenPortada" class="thumbnail img-responsive-centered" src="http://medioambiente.nh-hoteles.es/themes/default/images/bgd-biodiversidad-00.png" alt="...">
 							@else
@@ -106,7 +106,6 @@
 					</div>
 				</div>
 			</div>			
-		@endif
 
 	</div>
 </div>
@@ -119,18 +118,18 @@
 			</div>
 			<div class="list-group-item">
 				<div class="form-group has-feedback has-feedback-left">
-					{!!Form::label('Rut:')!!}
+					(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Rut:')!!} <small>(Si no lo tiene ingrese su rut personal)</small>
 					{!!Form::text('rut',null,['class'=>'form-control','placeholder'=>'Ingrese rut de la empresa', 'id' => 'rut',  'maxlength' => '16'])!!}			
 					<i class="form-control-feedback glyphicon glyphicon-user"></i>
 				</div>
 
 				<div class="form-group has-feedback has-feedback-left">
-					{!!Form::label('Dirección:')!!}
+					(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Dirección:')!!}
 					{!!Form::text('direccion',null,['class'=>'form-control','placeholder'=>'Ingrese dirección', 'maxlength' => '100'])!!}
 				</div>
 
 				<div class="form-group has-feedback has-feedback-left">
-					{!!Form::label('Región:')!!}
+					(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Región:')!!}
 					{!!Form::select('region', 
 						['I Región' => 'I Región',
 						'II Región' => 'II Región',	
@@ -152,13 +151,13 @@
 				</div>
 
 				<div class="form-group has-feedback has-feedback-left">
-					{!!Form::label('País:')!!}
+					(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('País:')!!}
 					{!!Form::select('pais', 
-						['Argentina' => 'Argentina',
+						['Chile' => 'Chile',
+						'Argentina' => 'Argentina',
 						'Bolivia' => 'Bolivia',	
 						'Brasil' => 'Brasil',	
-						'Colombia' => 'Colombia',	
-						'Chile' => 'Chile',	
+						'Colombia' => 'Colombia',
 						'Ecuador' => 'Ecuador',	
 						'Mexico' => 'Mexico',	
 						'Panama' => 'Panama',	
@@ -179,16 +178,17 @@
 					{!!Form::label('Teléfono Fijo:')!!}
 					{!!Form::text('fono_2',null,['class'=>'form-control','placeholder'=>'Teléfono fijo', 'maxlength' => '20'])!!}
 				</div>
-
+				<!--
 				<div class="form-group has-feedback has-feedback-left">
-					{!!Form::label('Fecha de inicio:')!!}
+					{!!Form::label('Fecha de inicio de actividades:')!!}
 					{!!Form::date('fecha_creacion',null,['class'=>'form-control','placeholder'=>'Inicio de actividad', 'maxlength' => '100'])!!}
 				</div>
-
+				-->
 				<div class="form-group has-feedback has-feedback-left">
-					{!!Form::label('Nombre del encargado:')!!}
+					(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Nombre del encargado:')!!}
 					{!!Form::text('nombre_ecargado',null,['class'=>'form-control','placeholder'=>'Encargado de la empresa', 'maxlength' => '100'])!!}
 				</div>
+				<!--
 				<div class="form-group has-feedback has-feedback-left">
 					{!!Form::label('tipo_servicio:')!!}
 					{!!Form::select('tipo_servicio', 
@@ -201,7 +201,7 @@
 					{!!Form::label('Fecha de pago:')!!}
 					{!!Form::date('fecha_de_pago',null,['class'=>'form-control','placeholder'=>'', 'maxlength' => '100'])!!}
 				</div>
-
+				-->
 					@if (Auth::admin()->check()) 
 
 				<div class="form-group has-feedback has-feedback-left">
@@ -245,19 +245,18 @@
 
 			@endif 
 <script>
+
 	$("#rut").change(function(){
 		ValidarRut($("#rut").val());
 	});
+
 	function ValidarRut(rut){
 		console.log("click");
 		var route = "http://localhost:8000/validarrutempresa/"+rut+"";
-
-		//Si esto esta aqui valida el rut solo cuando la empresa se edita, tambien valida que el rut sea valido antes del registro
 		document.getElementById('FormEmpresa').onsubmit = function() {
 		    return false;
 		}
 		$.get(route, function(res){
-			
 			if(res !== 'false'){
 				$("#rut").val(res);
 				document.getElementById('FormEmpresa').onsubmit = function() {
@@ -302,9 +301,6 @@
 		{          
 			return SanearInputs(Busqueda);
 		}
-		
-		
-		
 		console.log(Busqueda.indexOf(String.fromCharCode(187)));
 
 		return Busqueda;
@@ -319,16 +315,36 @@
 		return Busqueda;
 	}
 
-
-	$("#imagen_perfil, #imagen_portada").change(function(){
+	$("#imagen_perfil").change(function(){
 		var formato = this.value;
 		var formatosPermitidos = ["jpg", "jpeg", "png", "gif"];
 		formato = formato.split('.');
 		if(formatosPermitidos.indexOf(formato[1]) < 0)
 		{
-			this.value = "";
+			this.value.clear();
 			alert('Formato de imagen invalido, no se subirá');
 		}
-		console.log(this.value);
+		else
+		{
+			$("#Perfil").addClass('btn btn-success btn-xs').text('ok');
+		}
 	});
+
+	$("#imagen_portada").change(function(){
+		var formato = this.value;
+		var formatosPermitidos = ["jpg", "jpeg", "png", "gif"];
+		formato = formato.split('.');
+		if(formatosPermitidos.indexOf(formato[1]) < 0)
+		{
+			this.value.clear();
+			alert('Formato de imagen invalido, no se subirá');
+		}
+		else
+		{
+			$("#Portada").addClass('btn btn-success btn-xs').text('ok');
+		}
+	});
+
+
+
 </script>

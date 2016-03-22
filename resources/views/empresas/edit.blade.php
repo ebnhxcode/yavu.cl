@@ -4,14 +4,13 @@
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		<h4>Actualización de Empresa : {{$empresa->nombre}}</h4>
+		<h4>Informacion de : {{$empresa->nombre}}</h4>
 		@include('alerts.alertFields')
 		@include('alerts.errorsMessage')
 		@include('alerts.successMessage')
 		@include('alerts.warningMessage')			
 		<div class="row">
 			{!!Form::model($empresa, ['method'=>'PUT', 'route' => ['empresas.update', $empresa->id], 'files' => true , 'id' => 'FormEmpresa'])!!}
-
 			@include('empresas.forms.fieldsEmpresa', array('empresa' => $empresa))
 
 				<div class="list-group">
@@ -25,7 +24,7 @@
 					<div class="list-group-item">		
 						<div class="form-group has-feedback has-feedback-left">
 							<!--  Reemplaza->{!!Form::open(['action'=> ['EmpresaController@destroy', $empresa->id], 'method'=>'DELETE'])!!}
-								{!!Form::submit('Solicitar eliminación', ['class'=>'btn btn-danger', 'style'=>'width:100%;'])!!}
+							{!!Form::submit('Solicitar eliminación', ['class'=>'btn btn-danger', 'style'=>'width:100%;'])!!}
 							{!!Form::close()!!}-->
 							{!!Form::button('Solicitar eliminación', ['class'=>'btn btn-danger', 'style'=>'width:100%;', 'id' => 'SolicitudEliminacion', 'value'=>$empresa->id])!!}
 						</div>
@@ -56,4 +55,3 @@
 	</div>
 </div>
 @stop
-<!--,'data-toggle'=>'tooltip', 'data-placement'=>'top', 'title'=>'Tooltip'-->

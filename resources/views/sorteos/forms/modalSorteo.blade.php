@@ -29,9 +29,11 @@
 				</div>
 			</div>
 			<div class="modal-footer">
+				@if(isset($sorteo))
 				<button id="UsarTicket" value="{!! $sorteo->id !!}" type="button" class="btn btn-success btn-sm" style="display: none;" data-dismiss="modal">Usar ticket</button>
 				<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">No</button>
 				<button type="button" id='siquiero' class="btn btn-primary btn-sm">Comprar 1 ticket</button>
+				@endif
 			</div>
 		</div>
 	</div>

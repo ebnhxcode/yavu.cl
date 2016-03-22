@@ -81,10 +81,10 @@
                 @include('alerts.alertFields')
 
 	              <div>
-		              {!!Form::open(['route'=>'usuarios.store', 'method'=>'POST'])!!}
+		              {!!Form::open(['route'=>'usuarios.store', 'method'=>'POST', 'id' => 'FormRegistroLanding'])!!}
 		                @include('usuarios.forms.fieldsLanding')
 		                <div class="form-group has-feedback has-feedback-left">
-		                  {!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success'])!!}
+		                  {!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success', 'onclick' => 'ValidarRegistro()'])!!}
 		                </div>
 		              {!!Form::close()!!}
 	              </div>
@@ -107,4 +107,5 @@
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+}(document, 'script', 'facebook-jssdk'));
+</script>

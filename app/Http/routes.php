@@ -53,7 +53,6 @@ Route::resource('dashboard', 'UserController@dashboard');
 Route::resource('profile', 'UserController@profile');
 Route::get('infoempresas/{user_id}','UserController@InfoEmpresas');
 Route::get('verificarusuario/{codigo}', 'UserController@VerificarUsuario');
-
 /*Gestión de Usuarios*/
 
 
