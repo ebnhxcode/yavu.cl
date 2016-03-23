@@ -1,4 +1,5 @@
-$(document).ready(function(){	
+var $j = jQuery.noConflict();
+$j(document).ready(function(){
 	/*DECLARACION DE VARIABLES GLOBALES*/
 	var Global_idUltimaNotificacion;
 	var Global_ContadorCargaNotificaciones;
@@ -22,8 +23,10 @@ $(document).ready(function(){
 	/*MÉTODOS CONSTRUCTORES*/
 
 	/*SELECTORES*/
+	//$("time.timeago").timeago();
+	$j("abbr.timeago").timeago();
 
-	$("#CargarNotificaciones").click(function(e)
+	$j("#CargarNotificaciones").click(function(e)
 	{
 		$("#NotificacionesNuevas").append("");
 		CargarNotificaciones();			
@@ -53,7 +56,7 @@ $(document).ready(function(){
 				url: route,
 				type: 'GET',
 				dataType: 'json',
-				cache: true,
+				cache: false,
 				jsonpCallback: 'mantener',
 				async: true,				
 				success: function success(data, status) {
@@ -82,7 +85,7 @@ $(document).ready(function(){
 									+"</div>"
 									+"<div class='list-group-item-full panel-footer-small'>"	
 										+"<small>"
-											+"<span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
+											+"<abbr	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\' datetime='"+TimeAgo+"'></abbr	>"
 										+"</small>"		
 									+"</div>"
 								+"</div>"								
@@ -98,8 +101,8 @@ $(document).ready(function(){
 											+"</div>"
 											+"<div class='list-group-item-full panel-footer-small'>"	
 												+"<small>"
-													+"<span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
-												+"</small>"		
+												+"<abbr	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\' datetime='"+TimeAgo+"'></abbr	>"
+												+"</small>"
 											+"</div>"
 										+"</div>"
 								).show('slow');
@@ -113,7 +116,7 @@ $(document).ready(function(){
 											+"</div>"
 											+"<div class='list-group-item-full panel-footer-small'>"	
 												+"<small>"
-													+"<span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
+												+"<abbr	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\' datetime='"+TimeAgo+"'></abbr	>"
 												+"</small>"		
 											+"</div>"
 										+"</div>"
@@ -187,7 +190,7 @@ $(document).ready(function(){
 	function humanTiming(time)
 	{
 		var now = new Date();
-		var nowTime = now.getTime()
+		var nowTime = now.getTime();
 		nowTime = nowTime - Date.parse(time);
 		console.log(nowTime);
 	    var tokens = [
