@@ -12,19 +12,22 @@ $j(document).ready(function(){
 
 	setInterval(function()
 	{
+		/*
 		var a = $(".timeago");
 		for(var i = 0; i < a.length ; i++){
 			var elemento = document.getElementById( a[i].id );
 			console.log(elemento.title);
 			$('#'+a[i].id).text("" + humanTiming( elemento.title ) );
 		}
-	},40000);
+		*/
+		$j("abbr.timeago").timeago();
+
+	},10000);
 
 	/*MÉTODOS CONSTRUCTORES*/
 
 	/*SELECTORES*/
 	//$("time.timeago").timeago();
-	$j("abbr.timeago").timeago();
 
 	$j("#CargarNotificaciones").click(function(e)
 	{
@@ -138,7 +141,8 @@ $j(document).ready(function(){
 							Global_Control = false;	
 						}			
 					}
-					ocultarCargando();	
+					ocultarCargando();
+					$j("abbr.timeago").timeago();
 					Global_ContadorCargaNotificaciones += 1 * 5;
 					return true;
 

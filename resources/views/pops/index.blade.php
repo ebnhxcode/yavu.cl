@@ -1,7 +1,7 @@
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/global.js')!!}
 
-{!!Html::script('https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.3/jquery.timeago.js')!!}
+{!!Html::script('js/vendor/jquery.timeago.js')!!}
 
 {!!Html::script('js/notificaciones/GestionarNotificaciones.js')!!}
 <!--{!!Html::script('js/ajax/InteraccionPublicaciones.js')!!}-->
