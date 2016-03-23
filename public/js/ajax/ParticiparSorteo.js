@@ -40,13 +40,14 @@
 	});	
 	$(".participar").click(function(){
 		$("#UsarTicket").val($(this).attr('value'));
+		VerificarTickets();
 		ContarTickets();		
 		//console.log($(this).attr('value')+"/");
 	});
 	$("#siquiero").click(function(){
 		//console.log($("#user_id").val());
 		CanjearTicket();
-		UsarTicket($("#UsarTicket").attr('value'))
+		UsarTicket($("#UsarTicket").attr('value'));
 ;	});
 	/*SELECTORES*/
 
@@ -102,6 +103,10 @@
 			console.log(res);
 			if(res>0){
 				$("#UsarTicket").removeAttr('style');	
+			}
+			else
+			{
+				$("#UsarTicket").fadeOut();
 			}
 		});			
 	}

@@ -35,7 +35,6 @@
 			</div>
 		</div>
 		<hr>
-
 	@endforeach
 	@include('sorteos.forms.modalSorteo', array('sorteos' => $sorteos))
 	{!!$sorteos->render()!!}
