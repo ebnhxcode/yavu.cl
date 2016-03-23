@@ -57,12 +57,14 @@
                   <li><a href="{!!URL::to('/sorteos')!!}">Sorteos por confirmar</a></li>
                 </ul>
               </li> 
+              <!--
                   <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Pagos<b class="caret"></b></a>                        
                 <ul class="dropdown-menu">      
                 <li><a href="{!!URL::to('/empresas')!!}">Registrar pago</a></li> 
                 <li><a href="{!!URL::to('/empresas')!!}">Mostrar listado de deudores</a></li>
                 </ul>
               </li> 
+              -->
               <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Admintración<b class="caret"></b></a>                        
                 <ul class="dropdown-menu">      
               <li><a href="{!!URL::to('/admins/create')!!}">Registro de Administradores</a></li>
@@ -81,64 +83,44 @@
     </nav>
       @yield('content')
      <div class="container">
+
 <!-- footer -->
-<footer role="contentinfo" class="site-footer" id="colophon">
-  <div class="container">
-    <div class="row">
-      <div id="accordion" class="collapse-footer">
-        <div class="panel">
-          <div class="panel-heading">
-            <h4 class="panel-title"> <a href="#collapseOne" data-parent="#accordion" data-toggle="collapse" class="collapsed"> <span class="glyphicon glyphicon-chevron-down"></span> </a> </h4>
-          </div>
-          <div class="panel-collapse collapse" id="collapseOne" style="height: 0px;">
-            <div class="panel-body">
-              <div class="row">
-                <div class="col-lg-6">
-                  <h5 class="title"><span>Menú de Navegación</span></h5>
-                  <div class="menu-main-menu-container">
-                    <ul class="nav nav-footer" id="menu-main-menu-1">
-                      <li><a href="{!!URL::to('#')!!}">Inicio</a></li>
-                      <li><a href="{!!URL::to('/nosotros/')!!}">Nuestra empresa</a></li>
-                      <li><a href="{!!URL::to('/terminos/')!!}">Terminos y Condiciones</a></li>
-                      <li><a href="{!!URL::to('/contacto/')!!}">Contacto</a></li>
-                    </ul>
+      <footer role="contentinfo" class="site-footer" id="colophon">
 
-                  </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <h5 class="title"><span>Site map</span></h5>
-                  <div class="menu-footer-sitemap-container">
-                    <ul class="nav nav-footer" id="menu-footer-sitemap">
-                      <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-87" id="menu-item-87"><a href="http://localhost/">Mapa</a></li>
-                      <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-88" id="menu-item-88"><a href="#">Algo Acá</a></li>
-                      <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-89" id="menu-item-89"><a href="#">About Us</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+
+        <div class="row">
+          <div class="col-md-12">
+            <img alt="Imagen corfo" src= "{!!URL::to('img/footer/corfo.png')!!}" class="img-responsive-centered"/></a>
+          </div>
+          <div class="col-md-4">
+
+          </div>
+          <div class="col-md-1">
+            <a href="#!"><img  src= "{!!URL::to('img/footer/icono_facebook.png')!!}" class="img-responsive-centered"/></a>
+          </div>
+          <div class="col-md-1">
+            <a href="#!"><img  src= "{!!URL::to('img/footer/icono_twitter.png')!!}" class="img-responsive-centered"/></a>
+          </div>
+          <div class="col-md-1">
+            <a href="#!"><img  src= "{!!URL::to('img/footer/ico_instagram.png')!!}" class="img-responsive-centered"/></a>
+          </div>
+          <div class="col-md-1">
+            <a href="#!"><img  src= "{!!URL::to('img/footer/icono_youtube.png')!!}" class="img-responsive-centered"/></a>
+
+          </div>
+          <div class="col-md-4">
+
+          </div>
+          <div class="col-md-12" style="text-align: center;">
+            <spam>Copyright© ~ Yavu.cl 2016.</spam>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Copyright -->
-  <div class="copyright">
-    <div class="container">
-      <div class="row copyright-img">
-        <div class="col-lg-4 col-sm-4"> Copyright © 2016 - Yavu.cl <a href="https://www.facebook.com/milahorros.cl/"><img alt="Facebook" src= "{!!URL::to('images/facebook.png')!!}" height="100px" width="100px"/></a></div>
-        <div class="col-lg-8 col-sm-8 text-right" id="footertext"> <a href="Pagina de corfo"><img alt="Imagen corfo" src= "{!!URL::to('images/footer_corfo.jpg')!!}" height="110px" width="220px"/></a> </div>
-        <div>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- /Copyright -->
-</footer>
 
-<!-- /footer -
+
+      </footer>
+
+<!-- /footer -->
       
     </div> <!-- /container -->        
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
