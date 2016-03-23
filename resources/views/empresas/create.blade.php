@@ -9,8 +9,10 @@
 			@include('empresas.forms.fieldsEmpresa')
 				<div class="list-group">
 					<div class="list-group-item">			
-						<div class="form-group has-feedback has-feedback-left">	
-							{!!Form::submit('Registrar', ['class'=>'btn btn-success', 'style'=>'width:100%;'])!!}
+						<div class="form-group has-feedback has-feedback-left">
+							{!! Form::checkbox('name', 'acepta', true, ['id' => 'AceptaTerminos']) !!} Aceptar <a href="#!" class="btn-link">términos y condiciones</a>
+
+							{!!Form::submit('Registrar', ['class'=>'btn btn-success', 'style'=>'width:100%;', 'id' => 'Registrar'])!!}
 							{!!Form::close()!!}			
 						</div>
 					</div>
@@ -20,3 +22,28 @@
 	</div>
 </div>
 @stop
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+
+	$(document).ready(function(){
+		document.getElementById('FormEmpresa').onsubmit = function() {
+			return false;
+		}
+		$("#AceptaTerminos").change( function(){
+			var checked = $("input[id=AceptaTerminos]:checked").length;
+			//Opcional//if($("#AceptaTerminos").is(":checked")){return:true;}
+			if(checked === 0){
+				$("#Registrar").attr('disabled','disabled');
+			}
+			else{
+				$("#Registrar").removeAttr('disabled');
+				document.getElementById("FormEmpresa").onsubmit = function() {
+					return true;
+				}
+			}
+		});
+
+	});
+
+
+</script>
