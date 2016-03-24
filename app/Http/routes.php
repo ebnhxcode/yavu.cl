@@ -134,6 +134,7 @@ Route::resource('eventos', 'EventoController');
 
 /*Gestión de Banners */
 Route::resource('feeds', 'FeedController');
+Route::get('eliminarfeed/{id}', 'FeedController@EliminarFeed');
 /*Gestión de Banners */
 
 /*Gestión de  Interacciones */

@@ -7,7 +7,7 @@ use Carbon\Carbon;
 class Sorteo extends Model
 {
    	use Authorizable;
-     protected $table = 'sorteos';
+    protected $table = 'sorteos';
     protected $primaryKey = 'id';
     protected $fillable = ['nombre_sorteo', 'descripcion', 'fecha_inicio_sorteo', 'estado_sorteo', 'imagen_sorteo'];
 
@@ -18,6 +18,6 @@ class Sorteo extends Model
         $name = Carbon::now()->second.$imagen_sorteo->getClientOriginalName();
         
         \Storage::disk('local')->put($name, \File::get($imagen_sorteo));
-    } 
+    }
 
 }

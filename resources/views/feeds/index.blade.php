@@ -29,7 +29,20 @@
 
 
 	function eliminarEstado(id){
-		$("#publicacion"+id).fadeOut();
+		console.log(id);
+		var route = "http://localhost:8000/eliminarfeed/"+id;
+		$.ajax({
+			url: route,
+			type: 'GET',
+			dataType: 'json',
+			success:function(){
+				console.log('exito');
+				$("#publicacion"+id).fadeOut();
+			}
+		});
+
+
+		return true;
 	}
 
 	function Interactuar(valor){

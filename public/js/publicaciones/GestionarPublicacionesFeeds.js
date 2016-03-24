@@ -155,7 +155,6 @@ $(document).ready(function(){
 				Estados.hide().append(
 					"<div id='publicacion"+value.id+"' class='list-group'>"
 						+"<div class='list-group-item'>"	
-							/*
 							+'<div class="dropdown">'
 								+'<button class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
 									+'<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>'
@@ -166,7 +165,6 @@ $(document).ready(function(){
 									+'<li><a onclick="eliminarEstado('+value.id+')" href="#!">Eliminar publicación</a></li>'
 								+'</ul>'
 							+'</div>'																	  	
-							*/
 						  	+"<h4><a href='/empresa/"+value.nombreEmp+"' style='color:#3C5B28;'>"
 						  		+"<img class='media-object' src='"+ImagenPerfilEmpresa+"' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
 						  		+'&nbsp;'
