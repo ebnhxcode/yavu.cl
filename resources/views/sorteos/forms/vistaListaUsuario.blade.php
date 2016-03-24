@@ -15,6 +15,7 @@
 				<h5><strong>Nombre Sorteo: </strong>{{$sorteo->nombre_sorteo}}</h5>
 				<h5><strong>Descripción del Sorteo: </strong>{{$sorteo->descripcion}}</h5>
 				<h5><strong>Estado del Sorteo: </strong>{{$sorteo->estado_sorteo}}</h5>
+				<h5>{!!link_to_route('sorteos.show', $title = 'Mostrar', $parameters = $sorteo->id, $attributes = ['class'=>'btn btn-primary'])!!}</h5>
 				@if(Auth::user()->check())
 					<input id="user_id" value="{!! Auth::user()->get()->id !!}" type="hidden" />
 					<input id="sorteo_id" value="{!! $sorteo->id !!}" type="hidden" />
@@ -28,9 +29,9 @@
 				@endif
 			</div>
 			<div class="col-md-2 col-xs-4">
-				<span class="glyphicon glyphicon-user">14</span>
+				<span class="glyphicon glyphicon-user UsuariosEnSorteo" value="{!! $sorteo->id !!}"></span>
 				<br>
-				<span class="glyphicon glyphicon-time">14</span>
+				<span class="glyphicon glyphicon-time"></span>
 
 			</div>
 		</div>

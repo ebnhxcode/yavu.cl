@@ -1,18 +1,27 @@
-	$(document).ready(function(){	
+$(document).ready(function(){
 	/*DECLARACIÓ DE VARIABLES GLOBALES*/
 	var Busqueda = "";
+	var TiempoRecarga = 10000;
 	var letter = "";
 	/*DECLARACIÓN DE VARIABLES GLOBALES*/
 
+
 	/*MÉTODOS CONSTRUCTORES*/
+	BuscarUsuariosEnSorteos();
 	$("#BuscarSorteo").click(function(e){
 		//BuscarSorteo();
 		e.preventDefault();
 	});
+	setInterval(function(){
+
+		BuscarUsuariosEnSorteos();
+		TiempoRecarga + 5000;
+
+	}, TiempoRecarga);
 	/*MÉTODOS CONSTRUCTORES*/
 
 	/*SELECTORES*/
-	/*$("#usuario").on('keypress', function(e) { 		
+	/*$("#usuario").on('keypress', function(e) {
 	    if(e.which == 13) {
 	        BuscarUsuario();
 	    }
@@ -210,7 +219,21 @@
 
 			});
 		});						
-	}	
+	}
+
+	function BuscarUsuariosEnSorteos()
+	{
+		var Usuarios = [];
+		$(".UsuariosEnSorteo").each(function(){
+			Usuarios.push($(this).attr('value'));
+		});
+		//console.log(Usuarios);
+		var UsuariosJson; //= JSON.stringify(yourArray);
+		UsuariosJson = JSON.stringify(Usuarios);
+		console.log(UsuariosJson);
+
+		return true;
+	}
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 });
 

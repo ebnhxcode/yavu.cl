@@ -18,7 +18,7 @@ class SorteoController extends Controller
 {
     public function __construct(){
 
-        $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+        $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy', 'show']]);
     }
     public function find(Route $route){
         $this->sorteo = Sorteo::find($route->getParameter('sorteos'));
@@ -172,13 +172,11 @@ OR newTable.nombre_sorteo like '%sorteo%'
     }
     public function show($id)
     {
-        //
+      return view('sorteos.show', ['sorteo' => $this->sorteo]);
     }
     public function edit($id)
-
-    {   
-                
-                return view('sorteos.edit', ['sorteo' => $this->sorteo]); 
+    {
+      return view('sorteos.edit', ['sorteo' => $this->sorteo]);
     }
     public function update($id, SorteoUpdateRequest $request)
     {
