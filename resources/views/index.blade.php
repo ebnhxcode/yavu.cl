@@ -60,39 +60,39 @@
     </div>
       <br>
 	    @if(!Auth::user()->check())
-      <div align="middle">
-	      <a data-toggle="modal" data-target="#gridSystemModal" role="button" href="#!">
-		      <img src="img/cards/registrate_01a.png" class="img-responsive" >
-	      </a>
-	      <br>
-        <img src="img/cards/barra_separadora.png" class="img-responsive">
-      </div>
-	    <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
-			  <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	              <span aria-hidden="true">&times;</span>
-              </button>
-              <div align="center"> <h4 class="modal-title" id="gridSystemModalLabel">Registrate gratis!</h4></div>
-            </div>
-            <div class="modal-body">
-              <div id="" style="border: dashed; border-width: 2px; padding: 10px 10px 10px 10px;">
-                @include('alerts.alertFields')
-
-	              <div>
-		              {!!Form::open(['route'=>'usuarios.store', 'method'=>'POST', 'id' => 'FormRegistroLanding'])!!}
-		                @include('usuarios.forms.fieldsLanding')
-		                <div class="form-group has-feedback has-feedback-left">
-		                  {!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success', 'onclick' => 'ValidarRegistro()'])!!}
-		                </div>
-		              {!!Form::close()!!}
-	              </div>
+        <div align="middle">
+          <a data-toggle="modal" data-target="#gridSystemModal" role="button" href="#!">
+            <img src="img/cards/registrate_01a.png" class="img-responsive" >
+          </a>
+          <br>
+          <img src="img/cards/barra_separadora.png" class="img-responsive">
+        </div>
+        <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <div align="center"> <h4 class="modal-title" id="gridSystemModalLabel">Registrate gratis!</h4></div>
               </div>
-            </div>
-          </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-			</div><!-- /.modal -->
+              <div class="modal-body">
+                <div id="" style="border: dashed; border-width: 2px; padding: 10px 10px 10px 10px;">
+                  @include('alerts.alertFields')
+
+                  <div>
+                    {!!Form::open(['route'=>'usuarios.store', 'method'=>'POST', 'id' => 'FormRegistroLanding'])!!}
+                      @include('usuarios.forms.fieldsLanding')
+                      <div class="form-group has-feedback has-feedback-left">
+                        {!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success', 'onclick' => 'ValidarRegistro()'])!!}
+                      </div>
+                    {!!Form::close()!!}
+                  </div>
+                </div>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
 	    @endif
     </div><!-- /.row -->
   </div>
