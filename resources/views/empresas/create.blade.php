@@ -3,6 +3,7 @@
 <div class="jumbotron">
 	<div id="contentMiddle">
 		@include('alerts.alertFields')
+		@include('empresas.forms.modalTerminosCondiciones')
 		<h1>Registro de Empresas</h1>
 		<div class="row">
 			{!!Form::open(['route'=>'empresas.store', 'method'=>'POST', 'files' => true, 'id' => 'FormEmpresa' ])!!}
@@ -10,7 +11,7 @@
 				<div class="list-group">
 					<div class="list-group-item">			
 						<div class="form-group has-feedback has-feedback-left">
-							{!! Form::checkbox('name', 'acepta', true, ['id' => 'AceptaTerminos']) !!} Aceptar <a href="#!" class="btn-link">términos y condiciones</a>
+							{!! Form::checkbox('name', 'acepta', true, ['id' => 'AceptaTerminos']) !!} Aceptar <a href="#!" data-toggle="modal" data-target="#myModal" class="btn-link">términos y condiciones</a>
 
 							{!!Form::submit('Registrar', ['class'=>'btn btn-success', 'style'=>'width:100%;', 'id' => 'Registrar'])!!}
 							{!!Form::close()!!}			
@@ -24,7 +25,6 @@
 @stop
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script>
-
 	$(document).ready(function(){
 		document.getElementById('FormEmpresa').onsubmit = function() {
 			return false;
@@ -42,8 +42,5 @@
 				}
 			}
 		});
-
 	});
-
-
 </script>

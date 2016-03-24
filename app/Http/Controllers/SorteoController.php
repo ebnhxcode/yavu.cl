@@ -25,11 +25,9 @@ class SorteoController extends Controller
         //return $this->user;
     }        
     public function index()
-    {   
-        
+    {
         $sorteos = DB::table('sorteos')->paginate(10);
         return view('sorteos.index', compact('sorteos'));
-
     }
 
     public function BuscarSorteos($nombre = null){
