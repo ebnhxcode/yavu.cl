@@ -150,14 +150,20 @@ OR newTable.nombre_sorteo like '%sorteo%'
             );    
 
         }else{
-            return response()->json([
-                "Mensaje: " => "Sin salido para el servicio"                
-            ]);             
+            return response()->json(
+                "Sin saldo para el servicio"
+            );
         }
         return response()->json([
             "Mensaje: " => "Creado"                
         ]);   
     }
+    public function ContarTicketsEnSorteo($id)
+    {
+      $tickets = Sorteo::find($id)->participante_sorteos;
+      return response()->json($tickets);
+    }
+
     public function create()
     {
         return view('sorteos.create');

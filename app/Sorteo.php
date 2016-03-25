@@ -19,5 +19,11 @@ class Sorteo extends Model
         
         \Storage::disk('local')->put($name, \File::get($imagen_sorteo));
     }
+    public function participante_sorteos()
+    {
+        return $this->hasMany('yavu\ParticipanteSorteo', 'sorteo_id');
+    }
+
+
 
 }

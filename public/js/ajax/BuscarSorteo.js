@@ -7,14 +7,16 @@ $(document).ready(function(){
 
 
 	/*MÉTODOS CONSTRUCTORES*/
-	BuscarUsuariosEnSorteos();
+	//BuscarUsuariosEnSorteos();
+	ContarTicketsEnSorteos();
 	$("#BuscarSorteo").click(function(e){
 		//BuscarSorteo();
 		e.preventDefault();
 	});
 	setInterval(function(){
 
-		BuscarUsuariosEnSorteos();
+		//BuscarUsuariosEnSorteos();
+		ContarTicketsEnSorteos();
 		TiempoRecarga + 5000;
 
 	}, TiempoRecarga);
@@ -234,6 +236,43 @@ $(document).ready(function(){
 
 		return true;
 	}
+	function ContarTicketsEnSorteos()
+	{
+		var Tickets = [];
+		$(".TicketsEnSorteo").each(function(){
+			var CantidadTicketsPorSorteo = $(this);
+			var CantidadActual = $(this).attr('value');
+			CantidadActual = CantidadActual | 0;
+			var route = "http://localhost:8000/contarticketsensorteo/"+$(this).attr('id');
+			$.ajax({
+				url: route,
+				type: 'GET',
+				dataType: 'json',
+				cache: false,
+				async: true,
+				success:function(data){
+
+					console.log(CantidadActual+"/"+data.length);
+					CantidadTicketsPorSorteo.attr('value', data.length);
+
+					if(CantidadActual < data.length){
+						CantidadTicketsPorSorteo.fadeOut(function() {
+							CantidadTicketsPorSorteo.text(data.length).fadeIn();
+						});
+					}else{
+						CantidadTicketsPorSorteo.text(data.length);
+					}
+
+				}
+			});
+
+			//Tickets.push($(this).attr('value'));
+		});
+
+
+		return true;
+	}
+
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 });
 

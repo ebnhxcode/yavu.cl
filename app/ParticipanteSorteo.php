@@ -7,5 +7,9 @@ class ParticipanteSorteo extends Model
     protected $fillable = [
     	"user_id", "sorteo_id",
    	];
+  public function sorteos()
+  {
+    return $this->belongsTo('yavu\Sorteo');
+  }
 
 }

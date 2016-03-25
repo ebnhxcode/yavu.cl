@@ -29,10 +29,12 @@
 				@endif
 			</div>
 			<div class="col-md-2 col-xs-4">
-				<span class="glyphicon glyphicon-user UsuariosEnSorteo" value="{!! $sorteo->id !!}"></span>
+				<span class="glyphicon glyphicon-user TicketsEnSorteo" id="{!! $sorteo->id !!}"></span>
+				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<br>
-				<span class="glyphicon glyphicon-time"></span>
-
+				<small><span class="glyphicon glyphicon-time"></span></small>
+				<br>
+				<span class="text-danger" id="Mensaje"></span>
 			</div>
 		</div>
 		<hr>
