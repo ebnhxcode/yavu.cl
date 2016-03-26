@@ -34,20 +34,26 @@
 	/*SELECTORES*/
 	$("#UsarTicket").click(function(){
 		//console.log("hola estoy usando ticket, aun estoy pendiente");
-		UsarTicket($(this).attr('value'));
+		UsarTicket($(this).val());
+		ContarTicketsEnSorteos();
 		//console.log($(this).attr('value'));
 
 	});	
 	$(".participar").click(function(){
 		$("#UsarTicket").val($(this).attr('value'));
+		console.log($("#UsarTicket").val()+"/No");
 		VerificarTickets();
-		ContarTickets();		
+		ContarTickets();
+
 		//console.log($(this).attr('value')+"/");
 	});
 	$("#siquiero").click(function(){
 		//console.log($("#user_id").val());
 		CanjearTicket();
-		UsarTicket($("#UsarTicket").attr('value'));
+
+		UsarTicket($("#UsarTicket").val());
+		ContarTicketsEnSorteos();
+
 ;	});
 	/*SELECTORES*/
 
@@ -66,12 +72,57 @@
 			data: {
 				user_id: user_id,
 			},
-			success:function(){
-				ContarCoins();
-				ContarTickets();				 
+			success:function(data){
+				console.log(data);
+				if(data !== 'Sin saldo para el servicio'){
+					ContarCoins();
+					ContarTickets();
+				}else{
+					$('#Mensaje').fadeIn().html(data);
+					setInterval(function(){
+						$('#Mensaje').fadeOut();
+					}, 1500);
+				}
+
 			}
 		});			
 	}
+		function ContarTicketsEnSorteos()
+		{
+			var Tickets = [];
+			$(".TicketsEnSorteo").each(function(){
+				var CantidadTicketsPorSorteo = $(this);
+				var CantidadActual = $(this).attr('value');
+				CantidadActual = CantidadActual | 0;
+				var route = "http://localhost:8000/contarticketsensorteo/"+$(this).attr('id');
+				$.ajax({
+					url: route,
+					type: 'GET',
+					dataType: 'json',
+					cache: false,
+					async: true,
+					success:function(data){
+
+						console.log(CantidadActual+"/"+data.length);
+						CantidadTicketsPorSorteo.attr('value', data.length);
+
+						if(CantidadActual < data.length){
+							CantidadTicketsPorSorteo.fadeOut(function() {
+								CantidadTicketsPorSorteo.text(data.length).fadeIn();
+							});
+						}else{
+							CantidadTicketsPorSorteo.text(data.length);
+						}
+
+					}
+				});
+
+				//Tickets.push($(this).attr('value'));
+			});
+
+
+			return true;
+		}
 	function UsarTicket(sorteo_id)//Esto deberia insertar un ticket en negativo y dejarlo rendido para el sorteo correspondiente.
 	{
 		$('#myModal').modal('hide');

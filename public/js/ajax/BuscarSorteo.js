@@ -1,18 +1,29 @@
-	$(document).ready(function(){	
+$(document).ready(function(){
 	/*DECLARACIÓ DE VARIABLES GLOBALES*/
 	var Busqueda = "";
+	var TiempoRecarga = 10000;
 	var letter = "";
 	/*DECLARACIÓN DE VARIABLES GLOBALES*/
 
+
 	/*MÉTODOS CONSTRUCTORES*/
+	//BuscarUsuariosEnSorteos();
+	ContarTicketsEnSorteos();
 	$("#BuscarSorteo").click(function(e){
 		//BuscarSorteo();
 		e.preventDefault();
 	});
+	setInterval(function(){
+
+		//BuscarUsuariosEnSorteos();
+		ContarTicketsEnSorteos();
+		TiempoRecarga + 5000;
+
+	}, TiempoRecarga);
 	/*MÉTODOS CONSTRUCTORES*/
 
 	/*SELECTORES*/
-	/*$("#usuario").on('keypress', function(e) { 		
+	/*$("#usuario").on('keypress', function(e) {
 	    if(e.which == 13) {
 	        BuscarUsuario();
 	    }
@@ -210,7 +221,58 @@
 
 			});
 		});						
-	}	
+	}
+
+	function BuscarUsuariosEnSorteos()
+	{
+		var Usuarios = [];
+		$(".UsuariosEnSorteo").each(function(){
+			Usuarios.push($(this).attr('value'));
+		});
+		//console.log(Usuarios);
+		var UsuariosJson; //= JSON.stringify(yourArray);
+		UsuariosJson = JSON.stringify(Usuarios);
+		console.log(UsuariosJson);
+
+		return true;
+	}
+	function ContarTicketsEnSorteos()
+	{
+		var Tickets = [];
+		$(".TicketsEnSorteo").each(function(){
+			var CantidadTicketsPorSorteo = $(this);
+			var CantidadActual = $(this).attr('value');
+			CantidadActual = CantidadActual | 0;
+			var route = "http://localhost:8000/contarticketsensorteo/"+$(this).attr('id');
+			$.ajax({
+				url: route,
+				type: 'GET',
+				dataType: 'json',
+				cache: false,
+				async: true,
+				success:function(data){
+
+					console.log(CantidadActual+"/"+data.length);
+					CantidadTicketsPorSorteo.attr('value', data.length);
+
+					if(CantidadActual < data.length){
+						CantidadTicketsPorSorteo.fadeOut(function() {
+							CantidadTicketsPorSorteo.text(data.length).fadeIn();
+						});
+					}else{
+						CantidadTicketsPorSorteo.text(data.length);
+					}
+
+				}
+			});
+
+			//Tickets.push($(this).attr('value'));
+		});
+
+
+		return true;
+	}
+
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 });
 

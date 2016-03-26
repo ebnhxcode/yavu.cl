@@ -1,4 +1,4 @@
-	$(document).ready(function(){	
+$(document).ready(function(){
 	/*DECLARACIÓN DE VARIABLES GLOBALES*/
 	/*DECLARACIÓN DE VARIABLES GLOBALES*/
 
@@ -45,7 +45,7 @@
 
 					if (value.imagen_portada === "") 
 					{
-						ImagenPortada = "";
+						ImagenPortada = "<div class='well well-sm'>No tienes un banner personal, puedes subir una editando la información de tu empresa <a class='btn-link' href='http://localhost:8000/empresas/"+value.id+"/edit'>aquí</a></div>";
 					}
 					else
 					{
