@@ -85,7 +85,8 @@
 				}
 
 			}
-		});			
+		});
+		return true;
 	}
 		function ContarTicketsEnSorteos()
 		{
@@ -145,6 +146,7 @@
 	
 			}
 		});
+		return true;
 	}
 	function VerificarTickets()
 	{
@@ -159,7 +161,8 @@
 			{
 				$("#UsarTicket").fadeOut();
 			}
-		});			
+		});
+		return true;
 	}
 	function ContarCoins(){
 		var route = "http://localhost:8000/contarcoins";
@@ -173,7 +176,8 @@
 				}
 					//$("#CantidadCoins").html("<p>0</p>");	
 			});
-		});						
+		});
+		return true;
 	}
 	function ContarTickets(){
 		var route = "http://localhost:8000/contartickets";
@@ -187,7 +191,8 @@
 				}
 					//$("#CantidadCoins").html("<p>0</p>");	
 			});
-		});						
+		});
+		return true;
 	}	
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 });

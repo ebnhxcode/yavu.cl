@@ -15,6 +15,10 @@
 					<div class="list-group-item">
 						<img src="http://i601.photobucket.com/albums/tt93/tbg8904/Gaia%20Icon/Coins.png" width="16px" height="16px">
 						<span id="CantidadCoins" class="label label-warning"></span>
+						<span class="btn btn-sm btn-success" style="float:right;" href="#!" id="">
+							Mirar publicaciones
+							<img src="http://i601.photobucket.com/albums/tt93/tbg8904/Gaia%20Icon/Coins.png" width="16px" height="16px">
+						</span>
 					</div>
 				</div>
 				<div class="list-group">
@@ -23,7 +27,7 @@
 					</div>
 					<div class="list-group-item">
 						<img src="{!!URL::to('images/ticket.png')!!}" width="16px" height="16px" />
-							<span id="CantidadTickets" class="label label-info"></span>
+						<span id="CantidadTickets" class="label label-info"></span>
 						<span class="btn btn-sm btn-primary" style="float:right;" href="#!" id="ComprarMasTickets">Comprar más</span>
 					</div>
 				</div>

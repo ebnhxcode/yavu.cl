@@ -251,21 +251,23 @@ $(document).ready(function(){
 				cache: false,
 				async: true,
 				success:function(data){
-
-					console.log(CantidadActual+"/"+data.length);
+					var j = 0;
+					$(data).each(function(key, index){
+						var user_id = $("#user_id");
+						if(index.user_id === user_id.val()){
+							j += 1;
+						}
+					});
 					CantidadTicketsPorSorteo.attr('value', data.length);
-
 					if(CantidadActual < data.length){
 						CantidadTicketsPorSorteo.fadeOut(function() {
-							CantidadTicketsPorSorteo.text(data.length).fadeIn();
+							CantidadTicketsPorSorteo.text(data.length + "\n (Haz usado " + j + " tickets para este sorteo)").fadeIn();
 						});
 					}else{
-						CantidadTicketsPorSorteo.text(data.length);
+						CantidadTicketsPorSorteo.text(data.length + "\n (Haz usado " + j + " tickets para este sorteo)");
 					}
-
 				}
 			});
-
 			//Tickets.push($(this).attr('value'));
 		});
 
