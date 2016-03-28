@@ -147,7 +147,17 @@ OR newTable.nombre_sorteo like '%sorteo%'
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
                 ]
-            );    
+            );
+
+            DB::table('pops')->insert(
+              ['user_id' => $user_id,
+                'empresa_id' => 1,
+                'tipo' => 'ticket',
+                'estado'   => 'pendiente',
+                'contenido' => 'Se canjeado un ticket por coins!',
+                'created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),
+                'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]
+            );
 
         }else{
             return response()->json(
@@ -172,12 +182,23 @@ OR newTable.nombre_sorteo like '%sorteo%'
 
     public function store(Request $request)
     {
+
         Sorteo::create($request->all());
+        DB::table('pops')->insert(
+          ['user_id' => $request->user_id,
+            'empresa_id' => 1,
+            'tipo' => 'sorteo',
+            'estado'   => 'pendiente',
+            'contenido' => 'Haz creado un nuevo sorteo!',
+            'created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),
+            'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]
+        );
         Session::flash('message', 'Sorteo creado correctamente');
     return Redirect::to('/sorteos/create');
     }
     public function show($id)
     {
+
       return view('sorteos.show', ['sorteo' => $this->sorteo]);
     }
     public function edit($id)
@@ -209,13 +230,24 @@ OR newTable.nombre_sorteo like '%sorteo%'
                 ]
             );
             //Ahora rindo el ticket
+
             DB::table('participante_sorteos')->insert(
                 ['user_id' => $user_id, 
                 'sorteo_id' => $sorteo_id,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
                 ]
-            );            
+            );
+
+            DB::table('pops')->insert(
+              ['user_id' => $user_id,
+                'empresa_id' => 1,
+                'tipo' => 'ticket',
+                'estado'   => 'pendiente',
+                'contenido' => 'Haz usado un ticket!',
+                'created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),
+                'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]
+            );
 
             return 'exito';
 

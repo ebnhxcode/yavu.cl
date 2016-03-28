@@ -109,7 +109,23 @@ $j(document).ready(function(){
 											+"</div>"
 										+"</div>"
 								).show('slow');
-						}				
+						}
+						else if($.trim(value.tipo) === 'ticket')
+						{
+							Notificaciones.hide().append(
+								"<div id='notificacion"+value.id+"' class='list-group'>"
+								+"<div class='list-group-item'>"
+								+"<img src='img/yavu007.png' style='width: 32px; height: 32px;' />&nbsp;"
+								+value.contenido
+								+"</div>"
+								+"<div class='list-group-item-full panel-footer-small'>"
+								+"<small>"
+								+"<abbr	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\' datetime='"+TimeAgo+"'></abbr	>"
+								+"</small>"
+								+"</div>"
+								+"</div>"
+							).show('slow');
+						}
 						else //if(value.tipo === 'coins')
 						{
 								Notificaciones.hide().append(
