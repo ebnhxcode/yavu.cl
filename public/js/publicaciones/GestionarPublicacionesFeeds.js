@@ -122,7 +122,7 @@ $(document).ready(function(){
 						+"</div>"
 						+"<div class='list-group-item panel-footer'>"
 						+"<span class='glyphicon glyphicon-hand-up'>&nbsp;</span>"
-							+"<a name='like' class='inter' role='button' id='estado_"+value.id+"' value='"+value.id+"' href='#!' style='color:#3C5B28;'>"
+							+"<a name='like' id='estado_"+value.id+"' value='"+value.id+"' href='#!' style='color:#3C5B28;'>"
 							+"<span>Cobrar coins</span></a>"
 						+"</div>"
 					+"</div>";
@@ -177,7 +177,7 @@ $(document).ready(function(){
 						+"</div>"
 						+"<div class='list-group-item panel-footer'>"					
 							+"<span id='badge_"+value.id+"' class='label label-success'></span>"+"&nbsp;"
-							+"<a role='button' class='btn-lg btn' href='#!' style='color:#3C5B28'>"
+							+"<a role='button' class='' href='#!' style='color:#3C5B28'>"
 								+"<span name='megusta' onclick='Interactuar(this.id)' id='estado_"+value.id+"' value='"+value.id+"'>"
 									+"<span class='glyphicon glyphicon-hand-up'>"
 										+"&nbsp;"
