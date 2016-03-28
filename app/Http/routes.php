@@ -173,4 +173,6 @@ Route::get('usarticket/{user_id}/{sorteo_id}', 'SorteoController@UsarTicket');
 Route::resource('mail', 'MailController');
 /*Gestión de correos*/
 
-
+/*Gestión de Mapas*/	
+Route::get('/gmaps', ['as ' => 'gmaps', 'uses' => 'GmapsController@index']);
+/*Gestión de Mapas*/
