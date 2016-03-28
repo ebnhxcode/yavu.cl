@@ -183,6 +183,7 @@
 
 	        </div>
 	        <div class="col-md-12" style="text-align: center;">
+	        	<br>
 		        <spam>Copyright© ~ Yavu.cl 2016.</spam>
 	        </div>
 		    </div>

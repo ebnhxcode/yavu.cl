@@ -46,9 +46,18 @@
 									<img id="ImagenPerfil" src="/img/users/{{$e->imagen_perfil}}" class="img-circle" alt="...">
 								@endif
 
+																<div class="list-group">
+						<div class="list-group-item-full-header">
+							<h6>DESCRIPCIÓN</h6>
+						</div>
+						<div class="list-group-item">
+							{!! $e->descripcion !!}
+						</div>	
+					</div>	
 
 
 								<div class="caption">
+								<h6>DATOS</h6>
 									Email : {{$e->email}}<br>
 									Dirección : {{$e->direccion}}<br>
 									Ciudad : {{$e->ciudad}}<br>
@@ -66,6 +75,7 @@
 									@endif
 
 								</div>
+
 
 
 							</div>
@@ -145,14 +155,7 @@
 
 				<div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
 
-					<div class="list-group">
-						<div class="list-group-item-full-header">
-							<h6>DESCRIPCIÓN</h6>
-						</div>
-						<div class="list-group-item">
-							{!! $e->descripcion !!}
-						</div>	
-					</div>				   
+								   
 				
 					<div class="list-group">
 						<div class="list-group-item-full-header">
@@ -201,15 +204,11 @@
 
     <div class="counter col_fourth">
       <i class="fa fa-lightbulb-o fa-2x"></i>
-      <h2 class="timer count-title" id="count-number" data-to="847" data-speed="1500"></h2>
       <p class="count-text ">Coins Otorgadas</p>
+      <h2 class="timer count-title" id="count-number" data-to="847" data-speed="1500"></h2>
+      
     </div>
 
-    <div class="counter col_fourth end">
-      <i class="fa fa-bug fa-2x"></i>
-      <h2 class="timer count-title" id="count-number" data-to="157" data-speed="1500"></h2>
-      <p class="count-text ">SomeText GoesHere</p>
-    </div>
 </div>
 
 					</div>  					
