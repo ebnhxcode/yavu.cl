@@ -9,7 +9,7 @@ class Sorteo extends Model
    	use Authorizable;
     protected $table = 'sorteos';
     protected $primaryKey = 'id';
-    protected $fillable = ['nombre_sorteo', 'descripcion', 'fecha_inicio_sorteo', 'estado_sorteo', 'imagen_sorteo'];
+    protected $fillable = ['user_id' ,'nombre_sorteo', 'descripcion', 'fecha_inicio_sorteo', 'estado_sorteo', 'imagen_sorteo'];
 
     public function setImagenSorteoAttribute($imagen_sorteo)
     {
@@ -23,7 +23,5 @@ class Sorteo extends Model
     {
         return $this->hasMany('yavu\ParticipanteSorteo', 'sorteo_id');
     }
-
-
 
 }

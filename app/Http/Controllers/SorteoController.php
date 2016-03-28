@@ -6,6 +6,7 @@ use yavu\Http\Requests;
 use yavu\Http\Requests\SorteoCreateRequest;
 use yavu\Http\Requests\SorteoUpdateRequest;
 use yavu\Http\Controllers\Controller;
+use yavu\ParticipanteSorteo;
 use yavu\Sorteo;
 use yavu\User;
 use Session;
@@ -168,6 +169,14 @@ OR newTable.nombre_sorteo like '%sorteo%'
             "Mensaje: " => "Creado"                
         ]);   
     }
+    public function CargarDetallesSorteo($sorteo_id)
+    {
+
+      $ganador = DB::table('participante_sorteos')
+        ->where('sorteo_id', $sorteo_id)
+        ->get();
+      return response()->json($ganador);
+    }
     public function ContarTicketsEnSorteo($id)
     {
       $tickets = Sorteo::find($id)->participante_sorteos;
@@ -179,11 +188,16 @@ OR newTable.nombre_sorteo like '%sorteo%'
         return view('sorteos.create');
     }
 
+    public function MostrarGanador($ganador){
+      $ganador = ParticipanteSorteo::find($ganador)->users;
+      return response()->json($ganador);
+    }
 
     public function store(Request $request)
     {
 
         Sorteo::create($request->all());
+
         DB::table('pops')->insert(
           ['user_id' => $request->user_id,
             'empresa_id' => 1,
@@ -231,7 +245,7 @@ OR newTable.nombre_sorteo like '%sorteo%'
             );
             //Ahora rindo el ticket
 
-            DB::table('participante_sorteos')->insert(
+          DB::table('participante_sorteos')->insert(
                 ['user_id' => $user_id, 
                 'sorteo_id' => $sorteo_id,
                 'created_at' => Carbon::now(),

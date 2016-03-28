@@ -39,5 +39,10 @@ class User extends Model implements AuthenticatableContract,
 			$name = Carbon::now()->second.$imagen_portada->getClientOriginalName();
 			
 			\Storage::disk('local')->put($name, \File::get($imagen_portada));
-		}    
+		}
+
+	public function participante_sorteos()
+	{
+		return $this->hasOne('yavu\ParticipanteSorteo');
+	}
 }

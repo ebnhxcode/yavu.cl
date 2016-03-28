@@ -72,6 +72,8 @@ Route::get('listasorteos', 'SorteoController@ListaSorteos');
 Route::get('buscarsorteo/{nombre?}', 'SorteoController@BuscarSorteos');
 Route::get('canjearticket/{user_id}', 'SorteoController@CanjearTicket');
 Route::get('contarticketsensorteo/{id}', 'SorteoController@ContarTicketsEnSorteo');
+Route::get('cargardetallessorteo/{id}', 'SorteoController@CargarDetallesSorteo');
+Route::get('mostrarganador/{ganador}', 'SorteoController@MostrarGanador');
 /*Gestión de Sorteos*/
 
 /*Gestión de Participantes*/

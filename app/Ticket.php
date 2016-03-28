@@ -8,4 +8,7 @@ class Ticket extends Model
     	'user_id', 'cantidad_tickets', 'monto'
     ];
 
+
+
+
 }

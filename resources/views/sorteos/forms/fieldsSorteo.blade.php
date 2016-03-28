@@ -11,15 +11,14 @@
 			<div class="form-group has-feedback has-feedback-left">
 				{!!Form::label('Descripción:')!!}
 				{!!Form::textarea('descripcion',null,['class'=>'form-control','maxlength'=>'500','placeholder'=>'Ingrese la descripcion del sorteo'])!!}
-		    </div>
-	        <div class="form-group has-feedback has-feedback-left">
-	          {!!Form::label('Fecha de inicio Sorteo:')!!}
-	          {!!Form::date('fecha_inicio_sorteo',null,['class'=>'form-control','placeholder'=>''])!!}
-	        </div> 
-        	<div class="form-group has-feedback has-feedback-left">
-	            {!!Form::hidden('estado_sorteo', 'Pendiente')!!} 
-    	    </div>      
-          		<!-- GESTION DE LAS FOTOS -->
+			</div>
+			<div class="form-group has-feedback has-feedback-left">
+				{!!Form::label('Fecha de inicio Sorteo:')!!}
+				{!!Form::date('fecha_inicio_sorteo',null,['class'=>'form-control','placeholder'=>''])!!}
+			</div>
+			<div class="form-group has-feedback has-feedback-left">
+					{!!Form::hidden('estado_sorteo', 'Pendiente')!!}
+			</div>
 
 			@if(isset($sorteo))
 				<div class="list-group-item">
@@ -31,17 +30,19 @@
 					</div>
 				</div>			
 			@endif
-     		@if (Auth::admin()->check()) 	
+			@if (Auth::admin()->check())
 				<div class="form-group has-feedback has-feedback-left">
-					{!!Form::label('Estado Sorteo:')!!}		
-					{!!Form::select('estado_sorteo', 
-						['Pendiente' => 'Pendiente',	
-						'Aprobado' => 'Aprobado'], 
-						$selected = null, ['class' => 'form-control']) 
-					!!}	
+					{!!Form::label('Estado Sorteo:')!!}
+					{!!Form::select('estado_sorteo',
+						['Pendiente' => 'Pendiente',
+						'Aprobado' => 'Aprobado'],
+						$selected = null, ['class' => 'form-control'])
+					!!}
 				</div>
-			@endif 
+			@endif
+			@if (Auth::user()->check())
+				<input type="hidden" name="user_id" value="{!! Auth::user()->get()->id !!}">
+			@endif
 		</div>
 	</div>
 </div>
-<div class="col-sm-4">

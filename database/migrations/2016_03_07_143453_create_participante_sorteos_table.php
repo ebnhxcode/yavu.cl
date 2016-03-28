@@ -9,6 +9,7 @@ class CreateParticipanteSorteosTable extends Migration
             $table->increments('id');
             $table->string('user_id');
             $table->string('sorteo_id');
+            $table->string('ticket_id');
             $table->timestamps();
         });
     }

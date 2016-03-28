@@ -7,6 +7,7 @@
 		<div class="row">
 			{!!Form::open(['route'=>'sorteos.store', 'method'=>'POST', 'files' => true ])!!}
 			@include('sorteos.forms.fieldsSorteo')
+			<div class="col-sm-4">
 				<div class="list-group">
 					<div class="list-group-item">
 						<h4>Todos los campos son requeridos</h4>
@@ -19,7 +20,7 @@
 						</div>
 					</div>
 				</div>
-			</div><!--Este fin del div cierra el div que se abre en fieldsUser-->	
+			</div>
 		</div>
 	</div>
 </div>

@@ -1,6 +1,6 @@
+{!!Html::script('js/jquery.js')!!}
+{!!Html::script('js/ajax/ParticiparSorteo.js')!!}
 @if(isset($sorteo))
-  {!! dd($sorteo) !!}
-  {!!Html::script('js/jquery.js')!!}
   @extends('layouts.front')
   @section('content')
     <div class="jumbotron">
@@ -9,7 +9,7 @@
         @include('alerts.errorsMessage')
         @include('alerts.successMessage')
         @include('alerts.warningMessage')
-        <h2>Sorteo : {!! $sorteo->nombre_sorteo !!}</h2>
+        <h2>Nombre : {!! $sorteo->nombre_sorteo !!}</h2>
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="row">
@@ -21,10 +21,19 @@
                 @endif
               </div>
               <div class="col-md-4">
-                {!! $sorteo->descripcion !!}
-                {!! $sorteo->fecha_inicio_sorteo !!}
-                {!! $sorteo->estado_sorteo !!}
-                {!! $sorteo->user_id.'/'.Auth::user()->get()->id !!}
+                {!! $sorteo->nombre_sorteo !!}<br>
+                {!! $sorteo->descripcion !!}<br>
+                {!! $sorteo->fecha_inicio_sorteo !!}<br>
+                {!! $sorteo->estado_sorteo !!}<br>
+                @if($sorteo->user_id === Auth::user()->get()->id)
+                  {!!link_to_route('sorteos.edit', $title = 'Editar', $parameters = $sorteo->id, $attributes = ['class'=>'btn btn-primary btn-sm'])!!}
+                  <a id="SortearGanador" data-toggle="modal"  class="btn btn-primary btn-sm" value="{!! $sorteo->id !!}">Sortear ganador</a>
+                  @include('sorteos.forms.modalSortearParticipante')
+                @else
+
+                  <a id="SortearGanador" data-toggle="modal" data-target="#ModalGanadorSorteo" class="btn btn-primary btn-sm" value="{!! $sorteo->id !!}">Ver al ganador</a>
+
+                @endif
               </div>
             </div>
           </div>
@@ -32,8 +41,6 @@
       </div>
     </div>
   @stop
-
-
 @else
   404
 @endif

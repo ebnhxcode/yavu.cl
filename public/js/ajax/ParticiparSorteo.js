@@ -50,44 +50,130 @@
 	$("#siquiero").click(function(){
 		//console.log($("#user_id").val());
 		CanjearTicket();
-
 		UsarTicket($("#UsarTicket").val());
 		ContarTicketsEnSorteos();
 
 ;	});
+	$("#SortearGanador").click(function(){
+		//console.log($(this).attr('value'));
+
+		CargarDetallesSorteo($(this).attr('value'));
+
+
+		return true;
+	});
 	/*SELECTORES*/
 
 	/*FUNCIONES Y PROCEDIMIENTOS*/
+		function CargarDetallesSorteo(sorteo_id)
+		{
 
-	function CanjearTicket()
-	{
-		$('#myModal').modal('hide');
-		var user_id = $("#user_id").val();	
-		var route = "http://localhost:8000/canjearticket/"+user_id;
-		$.ajax({
-			url: route,
-			headers: {'X-CSRF-TOKEN': token},
-			type: 'GET',
-			dataType: 'json',
-			data: {
-				user_id: user_id,
-			},
-			success:function(data){
-				console.log(data);
-				if(data !== 'Sin saldo para el servicio'){
-					ContarCoins();
-					ContarTickets();
-				}else{
-					$('#Mensaje').fadeIn().html(data);
-					setInterval(function(){
-						$('#Mensaje').fadeOut();
-					}, 1500);
+			$("#ModalGanadorSorteo").modal('show');
+			var route = "http://localhost:8000/cargardetallessorteo/"+sorteo_id;
+			$.ajax({
+				url: route,
+				//headers: {'X-CSRF-TOKEN': token},
+				type: 'GET',
+				dataType: 'json',
+				success:function(data){
+					var inicio, fin;
+					$(data).each(function(key, index){
+
+							if(key === 0){
+								console.log(index.id);
+								inicio = index.id;
+							}else if(data.length === key + 1){
+								console.log(index.id);
+								fin = index.id;
+							}
+
+					});
+
+					var tiempo = 10000;
+					var t = 0;
+					var a = setInterval(function(){
+					var Ganador = 0;
+
+						Ganador = aleatorio(inicio, fin);
+
+						$("#Detalles").text("Número de ticket: "+Ganador);
+							t = tiempo.toString();
+							t = t.substring(0,1);
+
+						$("#Tiempo").text("¡Empezó el sorteo! (Finaliza en : 	"+t+")");
+
+						tiempo -= 50;
+						if(tiempo === 1000){
+							clearInterval(a);
+							$("#Tiempo").text("¡¡¡ TIEMPO !!!");
+							//console.log($("#Detalles").text());
+							return MostrarGanador(Ganador);
+						}
+					}, 50 );
 				}
+			});
 
-			}
-		});
-		return true;
-	}
+			return true;
+		}
+
+		function MostrarGanador(Ganador)
+		{
+			console.log("este es: "+Ganador);
+			var route = "http://localhost:8000/mostrarganador/"+Ganador;
+			$.ajax({
+				url: route,
+				type: 'GET',
+				dataType: 'json',
+				success:function(data){
+					$(data).each(function(key,value){
+						$("#Detalles").text("Número de opción: "+Ganador+" \n Ganador: "+value.nombre+" "+value.apellido);
+					});
+				}
+			});
+			return true;
+		}
+
+		function aleatorio(inferior,superior){
+
+
+			var numPosibilidades = superior - inferior
+			var aleat = Math.random() * numPosibilidades
+			aleat = Math.round(aleat)
+			return parseInt(inferior) + aleat
+
+
+		}
+
+
+		function CanjearTicket()
+		{
+			$('#myModal').modal('hide');
+			var user_id = $("#user_id").val();
+			var route = "http://localhost:8000/canjearticket/"+user_id;
+			$.ajax({
+				url: route,
+				headers: {'X-CSRF-TOKEN': token},
+				type: 'GET',
+				dataType: 'json',
+				data: {
+					user_id: user_id,
+				},
+				success:function(data){
+					console.log(data);
+					if(data !== 'Sin saldo para el servicio'){
+						ContarCoins();
+						ContarTickets();
+					}else{
+						$('#Mensaje').fadeIn().html(data);
+						setInterval(function(){
+							$('#Mensaje').fadeOut();
+						}, 1500);
+					}
+
+				}
+			});
+			return true;
+		}
 		function ContarTicketsEnSorteos()
 		{
 			var Tickets = [];

@@ -12,4 +12,9 @@ class ParticipanteSorteo extends Model
     return $this->belongsTo('yavu\Sorteo');
   }
 
+  public function users()
+  {
+    return $this->belongsTo('yavu\User', 'user_id');
+  }
+
 }
