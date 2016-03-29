@@ -89,7 +89,7 @@
 
 					});
 
-					var tiempo = 10000;
+					var tiempo = 2000;
 					var t = 0;
 					var a = setInterval(function(){
 					var Ganador = 0;
@@ -106,7 +106,6 @@
 						if(tiempo === 1000){
 							clearInterval(a);
 							$("#Tiempo").text("¡¡¡ TIEMPO !!!");
-							//console.log($("#Detalles").text());
 							return MostrarGanador(Ganador);
 						}
 					}, 50 );
