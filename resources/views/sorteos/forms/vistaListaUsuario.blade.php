@@ -1,5 +1,5 @@
 <div id="SorteoListThumb">
-	{!! $ImagenSorteo = ""; !!}
+	{!! $ImagenSorteo = "" !!}
 	<hr>
 
 	@foreach($sorteos as $sorteo)
@@ -15,6 +15,7 @@
 				<h5><strong>Nombre Sorteo: </strong>{{$sorteo->nombre_sorteo}}</h5>
 				<h5><strong>Descripción del Sorteo: </strong>{{$sorteo->descripcion}}</h5>
 				<h5><strong>Estado del Sorteo: </strong><span class="requerido">{{$sorteo->estado_sorteo}}</span></h5>
+				<h5><strong>Fecha del sorteo: </strong>{{$sorteo->fecha_inicio_sorteo}}</h5>
 				@if(Auth::user()->check())
 					<input id="user_id" value="{!! Auth::user()->get()->id !!}" type="hidden" />
 					<input id="sorteo_id" value="{!! $sorteo->id !!}" type="hidden" />
@@ -32,7 +33,6 @@
 				<br>
 				<small><span class="">A las 21:00 horas aprox.</span></small>
 				<br>
-				<span class="text-danger" id="Mensaje"></span>
 			</div>
 		</div>
 		<hr>

@@ -68,7 +68,7 @@
 		function CargarDetallesSorteo(sorteo_id)
 		{
 
-			$("#ModalGanadorSorteo").modal('show');
+
 			var route = "http://localhost:8000/cargardetallessorteo/"+sorteo_id;
 			$.ajax({
 				url: route,
@@ -76,9 +76,11 @@
 				type: 'GET',
 				dataType: 'json',
 				success:function(data){
-					var inicio, fin;
-					$(data).each(function(key, index){
 
+					if(data.length > 3){
+						$("#ModalGanadorSorteo").modal('show');
+						var inicio, fin;
+						$(data).each(function(key, index){
 							if(key === 0){
 								console.log(index.id);
 								inicio = index.id;
@@ -86,29 +88,29 @@
 								console.log(index.id);
 								fin = index.id;
 							}
-
-					});
-
-					var tiempo = 2000;
-					var t = 0;
-					var a = setInterval(function(){
-					var Ganador = 0;
-
-						Ganador = aleatorio(inicio, fin);
-
-						$("#Detalles").text("Número de ticket: "+Ganador);
+						});
+						var tiempo = 2000;
+						var t = 0;
+						var Ganador = 0;
+						var a = setInterval(function(){
+							Ganador = aleatorio(inicio, fin);
+							$("#Detalles").text("Número de ticket: "+Ganador);
 							t = tiempo.toString();
 							t = t.substring(0,1);
+							$("#Tiempo").text("¡Empezó el sorteo! (Finaliza en : 	"+t+")");
+							tiempo -= 50;
+							if(tiempo === 1000){
+								clearInterval(a);
+								$("#Tiempo").text("¡¡¡ TIEMPO !!!");
+								return MostrarGanador(Ganador);
+							}
+						}, 50 );
 
-						$("#Tiempo").text("¡Empezó el sorteo! (Finaliza en : 	"+t+")");
+					}else{
+						alert("Estimado cliente:\n\n Para poder realizar el sorteo, usted debe tener almenos 3 usuarios, actualmente tiene "+data.length);
+					}
 
-						tiempo -= 50;
-						if(tiempo === 1000){
-							clearInterval(a);
-							$("#Tiempo").text("¡¡¡ TIEMPO !!!");
-							return MostrarGanador(Ganador);
-						}
-					}, 50 );
+
 				}
 			});
 
@@ -133,14 +135,10 @@
 		}
 
 		function aleatorio(inferior,superior){
-
-
-			var numPosibilidades = superior - inferior
-			var aleat = Math.random() * numPosibilidades
-			aleat = Math.round(aleat)
-			return parseInt(inferior) + aleat
-
-
+			var numPosibilidades = superior - inferior;
+			var aleat = Math.random() * numPosibilidades;
+			aleat = Math.round(aleat);
+			return parseInt(inferior) + aleat;
 		}
 
 
@@ -159,6 +157,7 @@
 				},
 				success:function(data){
 					console.log(data);
+
 					if(data !== 'Sin saldo para el servicio'){
 						ContarCoins();
 						ContarTickets();
@@ -189,7 +188,6 @@
 					async: true,
 					success:function(data){
 
-						if(data.length > 3){
 							var j = 0;
 							$(data).each(function(key, index){
 								var user_id = $("#user_id");
@@ -209,31 +207,8 @@
 									CantidadTicketsPorSorteo.text(data.length);
 								}
 							}
-						}else{
-							alert("Estimado cliente:\n\n Para poder realizar el sorteo, usted debe tener almenos 3 usuarios, actualmente tiene "+data.length);
-						}
 
-						var j = 0;
-						$(data).each(function(key, index){
-							var user_id = $("#user_id");
-							if(index.user_id === user_id.val()){
-								j += 1;
-							}
-						});
-						console.log(CantidadActual+"/"+data.length);
-						CantidadTicketsPorSorteo.attr('value', data.length);
 
-						if(CantidadActual < data.length){
-							CantidadTicketsPorSorteo.fadeOut(function() {
-								CantidadTicketsPorSorteo.text(data.length + "\n (Haz usado " + j + " tickets para este sorteo)").fadeIn();
-							});
-						}else{
-							if(data.length > 0){
-								CantidadTicketsPorSorteo.text(data.length + "\n (Haz usado " + j + " tickets para este sorteo)");
-							}else{
-								CantidadTicketsPorSorteo.text(data.length);
-							}
-						}
 
 					}
 				});

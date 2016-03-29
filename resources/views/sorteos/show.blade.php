@@ -21,10 +21,10 @@
                 @endif
               </div>
               <div class="col-md-4">
-                {!! $sorteo->nombre_sorteo !!}<br>
-                {!! $sorteo->descripcion !!}<br>
-                {!! $sorteo->fecha_inicio_sorteo !!}<br>
-                {!! $sorteo->estado_sorteo !!}<br>
+                <h5><strong>Nombre Sorteo: </strong>{{$sorteo->nombre_sorteo}}</h5>
+                <h5><strong>Descripción del Sorteo: </strong>{{$sorteo->descripcion}}</h5>
+                <h5><strong>Estado del Sorteo: </strong><span class="requerido">{{$sorteo->estado_sorteo}}</span></h5>
+                <h5><strong>Fecha del sorteo: </strong>{{$sorteo->fecha_inicio_sorteo}}</h5>
                 @if($sorteo->user_id == Auth::user()->get()->id)
                   {!!link_to_route('sorteos.edit', $title = 'Editar', $parameters = $sorteo->id, $attributes = ['class'=>'btn btn-primary btn-sm'])!!}
                   <a id="SortearGanador" data-toggle="modal"  class="btn btn-primary btn-sm" value="{!! $sorteo->id !!}">Sortear ganador</a>
@@ -32,6 +32,10 @@
                 @else
                   <a id="SortearGanador" data-toggle="modal" data-target="#ModalGanadorSorteo" class="btn btn-primary btn-sm" value="{!! $sorteo->id !!}">Ver al ganador</a>
                 @endif
+
+
+
+                
               </div>
             </div>
           </div>

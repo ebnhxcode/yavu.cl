@@ -11,7 +11,7 @@
     @include('alerts.errorsMessage')
     @include('alerts.successMessage')
     @include('alerts.warningMessage')
-    <h1>Sorteos</h1>   
+    <h1>Sorteos</h1><span class="text-danger" id="Mensaje"></span>
     <div class="panel panel-default">
       <div class="panel-body">
         <div class="form-group">
