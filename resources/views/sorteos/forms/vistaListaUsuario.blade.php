@@ -14,7 +14,7 @@
 			<div class="col-md-4 col-xs-4">
 				<h5><strong>Nombre Sorteo: </strong>{{$sorteo->nombre_sorteo}}</h5>
 				<h5><strong>Descripción del Sorteo: </strong>{{$sorteo->descripcion}}</h5>
-				<h5><strong>Estado del Sorteo: </strong>{{$sorteo->estado_sorteo}}</h5>
+				<h5><strong>Estado del Sorteo: </strong><span class="requerido">{{$sorteo->estado_sorteo}}</span></h5>
 				@if(Auth::user()->check())
 					<input id="user_id" value="{!! Auth::user()->get()->id !!}" type="hidden" />
 					<input id="sorteo_id" value="{!! $sorteo->id !!}" type="hidden" />
@@ -27,10 +27,10 @@
 				@endif
 			</div>
 			<div class="col-md-4 col-xs-4">
-				<span class="glyphicon glyphicon-bookmark"> Tickets en el sorteo: <span class="TicketsEnSorteo" id="{!! $sorteo->id !!}"></span></span>
+				<span class=""> Tickets en el sorteo: <span class="TicketsEnSorteo" id="{!! $sorteo->id !!}"></span></span>
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<br>
-				<small><span class="glyphicon glyphicon-time"></span></small>
+				<small><span class="">A las 21:00 horas aprox.</span></small>
 				<br>
 				<span class="text-danger" id="Mensaje"></span>
 			</div>

@@ -251,6 +251,9 @@ $(document).ready(function(){
 				cache: false,
 				async: true,
 				success:function(data){
+
+					console.log(data.length+"Esta es compadre");
+
 					var j = 0;
 					$(data).each(function(key, index){
 						var user_id = $("#user_id");
@@ -258,14 +261,21 @@ $(document).ready(function(){
 							j += 1;
 						}
 					});
+					console.log(CantidadActual+"/"+data.length);
 					CantidadTicketsPorSorteo.attr('value', data.length);
+
 					if(CantidadActual < data.length){
 						CantidadTicketsPorSorteo.fadeOut(function() {
 							CantidadTicketsPorSorteo.text(data.length + "\n (Haz usado " + j + " tickets para este sorteo)").fadeIn();
 						});
 					}else{
-						CantidadTicketsPorSorteo.text(data.length + "\n (Haz usado " + j + " tickets para este sorteo)");
+						if(data.length > 0){
+							CantidadTicketsPorSorteo.text(data.length + "\n (Haz usado " + j + " tickets para este sorteo)");
+						}else{
+							CantidadTicketsPorSorteo.text(data.length);
+						}
 					}
+
 				}
 			});
 			//Tickets.push($(this).attr('value'));

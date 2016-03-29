@@ -188,6 +188,31 @@
 					cache: false,
 					async: true,
 					success:function(data){
+
+						if(data.length > 3){
+							var j = 0;
+							$(data).each(function(key, index){
+								var user_id = $("#user_id");
+								if(index.user_id === user_id.val()){
+									j += 1;
+								}
+							});
+							CantidadTicketsPorSorteo.attr('value', data.length);
+							if(CantidadActual < data.length){
+								CantidadTicketsPorSorteo.fadeOut(function() {
+									CantidadTicketsPorSorteo.text(data.length + "\n (Haz usado " + j + " tickets para este sorteo)").fadeIn();
+								});
+							}else{
+								if(data.length > 0){
+									CantidadTicketsPorSorteo.text(data.length + "\n (Haz usado " + j + " tickets para este sorteo)");
+								}else{
+									CantidadTicketsPorSorteo.text(data.length);
+								}
+							}
+						}else{
+							alert("Estimado cliente:\n\n Para poder realizar el sorteo, usted debe tener almenos 3 usuarios, actualmente tiene "+data.length);
+						}
+
 						var j = 0;
 						$(data).each(function(key, index){
 							var user_id = $("#user_id");
@@ -203,7 +228,11 @@
 								CantidadTicketsPorSorteo.text(data.length + "\n (Haz usado " + j + " tickets para este sorteo)").fadeIn();
 							});
 						}else{
-							CantidadTicketsPorSorteo.text(data.length + "\n (Haz usado " + j + " tickets para este sorteo)");
+							if(data.length > 0){
+								CantidadTicketsPorSorteo.text(data.length + "\n (Haz usado " + j + " tickets para este sorteo)");
+							}else{
+								CantidadTicketsPorSorteo.text(data.length);
+							}
 						}
 
 					}
