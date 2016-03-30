@@ -17,12 +17,17 @@
 				<h5><strong>Estado del Sorteo: </strong><span class="requerido">{{$sorteo->estado_sorteo}}</span></h5>
 				<h5><strong>Fecha del sorteo: </strong>{{$sorteo->fecha_inicio_sorteo}}</h5>
 				@if(Auth::user()->check())
-					<input id="user_id" value="{!! Auth::user()->get()->id !!}" type="hidden" />
 					<input id="sorteo_id" value="{!! $sorteo->id !!}" type="hidden" />
 					<input type="hidden" name="_token" value="{{csrf_token()}}" id="token" />
 					<br>
-					<a id='participar' href="{!! URL::to('#!') !!}" class="btn btn-primary participar btn-sm" data-toggle="modal" data-target="#myModal" value="{!! $sorteo->id !!}" role="button">Participar</a>
-					{!!link_to_route('sorteos.show', $title = 'Mostrar detalles del sorteo', $parameters = $sorteo->id, $attributes = ['class'=>'btn btn-primary btn-sm'])!!}
+					<a id='participar' href="{!! URL::to('#!') !!}" class="btn btn-primary participar btn-sm" data-toggle="modal" data-target="#myModal" value="{!! $sorteo->id !!}" role="button">Comprar</a>
+					{!!link_to_route('sorteos.show', $title = 'Detalles', $parameters = $sorteo->id, $attributes = ['class'=>'btn btn-primary btn-sm'])!!}
+
+
+					<button class="btn btn-success btn-sm UsarTicket" value="{!! $sorteo->id !!}" type="button"   style="display: none;" data-dismiss="modal">Usar ticket</button>
+
+
+
 				@else
 					<a href="{!! URL::to('usuarios/create') !!}" class="btn btn-primary btn-sm" role="button">Participar!</a>
 				@endif

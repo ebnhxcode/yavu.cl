@@ -36,6 +36,7 @@ $(document).ready(function(){
 	});
 	$("#ComprarMasTickets").click(function(e){
 		EfectuarCompra(1);
+		VerificarTickets();
 		e.preventDefault();
 	});
 	/*SELECTORES*/
@@ -101,6 +102,22 @@ $(document).ready(function(){
 					//$("#CantidadCoins").html("<p>0</p>");	
 			});
 		});						
+	}
+	function VerificarTickets()
+	{
+		var user_id = $("#user_id").val();
+		var route = "http://localhost:8000/verificartickets/"+user_id;
+		$.get(route, function(res){
+			console.log(res);
+			if(res>0){
+				$(".UsarTicket").removeAttr('style');
+			}
+			else
+			{
+				$(".UsarTicket").fadeOut();
+			}
+		});
+		return true;
 	}
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 });

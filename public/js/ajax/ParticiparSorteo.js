@@ -32,27 +32,25 @@
 	/*MÉTODOS CONSTRUCTORES*/
 
 	/*SELECTORES*/
-	$("#UsarTicket").click(function(){
+	$(".UsarTicket").click(function(){
 		//console.log("hola estoy usando ticket, aun estoy pendiente");
 		UsarTicket($(this).val());
 		ContarTicketsEnSorteos();
+		VerificarTickets();
+		ContarTickets();
+		//CanjearTicket();
 		//console.log($(this).attr('value'));
 
 	});	
 	$(".participar").click(function(){
-		$("#UsarTicket").val($(this).attr('value'));
-		console.log($("#UsarTicket").val()+"/No");
 		VerificarTickets();
 		ContarTickets();
-
-		//console.log($(this).attr('value')+"/");
 	});
 	$("#siquiero").click(function(){
-		//console.log($("#user_id").val());
 		CanjearTicket();
-		UsarTicket($("#UsarTicket").val());
 		ContarTicketsEnSorteos();
-
+		VerificarTickets();
+		ContarTickets();
 ;	});
 	$("#SortearGanador").click(function(){
 		//console.log($(this).attr('value'));
@@ -250,11 +248,11 @@
 		$.get(route, function(res){
 			console.log(res);
 			if(res>0){
-				$("#UsarTicket").removeAttr('style');	
+				$(".UsarTicket").removeAttr('style');
 			}
 			else
 			{
-				$("#UsarTicket").fadeOut();
+				$(".UsarTicket").fadeOut();
 			}
 		});
 		return true;

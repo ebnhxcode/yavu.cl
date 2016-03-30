@@ -29,13 +29,8 @@
                   {!!link_to_route('sorteos.edit', $title = 'Editar', $parameters = $sorteo->id, $attributes = ['class'=>'btn btn-primary btn-sm'])!!}
                   <a id="SortearGanador" data-toggle="modal"  class="btn btn-primary btn-sm" value="{!! $sorteo->id !!}">Sortear ganador</a>
                   @include('sorteos.forms.modalSortearParticipante')
-                @else
-                  <a id="SortearGanador" data-toggle="modal" data-target="#ModalGanadorSorteo" class="btn btn-primary btn-sm" value="{!! $sorteo->id !!}">Ver al ganador</a>
                 @endif
 
-
-
-                
               </div>
             </div>
           </div>
