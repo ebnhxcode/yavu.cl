@@ -227,6 +227,11 @@ OR newTable.nombre_sorteo like '%sorteo%'
         Session::flash('message', 'sorteo validado correctamente');
         return Redirect::to('/sorteos');
     }
+    public function RegistrarGanadorSorteo(){
+
+
+      return "true wn";
+    }
     public function UsarTicket($user_id, $sorteo_id)
     {
         $ticketsUsuario = DB::table('tickets')

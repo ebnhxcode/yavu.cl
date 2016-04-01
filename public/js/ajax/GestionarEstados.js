@@ -1,78 +1,54 @@
 $(document).ready(function(){	
-	/*DECLARACION DE VARIABLES GLOBALES*/
+/*DECLARACION DE VARIABLES GLOBALES*/
 	var Global_idUltimaPublicacion;
 	var Global_ContadorCargaPublicaciones;
 	var Global_Control = true;
-	/*DECLARACION DE VARIABLES GLOBALES*/
-
-	/*MÉTODOS CONSTRUCTORES*/
-
-	CargarEstados();
-	//LimpiarEstados();
-	/*
-	function LimpiarEstados(){
-
-		var scriptOpen = "<script>";
-		var scriptClose = "</script>";
-
-		var i = 0;
-		var str = "Hello world!";
-		var res = str.substring(6, 11);
-	  	console.log(scriptOpen.substring(i, scriptOpen.length));
-		while(i<scriptOpen.length){
-		    break; //cuando sea mayor o igual a 10, rompe el ciclo
-		}
-	}
-	*/
-
-
-	setInterval(function(){
+	var TimeInterval = setInterval(function(){
 		var a = $(".timeago");
 		for(var i = 0; i < a.length ; i++){
 			var elemento = document.getElementById( a[i].id );
 			$('#'+a[i].id).text("" + humanTiming( elemento.title ) );
 		}
 	},40000);
+/*DECLARACION DE VARIABLES GLOBALES*/
 
-	/*MÉTODOS CONSTRUCTORES*/
+/*MÉTODOS CONSTRUCTORES*/
+	CargarEstados();
+/*MÉTODOS CONSTRUCTORES*/
 
-	/*SELECTORES*/
+/*SELECTORES*/
 
 	/*FALTA TERMINAR
-    // EVENTO CUANDO SE MUEVE EL SCROLL, EL MISMO APLICA TAMBIEN CUANDO SE RESIZA
-    var change = false;
-    var EstadosUsuario = $("#Estados"); 
-    var window_y, scroll_critical;
-
+	// EVENTO CUANDO SE MUEVE EL SCROLL, EL MISMO APLICA TAMBIEN CUANDO SE RESIZA
+	var change = false;
+	var EstadosUsuario = $("#Estados");
+	var window_y, scroll_critical;
 	$(window).scroll(function(){
-
 		setTimeout(function() {
 			window_y = $(window).scrollTop();
-	         // VALOR QUE SE HA MOVIDO DEL SCROLL
-	        scroll_critical = parseInt($("#Estados").height()); // VALOR DE TU DIV
-	        //console.log(scroll_critical);			
-		},1000);	
-        console.log(window_y+"//"+scroll_critical);
-        setTimeout(function(){
-	        if ( window_y - 200 > scroll_critical ) { // SI EL SCROLL HA SUPERADO EL ALTO DE TU DIV
-	           // ACA MUESTRAS EL OTRO DIV Y EL OCULTAS EL DIV QUE QUIERES
-				
+			// VALOR QUE SE HA MOVIDO DEL SCROLL
+			scroll_critical = parseInt($("#Estados").height()); // VALOR DE TU DIV
+			//console.log(scroll_critical);
+		},1000);
+		console.log(window_y+"//"+scroll_critical);
+		setTimeout(function(){
+			if ( window_y - 200 > scroll_critical ) { // SI EL SCROLL HA SUPERADO EL ALTO DE TU DIV
+				 // ACA MUESTRAS EL OTRO DIV Y EL OCULTAS EL DIV QUE QUIERES
 				if(Global_Control){
 					CargarEstados();
 					scroll_critical = parseInt($("#Estados").height());
 					return
 				}
-			
-	           
-	        }
-        },1000);
-	});		
-	*/
+			}
+		},1000);
+	});
+	FALTA TERMINAR*/
 
 	$("#CargarEstados").click(function(e){
 		$("#EstadosNuevos").append("");
 		CargarEstados();			
 		e.preventDefault();
+		return true;
 	});
 	$("#publicar").click(function(e){
 		document.getElementById("idUltima").value = "0";				    
@@ -93,19 +69,20 @@ $(document).ready(function(){
 					user_id: user_id
 				},
 				success:function(){
-				    document.getElementById("status").value = "";
+					document.getElementById("status").value = "";
 				}
 			});	
-			
 		}else{
 			document.getElementById("status").focus();
 		}	
 		CargarEstados();
-		e.preventDefault();	
+		e.preventDefault();
+		return true;
 	});
 	$("#limpiar").click(function(e){
 		document.getElementById("status").value = "";
 		e.preventDefault();
+		return true;
 	});
 	$( "#status" ).change(function(e) {
 		var status = $("#status").val();
@@ -113,17 +90,17 @@ $(document).ready(function(){
 		status_2 = limpiar(status);
 		status_2 = limpiar(status);
 		if (status != status_2){
-			//console.log("son distintos");
 			var status = $("#status").val();
 			if (status !== limpiar(status)){
 			  $('#msj-error').append();
 				$("#msj-error").fadeIn();
-					setTimeout(function() {
-					    $("#msj-error").fadeOut(8000);
-					},800);			
+				setTimeout(function() {
+					$("#msj-error").fadeOut(8000);
+				},800);
 			}		
 		}	
 		e.preventDefault();
+		return true;
 	});
 	/*SELECTORES*/
 
@@ -144,8 +121,8 @@ $(document).ready(function(){
 				var Estado = 
 					"<div id='status' class='list-group'>"
 						+"<div class='list-group-item'>"	
-						  	+"<h4><a href='/profile' style='color:#3C5B28;'>"
-						  		+"<img class='media-object' src='http://localhost:8000/images/user.png' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
+							+"<h4><a href='/profile' style='color:#3C5B28;'>"
+								+"<img class='media-object' src='http://localhost:8000/images/user.png' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
 								+value.nombre+" "+value.apellido
 							+"</a></h4>"
 							+"<small>"
@@ -154,19 +131,18 @@ $(document).ready(function(){
 							+"<p>"+value.status+"</p>"
 						+"</div>"
 						+"<div class='list-group-item panel-footer'>"
-						+"<span class='glyphicon glyphicon-thumbs-up'>&nbsp;</span>"
+							+"<span class='glyphicon glyphicon-thumbs-up'>&nbsp;</span>"
 							+"<a name='like' class='inter' role='button' id='estado_"+value.id+"' value='"+value.id+"' href='#!' style='color:#3C5B28;'>"
 							+"<span>Bien</span></a>"
 						+"</div>"
 					+"</div>";
 				EstadosUsuario.appendTo("#e").effects("highlight", {}, 12000);
 			});
-		});						
+		});
+		return true;
 	}
 
 	function limpiar(status){
-
-
 		status = status.replace("<script>", "");
 		status = status.replace("<script", "");
 		status = status.replace("<scrip", "");
@@ -177,7 +153,6 @@ $(document).ready(function(){
 		status = status.replace("<", ""); 
 		status = status.replace("<<<", "");
 		status = status.replace("<<", "");
-		
 		status = status.replace(">>>", "");
 		status = status.replace(">>", "");
 		status = status.replace(">", ""); 
@@ -203,10 +178,9 @@ $(document).ready(function(){
 		status = status.replace("')<", ""); 
 		return status;
 	}
-	function humanTiming(time)
-	{
+	function humanTiming(time){
 		var now = new Date();
-		var nowTime = now.getTime()
+		var nowTime = now.getTime();
 		nowTime = nowTime - Date.parse(time);
 		console.log(nowTime);
 	    var tokens = [
@@ -220,84 +194,61 @@ $(document).ready(function(){
 	   ];
 	   //console.log(JSON.stringify(tokens[0][1])); //unidad
 	   //console.log(JSON.stringify(tokens[0][0])); //cantidad
-	   	var numberOfUnits = 0;
+		var numberOfUnits = 0;
 		for(var i = 0, len = tokens.length; i < len; i++){
 			if (nowTime < tokens[i][0]) {	
-				
-
-
 				if (tokens[i][1] === 'día'){
 					numberOfUnits = nowTime/(tokens[i-1][0])*10;
-
 				}else if(tokens[i][1] === 'semana'){
 					numberOfUnits = nowTime*tokens[i][0]*10;
-
 				}else if(tokens[i][1] === 'mes'){
-
-					//numberOfUnits = nowTime*tokens[i+1][0]*10;
 					console.log(tokens[i][1]+"/"+tokens[i][0]+"/"+numberOfUnits+"/"+nowTime);
 				}
-
 				if(Math.floor(numberOfUnits) > 365 && tokens[i][1] === 'año'){
-					
-					//console.log(numberOfUnits+"//"+tokens[i][0]);
 					var mes = Math.floor(numberOfUnits/tokens[i][0]);
-
-					//console.log(mes+"//"+i+"//"+tokens[i][0]+"//"+numberOfUnits);
-
 					if ( mes === 0 ){ mes = 1; }
 					return "hace "+mes+" "+tokens[i][1]+((mes>1)?'s':'');
-
 				}else if(Math.floor(numberOfUnits) >= 31 && Math.floor(numberOfUnits) < 365){
 					var semana = Math.round(numberOfUnits/12);
 					return "hace "+semana+" "+tokens[i+1][1]+((semana>1)?'s':'');
-
 				}else if(Math.floor(numberOfUnits) >= 7 && Math.floor(numberOfUnits) < 31){
 					var dia = Math.round(numberOfUnits/7);
 					return "hace "+dia+" "+tokens[i+1][1]+((dia>1)?'s':'');
-
 				}else if(Math.floor(numberOfUnits) >= 1 && Math.floor(numberOfUnits) < 7){
 					var hora = Math.floor(numberOfUnits);
 					return "hace "+hora+" "+tokens[i][1]+((hora>1)?'s':'');	
-
 				}else if(Math.floor(numberOfUnits) < 1){
-					//console.log(nowTime+"(nowTime)/"+i+"(i)/"+tokens[i][0]+"(cant)/"+tokens[i][1]+"(text)/");
-					//console.log(numberOfUnits+"/"+tokens[i][1]);
-
-
 					if (numberOfUnits > 0.0416 ){
 						var minuto = Math.floor(24*numberOfUnits);
 						return "hace "+minuto+" "+tokens[i-1][1]+((minuto>1)?'s':'');	
-
-					}else if(numberOfUnits < 0.0416 && numberOfUnits > 0.000693333 ){						
+					}else if(numberOfUnits < 0.0416 && numberOfUnits > 0.000693333 ){
 						numberOfUnits = Math.floor(((numberOfUnits*100)/4.)*60);
 						return "hace "+numberOfUnits+" "+tokens[i-2][1]+((numberOfUnits>1)?'s':'');
-
 					}else if(numberOfUnits < 0.000293333 ){
 						return 'hace pocos minutos';
-
 					}
 				}	
 			}else{	
 				nowTime = Math.floor(nowTime/tokens[i][0]);					
 			}
-		}	    	
+		}
+		return true;
 	}
-    function ContarInteracciones(status_id){
-      status_id = status_id;
-      var route = "http://localhost:8000/contarinteracciones/"+status_id;
-      var user_id = $("#user_id").val();
-      var Contador = 0;
-      $.get(route, function(res){
-        $(res).each(function(key,value){
-            if(value.user_id === user_id){
-              $('#estado_'+status_id).addClass("text-info").fadeIn();
-            }
-            Contador += 1;
-        });
-        $("#badge_"+status_id).text(Contador);
-      });   
-    }    
+	function ContarInteracciones(status_id){
+		status_id = status_id;
+		var route = "http://localhost:8000/contarinteracciones/"+status_id;
+		var user_id = $("#user_id").val();
+		var Contador = 0;
+		$.get(route, function(res){
+			$(res).each(function(key,value){
+				if(value.user_id === user_id){
+					$('#estado_'+status_id).addClass("text-info").fadeIn();
+				}
+				Contador += 1;
+			});
+			$("#badge_"+status_id).text(Contador);
+		});
+	}
 
 	function CargarEstados(){
 		var EstadosUsuario = $("#Estados"); 
@@ -306,48 +257,43 @@ $(document).ready(function(){
 		var user_id = $("#user_id");
 		var Contador = 0;
 		$.get(route, function(res){
-
 			if(Global_Control){mostrarCargando();}
-
-			$(res).each(function(key,value){				
+			$(res).each(function(key,value){
 				var TimeAgo = value.created_at;
 				Global_idUltimaPublicacion = value.id;		
-
 				EstadosUsuario.append(
-					"<div id='publicacion"+value.id+"' class='list-group'>"
-						+"<div class='list-group-item'>"	
-							+'<div class="dropdown">'
-								+'<button class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
-									+'<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>'
-									+'<span class="caret"></span>'
-								+'</button>'
-								+'<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">'
-									+'<li><a onclick="eliminarEstado('+value.id+')" href="#!">Eliminar publicación</a></li>'
-								+'</ul>'
-							+'</div>'																	  	
-						  	+"<h4><a href='/profile' style='color:#3C5B28;'>"
-						  		+"<img class='media-object' src='http://localhost:8000/images/user.png' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
-								+value.nombre+" "+value.apellido+" Idp:("+Global_idUltimaPublicacion+")"
-							+"</a></h4>"
-							+"<small>"
-								+"Publicó <span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
-							+"</small><hr>"		
-							+"<p>"+value.status+"</p>"
-						+"</div>"
-						+"<div class='list-group-item panel-footer'>"					
-							+"<span id='badge_"+value.id+"' class='label label-info'></span>"+"&nbsp;"
-							+"<a role='button'  href='#!' style='color:#000;'>"
-								+"<span name='megusta' onclick='Interactuar(this.id)' id='estado_"+value.id+"' value='"+value.id+"'>"
-
-									+"<span class='glyphicon glyphicon-thumbs-up'>"
-										+"&nbsp;"
-									+"</span>"
-									+"Bien"
-								+"</span>"
-							+"</a>"							
-						+"</div>"
+				"<div id='publicacion"+value.id+"' class='list-group'>"
+					+"<div class='list-group-item'>"
+						+'<div class="dropdown">'
+							+'<button class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
+								+'<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>'
+								+'<span class="caret"></span>'
+							+'</button>'
+							+'<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">'
+								+'<li><a onclick="eliminarEstado('+value.id+')" href="#!">Eliminar publicación</a></li>'
+							+'</ul>'
+						+'</div>'
+						+"<h4><a href='/profile' style='color:#3C5B28;'>"
+							+"<img class='media-object' src='http://localhost:8000/images/user.png' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
+							+value.nombre+" "+value.apellido+" Idp:("+Global_idUltimaPublicacion+")"
+						+"</a></h4>"
+						+"<small>"
+							+"Publicó <span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
+						+"</small><hr>"
+						+"<p>"+value.status+"</p>"
 					+"</div>"
-				);				
+					+"<div class='list-group-item panel-footer'>"
+						+"<span id='badge_"+value.id+"' class='label label-info'></span>"+"&nbsp;"
+						+"<a role='button'  href='#!' style='color:#000;'>"
+							+"<span name='megusta' onclick='Interactuar(this.id)' id='estado_"+value.id+"' value='"+value.id+"'>"
+								+"<span class='glyphicon glyphicon-thumbs-up'>"
+									+"&nbsp;"
+								+"</span>"
+								+"Bien"
+							+"</span>"
+						+"</a>"
+					+"</div>"
+				+"</div>");
 				document.getElementById("idUltima").value =  Global_idUltimaPublicacion;
 				Contador += 1;	
 				ContarInteracciones(value.id);
@@ -356,20 +302,23 @@ $(document).ready(function(){
 				if (Global_Control) { 
 					$("#msj-finPublicaciones").fadeIn();	
 					setTimeout(function() {
-					    $("#msj-finPublicaciones").fadeOut(3000);
+						$("#msj-finPublicaciones").fadeOut(3000);
 					},1000);		
 					Global_Control = false;	
 				}			
 			}
 			ocultarCargando();	
 			Global_ContadorCargaPublicaciones += 1 * 5;
-		});						
+		});
+		return true;
 	}
 	function mostrarCargando(){		
 		$("#msj-estado").fadeIn(1000);
+		return true;
 	}
 	function ocultarCargando(){
 		$("#msj-estado").fadeOut();
+		return true;
 	}
 	function ContarEstados(){
 		var CargarEstados = $("#CargarEstados"); 
@@ -388,7 +337,9 @@ $(document).ready(function(){
 				}
 			});
 			$("#EstadosNuevos").append(Contador + " <small>¡Publicaciones Nuevas!</small>");
-		});						
+		});
+		return true;
 	}
+
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 });

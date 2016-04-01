@@ -1,6 +1,6 @@
-  {!!Html::script('js/jquery.js')!!}
-  {!!Html::script('js/ajax/BuscarSorteo.js')!!}
-  {!!Html::script('js/ajax/ParticiparSorteo.js')!!}
+{!!Html::script('js/jquery.js')!!}
+{!!Html::script('js/ajax/BuscarSorteo.js')!!}
+{!!Html::script('js/ajax/ParticiparSorteo.js')!!}
 {!!Html::script('js/ajax/GestionarCoins.js')!!}
 {!!Html::script('js/ajax/GestionarCompraTicket.js')!!}
 @extends('layouts.front') 
