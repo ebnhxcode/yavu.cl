@@ -72,8 +72,6 @@ $(document).ready(function(){
 		});
 		return true;
 	}
-
-
 	function humanTiming(time){
 		var now = new Date();
 		var nowTime = now.getTime()
@@ -87,8 +85,6 @@ $(document).ready(function(){
 			[2592000, 'mes'],
 			[31536000, 'año']
 		];
-		//console.log(JSON.stringify(tokens[0][1])); //unidad
-		//console.log(JSON.stringify(tokens[0][0])); //cantidad
 		var numberOfUnits = 0;
 		for(var i = 0, len = tokens.length; i < len; i++){
 			if (nowTime < tokens[i][0]) {	
@@ -96,7 +92,6 @@ $(document).ready(function(){
 					numberOfUnits = nowTime/(tokens[i-1][0])*10;
 				}
 				if(Math.floor(numberOfUnits) >= 7 && Math.floor(numberOfUnits) < 30){
-
 				}else if(Math.floor(numberOfUnits) >= 7 && Math.floor(numberOfUnits) < 30){
 					return " "+Math.floor(numberOfUnits/7)+" "+tokens[i+1][1]+((Math.floor(numberOfUnits/7)>1)?'s':'');
 				}else if(Math.floor(numberOfUnits) >= 1 && Math.floor(numberOfUnits) < 7){
@@ -115,6 +110,7 @@ $(document).ready(function(){
 				nowTime = Math.floor(nowTime/tokens[i][0]);				
 			}
 		}	    	
-	}	
+	}
+	
 	/*FUNCIONES Y PROCEDIMIENTOS*/
 });

@@ -1,45 +1,39 @@
-	$(document).ready(function(){	
-	/*DECLARACIÓN DE VARIABLES GLOBALES*/
-	/*DECLARACIÓN DE VARIABLES GLOBALES*/
+$(document).ready(function(){
+/*DECLARACIÓN DE VARIABLES GLOBALES*/
+/*DECLARACIÓN DE VARIABLES GLOBALES*/
 
-	/*MÉTODOS CONSTRUCTORES*/
+/*MÉTODOS CONSTRUCTORES*/
 	$(function () {
 		VerificarSeguidores($("#empresa_id").val());
 		ContarSeguidores($("#empresa_id").val());
+		return true;
 	})
-	/*MÉTODOS CONSTRUCTORES*/
+/*MÉTODOS CONSTRUCTORES*/
 
 	
-	/*SELECTORES*/
+/*SELECTORES*/
 
-  	$(function () {
-  		$( seguir ).click(function(){
-  			if ( $( seguir ).text() === 'Seguir' ) 
-  			{
-  				$( seguir ).text('Siguiendo'); 
-  				return Seguir( empresa_id.value );
-  			}
-			else 
-			{
-				$( seguir ).text('Seguir'); 
+	$(function () {
+		$( seguir ).click(function(){
+			if($(seguir).text()==='Seguir'){
+				$( seguir ).text('Siguiendo');
+				return Seguir( empresa_id.value );
+			}else{
+				$( seguir ).text('Seguir');
 				return NoSeguir( empresa_id.value );
-			}			
-  		});
-  	})
+			}
+		});
+		return true;
+	});
 
+/*SELECTORES*/
 
-
-	/*SELECTORES*/
-
-	/*FUNCIONES Y PROCEDIMIENTOS*/
+/*FUNCIONES Y PROCEDIMIENTOS*/
 	function Seguir(empresa_id){
-		
-
 		var user_id = $("#user_id").val();
 		var empresa_id = $("#empresa_id").val();
 		var token = $("#token").val();
 		var route = "http://localhost:8000/seguirempresa/"+empresa_id+"/"+user_id;
-
 		$.ajax({
 			url: route,
 			headers: {'X-CSRF-TOKEN': token},
@@ -50,24 +44,19 @@
 				empresa_id: empresa_id,
 			},
 			success:function(){
-				console.log('Sigo a : ' + empresa_id);
-				$( seguir ).text('Siguiendo'); 
+				$(seguir).text('Siguiendo');
 				ContarSeguidores($("#empresa_id").val());
 			}
 		});	
-
-
 		ContarSeguidores(empresa_id);
 		return true;
 	}
 
 	function NoSeguir(empresa_id){
-		
 		var user_id = $("#user_id").val();
 		var empresa_id = $("#empresa_id").val();
 		var token = $("#token").val();
 		var route = "http://localhost:8000/noseguirempresa/"+empresa_id+"/"+user_id;
-
 		$.ajax({
 			url: route,
 			headers: {'X-CSRF-TOKEN': token},
@@ -78,21 +67,16 @@
 				empresa_id: empresa_id,
 			},
 			success:function(){
-				console.log('Ya no sigo a : ' + empresa_id);	
-				$( seguir ).text('Seguir'); 
+				$( seguir ).text('Seguir');
 				ContarSeguidores($("#empresa_id").val());
 			}
 		});	
-
-
 		ContarSeguidores(empresa_id);
 		return true;
 	}
-	function ContarSeguidores(empresa_id)
-	{
+	function ContarSeguidores(empresa_id){
 		var user_id = $("#user_id").val();
 		var empresa_id = $("#empresa_id").val();
-
 		$.ajax({
 			url: "http://localhost:8000/contarseguidores/"+empresa_id+"/"+user_id,
 			type: 'GET',
@@ -103,13 +87,12 @@
 				$("#seguidores").val(data.length);
 			},
 			error: function error(xhr, textStatus, errorThrown) {
-			  console.log('Remote sever unavailable. Please try later');
+			  //console.log('Remote sever unavailable. Please try later');
 			}
 		});		
 		return true;	
 	}
-	function VerificarSeguidores(empresa_id)
-	{
+	function VerificarSeguidores(empresa_id){
 		var user_id = $("#user_id").val();
 		var empresa_id = $("#empresa_id").val();
 		$.ajax({
@@ -120,25 +103,19 @@
 			async: true,
 			success: function success(data, status) {
 				$(data).each(function(key,value){		
-					if (value.follow > 0)
-					{
+					if (value.follow > 0){
 						$( seguir ).text('Siguiendo'); 
-					}
-					else
-					{
+					}else{
 						$( seguir ).text('Seguir'); 	
 					}
-
-					//$("#seguidores").text(value.cantidadSeguidores);
 				});
 			},
 			error: function error(xhr, textStatus, errorThrown) {
-			  console.log('Remote sever unavailable. Please try later');
+			  //console.log('Remote sever unavailable. Please try later');
 			}
 		});		
-
-
 		return true;
 	}
 	/*FUNCIONES Y PROCEDIMIENTOS*/
+	return true;
 });

@@ -5,19 +5,17 @@ $(document).ready(function(){
 	var Global_idUltimaNotificacion;
 	var Global_ContadorCargaNotificaciones;
 	var Global_Control = true;
+	var Refresh = 100;
 /*DECLARACIÓN DE VARIABLES GLOBALES*/
 
 /*MÉTODOS CONSTRUCTORES*/
-		ContarNotificaciones();
-		setInterval(function(){
-			ContarNotificaciones();
-		},1000);
+	ContarNotificaciones();
 /*MÉTODOS CONSTRUCTORES*/
 
 /*SELECTORES*/
   	$(function () {
   		var popover = $('[data-toggle="popover"]');
-    	popover.popover({ html : true , trigger : 'manual'}); 
+    	popover.popover({ html : true , trigger : 'manual'});
       $('#Notificaciones, #CantidadNotificaciones').bind('click',function(){
         CargarNotificaciones();
 				return true;
@@ -26,7 +24,16 @@ $(document).ready(function(){
         CargarMensajes();
 				return true;
       });
-  	})
+			return true;
+  	});
+		$(function(){
+			setInterval(function(){
+				$("abbr.timeago").timeago();
+				Refresh = 30000 + Refresh;
+			}, Refresh);
+			return true;
+		});
+
 /*SELECTORES*/
 
 /*FUNCIONES Y PROCEDIMIENTOS*/
@@ -56,7 +63,7 @@ $(document).ready(function(){
 							+"<div class='text-info' >"
 								+"<img src='/img/yavu007.png' style='width: 32px; height: 30px;' />&nbsp;"+value.contenido+"<br>"
 								+"<small>"
-									+"<span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
+									+"<abbr class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
 								+"</small>"
 							+"</div>"
 						+"</div>";
@@ -66,7 +73,7 @@ $(document).ready(function(){
 							+"<div class='text-info' >"
 								+"<img src='/img/yavu007.png' style='width: 32px; height: 32px;' />&nbsp;"+value.contenido+"<br>"
 								+"<small>"
-									+"<span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
+									+"<abbr class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
 								+"</small>"
 							+"</div>"
 						+"</div>";
@@ -77,7 +84,7 @@ $(document).ready(function(){
 								+"<img src='/img/yavu007.png' style='width: 32px; height: 30px;' />&nbsp;"
 								+value.contenido+"<br>"
 								+"<small>"
-									+"<span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
+									+"<abbr class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
 								+"</small>"
 							+"</div>"
 						+"</div>";

@@ -13,11 +13,14 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 	      {!!Html::script('js/jquery.js')!!}
 	      <script>$.ajaxSetup({ cache:false });</script>
+			{!!Html::script('js/vendor/jquery.timeago.js')!!}
         {!!Html::script('js/vendor/bootstrap.min.js')!!}
         <!--{!!Html::style('css/bootstrap-theme.min.css')!!}-->
         {!!Html::script('js/plugins.js')!!}
         {!!Html::script('js/ajax/FrontNotificaciones.js')!!}
+
         {!!Html::style('css/bootstrap.css')!!}
+				{!!Html::script('js/global.js')!!}
         {!!Html::style('css/style.css')!!}
         <!-- {!!Html::style('css/main.css')!!} -->
         {!!Html::script('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')!!}

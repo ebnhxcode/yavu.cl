@@ -1,18 +1,19 @@
 $(document).ready(function(){	
-	/*DECLARACIÓN DE VARIABLES GLOBALES*/
-	/*DECLARACIÓN DE VARIABLES GLOBALES*/
+/*DECLARACIÓN DE VARIABLES GLOBALES*/
+/*DECLARACIÓN DE VARIABLES GLOBALES*/
 
-	/*MÉTODOS CONSTRUCTORES*/
-	/*MÉTODOS CONSTRUCTORES*/
+/*MÉTODOS CONSTRUCTORES*/
+/*MÉTODOS CONSTRUCTORES*/
 
-	/*SELECTORES*/
+/*SELECTORES*/
 	$("#SolicitudEliminacion").click(function(e){
 		SolicitarEliminacion();
 		e.preventDefault();
+		return true;
 	});		
-	/*SELECTORES*/
+/*SELECTORES*/
 
-	/*FUNCIONES Y PROCEDIMIENTOS*/
+/*FUNCIONES Y PROCEDIMIENTOS*/
 	function SolicitarEliminacion(){
 		var empresa_id = $("#SolicitudEliminacion").val();
 		var route = "http://localhost:8000/solicitareliminacionempresa/"+empresa_id;
@@ -25,7 +26,10 @@ $(document).ready(function(){
 				},800);					
 			});
 			//console.log(Contador);
-		});			
+		});
+		return true;
 	}
-	/*FUNCIONES Y PROCEDIMIENTOS*/
+/*FUNCIONES Y PROCEDIMIENTOS*/
+
+	return true;
 });

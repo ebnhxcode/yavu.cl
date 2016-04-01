@@ -1,7 +1,4 @@
 {!!Html::script('js/jquery.js')!!}
-{!!Html::script('js/global.js')!!}
-
-{!!Html::script('js/vendor/jquery.timeago.js')!!}
 
 {!!Html::script('js/notificaciones/GestionarNotificaciones.js')!!}
 <!--{!!Html::script('js/ajax/InteraccionPublicaciones.js')!!}-->
@@ -30,7 +27,7 @@
 @stop
 <script>
 
-$j(document).ready(function(){
+$(document).ready(function(){
 
 	function eliminarEstado(id){
 		$("#publicacion"+id).fadeOut();
