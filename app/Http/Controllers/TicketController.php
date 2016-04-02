@@ -81,11 +81,12 @@ class TicketController extends Controller{
   public function show($id){
   }
   public function store(TicketCreateRequest $request){
-      Ticket::create($request->all());
-      Session::flash('message', 'Ticket creado correctamente');
-      return Redirect::to('/tickets');
-    }
+    Ticket::create($request->all());
+    Session::flash('message', 'Ticket creado correctamente');
+    return Redirect::to('/tickets');
+  }
   public function VerificarTickets($user_id){
+    if(isset($user_id)){
       $ticketsUsuario = DB::table('tickets')
         ->where('user_id', $user_id)
         ->sum('cantidad_tickets');
@@ -93,4 +94,8 @@ class TicketController extends Controller{
         $ticketsUsuario
       );
     }
+    return response()->json(
+      'Acceso denegado'
+    );
+  }
 }
