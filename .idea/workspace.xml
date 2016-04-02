@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9b29a6e-80cf-49e0-9911-7f340db7a961" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ServicioController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ServicioController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/SorteoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/SorteoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/RoleController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/RoleController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
     </list>
     <ignored path="yavu.cl.iws" />
@@ -35,7 +35,45 @@
     <favorites_list name="yavu.cl" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="RoleController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RoleController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-19.333334">
+              <caret line="39" column="3" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3809524">
+              <caret line="82" column="26" selection-start-line="82" selection-start-column="26" selection-end-line="82" selection-end-column="26" />
+              <folding>
+                <element signature="e#436#547#0#PHP" expanded="false" />
+                <element signature="e#550#679#0#PHP" expanded="false" />
+                <element signature="e#682#1339#0#PHP" expanded="false" />
+                <element signature="e#1342#1407#0#PHP" expanded="false" />
+                <element signature="e#1410#1616#0#PHP" expanded="false" />
+                <element signature="e#1619#1885#0#PHP" expanded="false" />
+                <element signature="e#1888#2227#0#PHP" expanded="false" />
+                <element signature="e#2230#2391#0#PHP" expanded="false" />
+                <element signature="e#2394#2638#0#PHP" expanded="false" />
+                <element signature="e#2641#2995#0#PHP" expanded="false" />
+                <element signature="e#2998#3065#0#PHP" expanded="false" />
+                <element signature="e#3068#3099#0#PHP" expanded="false" />
+                <element signature="e#3102#6302#0#PHP" expanded="false" />
+                <element signature="e#6305#6703#0#PHP" expanded="false" />
+                <element signature="e#6706#6846#0#PHP" expanded="false" />
+                <element signature="e#6849#7278#0#PHP" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -48,7 +86,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/public/js/vendor/jquery.timeago.js" />
         <option value="$PROJECT_DIR$/resources/views/feeds/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FeedController.php" />
@@ -97,8 +134,9 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SorteoController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/StorageController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ServicioController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/RoleController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
       </list>
     </option>
   </component>
@@ -684,10 +722,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16414523" sideWeight="0.49459043" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16414523" sideWeight="0.49459043" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32766616" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -726,18 +764,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="15" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/empresas/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="20" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1110,31 +1141,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5714286">
-          <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
-          <folding>
-            <element signature="e#436#547#0#PHP" expanded="false" />
-            <element signature="e#550#679#0#PHP" expanded="false" />
-            <element signature="e#682#1339#0#PHP" expanded="false" />
-            <element signature="e#1342#1407#0#PHP" expanded="false" />
-            <element signature="e#1410#1616#0#PHP" expanded="false" />
-            <element signature="e#1619#1885#0#PHP" expanded="false" />
-            <element signature="e#1888#1977#0#PHP" expanded="false" />
-            <element signature="e#1980#2141#0#PHP" expanded="false" />
-            <element signature="e#2144#2307#0#PHP" expanded="false" />
-            <element signature="e#2310#2664#0#PHP" expanded="false" />
-            <element signature="e#2667#2734#0#PHP" expanded="false" />
-            <element signature="e#2737#2768#0#PHP" expanded="false" />
-            <element signature="e#2771#5971#0#PHP" expanded="false" />
-            <element signature="e#5974#6372#0#PHP" expanded="false" />
-            <element signature="e#6375#6515#0#PHP" expanded="false" />
-            <element signature="e#6518#6947#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ServicioController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31746033">
@@ -1142,13 +1148,40 @@
           <folding>
             <element signature="e#363#474#0#PHP" expanded="false" />
             <element signature="e#477#543#0#PHP" expanded="false" />
-            <element signature="e#546#796#0#PHP" expanded="false" />
-            <element signature="e#799#973#0#PHP" expanded="false" />
-            <element signature="e#976#1088#0#PHP" expanded="false" />
-            <element signature="e#1091#1217#0#PHP" expanded="false" />
-            <element signature="e#1220#1250#0#PHP" expanded="false" />
-            <element signature="e#1253#1453#0#PHP" expanded="false" />
             <element signature="e#1456#1697#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RoleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.333334">
+          <caret line="39" column="3" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3809524">
+          <caret line="82" column="26" selection-start-line="82" selection-start-column="26" selection-end-line="82" selection-end-column="26" />
+          <folding>
+            <element signature="e#436#547#0#PHP" expanded="false" />
+            <element signature="e#550#679#0#PHP" expanded="false" />
+            <element signature="e#682#1339#0#PHP" expanded="false" />
+            <element signature="e#1342#1407#0#PHP" expanded="false" />
+            <element signature="e#1410#1616#0#PHP" expanded="false" />
+            <element signature="e#1619#1885#0#PHP" expanded="false" />
+            <element signature="e#1888#2227#0#PHP" expanded="false" />
+            <element signature="e#2230#2391#0#PHP" expanded="false" />
+            <element signature="e#2394#2638#0#PHP" expanded="false" />
+            <element signature="e#2641#2995#0#PHP" expanded="false" />
+            <element signature="e#2998#3065#0#PHP" expanded="false" />
+            <element signature="e#3068#3099#0#PHP" expanded="false" />
+            <element signature="e#3102#6302#0#PHP" expanded="false" />
+            <element signature="e#6305#6703#0#PHP" expanded="false" />
+            <element signature="e#6706#6846#0#PHP" expanded="false" />
+            <element signature="e#6849#7278#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
