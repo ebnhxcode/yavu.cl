@@ -16,8 +16,7 @@ use RUT;
 use Mail;
 use Carbon\Carbon;
 use Malahierba\ChileRut\ChileRut;
-class UserController extends Controller
-{
+class UserController extends Controller{
   public function __construct(){
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
   }
