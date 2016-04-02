@@ -5,18 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9b29a6e-80cf-49e0-9911-7f340db7a961" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/ajax/FrontNotificaciones.js" afterPath="$PROJECT_DIR$/public/js/ajax/FrontNotificaciones.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/ajax/HistorialCoins.js" afterPath="$PROJECT_DIR$/public/js/ajax/HistorialCoins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/ajax/InteraccionPublicaciones.js" afterPath="$PROJECT_DIR$/public/js/ajax/InteraccionPublicaciones.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/ajax/InteraccionPublicacionesEmpresa.js" afterPath="$PROJECT_DIR$/public/js/ajax/InteraccionPublicacionesEmpresa.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/ajax/SeguirEmpresa.js" afterPath="$PROJECT_DIR$/public/js/ajax/SeguirEmpresa.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/ajax/SolicitudEliminacionEmpresa.js" afterPath="$PROJECT_DIR$/public/js/ajax/SolicitudEliminacionEmpresa.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/notificaciones/GestionarNotificaciones.js" afterPath="$PROJECT_DIR$/public/js/notificaciones/GestionarNotificaciones.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/publicaciones/GestionarPublicacionesFeeds.js" afterPath="$PROJECT_DIR$/public/js/publicaciones/GestionarPublicacionesFeeds.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pops/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/pops/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
     </list>
     <ignored path="yavu.cl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,7 +28,27 @@
     <favorites_list name="yavu.cl" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="TicketController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TicketController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.31746033">
+              <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+              <folding>
+                <element signature="e#345#456#0#PHP" expanded="false" />
+                <element signature="e#459#523#0#PHP" expanded="false" />
+                <element signature="e#526#956#0#PHP" expanded="false" />
+                <element signature="e#959#2117#0#PHP" expanded="false" />
+                <element signature="e#2120#2226#0#PHP" expanded="false" />
+                <element signature="e#2229#2347#0#PHP" expanded="false" />
+                <element signature="e#2350#2380#0#PHP" expanded="false" />
+                <element signature="e#2586#2816#0#PHP" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -50,7 +61,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/resources/views/usuarios/forms/fieldsLanding.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/usuarios/forms/fieldsUser.blade.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -61,7 +71,6 @@
         <option value="$PROJECT_DIR$/resources/views/empresas/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/empresas/forms/modalTerminosCondiciones.blade.php" />
         <option value="$PROJECT_DIR$/config/database.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/EmpresaController.php" />
         <option value="$PROJECT_DIR$/resources/views/sorteos/create.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_02_11_164427_create_sorteos_table.php" />
@@ -101,6 +110,8 @@
         <option value="$PROJECT_DIR$/public/js/ajax/FrontNotificaciones.js" />
         <option value="$PROJECT_DIR$/public/js/notificaciones/GestionarNotificaciones.js" />
         <option value="$PROJECT_DIR$/public/js/publicaciones/GestionarPublicacionesFeeds.js" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" />
       </list>
     </option>
   </component>
@@ -621,8 +632,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -689,7 +700,7 @@
     <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15506808" sideWeight="0.49459043" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16187595" sideWeight="0.49459043" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32766616" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -733,13 +744,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_11_164427_create_sorteos_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/empresas/publicProfile.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -842,13 +846,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TicketController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="99" column="27" selection-start-line="99" selection-start-column="27" selection-end-line="99" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -1088,44 +1085,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5521886">
           <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47619048">
+          <caret line="97" column="3" selection-start-line="97" selection-start-column="3" selection-end-line="97" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TicketController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31746033">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
           <folding>
-            <element signature="e#291#568#0" expanded="false" />
-            <element signature="e#654#794#0" expanded="false" />
-            <element signature="e#831#1526#0" expanded="false" />
-            <element signature="e#1562#1651#0" expanded="false" />
-            <element signature="e#1689#2076#0" expanded="false" />
-            <element signature="e#2155#3448#0" expanded="false" />
-            <element signature="e#3475#6296#0" expanded="false" />
-            <element signature="e#6339#6774#0" expanded="false" />
-            <element signature="e#6805#7415#0" expanded="false" />
-            <element signature="e#7442#8754#0" expanded="false" />
-            <element signature="e#8784#8836#0" expanded="false" />
-            <element signature="e#8865#8914#0" expanded="false" />
-            <marker date="1459529432581" expanded="true" signature="2587:3362" placeholder="..." />
-            <marker date="1459529432581" expanded="true" signature="2626:3068" placeholder="..." />
-            <marker date="1459529432581" expanded="true" signature="2642:2891" placeholder="..." />
-            <marker date="1459529432581" expanded="false" signature="2669:2683" placeholder="..." />
-            <marker date="1459529432581" expanded="true" signature="2684:2886" placeholder="..." />
-            <marker date="1459529432581" expanded="false" signature="2802:2828" placeholder="..." />
-            <marker date="1459529432581" expanded="true" signature="2909:3012" placeholder="..." />
-            <marker date="1459529432581" expanded="true" signature="3120:3347" placeholder="..." />
-            <marker date="1459529432581" expanded="false" signature="3276:3290" placeholder="..." />
-            <marker date="1459529432581" expanded="true" signature="3291:3331" placeholder="..." />
-            <marker date="1459529432581" expanded="true" signature="4182:5805" placeholder="..." />
-            <marker date="1459529432581" expanded="true" signature="4221:5299" placeholder="..." />
-            <marker date="1459529432581" expanded="true" signature="4255:4748" placeholder="..." />
-            <marker date="1459529432581" expanded="true" signature="4408:4546" placeholder="..." />
-            <marker date="1459529432581" expanded="true" signature="4616:4731" placeholder="..." />
-            <marker date="1459529432581" expanded="true" signature="4783:5080" placeholder="..." />
-            <marker date="1459529432581" expanded="false" signature="4830:4844" placeholder="..." />
-            <marker date="1459529432581" expanded="true" signature="4845:5075" placeholder="..." />
-            <marker date="1459529432581" expanded="false" signature="4949:4975" placeholder="..." />
-            <marker date="1459529432581" expanded="true" signature="5098:5243" placeholder="..." />
-            <marker date="1459529432581" expanded="true" signature="5351:5790" placeholder="..." />
-            <marker date="1459529432581" expanded="false" signature="5496:5509" placeholder="..." />
-            <marker date="1459529432581" expanded="true" signature="5510:5774" placeholder="..." />
-            <marker date="1459529432581" expanded="true" signature="5620:5759" placeholder="..." />
-            <marker date="1459529432581" expanded="true" signature="5675:5715" placeholder="..." />
+            <element signature="e#345#456#0#PHP" expanded="false" />
+            <element signature="e#459#523#0#PHP" expanded="false" />
+            <element signature="e#526#956#0#PHP" expanded="false" />
+            <element signature="e#959#2117#0#PHP" expanded="false" />
+            <element signature="e#2120#2226#0#PHP" expanded="false" />
+            <element signature="e#2229#2347#0#PHP" expanded="false" />
+            <element signature="e#2350#2380#0#PHP" expanded="false" />
+            <element signature="e#2586#2816#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
