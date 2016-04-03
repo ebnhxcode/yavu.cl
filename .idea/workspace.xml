@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9b29a6e-80cf-49e0-9911-7f340db7a961" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PagoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PagoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" />
     </list>
     <ignored path="yavu.cl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,7 +46,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/EmpresaController.php" />
         <option value="$PROJECT_DIR$/resources/views/sorteos/create.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_02_11_164427_create_sorteos_table.php" />
         <option value="$PROJECT_DIR$/resources/views/sorteos/forms/fieldsSorteo.blade.php" />
@@ -97,6 +96,7 @@
         <option value="$PROJECT_DIR$/public/js/ajax/ParticiparSorteo.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ParticipanteController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PagoController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/MailController.php" />
       </list>
     </option>
   </component>
@@ -804,13 +804,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/tickets/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/sorteos/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1456,6 +1449,22 @@
             <element signature="e#1151#1181#0#PHP" expanded="false" />
             <element signature="e#1184#1371#0#PHP" expanded="false" />
             <element signature="e#1374#1677#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MailController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25441697">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+          <folding>
+            <element signature="e#282#310#0#PHP" expanded="false" />
+            <element signature="e#313#342#0#PHP" expanded="false" />
+            <element signature="e#345#378#0#PHP" expanded="false" />
+            <element signature="e#381#411#0#PHP" expanded="false" />
+            <element signature="e#414#444#0#PHP" expanded="false" />
+            <element signature="e#447#768#0#PHP" expanded="false" />
+            <element signature="e#771#821#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
