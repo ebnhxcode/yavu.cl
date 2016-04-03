@@ -26,7 +26,25 @@
 </div>
 @stop
 <script>
-
+	var formatNumber = {
+		separador: ".", // separador para los miles
+		sepDecimal: ',', // separador para los decimales
+		formatear:function (num){
+			num +='';
+			var splitStr = num.split('.');
+			var splitLeft = splitStr[0];
+			var splitRight = splitStr.length > 1 ? this.sepDecimal + splitStr[1] : '';
+			var regx = /(\d+)(\d{3})/;
+			while (regx.test(splitLeft)) {
+				splitLeft = splitLeft.replace(regx, '$1' + this.separador + '$2');
+			}
+			return this.simbol + splitLeft  +splitRight;
+		},
+		new:function(num, simbol){
+			this.simbol = simbol ||'';
+			return this.formatear(num);
+		}
+	}
 
 	function eliminarEstado(id){
 		console.log(id);
@@ -63,6 +81,8 @@
 				$('#'+valor).addClass("text-info").fadeIn();
 				console.log('exito');
 				ContarInteracciones(status_id);
+				ContarNotificaciones();
+				ContarCoins();
 			}
 		});
 		ContarInteracciones(status_id);
@@ -81,6 +101,43 @@
 			});
 			$("#badge_"+status_id).text(Contador);
 		});
+	}
+
+	function ContarNotificaciones(){
+		var user_id = $("#user_id").val();
+		$.ajax({
+			url: "http://localhost:8000/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
+			type: 'GET',
+			dataType: 'json',
+			cache: false,
+			async: true,
+			success: function success(data, status) {
+				if (data > 0) {
+					$("#CantidadNotificaciones").text(data);
+					//$("#Notificaciones").css('color','#F5A9A9');
+				}else{
+					$("#CantidadNotificaciones").text("");
+					//$("#Notificaciones").css('color','');
+				}
+			},
+			error: function error(xhr, textStatus, errorThrown) {
+				//alert('Remote sever unavailable. Please try later');
+			}
+		});
+		return true;
+	}
+	function ContarCoins(){
+		var route = "http://localhost:8000/contarcoins";
+		var user_id = $("#user_id");
+		$.get(route, function(res){
+			$(".CantidadCoins").text("");
+			$(res).each(function(key,value){
+				if(parseInt(value.coins)>0){
+					$(".CantidadCoins").append(formatNumber.new(value.coins, "$ "));
+				}
+			});
+		});
+		return true;
 	}
 
 </script>

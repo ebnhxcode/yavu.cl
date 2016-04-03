@@ -134,7 +134,7 @@ $(document).ready(function(){
 					CantidadTicketsPorSorteo.attr('value', data.length);
 					if(CantidadActual < data.length){
 						CantidadTicketsPorSorteo.fadeOut(function() {
-							CantidadTicketsPorSorteo.text(data.length + "\n (Haz usado " + j + " tickets para este sorteo)").fadeIn();
+							CantidadTicketsPorSorteo.text(data.length + "\n (Haz usado " + j + " tickets para este sorteo)").fadeIn(50);
 						});
 					}else{
 						if(data.length > 0){

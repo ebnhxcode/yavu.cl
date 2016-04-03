@@ -65,9 +65,9 @@ $(document).ready(function(){
 				dataType: 'json',
 				success:function(data){
           if (data === 'Sin saldo para el servicio'){
-            $('#CantidadTickets').fadeIn().html(data);
+            $('#CantidadTickets').fadeIn(100).html(data);
           }else{
-            if(data==='Exito'){$("#UsarTicket").fadeIn();}
+            if(data==='Exito'){$("#UsarTicket").fadeIn(100);}
             ContarCoins();
             ContarTickets();
           }
@@ -82,10 +82,10 @@ $(document).ready(function(){
 		var route = "http://localhost:8000/contarcoins";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
-			$("#CantidadCoins").text("");
+			$(".CantidadCoins").text("");
 			$(res).each(function(key,value){
 				if(parseInt(value.coins)>0){
-					$("#CantidadCoins").text(formatNumber.new(value.coins, "$ "));	
+					$(".CantidadCoins").text(formatNumber.new(value.coins, "$ "));
 				}
 			});
 		});
@@ -114,7 +114,7 @@ $(document).ready(function(){
 			if(res>0){
 				$(".UsarTicket").removeAttr('style');
 			}else{
-				$(".UsarTicket").fadeOut();
+				$(".UsarTicket").fadeOut(100);
 			}
 		});
 		return true;

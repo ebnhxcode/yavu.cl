@@ -107,7 +107,10 @@ class UserController extends Controller{
     return view('usuarios.profile');
   }
   public function show($id){
-
+    if(isset($id)){
+      return Redirect::to('/profile');
+    }
+    return response()->json('Acceso denegado');
   }
   public function store(UserCreateRequest $request){
     //User::create($request->all());

@@ -144,9 +144,9 @@ $(document).ready(function(){
 					ContarCoins();
 					ContarTickets();
 				}else{
-					$('#Mensaje').fadeIn().html(data);
+					$('#Mensaje').fadeIn(100).html(data);
 					setInterval(function(){
-						$('#Mensaje').fadeOut();
+						$('#Mensaje').fadeOut(100);
 					}, 1500);
 				}
 			}
@@ -177,8 +177,8 @@ $(document).ready(function(){
 					});
 					CantidadTicketsPorSorteo.attr('value', data.length);
 					if(CantidadActual < data.length){
-						CantidadTicketsPorSorteo.fadeOut(function() {
-							CantidadTicketsPorSorteo.text(data.length + "\n (Haz usado " + j + " tickets para este sorteo)").fadeIn();
+						CantidadTicketsPorSorteo.fadeOut(function(){
+							CantidadTicketsPorSorteo.text(data.length + "\n (Haz usado " + j + " tickets para este sorteo)").fadeIn(50);
 						});
 					}else{
 						if(data.length > 0){
@@ -240,7 +240,7 @@ $(document).ready(function(){
 			if(res>0){
 				$(".UsarTicket").removeAttr('style');
 			}else{
-				$(".UsarTicket").fadeOut();
+				$(".UsarTicket").fadeOut(100);
 			}
 		});
 		return true;
@@ -250,10 +250,10 @@ $(document).ready(function(){
 		var route = "http://localhost:8000/contarcoins";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
-			$("#CantidadCoins").text("");
+			$(".CantidadCoins").text("");
 			$(res).each(function(key,value){
 				if(parseInt(value.coins)>0){
-					$("#CantidadCoins").text(formatNumber.new(value.coins, "$ "));	
+					$(".CantidadCoins").text(formatNumber.new(value.coins, "$ "));
 				}
 			});
 		});

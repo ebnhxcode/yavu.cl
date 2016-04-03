@@ -1,7 +1,6 @@
 {!!Html::script('js/jquery.js')!!}
 <!--{!!Html::script('js/ajax/GestionarEstados.js')!!}-->
 <!--{!!Html::script('js/ajax/GestionarInteraccionesEstadosUsuario.js')!!}-->
-{!!Html::script('js/ajax/GestionarCoins.js')!!}
 <!--{!!Html::script('js/ajax/InteraccionPublicaciones.js')!!}-->
 @extends('layouts.front')
 @section('content')
@@ -98,7 +97,7 @@
 						</div>
 						<div class="list-group-item">
 							Coins 
-							<span id="CantidadCoins" style="float:right;" class="label label-warning">
+							<span id="" style="float:right;" class="label label-warning CantidadCoins">
 								<img src="https://38.media.tumblr.com/9056c3040c618c65888244befef39321/tumblr_mhpc6eUvag1rrftcdo1_500.gif" width="16px" height="12px">
 							</span>
 						</div>
