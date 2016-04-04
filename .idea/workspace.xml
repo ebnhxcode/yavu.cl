@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c9b29a6e-80cf-49e0-9911-7f340db7a961" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/LogController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/LogController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/InteraccionEstadoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/InteraccionEstadoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/InteresController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/InteresController.php" />
     </list>
     <ignored path="yavu.cl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,8 +48,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/migrations/2016_02_11_164427_create_sorteos_table.php" />
-        <option value="$PROJECT_DIR$/resources/views/sorteos/forms/fieldsSorteo.blade.php" />
         <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/app/Ticket.php" />
         <option value="$PROJECT_DIR$/app/Sorteo.php" />
@@ -98,6 +97,8 @@
         <option value="$PROJECT_DIR$/resources/views/feeds/index.blade.php" />
         <option value="$PROJECT_DIR$/public/js/ajax/GestionarCoins.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/LogController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/InteresController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/InteraccionEstadoController.php" />
       </list>
     </option>
   </component>
@@ -805,20 +806,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/ajax/EmpresasDashboardUsuario.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="75" column="14" selection-start-line="75" selection-start-column="14" selection-end-line="75" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/ajax/BuscarEmpresa.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="136" column="14" selection-start-line="136" selection-start-column="14" selection-end-line="136" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/ajax/GestionarEstados.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1206,6 +1193,41 @@
             <element signature="e#2068#2098#0#PHP" expanded="false" />
             <element signature="e#2101#3756#0#PHP" expanded="false" />
             <element signature="e#3759#3811#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/InteresController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3809524">
+          <caret line="54" column="3" selection-start-line="54" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
+          <folding>
+            <element signature="e#359#470#0#PHP" expanded="false" />
+            <element signature="e#473#539#0#PHP" expanded="false" />
+            <element signature="e#542#790#0#PHP" expanded="false" />
+            <element signature="e#793#965#0#PHP" expanded="false" />
+            <element signature="e#968#1078#0#PHP" expanded="false" />
+            <element signature="e#1081#1206#0#PHP" expanded="false" />
+            <element signature="e#1209#1240#0#PHP" expanded="false" />
+            <element signature="e#1243#1440#0#PHP" expanded="false" />
+            <element signature="e#1443#1688#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/InteraccionEstadoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31746033">
+          <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+          <folding>
+            <element signature="e#300#328#0#PHP" expanded="false" />
+            <element signature="e#331#360#0#PHP" expanded="false" />
+            <element signature="e#363#762#0#PHP" expanded="false" />
+            <element signature="e#765#798#0#PHP" expanded="false" />
+            <element signature="e#801#831#0#PHP" expanded="false" />
+            <element signature="e#834#864#0#PHP" expanded="false" />
+            <element signature="e#867#2115#0#PHP" expanded="false" />
+            <element signature="e#2118#2168#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

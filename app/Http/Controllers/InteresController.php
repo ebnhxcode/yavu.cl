@@ -11,48 +11,46 @@ use Auth;
 use Redirect;
 use Illuminate\Routing\Route;
 use DB;
-class InteresController extends Controller
-{
-    public function __construct(){
-        $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+class InteresController extends Controller{
+  public function __construct(){
+    $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+  }
+  public function create(){
+    return view('intereses.create');
+  }
+  public function destroy($id){
+    if(isset($id)){
+      $this->interes->delete();
+      Session::flash('message', 'Interes eliminado correctamente');
+      return Redirect::to('/intereses');
     }
-    public function find(Route $route){
-        $this->interes = Interes::find($route->getParameter('intereses'));
-    }      
-    public function index()
-    {
-        $intereses = Interes::paginate(5);
-        return view('intereses.index', compact('intereses')); 
+    return response()->json('Acceso denegado');
+  }
+  public function edit($id){
+    if(isset($id)){
+      return view('intereses.edit', ['interes' => $this->interes]);
     }
-    public function create()
-    {
-        return view('intereses.create');
-    }
-    public function store(InteresCreateRequest $request)
-    {
-        Interes::create($request->all());
-        Session::flash('message', 'Interes creado correctamente');
-        return Redirect::to('/intereses'); 
-    }
-    public function show($id)
-    {
-        
-    }
-    public function edit($id)
-    {
-        return view('intereses.edit', ['interes' => $this->interes]);
-    }
-    public function update(InteresUpdateRequest $request, $id)
-    {
-        $this->interes->fill($request->all());
-        $this->interes->save();
-        Session::flash('message', 'Interes editado correctamente');
-        return Redirect::to('/intereses');
-    }
-    public function destroy($id)
-    {
-        $this->interes->delete();
-        Session::flash('message', 'Interes eliminado correctamente');
-        return Redirect::to('/intereses');
-    }
+    return response()->json('Acceso denegado');
+  }
+  public function find(Route $route){
+    $this->interes = Interes::find($route->getParameter('intereses'));
+  }
+  public function index(){
+    $intereses = Interes::paginate(5);
+    return view('intereses.index', compact('intereses'));
+  }
+  public function show($id){
+
+  }
+  public function store(InteresCreateRequest $request){
+    Interes::create($request->all());
+    Session::flash('message', 'Interes creado correctamente');
+    return Redirect::to('/intereses');
+  }
+  public function update(InteresUpdateRequest $request, $id){
+      $this->interes->fill($request->all());
+      $this->interes->save();
+      Session::flash('message', 'Interes editado correctamente');
+      return Redirect::to('/intereses');
+  }
 }
