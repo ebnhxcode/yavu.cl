@@ -146,7 +146,6 @@ return [
         yavu\Providers\RouteServiceProvider::class,
         'Collective\Html\HtmlServiceProvider',
         Malahierba\ChileRut\ChileRutServiceProvider::class,
-        GeneaLabs\Phpgmaps\PhpgmapsServiceProvider::class,
 
 
     ],
@@ -199,8 +198,6 @@ return [
         'Form'      => 'Collective\Html\FormFacade',
         'Html'      => 'Collective\Html\HtmlFacade',
         'RUT'       => Malahierba\ChileRut\Facades\ChileRut::class,
-        'Gmaps' => GeneaLabs\Phpgmaps\Facades\PhpgmapsFacade::class,
-
 
     ],
 

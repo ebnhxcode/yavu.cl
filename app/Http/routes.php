@@ -175,5 +175,15 @@ Route::resource('mail', 'MailController');
 /*Gestión de correos*/
 
 /*Gestión de Mapas*/	
-Route::get('/gmaps', ['as ' => 'gmaps', 'uses' => 'GmapsController@index']);
+Route::get('vendor/add', function(){
+
+  //view
+  return View::make('add');
+});
+Route::post('vendor/add', function(){
+
+});
+Route::get('vendor/{id}', function($id){
+
+});
 /*Gestión de Mapas*/
