@@ -42,7 +42,7 @@ $(document).ready(function(){
 			$(".CantidadCoins").value = "";
 			$(res).each(function(key,value){
 				if(parseInt(value.coins)>0){
-					$(".CantidadCoins").append(formatNumber.new(value.coins, "$ "));
+					$(".CantidadCoins").show('fast').append(formatNumber.new(value.coins, "$ "));
 				}
 			});
 		});

@@ -126,10 +126,11 @@ $(document).ready(function(){
 			async: true,
 			success: function success(data, status) {
 				if (data > 0) {
-          $("#CantidadNotificaciones").text(data);
+
+          $("#CantidadNotificaciones").show('fast').text(data);
           //$("#Notificaciones").css('color','#F5A9A9');
         }else{
-          $("#CantidadNotificaciones").text("");
+          $("#CantidadNotificaciones").hide('fast').text("");
           //$("#Notificaciones").css('color','');
         }
 			},
