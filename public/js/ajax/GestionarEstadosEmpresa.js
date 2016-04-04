@@ -3,6 +3,7 @@ $(document).ready(function(){
 	var Global_idUltimaPublicacion;
 	var Global_ContadorCargaPublicaciones;
 	var Global_Control = true;
+	var Refresh = 100;
 	//EVENTO CUANDO SE MUEVE EL SCROLL, EL MISMO APLICA TAMBIEN CUANDO SE RESIZA
 	var change = false;
 	var window_y = $(window).scrollTop();
@@ -28,6 +29,14 @@ $(document).ready(function(){
 		$("#EstadosNuevos").append("");
 		CargarEstados();
 		e.preventDefault();
+		return true;
+	});
+
+	$(function(){
+		setInterval(function(){
+			$("abbr.timeago").timeago();
+			Refresh = 30000 + Refresh;
+		}, Refresh);
 		return true;
 	});
 
@@ -240,7 +249,7 @@ $(document).ready(function(){
 								+value.nombreEmp+" Idp:("+Global_idUltimaPublicacion+")"
 							+"</a></h4>"
 							+"<small>"
-								+"Publicó <span	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+humanTiming(TimeAgo)+"</span	>"
+								+"Publicó <abbr class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
 							+"</small><hr>"		
 							+"<p>"+value.status+"</p>"
 						+"</div>"
@@ -267,7 +276,8 @@ $(document).ready(function(){
 					Global_Control = false;	
 				}			
 			}
-			ocultarCargando();	
+			ocultarCargando();
+			$("abbr.timeago").timeago();
 			Global_ContadorCargaPublicaciones += 1 * 5;
 			return true;
 		});

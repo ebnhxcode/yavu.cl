@@ -225,34 +225,68 @@
 @stop
 <script>
 
-	function eliminarEstado(id){
-		$("#publicacion"+id).fadeOut();
-	}
+  var formatNumber = {
+    separador: ".", // separador para los miles
+    sepDecimal: ',', // separador para los decimales
+    formatear:function (num){
+      num +='';
+      var splitStr = num.split('.');
+      var splitLeft = splitStr[0];
+      var splitRight = splitStr.length > 1 ? this.sepDecimal + splitStr[1] : '';
+      var regx = /(\d+)(\d{3})/;
+      while (regx.test(splitLeft)) {
+        splitLeft = splitLeft.replace(regx, '$1' + this.separador + '$2');
+      }
+      return this.simbol + splitLeft  +splitRight;
+    },
+    new:function(num, simbol){
+      this.simbol = simbol ||'';
+      return this.formatear(num);
+    }
+  }
 
-	function Interactuar(valor){
-		var status_id = valor.replace('estado_','');
-		var user_id = $("#user_id").val();
-		var token = $("#token").val();
-		var route = "http://localhost:8000/interactuar";
+  function eliminarEstado(id){
+		console.log(id);
+		var route = "http://localhost:8000/eliminarfeed/"+id;
 		$.ajax({
 			url: route,
-			headers: {'X-CSRF-TOKEN': token},
-			type: 'POST',
+			type: 'GET',
 			dataType: 'json',
-			data: {
-				status_id: status_id,
-				user_id: user_id
-			},
 			success:function(){
-				$('#'+valor).addClass("text-info").fadeIn();
 				console.log('exito');
-				ContarInteracciones(status_id);
+				$("#publicacion"+id).fadeOut();
 			}
 		});
-		ContarInteracciones(status_id);
-		$('#'+valor).removeClass("text-info").fadeIn();
 		return true;
 	}
+
+  function Interactuar(valor){
+    var status_id = valor.replace('estado_','');
+    var user_id = $("#user_id").val();
+    var token = $("#token").val();
+    var route = "http://localhost:8000/interactuar";
+    $.ajax({
+      url: route,
+      headers: {'X-CSRF-TOKEN': token},
+      type: 'POST',
+      dataType: 'json',
+      data: {
+        status_id: status_id,
+        user_id: user_id
+      },
+      success:function(){
+        $('#'+valor).addClass("text-info").fadeIn();
+        console.log('exito');
+        ContarInteracciones(status_id);
+        ContarNotificaciones();
+        ContarCoins();
+      }
+    });
+    ContarInteracciones(status_id);
+    $('#'+valor).removeClass("text-info").fadeIn();
+    return true;
+  }
+
 
 	function ContarInteracciones(status_id){
 		status_id = status_id;
@@ -266,109 +300,55 @@
 			$("#badge_"+status_id).text(Contador);
 		});
 	}
-
-</script>
-
-<script>
-	
-	(function ($) {
-	$.fn.countTo = function (options) {
-		options = options || {};
-		
-		return $(this).each(function () {
-			// set options for current element
-			var settings = $.extend({}, $.fn.countTo.defaults, {
-				from:            $(this).data('from'),
-				to:              $(this).data('to'),
-				speed:           $(this).data('speed'),
-				refreshInterval: $(this).data('refresh-interval'),
-				decimals:        $(this).data('decimals')
-			}, options);
-			
-			// how many times to update the value, and how much to increment the value on each update
-			var loops = Math.ceil(settings.speed / settings.refreshInterval),
-				increment = (settings.to - settings.from) / loops;
-			
-			// references & variables that will change with each update
-			var self = this,
-				$self = $(this),
-				loopCount = 0,
-				value = settings.from,
-				data = $self.data('countTo') || {};
-			
-			$self.data('countTo', data);
-			
-			// if an existing interval can be found, clear it first
-			if (data.interval) {
-				clearInterval(data.interval);
-			}
-			data.interval = setInterval(updateTimer, settings.refreshInterval);
-			
-			// initialize the element with the starting value
-			render(value);
-			
-			function updateTimer() {
-				value += increment;
-				loopCount++;
-				
-				render(value);
-				
-				if (typeof(settings.onUpdate) == 'function') {
-					settings.onUpdate.call(self, value);
-				}
-				
-				if (loopCount >= loops) {
-					// remove the interval
-					$self.removeData('countTo');
-					clearInterval(data.interval);
-					value = settings.to;
-					
-					if (typeof(settings.onComplete) == 'function') {
-						settings.onComplete.call(self, value);
-					}
-				}
-			}
-			
-			function render(value) {
-				var formattedValue = settings.formatter.call(self, value, settings);
-				$self.html(formattedValue);
-			}
-		});
-	};
-	
-	$.fn.countTo.defaults = {
-		from: 0,               // the number the element should start at
-		to: 0,                 // the number the element should end at
-		speed: 1000,           // how long it should take to count between the target numbers
-		refreshInterval: 100,  // how often the element should be updated
-		decimals: 0,           // the number of decimal places to show
-		formatter: formatter,  // handler for formatting the value before rendering
-		onUpdate: null,        // callback method for every time the element is updated
-		onComplete: null       // callback method for when the element finishes updating
-	};
-	
-	function formatter(value, settings) {
-		return value.toFixed(settings.decimals);
-	}
-}(jQuery));
-
-jQuery(function ($) {
-  // custom formatting example
-  $('#count-number').data('countToOptions', {
-	formatter: function (value, options) {
-	  return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
-	}
-  });
-  
-  // start all the timers
-  $('.timer').each(count);  
-  
-  function count(options) {
-	var $this = $(this);
-	options = $.extend({}, options || {}, $this.data('countToOptions') || {});
-	$this.countTo(options);
+  function ContarInteracciones(status_id){
+    status_id = status_id;
+    var route = "http://localhost:8000/contarinteracciones/"+status_id;
+    var user_id = $("#user_id");
+    var Contador = 0;
+    $.get(route, function(res){
+      $(res).each(function(key,value){
+        Contador += 1;
+      });
+      $("#badge_"+status_id).text(Contador);
+    });
   }
-});
+
+  function ContarNotificaciones(){
+    var user_id = $("#user_id").val();
+    $.ajax({
+      url: "http://localhost:8000/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
+      type: 'GET',
+      dataType: 'json',
+      cache: false,
+      async: true,
+      success: function success(data, status) {
+        if (data > 0) {
+          $("#CantidadNotificaciones").show('fast').text(data);
+          //$("#Notificaciones").css('color','#F5A9A9');
+        }else{
+          $("#CantidadNotificaciones").hide('fast').text("");
+          //$("#Notificaciones").css('color','');
+        }
+      },
+      error: function error(xhr, textStatus, errorThrown) {
+        //alert('Remote sever unavailable. Please try later');
+      }
+    });
+    return true;
+  }
+  function ContarCoins(){
+    var route = "http://localhost:8000/contarcoins";
+    var user_id = $("#user_id");
+    $.get(route, function(res){
+      $(".CantidadCoins").text("");
+      $(res).each(function(key,value){
+        if(parseInt(value.coins)>0){
+          $(".CantidadCoins").append(formatNumber.new(value.coins, "$ "));
+        }
+      });
+    });
+    return true;
+  }
+
+
 </script>
-
-

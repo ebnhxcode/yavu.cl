@@ -22,6 +22,7 @@ return array(
     'CreateEventosTable' => $baseDir . '/database/migrations/2016_02_24_162050_create_eventos_table.php',
     'CreateFeedsTable' => $baseDir . '/database/migrations/2016_02_25_105202_create_feeds_table.php',
     'CreateFollowersTable' => $baseDir . '/database/migrations/2016_03_10_151005_create_followers_table.php',
+    'CreateGmapsTable' => $baseDir . '/database/migrations/2016_04_04_125418_create_gmaps_table.php',
     'CreateInteraccionEstadosTable' => $baseDir . '/database/migrations/2016_02_16_123149_create_interaccion_estados_table.php',
     'CreateInteraccionesTable' => $baseDir . '/database/migrations/2016_02_25_110130_create_interacciones_table.php',
     'CreatePagosTable' => $baseDir . '/database/migrations/2016_02_24_145940_create_pagos_table.php',

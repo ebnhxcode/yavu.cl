@@ -13,7 +13,7 @@
 <div class="container">
   <div class="col-sm-4">
     <h1>Add Vendor, Location</h1>
-    {!!Form::open(array('url'=>'/vendor/add', 'files'=>true))!!}
+    {!!Form::open(['route'=>'gmaps.store', 'method'=>'POST', 'files'=>true])!!}
     <div class="form-group">
       <label for="">Title</label>
       <input type="text" class="form-control input-sm" name="title">

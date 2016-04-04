@@ -186,4 +186,6 @@ Route::post('vendor/add', function(){
 Route::get('vendor/{id}', function($id){
 
 });
+
+Route::resource('gmaps', 'GmapsController');
 /*Gestión de Mapas*/
