@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c9b29a6e-80cf-49e0-9911-7f340db7a961" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/InteraccionEstadoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/InteraccionEstadoController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/InteresController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/InteresController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/InteraccionController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/InteraccionController.php" />
     </list>
     <ignored path="yavu.cl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,7 +47,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/app/Ticket.php" />
         <option value="$PROJECT_DIR$/app/Sorteo.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_03_07_143453_create_participante_sorteos_table.php" />
@@ -99,6 +97,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/LogController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/InteresController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/InteraccionEstadoController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/InteraccionController.php" />
       </list>
     </option>
   </component>
@@ -189,6 +188,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -668,7 +668,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -735,12 +734,12 @@
     <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22919819" sideWeight="0.49459043" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22844176" sideWeight="0.49459043" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32766616" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17423134" sideWeight="0.5054096" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -806,13 +805,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/ajax/GestionarEstados.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="342" column="2" selection-start-line="342" selection-start-column="2" selection-end-line="342" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1118,7 +1110,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1126,25 +1117,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.2222222">
           <caret line="44" column="40" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
-          <folding>
-            <marker date="1459749544330" expanded="true" signature="1729:1987" placeholder="..." />
-            <marker date="1459749544330" expanded="false" signature="1798:1810" placeholder="..." />
-            <marker date="1459749544330" expanded="true" signature="1839:1970" placeholder="..." />
-            <marker date="1459749544330" expanded="true" signature="2331:3597" placeholder="..." />
-            <marker date="1459749544330" expanded="true" signature="2375:3581" placeholder="..." />
-            <marker date="1459749544330" expanded="true" signature="2414:2740" placeholder="..." />
-            <marker date="1459749544330" expanded="false" signature="2567:2620" placeholder="..." />
-            <marker date="1459749544330" expanded="true" signature="2780:3564" placeholder="..." />
-            <marker date="1459749544330" expanded="true" signature="2822:3095" placeholder="..." />
-            <marker date="1459749544330" expanded="false" signature="2902:2914" placeholder="..." />
-            <marker date="1459749544330" expanded="true" signature="2943:3075" placeholder="..." />
-            <marker date="1459749544330" expanded="true" signature="3138:3325" placeholder="..." />
-            <marker date="1459749544330" expanded="false" signature="3224:3236" placeholder="..." />
-            <marker date="1459749544330" expanded="true" signature="3368:3545" placeholder="..." />
-            <marker date="1459749544330" expanded="false" signature="3445:3457" placeholder="..." />
-            <marker date="1459749544330" expanded="true" signature="3726:4012" placeholder="..." />
-            <marker date="1459749544330" expanded="true" signature="3742:3998" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1152,7 +1124,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2786596">
           <caret line="118" column="60" selection-start-line="118" selection-start-column="60" selection-end-line="118" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1160,22 +1131,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.75757575">
           <caret line="132" column="10" selection-start-line="132" selection-start-column="10" selection-end-line="132" selection-end-column="61" />
-          <folding>
-            <marker date="1459727077834" expanded="true" signature="1925:2257" placeholder="..." />
-            <marker date="1459727077834" expanded="true" signature="1959:2241" placeholder="..." />
-            <marker date="1459727077834" expanded="true" signature="2008:2034" placeholder="..." />
-            <marker date="1459727077834" expanded="true" signature="2085:2224" placeholder="..." />
-            <marker date="1459727077834" expanded="true" signature="2368:2700" placeholder="..." />
-            <marker date="1459727077834" expanded="true" signature="2402:2684" placeholder="..." />
-            <marker date="1459727077834" expanded="true" signature="2451:2477" placeholder="..." />
-            <marker date="1459727077834" expanded="true" signature="2528:2667" placeholder="..." />
-            <marker date="1459727077834" expanded="true" signature="2771:3112" placeholder="..." />
-            <marker date="1459727077834" expanded="true" signature="2805:3096" placeholder="..." />
-            <marker date="1459727077834" expanded="true" signature="2854:2880" placeholder="..." />
-            <marker date="1459727077834" expanded="true" signature="2940:3079" placeholder="..." />
-            <marker date="1459727077834" expanded="true" signature="3207:3239" placeholder="..." />
-            <marker date="1459727077834" expanded="true" signature="3240:3360" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1183,17 +1138,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31746033">
           <caret line="74" column="23" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="23" />
-          <folding>
-            <element signature="e#347#378#0#PHP" expanded="false" />
-            <element signature="e#381#1673#0#PHP" expanded="false" />
-            <element signature="e#1676#1707#0#PHP" expanded="false" />
-            <element signature="e#1710#1743#0#PHP" expanded="false" />
-            <element signature="e#1746#1776#0#PHP" expanded="false" />
-            <element signature="e#1779#2065#0#PHP" expanded="false" />
-            <element signature="e#2068#2098#0#PHP" expanded="false" />
-            <element signature="e#2101#3756#0#PHP" expanded="false" />
-            <element signature="e#3759#3811#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1201,17 +1145,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3809524">
           <caret line="54" column="3" selection-start-line="54" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
-          <folding>
-            <element signature="e#359#470#0#PHP" expanded="false" />
-            <element signature="e#473#539#0#PHP" expanded="false" />
-            <element signature="e#542#790#0#PHP" expanded="false" />
-            <element signature="e#793#965#0#PHP" expanded="false" />
-            <element signature="e#968#1078#0#PHP" expanded="false" />
-            <element signature="e#1081#1206#0#PHP" expanded="false" />
-            <element signature="e#1209#1240#0#PHP" expanded="false" />
-            <element signature="e#1243#1440#0#PHP" expanded="false" />
-            <element signature="e#1443#1688#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1219,15 +1152,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31746033">
           <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/InteraccionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34982333">
+          <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
           <folding>
-            <element signature="e#300#328#0#PHP" expanded="false" />
-            <element signature="e#331#360#0#PHP" expanded="false" />
-            <element signature="e#363#762#0#PHP" expanded="false" />
-            <element signature="e#765#798#0#PHP" expanded="false" />
-            <element signature="e#801#831#0#PHP" expanded="false" />
-            <element signature="e#834#864#0#PHP" expanded="false" />
-            <element signature="e#867#2115#0#PHP" expanded="false" />
-            <element signature="e#2118#2168#0#PHP" expanded="false" />
+            <element signature="e#375#486#0#PHP" expanded="false" />
+            <element signature="e#489#559#0#PHP" expanded="false" />
+            <element signature="e#562#851#0#PHP" expanded="false" />
+            <element signature="e#854#962#0#PHP" expanded="false" />
+            <element signature="e#965#1087#0#PHP" expanded="false" />
+            <element signature="e#1090#1231#0#PHP" expanded="false" />
+            <element signature="e#1234#1264#0#PHP" expanded="false" />
+            <element signature="e#1267#1480#0#PHP" expanded="false" />
+            <element signature="e#1483#1740#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
