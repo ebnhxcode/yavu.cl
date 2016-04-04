@@ -58,7 +58,7 @@ $(document).ready(function(){
 						+'<small>'
 						+'<div style="float:right;"><img width="6%" height="3%" src="https://38.media.tumblr.com/9056c3040c618c65888244befef39321/tumblr_mhpc6eUvag1rrftcdo1_500.gif" /></div>'
 						+'<div style=""><strong>Motivo</strong> '+value.motivo+'</div>'						
-						+'<div><strong>Hace</strong> '+humanTiming(value.created_at)+'</div>'
+						+'<div><strong>Hace</strong> '+value.created_at+'</div>'
 						+'<div><strong>Cantidad</strong> '+formatNumber.new(value.cantidad,"$ ")+'</div>'
 						+'</small>'
 					+'</div>'						

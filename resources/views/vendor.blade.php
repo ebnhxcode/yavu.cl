@@ -15,8 +15,8 @@
 </div>
 
 <script>
-  var lat = "{!! $vendor->lat !!}";
-  var lng = "{!! $vendor->lng !!}";
+  var lat = {!! $vendor->lat !!};
+  var lng = {!!  !!}};
   var map = new google.maps.Map(document.getElementById('map-canvas'),{
     center:{
       lat: lat,

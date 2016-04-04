@@ -25,6 +25,10 @@ $(document).ready(function(){
 /*MÉTODOS CONSTRUCTORES*/
 
 /*SELECTORES*/
+
+	$(".like").click(function(){
+		console.log(this);
+	});
 	$("#CargarEstados").click(function(e){
 		$("#EstadosNuevos").append("");
 		CargarEstados();
@@ -103,40 +107,7 @@ $(document).ready(function(){
 /*SELECTORES*/
 
 /*FUNCIONES Y PROCEDIMIENTOS*/
-	function ActualizarEstados(){
-		var EstadosUsuario = $("#Estados").val();
-		$("#Estados").value ="";
-		var route = "http://localhost:8000/estadosempresa";
-		var user_id = $("#user_id");
-		var Contador = 0;
-		$.get(route, function(res){
-			Contador += 1;
-			if (Contador === 4){
-				Global_idUltimaPublicacion = value.id;
-			}
-			$(res).each(function(key,value){
-				var TimeAgo = value.created_at;
-				var Estado =
-					"<div id='status' class='list-group'>"
-						+"<div class='list-group-item'>"
-							+"<h4><a href='/profile' style='color:#3C5B28;'>"
-								+"<img class='media-object' src='http://localhost:8000/images/user.png' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
-								+value.nombre+" "+value.apellido
-							+"</a></h4>"
-							+"<small>"
-								+"Publicó <abbr class=\'timeago\' title=\'"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
-							+"</small><hr>"
-							+"<p>"+value.status+"</p>"
-						+"</div>"
-						+"<div class='list-group-item panel-footer'>"
-							+"<a name='like' id='estado_"+value.id+"' value='"+value.id+"' href='#!' style='color:#3C5B28;'><span>Cobrar coins</span></a>"
-						+"</div>"
-					+"</div>";
-				EstadosUsuario.appendTo("#e").effects("highlight", {}, 12000);
-			});
-		});
-		return true;
-	}
+
 
   function ContarInteracciones(status_id){
     status_id = status_id;
@@ -256,7 +227,7 @@ $(document).ready(function(){
 						+"<div class='list-group-item panel-footer'>"					
 							+"<span id='badge_"+value.id+"' class='label label-success'></span>"+"&nbsp;"
 							+"<a role='button' class='' href='#!' style='color:#3C5B28'>"
-								+"<span name='megusta' onclick='Interactuar(this.id)' id='estado_"+value.id+"' value='"+value.id+"'>"
+								+"<span class='like' name='megusta' id='estado_"+value.id+"' value='"+value.id+"'>"
 									+"Cobrar coins"
 								+"</span>"
 							+"</a>"

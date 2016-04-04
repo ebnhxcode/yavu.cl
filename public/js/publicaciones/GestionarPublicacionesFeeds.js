@@ -13,22 +13,10 @@ $(document).ready(function(){
 
 //LimpiarEstados();
 
-	$(function(){
-		setInterval(function(){
-			var a = $(".timeago");
-			for(var i = 0; i < a.length ; i++){
-				var elemento = document.getElementById( a[i].id );
-				console.log(elemento.title);
-				$('#'+a[i].id).text("" + humanTiming( elemento.title ) );
-			}
-		},40000);
-		return true;
-	});
-
-
 /*MÉTODOS CONSTRUCTORES*/
 
 /*SELECTORES*/
+
 
 	$("#CargarEstados").click(function(e){
 		$("#EstadosNuevos").append("");
@@ -95,6 +83,7 @@ $(document).ready(function(){
 /*SELECTORES*/
 
 /*FUNCIONES Y PROCEDIMIENTOS*/
+
 	function ActualizarEstados(){
 		var EstadosUsuario = $("#Estados").val(); 
 		$("#Estados").value = "";
@@ -170,7 +159,7 @@ $(document).ready(function(){
 						+"<div class='list-group-item panel-footer'>"					
 							+"<span id='badge_"+value.id+"' class='label label-success'></span>"+"&nbsp;"
 							+"<a role='button' class='' href='#!' style='color:#3C5B28'>"
-								+"<span name='megusta' onclick='Interactuar(this.id)' id='estado_"+value.id+"' value='"+value.id+"'>"
+								+"<span class='like' name='megusta' id='estado_"+value.id+"' value='"+value.id+"'>"
 									+"<span class='glyphicon glyphicon-hand-up'>"
 										+"&nbsp;"
 									+"</span>"
@@ -237,7 +226,32 @@ $(document).ready(function(){
 		});
 		return true;
 	}
-
+  function Interactuar(valor){
+    var status_id = valor.replace('estado_','');
+    var user_id = $("#user_id").val();
+    var token = $("#token").val();
+    var route = "http://localhost:8000/interactuar";
+    $.ajax({
+      url: route,
+      headers: {'X-CSRF-TOKEN': token},
+      type: 'POST',
+      dataType: 'json',
+      data: {
+        status_id: status_id,
+        user_id: user_id
+      },
+      success:function(){
+        $('#'+valor).addClass("text-info").fadeIn();
+        console.log('exito');
+        ContarInteracciones(status_id);
+        ContarNotificaciones();
+        ContarCoins();
+      }
+    });
+    ContarInteracciones(status_id);
+    $('#'+valor).removeClass("text-info").fadeIn();
+    return true;
+  }
 	function limpiar(status){
 		status = status.replace("<script>", "");
 		status = status.replace("<script", "");

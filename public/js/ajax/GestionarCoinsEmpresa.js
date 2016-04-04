@@ -27,6 +27,9 @@ $(document).ready(function(){
 /*MÉTODOS CONSTRUCTORES*/
 
 /*SELECTORES*/
+	$(".like").click(function(){
+		console.log(this);
+	});
 /*SELECTORES*/
 
 /*FUNCIONES Y PROCEDIMIENTOS*/
