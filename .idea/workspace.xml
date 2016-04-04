@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c9b29a6e-80cf-49e0-9911-7f340db7a961" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/ajax/FrontNotificaciones.js" afterPath="$PROJECT_DIR$/public/js/ajax/FrontNotificaciones.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/ajax/GestionarCoins.js" afterPath="$PROJECT_DIR$/public/js/ajax/GestionarCoins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/ajax/HistorialCoins.js" afterPath="$PROJECT_DIR$/public/js/ajax/HistorialCoins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/feeds/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/feeds/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/LogController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/LogController.php" />
     </list>
     <ignored path="yavu.cl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,7 +47,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/sorteos/create.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_02_11_164427_create_sorteos_table.php" />
         <option value="$PROJECT_DIR$/resources/views/sorteos/forms/fieldsSorteo.blade.php" />
         <option value="$PROJECT_DIR$/public/css/style.css" />
@@ -101,6 +97,7 @@
         <option value="$PROJECT_DIR$/public/js/ajax/HistorialCoins.js" />
         <option value="$PROJECT_DIR$/resources/views/feeds/index.blade.php" />
         <option value="$PROJECT_DIR$/public/js/ajax/GestionarCoins.js" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/LogController.php" />
       </list>
     </option>
   </component>
@@ -808,13 +805,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Winner.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/ajax/EmpresasDashboardUsuario.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1198,6 +1188,24 @@
             <marker date="1459727077834" expanded="true" signature="2940:3079" placeholder="..." />
             <marker date="1459727077834" expanded="true" signature="3207:3239" placeholder="..." />
             <marker date="1459727077834" expanded="true" signature="3240:3360" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LogController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31746033">
+          <caret line="74" column="23" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="23" />
+          <folding>
+            <element signature="e#347#378#0#PHP" expanded="false" />
+            <element signature="e#381#1673#0#PHP" expanded="false" />
+            <element signature="e#1676#1707#0#PHP" expanded="false" />
+            <element signature="e#1710#1743#0#PHP" expanded="false" />
+            <element signature="e#1746#1776#0#PHP" expanded="false" />
+            <element signature="e#1779#2065#0#PHP" expanded="false" />
+            <element signature="e#2068#2098#0#PHP" expanded="false" />
+            <element signature="e#2101#3756#0#PHP" expanded="false" />
+            <element signature="e#3759#3811#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
