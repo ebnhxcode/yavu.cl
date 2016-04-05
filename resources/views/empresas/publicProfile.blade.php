@@ -177,7 +177,6 @@
 </div>
 @stop
 <script>
-  $(document).ready(function(){
     /*VARIABLES*/
     var formatNumber = {
       separador: ".", // separador para los miles
@@ -214,32 +213,7 @@
         $("#badge_"+status_id).text(Contador);
       });
     }
-    function Interactuar(valor){
-      var status_id = valor.replace('estado_','');
-      var user_id = $("#user_id").val();
-      var token = $("#token").val();
-      var route = "http://localhost:8000/interactuar";
-      $.ajax({
-        url: route,
-        headers: {'X-CSRF-TOKEN': token},
-        type: 'POST',
-        dataType: 'json',
-        data: {
-          status_id: status_id,
-          user_id: user_id
-        },
-        success:function(){
-          $('#'+valor).addClass("text-info").fadeIn();
-          console.log('exito');
-          ContarInteracciones(status_id);
-          ContarNotificaciones();
-          ContarCoins();
-        }
-      });
-      ContarInteracciones(status_id);
-      $('#'+valor).removeClass("text-info").fadeIn();
-      return true;
-    }
+
     function ContarNotificaciones(){
       var user_id = $("#user_id").val();
       $.ajax({
@@ -290,9 +264,6 @@
       });
       return true;
     }
-    $(".like").click(function(){
-      console.log(this);
-    });
     function Interactuar(valor){
       var status_id = valor.replace('estado_','');
       var user_id = $("#user_id").val();
@@ -319,7 +290,9 @@
       $('#'+valor).removeClass("text-info").fadeIn();
       return true;
     }
+
+
+
     /*FUNCIONES Y PROCEDIMIENTOS*/
-  });
 
 </script>
