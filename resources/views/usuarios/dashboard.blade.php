@@ -36,27 +36,12 @@
 					<div class="list-group-item">
 					</div>
 					<a href="{{URL::to('/feeds')}}" style="text-align:center;" class="list-group-item list-group-item-info">
-					<span style="font-size: 6em;" class="glyphicon glyphicon-pushpin"></span>
+						<span><img  src= "{!!URL::to('img/dash/ico_pin03.png')!!}" class=""/></span>
 					</a>
 				</div>
 
 			</div>
-		  	<div class="col-md-4 col-sm-6 col-xs-12">	
 
-		        <div class="thumbnail">		        	
-		          	<img src="" alt="">
-		            <div class="caption">
-		            	<h6>MI(S) EMPRESA(S)</h6>	
-		            </div>
-		            @include('layouts.bannerFront')
-		            <br>
-								<div class="panel-group" id="AccordionEmpresas" role="tablist" aria-multiselectable="true">
-
-
-								</div>
-		    		</div>
-
-		    </div>
 		    <div class="col-md-4 col-sm-6 col-xs-12">
 
 			   <div class="list-group">
@@ -64,7 +49,7 @@
 					   <h6>CREAR EMPRESA</h6>
 				   </div>
 				   <a href="{!!URL::to('/empresas/create')!!}" style="text-align:center;" class="list-group-item list-group-item-warning">
-				   		<span style="font-size: 6em;" class="glyphicon glyphicon-briefcase"></span>	
+						 <span><img  src= "{!!URL::to('img/dash/ico_empresa.png')!!}" class=""/></span>
 				   </a>
 			   </div>
 
@@ -77,7 +62,7 @@
 						<h6>NOTIFICACIONES</h6>
 					</div>
 					<a href="{{URL::to('/pops')}}" style="text-align:center;" class="list-group-item list-group-item-warning">
-						<span style="font-size: 6em;" class="glyphicon glyphicon-flash"></span>
+						<span><img  src= "{!!URL::to('img/dash/ico_notificacion004.png')!!}" class=""/></span>
 					</a>
 
 				</div>
@@ -90,8 +75,9 @@
 				   <div class="list-group-item-full-header">
 					   <h6>CONFIGURACION</h6>
 				   </div>
-				   <a href="#" style="text-align: center;" class="list-group-item list-group-item-info">				   		
-				   		<span style="font-size: 6em;" class="glyphicon glyphicon-cog"></span>
+				   <a href="#" style="text-align: center;" class="list-group-item list-group-item-info">
+						 <span><img  src= "{!!URL::to('img/dash/ico_configurar_dash02.png')!!}" class=""/></span>
+
 				   	</a>
 			   </div>
 
@@ -104,7 +90,7 @@
 					   <h6>INFORMES</h6>
 				   </div>
 				   <a href="{!!URL::to('/reports')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
-				   		<span style="font-size: 6em;" class="glyphicon glyphicon-list-alt"></span>
+						 <span><img  src= "{!!URL::to('img/dash/icono_informe01.png')!!}" class=""/></span>
 				   </a>
 
 			   </div>
@@ -118,7 +104,7 @@
 					   <h6>TICKETS</h6>
 				   </div>
 				   <a href="{!!URL::to('/tickets')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
-				   		<span style="font-size: 6em;" class="glyphicon glyphicon-bookmark"></span>
+						 <span><img  src= "{!!URL::to('img/dash/ico_ticket01.png')!!}" class=""/></span>
 				   </a>
 
 			   </div>			 
@@ -131,7 +117,7 @@
 						<h6>SORTEOS</h6>
 					</div>
 					<a href="{{URL::to('/sorteos')}}" style="text-align:center;" class="list-group-item list-group-item-warning">
-						<span style="font-size: 6em;" class="glyphicon glyphicon-certificate"></span>
+						<span><img  src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}" class=""/></span>
 					</a>
 
 				</div>
