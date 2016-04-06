@@ -90,6 +90,7 @@ $(document).ready(function(){
         }else{
           $("#seguidores").val("sin seguidores");
         }
+
 			},
 			error: function error(xhr, textStatus, errorThrown) {
 			  //console.log('Remote sever unavailable. Please try later');
