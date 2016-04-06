@@ -17,7 +17,7 @@
 		<div class="col-md-12 col-sm-12 col-xs-12">
 			<div class="list-group" >
 				<div class="list-group-item-full-header">
-					<h6>PUBLICACIONES</h6>
+					<h4>Actualiza tus datos!</h4>
 				</div>
 				<div class="list-group-item">
 					@foreach($users as $user)
@@ -26,7 +26,7 @@
 						@elseif ($user->sexo == 'Femenino')
 							Bienvenida! {{$user->nombre}}
 						@else
-							Te damos la bienvenida a tu primera vez en el sitio, <a class="btn btn-primary btn-sm" href="usuarios/{{$user->id}}/edit">actualiza tus datos</a> y gana yavu coins!
+							Te damos la bienvenida a tu primera vez en el sitio, y gana yavu coins! <a class="btn btn-primary btn-sm" href="usuarios/{{$user->id}}/edit">actualiza tus datos</a>
 						@endif
 					@endforeach
 				</div>
