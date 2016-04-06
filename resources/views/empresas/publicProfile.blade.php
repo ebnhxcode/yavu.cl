@@ -63,6 +63,7 @@
             </div>
           </div>
 					{!!Form::hidden('empresa_id', $e->id, ['id'=>'empresa_id'])!!}
+          <input type="hidden" name="_token" value="{!! csrf_token() !!}" id="token" />
           @if(isset(Auth::user()->get()->id) && Auth::user()->get()->id===$e->user_id)
             @if((isset($e) && Auth::user()->check() ) && $e->user_id == Auth::user()->get()->id)
               <div class="list-group">
@@ -76,7 +77,6 @@
                   @else
                     {!!Form::hidden('user_id', $e->user_id, ['id'=>'user_id'])!!}
                   @endif
-                  <input type="hidden" name="_token" value="{{csrf_token()}}" id="token" />
                   <div class="list-group-item">
                     {!!link_to('#!', $title="Publicar estado", $attributes = ['id'=>'publicar', 'class'=>'btn btn-success btn-sm'], $secure = null)!!}
                     {!!link_to('#!', $title="Limpiar", $attributes = ['id'=>'limpiar', 'class'=>'btn btn-success btn-sm'], $secure = null)!!}
