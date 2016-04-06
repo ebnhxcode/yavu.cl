@@ -54,9 +54,11 @@ class EmpresaController extends Controller
   {
 
   }
-  public function edit($id)
-  {
-      return view('empresas.edit', ['empresa' => $this->empresa]); 
+  public function edit($id){
+      if($this->empresa->user_id == Auth::user()->get()->id){
+        return view('empresas.edit', ['empresa' => $this->empresa]);
+      }
+      return Redirect::to('/');
   }
   public function update(EmpresaUpdateRequest $request, $id)
   {
@@ -77,13 +79,8 @@ class EmpresaController extends Controller
                 ->where('empresas.nombre', '=', $empresa)   
                 ->orderBy('empresas.created_at','desc')   
                 ->get();
-
-    //dd($usuarios);
-
-    /*return response()->json(
-        $empresa
-    );*/
-    return view('empresas.publicProfile', compact('empresa'));
+    $mapa = Empresa::find($empresa[0]->id)->gmaps;
+    return view('empresas.publicProfile', compact('empresa'), compact('mapa'));
   }
   public function SolicitarEliminacion($id)
     {

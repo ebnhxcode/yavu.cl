@@ -49,11 +49,12 @@
                   @if (Auth::user()->check())
                     <p>
                       <span class="btn btn-primary btn-sm" id="seguir" value="{!! $e->id !!}" role="button">Seguir</span>
-                      <input type="text" class="btn btn-sm text-success" id="seguidores" size="1" disabled >
+                      <input type="text" class="btn btn-sm text-success" id="seguidores" size="10" disabled >
                     </p>
                   @else
                     <p>
-                      <a href="{!! URL::to('/usuarios/create') !!}" class="btn btn-primary btn-md" role="button">Seguir</a>
+                      <a href="{!! URL::to('/usuarios/create') !!}" class="btn btn-primary btn-sm" role="button">Seguir</a>
+                      <input type="text" class="btn btn-sm text-success" id="seguidores" size="10" disabled >
                     </p>
                     <small>Para seguir a esta empresa debes registrarte</small>
                   @endif
@@ -75,7 +76,6 @@
                   @else
                     {!!Form::hidden('user_id', $e->user_id, ['id'=>'user_id'])!!}
                   @endif
-
                   <input type="hidden" name="_token" value="{{csrf_token()}}" id="token" />
                   <div class="list-group-item">
                     {!!link_to('#!', $title="Publicar estado", $attributes = ['id'=>'publicar', 'class'=>'btn btn-success btn-sm'], $secure = null)!!}
@@ -121,9 +121,8 @@
 							Últimas novedades en yavu
 						</div>	
 						@if(Auth::user()->check())
-							{!!link_to_route('usuarios.edit', $title = 'Modificar datos de mi cuenta', $parameters = Auth::user()->get()->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}
-							<a href="{!!URL::to('dashboard')!!}" class="list-group-item list-group-item-warning">Volver a dashboard</a>
-							<a href="{!!URL::to('sitemap')!!}" class="list-group-item list-group-item-warning">Ir al Sitemap</a>
+							{!!link_to_route('usuarios.edit', $title = 'Actualizar mis datos', $parameters = Auth::user()->get()->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}
+							<a href="{!!URL::to('dashboard')!!}" class="list-group-item list-group-item-warning">Volver a <strong>Inicio</strong></a>
 						@endif
 					</div>	
 					<div class="list-group">
@@ -131,11 +130,12 @@
 							<h6>ACCESOS RÁPIDOS</h6>
 						</div>
 						<a class="list-group-item list-group-item-warning" href="{!! URL::to('/feeds') !!}">Ir a publicaciones</a>
-						{!!link_to_route('empresas.edit', $title = 'Modificar datos de mi empresa', $parameters = $e->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}
-						<a href="{!!URL::to('dashboard')!!}" class="list-group-item list-group-item-warning">Volver a dashboard</a>
-						<a href="{!!URL::to('sitemap')!!}" class="list-group-item list-group-item-warning">Ir al Sitemap</a>
-						<a href="{!!URL::to('sorteos/create')!!}" class="list-group-item list-group-item-warning">Crear sorteo nuevo</a>
-					</div> 
+            @if(Auth::user()->get()->id == $e->user_id)
+						  {!!link_to_route('empresas.edit', $title = 'Modificar datos de mi empresa', $parameters = $e->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}
+              <a href="{!!URL::to('sorteos/create')!!}" class="list-group-item list-group-item-warning">Crear sorteo nuevo</a>
+            @endif
+						<a href="{!!URL::to('dashboard')!!}" class="list-group-item list-group-item-warning">Volver a <strong>Inicio</strong></a>
+					</div>
 
 					<div class="list-group">                    
 						<div class="list-group-item">
@@ -167,7 +167,6 @@
             <div id="map-canvas"></div>
           </div>
 
-
           <!-- /gmaps -->
 			  </div>
   			<br />
@@ -177,122 +176,122 @@
 </div>
 @stop
 <script>
-    /*VARIABLES*/
-    var formatNumber = {
-      separador: ".", // separador para los miles
-      sepDecimal: ',', // separador para los decimales
-      formatear:function (num){
-        num +='';
-        var splitStr = num.split('.');
-        var splitLeft = splitStr[0];
-        var splitRight = splitStr.length > 1 ? this.sepDecimal + splitStr[1] : '';
-        var regx = /(\d+)(\d{3})/;
-        while (regx.test(splitLeft)) {
-          splitLeft = splitLeft.replace(regx, '$1' + this.separador + '$2');
-        }
-        return this.simbol + splitLeft  +splitRight;
-      },
-      new:function(num, simbol){
-        this.simbol = simbol ||'';
-        return this.formatear(num);
+  var formatNumber = {
+    separador: ".", // separador para los miles
+    sepDecimal: ',', // separador para los decimales
+    formatear:function (num){
+      num +='';
+      var splitStr = num.split('.');
+      var splitLeft = splitStr[0];
+      var splitRight = splitStr.length > 1 ? this.sepDecimal + splitStr[1] : '';
+      var regx = /(\d+)(\d{3})/;
+      while (regx.test(splitLeft)) {
+        splitLeft = splitLeft.replace(regx, '$1' + this.separador + '$2');
       }
+      return this.simbol + splitLeft  +splitRight;
+    },
+    new:function(num, simbol){
+      this.simbol = simbol ||'';
+      return this.formatear(num);
     }
-    /*VARIABLES*/
+  }
+  /*VARIABLES*/
+  /*VARIABLES*/
 
 
-    /*FUNCIONES Y PROCEDIMIENTOS*/
-    function ContarInteracciones(status_id){
-      status_id = status_id;
-      var route = "http://localhost:8000/contarinteracciones/"+status_id;
-      var user_id = $("#user_id");
-      var Contador = 0;
-      $.get(route, function(res){
-        $(res).each(function(key,value){
-          Contador += 1;
-        });
-        $("#badge_"+status_id).text(Contador);
+  /*FUNCIONES Y PROCEDIMIENTOS*/
+  function ContarInteracciones(status_id){
+    status_id = status_id;
+    var route = "http://localhost:8000/contarinteracciones/"+status_id;
+    var user_id = $("#user_id");
+    var Contador = 0;
+    $.get(route, function(res){
+      $(res).each(function(key,value){
+        Contador += 1;
       });
-    }
+      $("#badge_"+status_id).text(Contador);
+    });
+  }
 
-    function ContarNotificaciones(){
-      var user_id = $("#user_id").val();
-      $.ajax({
-        url: "http://localhost:8000/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
-        type: 'GET',
-        dataType: 'json',
-        cache: false,
-        async: true,
-        success: function success(data, status) {
-          if (data > 0) {
-            $("#CantidadNotificaciones").show('fast').text(data);
-            //$("#Notificaciones").css('color','#F5A9A9');
-          }else{
-            $("#CantidadNotificaciones").hide('fast').text("");
-            //$("#Notificaciones").css('color','');
-          }
-        },
-        error: function error(xhr, textStatus, errorThrown) {
-          //alert('Remote sever unavailable. Please try later');
+  function ContarNotificaciones(){
+    var user_id = $("#user_id").val();
+    $.ajax({
+      url: "http://localhost:8000/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
+      type: 'GET',
+      dataType: 'json',
+      cache: false,
+      async: true,
+      success: function success(data, status) {
+        if (data > 0) {
+          $("#CantidadNotificaciones").show('fast').text(data);
+          //$("#Notificaciones").css('color','#F5A9A9');
+        }else{
+          $("#CantidadNotificaciones").hide('fast').text("");
+          //$("#Notificaciones").css('color','');
+        }
+      },
+      error: function error(xhr, textStatus, errorThrown) {
+        //alert('Remote sever unavailable. Please try later');
+      }
+    });
+    return true;
+  }
+  function ContarCoins(){
+    var route = "http://localhost:8000/contarcoins";
+    var user_id = $("#user_id");
+    $.get(route, function(res){
+      $(".CantidadCoins").text("");
+      $(res).each(function(key,value){
+        if(parseInt(value.coins)>0){
+          $(".CantidadCoins").append(formatNumber.new(value.coins, "$ "));
         }
       });
-      return true;
-    }
-    function ContarCoins(){
-      var route = "http://localhost:8000/contarcoins";
-      var user_id = $("#user_id");
-      $.get(route, function(res){
-        $(".CantidadCoins").text("");
-        $(res).each(function(key,value){
-          if(parseInt(value.coins)>0){
-            $(".CantidadCoins").append(formatNumber.new(value.coins, "$ "));
-          }
-        });
-      });
-      return true;
-    }
-    function eliminarEstado(id){
-      console.log(id);
-      var route = "http://localhost:8000/eliminarfeed/"+id;
-      $.ajax({
-        url: route,
-        type: 'GET',
-        dataType: 'json',
-        success:function(){
-          console.log('exito');
-          $("#publicacion"+id).fadeOut();
-        }
-      });
-      return true;
-    }
-    function Interactuar(valor){
-      var status_id = valor.replace('estado_','');
-      var user_id = $("#user_id").val();
-      var token = $("#token").val();
-      var route = "http://localhost:8000/interactuar";
-      $.ajax({
-        url: route,
-        headers: {'X-CSRF-TOKEN': token},
-        type: 'POST',
-        dataType: 'json',
-        data: {
-          status_id: status_id,
-          user_id: user_id
-        },
-        success:function(){
-          $('#'+valor).addClass("text-info").fadeIn();
-          console.log('exito');
-          ContarInteracciones(status_id);
-          ContarNotificaciones();
-          ContarCoins();
-        }
-      });
-      ContarInteracciones(status_id);
-      $('#'+valor).removeClass("text-info").fadeIn();
-      return true;
-    }
+    });
+    return true;
+  }
+  function eliminarEstado(id){
+    console.log(id);
+    var route = "http://localhost:8000/eliminarfeed/"+id;
+    $.ajax({
+      url: route,
+      type: 'GET',
+      dataType: 'json',
+      success:function(){
+        console.log('exito');
+        $("#publicacion"+id).fadeOut();
+      }
+    });
+    return true;
+  }
+  function Interactuar(valor){
+    var status_id = valor.replace('estado_','');
+    var user_id = $("#user_id").val();
+    var token = $("#token").val();
+    var route = "http://localhost:8000/interactuar";
+    $.ajax({
+      url: route,
+      headers: {'X-CSRF-TOKEN': token},
+      type: 'POST',
+      dataType: 'json',
+      data: {
+        status_id: status_id,
+        user_id: user_id
+      },
+      success:function(){
+        $('#'+valor).addClass("text-info").fadeIn();
+        console.log('exito');
+        ContarInteracciones(status_id);
+        ContarNotificaciones();
+        ContarCoins();
+      }
+    });
+    ContarInteracciones(status_id);
+    $('#'+valor).removeClass("text-info").fadeIn();
+    return true;
+  }
 
 
 
-    /*FUNCIONES Y PROCEDIMIENTOS*/
+  /*FUNCIONES Y PROCEDIMIENTOS*/
 
 </script>

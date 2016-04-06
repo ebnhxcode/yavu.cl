@@ -84,7 +84,12 @@ $(document).ready(function(){
 			cache: false,
 			async: true,
 			success: function success(data, status) {
-				$("#seguidores").val(data.length);
+        if(data.length>0){
+
+          $("#seguidores").val(data.length+" seguidor"+(data.length>1?'es':''));
+        }else{
+          $("#seguidores").val("sin seguidores");
+        }
 			},
 			error: function error(xhr, textStatus, errorThrown) {
 			  //console.log('Remote sever unavailable. Please try later');

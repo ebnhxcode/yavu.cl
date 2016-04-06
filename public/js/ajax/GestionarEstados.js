@@ -11,7 +11,6 @@ $(document).ready(function(){
 		}
 	},40000);
 /*DECLARACION DE VARIABLES GLOBALES*/
-
 /*MÉTODOS CONSTRUCTORES*/
 	CargarEstados();
 /*MÉTODOS CONSTRUCTORES*/

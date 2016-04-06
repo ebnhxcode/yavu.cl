@@ -113,7 +113,7 @@
 						<div class="list-group-item-full-header">
 							<h6>MI(S) EMPRESA(S)
 								<span style="float:right;font-size: 0.9em;" class="label label-success">
-									<a href={!! URL::to('empresas/create/') !!}>REGISTRAR PYME</a>
+									<a href={!! URL::to('empresas/create/') !!}>REGISTRAR UNA EMPRESA</a>
 								</span>
 							</h6>
 						</div>
@@ -123,8 +123,8 @@
 							<h6>ACCESOS RÁPIDOS</h6>
 						</div>
 						<a class="list-group-item list-group-item-warning" href="{!! URL::to('/feeds') !!}">Ir a publicaciones</a>
-						{!!link_to_route('usuarios.edit', $title = 'Modificar datos de mi cuenta', $parameters = Auth::user()->get()->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}
-						<a href="{!!URL::to('dashboard')!!}" class="list-group-item list-group-item-warning">Volver a dashboard</a>
+						{!!link_to_route('usuarios.edit', $title = 'Actualizar mis datos', $parameters = Auth::user()->get()->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}
+						<a href="{!!URL::to('dashboard')!!}" class="list-group-item list-group-item-warning">Volver a <strong>Inicio</strong></a>
 					</div>
 
 					<div class="list-group">                    

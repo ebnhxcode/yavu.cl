@@ -10,6 +10,7 @@ class CreateGmapsTable extends Migration{
       $table->string('user_id');
       $table->string('empresa_id');
       $table->string('title');
+      $table->string('address', 500);
       $table->string('lat');
       $table->string('lng');
       $table->timestamps();

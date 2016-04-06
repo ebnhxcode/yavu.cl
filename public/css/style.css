@@ -98,7 +98,7 @@
 }
 @media (min-width: 400px) {
   #contentMini {
-    width: 99 %;
+    width: 99%;
   }
 }
 @media (min-width: 500px) {
@@ -140,7 +140,9 @@
   color: #ce8483;
 }
 
-
+.no-mostrar {
+  display: none;
+}
 
 #contentMiddle {
 	width: 75%;
@@ -210,7 +212,7 @@
 .menu-fixed {
   position:fixed;
   z-index:1000;
-  top:40;
+  top: 40px;
   box-shadow:0px 4px 3px rgba(0,0,0,.5);
 }
 

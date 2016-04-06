@@ -47,6 +47,10 @@ class Empresa extends Model implements AuthenticatableContract,
         $name = Carbon::now()->second.$imagen_portada->getClientOriginalName();
         
         \Storage::disk('local')->put($name, \File::get($imagen_portada));
-    }       
+    }
+    public function gmaps()
+    {
+        return $this->hasOne('yavu\Gmap');
+    }
 }
 
