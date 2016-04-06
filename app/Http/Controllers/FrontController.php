@@ -8,6 +8,9 @@ use yavu\Empresa;
 class FrontController extends Controller{
   public function __construct(){
   }
+  public function splash(){
+    return view('splash');
+  }
   public function index(){
     return view('index');
   }
