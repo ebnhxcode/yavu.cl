@@ -3,7 +3,7 @@
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		<h4>Actualización de usuario : {{$user->nombre .' '. $user->apellido}}</h4>
+		<h4>Actualización de usuario : {!!$user->nombre .' '. $user->apellido!!}</h4>
 		@include('alerts.alertFields')
 		@include('alerts.errorsMessage')
 		@include('alerts.successMessage')

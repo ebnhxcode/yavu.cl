@@ -15,9 +15,9 @@
           </thead>
           @foreach($encuestas as $encuesta) 
           <tbody>
-            <td>{{$encuesta->nombre}}</td>
-            <td>{{$encuesta->titulo}}</td>
-            <td>{{$encuesta->descripcion}}</td>            
+            <td>{!!$encuesta->nombre!!}</td>
+            <td>{!!$encuesta->titulo!!}</td>
+            <td>{!!$encuesta->descripcion!!}</td>
             <td>{!!link_to_route('encuestas.edit', $title = 'Editar', $parameters = $encuesta->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
           </tbody>
           @endforeach

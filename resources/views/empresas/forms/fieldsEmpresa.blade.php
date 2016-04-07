@@ -80,7 +80,7 @@
 							@if($empresa->imagen_perfil==="")
 								<img width="15%" id="ImagenPerfil" class="thumbnail img-responsive-centered" src="https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png" alt="...">
 							@else
-								<img width="15%" id="ImagenPerfil" class="thumbnail img-responsive-centered" src="/img/users/{{$empresa->imagen_perfil}}" alt="...">
+								<img width="15%" id="ImagenPerfil" class="thumbnail img-responsive-centered" src="/img/users/{!!$empresa->imagen_perfil!!}" alt="...">
 							@endif
 						@else
 							<img width="15%" id="ImagenPerfil" class="thumbnail img-responsive-centered" src="https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png" alt="...">
@@ -98,7 +98,7 @@
 							@if($empresa->imagen_portada==="")
 								<img width="25%" id="ImagenPortada" class="thumbnail img-responsive-centered" src="http://medioambiente.nh-hoteles.es/themes/default/images/bgd-biodiversidad-00.png" alt="...">
 							@else
-								<img width="35%" id="ImagenPortada" class="thumbnail img-responsive-centered" src="/img/users/{{$empresa->imagen_portada}}" alt="...">
+								<img width="35%" id="ImagenPortada" class="thumbnail img-responsive-centered" src="/img/users/{!!$empresa->imagen_portada!!}" alt="...">
 							@endif
 						@else
 							<img width="25%" id="ImagenPortada" class="thumbnail img-responsive-centered" src="http://medioambiente.nh-hoteles.es/themes/default/images/bgd-biodiversidad-00.png" alt="...">

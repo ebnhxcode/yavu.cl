@@ -15,7 +15,7 @@
 					<div class="list-group" >
 						<div class="list-group-item-full-header">
 							{!!Form::hidden('empresa', $e->nombre, ['id'=>'empresa'])!!}
-							<h6>{{ strtoupper("Perfil publico de: ".$e->nombre)}}</h6>
+							<h6>{!! strtoupper("Perfil publico de: ".$e->nombre)!!}</h6>
 						</div>
 						<div class="">
 							<div class="thumbnail">
@@ -23,14 +23,14 @@
 								@if($e->imagen_portada === "" )
 									<img id="ImagenPortada" src="http://medioambiente.nh-hoteles.es/themes/default/images/bgd-biodiversidad-00.png" alt="...">
 								@else
-									<img id="ImagenPortada" src="/img/users/{{$e->imagen_portada}}" alt="...">
+									<img id="ImagenPortada" src="/img/users/{!!$e->imagen_portada!!}" alt="...">
 								@endif
                   <!-- /Portada -->
                   <!-- Perfil -->
 								@if($e->imagen_perfil === "")
 									<img id="ImagenPerfil" src="https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png" class="img-circle" alt="...">
 								@else
-									<img id="ImagenPerfil" src="/img/users/{{$e->imagen_perfil}}" class="img-circle" alt="...">
+									<img id="ImagenPerfil" src="/img/users/{!!$e->imagen_perfil!!}" class="img-circle" alt="...">
 								@endif
                   <!-- /Perfil -->
                 <div class="list-group">
@@ -43,9 +43,9 @@
                 </div>
                 <div class="caption">
                   <h6>DATOS</h6>
-                  Email : {{$e->email}}<br>
-                  Dirección : {{$e->direccion}}<br>
-                  Ciudad : {{$e->ciudad}}<br>
+                  Email : {!!$e->email!!}<br>
+                  Dirección : {!!$e->direccion!!}<br>
+                  Ciudad : {!!$e->ciudad!!}<br>
                   @if (Auth::user()->check())
                     <p>
                       <span class="btn btn-primary btn-sm" id="seguir" value="{!! $e->id !!}" role="button">Seguir</span>

@@ -24,13 +24,13 @@
 								@if(Auth::user()->get()->imagen_portada === "")
 									<img id="ImagenPortada" src="http://medioambiente.nh-hoteles.es/themes/default/images/bgd-biodiversidad-00.png" alt="...">
 								@else
-									<img id="ImagenPortada" src="/img/users/{{Auth::user()->get()->imagen_portada}}" alt="...">
+									<img id="ImagenPortada" src="/img/users/{!!Auth::user()->get()->imagen_portada!!}" alt="...">
 								@endif								
 
 								@if(Auth::user()->get()->imagen_perfil === "")
 									<img id="ImagenPerfil" src="https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png" class="img-circle" alt="...">
 								@else
-									<img id="ImagenPerfil" src="/img/users/{{Auth::user()->get()->imagen_perfil}}" class="img-circle" alt="...">
+									<img id="ImagenPerfil" src="/img/users/{!!Auth::user()->get()->imagen_perfil!!}" class="img-circle" alt="...">
 								@endif
 
 
@@ -55,7 +55,7 @@
 						{!!Form::open(['action'=>'EstadoController@store', 'method'=>'POST'])!!}
 						{!!Form::textarea('status',null,['class'=>'form-control-stat','placeholder'=>'¿Qué deseas compartir en yavu?', 'maxlength'=>'500', 'required'=>'required','style'=>'resize:none;', 'rows'=>'10', 'id'=>'status'])!!}
 						
-						<input type="hidden" name="_token" value="{{csrf_token()}}" id="token" />
+						<input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
 						<div class="list-group-item">
 							{!!link_to('#!', $title="Publicar estado", $attributes = ['id'=>'publicar', 'class'=>'btn btn-success btn-xs'], $secure = null)!!}
 							{!!link_to('#!', $title="Limpiar", $attributes = ['id'=>'limpiar', 'class'=>'btn btn-success btn-xs'], $secure = null)!!}                                           
@@ -132,7 +132,7 @@
 
 
 
-							<button id="Info" type="button" class="btn btn-info btn-sm" data-container="body" data-toggle="popover" data-placement="top" data-content="Con este código tus amigos ganarán coins al registrarse!" data-original-title="Atención {{Auth::user()->get()->nombre}} <button type='button' onclick='CloseInfo()' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button> " >
+							<button id="Info" type="button" class="btn btn-info btn-sm" data-container="body" data-toggle="popover" data-placement="top" data-content="Con este código tus amigos ganarán coins al registrarse!" data-original-title="Atención {!!Auth::user()->get()->nombre!!} <button type='button' onclick='CloseInfo()' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button> " >
 								Info
 							</button>
 

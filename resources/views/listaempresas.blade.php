@@ -29,12 +29,12 @@
 						</thead>
 						@foreach($empresas as $empresa)	
 						<tbody>
-							<td>{{$empresa->nombre}}</td>
-							<td>{{$empresa->email}}</td>
-							<td>{{$empresa->ciudad}}</td>
-							<td>{{$empresa->fono}}</td>
-							<td>{{$empresa->fecha_nacimiento}}</td>
-							<td>{{$empresa->sexo}}</td>
+							<td>{!!$empresa->nombre!!}</td>
+							<td>{!!$empresa->email!!}</td>
+							<td>{!!$empresa->ciudad!!}</td>
+							<td>{!!$empresa->fono!!}</td>
+							<td>{!!$empresa->fecha_nacimiento!!}</td>
+							<td>{!!$empresa->sexo!!}</td>
 							<td>{!!link_to_route('usuarios.edit', $title = 'Editar', $parameters = $empresa->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
 						</tbody>
 						@endforeach

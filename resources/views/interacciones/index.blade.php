@@ -14,8 +14,8 @@
           </thead>
           @foreach($interacciones as $interaccion) 
           <tbody>
-            <td>{{$interaccion->nombre_interaccion}}</td>
-            <td>{{$interaccion->descripcion_interaccion}}</td>            
+            <td>{!!$interaccion->nombre_interaccion!!}</td>
+            <td>{!!$interaccion->descripcion_interaccion!!}</td>
             <td>{!!link_to_route('interacciones.edit', $title = 'Editar', $parameters = $interaccion->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
           </tbody>
           @endforeach

@@ -35,10 +35,10 @@
                   </div>
                   <div class="list-group-item">
 
-                    <h5><strong>Nombre Sorteo: </strong>{{$sorteo->nombre_sorteo}}</h5>
-                    <h5><strong>Descripción del Sorteo: </strong>{{$sorteo->descripcion}}</h5>
-                    <h5><strong>Estado del Sorteo: </strong><span class="requerido">{{$sorteo->estado_sorteo}}</span></h5>
-                    <h5><strong>Fecha del sorteo: </strong>{{$sorteo->fecha_inicio_sorteo}}</h5>
+                    <h5><strong>Nombre Sorteo: </strong>{!!$sorteo->nombre_sorteo!!}</h5>
+                    <h5><strong>Descripción del Sorteo: </strong>{!!$sorteo->descripcion!!}</h5>
+                    <h5><strong>Estado del Sorteo: </strong><span class="requerido">{!!$sorteo->estado_sorteo!!}</span></h5>
+                    <h5><strong>Fecha del sorteo: </strong>{!!$sorteo->fecha_inicio_sorteo!!}</h5>
                     @if($sorteo->user_id == Auth::user()->get()->id)
                       {!!link_to_route('sorteos.edit', $title = 'Editar', $parameters = $sorteo->id, $attributes = ['class'=>'btn btn-primary btn-sm'])!!}
                       <a id="SortearGanador" data-toggle="modal"  class="btn btn-primary btn-sm" value="{!! $sorteo->id !!}">Sortear ganador</a>

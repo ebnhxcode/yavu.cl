@@ -41,7 +41,7 @@
 						<span class="icon-bar"></span>
 					</button>
 					<div class="navbar-brand" style="width: 135px;padding-right: 0px;padding-left: 20px;">
-						<img id="LogoYavu" src="{{URL::to('img/yavu004.png')}}" style="transition: width 0.8s;" width="50%" />
+						<img id="LogoYavu" src="{!!URL::to('img/yavu004.png')!!}" style="transition: width 0.8s;" width="50%" />
 					</div>
 					@if(Auth::user()->check())
 						<div class="navbar-brand"  align="center" >

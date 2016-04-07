@@ -14,8 +14,8 @@
           </thead>
           @foreach($pagos as $pago) 
           <tbody>
-            <td>{{$pago->user_id}}</td>
-            <td>{{$pago->descripcion}}</td>            
+            <td>{!!$pago->user_id!!}</td>
+            <td>{!!$pago->descripcion!!}</td>
             <td>{!!link_to_route('pagos.edit', $title = 'Editar', $parameters = $pago->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
           </tbody>
           @endforeach

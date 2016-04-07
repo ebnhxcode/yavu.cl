@@ -38,12 +38,12 @@
 						</thead>
 						@foreach($empresas as $empresa)	
 							<tbody>
-								<td>{{$empresa->nombre}}</td>
-								<td>{{$empresa->email}}</td>
-								<td>{{$empresa->ciudad}}</td>
-								<td>{{$empresa->fono}}</td>
-								<td>{{$empresa->fecha_creacion}}</td>
-								<td>{{$empresa->nombre_encargado}}</td>
+								<td>{!!$empresa->nombre!!}</td>
+								<td>{!!$empresa->email!!}</td>
+								<td>{!!$empresa->ciudad!!}</td>
+								<td>{!!$empresa->fono!!}</td>
+								<td>{!!$empresa->fecha_creacion!!}</td>
+								<td>{!!$empresa->nombre_encargado!!}</td>
 								<td>{!!link_to_route('empresas.edit', $title = 'Editar', $parameters = $empresa->id, $attributes = ['class'=>'btn btn-primary'])!!}
 								</td>
 							</tbody>
@@ -59,7 +59,7 @@
 										@if($empresa->imagen_portada === "" )
 											<img id="ImagenPortada" src="http://medioambiente.nh-hoteles.es/themes/default/images/bgd-biodiversidad-00.png" alt="...">
 										@else
-											<img id="ImagenPortada" src="/img/users/{{$empresa->imagen_portada}}" alt="...">
+											<img id="ImagenPortada" src="/img/users/{!!$empresa->imagen_portada!!}" alt="...">
 										@endif		
 
 				          	@if($empresa->imagen_perfil !== "")
@@ -67,11 +67,11 @@
 				            @else
 				            	<img width="40%" id="ImagenPerfil" class="img-circle" src="/images/pyme.jpg" alt="...">
 				            @endif
-			                <h4><a class="btn-link" href="/empresa/{{$empresa->nombre}}">{!!$empresa->nombre!!}</a></h4>
+			                <h4><a class="btn-link" href="/empresa/{!!$empresa->nombre!!}">{!!$empresa->nombre!!}</a></h4>
 
-											{{$empresa->ciudad}}
+											{!!$empresa->ciudad!!}
 											<br>
-											{{$empresa->fono}}											
+											{!!$empresa->fono!!}
 											<br>
 
 

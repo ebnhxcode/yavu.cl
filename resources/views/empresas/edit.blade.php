@@ -4,7 +4,7 @@
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		<h4>Informacion de : {{$empresa->nombre}}</h4>
+		<h4>Informacion de : {!!$empresa->nombre!!}</h4>
 		@include('alerts.alertFields')
 		@include('alerts.errorsMessage')
 		@include('alerts.successMessage')

@@ -6,9 +6,9 @@
 	</thead>
 	@foreach($sorteos as $sorteo)
 		<tbody>
-		<td>{{$sorteo->nombre_sorteo}}</td>
-		<td>{{$sorteo->descripcion}}</td>
-		<td>{{$sorteo->estado_sorteo}}</td>
+		<td>{!!$sorteo->nombre_sorteo!!}</td>
+		<td>{!!$sorteo->descripcion!!}</td>
+		<td>{!!$sorteo->estado_sorteo!!}</td>
 		<td>{!!link_to_route('sorteos.edit', $title = 'Editar', $parameters = $sorteo->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
 		</tbody>
 	@endforeach

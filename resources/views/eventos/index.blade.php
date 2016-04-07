@@ -14,8 +14,8 @@
           </thead>
           @foreach($eventos as $evento) 
           <tbody>
-            <td>{{$evento->nombre}}</td>
-            <td>{{$evento->descripcion}}</td>            
+            <td>{!!$evento->nombre!!}</td>
+            <td>{!!$evento->descripcion!!}</td>
             <td>{!!link_to_route('eventos.edit', $title = 'Editar', $parameters = $evento->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
           </tbody>
           @endforeach

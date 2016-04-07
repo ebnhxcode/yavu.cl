@@ -24,10 +24,10 @@
 					</thead>
 					@foreach($banners as $banner)	
 					<tbody>
-						<td>{{$banner->banner_empresa}}</td>
-						<td>{{$banner->enlace_empresa}}</td>
-						<td>{{$banner->imagen_empresa}}</td>
-						<td>{{$banner->comentario_banner}}</td>
+						<td>{!!$banner->banner_empresa!!}</td>
+						<td>{!!$banner->enlace_empresa!!}</td>
+						<td>{!!$banner->imagen_empresa!!}</td>
+						<td>{!!$banner->comentario_banner!!}</td>
 
 						<td>{!!link_to_route('banners.edit', $title = 'Editar', $parameters = $banner->id, $attributes = ['class'=>'btn btn-primary'])!!}
 						

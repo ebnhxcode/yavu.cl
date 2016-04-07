@@ -14,8 +14,8 @@
           </thead>
           @foreach($beneficios as $beneficio) 
           <tbody>
-            <td>{{$beneficio->nombre}}</td>
-            <td>{{$beneficio->descripcion}}</td>            
+            <td>{!!$beneficio->nombre!!}</td>
+            <td>{!!$beneficio->descripcion!!}</td>
             <td>{!!link_to_route('beneficios.edit', $title = 'Editar', $parameters = $beneficio->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
           </tbody>
           @endforeach

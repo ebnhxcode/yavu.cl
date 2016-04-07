@@ -16,7 +16,7 @@
     @include('alerts.warningMessage') 
 
 
-	<input type="hidden" name="_token" value="{{csrf_token()}}" id="token" />
+	<input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
     {!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
     @include('pops.forms.panelRight')
 

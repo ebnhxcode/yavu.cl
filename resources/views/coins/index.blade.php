@@ -28,9 +28,9 @@
 							</thead>
 						@foreach($historialcoins as $hcoin)	
 							<tbody>
-								<td>{{$hcoin->motivo}}</td>
-								<td>{{$hcoin->cantidad}}</td>
-								<td id="date{{$hcoin->id}}" title="{{$hcoin->created_at}}" class="timeago"></td>
+								<td>{!!$hcoin->motivo!!}</td>
+								<td>{!!$hcoin->cantidad!!}</td>
+								<td id="date{!!$hcoin->id!!}" title="{!!$hcoin->created_at!!}" class="timeago"></td>
 							@if(Auth::admin()->check())
 								<td>
 									{!!link_to_route('coins.edit', $title = 'Editar', $parameters = $hcoin->id, $attributes = ['class'=>'', 'style' => 'color:#000;'])!!}

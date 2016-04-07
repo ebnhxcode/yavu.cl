@@ -21,8 +21,8 @@
 					</thead>
 					@foreach($admins as $admin)	
 					<tbody>
-						<td>{{$admin->nombre}}</td>
-						<td>{{$admin->email}}</td>
+						<td>{!!$admin->nombre!!}</td>
+						<td>{!!$admin->email!!}</td>
 						<td>{!!link_to_route('admins.edit', $title = 'Editar', $parameters = $admin->id, $attributes = ['class'=>'btn btn-primary btn-lg'])!!}</td>
 					</tbody>
 					@endforeach

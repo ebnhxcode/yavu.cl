@@ -15,8 +15,8 @@
           </thead>
           @foreach($preguntas as $pregunta) 
           <tbody>
-            <td>{{$pregunta->encuesta_id}}</td>
-            <td>{{$pregunta->pregunta}}</td>
+            <td>{!!$pregunta->encuesta_id!!}</td>
+            <td>{!!$pregunta->pregunta!!}</td>
             <td>{!!link_to_route('preguntas.edit', $title = 'Editar', $parameters = $pregunta->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
           </tbody>
           @endforeach

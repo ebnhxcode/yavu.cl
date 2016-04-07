@@ -22,16 +22,16 @@
 				<div class="list-group-item">
 					@foreach($users as $user)
 						@if ($user->sexo == 'Masculino')
-							Bienvenido! {{$user->nombre}}
+							Bienvenido! {!!$user->nombre!!}
 						@elseif ($user->sexo == 'Femenino')
-							Bienvenida! {{$user->nombre}}
+							Bienvenida! {!!$user->nombre!!}
 						@else
-							Te damos la bienvenida a tu primera vez en el sitio, y gana yavu coins! <a class="btn btn-primary btn-sm" href="usuarios/{{$user->id}}/edit">actualiza tus datos</a>
+							Te damos la bienvenida a tu primera vez en el sitio, y gana yavu coins! <a class="btn btn-primary btn-sm" href="usuarios/{!!$user->id!!}/edit">actualiza tus datos</a>
 						@endif
 					@endforeach
 				</div>
 				<div>
-					<a href="{{URL::to('/feeds')}}" style="text-align:center;" class="list-group-item list-group-item-info">
+					<a href="{!!URL::to('/feeds')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
 						<span>
 							<h1>PUBLICACIONES</h1>
 							<img src= "{!!URL::to('img/dash/ico_pin03.png')!!}"/>
@@ -61,7 +61,7 @@
 					<div class="list-group-item-full-header">
 
 					</div>
-					<a href="{{URL::to('/pops')}}" style="text-align:center;" class="list-group-item list-group-item-danger">
+					<a href="{!!URL::to('/pops')!!}" style="text-align:center;" class="list-group-item list-group-item-danger">
 						<span>
 							<h1>NOTIFICACIONES</h1>
 							<img  src= "{!!URL::to('img/dash/ico_notificacion004.png')!!}" class=""/></span>
@@ -115,7 +115,7 @@
 			<div class="col-md-12 col-sm-12 col-xs-12">
 
 				<div class="list-group" >
-					<a href="{{URL::to('/sorteos')}}" style="text-align:center;" class="list-group-item list-group-item-warning">
+					<a href="{!!URL::to('/sorteos')!!}" style="text-align:center;" class="list-group-item list-group-item-warning">
 						<span>
 							<h1>SORTEOS</h1>
 							<img  src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}" class=""/>

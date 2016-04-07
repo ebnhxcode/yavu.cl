@@ -23,7 +23,7 @@
             {!!Form::label('Clave:')!!}
             {!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingresa tu clave'])!!}     
           </div>
-          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+          <input type="hidden" name="_token" value="{!! csrf_token() !!}">
           <div class="form-group has-feedback has-feedback-left ">
             {!!Form::submit('Acceder',['class'=>'btn btn-default ', 'style'=>'width:100%;'])!!}
           </div>
