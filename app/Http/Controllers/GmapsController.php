@@ -1,9 +1,6 @@
 <?php
-
 namespace yavu\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
 use yavu\Gmap;
@@ -16,22 +13,26 @@ use Illuminate\Routing\Route;
 use DB;
 
 class GmapsController extends Controller{
-
   public function __construct(){
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+  }
+  public function create(){
+  }
+  public function destroy($id){
+  }
+  public function edit($id){
   }
   public function find(Route $route){
     $this->gmap = Gmap::find($route->getParameter('gmaps'));
   }
   public function index(){
   }
-  public function create(){
+  public function show($id){
   }
   public function store(Request $request){
     if(isset($request)){
       $userGmap = Gmap::where('user_id', $request->user_id)->where('empresa_id', $request->empresa_id)->first();
       if($userGmap){
-
         DB::table('gmaps')
           ->where('id', $userGmap->id)
           ->update([
@@ -53,17 +54,11 @@ class GmapsController extends Controller{
     }
     return Redirect::to('/');
   }
-  public function show($id){
-  }
-  public function edit($id){
-  }
   public function update(Request $request, $id){
     $this->gmap->fill($request->all());
     $this->gmap->save();
     Session::flash('message', 'Mapa modificado correctamente');
     $empresa = Empresa::find($request->empresa_id);
     return Redirect::to('/empresa/'.$empresa->nombre);
-  }
-  public function destroy($id){
   }
 }
