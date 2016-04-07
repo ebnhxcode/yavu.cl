@@ -1,9 +1,3 @@
-<style>
-  #map-canvas{
-    width: 100%;
-    height: 50%;
-  }
-</style>
 <h4>{!! strtoupper($e->nombre.' Se ubica en:') !!}</h4>
 
 {!!Form::open(['route'=>'gmaps.store', 'method'=>'POST', 'files'=>true])!!}
@@ -15,7 +9,7 @@
     @if(isset($mapa))
 
       <div class="form-group">
-        <label for="">Título</label>
+        <label for="">¿Como se llama el lugar?</label> <small>(Nombre amigable)</small>
         <input type="text"  class="form-control input-sm" name="title" value="{!! $mapa->title !!}">
       </div>
       @if(Auth::user()->get()->id == $e->user_id)

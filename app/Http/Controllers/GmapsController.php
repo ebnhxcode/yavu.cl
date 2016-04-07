@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
 use yavu\Gmap;
+use yavu\Empresa;
 use Session;
 use Auth;
 use Redirect;
@@ -25,8 +26,12 @@ class GmapsController extends Controller{
   public function create(){
   }
   public function store(Request $request){
-    Gmap::create($request->all());
-    Session::flash('message', 'Mapa registrado correctamente');
+    if(isset($request)){
+      Gmap::create($request->all());
+      $empresa = Empresa::find($request->empresa_id);
+      Session::flash('message', 'Mapa registrado correctamente');
+      return Redirect::to('/empresa/'.$empresa->nombre);
+    }
     return Redirect::to('/');
   }
   public function show($id){

@@ -4,7 +4,7 @@ $(document).ready(function(){
 	var Global_idUltimaPublicacion;
 	var Global_ContadorCargaPublicaciones;
 	var Global_Control = true;
-
+	var Refresh = 100;
 /*DECLARACION DE VARIABLES GLOBALES*/
 
 /*MÉTODOS CONSTRUCTORES*/
@@ -15,13 +15,9 @@ $(document).ready(function(){
 
 	$(function(){
 		setInterval(function(){
-			var a = $(".timeago");
-			for(var i = 0; i < a.length ; i++){
-				var elemento = document.getElementById( a[i].id );
-				console.log(elemento.title);
-				$('#'+a[i].id).text("" + humanTiming( elemento.title ) );
-			}
-		},40000);
+			$("abbr.timeago").timeago();
+			Refresh = 30000 + Refresh;
+		}, Refresh);
 		return true;
 	});
 

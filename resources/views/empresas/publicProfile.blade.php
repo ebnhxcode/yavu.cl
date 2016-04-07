@@ -161,11 +161,14 @@
   				</div>
           <!-- gmaps -->
 
-          @include('empresas.forms.modalModificarDireccionMapa')
-
-          <div class="container">
-            <div id="map-canvas"></div>
+          <div class="list-group">
+            <div class="list-group-item">
+              @include('empresas.forms.modalModificarDireccionMapa')
+            </div>
           </div>
+
+
+
 
           <!-- /gmaps -->
 			  </div>

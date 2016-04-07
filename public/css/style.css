@@ -42,7 +42,10 @@
   -webkit-transition: opacity 0.2s;
   -moz-transition: opacity 0.2s;
 }
-
+#map-canvas{
+   width: 100%;
+   height: 50%;
+}
 
 
 
