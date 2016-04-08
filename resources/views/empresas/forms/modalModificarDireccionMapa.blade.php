@@ -4,7 +4,11 @@
   @if(Auth::user()->check())
     @if(isset($mapa))
       <div class="form-group">
-        <label for="">¿Como se llama el lugar?</label> <small>(Nombre amigable)</small>
+        @if(Auth::user()->get()->id == $mapa->user_id)
+          <label for="">¿Como se apoda el lugar?</label> <small>(Nombre amigable)</small>
+        @else
+          <label for="">Este lugar se apoda</label>
+        @endif
         <input type="text"  class="form-control input-sm" name="title" value="{!! $mapa->title !!}">
       </div>
       @if(Auth::user()->get()->id == $e->user_id)
@@ -13,7 +17,12 @@
           <input type="text" class="form-control input-sm" name="address" id="searchmap" value="{!! $mapa->address !!}">
           <small>Ej. Mi Dirección 1234, Ciudad, Pais</small>
         </div>
+      @else
+        <div class="form-group">
+          <input type="text" class="form-control input-sm no-mostrar" name="address" id="searchmap" value="{!! $mapa->address !!}">
+        </div>
       @endif
+
       <div class="form-group" style="display: none;">
         <label for="">Lat</label>
         <input type="text" class="form-control input-sm" name="lat" id="lat" value="{!! $mapa->lat !!}">

@@ -79,8 +79,14 @@ class EmpresaController extends Controller
                 ->where('empresas.nombre', '=', $empresa)   
                 ->orderBy('empresas.created_at','desc')   
                 ->get();
+
     $mapa = Empresa::find($empresa[0]->id)->gmaps;
-    return view('empresas.publicProfile', compact('empresa'), compact('mapa'));
+    
+    if($mapa){
+      return view('empresas.publicProfile', compact('empresa'), compact('mapa'));
+    }else{
+      return view('empresas.publicProfile', compact('empresa'));
+    }
   }
   public function SolicitarEliminacion($id)
     {

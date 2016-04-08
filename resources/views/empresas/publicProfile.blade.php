@@ -1,9 +1,18 @@
 {!!Html::script('js/jquery.js')!!}
+  @if(Auth::user()->check())
 {!!Html::script('js/ajax/GestionarEstadosEmpresa.js')!!}
 {!!Html::script('js/ajax/SeguirEmpresa.js')!!}
+  @endif
+
+
+<!--
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyB6K1CFUQ1RwVJ-nyXxd6W0rfiIBe12Q&libraries=places"
         type="text/javascript"></script>
+-->
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?libraries=places&sensor=false"></script>
 {!!Html::script('js/googlemaps/MakerGoogleMaps.js')!!}
+
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
@@ -12,6 +21,7 @@
 		@foreach($empresa as $e)
 			<div class="row" style="margin-top:-35px;">
 				<div class="col-sm-8">
+
 					<div class="list-group" >
 						<div class="list-group-item-full-header">
 							{!!Form::hidden('empresa', $e->nombre, ['id'=>'empresa'])!!}
@@ -33,20 +43,26 @@
 									<img id="ImagenPerfil" src="/img/users/{!!$e->imagen_perfil!!}" class="img-circle" alt="...">
 								@endif
                   <!-- /Perfil -->
-                <div class="list-group">
-                  <div class="list-group-item-full-header">
-                    <h6>DESCRIPCIÓN</h6>
-                  </div>
-                  <div class="list-group-item">
-                    {!! $e->descripcion !!}
-                  </div>
-                </div>
+
+
+
                 <div class="caption">
-                  <h6>DATOS</h6>
-                  Email : {!!$e->email!!}<br>
-                  Dirección : {!!$e->direccion!!}<br>
-                  Ciudad : {!!$e->ciudad!!}<br>
-                  @if (Auth::user()->check())
+
+
+                  @if(Auth::user()->check())
+                    <div class="list-group">
+                      <div class="list-group-item-full-header">
+                        <h6>DESCRIPCIÓN</h6>
+                      </div>
+                      <div class="list-group-item">
+                        {!! $e->descripcion !!}
+                      </div>
+                    </div>
+
+                    <h6>DATOS</h6>
+                    Email : {!!$e->email!!}<br>
+                    Dirección : {!!$e->direccion!!}<br>
+                    Ciudad : {!!$e->ciudad!!}<br>
                     <p>
                       <span class="btn btn-primary btn-sm" id="seguir" value="{!! $e->id !!}" role="button">Seguir</span>
                       <input type="text" class="btn btn-sm text-success" id="seguidores" size="10" disabled >
@@ -58,14 +74,15 @@
                     </p>
                     <small>Para seguir a esta empresa debes registrarte</small>
                   @endif
+
                 </div>
               </div>
             </div>
           </div>
 					{!!Form::hidden('empresa_id', $e->id, ['id'=>'empresa_id'])!!}
           <input type="hidden" name="_token" value="{!! csrf_token() !!}" id="token" />
-          @if(isset(Auth::user()->get()->id) && Auth::user()->get()->id===$e->user_id)
-            @if((isset($e) && Auth::user()->check() ) && $e->user_id == Auth::user()->get()->id)
+          @if((Auth::user()->check()))
+            @if($e->user_id == Auth::user()->get()->id)
               <div class="list-group">
                 <div class="list-group-item-full-header">
                   <h6>PUBLICAR NUEVO ESTADO</h6>
@@ -92,84 +109,96 @@
                   {!!Form::close()!!}
                 </div>
             @endif
-          @endif
-          <div>
-            <div id="Estados">
+            <div>
+              <div id="Estados">
+              </div>
+              {!!Form::hidden('idUltima', "0", ['id'=>'idUltima'])!!}
             </div>
-            {!!Form::hidden('idUltima', "0", ['id'=>'idUltima'])!!}
-          </div>
-          <div>
-            <div id="msj-estado" class="alert alert-dismissible list-group-item" role="alert" style="display:none;">
-              <img width="30%"  src='/images/iconoCargando.gif'/>
-            </div>
-            <div id='msj-finPublicaciones' class="alert alert-dismissible list-group-item-warning" role="alert" style="display:none;">
+            <div>
+              <div id="msj-estado" class="alert alert-dismissible list-group-item" role="alert" style="display:none;">
+                <img width="30%"  src='/images/iconoCargando.gif'/>
+              </div>
+              <div id='msj-finPublicaciones' class="alert alert-dismissible list-group-item-warning" role="alert" style="display:none;">
                 No hay mas publicaciones.
+              </div>
+              <a id="CargarEstados" href="#!" class="list-group-item list-group-item-info">
+                Cargar estados
+                <span id="EstadosNuevos" class="badge"></span>
+              </a>
             </div>
-            <a id="CargarEstados" href="#!" class="list-group-item list-group-item-info">
-              Cargar estados
-              <span id="EstadosNuevos" class="badge"></span>
-            </a>
-          </div>
+          @endif
+
+
 		  		<br>
 				</div>
 				<div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
-					<div class="list-group">
-						<div class="list-group-item-full-header">
-							<h6>INFORMACIÓN</h6>
-						</div>
-						<div class="list-group-item">
-							Últimas novedades en yavu
-						</div>	
-						@if(Auth::user()->check())
-							{!!link_to_route('usuarios.edit', $title = 'Actualizar mis datos', $parameters = Auth::user()->get()->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}
-							<a href="{!!URL::to('dashboard')!!}" class="list-group-item list-group-item-warning">Volver a <strong>Inicio</strong></a>
-						@endif
-					</div>	
-					<div class="list-group">
-						<div class="list-group-item">
-							<h6>ACCESOS RÁPIDOS</h6>
-						</div>
-						<a class="list-group-item list-group-item-warning" href="{!! URL::to('/feeds') !!}">Ir a publicaciones</a>
-            @if(Auth::user()->get()->id == $e->user_id)
-						  {!!link_to_route('empresas.edit', $title = 'Modificar datos de mi empresa', $parameters = $e->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}
-              <a href="{!!URL::to('sorteos/create')!!}" class="list-group-item list-group-item-warning">Crear sorteo nuevo</a>
-            @endif
-						<a href="{!!URL::to('dashboard')!!}" class="list-group-item list-group-item-warning">Volver a <strong>Inicio</strong></a>
-					</div>
 
-					<div class="list-group">                    
-						<div class="list-group-item">
-							<h6>GRAFICOS</h6>
-              <div class="wrapper">
-                <div class="counter col_fourth">
-                  <i class="fa fa-code fa-2x"></i>
-                  <p class="count-text ">Visitas Al Perfil</p>
-                  <h2 class="timer count-title" id="count-number" data-to="300" data-speed="1500"></h2>
-                </div>
-                <div class="counter col_fourth">
-                  <i class="fa fa-coffee fa-2x"></i>
-                  <p class="count-text ">Impacto Publicaciones</p>
-                  <h2 class="timer count-title" id="count-number" data-to="17870" data-speed="1500"></h2>
-                </div>
-                <div class="counter col_fourth">
-                  <i class="fa fa-lightbulb-o fa-2x"></i>
-                  <p class="count-text ">Coins Otorgadas</p>
-                  <h2 class="timer count-title" id="count-number" data-to="847" data-speed="1500"></h2>
+
+
+
+
+          @if(Auth::user()->check())
+
+            <div class="list-group">
+              <div class="list-group-item-full-header">
+                <h6>INFORMACIÓN</h6>
+              </div>
+              <div class="list-group-item">
+                Últimas novedades en yavu
+              </div>
+                {!!link_to_route('usuarios.edit', $title = 'Actualizar mis datos', $parameters = Auth::user()->get()->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}
+                <a href="{!!URL::to('dashboard')!!}" class="list-group-item list-group-item-warning">Volver a <strong>Inicio</strong></a>
+            </div>
+
+            <div class="list-group">
+              <div class="list-group-item">
+                <h6>ACCESOS RÁPIDOS</h6>
+              </div>
+              <a class="list-group-item list-group-item-warning" href="{!! URL::to('/feeds') !!}">Ir a publicaciones</a>
+              @if(Auth::user()->get()->id == $e->user_id)
+                {!!link_to_route('empresas.edit', $title = 'Modificar datos de mi empresa', $parameters = $e->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}
+                <a href="{!!URL::to('sorteos/create')!!}" class="list-group-item list-group-item-warning">Crear sorteo nuevo</a>
+              @endif
+              <a href="{!!URL::to('dashboard')!!}" class="list-group-item list-group-item-warning">Volver a <strong>Inicio</strong></a>
+            </div>
+
+            <div class="list-group">
+              <div class="list-group-item">
+                <h6>GRAFICOS</h6>
+                <div class="wrapper">
+                  <div class="counter col_fourth">
+                    <i class="fa fa-code fa-2x"></i>
+                    <p class="count-text ">Visitas Al Perfil</p>
+                    <h2 class="timer count-title" id="count-number" data-to="300" data-speed="1500"></h2>
+                  </div>
+                  <div class="counter col_fourth">
+                    <i class="fa fa-coffee fa-2x"></i>
+                    <p class="count-text ">Impacto Publicaciones</p>
+                    <h2 class="timer count-title" id="count-number" data-to="17870" data-speed="1500"></h2>
+                  </div>
+                  <div class="counter col_fourth">
+                    <i class="fa fa-lightbulb-o fa-2x"></i>
+                    <p class="count-text ">Coins Otorgadas</p>
+                    <h2 class="timer count-title" id="count-number" data-to="847" data-speed="1500"></h2>
+                  </div>
                 </div>
               </div>
-  					</div>
-  				</div>
-          <!-- gmaps -->
+            </div>
+          @endif <!-- /AuthCheck -->
 
+
+
+
+
+
+          <!-- gmaps -->
           <div class="list-group">
             <div class="list-group-item">
-              @include('empresas.forms.modalModificarDireccionMapa')
+              @if(isset($mapa))
+                @include('empresas.forms.modalModificarDireccionMapa')
+              @endif
             </div>
           </div>
-
-
-
-
           <!-- /gmaps -->
 			  </div>
   			<br />
