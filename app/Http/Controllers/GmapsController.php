@@ -11,7 +11,6 @@ use Auth;
 use Redirect;
 use Illuminate\Routing\Route;
 use DB;
-
 class GmapsController extends Controller{
   public function __construct(){
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
