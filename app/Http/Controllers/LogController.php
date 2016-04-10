@@ -16,46 +16,42 @@ use yavu\Http\Controllers\Controller;
 use DB;
 class LogController extends Controller{
   public function index(){
-
-    }
+  }
   public function CargarCoinSesion($id){
-      if(isset($id)){
-        $id = addslashes($id);
-        $fechaRegistro = "";
-        $fechaActual = strftime( "%m/%d/%Y", time());
-        $cargaDiaria = RegistroCoin::where('user_id', $id)
-          ->where('motivo', 'Inicio sesión')
-          ->orderby('created_at', 'desc')
-          ->limit('1')
-          ->first();
-        if($cargaDiaria){
-          $fechaRegistro = $cargaDiaria->created_at->format('m/d/Y');
-        }
-        if( $fechaRegistro != $fechaActual ){
-          DB::table('registro_coins')->insert(
-            ['user_id'    => $id,
-            'cantidad'    => '10',
-            'motivo'      => 'Inicio sesión',
-            'created_at'  => strftime( "%Y-%m-%d-%H-%M-%S", time()),
-            'updated_at'  => strftime( "%Y-%m-%d-%H-%M-%S", time())]
-          );
-          //Ahora notifico al cliente
-          DB::table('pops')->insert(
-            ['user_id'    => $id,
-            'empresa_id'  => 1,
-            'tipo'        => 'coins',
-            'estado'      => 'pendiente',
-            'contenido'   => 'Tienes una nueva carga diaria!',
-            'created_at'  => strftime( "%Y-%m-%d-%H-%M-%S", time()),
-            'updated_at'  => strftime( "%Y-%m-%d-%H-%M-%S", time())]
-          );
-
-        }
-
+    if(isset($id)){
+      $id = addslashes($id);
+      $fechaRegistro = "";
+      $fechaActual = strftime( "%m/%d/%Y", time());
+      $cargaDiaria = RegistroCoin::where('user_id', $id)
+        ->where('motivo', 'Inicio sesión')
+        ->orderby('created_at', 'desc')
+        ->limit('1')
+        ->first();
+      if($cargaDiaria){
+        $fechaRegistro = $cargaDiaria->created_at->format('m/d/Y');
       }
-
-
+      if( $fechaRegistro != $fechaActual ){
+        DB::table('registro_coins')->insert(
+          ['user_id'    => $id,
+          'cantidad'    => '10',
+          'motivo'      => 'Inicio sesión',
+          'created_at'  => strftime( "%Y-%m-%d-%H-%M-%S", time()),
+          'updated_at'  => strftime( "%Y-%m-%d-%H-%M-%S", time())]
+        );
+        //Ahora notifico al cliente
+        DB::table('pops')->insert(
+          ['user_id'    => $id,
+          'empresa_id'  => 1,
+          'tipo'        => 'coins',
+          'estado'      => 'pendiente',
+          'contenido'   => 'Tienes una nueva carga diaria!',
+          'created_at'  => strftime( "%Y-%m-%d-%H-%M-%S", time()),
+          'updated_at'  => strftime( "%Y-%m-%d-%H-%M-%S", time())]
+        );
+      }
     }
+    return response()->json(["Mensaje: " => "Acceso denegado"]);
+  }
   public function create(){
     }
   public function destroy($id){
@@ -111,4 +107,6 @@ class LogController extends Controller{
     }
   public function update(Request $request, $id){
     }
+
+  
 }

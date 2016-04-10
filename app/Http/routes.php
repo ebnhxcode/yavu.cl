@@ -2,7 +2,6 @@
 
 /*Gestión del front*/
 Route::get('/','FrontController@index');
-Route::get('splash','FrontController@splash');
 Route::get('index','FrontController@index');
 Route::get('login','FrontController@login');
 Route::get('registro','FrontController@registro');
