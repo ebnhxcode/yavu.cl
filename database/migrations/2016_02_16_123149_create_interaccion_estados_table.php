@@ -17,11 +17,12 @@ class CreateInteraccionEstadosTable extends Migration
             $table->increments('id');
             $table->string('user_id',20);
             $table->string('status_id',20);
+            $table->string('estado',20);
             $table->timestamps();
         });
     }
     public function down()
     {
-        Schema::drop('interaccion_estados');
+        Schema::dropIfExists('interaccion_estados');
     }
 }

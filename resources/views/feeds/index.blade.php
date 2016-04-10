@@ -86,7 +86,7 @@
 			}
 		});
 		ContarInteracciones(status_id);
-		$('#'+valor).removeClass("text-info").fadeIn();
+		$('#'+valor).addClass("text-info").fadeIn();
 		return true;
 	}
 
