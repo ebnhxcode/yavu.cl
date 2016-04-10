@@ -12,57 +12,71 @@ use Redirect;
 use Illuminate\Routing\Route;
 use DB;
 
-class BannerController extends Controller
-{
-    public function __construct(){
+class BannerController extends Controller{
 
-        $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+  public function __construct(){
+    $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+  }
+  public function find(Route $route){
+    if(Auth::admin()->check()){
+      $this->banner = Banner::find($route->getParameter('banners'));
     }
-    public function find(Route $route){
-        $this->banner = Banner::find($route->getParameter('banners'));
-        //return $this->user;   
-    }         
-    public function index()
-    {   
-        
-        $banners = Banner::all();
-        return view('banners.index', compact('banners'));
+    return Redirect::to("/");
+    //return response()->json(["Mensaje: " => "Acceso denegado"]);
+  }
+  public function index(){
+    if(Auth::admin()->check()){
+      $banners = Banner::all();
+      return view('banners.index', compact('banners'));
+    }
+    return Redirect::to("/");
+    //return response()->json(["Mensaje: " => "Acceso denegado"]);
+  }
+  public function create(){
+    if(Auth::admin()->check()){
+      return view('banners.create');
+    }
+    return Redirect::to("/");
+    //return response()->json(["Mensaje: " => "Acceso denegado"]);
+  }
 
+  public function store(Request $request){
+    if(Auth::admin()->check()){
+      Banner::create($request->all());
+      Session::flash('message', 'Banner creado correctamente');
+      return Redirect::to('/banners/create');
     }
-    public function create()
-    {
-        return view('banners.create');
+    return Redirect::to("/");
+    //return response()->json(["Mensaje: " => "Acceso denegado"]);
+  }
+  public function show($id){
+    return Redirect::to("/");
+  }
+  public function edit($id){
+    if(Auth::admin()->check()){
+      return view('banners.edit', ['banner' => $this->banner]);
     }
+    return Redirect::to("/");
+    //return response()->json(["Mensaje: " => "Acceso denegado"]);
+  }
 
-    public function store(Request $request)
-    {
-        Banner::create($request->all());
-        Session::flash('message', 'Banner creado correctamente');
-    return Redirect::to('/banners/create');
+  public function update(BannerUpdateRequest $request, $id){
+    if(Auth::admin()->check()){
+      $this->banner->fill($request->all());
+      $this->banner->save();
+      Session::flash('message', 'banner validado correctamente');
+      return Redirect::to('/banners');
     }
-    public function show($id)
-    {
-
+    return Redirect::to("/");
+    //return response()->json(["Mensaje: " => "Acceso denegado"]);
+  }
+  public function destroy($id){
+    if(Auth::admin()->check()){
+      $this->banner->delete();
+      Session::flash('message', 'banner eliminado correctamente');
+      return Redirect::to('/banners');
     }
-     public function edit($id)
-
-    {           
-        return view('banners.edit', ['banner' => $this->banner]); 
-    }
-
-    public function update(BannerUpdateRequest $request, $id)
-
-    {
-
-        $this->banner->fill($request->all());
-        $this->banner->save();
-        Session::flash('message', 'banner validado correctamente');
-        return Redirect::to('/banners');
-    }
-    public function destroy($id)
-    {
-        $this->banner->delete();
-        Session::flash('message', 'banner eliminado correctamente');
-        return Redirect::to('/banners');
-    }
+    return Redirect::to("/");
+    //return response()->json(["Mensaje: " => "Acceso denegado"]);
+  }
 }
