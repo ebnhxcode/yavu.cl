@@ -46,7 +46,6 @@ class CoinController extends Controller{
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function ContarCoins(){
-
     if(Auth::user()->check()){
       $coins = DB::table('registro_coins')
         ->select(DB::raw('sum(cantidad) as coins'))
@@ -54,12 +53,9 @@ class CoinController extends Controller{
         ->groupBy('user_id')
         //->orderBy('created_at','desc')
         ->get();
-      return response()->json(
-        $coins
-      );
+      return response()->json($coins);
     }
     return response()->json(["Mensaje: " => "Acceso denegado"]);
-
   }
   public function HistorialCoins(){
     if(Auth::user()->check()){
@@ -77,7 +73,10 @@ class CoinController extends Controller{
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function store(CoinCreateRequest $request){
-    RegistroCoin::create($request->all());
+    if(Auth::admin()->check()){
+      RegistroCoin::create($request->all());
+    }
+    return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function show($id){
 
@@ -98,8 +97,11 @@ class CoinController extends Controller{
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function destroy($id){
-    $this->coin->delete();
-    Session::flash('message', 'Carga eliminada correctamente');
-    return Redirect::to('/coins');
+    if(Auth::admin()->check()) {
+      $this->coin->delete();
+      Session::flash('message', 'Carga eliminada correctamente');
+      return Redirect::to('/coins');
+    }
+    return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
 }
