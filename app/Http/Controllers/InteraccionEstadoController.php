@@ -36,6 +36,8 @@ class InteraccionEstadoController extends Controller{
   }
   public function store(Request $request){
     $estado = InteraccionEstado::where('user_id', $request->user_id)->where('status_id', $request->status_id)->first();
+
+
     if($request->ajax() && !$estado){
       InteraccionEstado::create($request->all());
       DB::table('registro_coins')->insert(
@@ -63,6 +65,8 @@ class InteraccionEstadoController extends Controller{
         ->where('status_id', '=', $request->status_id)
         ->where('user_id', '=', $request->user_id)
         ->delete();
+
+
     }
   }
   public function update(Request $request, $id){

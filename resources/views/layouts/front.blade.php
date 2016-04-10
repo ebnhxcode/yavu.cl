@@ -52,7 +52,7 @@
 							</a>
 						</div>
 						<div class="navbar-brand" align="center">
-							<span class="glyphicon glyphicon-record" style="font-size: 1.2em; color: #BEF781;"></span>
+							<span class="glyphicon glyphicon-certificate" style="font-size: 1.2em; color: #BEF781;"></span>
 							<small><span id="" style="float:right;" class="label label-warning CantidadCoins"></span></small>
 						</div>
 						<div class="navbar-brand" align="center">

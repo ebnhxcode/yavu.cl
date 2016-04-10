@@ -1,6 +1,5 @@
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/BuscarUsuario.js')!!}
-{!!Html::script('js/ajax/GestionarCompraTicket.js')!!}
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
@@ -63,15 +62,3 @@
 	</div>
 </div>
 @stop
-<script>
-	var Control = true;
-	setInterval(function(){
-		var a = $(".timeago");
-		for(var i = 0; i < a.length ; i++){
-			var elemento = document.getElementById( a[i].id );
-			$('#'+a[i].id).text("" + humanTiming( elemento.title ) );
-		}
-	},40000);
-
-	}
-</script>

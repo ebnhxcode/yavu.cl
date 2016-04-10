@@ -20,7 +20,9 @@
 					<input id="sorteo_id" value="{!! $sorteo->id !!}" type="hidden" />
 					<input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
 					<br>
+					<!--
 					<a id='participar' href="{!! URL::to('#!') !!}" class="btn btn-primary participar btn-sm" data-toggle="modal" data-target="#myModal" value="{!! $sorteo->id !!}" role="button">Comprar</a>
+					-->
 					{!!link_to_route('sorteos.show', $title = 'Detalles', $parameters = $sorteo->id, $attributes = ['class'=>'btn btn-primary btn-sm'])!!}
 
 

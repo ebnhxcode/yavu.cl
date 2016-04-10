@@ -6801,7 +6801,7 @@ a:focus {
 
 .navbar-brand {
   float: left;
-  padding: 15px 8px;
+  padding: 15px 7px;
   font-size: 18px;
   line-height: 20px;
   height: 50px;
@@ -6861,6 +6861,9 @@ a:focus {
     margin-top: 0;    
     border: 0;
     box-shadow: none;
+  }
+  .navbar-brand {
+    padding: 15px 0px;
   }
   .navbar-nav .open .dropdown-menu > li > a,
   .navbar-nav .open .dropdown-menu .dropdown-header {

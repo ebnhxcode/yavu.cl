@@ -19,7 +19,7 @@
 								{!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar...','id'=>'empresa', 'aria-describedby' => 'sizing-addon1'])!!}	              
 			      </div>
 					@elseif(Auth::user()->check() || !Auth::user()->check())
-			      <div class="input-group input-group-lg">
+			      <div class="input-group input-group-lg has-success">
 			          <span class="glyphicon glyphicon-search input-group-addon" id="sizing-addon1"></span>
 								{!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar...','id'=>'empresathumb', 'role' => 'combobox', 'aria-describedby' => 'sizing-addon1'])!!} 
 			      </div>
