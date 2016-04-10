@@ -55,24 +55,14 @@
 
 
 			<div class="col-md-12 col-sm-12 col-xs-12">
-
-
 				<div class="list-group" >
-					<div class="list-group-item-full-header">
-
-					</div>
 					<a href="{!!URL::to('/pops')!!}" style="text-align:center;" class="list-group-item list-group-item-danger">
 						<span>
 							<h1>NOTIFICACIONES</h1>
 							<img  src= "{!!URL::to('img/dash/ico_notificacion004.png')!!}" class=""/></span>
 					</a>
-
 				</div>
-
 			</div>
-
-
-			
 		  <!-- <div class="col-md-12 col-sm-12 col-xs-12"><!--style="position:fixed;z-index:1000;"
 
 			   <div class="list-group" >

@@ -26,7 +26,7 @@ $(document).ready(function(){
 /*MÉTODOS CONSTRUCTORES*/
 
 /*SELECTORES*/
-	$("#cantidadtickets").change(function(e){
+	$("#CantidadTickets").change(function(e){
 		CalcularTotalCompra(this.value);
 		e.preventDefault();
 		return true;
@@ -34,6 +34,7 @@ $(document).ready(function(){
 
 	$("#comprar").click(function(e){
 		EfectuarCompra();
+    ContarNotificaciones();
 		e.preventDefault();
 		return true;
 	});
@@ -41,6 +42,7 @@ $(document).ready(function(){
 	$("#ComprarMasTickets").click(function(e){
 		EfectuarCompra(1);
 		VerificarTickets();
+		ContarNotificaciones();
 		e.preventDefault();
 		return true;
 	});
@@ -77,7 +79,29 @@ $(document).ready(function(){
 		}
 		return true;
 	}
-
+	function ContarNotificaciones(){
+		var user_id = $("#user_id").val();
+		$.ajax({
+			url: "http://localhost:8000/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
+			type: 'GET',
+			dataType: 'json',
+			cache: false,
+			async: true,
+			success: function success(data, status) {
+				if (data > 0) {
+					$("#CantidadNotificaciones").show('fast').text(data);
+					//$("#Notificaciones").css('color','#F5A9A9');
+				}else{
+					$("#CantidadNotificaciones").hide('fast').text("");
+					//$("#Notificaciones").css('color','');
+				}
+			},
+			error: function error(xhr, textStatus, errorThrown) {
+				//alert('Remote sever unavailable. Please try later');
+			}
+		});
+		return true;
+	}
 	function ContarCoins(){
 		var route = "http://localhost:8000/contarcoins";
 		var user_id = $("#user_id");

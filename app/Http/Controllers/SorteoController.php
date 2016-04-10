@@ -11,14 +11,15 @@ use yavu\Sorteo;
 use yavu\User;
 use Session;
 use Redirect;
+use Auth;
 use DB;
 use Carbon\Carbon;
 use Illuminate\Routing\Route;
 
 class SorteoController extends Controller{
   public function __construct(){
-      $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy', 'show']]);
-    }
+    $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy', 'show']]);
+  }
   public function BuscarSorteos($nombre = null){
     if(isset($nombre)){
       $nombre = addslashes($nombre);
@@ -113,7 +114,11 @@ class SorteoController extends Controller{
     return response()->json('Acceso denegado');
   }
   public function create(){
-    return view('sorteos.create');
+    if(Auth::user()->check()){
+      return view('sorteos.create');
+    }
+    Session::flash('message', '¡Para crear un sorteo para sus clientes debes iniciar sesión!');
+    return Redirect::to("/login");
   }
   public function destroy($id){
     if(isset($id)){
@@ -121,38 +126,45 @@ class SorteoController extends Controller{
       Session::flash('message', 'Sorteo eliminado correctamente');
       return Redirect::to('/sorteos');
     }
-    return responde()->json(
-      'Acceso denegado'
-    );
+    return responde()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function edit($id){
     if(isset($id)){
       return view('sorteos.edit', ['sorteo' => $this->sorteo]);
     }
-    return response()->json('Acceso denegado');
+    return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function find(Route $route){
       $this->sorteo = Sorteo::find($route->getParameter('sorteos'));
       //return $this->user;
     }
   public function index(){
+    if(Auth::user()->check()){
       $sorteos = DB::table('sorteos')->paginate(10);
       return view('sorteos.index', compact('sorteos'));
     }
+    Session::flash('message', '¡Para mirar los sorteos que yavu tiene para ti, debes iniciar sesión!');
+    return Redirect::to("/login");
+  }
   public function MostrarGanador($ganador){
-      if(isset($ganador)){
-        $ganador = ParticipanteSorteo::find($ganador)->users;
-        return response()->json($ganador);
-      }
-      return response()->json('Acceso denegado');
+    if(isset($ganador)){
+      $ganador = ParticipanteSorteo::find($ganador)->users;
+      return response()->json($ganador);
     }
+    return responde()->json(["Mensaje: " => "Acceso denegado"]);
+  }
   public function RegistrarGanadorSorteo(){
     return "true wn";
   }
   public function show($id){
+    if(!Auth::user()->check()){
+      Session::flash('message', '¡Debes iniciar sesión!');
+      return Redirect::to("/login");
+    }
     if(isset($id)){
       return view('sorteos.show', ['sorteo' => $this->sorteo]);
     }
+    return responde()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function store(Request $request){
       if(Sorteo::create($request->all())){

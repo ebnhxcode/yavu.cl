@@ -1,7 +1,7 @@
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/BuscarSorteo.js')!!}
 {!!Html::script('js/ajax/ParticiparSorteo.js')!!}
-{!!Html::script('js/ajax/GestionarCompraTicket.js')!!}
+
 @extends('layouts.front') 
 @section('content')
 <div class="jumbotron">
@@ -11,6 +11,14 @@
     @include('alerts.successMessage')
     @include('alerts.warningMessage')
     <h1>Sorteos</h1><span class="text-danger" id="Mensaje"></span>
+    <a class="btn btn-default btn-lg" href="{!! URL::to("/sorteos/create") !!}">
+      <span class="glyphicon glyphicon-plus"></span>
+      Crear nuevo sorteo
+    </a>
+    <span class="btn btn-default btn-lg" style="" href="#!" id="ComprarMasTickets">
+      <span class="glyphicon glyphicon-plus"></span>
+      Comprar más tickets
+    </span>
     <div class="panel panel-default">
       <div class="panel-body">
         <div class="form-group">

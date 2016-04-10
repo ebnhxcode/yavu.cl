@@ -37,6 +37,7 @@ $(document).ready(function(){
 		ContarTicketsEnSorteos();
 		VerificarTickets();
 		ContarTickets();
+		
 		return true;
 	});
 	$("#SortearGanador").click(function(){
@@ -53,6 +54,7 @@ $(document).ready(function(){
 		ContarTicketsEnSorteos();
 		VerificarTickets();
 		ContarTickets();
+		ContarNotificaciones();
 		return true;
 	});
 /*SELECTORES*/
@@ -103,7 +105,29 @@ $(document).ready(function(){
 		});
 		return true;
 	}
-
+	function ContarNotificaciones(){
+		var user_id = $("#user_id").val();
+		$.ajax({
+			url: "http://localhost:8000/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
+			type: 'GET',
+			dataType: 'json',
+			cache: false,
+			async: true,
+			success: function success(data, status) {
+				if (data > 0) {
+					$("#CantidadNotificaciones").show('fast').text(data);
+					//$("#Notificaciones").css('color','#F5A9A9');
+				}else{
+					$("#CantidadNotificaciones").hide('fast').text("");
+					//$("#Notificaciones").css('color','');
+				}
+			},
+			error: function error(xhr, textStatus, errorThrown) {
+				//alert('Remote sever unavailable. Please try later');
+			}
+		});
+		return true;
+	}
 	function MostrarGanador(Ganador){
 		console.log("este es: "+Ganador);
 		var route = "http://localhost:8000/mostrarganador/"+Ganador;

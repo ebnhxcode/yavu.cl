@@ -58,6 +58,15 @@ class TicketController extends Controller{
             'updated_at' => Carbon::now()
           ]
         );
+        DB::table('pops')->insert(
+          ['user_id' => $user_id,
+            'empresa_id' => 1,
+            'tipo' => 'ticket',
+            'estado'   => 'pendiente',
+            'contenido' => 'Haz comprado 1 ticket!',
+            'created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),
+            'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]
+        );
         return response()->json(
           'Exito'
         );

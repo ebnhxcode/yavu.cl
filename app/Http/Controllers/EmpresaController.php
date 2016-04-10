@@ -24,7 +24,10 @@ class EmpresaController extends Controller{
     return view('empresas.index', compact('empresas'));
   }
   public function create(){
-    return view('empresas.create');
+    if(Auth::user()->check()){
+      return view('empresas.create');
+    }
+    return Redirect::to('/');
   }
   public function store(EmpresaCreateRequest $request){
     if(isset($request)){
@@ -47,7 +50,8 @@ class EmpresaController extends Controller{
     Redirect::to("/");
   }
   public function edit($id){
-    if(isset($this->empresa)){
+
+    if(isset($this->empresa) && Auth::user()->check()){
       if($this->empresa->user_id == Auth::user()->get()->id){
         return view('empresas.edit', ['empresa' => $this->empresa]);
       }
@@ -136,6 +140,7 @@ class EmpresaController extends Controller{
       );
     }
     return response()->json($empresas);
+
   }
 
 

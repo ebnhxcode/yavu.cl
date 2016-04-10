@@ -1,6 +1,5 @@
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/BuscarUsuario.js')!!}
-{!!Html::script('js/ajax/GestionarCoins.js')!!}
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
@@ -50,7 +49,7 @@
                  </div>
                  <div class="list-group-item">
                      Coins 
-                     <span id="CantidadCoins" style="float:right;" class="label label-warning">
+                     <span id="" style="float:right;" class="label label-warning CantidadCoins">
                          <img src="http://i601.photobucket.com/albums/tt93/tbg8904/Gaia%20Icon/Coins.png" width="16px" height="16px">    
                      </span>
                  </div>

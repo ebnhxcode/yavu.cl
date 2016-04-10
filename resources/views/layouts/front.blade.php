@@ -19,6 +19,7 @@
 		{!!Html::style('css/bootstrap.css')!!}
 		{!!Html::script('js/global.js')!!}
     {!!Html::script('js/ajax/GestionarCoins.js')!!}
+		{!!Html::script('js/ajax/GestionarCompraTicket.js')!!}
 		{!!Html::style('css/style.css')!!}
 		{!!Html::script('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')!!}
 			<!-- {!!Html::style('css/main.css')!!} -->
@@ -46,14 +47,20 @@
 					@if(Auth::user()->check())
 						<div class="navbar-brand"  align="center" >
 							<a href="#!">
-								<span id="Notificaciones" title="Notificaciones" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-globe" style="font-size: 1.2em;" aria-hidden="true"></span>
+								<span id="Notificaciones" title="Notificaciones" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-globe" style="font-size: 1.2em; color: #BEF781;" aria-hidden="true"></span>
                 <small><span id="CantidadNotificaciones" style="float:right;" class="label label-danger"></span></small>
 							</a>
 						</div>
 						<div class="navbar-brand" align="center">
-							<span class="glyphicon glyphicon-record" style="font-size: 1.2em;"></span>
+							<span class="glyphicon glyphicon-record" style="font-size: 1.2em; color: #BEF781;"></span>
 							<small><span id="" style="float:right;" class="label label-warning CantidadCoins"></span></small>
 						</div>
+						<div class="navbar-brand" align="center">
+							<span class="glyphicon glyphicon-tag" style="font-size: 1.2em; color: #BEF781;"></span>
+							<small><span id="CantidadTickets" style="float:right;" class="label label-info"></span></small>
+						</div>
+
+
 						<!--
 						<div class="navbar-brand">
 							<a href="#!">

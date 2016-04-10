@@ -64,15 +64,15 @@ class UserController extends Controller{
     );
   }
   public function edit($id){
-    $user_session_id = Auth::user()->get()->id;
-    if(isset($id) && isset($user_session_id)){
-      if($id == $user_session_id){
+
+    if(isset($id) && Auth::user()->check()){
+      if($id == Auth::user()->get()->id){
         return view('usuarios.edit', ['user' => $this->user]);
       }else{
         return Redirect::to('/profile');
       }
     }
-    return response()->json('Acceso denegado');
+    return Redirect::to('/');
   }
   public function getCodigoVerificacion(){
     $codigo = Carbon::now()->second.
@@ -85,8 +85,10 @@ class UserController extends Controller{
       $users = User::paginate(10);
       //$users = User::onlyTrashed()->paginate(5);
       return view('usuarios.index', compact('users'));
+    }elseif (Auth::user()->check()){
+      return Redirect::to('/profile');
     }
-    return Redirect::to('/profile');
+    return Redirect::to('/');
   }
   public function InfoEmpresas($user_id){
     if(isset($user_id)){
