@@ -62,12 +62,17 @@ class FeedController extends Controller{
     //return view('feeds.edit', ['feed' => $this->feed]);
   }
   public function EliminarFeed($id){
-    if(isset($id) && $id !== ""){
+
+    if(isset($id) && $id !== "" && Auth::user()->check()){
       $id = addslashes($id);
-      DB::table('estado_empresas')->where('id', '=', $id)->delete();
-      return response()->json(["Mensaje: " => "Eliminado"]);
+      $feed = EstadoEmpresa::find($id);
+      if($feed->user_id == Auth::user()->get()->id){
+        DB::table('estado_empresas')->where('id', '=', $id)->delete();
+        return response()->json(["Mensaje: " => "Eliminado"]);
+      }else{
+        return response()->json(["Mensaje: " => "Acceso denegado"]);
+      }
     }
-    return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function find(Route $route){
     $this->feed = Feed::find($route->getParameter('feeds'));

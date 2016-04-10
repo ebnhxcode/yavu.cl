@@ -131,6 +131,7 @@ $(document).ready(function(){
 		var Estados = $("#Estados");
 		var route = "http://localhost:8000/cargarfeeds/"+$("#idUltima").val();
 		var Contador = 0;
+		var user_id = $("#user_id").val();
 		$.get(route, function(res){
 			if(Global_Control){mostrarCargando();}
 			var ImagenPerfilEmpresa = "";
@@ -150,7 +151,7 @@ $(document).ready(function(){
 									+'<span class="caret"></span>'
 								+'</button>'
 								+'<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">'
-									+'<li><a onclick="eliminarEstado('+value.id+')" href="#!">Eliminar publicación</a></li>'
+									+'<li><a onclick="eliminarEstado('+value.id+')" href="#!">'+(user_id!=value.user_id?"Ocultar":"Eliminar")+' publicación</a></li>'
 								+'</ul>'
 							+'</div>'																	  	
 							+"<h4><a href='/empresa/"+value.nombreEmp+"' style='color:#3C5B28;'>"
