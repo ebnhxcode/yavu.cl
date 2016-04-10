@@ -9,7 +9,15 @@
 		@include('alerts.errorsMessage')
 		@include('alerts.successMessage')
 		@include('alerts.warningMessage')
-		<h1>Empresas Asociadas</h1>		
+		<h1>Empresas</h1>
+		<a class="btn btn-success btn-sm" href="{!! URL::to("/empresas/create") !!}">
+			<span class="glyphicon glyphicon-plus"></span>
+			Crear nueva empresa
+		</a>
+    <span class="btn btn-success btn-sm" style="" href="#!" id="ComprarMasTickets">
+      <span class="glyphicon glyphicon-plus"></span>
+      Comprar más tickets
+    </span>
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<div class="form-group">
