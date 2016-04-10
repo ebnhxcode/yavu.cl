@@ -108,7 +108,7 @@ $(document).ready(function(){
 			cache: false,
 			async: true,
 			success: function success(data, status) {
-				$(data).each(function(key,value){		
+				$(data).each(function(key,value){
 					if (value.follow > 0){
 						$( seguir ).text('Siguiendo'); 
 					}else{

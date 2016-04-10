@@ -237,7 +237,8 @@ $(document).ready(function(){
 						  	+"<h4><a href='/empresa/"+value.nombreEmp+"' style='color:#3C5B28;'>"
 						  		+"<img class='media-object' src='"+ImagenPerfilEmpresa+"' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
 						  		+'&nbsp;'
-								+value.nombreEmp+" Idp:("+Global_idUltimaPublicacion+")"
+								+value.nombreEmp
+								+'<span class="btn btn-primary btn-sm" id="seguir" value="'+value.id+'" role="button">Seguir</span>'
 							+"</a></h4>"
 							+"<small>"
 								+"Publicó <abbr class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
@@ -248,6 +249,9 @@ $(document).ready(function(){
 							+"<span id='badge_"+value.id+"' class='label label-success'></span>"+"&nbsp;"
 							+"<a role='button' class='' href='#!' style='color:#3C5B28'>"
 								+"<span name='megusta' onclick='Interactuar(this.id)' id='estado_"+value.id+"' value='"+value.id+"'>"
+									+"<span class='glyphicon glyphicon-hand-up'>"
+									+"&nbsp;"
+									+"</span>"
 									+"Cobrar coins"
 								+"</span>"
 							+"</a>"

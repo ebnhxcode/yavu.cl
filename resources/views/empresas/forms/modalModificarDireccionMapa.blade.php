@@ -38,7 +38,8 @@
       <br>
       <input class="form-control" type="hidden" name="user_id" id="user_id" value="{!! $e->user_id !!}">
       <input class="form-control" type="hidden" name="empresa_id" id="empresa_id" value="{!! $e->id !!}">
-      <button class="btn btn-sm btn-primary">Cambiar ubicación</button>
+      <button class="btn btn-sm btn-primary">Agregar un mapa</button>
+
     @endif
 
   @else
