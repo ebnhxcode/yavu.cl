@@ -20,7 +20,7 @@ class SorteoController extends Controller{
   public function __construct(){
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy', 'show']]);
   }
-  public function BuscarSorteos($nombre = null){
+  public function BuscarSorteos(){
     if(isset($nombre)){
       $nombre = addslashes($nombre);
       $nombreCompleto="";

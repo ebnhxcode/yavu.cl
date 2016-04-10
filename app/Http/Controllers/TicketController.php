@@ -17,10 +17,14 @@ class TicketController extends Controller{
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
   }
   public function create(){
-    return view('tickets.create');
+    if(Auth::user()->check()){
+      return view('tickets.create');
+    }
+    Session::flash('message', '¡Para comprar tickets debes iniciar sesión!');
+    return Redirect::to('/login');
   }
   public function ContarTickets(){
-    if(isset(Auth::user()->get()->id)){
+    if(Auth::user()->check()){
       $tickets = DB::table('tickets')
         ->select(DB::raw('sum(cantidad_tickets) as tickets'))
         ->where('user_id', '=', Auth::user()->get()->id)
@@ -84,8 +88,13 @@ class TicketController extends Controller{
     $this->ticket = Ticket::find($route->getParameter('tickets'));
   }
   public function index(){
-    $tickets = Ticket::paginate(5);
-    return view('tickets.index', compact('tickets'));
+
+    if(Auth::user()->check()){
+      $tickets = Ticket::paginate(5);
+      return view('tickets.index', compact('tickets'));
+    }
+    Session::flash('message', '¡Para comprar tickets debes iniciar sesión!');
+    return Redirect::to('/login');
   }
   public function show($id){
   }
@@ -103,8 +112,6 @@ class TicketController extends Controller{
         $ticketsUsuario
       );
     }
-    return response()->json(
-      'Acceso denegado'
-    );
+    return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
 }
