@@ -135,13 +135,11 @@ class UserController extends Controller{
         "validacion"=> $CodigoVerificacion,
         "ciudad"    => $request->ciudad,
       ])->first()->save();
-      /*
       Mail::send('emails.register', ['email' => \Input::get('email'), 'nombre' => \Input::get('nombre'), 'codigo' => $CodigoVerificacion ], function($msj){
         $msj->subject('Correo de Contacto');
         $msj->to(\Input::get('email'));
         return true;
       });
-      */
       $usuario = User::where('email', \Input::get('email'))->first();
       if($usuario){
         DB::table('registro_coins')->insert(
@@ -166,12 +164,10 @@ class UserController extends Controller{
     }else{
       //CUANDO NO EXISTE REFERENTE
       $CodigoVerificacion = $this->getCodigoVerificacion();
-      /*
       Mail::send('emails.register', ['email' => \Input::get('email'), 'nombre' => \Input::get('nombre'), 'codigo' => $CodigoVerificacion ], function($msj){
         $msj->subject('Correo de Contacto');
         $msj->to(\Input::get('email'));
       });
-      */
       User::create([
         "nombre"      =>  $request->nombre,
         "apellido"    =>  $request->apellido,
