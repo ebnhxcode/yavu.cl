@@ -42,9 +42,9 @@ class EmpresaController extends Controller{
     return Redirect::to('/');
   }
   public function store(EmpresaCreateRequest $request){
-    if(isset($request)){
+    if(isset($request) && isset($this->user)){
       DB::table('pops')->insert(
-        ['user_id' => $request->user_id,
+        ['user_id' => $this->user->id,
           'empresa_id' => 1,
           'tipo' => 'activacion',
           'estado'   => 'pendiente',
@@ -63,7 +63,7 @@ class EmpresaController extends Controller{
   }
   public function edit($id){
 
-    if(isset($this->empresa) && Auth::user()->check()){
+    if(isset($this->empresa) && isset($this->user)){
       if($this->empresa->user_id == Auth::user()->get()->id){
         return view('empresas.edit', ['empresa' => $this->empresa]);
       }

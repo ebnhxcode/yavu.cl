@@ -15,6 +15,12 @@ use DB;
 class TicketController extends Controller{
   public function __construct(){
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+    if(Auth::user()->check()){
+      $this->user = User::find(Auth::user()->get()->id);
+    }
+    if(Auth::admin()->check()){
+      $this->admin = Admin::find(Auth::admin()->get()->id);
+    }
   }
   public function create(){
     if(Auth::user()->check()){

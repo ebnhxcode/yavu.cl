@@ -1,6 +1,7 @@
 <?php
 namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
+use yavu\Admin;
 use yavu\Http\Requests;
 use yavu\Http\Requests\CoinCreateRequest;
 use yavu\Http\Requests\CoinUpdateRequest;
@@ -9,22 +10,29 @@ use Session;
 use Redirect;
 use yavu\RegistroCoin;
 use Auth;
+use yavu\User;
 use Illuminate\Routing\Route;
 use DB;
 
 class CoinController extends Controller{
   public function __construct(){
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+    if(Auth::user()->check()){
+      $this->user = User::find(Auth::user()->get()->id);
+    }
+    if(Auth::admin()->check()){
+      $this->admin = Admin::find(Auth::admin()->get()->id);
+    }
   }
   public function find(Route $route){
     $this->coin = RegistroCoin::find($route->getParameter('coins'));
   }
   public function index(){
-    if(Auth::user()->check()){
+    if(isset($this->user)){
       $historialcoins = DB::table('registro_coins')
         ->join('users', 'users.id', '=', 'registro_coins.user_id')
         ->select('registro_coins.*', 'users.nombre')
-        ->where('user_id', '=', Auth::user()->get()->id)
+        ->where('user_id', '=', $this->user->id)
         ->orderBy('created_at','desc')
         //->limit('10')
         ->get();
@@ -34,22 +42,22 @@ class CoinController extends Controller{
     return Redirect::to('/login');
   }
   public function create(){
-    if(Auth::admin()->check()){
+    if(isset($this->admin)){
       return view('coins.create');
     }
     Session::flash('message-error', 'Usted está ingresando a un lugar que no existe.');
-    if(Auth::user()->check()) {
-      return Redirect::to('/');
+    if(isset($this->user)) {
+      return Redirect::to('/dashboard');
     }else{
       return Redirect::to('/login');
     }
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function ContarCoins(){
-    if(Auth::user()->check()){
+    if(isset($this->user)){
       $coins = DB::table('registro_coins')
         ->select(DB::raw('sum(cantidad) as coins'))
-        ->where('user_id', '=', Auth::user()->get()->id)
+        ->where('user_id', '=', $this->user->id)
         ->groupBy('user_id')
         //->orderBy('created_at','desc')
         ->get();
@@ -58,11 +66,11 @@ class CoinController extends Controller{
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function HistorialCoins(){
-    if(Auth::user()->check()){
+    if(isset($this->user)){
       $historialcoins = DB::table('registro_coins')
         ->join('users', 'users.id', '=', 'registro_coins.user_id')
         ->select('registro_coins.*', 'users.nombre')
-        ->where('user_id', '=', Auth::user()->get()->id)
+        ->where('user_id', '=', $this->user->id)
         ->orderBy('created_at','desc')
         ->limit('5')
         ->get();
@@ -73,8 +81,10 @@ class CoinController extends Controller{
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function store(CoinCreateRequest $request){
-    if(Auth::admin()->check()){
+    if(isset($this->admin)){
       RegistroCoin::create($request->all());
+      Session::flash('message', 'Carga creada correctamente');
+      return Redirect::to('/coins/create');
     }
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
@@ -82,13 +92,13 @@ class CoinController extends Controller{
 
   }
   public function edit($id){
-    if(Auth::admin()->check()){
+    if(isset($this->admin)){
       return view('coins.edit', ['coin' => $this->coin]);
     }
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function update(CoinUpdateRequest $request, $id){
-    if(Auth::admin()->check()){
+    if(isset($this->admin)){
       $this->coin->fill($request->all());
       $this->coin->save();
       Session::flash('message', 'Carga editada correctamente');
@@ -97,7 +107,7 @@ class CoinController extends Controller{
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function destroy($id){
-    if(Auth::admin()->check()) {
+    if(isset($this->admin)){
       $this->coin->delete();
       Session::flash('message', 'Carga eliminada correctamente');
       return Redirect::to('/coins');
