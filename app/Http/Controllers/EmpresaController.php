@@ -8,6 +8,7 @@ use yavu\Http\Controllers\Controller;
 use Session;
 use Redirect;
 use yavu\Empresa;
+use yavu\User;
 use Illuminate\Routing\Route;
 use Auth;
 use DB;
@@ -15,6 +16,9 @@ use RUT;
 class EmpresaController extends Controller{
   public function __construct(){
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+    if(Auth::user()->check()){
+      $this->user = User::find(Auth::user()->get()->id);
+    }
   }
   public function find(Route $route){
     $this->empresa = Empresa::find($route->getParameter('empresas'));
@@ -24,8 +28,16 @@ class EmpresaController extends Controller{
     return view('empresas.index', compact('empresas'));
   }
   public function create(){
-    if(Auth::user()->check()){
-      return view('empresas.create');
+
+    if(isset($this->user)){
+      $empresa = Empresa::find($this->user->id);
+      if(!$empresa){
+        return view('empresas.create');
+      }else{
+        Session::flash('message-error', 'Usted ya tiene registrada una empresa');
+        Session::flash('message-warning', 'Si desea registrar una nueva empresa comuniquese con el administrador');
+        return Redirect::to('/dashboard');
+      }
     }
     return Redirect::to('/');
   }

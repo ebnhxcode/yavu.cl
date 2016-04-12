@@ -5,13 +5,13 @@
 @section('content')
 <div class="jumbotron">
 	<div id="fullWidth">
-		@include('alerts.alertFields')
-		@include('alerts.errorsMessage')
-		@include('alerts.successMessage')
-		@include('alerts.warningMessage')
 		<h4 style="margin-top:-40px;"></h4>
 		<div class="row">
 			<div class="col-md-3">
+        @include('alerts.alertFields')
+        @include('alerts.errorsMessage')
+        @include('alerts.successMessage')
+        @include('alerts.warningMessage')
 				<div class="list-group">
 					<div class="list-group-item-full-header">
 						<h4>Actualiza tus datos!</h4>

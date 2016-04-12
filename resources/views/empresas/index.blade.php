@@ -23,13 +23,13 @@
 				<div class="form-group">
   				@if(Auth::admin()->check())
 			      <div class="input-group input-group-lg">
-			          <span class="glyphicon glyphicon-search input-group-addon" id="sizing-addon1"></span>
-								{!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar...','id'=>'empresa', 'aria-describedby' => 'sizing-addon1'])!!}	              
+							<span class="glyphicon glyphicon-search input-group-addon" id="sizing-addon1"></span>
+							{!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar...','id'=>'empresa', 'aria-describedby' => 'sizing-addon1'])!!}
 			      </div>
 					@elseif(Auth::user()->check() || !Auth::user()->check())
 			      <div class="input-group input-group-lg has-success">
-			          <span class="glyphicon glyphicon-search input-group-addon" id="sizing-addon1"></span>
-								{!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar...','id'=>'empresathumb', 'role' => 'combobox', 'aria-describedby' => 'sizing-addon1'])!!} 
+							<span class="glyphicon glyphicon-search input-group-addon" id="sizing-addon1"></span>
+							{!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar...','id'=>'empresathumb', 'role' => 'combobox', 'aria-describedby' => 'sizing-addon1'])!!}
 			      </div>
 					@endif
 				</div>
@@ -52,47 +52,43 @@
 								<td>{!!$empresa->fono!!}</td>
 								<td>{!!$empresa->fecha_creacion!!}</td>
 								<td>{!!$empresa->nombre_encargado!!}</td>
-								<td>{!!link_to_route('empresas.edit', $title = 'Editar', $parameters = $empresa->id, $attributes = ['class'=>'btn btn-primary'])!!}
-								</td>
+								<td>{!!link_to_route('empresas.edit', $title = 'Editar', $parameters = $empresa->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
 							</tbody>
 						@endforeach
 					</table>	
-					{!!$empresas->render()!!}
 				@elseif(Auth::user()->check() || !Auth::user()->check())
 					<div id="EmpresaListThumb">
 						@foreach($empresas as $empresa)	
-				        <div class="col-md-4">
-				          <div class="thumbnail card">
+							<div class="col-md-4">
+								<div class="thumbnail card">
 
-										@if($empresa->imagen_portada === "" )
-											<img id="ImagenPortada" src="http://medioambiente.nh-hoteles.es/themes/default/images/bgd-biodiversidad-00.png" alt="...">
-										@else
-											<img id="ImagenPortada" src="/img/users/{!!$empresa->imagen_portada!!}" alt="...">
-										@endif		
+									@if($empresa->imagen_portada === "" )
+										<img id="ImagenPortada" src="http://medioambiente.nh-hoteles.es/themes/default/images/bgd-biodiversidad-00.png" alt="...">
+									@else
+										<img id="ImagenPortada" src="/img/users/{!!$empresa->imagen_portada!!}" alt="...">
+									@endif
 
-				          	@if($empresa->imagen_perfil !== "")
-				            	<img width="40%" class="img-circle" src="{!!URL::to('img/users/'.$empresa->imagen_perfil)!!}" alt="">
-				            @else
-				            	<img width="40%" id="ImagenPerfil" class="img-circle" src="/images/pyme.jpg" alt="...">
-				            @endif
-			                <h4><a class="btn-link" href="/empresa/{!!$empresa->nombre!!}">{!!$empresa->nombre!!}</a></h4>
+									@if($empresa->imagen_perfil !== "")
+										<img width="40%" class="img-circle" src="{!!URL::to('img/users/'.$empresa->imagen_perfil)!!}" alt="">
+									@else
+										<img width="40%" id="ImagenPerfil" class="img-circle" src="/images/pyme.jpg" alt="...">
+									@endif
 
-											{!!$empresa->ciudad!!}
-											<br>
-											{!!$empresa->fono!!}
-											<br>
-
-
-				          </div>
-				        </div>
+									<h4><a class="btn-link" href="/empresa/{!!$empresa->nombre!!}">{!!$empresa->nombre!!}</a></h4>
+									{!!$empresa->ciudad!!}
+									<br>
+									{!!$empresa->fono!!}
+									<br>
+								</div>
+							</div>
 						@endforeach
 					</div>
 					{!!$empresas->render()!!}
 				@endif
-			</div>
-		</div>
-	</div>
-</div>
+			</div><!-- /panel body -->
+		</div><!-- /panel panel-default -->
+	</div><!-- /contentMiddle -->
+</div><!-- /jumbotron -->
 
 
 @stop

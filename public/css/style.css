@@ -190,12 +190,12 @@
 
 @media (min-width: 1096px) {
   #contentMiddle {
-    width: 75%;
+    width: 95%;
   }
 }
 @media (min-width: 1200px) {
   #contentMiddle {
-    width: 75%; /*a escala , old : 1200x1170*/
+    width: 90%; /*a escala , old : 1200x1170*/
 
   }
 }
