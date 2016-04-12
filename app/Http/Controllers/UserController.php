@@ -1,12 +1,12 @@
 <?php
 namespace yavu\Http\Controllers;
+use Auth;
 use Illuminate\Http\Request;
 use yavu\Http\Requests;
 use yavu\Http\Requests\UserCreateRequest;
 use yavu\Http\Requests\UserUpdateRequest;
 use yavu\Http\Controllers\Controller;
 use Session;
-use Auth;
 use Redirect;
 use yavu\User;
 use yavu\Estado;
@@ -158,8 +158,9 @@ class UserController extends Controller{
             'created_at'  => strftime( "%Y-%m-%d-%H-%M-%S", time()),
             'updated_at'  => strftime( "%Y-%m-%d-%H-%M-%S", time())]
         );
-        Session::flash('message', 'Usuario creado correctamente');
-        return Redirect::to('/');
+        Session::flash('message', 'Usuario creado correctamente. Debes validar tu cuenta para entrar a yavu.');
+        Session::flash('message-warning', 'Para validar tu cuenta revisa el correo con el te acabas de registrar y encontrarás las instrucciones.');
+        return Redirect::to('/login');
       }
     }else{
       //CUANDO NO EXISTE REFERENTE
@@ -184,8 +185,9 @@ class UserController extends Controller{
         "validacion"  =>  $CodigoVerificacion,
         "ciudad"      =>  $request->ciudad
       ])->save();
-      Session::flash('message', 'Usuario creado correctamente');
-      return Redirect::to('/');
+      Session::flash('message', 'Usuario creado correctamente. Debes validar tu cuenta para entrar a yavu.');
+      Session::flash('message-warning', 'Para validar tu cuenta revisa el correo con el te acabas de registrar y encontrarás las instrucciones.');
+      return Redirect::to('/login');
     }
     Session::flash('error', 'Ocurrio un error inesperado');
     return Redirect::to('/usuarios');

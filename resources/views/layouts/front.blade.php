@@ -32,6 +32,25 @@
 		</style>
 	</head>
 	<body>
+	<script>
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId      : '457382627805002',
+				xfbml      : true,
+				version    : 'v2.5'
+			});
+		};
+
+		(function(d, s, id){
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+
+
 		<nav class="navbar navbar-fixed-top" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
@@ -76,6 +95,7 @@
 					<ul class="nav navbar-nav navbar-right">
 						@if(!Auth::user()->check() && !Auth::empresa()->check() && !Auth::admin()->check() && Request::path() !== 'login')
 							<li class="dropdown"><a href="{!!URL::to('/login/')!!}"><span role="button" style="background: transparent;" class="btn btn-default btn-xs">INICIA SESIÓN</span></a></li>
+							<li class="dropdown"></li>
 						@endif
 						@if(Auth::user()->check())
 							{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}

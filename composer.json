@@ -11,8 +11,9 @@
         "kbwebs/multiauth": "~1.0",
         "nesbot/carbon": "^1.21",
         "malahierba-lab/chile-rut": "5.1.*",
-        "genealabs/phpgmaps": "~0.3.0"
-       
+        "genealabs/phpgmaps": "~0.3.0",
+        "laravel/socialite": "~2.0"
+
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

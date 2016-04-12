@@ -85,6 +85,7 @@
                       @include('usuarios.forms.fieldsLanding')
                       <div class="form-group has-feedback has-feedback-left">
                         {!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success', 'onclick' => 'ValidarRegistro()'])!!}
+                        <a class="btn btn-primary" href='{!! url("social/facebook") !!}'>Iniciar sesión con Facebook</a>
                       </div>
                     {!!Form::close()!!}
                   </div>

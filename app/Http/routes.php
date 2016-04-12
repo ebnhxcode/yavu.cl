@@ -189,3 +189,5 @@ Route::get('vendor/{id}', function($id){
 
 Route::resource('gmaps', 'GmapsController');
 /*Gestión de Mapas*/
+Route::get('social/{provider?}', 'SocialController@getSocialAuth');
+Route::get('social/callback/{provider?}', 'SocialController@getSocialAuthCallback');

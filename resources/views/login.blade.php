@@ -3,10 +3,11 @@
 {!!Form::open(['route' => 'log.store', 'method' => 'POST'])!!}
 <div class="jumbotron">
   <div id="contentMini">
+    @include('alerts.successMessage')
     @include('alerts.warningMessage')
     @include('alerts.errorsMessage')
     @include('alerts.alertFields')
-    @include('alerts.successMessage')
+
 
     
       <div id="contentMiddle">
@@ -26,6 +27,9 @@
           <input type="hidden" name="_token" value="{!! csrf_token() !!}">
           <div class="form-group has-feedback has-feedback-left ">
             {!!Form::submit('Acceder',['class'=>'btn btn-default ', 'style'=>'width:100%;'])!!}
+          </div>
+          <div class="form-group has-feedback has-feedback-left ">
+            <a class="btn btn-primary" style='width:100%;' href='{!! url("social/facebook") !!}'>Iniciar sesión con Facebook</a>
           </div>
         </div>
     </div>
