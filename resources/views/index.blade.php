@@ -4,6 +4,8 @@
 <div class="jumbotron">
   <div id="contentMiddle" class="container">
     @include('alerts.errorsMessage')
+    @include('alerts.warningMessage')
+    @include('alerts.successMessage')
     <div class="row">
       <div class="col-md-5">
         <img src="/img/icono_que_es.png" class="img-responsive-centered">
@@ -84,8 +86,15 @@
                     {!!Form::open(['route'=>'usuarios.store', 'method'=>'POST', 'id' => 'FormRegistroLanding'])!!}
                       @include('usuarios.forms.fieldsLanding')
                       <div class="form-group has-feedback has-feedback-left">
-                        {!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success', 'onclick' => 'ValidarRegistro()'])!!}
-                        <a class="btn btn-primary" href='{!! url("social/facebook") !!}'>Iniciar sesión con Facebook</a>
+                        {!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success', 'style' => 'width:100%;', 'onclick' => 'ValidarRegistro()'])!!}
+                      </div>
+                      <div class="form-group has-feedback has-feedback-left">
+                        <a class="btn btn-primary" href='{!! url("social/facebook") !!}'>
+                          <span>
+                            <img src="{!! URL::to('/images/facebook.png') !!}" width="7%" alt="">
+                            Iniciar sesión con Facebook
+                          </span>
+                        </a>
                       </div>
                     {!!Form::close()!!}
                   </div>

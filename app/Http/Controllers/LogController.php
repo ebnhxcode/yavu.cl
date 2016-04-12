@@ -59,9 +59,13 @@ class LogController extends Controller{
   public function edit($id){
   }
   public function logout(){
-    if(Auth::logout()){
+    if(Auth::user()->check()){
+      Auth::user()->logout();
+      Session::flash('message-warning', 'Se ha cerrado la sesión correctamente');
       return Redirect::to('/');
-    }elseif(Auth::empresa()->logout()){
+    }elseif(Auth::admin()->check()){
+      Auth::admin()->logout();
+      Session::flash('message-warning', 'Se ha cerrado la sesión correctamente');
       return Redirect::to('/');
     }else{
       Session::flash('message-error', 'Ocurrió un error al cerrar la sesión.');

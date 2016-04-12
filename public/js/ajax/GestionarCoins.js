@@ -88,12 +88,12 @@ $(document).ready(function(){
 
 									+'<div class="list-group-item">'
 										+'<small>Modificar datos de la empresa</small> : '
-										+'<a style="float:right;" class="btn-xs btn-link" href="empresas/'+value.id+'/edit">Editar</a>'	
+										+'<a style="float:right;" class="btn-xs btn-primary btn-sm" href="empresas/'+value.id+'/edit">Editar</a>'
 									+'</div>'
 
 									+'<div class="list-group-item">'
 										+'<small>Perfil de la empresa</small> : '
-										+"<a style='float:right;' class='btn-xs btn-link' href='empresa/"+value.nombre+"/'>Perfil</a>"	
+										+"<a style='float:right;' class='btn-xs btn-primary btn-sm' href='empresa/"+value.nombre+"/'>Perfil</a>"
 									+'</div>'
 
 								+'</div>'

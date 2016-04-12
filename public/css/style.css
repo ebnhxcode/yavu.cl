@@ -187,19 +187,7 @@
     width: 100%;
   }
 } 
-@media (min-width: 880px) {
-  #contentMiddle {
-    width: 100%;
-  }
-}
-@media (min-width: 992px) {
-  #contentMiddle {
-    width: 100%;
-  }
-  #Usuario {
-    float:initial;
-  }
-}
+
 @media (min-width: 1096px) {
   #contentMiddle {
     width: 75%;

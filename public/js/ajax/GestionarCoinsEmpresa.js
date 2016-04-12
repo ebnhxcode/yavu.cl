@@ -73,7 +73,7 @@ $(document).ready(function(){
 								+'<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>'
 								+"<a href='empresa/"+value.nombre+"/'>"+value.estado+"</a>"											
 							+"</span>"	
-							+'<a class="btn-xs btn-link" style="float:right;" href="empresas/'+value.id+'/edit">Editar</a>'	
+							+'<a class="btn-xs btn-primary btn-sm" style="float:right;" href="empresas/'+value.id+'/edit">Editar</a>'
 						+'</div>');
 				}					
 			});

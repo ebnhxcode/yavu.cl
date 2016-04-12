@@ -28,8 +28,22 @@
 						@endforeach
 					</div>
 				</div>
+
+				<div class="list-group"  id="EstadoEmpresa">
+					<div class="list-group-item-full-header">
+						<h6>MI(S) EMPRESA(S)
+								<span style="float:right;font-size: 0.9em;" class="label label-success">
+									<a href={!! URL::to('empresas/create/') !!}>CREAR EMPRESA</a>
+								</span>
+						</h6>
+					</div>
+				</div>
+
 			</div>
-			<div class="col-md-9">
+			<div class="col-md-1">
+
+			</div>
+			<div class="col-md-8">
 				<div class="row">
 					@if(Auth::user()->check())
 						<input type="hidden" value="{!!Auth::user()->get()->id!!}" />
