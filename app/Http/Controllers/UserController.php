@@ -17,11 +17,16 @@ use Mail;
 use Carbon\Carbon;
 use Malahierba\ChileRut\ChileRut;
 class UserController extends Controller{
-  public function __construct(){
-    //$this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+  public function __construct(Route $route){
+    /*
+    $this->beforeFilter('@find', ['only' =>
+      ['edit', 'update', 'destroy']
+    ]);
+    */
     if(Auth::user()->check()){
-      $this->user = User::find(Auth::user()->get()->id);
+      return $this->user = User::find(Auth::user()->get()->id);
     }
+
   }
   /*
   public function find(Route $route){
@@ -62,11 +67,11 @@ class UserController extends Controller{
     if(isset($this->user)){
       return view('usuarios.dashboard', ['users' => $this->user]);
     }
-    Session::flash('message-warning', '¡Creemos que estabas un poco perdido por esto te trajimos hasta acá :)!');
-    return Redirect::to('/');
+    Session::flash('message-warning', '¡Creemos que estabas un poco ansioso, inicia sesión antes de continuar :)!');
+    return Redirect::to('/login');
   }
   public function destroy($id){
-    if($this->user){
+    if(isset($this->user)){
       $this->user->estado = 'Inactivo';
       $this->user->save();
       //$this->user->delete();
@@ -77,7 +82,7 @@ class UserController extends Controller{
     return response()->json(['Mensaje: '=>'No se encontró el usuario']);
   }
   public function edit($id){
-    if(isset($id) && $this->user){
+    if(isset($id) && isset($this->user)){
       if($id == $this->user->id){
         return view('usuarios.edit', ['user' => $this->user]);
       }else{
@@ -89,7 +94,7 @@ class UserController extends Controller{
     return Redirect::to('/');
   }
   public function getCodigoVerificacion(){
-    if(!$this->user){
+    if(!isset($this->user)){
       $codigo = Carbon::now()->second.
         Carbon::now()->minute.
         Carbon::now()->hour."V";
@@ -104,11 +109,11 @@ class UserController extends Controller{
       //$users = User::onlyTrashed()->paginate(5);
       return view('usuarios.index', compact('users'));
     }elseif (isset($this->user)){
-      Session::flash('message-warning', '¡Creemos que estabas un poco perdido por esto te trajimos hasta acá :)!');
+      Session::flash('message-warning', '¡Creemos que estabas un poco perdido por eso te trajimos hasta acá :)!');
       return Redirect::to('/dashboard');
     }
-    Session::flash('message-warning', '¡Creemos que estabas un poco perdido por esto te trajimos hasta acá :)!');
-    return Redirect::to('/');
+    Session::flash('message-warning', '¡Creemos que estabas un poco perdido, por eso te trajimos hasta acá :)!');
+    return Redirect::to('/login');
   }
   public function InfoEmpresas($user_id){
     if(isset($user_id)){
@@ -119,15 +124,17 @@ class UserController extends Controller{
         ->get();
       return response()->json($info);
     }
-    return response()->json(
-      'No se encontró la empresa'
-    );
+    return response()->json(['Mensaje: ' => 'No se encontró la empresa']);
   }
   public function profile(){
-    return view('usuarios.profile');
+    if(isset($this->user)){
+      return view('usuarios.profile');
+    }
+    Session::flash('message-warning', '¡Para poder entrar al perfil debes iniciar sesión!');
+    return Redirect::to('/login');
   }
   public function show($id){
-    if(isset($id)){
+    if(isset($this->user)){
       return Redirect::to('/profile');
     }
     return response()->json('Acceso denegado');
@@ -229,6 +236,9 @@ class UserController extends Controller{
     }
   }
   public function VerificarUsuario($codigo){
+    if(isset($this->user)){
+      return view('usuarios.profile');
+    }
     $this->user = User::where('validacion', $codigo)->first();
     if($this->user){
       $this->user->estado = 'Activo';

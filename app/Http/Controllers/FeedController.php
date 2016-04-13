@@ -16,6 +16,7 @@ class FeedController extends Controller{
   public function __construct(){
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
   }
+
   public function CargarFeeds($idUltima){
     if(isset($idUltima) && Auth::user()->check()){
       $idUltima = addslashes($idUltima);
