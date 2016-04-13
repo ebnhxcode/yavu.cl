@@ -5,6 +5,7 @@ use Hash;
 use yavu\User;
 use yavu\Empresa;
 use yavu\RegistroCoin;
+use yavu\Coin;
 use yavu\Admin;
 use Input;
 use Session;
@@ -17,12 +18,11 @@ use DB;
 class LogController extends Controller{
   public function index(){
   }
-  public function CargarCoinSesion($id){
-    if(isset($id)){
-      $id = addslashes($id);
+  public function CargarCoinSesion(){
+    if(isset($this->user->id)){
       $fechaRegistro = "";
       $fechaActual = strftime( "%m/%d/%Y", time());
-      $cargaDiaria = RegistroCoin::where('user_id', $id)
+      $cargaDiaria = RegistroCoin::where('user_id', $this->user->id)
         ->where('motivo', 'Inicio sesión')
         ->orderby('created_at', 'desc')
         ->limit('1')
@@ -32,7 +32,7 @@ class LogController extends Controller{
       }
       if( $fechaRegistro != $fechaActual ){
         DB::table('registro_coins')->insert(
-          ['user_id'    => $id,
+          ['user_id'    => $this->user->id,
           'cantidad'    => '10',
           'motivo'      => 'Inicio sesión',
           'created_at'  => strftime( "%Y-%m-%d-%H-%M-%S", time()),
@@ -40,7 +40,7 @@ class LogController extends Controller{
         );
         //Ahora notifico al cliente
         DB::table('pops')->insert(
-          ['user_id'    => $id,
+          ['user_id'    => $this->user->id,
           'empresa_id'  => 1,
           'tipo'        => 'coins',
           'estado'      => 'pendiente',
@@ -98,11 +98,25 @@ class LogController extends Controller{
           return Redirect::to('/login');
         }
       }else{
-        if(Auth::user()->attempt(['email' => Input::get('email'), 'password' => Input::get('password'), 'estado' => 'activo'])){
-          $this->CargarCoinSesion(Auth::user()->get()->id);
+        $sesion = Auth::user()->attempt(['email' => Input::get('email'), 'password' => Input::get('password'), 'estado' => 'activo']);
+        if($sesion){
+          $this->user = User::find(Auth::user()->get()->id);
+          $this->CargarCoinSesion();
+          /*
+          $this->coins = $this->user->registro_coins;
+          $bolsaCoins = [];
+          foreach($this->coins as $coin){
+            array_push($bolsaCoins, $coin->cantidad);
+          }
+          array_push($bolsaCoins, 10);
+          //dd(array_sum($bolsaCoins));
+          */
+          Session::flash('message-info', '¡Hay publicaciones nuevas, cobra tus coins <a class="btn-warning btn-xs" href="/feeds">ya</a>!');
           return Redirect::to('/dashboard');
         }else{
-          Session::flash('message-error', 'Se requiere validar la cuenta');
+          //dd($sesion);
+
+          Session::flash('message-warning', 'Se requiere validar la cuenta');
           return Redirect::to('/');
         }
       }

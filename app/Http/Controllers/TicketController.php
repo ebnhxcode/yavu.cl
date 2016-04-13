@@ -23,13 +23,14 @@ class TicketController extends Controller{
     }
   }
   public function create(){
-    if(Auth::user()->check()){
+    if(isset($this->user)){
       return view('tickets.create');
     }
     Session::flash('message', '¡Para comprar tickets debes iniciar sesión!');
     return Redirect::to('/login');
   }
   public function ContarTickets(){
+
     if(Auth::user()->check()){
       $tickets = DB::table('tickets')
         ->select(DB::raw('sum(cantidad_tickets) as tickets'))
@@ -95,7 +96,7 @@ class TicketController extends Controller{
   }
   public function index(){
 
-    if(Auth::user()->check()){
+    if(isset($this->user)){
       $tickets = Ticket::paginate(5);
       return view('tickets.index', compact('tickets'));
     }

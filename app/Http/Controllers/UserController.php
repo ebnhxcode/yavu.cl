@@ -18,13 +18,21 @@ use Carbon\Carbon;
 use Malahierba\ChileRut\ChileRut;
 class UserController extends Controller{
   public function __construct(){
-    $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+    //$this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+    if(Auth::user()->check()){
+      $this->user = User::find(Auth::user()->get()->id);
+    }
   }
+  /*
   public function find(Route $route){
     $this->user = User::find($route->getParameter('usuarios'));
-    //return $this->user;
   }
+  */
   public function BuscarUsuarios($nombre){
+    if(!$this->user){
+      Session::flash('message-warning', '¡Creemos que no estas encontrando lo que necesitas!');
+      return Redirect::to('/');
+    }
     $nombre = addslashes($nombre);
     if(isset($nombre)){
       $usuarios = DB::table('users')
@@ -37,57 +45,67 @@ class UserController extends Controller{
         ->orwhere('pais', 'like', '%'.$nombre.'%')
         ->orderBy('created_at','desc')
         ->get();
-      return response()->json(
-        $usuarios
-      );
+      return response()->json($usuarios);
     }
-    return response()->json("No se encontró la búsqueda.");
+    return response()->json(["Mensaje: " => "No se encontró la búsqueda."]);
   }
   public function create(){
-    return view('usuarios.create');
+    if(!$this->user){
+      return view('usuarios.create');
+    }
+    Session::flash('message-warning', '¡Creemos que es esto lo que andabas buscando!');
+    return Redirect::to('/usuarios/'.$this->user->id.'/edit');
   }
   public function dashboard(){
-    $users = DB::table('users')
-      ->select('*')
-      ->where('id', '=', Auth::user()->get()->id)
-      ->get();
-    return view('usuarios.dashboard', compact('users'));
+    if($this->user){
+      return view('usuarios.dashboard', ['users' => $this->user]);
+    }
+    Session::flash('message-warning', '¡Creemos que estabas un poco perdido por esto te trajimos hasta acá :)!');
+    return Redirect::to('/');
   }
   public function destroy($id){
-    if(isset($id)){
-      $this->user->delete();
-      Session::flash('message', 'Usuario eliminado correctamente');
-      return Redirect::to('/usuarios');
+    if($this->user){
+      $this->user->estado = 'Inactivo';
+      $this->user->save();
+      //$this->user->delete();
+      Session::flash('message-error', 'Se inhabilitó tu cuenta, lamentamos tu decisión, éxito !');
+      Auth::user()->logout();
+      return Redirect::to('/login');
     }
-    return response()->json(
-      'No se encontró el usuario'
-    );
+    return response()->json(['Mensaje: '=>'No se encontró el usuario']);
   }
   public function edit($id){
-
-    if(isset($id) && Auth::user()->check()){
-      if($id == Auth::user()->get()->id){
+    if(isset($id) && $this->user){
+      if($id == $this->user->id){
         return view('usuarios.edit', ['user' => $this->user]);
       }else{
-        return Redirect::to('/profile');
+        Session::flash('message-warning', '¡Creemos que es esto lo que andabas buscando!');
+        return Redirect::to('/usuarios/'.$this->user->id.'/edit');
       }
     }
+    Session::flash('message-warning', '¡Creemos que es esto lo que andabas buscando!');
     return Redirect::to('/');
   }
   public function getCodigoVerificacion(){
-    $codigo = Carbon::now()->second.
-      Carbon::now()->minute.
-      Carbon::now()->hour."V";
-    return $codigo;
+    if(!$this->user){
+      $codigo = Carbon::now()->second.
+        Carbon::now()->minute.
+        Carbon::now()->hour."V";
+      return $codigo;
+    }
+    Session::flash('message-warning', '¡Creemos que es esto lo que andabas buscando!');
+    return Redirect::to('/usuarios/create');
   }
   public function index(){
     if(Auth::admin()->check()){
       $users = User::paginate(10);
       //$users = User::onlyTrashed()->paginate(5);
       return view('usuarios.index', compact('users'));
-    }elseif (Auth::user()->check()){
-      return Redirect::to('/profile');
+    }elseif (isset($this->user)){
+      Session::flash('message-warning', '¡Creemos que estabas un poco perdido por esto te trajimos hasta acá :)!');
+      return Redirect::to('/dashboard');
     }
+    Session::flash('message-warning', '¡Creemos que estabas un poco perdido por esto te trajimos hasta acá :)!');
     return Redirect::to('/');
   }
   public function InfoEmpresas($user_id){
@@ -97,9 +115,7 @@ class UserController extends Controller{
         ->where('user_id', '=', $user_id)
         ->orderBy('created_at','desc')
         ->get();
-      return response()->json(
-        $info
-      );
+      return response()->json($info);
     }
     return response()->json(
       'No se encontró la empresa'
@@ -211,16 +227,13 @@ class UserController extends Controller{
     }
   }
   public function VerificarUsuario($codigo){
-    $validaCodigo = User::where('validacion', $codigo)->first();
-    if($validaCodigo){
-      DB::table('users')
-        ->where('validacion', $codigo)
-        ->update(['estado' => 'activo']);
+    $this->user = User::where('validacion', $codigo)->first();
+    if($this->user){
+      $this->user->estado = 'Activo';
+      $this->user->save();
       Session::flash('message', 'Su cuenta ha sido verificada. Disfrute.');
       return Redirect::to('/login');
     }
-    return response()->json(
-      'No se encontró el usuario'
-    );
+    return response()->json(['Mensaje: ' => 'No se encontró el usuario']);
   }
 }

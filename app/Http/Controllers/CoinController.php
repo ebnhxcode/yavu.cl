@@ -95,7 +95,8 @@ class CoinController extends Controller{
     if(isset($this->admin)){
       return view('coins.edit', ['coin' => $this->coin]);
     }
-    return response()->json(["Mensaje: " => "Acceso denegado"]);
+    Session::flash('message-warning', 'No se ha encontrado la página que buscabas.');
+    return Redirect::to("/dashboard");
   }
   public function update(CoinUpdateRequest $request, $id){
     if(isset($this->admin)){
@@ -104,7 +105,8 @@ class CoinController extends Controller{
       Session::flash('message', 'Carga editada correctamente');
       return Redirect::to('/coins');
     }
-    return response()->json(["Mensaje: " => "Acceso denegado"]);
+    Session::flash('message-warning', 'No se ha encontrado la página que buscabas.');
+    return Redirect::to("/dashboard");
   }
   public function destroy($id){
     if(isset($this->admin)){
@@ -112,6 +114,7 @@ class CoinController extends Controller{
       Session::flash('message', 'Carga eliminada correctamente');
       return Redirect::to('/coins');
     }
-    return response()->json(["Mensaje: " => "Acceso denegado"]);
+    Session::flash('message-warning', 'No se ha encontrado la página que buscabas.');
+    return Redirect::to("/dashboard");
   }
 }

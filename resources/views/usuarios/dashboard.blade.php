@@ -1,6 +1,7 @@
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/HistorialCoins.js')!!}
 {!!Html::script('js/ajax/EmpresasDashboardUsuario.js')!!}
+
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
@@ -12,20 +13,13 @@
         @include('alerts.errorsMessage')
         @include('alerts.successMessage')
         @include('alerts.warningMessage')
+				@include('alerts.infoMessage')
 				<div class="list-group">
 					<div class="list-group-item-full-header">
 						<h4>Actualiza tus datos!</h4>
 					</div>
 					<div class="list-group-item">
-						@foreach($users as $user)
-							@if ($user->sexo == 'Masculino')
-								Bienvenido! {!!$user->nombre!!}
-							@elseif ($user->sexo == 'Femenino')
-								Bienvenida! {!!$user->nombre!!}
-							@else
-								Te damos la bienvenida a tu primera vez en el sitio, y gana yavu coins! <a class="btn btn-primary btn-sm" href="usuarios/{!!$user->id!!}/edit">actualiza tus datos</a>
-							@endif
-						@endforeach
+						Bienvenid{!! ($users->sexo=='Masculino')?'o'.' '.$users->nombre:'a'.' '.$users->nombre !!}
 					</div>
 				</div>
 

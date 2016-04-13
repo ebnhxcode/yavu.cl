@@ -7,7 +7,7 @@
     @include('alerts.warningMessage')
     @include('alerts.errorsMessage')
     @include('alerts.alertFields')
-
+    @include('alerts.infoMessage')
 
     
       <div id="contentMiddle">
