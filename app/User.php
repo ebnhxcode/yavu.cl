@@ -41,15 +41,17 @@ class User extends Model implements AuthenticatableContract,
 			\Storage::disk('local')->put($name, \File::get($imagen_portada));
 		}
 
-	public function participante_sorteos()
-	{
+	public function participante_sorteos(){
 		return $this->hasOne('yavu\ParticipanteSorteo');
 	}
 
 	public function registro_coins(){
 		return $this->hasMany(RegistroCoin::class);
 	}
+
 	public function tickets(){
 		return $this->hasMany(Ticket::class, 'user_id');
 	}
+
+	
 }

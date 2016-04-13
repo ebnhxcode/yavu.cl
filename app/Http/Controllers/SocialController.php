@@ -54,7 +54,8 @@ class SocialController extends Controller{
             'updated_at' => Carbon::now(),
           ]);
           $userLogin = User::where('email', $user->email)->first();
-          if(Auth::user()->login($userLogin)){
+          $sesion = Auth::user()->login($userLogin);
+          if($sesion){
             return Redirect::to('/dashboard');
           }else{
             Session::flash('message-warning', 'Registro finalizado. Ahora puedes iniciar sesión');

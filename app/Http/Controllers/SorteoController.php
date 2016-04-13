@@ -8,6 +8,7 @@ use yavu\Http\Requests\SorteoUpdateRequest;
 use yavu\Http\Controllers\Controller;
 use yavu\ParticipanteSorteo;
 use yavu\Sorteo;
+use yavu\Empresa;
 use yavu\User;
 use Session;
 use Redirect;
@@ -18,7 +19,11 @@ use Illuminate\Routing\Route;
 
 class SorteoController extends Controller{
   public function __construct(){
-    $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy', 'show']]);
+    //$this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy', 'show']]);
+    if(Auth::user()->check()){
+      return $this->user = User::find(Auth::user()->get()->id);
+    }
+
   }
   public function BuscarSorteos(){
     if(isset($nombre)){
@@ -108,16 +113,20 @@ class SorteoController extends Controller{
   }
   public function ContarTicketsEnSorteo($id){
     if(isset($id)){
-      $tickets = Sorteo::find($id)->participante_sorteos;
-      return response()->json($tickets);
+      return response()->json(Sorteo::find($id)->participante_sorteos);
     }
     return response()->json('Acceso denegado');
   }
   public function create(){
-    if(Auth::user()->check()){
-      return view('sorteos.create');
+    if(isset($this->user)){
+      $empresa = Empresa::find($this->user->id);
+      if(!$empresa){
+        return view('sorteos.create');
+      }
+      Session::flash('message', '¡Para crear un sorteo para tus clientes debes tener una empresa creada, creala <a href="/empresas/create">Aquí</a>!');
+      return Redirect::to("/dashboard");
     }
-    Session::flash('message', '¡Para crear un sorteo para sus clientes debes iniciar sesión!');
+    Session::flash('message', '¡Para crear un sorteo para tus clientes debes iniciar sesión!');
     return Redirect::to("/login");
   }
   public function destroy($id){
