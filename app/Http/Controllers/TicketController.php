@@ -94,12 +94,10 @@ class TicketController extends Controller{
     return Redirect::to('/tickets');
   }
   public function VerificarTickets($user_id){
-    if(isset($user_id)){
-      $ticketsUsuario = DB::table('tickets')
-        ->where('user_id', $user_id)
-        ->sum('cantidad_tickets');
-      return response()->json($ticketsUsuario);
+    if(isset($this->user)){
+      return response()->json($this->user->tickets->sum('cantidad_tickets'));
+    }else{
+      return response()->json(['Mensaje: ' => 'Registrate o inicia sesión']);
     }
-    return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
 }
