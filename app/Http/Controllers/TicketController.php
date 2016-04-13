@@ -30,20 +30,24 @@ class TicketController extends Controller{
     return Redirect::to('/login');
   }
   public function ContarTickets(){
-
-    if(Auth::user()->check()){
+    if(isset($this->user)){
+      /*
+      $tickets = $this->user->tickets();
+      $tickets = [];
+      foreach ($this->tickets as $ticket){
+        array_push($tickets, $ticket->cantidad_tickets);
+      }
+      dd(array_sum($tickets));
+      //array_sum($this->tickets);
+      */
       $tickets = DB::table('tickets')
         ->select(DB::raw('sum(cantidad_tickets) as tickets'))
-        ->where('user_id', '=', Auth::user()->get()->id)
+        ->where('user_id', '=', $this->user->id)
         ->groupBy('user_id')
         ->get();
-      return response()->json(
-        $tickets
-      );
+      return response()->json($tickets);
     }else{
-      return response()->json(
-        'Registrate o inicia sesión'
-      );
+      return response()->json(['Mensaje: ' => 'Registrate o inicia sesión']);
     }
   }
   public function EfectuarCompra($user_id, $cantidadtickets){
@@ -78,18 +82,12 @@ class TicketController extends Controller{
             'created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),
             'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]
         );
-        return response()->json(
-          'Exito'
-        );
+        return response()->json(['Mensaje: ' => 'Exito']);
       }else{
-        return response()->json(
-          'Sin saldo para el servicio'
-        );
+        return response()->json(['Mensaje: ' => 'Sin saldo para el servicio']);
       }
     }
-    return response()->json(
-      'Acceso inconrrecto'
-    );
+    return response()->json(['Mensaje: ' => 'Acceso inconrrecto']);
   }
   public function find(Route $route){
     $this->ticket = Ticket::find($route->getParameter('tickets'));
@@ -115,9 +113,7 @@ class TicketController extends Controller{
       $ticketsUsuario = DB::table('tickets')
         ->where('user_id', $user_id)
         ->sum('cantidad_tickets');
-      return response()->json(
-        $ticketsUsuario
-      );
+      return response()->json($ticketsUsuario);
     }
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
