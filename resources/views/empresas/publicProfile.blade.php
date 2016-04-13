@@ -45,21 +45,25 @@
 
                   @if(Auth::user()->check())
                     <div class="list-group">
-                      <div class="list-group-item-full-header">
+                      <div class="list-group-item">
                         <h6>DESCRIPCIÓN</h6>
                       </div>
                       <div class="list-group-item">
                         {!! $e->descripcion !!}
                       </div>
+                      <div class="list-group-item">
+                        <h6>DATOS</h6>
+                        Email : {!!$e->email!!}<br>
+                        Dirección : {!!$e->direccion!!}<br>
+                        Ciudad : {!!$e->ciudad!!}<br>
+                      </div>
                     </div>
-
-                    <h6>DATOS</h6>
-                    Email : {!!$e->email!!}<br>
-                    Dirección : {!!$e->direccion!!}<br>
-                    Ciudad : {!!$e->ciudad!!}<br>
-                    <p>
+                    <div class="list-group-item">
                       <span class="btn btn-primary btn-sm" id="seguir" value="{!! $e->id !!}" role="button">Seguir</span>
                       <input type="text" class="btn btn-sm text-success" id="seguidores" size="10" disabled >
+                    </div>
+                    <p>
+
                     </p>
                   @else
                     <p>

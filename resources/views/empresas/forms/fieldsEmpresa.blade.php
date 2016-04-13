@@ -257,6 +257,11 @@
 		    return false;
 		}
 		$.get(route, function(res){
+			if(res === 'registrado'){
+				$("#rut").val("");
+				$("#rut").focus();
+				alert('El rut ya se encuentra registrado');
+			}
 			if(res !== 'false'){
 				$("#rut").val(res);
 				document.getElementById('FormEmpresa').onsubmit = function() {

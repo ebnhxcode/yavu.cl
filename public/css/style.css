@@ -147,6 +147,10 @@
   display: none;
 }
 
+.left {
+  text-align: left;
+}
+
 #contentMiddle {
 	width: 75%;
 	margin: 0px auto 0 auto;
@@ -190,12 +194,12 @@
 
 @media (min-width: 1096px) {
   #contentMiddle {
-    width: 95%;
+    width: 80%;
   }
 }
 @media (min-width: 1200px) {
   #contentMiddle {
-    width: 90%; /*a escala , old : 1200x1170*/
+    width: 83%; /*a escala , old : 1200x1170*/
 
   }
 }

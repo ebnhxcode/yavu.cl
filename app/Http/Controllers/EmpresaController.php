@@ -117,6 +117,10 @@ class EmpresaController extends Controller{
   }
 
   public function ValidarRutEmpresa($rut){
+    $exist = Empresa::where('rut', '=', RUT::clean($rut))->first();
+    if($exist){
+      return "registrado";
+    }
     if(isset($rut)){
       $rut = addslashes($rut);
       if(RUT::check($rut)){
