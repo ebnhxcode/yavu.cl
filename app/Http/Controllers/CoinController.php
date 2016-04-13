@@ -16,7 +16,7 @@ use DB;
 
 class CoinController extends Controller{
   public function __construct(){
-    $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+    //$this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
     if(Auth::user()->check()){
       $this->user = User::find(Auth::user()->get()->id);
     }
@@ -55,13 +55,7 @@ class CoinController extends Controller{
   }
   public function ContarCoins(){
     if(isset($this->user)){
-      $coins = DB::table('registro_coins')
-        ->select(DB::raw('sum(cantidad) as coins'))
-        ->where('user_id', '=', $this->user->id)
-        ->groupBy('user_id')
-        //->orderBy('created_at','desc')
-        ->get();
-      return response()->json($coins);
+      return response()->json($this->user->registro_coins->sum('cantidad'));
     }
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }

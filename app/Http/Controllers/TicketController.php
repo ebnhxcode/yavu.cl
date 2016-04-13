@@ -31,21 +31,7 @@ class TicketController extends Controller{
   }
   public function ContarTickets(){
     if(isset($this->user)){
-      /*
-      $tickets = $this->user->tickets();
-      $tickets = [];
-      foreach ($this->tickets as $ticket){
-        array_push($tickets, $ticket->cantidad_tickets);
-      }
-      dd(array_sum($tickets));
-      //array_sum($this->tickets);
-      */
-      $tickets = DB::table('tickets')
-        ->select(DB::raw('sum(cantidad_tickets) as tickets'))
-        ->where('user_id', '=', $this->user->id)
-        ->groupBy('user_id')
-        ->get();
-      return response()->json($tickets);
+      return response()->json($this->user->tickets->sum('cantidad_tickets'));
     }else{
       return response()->json(['Mensaje: ' => 'Registrate o inicia sesión']);
     }

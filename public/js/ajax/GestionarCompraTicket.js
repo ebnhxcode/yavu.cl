@@ -108,8 +108,8 @@ $(document).ready(function(){
 		$.get(route, function(res){
 			$(".CantidadCoins").text("");
 			$(res).each(function(key,value){
-				if(parseInt(value.coins)>0){
-					$(".CantidadCoins").text(formatNumber.new(value.coins, "$ "));
+				if(parseInt(value)>0){
+					$(".CantidadCoins").text(formatNumber.new(value, "$ "));
 				}
 			});
 		});
@@ -122,8 +122,8 @@ $(document).ready(function(){
 		$.get(route, function(res){
 			$("#CantidadTickets").text("");
 			$(res).each(function(key,value){
-				if(parseInt(value.tickets)>0){
-					$("#CantidadTickets").text(formatNumber.new(value.tickets, "# "));	
+				if(parseInt(value)>0){
+					$("#CantidadTickets").text(formatNumber.new(value, "# "));
 				}
 			});
 		});

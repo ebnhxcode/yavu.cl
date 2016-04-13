@@ -41,8 +41,8 @@ $(document).ready(function(){
 		$.get(route, function(res){
 			$(".CantidadCoins").value = "";
 			$(res).each(function(key,value){
-				if(parseInt(value.coins)>0){
-					$(".CantidadCoins").show('fast').append(formatNumber.new(value.coins, "$ "));
+				if(parseInt(value)>0){
+					$(".CantidadCoins").show('fast').append(formatNumber.new(value, "$ "));
 				}
 			});
 		});

@@ -290,8 +290,8 @@ $(document).ready(function(){
 		$.get(route, function(res){
 			$("#CantidadTickets").text("");
 			$(res).each(function(key,value){
-				if(parseInt(value.tickets)>0){
-					$("#CantidadTickets").text(formatNumber.new(value.tickets, "# "));	
+				if(parseInt(value)>0){
+					$("#CantidadTickets").text(formatNumber.new(value, "# "));
 				}
 			});
 		});
