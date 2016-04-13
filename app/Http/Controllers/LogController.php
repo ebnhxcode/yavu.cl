@@ -111,7 +111,7 @@ class LogController extends Controller{
           array_push($bolsaCoins, 10);
           //dd(array_sum($bolsaCoins));
           */
-          Session::flash('message-info', '¡Hay publicaciones nuevas, cobra tus coins <a class="btn-warning btn-xs" href="/feeds">ya</a>!');
+          Session::flash('message-info', '¡Hay publicaciones nuevas, cobra tus coins <a class="btn-warning btn-xs" href="/feeds">YA</a>!');
           return Redirect::to('/dashboard');
         }else{
           //dd($sesion);

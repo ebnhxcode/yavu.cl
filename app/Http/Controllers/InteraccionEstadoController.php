@@ -7,10 +7,16 @@ use Session;
 use Redirect;
 use Auth;
 use yavu\Estado;
+use yavu\User;
 use yavu\InteraccionEstado;
 use yavu\EstadoEmpresa;
 use DB;
 class InteraccionEstadoController extends Controller{
+  public function __construct(){
+    if(Auth::user()->check()){
+      $this->user = User::find(Auth::user()->get()->id);
+    }
+  }
   public function index(){
   }
   public function create(){
@@ -18,6 +24,7 @@ class InteraccionEstadoController extends Controller{
   public function ContarInteracciones($status_id){
     if(isset($status_id)){
       $status_id = addslashes($status_id);
+
       $interacciones = DB::table('interaccion_estados')
         ->select('status_id', 'user_id')
         ->where('status_id', '=', $status_id)
@@ -36,6 +43,7 @@ class InteraccionEstadoController extends Controller{
   public function show($id){
   }
   public function store(Request $request){
+
     $estado = InteraccionEstado::where('user_id', $request->user_id)
       ->where('status_id', $request->status_id)
       ->first();

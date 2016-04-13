@@ -260,8 +260,8 @@
     $.get(route, function(res){
       $(".CantidadCoins").text("");
       $(res).each(function(key,value){
-        if(parseInt(value.coins)>0){
-          $(".CantidadCoins").append(formatNumber.new(value.coins, "$ "));
+        if(parseInt(value)>0){
+          $(".CantidadCoins").append(formatNumber.new(value, "$ "));
         }
       });
     });

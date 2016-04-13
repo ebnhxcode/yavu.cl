@@ -305,7 +305,43 @@ $(document).ready(function(){
 		});
 		return true;
 	}
-
+	function ContarCoins(){
+		var CargarEstados = $("#CargarEstados");
+		var route = "http://localhost:8000/contarcoins";
+		var user_id = $("#user_id");
+		$.get(route, function(res){
+			$(".CantidadCoins").value = "";
+			$(res).each(function(key,value){
+				if(parseInt(value)>0){
+					$(".CantidadCoins").show('fast').append(formatNumber.new(value, "$ "));
+				}
+			});
+		});
+		return true;
+	}
+	function ContarNotificaciones(){
+		var user_id = $("#user_id").val();
+		$.ajax({
+			url: "http://localhost:8000/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
+			type: 'GET',
+			dataType: 'json',
+			cache: false,
+			async: true,
+			success: function success(data, status) {
+				if (data > 0) {
+					$("#CantidadNotificaciones").show('fast').text(data);
+					//$("#Notificaciones").css('color','#F5A9A9');
+				}else{
+					$("#CantidadNotificaciones").hide('fast').text("");
+					//$("#Notificaciones").css('color','');
+				}
+			},
+			error: function error(xhr, textStatus, errorThrown) {
+				//alert('Remote sever unavailable. Please try later');
+			}
+		});
+		return true;
+	}
 	function Interactuar(valor){
 		var status_id = valor.replace('estado_','');
 		var user_id = $("#user_id").val();
@@ -322,8 +358,9 @@ $(document).ready(function(){
 			},
 			success:function(){
 				$('#'+valor).addClass("text-info").fadeIn();
-				console.log('exito');
+				console.log('exitonowei');
 				ContarInteracciones(status_id);
+
 				ContarNotificaciones();
 				ContarCoins();
 			}
