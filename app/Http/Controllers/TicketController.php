@@ -93,7 +93,6 @@ class TicketController extends Controller{
     $this->ticket = Ticket::find($route->getParameter('tickets'));
   }
   public function index(){
-
     if(isset($this->user)){
       $tickets = Ticket::paginate(5);
       return view('tickets.index', compact('tickets'));

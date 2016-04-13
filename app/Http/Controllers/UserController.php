@@ -50,14 +50,16 @@ class UserController extends Controller{
     return response()->json(["Mensaje: " => "No se encontró la búsqueda."]);
   }
   public function create(){
-    if(!$this->user){
+    if(!isset($this->user)){
       return view('usuarios.create');
+    }else{
+      Session::flash('message-warning', '¡Creemos que es esto lo que andabas buscando!');
+      return Redirect::to('/usuarios/'.$this->user->id.'/edit');
     }
-    Session::flash('message-warning', '¡Creemos que es esto lo que andabas buscando!');
-    return Redirect::to('/usuarios/'.$this->user->id.'/edit');
+    return view('usuarios.create');
   }
   public function dashboard(){
-    if($this->user){
+    if(isset($this->user)){
       return view('usuarios.dashboard', ['users' => $this->user]);
     }
     Session::flash('message-warning', '¡Creemos que estabas un poco perdido por esto te trajimos hasta acá :)!');

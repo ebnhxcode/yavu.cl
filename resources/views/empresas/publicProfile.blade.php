@@ -3,7 +3,8 @@
   {!!Html::script('js/ajax/GestionarEstadosEmpresa.js')!!}
   {!!Html::script('js/ajax/SeguirEmpresa.js')!!}
 @endif
-{!!Html::script('js/googlemaps/GoogleMapsApi(http).js')!!}
+<!-- AIzaSyCrcjogGTQUWUOD3Bvp-B1mVzUq0q6WMgU -->
+{!!Html::script('js/googlemaps/GoogleMapsApi(mine).js')!!}
 {!!Html::script('js/googlemaps/MakerGoogleMaps.js')!!}
 
 @extends('layouts.front')
