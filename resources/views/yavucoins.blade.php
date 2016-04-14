@@ -7,7 +7,7 @@
 <html>
   <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>jQuery Parallax Plugin Demo</title>
+<title>YavuCoins</title>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 <script type="text/javascript" src="http://ianlunn.co.uk/plugins/jquery-parallax/scripts/jquery.parallax-1.1.3.js"></script>
@@ -20,7 +20,6 @@
     <li><a href="#intro" title="Next Section"><img src="http://ianlunn.co.uk/plugins/jquery-parallax/images/dot.png" alt="Link" /></a></li>
       <li><a href="#second" title="Next Section"><img src="http://ianlunn.co.uk/plugins/jquery-parallax/images/dot.png" alt="Link" /></a></li>
       <li><a href="#third" title="Next Section"><img src="http://ianlunn.co.uk/plugins/jquery-parallax/images/dot.png" alt="Link" /></a></li>
-      <li><a href="#fifth" title="Next Section"><img src="http://ianlunn.co.uk/plugins/jquery-parallax/images/dot.png" alt="Link" /></a></li>
   </ul>
   
   <div id="intro">
@@ -52,11 +51,6 @@
       </div> <!--.story-->
   </div> <!--#third-->
   
-  <div id="fifth">
-    <div class="story">
-
-      </div> <!--.story-->
-  </div> <!--#fifth-->
 </body>
 </html>
 
