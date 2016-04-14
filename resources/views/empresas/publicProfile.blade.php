@@ -31,12 +31,7 @@
 								@endif
                   <!-- /Portada -->
                   <!-- Perfil -->
-								@if($e->imagen_perfil === "")
-									<img id="ImagenPerfil" src="https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png" class="img-circle" alt="...">
-								@else
-									<img id="ImagenPerfil" src="/img/users/{!!$e->imagen_perfil!!}" class="img-circle" alt="...">
-								@endif
-                  <!-- /Perfil -->
+
 
 
 
