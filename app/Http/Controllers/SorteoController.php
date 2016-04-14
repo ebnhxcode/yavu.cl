@@ -7,8 +7,10 @@ use yavu\Http\Requests\SorteoCreateRequest;
 use yavu\Http\Requests\SorteoUpdateRequest;
 use yavu\Http\Controllers\Controller;
 use yavu\ParticipanteSorteo;
+use yavu\Pop;
 use yavu\Sorteo;
 use yavu\Empresa;
+use yavu\RegistroCoin;
 use yavu\Ticket;
 use yavu\User;
 use Session;
@@ -23,7 +25,6 @@ class SorteoController extends Controller{
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy', 'show']]);
     if(Auth::user()->check()){
       $this->user = User::find(Auth::user()->get()->id);
-
     }
 
   }
@@ -56,56 +57,26 @@ class SorteoController extends Controller{
     );
   }
   public function CanjearTicket($user_id){
-    if(isset($user_id)){
-      $coinsUsuario = DB::table('registro_coins')
-        ->where('user_id', $user_id)
-        ->sum('cantidad');
-      if($coinsUsuario >= 100){
-        DB::table('registro_coins')->insert(
-          ['user_id'      => $user_id,
-            'motivo'      => 'Canje (compra) de ticket',
-            'cantidad'    => '-100',
-            'created_at'  => Carbon::now(),
-            'updated_at'  => Carbon::now()
-          ]
-        );
 
-        DB::table('tickets')->insert(
-          ['user_id'            => $user_id,
-            'cantidad_tickets'  => 1,
-            'monto'             => 100,
-            'created_at'        => Carbon::now(),
-            'updated_at'        => Carbon::now()
-          ]
-        );
-
-        DB::table('pops')->insert(
-          ['user_id' => $user_id,
-            'empresa_id'  => 1,
-            'tipo'        => 'ticket',
-            'estado'      => 'pendiente',
-            'contenido'   => 'Se canjeado un ticket por coins!',
-            'created_at'  => strftime( "%Y-%m-%d-%H-%M-%S", time()),
-            'updated_at'  => strftime( "%Y-%m-%d-%H-%M-%S", time())
-          ]
-        );
-        return response()->json([
-          "Mensaje: " => "Creado"
-        ]);
+    if(isset($this->user)){
+      if($this->user->registro_coins->sum('cantidad') >= 100){
+        $this->registro_coins = new RegistroCoin(['user_id'=>$user_id,'motivo'=>'Canje (compra) de ticket','cantidad'=>'-100','created_at'=>Carbon::now(),'updated_at'=>Carbon::now()]);
+        $this->user->registro_coins()->save($this->registro_coins);
+        $this->ticket = new Ticket(['user_id'=>$user_id,'cantidad_tickets'=>1,'monto'=>100,'created_at'=>Carbon::now(),'updated_at'=>Carbon::now()]);
+        $this->user->tickets()->save($this->ticket);
+        $this->pop = new Pop(['user_id' => $user_id,'empresa_id'=>1,'tipo'=>'ticket','estado'=>'pendiente','contenido'=>'Se canjeado un ticket por coins!','created_at'=>strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at'=>strftime( "%Y-%m-%d-%H-%M-%S", time())]);
+        $this->user->pops()->save($this->pop);
+        return response()->json(["Mensaje: " => "Creado"]);
       }else{
-        return response()->json(
-          "Sin saldo para el servicio"
-        );
+        return response()->json(["Mensaje: " => "Sin saldo para el servicio"]);
       }
     }
     return response()-json(['Mensaje: ' => 'Acceso denegado']);
   }
   public function CargarDetallesSorteo($sorteo_id){
     if(isset($sorteo_id)){
-      $ganador = DB::table('participante_sorteos')
-        ->where('sorteo_id', $sorteo_id)
-        ->get();
-      return response()->json($ganador);
+      $this->participantes = ParticipanteSorteo::where('sorteo_id', $sorteo_id)->get();
+      return response()->json($this->participantes);
     }
     return response()-json(['Mensaje: ' => 'Acceso denegado']);
   }
@@ -131,11 +102,13 @@ class SorteoController extends Controller{
     /*
       verificar que el sorteo no tenga participantes, de lo contrario si elimina el sorteo se deben devolver los tickets a cada usuario
     */
+    /*
     if(isset($this->sorteo)){
       $this->sorteo->delete();
       Session::flash('message', 'Sorteo eliminado correctamente');
       return Redirect::to('/sorteos');
     }
+    */
     return responde()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function edit($id){
@@ -184,15 +157,8 @@ class SorteoController extends Controller{
   }
   public function store(Request $request){
       if(Sorteo::create($request->all())){
-        DB::table('pops')->insert(
-          ['user_id' => $request->user_id,
-          'empresa_id' => 1,
-          'tipo' => 'sorteo',
-          'estado'   => 'pendiente',
-          'contenido' => 'Haz creado un nuevo sorteo!',
-          'created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),
-          'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]
-        );
+        $this->pop = new Pop(['user_id' => $request->user_id,'empresa_id' => 1,'tipo' => 'sorteo','estado'   => 'pendiente','contenido' => 'Haz creado un nuevo sorteo!','created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]);
+        $this->user->pops()->save($this->pop);
         Session::flash('message', 'Sorteo creado correctamente');
         return Redirect::to('/sorteos/create');
       }
@@ -213,42 +179,20 @@ class SorteoController extends Controller{
         return response()->json(['Mensaje: ' => 'Acceso denegado']);
       }
       if($this->user->tickets->sum('cantidad_tickets') > 0){
-        $this->ticket = new Ticket();
-        $this->ticket->user_id = $this->user->id;
-        $this->ticket->cantidad_tickets = -1;
-        $this->ticket->monto = -100;
-        $this->ticket->created_at = Carbon::now();
-        $this->ticket->updated_at = Carbon::now();
-        $this->ticket->save();
-        //dd($this->ticket);
-/*
-        DB::table('tickets')->insert(
-          ['user_id' => $user_id,
-          'cantidad_tickets' => -1,
-          'monto' => -100,
-          'created_at' => Carbon::now(),
-          'updated_at' => Carbon::now()
-          ]
-        );
-*/
+
+        $this->ticket = new Ticket(['user_id' => $user_id,'cantidad_tickets' => -1,'monto' => -100,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
+        $this->user->tickets()->save($this->ticket);
+
         //Ahora rindo el ticket
-        DB::table('participante_sorteos')->insert(
-          ['user_id' => $user_id,
-          'sorteo_id' => $sorteo_id,
-          'created_at' => Carbon::now(),
-          'updated_at' => Carbon::now()
-          ]
-        );
+
+        $this->participante_sorteos = new ParticipanteSorteo(['user_id' => $user_id,'sorteo_id' => $sorteo_id,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
+        $this->user->participante_sorteos()->save($this->participante_sorteos);
+
         //Ahora notifico
-        DB::table('pops')->insert(
-          ['user_id' => $user_id,
-          'empresa_id' => 1,
-          'tipo' => 'ticket',
-          'estado'   => 'pendiente',
-          'contenido' => 'Haz usado un ticket!',
-          'created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),
-          'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]
-        );
+
+        $this->pop = new Pop(['user_id' => $user_id,'empresa_id' => 1,'tipo' => 'ticket','estado'   => 'pendiente','contenido' => 'Haz usado un ticket!','created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]);
+        $this->user->pops()->save($this->pop);
+
         return 'Exito';
       }else{
         return 'sin saldo de tickets';

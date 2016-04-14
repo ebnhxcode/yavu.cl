@@ -3,6 +3,10 @@ $(document).ready(function(){
 	var Ejecutandose = true;
 /*DECLARACIÓN DE VARIABLES GLOBALES*/
 
+	setInterval(function(){
+		ContarTicketsEnSorteos;
+	}, 3000);
+
 /*MÉTODOS CONSTRUCTORES*/
 	VerificarTickets();
 	var formatNumber = {
@@ -51,10 +55,10 @@ $(document).ready(function(){
 	});
 	$(".UsarTicket").click(function(){
 		UsarTicket($(this).val());
-		ContarTicketsEnSorteos();
 		VerificarTickets();
 		ContarTickets();
 		ContarNotificaciones();
+		//ContarTicketsEnSorteos();
 		return true;
 	});
 /*SELECTORES*/
@@ -232,6 +236,7 @@ $(document).ready(function(){
 				sorteo_id: sorteo_id
 			},
 			success:function(){
+
 			}
 		});
 		return true;

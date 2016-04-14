@@ -126,8 +126,7 @@
 						{!!link_to_route('usuarios.edit', $title = 'Actualizar mis datos', $parameters = Auth::user()->get()->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}
 						<a href="{!!URL::to('dashboard')!!}" class="list-group-item list-group-item-warning">Volver a <strong>Inicio</strong></a>
 					</div>
-
-					<div class="list-group">                    
+					<div class="list-group">
 						<div class="list-group-item">
 
 
