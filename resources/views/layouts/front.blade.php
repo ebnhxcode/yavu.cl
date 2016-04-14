@@ -172,7 +172,7 @@
 			<footer role="contentinfo" class="site-footer" id="colophon">
 				<div class="row">
 
-					<div class="col-md-4" class="panel-group">
+					<div class="col-md-4" class="panel-group" align="center">
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<h4 class="panel-title">
@@ -181,8 +181,8 @@
 							</div>
 							<div id="collapse1" class="panel-collapse collapse">
 								<ul class="list-group">
-									<li  class="list-group-item list-group-item-success"><span><a class="btn-link" href="{!!URL::to('/nosotros/')!!}">Nuestra empresa</a></span></li>
-									<li class="list-group-item list-group-item-warning"><span><a class="btn-link" href="{!!URL::to('/terminos/')!!}">Terminos</a></span></li>
+									<li  class="list-group-item list-group-item-success"><span><a class="btn-link" href="{!!URL::to('/nosotros/')!!}">Nuestra Empresa</a></span></li>
+									<li class="list-group-item list-group-item-warning"><span><a class="btn-link" href="{!!URL::to('/terminos/')!!}">Términos</a></span></li>
 									<li class="list-group-item list-group-item-success"><span><a class="btn-link" href="{!!URL::to('/terminos/')!!}">YavuCoins</a></span></li>
 									<li class="list-group-item list-group-item-warning"><span><a class="btn-link" href="{!!URL::to('/terminos/')!!}">Contacto</a></span></li>
 								</ul>
