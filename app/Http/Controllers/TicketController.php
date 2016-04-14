@@ -38,13 +38,19 @@ class TicketController extends Controller{
   }
   public function EfectuarCompra($user_id, $cantidadtickets){
     if(isset($this->user) && isset($cantidadtickets)){
+
+      /*
       $coinsUsuario = DB::table('registro_coins')
-        ->where('user_id', $user_id)
+        ->where('user_id', $this->user->id)
         ->sum('cantidad');
+       */
+
       $valorCompra = (int) $cantidadtickets*100;
-      if((int) $coinsUsuario >= (int) $valorCompra ){
+
+      if($this->user->registro_coins->sum('cantidad') >= (int) $valorCompra ){
+        
         DB::table('registro_coins')->insert(
-          ['user_id' => $user_id,
+          ['user_id' => $this->user->id,
             'motivo' => 'Compra de ticket'.(($cantidadtickets>1)?'s':''),
             'cantidad' => $valorCompra*-1,
             'created_at' => Carbon::now(),
@@ -52,7 +58,7 @@ class TicketController extends Controller{
           ]
         );
         DB::table('tickets')->insert(
-          ['user_id' => $user_id,
+          ['user_id' => $this->user->id,
             'cantidad_tickets' => $cantidadtickets,
             'monto' => ((int) $cantidadtickets * 100),
             'created_at' => Carbon::now(),
@@ -60,11 +66,11 @@ class TicketController extends Controller{
           ]
         );
         DB::table('pops')->insert(
-          ['user_id' => $user_id,
+          ['user_id' => $this->user->id,
             'empresa_id' => 1,
             'tipo' => 'ticket',
             'estado'   => 'pendiente',
-            'contenido' => 'Haz comprado 1 ticket!',
+            'contenido' => 'Haz comprado '.$cantidadtickets.' ticket'.(($cantidadtickets>1)?'s!':'!'),
             'created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),
             'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]
         );

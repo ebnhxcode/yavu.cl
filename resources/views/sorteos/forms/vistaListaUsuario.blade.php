@@ -1,6 +1,5 @@
 <div id="SorteoListThumb">
 	{!! $ImagenSorteo = "" !!}
-	<hr>
 
 	@foreach($sorteos as $sorteo)
 		<div class="row">
@@ -42,7 +41,9 @@
 				<br>
 			</div>
 		</div>
-		<hr>
+		<br>
+		<img src="img/cards/barra_separadora.png" class="img-responsive">
+		<br>
 	@endforeach
 	{!!$sorteos->render()!!}
 
