@@ -17,24 +17,21 @@
 	                    <h6>COMPRA TUS TICKET</h6>
 	                </div>		
 	                <div class="list-group-item-full-header">
-	                    El valor de cada ticket es de <span class="text-success">$100</span>
+	                    El valor de cada ticket es de <span class="text-success">$100</span> coins!
 	                </div>		                		
 					<div class="list-group-item">
 						<img alt="Ticket ya!" src= "{!!URL::to('images/ticket.png')!!}" height="100px" width="100px"/>
-						{!!Form::select('size', array('1' => '1'), null, ['placeholder' => 'Seleciona la cantidad...','id' => 'cantidadtickets', 'class' => 'form-control']);!!}
-						<button type="button" id='comprar' class="btn btn-primary btn-sm comprar">Comprar ticket</button>
+						{!!Form::select('size', array('1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5',), null, ['placeholder' => 'Seleciona la cantidad...','id' => 'cantidadtickets', 'class' => 'form-control']);!!}
+						<br>
+						<button type="button" style="width: 100%" id='comprar' class="btn btn-primary btn-md comprar">Comprar ticket</button>
 						<input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
 						<input type="hidden" value="{!!Auth::user()->get()->id!!}" id="user_id" />
 					</div>
-					<div class="list-group-item">
-						Total :
-						<span id="ValorCompra">0</span>
-					</div>	
 				</div>				
 			</div>		
 
 	         <div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
-
+						 <!--
 	             <div class="list-group">
 	                 <div class="list-group-item-full-header">
 	                     <h6>MIS COINS</h6>
@@ -56,7 +53,7 @@
 	                     </span>
 	                 </div>
 	             </div>
-
+						-->
 	         </div>
 		</div>
 	</div>

@@ -37,7 +37,7 @@ class TicketController extends Controller{
     }
   }
   public function EfectuarCompra($user_id, $cantidadtickets){
-    if(isset($user_id) && isset($cantidadtickets)){
+    if(isset($this->user) && isset($cantidadtickets)){
       $coinsUsuario = DB::table('registro_coins')
         ->where('user_id', $user_id)
         ->sum('cantidad');

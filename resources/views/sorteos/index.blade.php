@@ -17,8 +17,12 @@
     </a>
     <span class="btn btn-success btn-sm" style="" href="#!" id="ComprarMasTickets">
       <span class="glyphicon glyphicon-plus"></span>
-      Comprar más tickets
+      Comprar 1 ticket
     </span>
+    <a class="btn btn-success btn-sm" style="" href="{!! URL::to('/tickets') !!}">
+      <span class="glyphicon glyphicon-plus"></span>
+      Comprar más tickets
+    </a>
     <div class="panel panel-default">
       <div class="panel-body">
         <div class="form-group">

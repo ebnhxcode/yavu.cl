@@ -14,12 +14,12 @@
       <div class='col-md-7' align='middle'>
         <div class="panel panel-default">
           <div class="panel-body">
-            <hr>
+
             <h3> ¿Qué es Yavu?</h3>
             <h4>
              Yavu.cl es el portal donde los comercios y los premios coexisten para entregar una amplia gama de beneficios tanto para usuarios como para Empresas. Regístrate hoy en nuestro sitio y podrás conocer empresas en tu ciudad y ver qué hablan en tiempo real, además conocer sus promociones y participar por premios, todo gracias a nuestro sistema de bonificación para nuestros usuarios por medio de las Yavu Coins.
             </h4>
-            <hr>
+
           </div>
         </div>
       </div>
