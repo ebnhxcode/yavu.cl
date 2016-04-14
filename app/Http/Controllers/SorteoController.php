@@ -9,6 +9,7 @@ use yavu\Http\Controllers\Controller;
 use yavu\ParticipanteSorteo;
 use yavu\Sorteo;
 use yavu\Empresa;
+use yavu\Ticket;
 use yavu\User;
 use Session;
 use Redirect;
@@ -19,9 +20,10 @@ use Illuminate\Routing\Route;
 
 class SorteoController extends Controller{
   public function __construct(){
-    //$this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy', 'show']]);
+    $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy', 'show']]);
     if(Auth::user()->check()){
-      return $this->user = User::find(Auth::user()->get()->id);
+      $this->user = User::find(Auth::user()->get()->id);
+
     }
 
   }
@@ -96,9 +98,7 @@ class SorteoController extends Controller{
         );
       }
     }
-    return response()-json(
-      'Acceso denegado'
-    );
+    return response()-json(['Mensaje: ' => 'Acceso denegado']);
   }
   public function CargarDetallesSorteo($sorteo_id){
     if(isset($sorteo_id)){
@@ -107,9 +107,7 @@ class SorteoController extends Controller{
         ->get();
       return response()->json($ganador);
     }
-    return response()->json(
-      'Acceso denegado'
-    );
+    return response()-json(['Mensaje: ' => 'Acceso denegado']);
   }
   public function ContarTicketsEnSorteo($id){
     if(isset($id)){
@@ -130,7 +128,10 @@ class SorteoController extends Controller{
     return Redirect::to("/login");
   }
   public function destroy($id){
-    if(isset($id)){
+    /*
+      verificar que el sorteo no tenga participantes, de lo contrario si elimina el sorteo se deben devolver los tickets a cada usuario
+    */
+    if(isset($this->sorteo)){
       $this->sorteo->delete();
       Session::flash('message', 'Sorteo eliminado correctamente');
       return Redirect::to('/sorteos');
@@ -138,8 +139,12 @@ class SorteoController extends Controller{
     return responde()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function edit($id){
-    if(isset($id)){
-      return view('sorteos.edit', ['sorteo' => $this->sorteo]);
+    if(isset($this->sorteo) && isset($this->user)){
+      if($this->sorteo->user_id == $this->user->id){
+        return view('sorteos.edit', ['sorteo' => $this->sorteo]);
+      }
+      Session::flash('message-warning', 'Creemos que te haz equivocado esta vez, para crear un sorteo debes tener una empresa creada, si es así haz click <a class="btn-success btn-xs" href="/sorteos/create">AQUI</a>, si no tienes una empresa puedes hacer click <a class="btn-success btn-xs" href="/empresas/create">AQUI</a> para crear una');
+      return Redirect::to('/dashboard');
     }
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
@@ -148,11 +153,11 @@ class SorteoController extends Controller{
       //return $this->user;
     }
   public function index(){
-    if(Auth::user()->check()){
+    if(isset($this->user)){
       $sorteos = DB::table('sorteos')->paginate(10);
       return view('sorteos.index', compact('sorteos'));
     }
-    Session::flash('message', '¡Para mirar los sorteos que yavu tiene para ti, debes iniciar sesión!');
+    Session::flash('message-warning', '¡Para mirar los sorteos que yavu tiene para ti, debes iniciar sesión!');
     return Redirect::to("/login");
   }
   public function MostrarGanador($ganador){
@@ -163,10 +168,12 @@ class SorteoController extends Controller{
     return responde()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function RegistrarGanadorSorteo(){
+    //ESTO HAY QUE TERMINAR
     return "true wn";
+
   }
   public function show($id){
-    if(!Auth::user()->check()){
+    if(!isset($this->user)){
       Session::flash('message', '¡Debes iniciar sesión!');
       return Redirect::to("/login");
     }
@@ -192,16 +199,29 @@ class SorteoController extends Controller{
       return response()->json('Acceso denegado');
     }
   public function update($id, SorteoUpdateRequest $request){
+    if(isset($this->sorteo)){
       $this->sorteo->fill($request->all());
       $this->sorteo->save();
       Session::flash('message', 'sorteo validado correctamente');
       return Redirect::to('/sorteos');
     }
+    Session::flash('message-warning', '¡Crea tu propio sorteo y promociona tu empresa!');
+    return Redirect::to("/dashboard");
+  }
   public function UsarTicket($user_id, $sorteo_id){
-      $ticketsUsuario = DB::table('tickets')
-        ->where('user_id', $user_id)
-        ->sum('cantidad_tickets');
-      if($ticketsUsuario > 0){
+      if(!isset($this->user)){
+        return response()->json(['Mensaje: ' => 'Acceso denegado']);
+      }
+      if($this->user->tickets->sum('cantidad_tickets') > 0){
+        $this->ticket = new Ticket();
+        $this->ticket->user_id = $this->user->id;
+        $this->ticket->cantidad_tickets = -1;
+        $this->ticket->monto = -100;
+        $this->ticket->created_at = Carbon::now();
+        $this->ticket->updated_at = Carbon::now();
+        $this->ticket->save();
+        //dd($this->ticket);
+/*
         DB::table('tickets')->insert(
           ['user_id' => $user_id,
           'cantidad_tickets' => -1,
@@ -210,6 +230,7 @@ class SorteoController extends Controller{
           'updated_at' => Carbon::now()
           ]
         );
+*/
         //Ahora rindo el ticket
         DB::table('participante_sorteos')->insert(
           ['user_id' => $user_id,
