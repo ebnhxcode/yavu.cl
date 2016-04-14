@@ -176,7 +176,7 @@
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<h4 class="panel-title">
-									<a data-toggle="collapse" href="#collapse1" class="btn-link">Acerca de Yavu</a>
+									<a data-toggle="collapse" href="#collapse1" class="btn-link">ACERCA DE YAVU</a>
 								</h4>
 							</div>
 							<div id="collapse1" class="panel-collapse collapse">

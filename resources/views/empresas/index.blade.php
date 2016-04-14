@@ -68,11 +68,11 @@
 										<img id="ImagenPortada" src="/img/users/{!!$empresa->imagen_portada!!}" alt="...">
 									@endif
 
-									@if($empresa->imagen_perfil !== "")
+									{{-- @if($empresa->imagen_perfil !== "")
 										<img width="40%" class="img-circle" src="{!!URL::to('img/users/'.$empresa->imagen_perfil)!!}" alt="">
 									@else
 										<img width="40%" id="ImagenPerfil" class="img-circle" src="/images/pyme.jpg" alt="...">
-									@endif
+									@endif --}}
 
 									<h4><a class="btn-link" href="/empresa/{!!$empresa->nombre!!}">{!!$empresa->nombre!!}</a></h4>
 									{!!$empresa->ciudad!!}
