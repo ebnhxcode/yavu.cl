@@ -74,7 +74,7 @@ Route::get('canjearticket/{user_id}', 'SorteoController@CanjearTicket');
 Route::get('contarticketsensorteo/{id}', 'SorteoController@ContarTicketsEnSorteo');
 Route::get('cargardetallessorteo/{id}', 'SorteoController@CargarDetallesSorteo');
 Route::get('mostrarganador/{ganador}', 'SorteoController@MostrarGanador');
-Route::get('registrarganadorsorteo/{ganador}', 'SorteoController@RegistrarGanadorSorteo');
+Route::get('registrarganadorsorteo/{sorteado}', 'SorteoController@RegistrarGanadorSorteo');
 /*Gestión de Sorteos*/
 
 /*Gestión de Participantes*/
@@ -84,7 +84,7 @@ Route::get('contarparticipantes/{sorteo_id}','ParticipanteController@ContarParti
 /*Gestión de Participantes*/
 
 /*Gestión de Admins*/
-Route::resource('admins','AdminController');
+Route::resource('admins','AdminController');  
 /*Gestión de Admins*/
 
 /*Gestión de Notificaciones -> Pops*/

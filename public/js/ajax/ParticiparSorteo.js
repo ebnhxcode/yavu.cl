@@ -133,7 +133,7 @@ $(document).ready(function(){
 		return true;
 	}
 	function MostrarGanador(Ganador){
-		console.log("este es: "+Ganador);
+		//console.log("este es: "+Ganador);
 		var route = "http://localhost:8000/mostrarganador/"+Ganador;
 		$.ajax({
 			url: route,
@@ -243,22 +243,17 @@ $(document).ready(function(){
 	}
 
 	function RegistrarParticipanteGanador(Ganador){
-		/*
-		var route = "http://localhost:8000/registrarganadorsorteo/";
+		var route = "http://localhost:8000/registrarganadorsorteo/"+Ganador;
 		$.ajax({
 			url: route,
-			headers: {'X-CSRF-TOKEN': token},
 			type: 'GET',
 			dataType: 'json',
 			data: {
-				user_id: user_id,
-				sorteo_id: sorteo_id
 			},
-			success:function(){
-
+			success:function(data){
+				console.log(data);
 			}
 		});
-		*/
 		return true;
 	}
 

@@ -23,8 +23,10 @@
 		{!!Html::style('css/style.css')!!}
 		{!!Html::script('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')!!}
 			<!-- {!!Html::style('css/main.css')!!} -->
-		<script>$.ajaxSetup({ cache:false });</script>
-		<script>$.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });</script>
+		<script>$.ajaxSetup({ cache:true });</script>
+		<script>$.ajaxSetup({ headers: { 'csrftoken' : '{!! csrf_token() !!}' } });</script>
+		<script>$.ajaxSetup({headers:{'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')}});</script>
+
 		<style>
 			body {
 				padding-top:50px;

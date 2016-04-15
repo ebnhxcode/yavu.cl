@@ -19,6 +19,7 @@ use Auth;
 use DB;
 use Carbon\Carbon;
 use Illuminate\Routing\Route;
+use yavu\Winner;
 
 class SorteoController extends Controller{
   public function __construct(){
@@ -136,14 +137,25 @@ class SorteoController extends Controller{
   public function MostrarGanador($ganador){
     if(isset($ganador)){
       $ganador = ParticipanteSorteo::find($ganador)->users;
-      return response()->json($ganador);
+      return response()->json(['nombre'=>$ganador->nombre, 'apellido'=>$ganador->apellido]);
     }
     return responde()->json(["Mensaje: " => "Acceso denegado"]);
   }
-  public function RegistrarGanadorSorteo(){
-    //ESTO HAY QUE TERMINAR
-    return "true wn";
+  public function RegistrarGanadorSorteo($ganador){
 
+    $this->existe = Winner::where('participante_sorteo_id', $ganador);
+
+    $this->sorteado = ParticipanteSorteo::find($ganador)->first();
+
+    $this->ganador = User::where('id', $this->sorteado->id)->get();
+
+    if($this->ganador[0]){
+      $this->registrar_ganador = new Winner(['user_id' => $this->sorteado->user_id, 'sorteo_id' => $this->sorteado->sorteo_id,'participante_sorteo_id' => $ganador,'nombre' => $this->ganador[0]->nombre,'apellido' => $this->ganador[0]->apellido]);
+      $this->registrar_ganador->save();
+    }
+
+    //dd($this->registrar_ganador);
+    return "true wn";
   }
   public function show($id){
     if(!isset($this->user)){

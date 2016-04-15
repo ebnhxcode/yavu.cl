@@ -256,7 +256,7 @@ $(document).ready(function(){
 							+"</a>"
 						+"</div>"
 					+"</div>"
-				).show('slow');	
+				).show();
 				document.getElementById("idUltima").value =  Global_idUltimaPublicacion;
 				Contador += 1;	
 				ContarInteracciones(value.id);						

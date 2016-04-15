@@ -11,7 +11,8 @@ class LoginRequest extends Request
     {
         return [
             'email' => 'required|email',
-            'password' => 'required'         
+            'password' => 'required',
+            '_token' => 'required'
         ];
     }
 }

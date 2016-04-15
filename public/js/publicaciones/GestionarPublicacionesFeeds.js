@@ -122,6 +122,7 @@ $(document).ready(function(){
 							+"<span>Cobrar coins</span></a>"
 						+"</div>"
 					+"</div>";
+
 				EstadosUsuario.appendTo("#e").effects("highlight", {}, 12000);
 			});
 		});
@@ -177,7 +178,7 @@ $(document).ready(function(){
 							+"</a>"
 						+"</div>"
 					+"</div>"
-				).show('slow');				
+				).show();
 				document.getElementById("idUltima").value =  Global_idUltimaPublicacion;
 				Contador += 1;	
 				ContarInteracciones(value.id);

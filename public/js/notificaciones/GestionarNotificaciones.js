@@ -71,7 +71,7 @@ $(document).ready(function(){
 									+"</small>"
 								+"</div>"
 							+"</div>"
-						).show('slow');
+						).show();
 					}else if($.trim(value.tipo) === 'activacion'){
 							Notificaciones.hide().append(
 								"<div id='notificacion"+value.id+"' class='list-group'>"
@@ -85,7 +85,7 @@ $(document).ready(function(){
 										+"</small>"
 									+"</div>"
 								+"</div>"
-							).show('slow');
+							).show();
 					}else if($.trim(value.tipo) === 'ticket'){
 						Notificaciones.hide().append(
 							"<div id='notificacion"+value.id+"' class='list-group'>"
@@ -99,7 +99,7 @@ $(document).ready(function(){
 									+"</small>"
 								+"</div>"
 							+"</div>"
-						).show('slow');
+						).show();
 					}else{ //if(value.tipo === 'coins')
 						Notificaciones.hide().append(
 							"<div id='notificacion"+value.id+"' class='list-group'>"
@@ -112,7 +112,7 @@ $(document).ready(function(){
 									+"</small>"
 								+"</div>"
 							+"</div>"
-						).show('slow');
+						).show();
 					}
 					document.getElementById("idUltima").value =  Global_idUltimaNotificacion;
 					Contador += 1;

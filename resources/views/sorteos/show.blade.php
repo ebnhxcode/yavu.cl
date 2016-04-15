@@ -51,18 +51,29 @@
                   <div class="list-group-item-full-header">
                     LISTA DE SORTEADOS
                   </div>
-                  <div class="list-group-item">
-                    1°# : Al agua
+                  <div class="list-group-item-danger">
+                    1°# : <span id="primero">Al agua</span>
                   </div>
-                  <div class="list-group-item">
-                    2°# : Al agua
+                  <div class="list-group-item-danger">
+                    2°# : <span id="segundo">Al agua</span>
                   </div>
-                  <div class="list-group-item">
-                    3°# : Ganador
+                  <div class="list-group-item-success">
+                    3°# : <span id="tercero">Al agua</span>
                   </div>
                 </div>
 
+                <script language="JavaScript" type="text/javascript">
 
+                  var bPreguntar = true;
+
+                  window.onbeforeunload = preguntarAntesDeSalir;
+
+                  function preguntarAntesDeSalir()
+                  {
+                    if (bPreguntar)
+                      return "¿Seguro que quieres salir?";
+                  }
+                </script>
 
               </div>
 

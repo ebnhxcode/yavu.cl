@@ -62,7 +62,8 @@ class LogController extends Controller{
     if(Auth::user()->check()){
       Auth::user()->logout();
       Session::flash('message-warning', 'Se ha cerrado la sesión correctamente');
-      return Redirect::to('/');
+      Session::flash('message', '¡Esperamos volver a verte!');
+      return Redirect::to('/login');
     }elseif(Auth::admin()->check()){
       Auth::admin()->logout();
       Session::flash('message-warning', 'Se ha cerrado la sesión correctamente');
@@ -75,6 +76,10 @@ class LogController extends Controller{
   public function show($id){
   }
   public function store(LoginRequest $request){
+      if(!Input::get('_token')){
+        Session::flash('message-error', 'El tiempo de espera para el inicio de sesión ha caducado, por favor intente nuevamente.');
+        Redirect::to('/login');
+      }
       $userEmail = User::where('email', Input::get('email'))->first();
       if(!$userEmail){
         $empresaEmail = Empresa::where('email', Input::get('email'))->first();
