@@ -8,6 +8,8 @@ use yavu\Http\Requests\UserUpdateRequest;
 use yavu\Http\Controllers\Controller;
 use Session;
 use Redirect;
+use yavu\Pop;
+use yavu\RegistroCoin;
 use yavu\User;
 use yavu\Estado;
 use Illuminate\Routing\Route;
@@ -95,14 +97,12 @@ class UserController extends Controller{
   }
   public function getCodigoVerificacion(){
     if(!isset($this->user)){
-      $codigo = Carbon::now()->second.
-        Carbon::now()->minute.
-        Carbon::now()->hour."V";
-      return $codigo;
+      return Carbon::now()->second.Carbon::now()->minute.Carbon::now()->hour."V";
     }
     Session::flash('message-warning', '¡Creemos que es esto lo que andabas buscando!');
     return Redirect::to('/usuarios/create');
   }
+
   public function index(){
     if(Auth::admin()->check()){
       $users = User::paginate(10);
@@ -116,13 +116,8 @@ class UserController extends Controller{
     return Redirect::to('/login');
   }
   public function InfoEmpresas($user_id){
-    if(isset($user_id)){
-      $info = DB::table('empresas')
-        ->select('*')
-        ->where('user_id', '=', $user_id)
-        ->orderBy('created_at','desc')
-        ->get();
-      return response()->json($info);
+    if(isset($this->user)){
+      return response()->json($this->user->empresas);
     }
     return response()->json(['Mensaje: ' => 'No se encontró la empresa']);
   }
@@ -137,79 +132,40 @@ class UserController extends Controller{
     if(isset($this->user)){
       return Redirect::to('/profile');
     }
-    return response()->json('Acceso denegado');
+    return response()->json(['Mensaje: ' => 'Acceso denegado']);
   }
   public function store(UserCreateRequest $request){
     //User::create($request->all());
     $existeReferente = User::where('referente', $request->referido)->first();
+
     if ($existeReferente){
-      $CodigoVerificacion = $this->getCodigoVerificacion();
-      User::create([
-        "nombre"    => $request->nombre,
-        "apellido"  => $request->apellido,
-        "email"     => $request->email,
-        "password"  => $request->password,
-        "estado"    => "inactivo",
-        "referido"  => $request ->referido,
-        "referente" =>  Carbon::now()->second.
-          Carbon::now()->minute.
-          Carbon::now()->hour.
-          Carbon::now()->year.
-          Carbon::now()->month.
-          Carbon::now()->day."RY",
-        "validacion"=> $CodigoVerificacion,
-        "ciudad"    => $request->ciudad,
-      ])->first()->save();
-      Mail::send('emails.register', ['email' => \Input::get('email'), 'nombre' => \Input::get('nombre'), 'codigo' => $CodigoVerificacion ], function($msj){
+      //CUANDO EXISTE REFERENTE
+      $this->newuser = new User(["nombre"=>$request->nombre,"apellido"=>$request->apellido,"email"=>$request->email,"password"=>$request->password,"estado"=>"inactivo","referido"=>$request ->referido,"referente"=>Carbon::now()->second.Carbon::now()->minute.Carbon::now()->hour.Carbon::now()->year.Carbon::now()->month.Carbon::now()->day."RY","validacion"=> $this->getCodigoVerificacion(),"ciudad"=>$request->ciudad]);
+      $this->newuser->save();
+      $this->registro_coins = new RegistroCoin(['user_id'=>$this->newuser->id,'cantidad'=>'70','motivo'=>'Uso de código referido','created_at'=>strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at'=>strftime( "%Y-%m-%d-%H-%M-%S", time())]);
+      $this->registro_coins->save();
+      $this->pop = new Pop(['user_id'=>$this->newuser->id,'empresa_id'=>1,'tipo'=>'referido','estado'=>'pendiente','contenido'=>'Se cargaron coins por código de referido! ','created_at'=>strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at'=>strftime( "%Y-%m-%d-%H-%M-%S", time())]);
+      $this->pop->save();
+
+      Mail::send('emails.register', ['email' => $this->newuser->email, 'nombre' => $this->newuser->nombre, 'codigo' => $this->getCodigoVerificacion() ], function($msj){
         $msj->subject('Correo de Contacto');
-        $msj->to(\Input::get('email'));
+        $msj->to($this->newuser->email);
         return true;
       });
-      $usuario = User::where('email', \Input::get('email'))->first();
-      if($usuario){
-        DB::table('registro_coins')->insert(
-          ['user_id'    => $usuario->id,
-            'cantidad'    => '70',
-            'motivo'      => 'Uso de código referido',
-            'created_at'  => strftime( "%Y-%m-%d-%H-%M-%S", time()),
-            'updated_at'  => strftime( "%Y-%m-%d-%H-%M-%S", time())]
-        );
-        DB::table('pops')->insert(
-          ['user_id'    => $usuario->id,
-            'empresa_id'  => 1,
-            'tipo'        => 'referido',
-            'estado'      => 'pendiente',
-            'contenido'   => 'Se cargaron coins por código de referido! ',
-            'created_at'  => strftime( "%Y-%m-%d-%H-%M-%S", time()),
-            'updated_at'  => strftime( "%Y-%m-%d-%H-%M-%S", time())]
-        );
-        Session::flash('message', 'Usuario creado correctamente. Debes validar tu cuenta para entrar a yavu.');
-        Session::flash('message-warning', 'Para validar tu cuenta revisa el correo con el te acabas de registrar y encontrarás las instrucciones.');
-        return Redirect::to('/login');
-      }
+
+      Session::flash('message', 'Usuario creado correctamente. Debes validar tu cuenta para entrar a yavu.');
+      Session::flash('message-warning', 'Para validar tu cuenta revisa el correo con el te acabas de registrar y encontrarás las instrucciones.');
+      return Redirect::to('/login');
     }else{
       //CUANDO NO EXISTE REFERENTE
-      $CodigoVerificacion = $this->getCodigoVerificacion();
-      Mail::send('emails.register', ['email' => \Input::get('email'), 'nombre' => \Input::get('nombre'), 'codigo' => $CodigoVerificacion ], function($msj){
+      $this->newuser = new User(["nombre"=>$request->nombre,"apellido"=>$request->apellido,"email"=>$request->email,"password"=>$request->password,"estado"=>"inactivo","referido"=>"","referente"=>Carbon::now()->second.Carbon::now()->minute.Carbon::now()->hour.Carbon::now()->year.Carbon::now()->month.Carbon::now()->day."RY","validacion"=>$this->getCodigoVerificacion(),"ciudad"=>$request->ciudad]);
+      $this->newuser->save();
+
+      Mail::send('emails.register', ['email'=>\Input::get('email'), 'nombre' => \Input::get('nombre'), 'codigo' => $this->getCodigoVerificacion()], function($msj){
         $msj->subject('Correo de Contacto');
         $msj->to(\Input::get('email'));
       });
-      User::create([
-        "nombre"      =>  $request->nombre,
-        "apellido"    =>  $request->apellido,
-        "email"       =>  $request->email,
-        "password"    =>  $request->password,
-        "estado"      =>  "inactivo",
-        "referido"    =>  "",
-        "referente"   =>  Carbon::now()->second.
-          Carbon::now()->minute.
-          Carbon::now()->hour.
-          Carbon::now()->year.
-          Carbon::now()->month.
-          Carbon::now()->day."RY",
-        "validacion"  =>  $CodigoVerificacion,
-        "ciudad"      =>  $request->ciudad
-      ])->save();
+
       Session::flash('message', 'Usuario creado correctamente. Debes validar tu cuenta para entrar a yavu.');
       Session::flash('message-warning', 'Para validar tu cuenta revisa el correo con el te acabas de registrar y encontrarás las instrucciones.');
       return Redirect::to('/login');

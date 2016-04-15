@@ -53,6 +53,10 @@ class User extends Model implements AuthenticatableContract,
 	public function tickets(){
 		return $this->hasMany(Ticket::class, 'user_id');
 	}
+	public function empresas (){
+		return $this->hasMany(Empresa::class);
+	}
+
 
 	
 }

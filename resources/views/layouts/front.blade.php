@@ -24,6 +24,7 @@
 		{!!Html::script('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')!!}
 			<!-- {!!Html::style('css/main.css')!!} -->
 		<script>$.ajaxSetup({ cache:false });</script>
+		<script>$.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });</script>
 		<style>
 			body {
 				padding-top:50px;
