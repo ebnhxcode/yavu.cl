@@ -23,7 +23,11 @@ class PopController extends Controller{
     //return $this->user;
   }
   public function index(){
-    return view('pops.index');
+    if(isset($this->user)){
+      return view('pops.index');
+    }
+    Session::flash('message-warning', '¡Para ver tus notificaciones debes iniciar sesión!');
+    return Redirect::to("/login");
   }
   public function CargarPops($idUltima, $user_id, $tipo){
     if($tipo == 'todas'){
@@ -98,16 +102,4 @@ class PopController extends Controller{
     }
     return response()->json('Acceso denegado');
   }
-  public function create(){
-  }
-  public function store(Request $request){
-  }
-  public function show($id){
-  }
-  public function edit($id){
-  }
-  public function update(Request $request, $id){
-  }
-  public function destroy($id){
-    }
 }

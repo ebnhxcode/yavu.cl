@@ -4,7 +4,9 @@
   {!!Html::script('js/ajax/SeguirEmpresa.js')!!}
 @endif
 <!-- AIzaSyCrcjogGTQUWUOD3Bvp-B1mVzUq0q6WMgU -->
-{!!Html::script('js/googlemaps/GoogleMapsApi(mine).js')!!}
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrcjogGTQUWUOD3Bvp-B1mVzUq0q6WMgU&libraries=places"></script>
+
 {!!Html::script('js/googlemaps/MakerGoogleMaps.js')!!}
 
 @extends('layouts.front')
