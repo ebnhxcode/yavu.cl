@@ -10,7 +10,10 @@
     @include('alerts.errorsMessage')
     @include('alerts.successMessage')
     @include('alerts.warningMessage')
-    <h1>Sorteos</h1><span class="text-danger" id="Mensaje"></span>
+      <div class="" style="font-size: 4em;">
+      <img width="8%" src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}"/><span >Sorteos</span>
+    </div>
+    <span class="text-danger" id="Mensaje"></span>
     <a class="btn btn-success btn-sm" href="{!! URL::to("/sorteos/create") !!}">
       <span class="glyphicon glyphicon-plus"></span>
       Crear nuevo sorteo

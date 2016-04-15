@@ -32,14 +32,6 @@
 		</style>
 	</head>
 	<body>
-	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) return;
-			js = d.createElement(s); js.id = id;
-			js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.6&appId=457382627805002";
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
 	<script>
 		window.fbAsyncInit = function() {
 			FB.init({
@@ -69,7 +61,8 @@
 						<span class="icon-bar"></span>
 					</button>
 					<div class="navbar-brand" style="width: 135px;padding-right: 0px;padding-left: 20px;">
-						<img id="LogoYavu" src="{!!URL::to('img/yavu004.png')!!}" style="transition: width 0.8s;" width="50%" />
+						<a href="{{URL::to('/')}}"><img src={{asset('img/yavu004.png')}} style="transition: width 0.8s;" width="70%"></a>
+						{{-- <img id="LogoYavu" src="{!!URL::to('img/yavu004.png')!!}" style="transition: width 0.8s;" width="50%" /> --}}
 					</div>
 					@if(Auth::user()->check())
 						<div class="navbar-brand"  align="center" >
@@ -171,42 +164,30 @@
 			<!-- footer -->
 			<footer role="contentinfo" class="site-footer" id="colophon">
 				<div class="row">
-
-					<div class="col-md-4" class="panel-group" align="center">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h4 class="panel-title">
-									<a data-toggle="collapse" href="#collapse1" class="btn-link">ACERCA DE YAVU</a>
-								</h4>
-							</div>
-							<div id="collapse1" class="panel-collapse collapse">
-								<ul class="list-group">
-									<li  class="list-group-item list-group-item-success"><span><a class="btn-link" href="{!!URL::to('/nosotros/')!!}">Nuestra Empresa</a></span></li>
-									<li class="list-group-item list-group-item-warning"><span><a class="btn-link" href="{!!URL::to('/terminos/')!!}">Términos</a></span></li>
-									<li class="list-group-item list-group-item-success"><span><a class="btn-link" href="{!!URL::to('/terminos/')!!}">YavuCoins</a></span></li>
-									<li class="list-group-item list-group-item-warning"><span><a class="btn-link" href="{!!URL::to('/terminos/')!!}">Contacto</a></span></li>
-								</ul>
-							</div>
-							<br>
-						</div>
-					</div>
-
-					<div align="center" class="col-md-4" style="border: none">
-
-						<div class="fb-page" data-href="https://www.facebook.com/yavu.cl/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/yavu.cl/"><a href="https://www.facebook.com/yavu.cl/">Yavu.cl</a></blockquote></div></div>
+					<div class="col-md-12">
+						<img alt="Imagen corfo" src= "{!!URL::to('img/footer/corfo.png')!!}" class="img-responsive-centered"/></a>
 					</div>
 					<div class="col-md-4">
-						<img alt="Imagen corfo" src= "{!!URL::to('img/footer/corfo.png')!!}" class="img-responsive-centered"/>
+					</div>
+					<div class="col-md-4">
+					</div>
+					<div class="col-md-4">
+					</div>
+					<div class="col-md-12" style="text-align: center;">
+						<span><a href="#!"><img  src= "{!!URL::to('img/footer/icono_facebook.png')!!}" class=""/></a></span>
+						<span><a href="#!"><img  src= "{!!URL::to('img/footer/icono_twitter.png')!!}" class=""/></a></span>
+						<span><a href="#!"><img  src= "{!!URL::to('img/footer/ico_instagram.png')!!}" class=""/></a></span>
+						<span><a href="#!"><img  src= "{!!URL::to('img/footer/icono_youtube.png')!!}" class=""/></a></span>
 						<br>
-						<div align="center">
-							<h2>Búscanos en las redes sociales</h2>
-							<br>
-							<a href="#!"><img  src= "{!!URL::to('img/footer/icono_facebook.png')!!}" class=""/></a>
-							<a href="#!"><img  src= "{!!URL::to('img/footer/icono_twitter.png')!!}" class=""/></a>
-							<a href="#!"><img  src= "{!!URL::to('img/footer/ico_instagram.png')!!}" class=""/></a>
-							<a href="#!"><img  src= "{!!URL::to('img/footer/icono_youtube.png')!!}" class=""/></a>
-						</div>
-
+						<br>
+						<span><a class="btn-link" href="{!!URL::to('/nosotros/')!!}">Nuestra empresa</a></span>
+						<span class="required">\</span>
+						<span><a class="btn-link" href="{!!URL::to('/contacto/')!!}">Contacto</a></span>
+						<span class="required">\</span>
+						<span><a class="btn-link" href="{!!URL::to('/terminos/')!!}">Terminos</a></span>
+						<span class="required">\</span>
+						<span><a class="btn-link" href="{!!URL::to('/yavucoins/')!!}"><strong>YavuCoins</strong></a></span>
+						<spam> - Copyright© ~ Yavu.cl 2016.</spam>
 					</div>
 				</div>
 			</footer>

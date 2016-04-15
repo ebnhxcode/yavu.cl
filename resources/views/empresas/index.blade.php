@@ -9,7 +9,10 @@
 		@include('alerts.errorsMessage')
 		@include('alerts.successMessage')
 		@include('alerts.warningMessage')
-		<h1>Empresas</h1>
+				<div class="" style="font-size: 4em;">
+			<img width="8%" src= "{!!URL::to('img/dash/ico_empresa.png')!!}"/><span >Empresas</span>
+		</div>
+	
 		<a class="btn btn-success btn-sm" href="{!! URL::to("/empresas/create") !!}">
 			<span class="glyphicon glyphicon-plus"></span>
 			Crear nueva empresa
