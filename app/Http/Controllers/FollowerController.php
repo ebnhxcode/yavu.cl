@@ -7,12 +7,29 @@ use DB;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use yavu\Follower;
+use yavu\Empresa;
+use yavu\User;
 class FollowerController extends Controller{
+  public function __construct(){
+    if(Auth::user()->check()){
+      $this->user = User::find(Auth::user()->get()->id);
+    }
+  }
+
   public function create(){
   }
+
   public function ContarSeguidores($empresa_id){
-    if(isset($empresa_id)){
+    if(isset($empresa_id) && isset($this->user)){
+
       $empresa_id = addslashes($empresa_id);
+
+      /*
+      $this->empresas = Empresa::where('user_id', $this->user->id)->where('id', $empresa_id)->get();
+      foreach($this->empresas as $this->empresa){
+        dd($this->empresa->followers()->get());
+      }
+      */
 
       $followers = DB::table('followers')
         ->select(DB::raw('sum(user_id) as follow'))

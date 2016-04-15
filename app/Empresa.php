@@ -48,9 +48,11 @@ class Empresa extends Model implements AuthenticatableContract,
         
         \Storage::disk('local')->put($name, \File::get($imagen_portada));
     }
-    public function gmaps()
-    {
+    public function gmaps(){
         return $this->hasOne('yavu\Gmap');
+    }
+    public function followers(){
+        return $this->hasMany(Follower::class, 'empresa_id');
     }
 }
 

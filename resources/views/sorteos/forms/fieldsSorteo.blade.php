@@ -17,7 +17,19 @@
 			<div class="form-group has-feedback has-feedback-left">
 				(<strong><small><span class="requerido">Requerido</span></small></strong>)
 				{!!Form::label('Fecha de inicio Sorteo:')!!}
-				{!!Form::date('fecha_inicio_sorteo',null,['class'=>'form-control','placeholder'=>''])!!}
+				{!!Form::text('fecha_inicio_sorteo',null,['class'=>'form-control','placeholder'=>'','id'=>'datepicker'])!!}
+				<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+				<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+				<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+				<script>
+					$(function() {
+						$( "#datepicker" ).datepicker();
+					});
+				</script>
+
+
+
+
 			</div>
 			<div class="form-group has-feedback has-feedback-left">
 					{!!Form::hidden('estado_sorteo', 'Pendiente')!!}

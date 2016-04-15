@@ -5,13 +5,18 @@ use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
 use Session;
 use Redirect;
+use yavu\Pop;
 use yavu\RegistroCoin;
 use Auth;
+use yavu\User;
 use Illuminate\Routing\Route;
 use DB;
 class PopController extends Controller{
   public function __construct(){
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+    if(Auth::user()->check()){
+      $this->user = User::find(Auth::user()->get()->id);
+    }
   }
   public function find(Route $route){
     $this->pop = Pop::find($route->getParameter('pops'));
@@ -86,8 +91,7 @@ class PopController extends Controller{
     );
   }
   public function MarcarVistas($user_id){
-    if(isset($user_id)){
-      $user_id = addslashes($user_id);
+    if(isset($this->user)){
       if(DB::table('pops')->where('user_id', $user_id)->update(['estado' => 'visto'])){
         return response()->json('Visto');
       }
