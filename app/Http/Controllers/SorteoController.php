@@ -58,46 +58,32 @@ class SorteoController extends Controller{
     );
   }
   public function CanjearTicket($user_id){
-
-    if(isset($this->user)){
-      if($this->user->registro_coins->sum('cantidad') >= 100){
-        $this->registro_coins = new RegistroCoin(['user_id'=>$user_id,'motivo'=>'Canje (compra) de ticket','cantidad'=>'-100','created_at'=>Carbon::now(),'updated_at'=>Carbon::now()]);
-        $this->user->registro_coins()->save($this->registro_coins);
-        $this->ticket = new Ticket(['user_id'=>$user_id,'cantidad_tickets'=>1,'monto'=>100,'created_at'=>Carbon::now(),'updated_at'=>Carbon::now()]);
-        $this->user->tickets()->save($this->ticket);
-        $this->pop = new Pop(['user_id' => $user_id,'empresa_id'=>1,'tipo'=>'ticket','estado'=>'pendiente','contenido'=>'Se canjeado un ticket por coins!','created_at'=>strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at'=>strftime( "%Y-%m-%d-%H-%M-%S", time())]);
-        $this->user->pops()->save($this->pop);
-        return response()->json(["Mensaje: " => "Creado"]);
-      }else{
-        return response()->json(["Mensaje: " => "Sin saldo para el servicio"]);
-      }
+    if($this->user->registro_coins->sum('cantidad') >= 100){
+      $this->registro_coins = new RegistroCoin(['user_id'=>$user_id,'motivo'=>'Canje (compra) de ticket','cantidad'=>'-100','created_at'=>Carbon::now(),'updated_at'=>Carbon::now()]);
+      $this->user->registro_coins()->save($this->registro_coins);
+      $this->ticket = new Ticket(['user_id'=>$user_id,'cantidad_tickets'=>1,'monto'=>100,'created_at'=>Carbon::now(),'updated_at'=>Carbon::now()]);
+      $this->user->tickets()->save($this->ticket);
+      //$this->pop = new Pop(['user_id' => $user_id,'empresa_id'=>1,'tipo'=>'ticket','estado'=>'pendiente','contenido'=>'Se canjeado un ticket por coins!','created_at'=>strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at'=>strftime( "%Y-%m-%d-%H-%M-%S", time())]);
+      //$this->user->pops()->save($this->pop);
+      return response()->json(["Mensaje: " => "Creado"]);
+    }else{
+      return response()->json(["Mensaje: " => "Sin saldo para el servicio"]);
     }
-    return response()-json(['Mensaje: ' => 'Acceso denegado']);
   }
   public function CargarDetallesSorteo($sorteo_id){
-    if(isset($sorteo_id)){
-      $this->participantes = ParticipanteSorteo::where('sorteo_id', $sorteo_id)->get();
-      return response()->json($this->participantes);
-    }
-    return response()-json(['Mensaje: ' => 'Acceso denegado']);
+    $this->participantes = ParticipanteSorteo::where('sorteo_id', $sorteo_id)->get();
+    return response()->json($this->participantes);
   }
   public function ContarTicketsEnSorteo($id){
-    if(isset($id)){
-      return response()->json(Sorteo::find($id)->participante_sorteos);
-    }
-    return response()->json('Acceso denegado');
+    return response()->json(Sorteo::find($id)->participante_sorteos);
   }
   public function create(){
-    if(isset($this->user)){
-      $empresa = Empresa::find($this->user->id);
-      if($empresa !== null){
-        return view('sorteos.create');
-      }
-      Session::flash('message', '¡Para crear un sorteo para tus clientes debes tener una empresa creada, creala <a class="btn-info btn-xs" href="/empresas/create">AQUI</a>!');
-      return Redirect::to("/dashboard");
+    $empresa = Empresa::find($this->user->id);
+    if($empresa !== null){
+      return view('sorteos.create');
     }
-    Session::flash('message', '¡Para crear un sorteo para tus clientes debes iniciar sesión!');
-    return Redirect::to("/login");
+    Session::flash('message', '¡Para crear un sorteo para tus clientes debes tener una empresa creada, creala <a class="btn-info btn-xs" href="/empresas/create">AQUI</a>!');
+    return Redirect::to("/dashboard");
   }
   public function destroy($id){
     /*
@@ -113,33 +99,23 @@ class SorteoController extends Controller{
     return responde()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function edit($id){
-    if(isset($this->sorteo) && isset($this->user)){
-      if($this->sorteo->user_id == $this->user->id){
-        return view('sorteos.edit', ['sorteo' => $this->sorteo]);
-      }
-      Session::flash('message-warning', 'Creemos que te haz equivocado esta vez, para crear un sorteo debes tener una empresa creada, si es así haz click <a class="btn-success btn-xs" href="/sorteos/create">AQUI</a>, si no tienes una empresa puedes hacer click <a class="btn-success btn-xs" href="/empresas/create">AQUI</a> para crear una');
-      return Redirect::to('/dashboard');
+    if($this->sorteo->user_id == $this->user->id){
+      return view('sorteos.edit', ['sorteo' => $this->sorteo]);
     }
-    return response()->json(["Mensaje: " => "Acceso denegado"]);
+    Session::flash('message-warning', 'Creemos que te haz equivocado esta vez, para crear un sorteo debes tener una empresa creada, si es así haz click <a class="btn-success btn-xs" href="/sorteos/create">AQUI</a>, si no tienes una empresa puedes hacer click <a class="btn-success btn-xs" href="/empresas/create">AQUI</a> para crear una');
+    return Redirect::to('/dashboard');
   }
   public function find(Route $route){
       $this->sorteo = Sorteo::find($route->getParameter('sorteos'));
       //return $this->user;
     }
   public function index(){
-    if(isset($this->user)){
-      $sorteos = DB::table('sorteos')->paginate(10);
-      return view('sorteos.index', compact('sorteos'));
-    }
-    Session::flash('message-warning', '¡Para mirar los sorteos que yavu tiene para ti, debes iniciar sesión!');
-    return Redirect::to("/login");
+    $sorteos = DB::table('sorteos')->paginate(10);
+    return view('sorteos.index', compact('sorteos'));
   }
   public function MostrarGanador($ganador){
-    if(isset($ganador)){
-      $ganador = ParticipanteSorteo::find($ganador)->users;
-      return response()->json(['nombre'=>$ganador->nombre, 'apellido'=>$ganador->apellido]);
-    }
-    return responde()->json(["Mensaje: " => "Acceso denegado"]);
+    $ganador = ParticipanteSorteo::find($ganador)->users;
+    return response()->json(['nombre'=>$ganador->nombre, 'apellido'=>$ganador->apellido]);
   }
   public function RegistrarGanadorSorteo($ganador){
     /*AQUI FALTA TERMINAR*/
@@ -160,14 +136,7 @@ class SorteoController extends Controller{
     return "true wn";
   }
   public function show($id){
-    if(!isset($this->user)){
-      Session::flash('message', '¡Debes iniciar sesión!');
-      return Redirect::to("/login");
-    }
-    if(isset($id)){
-      return view('sorteos.show', ['sorteo' => $this->sorteo]);
-    }
-    return responde()->json(["Mensaje: " => "Acceso denegado"]);
+    return view('sorteos.show', ['sorteo' => $this->sorteo]);
   }
   public function store(Request $request){
       if(Sorteo::create($request->all())){
@@ -179,19 +148,14 @@ class SorteoController extends Controller{
       return response()->json('Acceso denegado');
     }
   public function update($id, SorteoUpdateRequest $request){
-    if(isset($this->sorteo)){
-      $this->sorteo->fill($request->all());
-      $this->sorteo->save();
-      Session::flash('message', 'sorteo validado correctamente');
-      return Redirect::to('/sorteos');
-    }
+    $this->sorteo->fill($request->all());
+    $this->sorteo->save();
+    Session::flash('message', 'sorteo validado correctamente');
+    return Redirect::to('/sorteos/'.$this->sorteo->id);
     Session::flash('message-warning', '¡Crea tu propio sorteo y promociona tu empresa!');
     return Redirect::to("/dashboard");
   }
   public function UsarTicket($user_id, $sorteo_id){
-      if(!isset($this->user)){
-        return response()->json(['Mensaje: ' => 'Acceso denegado']);
-      }
       if($this->user->tickets->sum('cantidad_tickets') > 0){
 
         $this->ticket = new Ticket(['user_id' => $user_id,'cantidad_tickets' => -1,'monto' => -100,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
@@ -204,8 +168,8 @@ class SorteoController extends Controller{
 
         //Ahora notifico
 
-        $this->pop = new Pop(['user_id' => $user_id,'empresa_id' => 1,'tipo' => 'ticket','estado'   => 'pendiente','contenido' => 'Haz usado un ticket!','created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]);
-        $this->user->pops()->save($this->pop);
+        //$this->pop = new Pop(['user_id' => $user_id,'empresa_id' => 1,'tipo' => 'ticket','estado'   => 'pendiente','contenido' => 'Haz usado un ticket!','created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]);
+        //$this->user->pops()->save($this->pop);
 
         return 'Exito';
       }else{

@@ -12,10 +12,10 @@ Route::group(['middleware' => 'user'], function(){
 
   /*Gestión de estados*/
   Route::resource('estadoempresa', 'EstadoEmpresaController');
-  Route::get('estadosempresa/{idUltima}/{empresa}', 'EstadoEmpresaController@CargarEstadoEmpresa');
+  Route::get('estadosempresa/{idUltima}/{empresa}', 'EstadoEmpresaController@CargarEstadoEmpresa')->where('idUltima', '[0-9]+');
 
   Route::get('cargarfeeds/{idUltima}/', 'FeedController@CargarFeeds');
-  Route::get('cargarfeedsempresa/{idUltima}/{empresa}', 'FeedController@CargarFeedsEmpresa');
+  Route::get('cargarfeedsempresa/{idUltima}/{empresa}', 'FeedController@CargarFeedsEmpresa')->where('idUltima', '[0-9]+');
 
   Route::get('contarestados', 'EstadoController@ContarEstados');
   Route::resource('estados','EstadoController');
@@ -31,13 +31,13 @@ Route::group(['middleware' => 'user'], function(){
 
   /*Gestión de Usuarios*/
   Route::resource('interactuar', 'InteraccionEstadoController');
-  Route::get('contarinteracciones/{status_id}', 'InteraccionEstadoController@ContarInteracciones');
-  Route::get('estadosusuario/{idUltima}', 'EstadoController@CargarEstados');
+  Route::get('contarinteracciones/{status_id}', 'InteraccionEstadoController@ContarInteracciones')->where('status_id', '[0-9]+');
+  Route::get('estadosusuario/{idUltima}', 'EstadoController@CargarEstados')->where('idUltima', '[0-9]+');
   Route::resource('usuarios','UserController');
   Route::resource('dashboard', 'UserController@dashboard');
   Route::resource('profile', 'UserController@profile');
-  Route::get('infoempresas/{user_id}','UserController@InfoEmpresas');
-  Route::get('verificarusuario/{codigo}', 'UserController@VerificarUsuario');
+  Route::get('infoempresas/{user_id}','UserController@InfoEmpresas')->where('user_id', '[0-9]+');
+  Route::get('verificarusuario/{codigo}', 'UserController@VerificarUsuario')->where('codigo', '[0-9]+');
   /*Gestión de Usuarios*/
 
 
@@ -45,7 +45,7 @@ Route::group(['middleware' => 'user'], function(){
   Route::resource('empresas','EmpresaController');
   Route::get('empresa/{empresa}/', 'EmpresaController@MostrarEmpresaPublica');
   Route::get('listaempresas', 'EmpresaController@ListaEmpresas');
-  Route::get('solicitareliminacionempresa/{id}', 'EmpresaController@SolicitarEliminacion');
+  Route::get('solicitareliminacionempresa/{id}', 'EmpresaController@SolicitarEliminacion')->where('id', '[0-9]+');
   Route::get('buscarempresa/{nombre?}', 'EmpresaController@BuscarEmpresas');
   /*Gestión de Empresas*/
   /*Gestión de Servicios*/
@@ -56,24 +56,24 @@ Route::group(['middleware' => 'user'], function(){
   Route::resource('sorteos', 'SorteoController');
   Route::get('listasorteos', 'SorteoController@ListaSorteos');
   Route::get('buscarsorteo/{nombre?}', 'SorteoController@BuscarSorteos');
-  Route::get('canjearticket/{user_id}', 'SorteoController@CanjearTicket');
-  Route::get('contarticketsensorteo/{id}', 'SorteoController@ContarTicketsEnSorteo');
-  Route::get('cargardetallessorteo/{id}', 'SorteoController@CargarDetallesSorteo');
-  Route::get('mostrarganador/{ganador}', 'SorteoController@MostrarGanador');
-  Route::get('registrarganadorsorteo/{sorteado}', 'SorteoController@RegistrarGanadorSorteo');
+  Route::get('canjearticket/{user_id}', 'SorteoController@CanjearTicket')->where('user_id', '[0-9]+');
+  Route::get('contarticketsensorteo/{id}', 'SorteoController@ContarTicketsEnSorteo')->where('user_id', '[0-9]+');
+  Route::get('cargardetallessorteo/{id}', 'SorteoController@CargarDetallesSorteo')->where('user_id', '[0-9]+');
+  Route::get('mostrarganador/{ganador}', 'SorteoController@MostrarGanador')->where('ganador', '[0-9]+');
+  Route::get('registrarganadorsorteo/{sorteado}', 'SorteoController@RegistrarGanadorSorteo')->where('sorteado', '[0-9]+');
   /*Gestión de Sorteos*/
 
   /*Gestión de Participantes*/
   Route::resource('participantes', 'ParticipanteController');
-  Route::get('contarparticipantes/{sorteo_id}','ParticipanteController@ContarParticipantes');
+  Route::get('contarparticipantes/{sorteo_id}','ParticipanteController@ContarParticipantes')->where('sorteo_id', '[0-9]+');
 
   /*Gestión de Participantes*/
 
   /*Gestión de  Followers */
-  Route::get('seguirempresa/{empresa_id}/{user_id}', 'FollowerController@SeguirEmpresa');
-  Route::get('noseguirempresa/{empresa_id}/{user_id}', 'FollowerController@NoSeguirEmpresa');
-  Route::get('contarseguidores/{empresa_id}/{user_id}','FollowerController@ContarSeguidores');
-  Route::get('verificarseguidores/{empresa_id}/{user_id}','FollowerController@VerificarSeguidores');
+  Route::get('seguirempresa/{empresa_id}/{user_id}', 'FollowerController@SeguirEmpresa')->where(['empresa_id', 'user_id'], '[0-9]+');
+  Route::get('noseguirempresa/{empresa_id}/{user_id}', 'FollowerController@NoSeguirEmpresa')->where(['empresa_id', 'user_id'], '[0-9]+');
+  Route::get('contarseguidores/{empresa_id}/{user_id}','FollowerController@ContarSeguidores')->where(['empresa_id', 'user_id'], '[0-9]+');
+  Route::get('verificarseguidores/{empresa_id}/{user_id}','FollowerController@VerificarSeguidores')->where(['empresa_id', 'user_id'], '[0-9]+');
   /*Gestión de Followers */
 
   /*Gestión de  Rut */
@@ -84,11 +84,18 @@ Route::group(['middleware' => 'user'], function(){
 
   /*Gestión de tickets*/
   Route::resource('tickets','TicketController');
-  Route::get('efectuarcompraticket/{user_id}/{cantidadtickets}', 'TicketController@EfectuarCompra');
-  Route::get('verificartickets/{user_id}', 'TicketController@VerificarTickets');
+  Route::get('efectuarcompraticket/{user_id}/{cantidadtickets}', 'TicketController@EfectuarCompra')->where(['user_id', 'cantidadtickets'], '[0-9]+');
+  Route::get('verificartickets/{user_id}', 'TicketController@VerificarTickets')->where('user_id', '[0-9]+');
   Route::get('contartickets', 'TicketController@ContarTickets');
-  Route::get('usarticket/{user_id}/{sorteo_id}', 'SorteoController@UsarTicket');
+  Route::get('usarticket/{user_id}/{sorteo_id}', 'SorteoController@UsarTicket')->where(['user_id', 'sorteo_id'], '[0-9]+');
   /*Gestión de tickets*/
+
+  /*Gestión de Notificaciones -> Pops*/
+  Route::resource('pops', 'PopController');
+  Route::get('cargarpops/{idUltima}/{usuario}/{tipo}', 'PopController@CargarPops')->where(['idUltima', 'usuario'], '[0-9]+');
+  Route::get('cargarpopsempresa/{idUltima}/{empresa}', 'PopController@CargarPopsEmpresa')->where(['idUltima', 'empresa'], '[0-9]+');
+
+  /*Gestión de Notificaciones -> Pops*/
 
 
   /*Gestión de correos*/
@@ -132,12 +139,6 @@ Route::resource('log', 'LogController');
 Route::resource('admins','AdminController');  
 /*Gestión de Admins*/
 
-/*Gestión de Notificaciones -> Pops*/
-Route::resource('pops', 'PopController');
-Route::get('cargarpops/{idUltima}/{usuario}/{tipo}', 'PopController@CargarPops');
-Route::get('cargarpopsempresa/{idUltima}/{empresa}', 'PopController@CargarPopsEmpresa');
-
-/*Gestión de Notificaciones -> Pops*/
 
 
 /*Gestión de Encuestas*/

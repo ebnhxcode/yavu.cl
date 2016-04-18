@@ -28,51 +28,37 @@ class CoinController extends Controller{
     $this->coin = RegistroCoin::find($route->getParameter('coins'));
   }
   public function index(){
-    if(isset($this->user)){
-      $historialcoins = DB::table('registro_coins')
-        ->join('users', 'users.id', '=', 'registro_coins.user_id')
-        ->select('registro_coins.*', 'users.nombre')
-        ->where('user_id', '=', $this->user->id)
-        ->orderBy('created_at','desc')
-        //->limit('10')
-        ->get();
-      return view('coins.index', compact('historialcoins'));
-    }
-    Session::flash('message', 'Para ver tu historial de coins debes iniciar sesión.');
-    return Redirect::to('/login');
+    
+    $historialcoins = DB::table('registro_coins')
+      ->join('users', 'users.id', '=', 'registro_coins.user_id')
+      ->select('registro_coins.*', 'users.nombre')
+      ->where('user_id', '=', $this->user->id)
+      ->orderBy('created_at','desc')
+      //->limit('10')
+      ->get();
+    return view('coins.index', compact('historialcoins'));
   }
   public function create(){
     if(isset($this->admin)){
       return view('coins.create');
     }
     Session::flash('message-error', 'Usted está ingresando a un lugar que no existe.');
-    if(isset($this->user)) {
-      return Redirect::to('/dashboard');
-    }else{
-      return Redirect::to('/login');
-    }
-    return response()->json(["Mensaje: " => "Acceso denegado"]);
+    return Redirect::to('/dashboard');
   }
   public function ContarCoins(){
-    if(isset($this->user)){
-      return response()->json($this->user->registro_coins->sum('cantidad'));
-    }
-    return response()->json(["Mensaje: " => "Acceso denegado"]);
+    return response()->json($this->user->registro_coins->sum('cantidad'));
   }
   public function HistorialCoins(){
-    if(isset($this->user)){
-      $historialcoins = DB::table('registro_coins')
-        ->join('users', 'users.id', '=', 'registro_coins.user_id')
-        ->select('registro_coins.*', 'users.nombre')
-        ->where('user_id', '=', $this->user->id)
-        ->orderBy('created_at','desc')
-        ->limit('5')
-        ->get();
-      return response()->json(
-        $historialcoins
-      );
-    }
-    return response()->json(["Mensaje: " => "Acceso denegado"]);
+    $historialcoins = DB::table('registro_coins')
+      ->join('users', 'users.id', '=', 'registro_coins.user_id')
+      ->select('registro_coins.*', 'users.nombre')
+      ->where('user_id', '=', $this->user->id)
+      ->orderBy('created_at','desc')
+      ->limit('5')
+      ->get();
+    return response()->json(
+      $historialcoins
+    );
   }
   public function store(CoinCreateRequest $request){
     if(isset($this->admin)){

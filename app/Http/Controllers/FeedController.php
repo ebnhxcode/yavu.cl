@@ -18,7 +18,7 @@ class FeedController extends Controller{
   }
 
   public function CargarFeeds($idUltima){
-    if(isset($idUltima) && Auth::user()->check()){
+    if(isset($idUltima)){
       $idUltima = addslashes($idUltima);
 
       if((int) $idUltima == "0"){
@@ -64,15 +64,11 @@ class FeedController extends Controller{
   }
   public function EliminarFeed($id){
 
-    if(isset($id) && $id !== "" && Auth::user()->check()){
+    if(isset($id) && $id !== ""){
       $id = addslashes($id);
       $feed = EstadoEmpresa::find($id);
-      if($feed->user_id == Auth::user()->get()->id){
-        DB::table('estado_empresas')->where('id', '=', $id)->delete();
-        return response()->json(["Mensaje: " => "Eliminado"]);
-      }else{
-        return response()->json(["Mensaje: " => "Acceso denegado"]);
-      }
+      $feed->delete();
+      return response()->json(["Mensaje: " => "Eliminado"]);
     }
   }
   public function find(Route $route){

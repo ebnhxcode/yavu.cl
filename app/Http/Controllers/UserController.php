@@ -19,23 +19,14 @@ use Mail;
 use Carbon\Carbon;
 use Malahierba\ChileRut\ChileRut;
 class UserController extends Controller{
+
   public function __construct(Route $route){
     if(Auth::user()->check()){
       return $this->user = User::find(Auth::user()->get()->id);
     }
   }
-  /*
-  public function find(Route $route){
-    $this->user = User::find($route->getParameter('usuarios'));
-  }
-  */
+
   public function BuscarUsuarios($nombre){
-    /*
-    if(!$this->user){
-      Session::flash('message-warning', '¡Creemos que no estas encontrando lo que necesitas!');
-      return Redirect::to('/');
-    }
-    */
     if(isset($nombre)){
       $nombre = addslashes($nombre);
       $usuarios = DB::table('users')
@@ -52,35 +43,24 @@ class UserController extends Controller{
     }
     return response()->json(["Mensaje: " => "No se encontró la búsqueda."]);
   }
+
   public function create(){
-    //if(!isset($this->user)){
-      return view('usuarios.create');
-    /*
-    }else{
-      Session::flash('message-warning', '¡Creemos que es esto lo que andabas buscando!');
-      return Redirect::to('/usuarios/'.$this->user->id.'/edit');
-    }
     return view('usuarios.create');
-    */
   }
+
   public function dashboard(){
-    //if(isset($this->user)){
-      return view('usuarios.dashboard', ['users' => $this->user]);
-    //}
-    /*Session::flash('message-warning', '¡Creemos que estabas un poco ansioso, inicia sesión antes de continuar :)!');
-    return Redirect::to('/login');*/
+    return view('usuarios.dashboard', ['users' => $this->user]);
   }
+
   public function destroy($id){
-    //if(isset($this->user)){
       $this->user->estado = 'Inactivo';
       $this->user->save();
       //$this->user->delete();
       Session::flash('message-error', 'Se inhabilitó tu cuenta, lamentamos tu decisión, éxito !');
       Auth::user()->logout();
       return Redirect::to('/login');
-    //}
-    //return response()->json(['Mensaje: '=>'No se encontró el usuario']);
   }
+
   public function edit($id){
     if(isset($id) && isset($this->user)){
       if($id == $this->user->id){
@@ -93,12 +73,9 @@ class UserController extends Controller{
     Session::flash('message-warning', '¡Creemos que es esto lo que andabas buscando!');
     return Redirect::to('/');
   }
+
   public function getCodigoVerificacion(){
-    if(!isset($this->user)){
-      return Carbon::now()->second.Carbon::now()->minute.Carbon::now()->hour."V";
-    }
-    Session::flash('message-warning', '¡Creemos que es esto lo que andabas buscando!');
-    return Redirect::to('/usuarios/create');
+    return Carbon::now()->second.Carbon::now()->minute.Carbon::now()->hour."V";
   }
 
   public function index(){
@@ -113,25 +90,19 @@ class UserController extends Controller{
     Session::flash('message-warning', '¡Creemos que estabas un poco perdido, por eso te trajimos hasta acá :)!');
     return Redirect::to('/login');
   }
+
   public function InfoEmpresas($user_id){
-    if(isset($this->user)){
-      return response()->json($this->user->empresas);
-    }
-    return response()->json(['Mensaje: ' => 'No se encontró la empresa']);
+    return response()->json($this->user->empresas);
   }
+
   public function profile(){
-    if(isset($this->user)){
-      return view('usuarios.profile');
-    }
-    Session::flash('message-warning', '¡Para poder entrar al perfil debes iniciar sesión!');
-    return Redirect::to('/login');
+    return view('usuarios.profile');
   }
+
   public function show($id){
-    if(isset($this->user)){
-      return Redirect::to('/profile');
-    }
-    return response()->json(['Mensaje: ' => 'Acceso denegado']);
+    return Redirect::to('/profile');
   }
+
   public function store(UserCreateRequest $request){
     //User::create($request->all());
     $existeReferente = User::where('referente', $request->referido)->first();
@@ -171,6 +142,7 @@ class UserController extends Controller{
     Session::flash('error', 'Ocurrio un error inesperado');
     return Redirect::to('/usuarios');
   }
+
   public function update($id, UserUpdateRequest $request){
     if(RUT::check($request->rut)){
       $this->user->fill($request->all());
@@ -182,6 +154,7 @@ class UserController extends Controller{
       return Redirect::to('/profile');
     }
   }
+
   public function ValidarRutUsuario($rut){
     if(RUT::check($rut)){
       return RUT::clean($rut);
@@ -189,6 +162,7 @@ class UserController extends Controller{
       return "false";
     }
   }
+
   public function VerificarUsuario($codigo){
     if(isset($this->user)){
       return view('usuarios.profile');

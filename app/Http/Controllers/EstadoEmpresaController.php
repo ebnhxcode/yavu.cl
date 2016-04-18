@@ -2,6 +2,7 @@
 namespace yavu\Http\Controllers;
 use Illuminate\Cache\RedisTaggedCache;
 use Illuminate\Http\Request;
+use yavu\Empresa;
 use yavu\Http\Requests;
 use Session;
 use Redirect;
@@ -23,14 +24,8 @@ class EstadoEmpresaController extends Controller{
     }
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
-  public function index(){
-    Redirect::to("/");
-  }
-  public function create(){
-    Redirect::to("/");
-  }
   public function store(Request $request){
-    if($request->ajax() && Auth::user()->check()){
+    if($request->ajax()){
       EstadoEmpresa::create($request->all());
       return response()->json(["Mensaje: " => "Creado"]);
     }
@@ -38,18 +33,14 @@ class EstadoEmpresaController extends Controller{
   }
   public function CargarEstadoEmpresa($idUltima, $empresa){
     if(isset($idUltima) && isset($empresa)){
-      $nombreEmp = DB::table('empresas')
-        ->select('user_id')
-        ->where('nombre', '=', $empresa)
-        ->limit('1')
-        ->get();
+      $this->company = Empresa::where('nombre', $empresa)->first();
 
       if((int) $idUltima == "0"){
         $estado_empresas = DB::table('estado_empresas')
           ->join('users', 'users.id', '=', 'estado_empresas.user_id')
           ->join('empresas'  , 'empresas.id', '=', 'estado_empresas.empresa_id')
           ->select('users.*', 'estado_empresas.*', 'empresas.nombre as nombreEmp', 'empresas.imagen_perfil as imagen_perfil_empresa')
-          ->where('estado_empresas.user_id', '=', $nombreEmp[0]->user_id)
+          ->where('estado_empresas.user_id', '=', $this->company->user_id)
           ->where('empresas.nombre', '=', $empresa)
           ->where('estado_empresas.id', '>', (int) $idUltima)
           ->orderBy('estado_empresas.created_at','desc')
@@ -61,7 +52,7 @@ class EstadoEmpresaController extends Controller{
           ->join('users'  , 'users.id', '=', 'estado_empresas.user_id')
           ->join('empresas'  , 'empresas.id', '=', 'estado_empresas.empresa_id')
           ->select('users.*', 'estado_empresas.*', 'empresas.nombre as nombreEmp', 'empresas.imagen_perfil as imagen_perfil_empresa')
-          ->where('estado_empresas.user_id', '=', $nombreEmp[0]->user_id)
+          ->where('estado_empresas.user_id', '=', $this->company->user_id)
           ->where('estado_empresas.id', '<', (int) $idUltima)
           ->orderBy('estado_empresas.created_at','desc')
           ->limit('5')
@@ -71,18 +62,4 @@ class EstadoEmpresaController extends Controller{
     }
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
-
-  public function show($id){
-    Redirect::to("/");
-  }
-  public function edit($id){
-    Redirect::to("/");
-  }
-  public function update(Request $request, $id){
-    Redirect::to("/");
-  }
-  public function destroy($id){
-    Redirect::to("/");
-  }
-
 }

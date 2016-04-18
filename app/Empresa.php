@@ -54,5 +54,8 @@ class Empresa extends Model implements AuthenticatableContract,
     public function followers(){
         return $this->hasMany(Follower::class, 'empresa_id');
     }
+    public function estado_empresas(){
+        return $this->hasMany(EstadoEmpresas::class, 'empresa_id');
+    }
 }
 
