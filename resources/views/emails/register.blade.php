@@ -7,6 +7,6 @@
 <body>
 	<p><strong>Nombre: </strong>{!!$nombre!!}</p>
 	<p><strong>Correo: </strong>{!!$email!!}</p>
-	<p><strong>Enlace de validacion: </strong><a href="http_//yavu.cl/verificarusuario/{!! $codigo !!}"> Abrir </a>  </p>
+	<p><strong>Enlace de validacion: </strong><a href="http://yavu.cl/verificarusuario/{!! $codigo !!}"> Abrir </a>  </p>
 	</body>
 </html>
