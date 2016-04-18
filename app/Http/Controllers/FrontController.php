@@ -2,12 +2,13 @@
 namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
 use yavu\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 use yavu\Http\Controllers\Controller;
 use yavu\Empresa;
+use yavu\User;
 
 class FrontController extends Controller{
   public function __construct(){
-    
   }
   public function index(){
     return view('index');

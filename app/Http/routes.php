@@ -1,15 +1,19 @@
 <?php
 
+Route::group(['middleware' => 'user'], function(){
+  Route::get('tester', [
+    'uses' => 'BorrarController@tester',
+    'as' => 'borrar_tester_path',
+  ]);
+});
 /*Gestión del front*/
+
 Route::get('/','FrontController@index');
 Route::get('index','FrontController@index');
 Route::get('login','FrontController@login');
 Route::get('registro','FrontController@registro');
 Route::get('yavucoins','FrontController@yavucoins');
-
 Route::get('contacto','FrontController@contacto');
-
-
 Route::get('listaempresas/{empresa}','EmpresaController@ListaEmpresas');
 Route::get('nosotros','FrontController@nosotros');
 Route::get('terminos','FrontController@terminos');
@@ -17,7 +21,6 @@ Route::get('logout', 'LogController@logout');
 Route::get('sitemap', function(){
 	return view('sitemap');
 });
-
 /*Gestión del front*/
 
 /*Gestión de estados*/

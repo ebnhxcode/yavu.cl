@@ -142,6 +142,8 @@ class SorteoController extends Controller{
     return responde()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function RegistrarGanadorSorteo($ganador){
+    /*AQUI FALTA TERMINAR*/
+
 
     $this->existe = Winner::where('participante_sorteo_id', $ganador);
 
