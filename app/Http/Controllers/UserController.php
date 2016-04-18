@@ -20,15 +20,9 @@ use Carbon\Carbon;
 use Malahierba\ChileRut\ChileRut;
 class UserController extends Controller{
   public function __construct(Route $route){
-    /*
-    $this->beforeFilter('@find', ['only' =>
-      ['edit', 'update', 'destroy']
-    ]);
-    */
     if(Auth::user()->check()){
       return $this->user = User::find(Auth::user()->get()->id);
     }
-
   }
   /*
   public function find(Route $route){
@@ -36,12 +30,14 @@ class UserController extends Controller{
   }
   */
   public function BuscarUsuarios($nombre){
+    /*
     if(!$this->user){
       Session::flash('message-warning', '¡Creemos que no estas encontrando lo que necesitas!');
       return Redirect::to('/');
     }
-    $nombre = addslashes($nombre);
+    */
     if(isset($nombre)){
+      $nombre = addslashes($nombre);
       $usuarios = DB::table('users')
         ->select('*')
         ->where('nombre', 'like', '%'.$nombre.'%')
@@ -57,31 +53,33 @@ class UserController extends Controller{
     return response()->json(["Mensaje: " => "No se encontró la búsqueda."]);
   }
   public function create(){
-    if(!isset($this->user)){
+    //if(!isset($this->user)){
       return view('usuarios.create');
+    /*
     }else{
       Session::flash('message-warning', '¡Creemos que es esto lo que andabas buscando!');
       return Redirect::to('/usuarios/'.$this->user->id.'/edit');
     }
     return view('usuarios.create');
+    */
   }
   public function dashboard(){
-    if(isset($this->user)){
+    //if(isset($this->user)){
       return view('usuarios.dashboard', ['users' => $this->user]);
-    }
-    Session::flash('message-warning', '¡Creemos que estabas un poco ansioso, inicia sesión antes de continuar :)!');
-    return Redirect::to('/login');
+    //}
+    /*Session::flash('message-warning', '¡Creemos que estabas un poco ansioso, inicia sesión antes de continuar :)!');
+    return Redirect::to('/login');*/
   }
   public function destroy($id){
-    if(isset($this->user)){
+    //if(isset($this->user)){
       $this->user->estado = 'Inactivo';
       $this->user->save();
       //$this->user->delete();
       Session::flash('message-error', 'Se inhabilitó tu cuenta, lamentamos tu decisión, éxito !');
       Auth::user()->logout();
       return Redirect::to('/login');
-    }
-    return response()->json(['Mensaje: '=>'No se encontró el usuario']);
+    //}
+    //return response()->json(['Mensaje: '=>'No se encontró el usuario']);
   }
   public function edit($id){
     if(isset($id) && isset($this->user)){

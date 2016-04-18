@@ -9,6 +9,9 @@ use yavu\Http\Controllers\Controller;
 
 class BorrarController extends Controller
 {
+    public function tester(){
+        return 'hola';
+    }
     /**
      * Display a listing of the resource.
      *
