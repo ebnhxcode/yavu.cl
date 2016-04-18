@@ -31,7 +31,7 @@ $(document).ready(function(){
 /*FUNCIONES Y PROCEDIMIENTOS*/
 	function ContarCoins(){
 		var CargarEstados = $("#CargarEstados"); 
-		var route = "http://localhost:8000/contarcoins";
+		var route = "http_//yavu.cl/contarcoins";
 		var user_id = $("#user_id").val();
 		$.get(route, function(res){
 			$(".CantidadCoins").value = "";
@@ -46,7 +46,7 @@ $(document).ready(function(){
 	}
 
 	function HistorialCoins(){
-		var route = "http://localhost:8000/historialcoins";
+		var route = "http_//yavu.cl/historialcoins";
 		var TotalCoins = 0;
 		var Contador = 0;
 		$.get(route, function(res){

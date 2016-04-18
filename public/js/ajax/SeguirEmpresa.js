@@ -33,7 +33,7 @@ $(document).ready(function(){
 		var user_id = $("#user_id").val();
 		var empresa_id = $("#empresa_id").val();
 		var token = $("#token").val();
-		var route = "http://localhost:8000/seguirempresa/"+empresa_id+"/"+user_id;
+		var route = "http_//yavu.cl/seguirempresa/"+empresa_id+"/"+user_id;
 		$.ajax({
 			url: route,
 			headers: {'X-CSRF-TOKEN': token},
@@ -56,7 +56,7 @@ $(document).ready(function(){
 		var user_id = $("#user_id").val();
 		var empresa_id = $("#empresa_id").val();
 		var token = $("#token").val();
-		var route = "http://localhost:8000/noseguirempresa/"+empresa_id+"/"+user_id;
+		var route = "http_//yavu.cl/noseguirempresa/"+empresa_id+"/"+user_id;
 		$.ajax({
 			url: route,
 			headers: {'X-CSRF-TOKEN': token},
@@ -78,7 +78,7 @@ $(document).ready(function(){
 		var user_id = $("#user_id").val();
 		var empresa_id = $("#empresa_id").val();
 		$.ajax({
-			url: "http://localhost:8000/contarseguidores/"+empresa_id+"/"+user_id,
+			url: "http_//yavu.cl/contarseguidores/"+empresa_id+"/"+user_id,
 			type: 'GET',
 			dataType: 'json',
 			cache: false,
@@ -102,7 +102,7 @@ $(document).ready(function(){
 		var user_id = $("#user_id").val();
 		var empresa_id = $("#empresa_id").val();
 		$.ajax({
-			url: "http://localhost:8000/verificarseguidores/"+empresa_id+"/"+user_id,
+			url: "http_//yavu.cl/verificarseguidores/"+empresa_id+"/"+user_id,
 			type: 'GET',
 			dataType: 'json',
 			cache: false,
