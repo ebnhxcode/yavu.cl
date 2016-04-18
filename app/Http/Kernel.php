@@ -31,5 +31,6 @@ class Kernel extends HttpKernel
         'guest' => \yavu\Http\Middleware\RedirectIfAuthenticated::class,
         'user' => '\yavu\Http\Middleware\User',
         'admin' => '\yavu\Http\Middleware\Admin',
+        'cors' => \yavu\Http\Middleware\Cors::class,
     ];
 }

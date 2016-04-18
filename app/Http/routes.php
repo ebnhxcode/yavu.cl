@@ -1,4 +1,8 @@
 <?php
+Route::get('breweries', ['middleware' => 'cors', function()
+{
+  return \Response::json(\yavu\Brewery::with('beers', 'geocode')->paginate(10), 200);
+}]);
 
 Route::group(['middleware' => 'user'], function(){
   /*
