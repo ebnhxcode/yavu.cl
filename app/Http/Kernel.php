@@ -29,8 +29,8 @@ class Kernel extends HttpKernel
         'auth' => \yavu\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \yavu\Http\Middleware\RedirectIfAuthenticated::class,
-        'user' => '\yavu\Http\Middleware\User',
-        'admin' => '\yavu\Http\Middleware\Admin',
+        'user' => \yavu\Http\Middleware\User::class,
+        'admin' => \yavu\Http\Middleware\Admin::class,
         'cors' => \yavu\Http\Middleware\Cors::class,
     ];
 }
