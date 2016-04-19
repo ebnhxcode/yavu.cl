@@ -12,6 +12,7 @@ class CreateWinnersTable extends Migration
             $table->string('participante_sorteo_id');
             $table->string('nombre');
             $table->string('apellido');
+            $table->string('estado');
             $table->timestamps();
         });
     }

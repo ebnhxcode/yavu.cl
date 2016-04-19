@@ -58,13 +58,15 @@ $(document).ready(function(){
 				if(value.estado === "Pendiente"){
 					Pendiente = true;
 					$("#EstadoEmpresa").append(
+						'<div>'+
 						'<div class="list-group-item">'
 							+"<strong>"+value.nombre+"</strong>"
 							+'<span style="float:right;" class="label label-warning">'								
 								+'<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>'
 								+value.estado
 							+"</span>"	
-						+'</div>'				
+						+'</div>'
+						+'</div>'
 					);
 				}else if(value.estado === "Activo"){
 					var ImagenPerfil = "/img/users/"+value.imagen_perfil;
@@ -72,30 +74,32 @@ $(document).ready(function(){
 						ImagenPerfil = "https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png";
 					}
 					$("#EstadoEmpresa").append(
-						'<div class="list-group-item-full-header">'
-							+'<div class="panel panel-success">'
-								+'<div class="panel-heading">'
-								+'<a class="btn-link" href="/empresa/'+value.nombre+'">'+"<img class='media-object' src='"+ImagenPerfil+"' data-holder-rendered='true' style='width: 32px; height: 32px; border: 1px solid #73AD21;'/></a>"
-								+'&nbsp;<strong><a class="btn-link" href="/empresa/'+value.nombre+'">'+value.nombre+'</a></strong></div>'    
-								+'<div class="list-group">'
-									+'<div class="list-group-item">'
-										+'<small>Estado de la empresa</small> : '
-										+'<span style="float:right;" class="label label-success">'
-											+'<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>'
-											+value.estado
-										+"</span>"	
-									+'</div>'
+						'<div>'+
+							'<div class="list-group-item-full-header">'
+								+'<div class="panel panel-success">'
+									+'<div class="panel-heading">'
+									+'<a class="btn-link" href="/empresa/'+value.nombre+'">'+"<img class='media-object' src='"+ImagenPerfil+"' data-holder-rendered='true' style='width: 32px; height: 32px; border: 1px solid #73AD21;'/></a>"
+									+'&nbsp;<strong><a class="btn-link" href="/empresa/'+value.nombre+'">'+value.nombre+'</a></strong></div>'
+									+'<div class="list-group">'
+										+'<div class="list-group-item">'
+											+'<small>Estado de la empresa</small> : '
+											+'<span style="float:right;" class="label label-success">'
+												+'<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>'
+												+value.estado
+											+"</span>"
+										+'</div>'
 
-									+'<div class="list-group-item">'
-										+'<small>Modificar datos de la empresa</small> : '
-										+'<a style="float:right;" class="btn-xs btn-primary btn-sm" href="empresas/'+value.id+'/edit">Editar</a>'
-									+'</div>'
+										+'<div class="list-group-item">'
+											+'<small>Modificar datos de la empresa</small> : '
+											+'<a style="float:right;" class="btn-xs btn-primary btn-sm" href="empresas/'+value.id+'/edit">Editar</a>'
+										+'</div>'
 
-									+'<div class="list-group-item">'
-										+'<small>Perfil de la empresa</small> : '
-										+"<a style='float:right;' class='btn-xs btn-primary btn-sm' href='empresa/"+value.nombre+"/'>Perfil</a>"
-									+'</div>'
+										+'<div class="list-group-item">'
+											+'<small>Perfil de la empresa</small> : '
+											+"<a style='float:right;' class='btn-xs btn-primary btn-sm' href='empresa/"+value.nombre+"/'>Perfil</a>"
+										+'</div>'
 
+									+'</div>'
 								+'</div>'
 							+'</div>'
 						+'</div>'
