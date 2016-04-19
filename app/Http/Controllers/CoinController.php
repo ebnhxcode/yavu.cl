@@ -2,6 +2,7 @@
 namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
 use yavu\Admin;
+use yavu\Coin;
 use yavu\Http\Requests;
 use yavu\Http\Requests\CoinCreateRequest;
 use yavu\Http\Requests\CoinUpdateRequest;
@@ -16,7 +17,7 @@ use DB;
 
 class CoinController extends Controller{
   public function __construct(){
-    //$this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+
     if(Auth::user()->check()){
       $this->user = User::find(Auth::user()->get()->id);
     }
@@ -24,41 +25,14 @@ class CoinController extends Controller{
       $this->admin = Admin::find(Auth::admin()->get()->id);
     }
   }
-  public function find(Route $route){
-    $this->coin = RegistroCoin::find($route->getParameter('coins'));
-  }
   public function index(){
-    
-    $historialcoins = DB::table('registro_coins')
-      ->join('users', 'users.id', '=', 'registro_coins.user_id')
-      ->select('registro_coins.*', 'users.nombre')
-      ->where('user_id', '=', $this->user->id)
-      ->orderBy('created_at','desc')
-      //->limit('10')
-      ->get();
-    return view('coins.index', compact('historialcoins'));
-  }
-  public function create(){
-    if(isset($this->admin)){
-      return view('coins.create');
-    }
-    Session::flash('message-error', 'Usted está ingresando a un lugar que no existe.');
-    return Redirect::to('/dashboard');
+    return view('coins.index', ['historialcoins' => $this->user->registro_coins()->limit('20')->get()]);
   }
   public function ContarCoins(){
     return response()->json($this->user->registro_coins->sum('cantidad'));
   }
   public function HistorialCoins(){
-    $historialcoins = DB::table('registro_coins')
-      ->join('users', 'users.id', '=', 'registro_coins.user_id')
-      ->select('registro_coins.*', 'users.nombre')
-      ->where('user_id', '=', $this->user->id)
-      ->orderBy('created_at','desc')
-      ->limit('5')
-      ->get();
-    return response()->json(
-      $historialcoins
-    );
+    return view('coins.index', ['historialcoins' => $this->user->registro_coins()->limit('20')->get()]);
   }
   public function store(CoinCreateRequest $request){
     if(isset($this->admin)){
@@ -67,9 +41,6 @@ class CoinController extends Controller{
       return Redirect::to('/coins/create');
     }
     return response()->json(["Mensaje: " => "Acceso denegado"]);
-  }
-  public function show($id){
-
   }
   public function edit($id){
     if(isset($this->admin)){
