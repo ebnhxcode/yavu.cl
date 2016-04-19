@@ -85,6 +85,8 @@ $(document).ready(function(){
 					var tiempo = 100000;
 					var t = 0;
 					var Ganador = 0;
+					var GanadorFinal = aleatorio(inicio, fin);
+					RegistrarParticipanteGanador(GanadorFinal);
 					var EjecucionSorteo = setInterval(function(){
 						Ganador = aleatorio(inicio, fin);
 						$("#Detalles").text("Número de ticket: "+Ganador);
@@ -95,9 +97,8 @@ $(document).ready(function(){
 						if(tiempo === 10000){
 							clearInterval(EjecucionSorteo);
 							$("#Tiempo").text("¡¡¡ TIEMPO !!!");
-							Ejecutandose = true;
-							RegistrarParticipanteGanador(Ganador);
-							MostrarGanador(Ganador);
+							Ejecutandose = true;		
+							MostrarGanador(GanadorFinal);
 						}
 						return true;
 					}, 5);
