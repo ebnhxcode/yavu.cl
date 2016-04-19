@@ -64,7 +64,7 @@ Route::group(['middleware' => 'user'], function(){
   Route::get('contarticketsensorteo/{id}', 'SorteoController@ContarTicketsEnSorteo')->where('user_id', '[0-9]+');
   Route::get('cargardetallessorteo/{id}', 'SorteoController@CargarDetallesSorteo')->where('user_id', '[0-9]+');
   Route::get('mostrarganador/{ganador}', 'SorteoController@MostrarGanador')->where('ganador', '[0-9]+');
-  Route::get('registrarganadorsorteo/{sorteado}', 'SorteoController@RegistrarGanadorSorteo')->where('sorteado', '[0-9]+');
+  Route::get('registrarganadorsorteo/{sorteado?}', 'SorteoController@RegistrarGanadorSorteo');
   /*Gestión de Sorteos*/
 
   /*Gestión de Participantes*/

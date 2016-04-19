@@ -85,8 +85,11 @@ $(document).ready(function(){
 					var tiempo = 100000;
 					var t = 0;
 					var Ganador = 0;
-					var GanadorFinal = aleatorio(inicio, fin);
-					RegistrarParticipanteGanador(GanadorFinal);
+					var GanadorFinal = [aleatorio(inicio, fin),aleatorio(inicio, fin),aleatorio(inicio, fin)];
+
+
+					console.log(GanadorFinal);
+					RegistrarParticipanteGanador(JSON.stringify(GanadorFinal));
 					var EjecucionSorteo = setInterval(function(){
 						Ganador = aleatorio(inicio, fin);
 						$("#Detalles").text("Número de ticket: "+Ganador);
@@ -98,7 +101,7 @@ $(document).ready(function(){
 							clearInterval(EjecucionSorteo);
 							$("#Tiempo").text("¡¡¡ TIEMPO !!!");
 							Ejecutandose = true;		
-							MostrarGanador(GanadorFinal);
+							//MostrarGanador(GanadorFinal);
 						}
 						return true;
 					}, 5);

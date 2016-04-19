@@ -119,24 +119,29 @@ class SorteoController extends Controller{
   }
   public function RegistrarGanadorSorteo($ganador){
     /*AQUI FALTA TERMINAR*/
+    $ganador = str_replace('[', '', $ganador);
+    $ganador = str_replace(']', '', $ganador);
+    $ArraySeleccionados = explode(',', $ganador);  
 
-
-    $this->existe = Winner::where('participante_sorteo_id', $ganador);
-
-    $this->sorteado = ParticipanteSorteo::find($ganador)->first();
-
-    $this->ganador = User::where('id', $this->sorteado->id)->get();
-
-    if($this->ganador[0]){
-      $this->registrar_ganador = new Winner(['user_id' => $this->sorteado->user_id, 'sorteo_id' => $this->sorteado->sorteo_id,'participante_sorteo_id' => $ganador,'nombre' => $this->ganador[0]->nombre,'apellido' => $this->ganador[0]->apellido]);
-      $this->registrar_ganador->save();
+//    dd($ArraySeleccionados[0]);
+    foreach ($ArraySeleccionados as $key) {
+      $this->existe = Winner::where('participante_sorteo_id', $key);
+      $this->sorteado = ParticipanteSorteo::find($key)->first();
+      $this->ganador = User::where('id', $this->sorteado->id)->get();
+      if($this->ganador[0]){
+        $this->registrar_ganador = new Winner(['user_id' => $this->sorteado->user_id, 'sorteo_id' => $this->sorteado->sorteo_id,'participante_sorteo_id' => $key,'nombre' => $this->ganador[0]->nombre,'apellido' => $this->ganador[0]->apellido]);
+        $this->registrar_ganador->save();
+      }
     }
 
+
+
     //dd($this->registrar_ganador);
-    return "true wn";
+    return "true";
   }
   public function show($id){
-    return view('sorteos.show', ['sorteo' => $this->sorteo]);
+    $winners = $this->sorteo->winners()->get();
+    return view('sorteos.show', ['sorteo' => $this->sorteo], ['winners' => $this->sorteo->winners()->get()]);  
   }
   public function store(Request $request){
       if(Sorteo::create($request->all())){
