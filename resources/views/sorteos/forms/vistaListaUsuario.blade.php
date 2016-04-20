@@ -15,14 +15,14 @@
 					<div class="amplio">
 						<div style="padding-left: 8px;padding-right: 8px;" class="row">
 							<div align="center" class="col-md-4 col-sm-4 col-xs-4">
-								<div class="well">
-									<span class="glyphicon glyphicon-user"></span>
-									<span class="">
-										<span class="TicketsEnSorteo" id="{!! $sorteo->id !!}"></span>
-										<input type="hidden" name="_token" value="{!! csrf_token() !!}">
-									</span>
-								</div>
+								<span class="glyphicon glyphicon-user"></span>
+								<span class="">
+									<span class="TicketsEnSorteo" id="{!! $sorteo->id !!}"></span>
+									<input type="hidden" name="_token" value="{!! csrf_token() !!}">
+								</span>
 							</div>
+
+
 
 							<div align="center" class="col-md-4 col-sm-4 col-xs-4">
 								<div class="well">

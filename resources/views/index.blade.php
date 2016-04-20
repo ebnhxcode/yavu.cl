@@ -83,7 +83,7 @@
                   @include('alerts.alertFields')
 
                   <div>
-                    {!!Form::open(['route'=>'usuarios.store', 'method'=>'POST', 'id' => 'FormRegistroLanding'])!!}
+                    {!!Form::open([route('usuarios_store_path'), 'method'=>'POST', 'id' => 'FormRegistroLanding'])!!}
                       @include('usuarios.forms.fieldsLanding')
                       <div class="form-group has-feedback has-feedback-left">
                         {!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success', 'style' => 'width:100%;', 'onclick' => 'ValidarRegistro()'])!!}

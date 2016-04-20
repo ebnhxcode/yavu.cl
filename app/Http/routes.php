@@ -1,18 +1,43 @@
 <?php
-Route::get('breweries', ['middleware' => 'cors', function()
-{
-  return \Response::json(\yavu\Brewery::with('beers', 'geocode')->paginate(10), 200);
-}]);
+Route::get('breweries', ['middleware' => 'cors', function(){return \Response::json(\yavu\Brewery::with('beers', 'geocode')->paginate(10), 200);}]);
+
+Route::get('usuarios', 'UserController@index');
+Route::get('usuarios/create', ['uses' => 'UserController@create', 'as' => 'usuarios_create_path',]);
+Route::post('usuarios/create', ['uses' => 'UserController@store', 'as' => 'usuarios_store_path',]);
+
+Route::get('logout', 'LogController@logout');
+
+
+/*
+Route::get('', '');
+Route::get('', '');
+Route::get('', '');
+Route::get('', '');
+Route::get('', '');
+Route::get('', '');
+*/
+
+
 
 Route::group(['middleware' => 'user'], function(){
-  /*
-  Route::get('tester', [
-    'uses' => 'BorrarController@tester',
-    'as' => 'borrar_tester_path',
-  ]);
-  */
 
-  Route::get('logout', 'LogController@logout');
+  /*Gestión de Usuarios*/
+  Route::resource('interactuar', 'InteraccionEstadoController');
+  Route::get('contarinteracciones/{status_id}', 'InteraccionEstadoController@ContarInteracciones')->where('status_id', '[0-9]+');
+  Route::get('estadosusuario/{idUltima}', 'EstadoController@CargarEstados')->where('idUltima', '[0-9]+');
+  //Route::resource('usuarios','UserController');
+
+  Route::resource('dashboard', 'UserController@dashboard');
+  Route::resource('profile', 'UserController@profile');
+  Route::get('infoempresas/{user_id}','UserController@InfoEmpresas')->where('user_id', '[0-9]+');
+  Route::get('verificarusuario/{codigo}', 'UserController@VerificarUsuario')->where('codigo', '[0-9]+');
+
+  Route::get('usuarios/{id}/edit', ['uses' => 'UserController@edit', 'as' => 'usuarios_edit_path',])->where('id', '[0-9]+');
+  Route::put('usuarios/{id}/edit', ['uses' => 'UserController@update','as' => 'usuarios_put_path',])->where('id', '[0-9]+');
+  Route::delete('usuarios/{id}/edit', ['uses' => 'UserController@destroy','as' => 'usuarios_delete_path',])->where('id', '[0-9]+');
+  Route::get('usuarios/{id}', function(){return redirect()->to('/');})->where('id', '[1-9]+');
+  /*Gestión de Usuarios*/
+
 
   /*Gestión de estados*/
   Route::resource('estadoempresa', 'EstadoEmpresaController');
@@ -33,16 +58,7 @@ Route::group(['middleware' => 'user'], function(){
   Route::get('historialcoins', 'CoinController@HistorialCoins');
   /*Gestión de coins*/
 
-  /*Gestión de Usuarios*/
-  Route::resource('interactuar', 'InteraccionEstadoController');
-  Route::get('contarinteracciones/{status_id}', 'InteraccionEstadoController@ContarInteracciones')->where('status_id', '[0-9]+');
-  Route::get('estadosusuario/{idUltima}', 'EstadoController@CargarEstados')->where('idUltima', '[0-9]+');
-  Route::resource('usuarios','UserController');
-  Route::resource('dashboard', 'UserController@dashboard');
-  Route::resource('profile', 'UserController@profile');
-  Route::get('infoempresas/{user_id}','UserController@InfoEmpresas')->where('user_id', '[0-9]+');
-  Route::get('verificarusuario/{codigo}', 'UserController@VerificarUsuario')->where('codigo', '[0-9]+');
-  /*Gestión de Usuarios*/
+
 
 
   /*Gestión de Empresas*/

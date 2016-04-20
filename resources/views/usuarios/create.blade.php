@@ -5,7 +5,7 @@
 		@include('alerts.alertFields')
 		<h4>Registro de cliente </h4>
 		<div class="row">
-			{!!Form::open(['route'=>'usuarios.store', 'method'=>'POST', 'files' => true])!!}
+			{!!Form::open([route('usuarios_create_path'), 'method'=>'POST', 'files' => true])!!}
 			@include('usuarios.forms.fieldsUser')
 				<div class="list-group">
 					<div class="list-group-item">

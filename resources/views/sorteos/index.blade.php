@@ -29,27 +29,27 @@
             </div>
             <div class="list-group-item">
               <span class="text-danger" id="Mensaje"></span>
-              <a class="btn btn-warning btn-lg" href="{!! URL::to("/sorteos/create") !!}">
+              <a class="btn-link" href="{!! URL::to("/sorteos/create") !!}">
                 Crear nuevo sorteo
               </a><span class="label label-info">nuevo</span>
               <br>
-              <a class="btn btn-success btn-lg" style="" href="#!" id="ComprarMasTickets">
+              <a class="btn-link" style="" href="#!" id="ComprarMasTickets">
                 Comprar 1 ticket
               </a><span class="label label-info">nuevo</span>
               <br>
-              <a class="btn btn-success btn-lg" style="" href="{!! URL::to('/tickets') !!}">
+              <a class="btn-link" style="" href="{!! URL::to('/tickets') !!}">
                 Asegurate de comprar más tickets
               </a><span class="label label-info">nuevo</span>
               <br>
-              <a class="btn btn-warning btn-lg" style="" href="{!! URL::to('/feeds') !!}">
+              <a class="btn-link" style="" href="{!! URL::to('/feeds') !!}">
                 Volver a publicaciones
               </a><span class="label label-info">nuevo</span>
               <br>
-              <a class="btn btn-primary btn-lg" style="" href="{!! URL::to('/profile') !!}">
+              <a class="btn-link" style="" href="{!! URL::to('/profile') !!}">
                 Ir a mi perfil
               </a><span class="label label-info">nuevo</span>
               <br>
-              <a class="btn btn-info btn-lg" style="" href="{!! URL::to('/dashboard') !!}">
+              <a class="btn-link" style="" href="{!! URL::to('/dashboard') !!}">
                 Inicio
               </a><span class="label label-info">nuevo</span>
               <br>

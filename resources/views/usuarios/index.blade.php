@@ -37,7 +37,7 @@
 							<td>{!!$user->fono!!}</td>
 							<td>{!!$user->fecha_nacimiento!!}</td>
 							<td>{!!$user->sexo!!}</td>
-							<td>{!!link_to_route('usuarios.edit', $title = 'Editar', $parameters = $user->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
+							<td><a class="btn btn-primary" href="{!! route('usuarios_edit_path', $user->id) !!}">Editar</a></td>
 						</tbody>
 						@endforeach
 					</table>	
