@@ -186,6 +186,7 @@ $(document).ready(function(){
 		var Tickets = [];
 		$(".TicketsEnSorteo").each(function(){
 			var CantidadTicketsPorSorteo = $(this);
+			//var CantidadTicketsUsados =
 			var CantidadActual = $(this).attr('value');
 			CantidadActual = CantidadActual | 0;
 			var route = "http://localhost:8000/contarticketsensorteo/"+$(this).attr('id');
@@ -206,13 +207,16 @@ $(document).ready(function(){
 					CantidadTicketsPorSorteo.attr('value', data.length);
 					if(CantidadActual < data.length){
 						CantidadTicketsPorSorteo.fadeOut(function(){
-							CantidadTicketsPorSorteo.text(data.length + "\n (Haz usado " + j + " tickets para este sorteo)").fadeIn(50);
+							CantidadTicketsPorSorteo.text(data.length).fadeIn(50);// + "\n (Haz usado " + j + " tickets para este sorteo)").fadeIn(50);
 						});
 					}else{
 						if(data.length > 0){
-							CantidadTicketsPorSorteo.text(data.length + "\n (Haz usado " + j + " tickets para este sorteo)");
+							CantidadTicketsPorSorteo.text(data.length).fadeIn(50);
+							$(".CantidadTicketsUsados").text(j);
+							// + "\n (Haz usado " + j + " tickets para este sorteo)");
 						}else{
 							CantidadTicketsPorSorteo.text(data.length);
+							$(".CantidadTicketsUsados").text(j);
 						}
 					}
 				}
@@ -265,6 +269,7 @@ $(document).ready(function(){
 				$(".UsarTicket").removeAttr('style');
 			}else{
 				$(".UsarTicket").fadeOut(100);
+				$(".UsarTicket").css({width:'100%'});//.addClass({width:'100%'});
 			}
 		});
 		return true;

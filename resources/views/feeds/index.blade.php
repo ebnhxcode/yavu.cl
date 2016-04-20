@@ -8,8 +8,6 @@
 		<div class="" style="font-size: 4em;">
 			<img width="8%" src= "{!!URL::to('img/dash/ico_pin03.png')!!}"/><span >Publicaciones</span>
 		</div>
-
-    <h1></h1>
     <br />
     <div class="row">
     
@@ -17,7 +15,7 @@
     @include('alerts.errorsMessage')
     @include('alerts.successMessage')
     @include('alerts.warningMessage') 
-	@include('feeds.forms.panelLeft') 
+		@include('feeds.forms.panelLeft')
 
 	<input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
     {!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}

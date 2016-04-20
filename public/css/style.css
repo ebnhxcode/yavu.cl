@@ -47,7 +47,19 @@
    height: 50%;
 }
 
+.amplio {
+  color: #00312D;
+  opacity: 0.9;
+  font-size: 2em;
+  padding: 10px 10px 10px 10px;
 
+}
+.semi-amplio {
+  color: #000000;
+  font-size: 1em;
+  padding: 10px 10px 10px 10px;
+
+}
 
 @media (min-width: 768px) {
   #contentIn {

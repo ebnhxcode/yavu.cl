@@ -14,8 +14,38 @@ $(document).ready(function(){
 
 /*SELECTORES*/
   	$(function () {
-  		var popover = $('[data-toggle="popover"]');
-    	popover.popover({ html : true , trigger : 'manual'});
+
+
+  		//var popover = $('[data-toggle="popover"]');
+
+			$('[data-toggle="popover"]').popover({
+				html: true,
+				trigger: 'manual',
+				//animation: false,
+				placement: 'bottom',
+				content: function () {
+					CargarNotificaciones();
+					//$return = '<div class="hover-hovercard"></div>';
+				}
+			}).on("mouseenter", function () {
+				var _this = this;
+				$(this).popover("show");
+				$(this).siblings(".popover").on("mouseleave", function () {
+					$(_this).popover('hide');
+				});
+			}).on("mouseleave", function () {
+				var _this = this;
+				setTimeout(function () {
+					if (!$(".popover:hover").length) {
+						$(_this).popover("hide")
+					}
+				}, 100);
+			});
+		});
+
+			//popover.popover({ html : true , trigger : 'manual'});
+			//popover.popover('show');
+		$(function () {
       $('#Notificaciones, #CantidadNotificaciones').bind('click',function(){
         CargarNotificaciones();
 				ContarNotificaciones();
