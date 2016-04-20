@@ -65,7 +65,7 @@ $(document).ready(function(){
 
 /*FUNCIONES Y PROCEDIMIENTOS*/
 	function CargarDetallesSorteo(sorteo_id){
-		var route = "http://localhost:8000/cargardetallessorteo/"+sorteo_id;
+		var route = "http://yavu.cl/cargardetallessorteo/"+sorteo_id;
 		$.ajax({
 			url: route,
 			type: 'GET',
@@ -116,7 +116,7 @@ $(document).ready(function(){
 	function ContarNotificaciones(){
 		var user_id = $("#user_id").val();
 		$.ajax({
-			url: "http://localhost:8000/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
+			url: "http://yavu.cl/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
 			type: 'GET',
 			dataType: 'json',
 			cache: false,
@@ -138,7 +138,7 @@ $(document).ready(function(){
 	}
 	function MostrarGanador(Ganador){
 		//console.log("este es: "+Ganador);
-		var route = "http://localhost:8000/mostrarganador/"+Ganador;
+		var route = "http://yavu.cl/mostrarganador/"+Ganador;
 		$.ajax({
 			url: route,
 			type: 'GET',
@@ -162,7 +162,7 @@ $(document).ready(function(){
 	function CanjearTicket(){
 		$('#myModal').modal('hide');
 		var user_id = $("#user_id").val();
-		var route = "http://localhost:8000/canjearticket/"+user_id;
+		var route = "http://yavu.cl/canjearticket/"+user_id;
 		$.ajax({
 			url: route,
 			headers: {'X-CSRF-TOKEN': token},
@@ -193,7 +193,7 @@ $(document).ready(function(){
 			//var CantidadTicketsUsados =
 			var CantidadActual = $(this).attr('value');
 			CantidadActual = CantidadActual | 0;
-			var route = "http://localhost:8000/contarticketsensorteo/"+$(this).attr('id');
+			var route = "http://yavu.cl/contarticketsensorteo/"+$(this).attr('id');
 			$.ajax({
 				url: route,
 				type: 'GET',
@@ -233,7 +233,7 @@ $(document).ready(function(){
 	function UsarTicket(sorteo_id){
 		$('#myModal').modal('hide');
 		var user_id = $("#user_id").val();	
-		var route = "http://localhost:8000/usarticket/"+user_id+"/"+sorteo_id;
+		var route = "http://yavu.cl/usarticket/"+user_id+"/"+sorteo_id;
 		$.ajax({
 			url: route,
 			headers: {'X-CSRF-TOKEN': token},
@@ -251,7 +251,7 @@ $(document).ready(function(){
 	}
 
 	function RegistrarParticipanteGanador(Ganador){
-		var route = "http://localhost:8000/registrarganadorsorteo/"+Ganador;
+		var route = "http://yavu.cl/registrarganadorsorteo/"+Ganador;
 		$.ajax({
 			url: route,
 			type: 'GET',
@@ -267,7 +267,7 @@ $(document).ready(function(){
 
 	function VerificarTickets(){
 		var user_id = $("#user_id").val();
-		var route = "http://localhost:8000/verificartickets/"+user_id;
+		var route = "http://yavu.cl/verificartickets/"+user_id;
 		$.get(route, function(res){
 			if(res>0){
 				$(".UsarTicket").removeAttr('style');
@@ -280,7 +280,7 @@ $(document).ready(function(){
 	}
 
 	function ContarCoins(){
-		var route = "http://localhost:8000/contarcoins";
+		var route = "http://yavu.cl/contarcoins";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
 			$(".CantidadCoins").text("");
@@ -294,7 +294,7 @@ $(document).ready(function(){
 	}
 
 	function ContarTickets(){
-		var route = "http://localhost:8000/contartickets";
+		var route = "http://yavu.cl/contartickets";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
 			$("#CantidadTickets").text("");
