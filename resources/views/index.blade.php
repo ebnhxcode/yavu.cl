@@ -73,6 +73,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
+              <a href="{{URL::to('/')}}"><img src={{asset('img/yavu005.png')}} width="20%"></a>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>

@@ -68,7 +68,7 @@
 								<div class="thumbnail card">
 
 									@if($empresa->imagen_portada === "" )
-										<img id="ImagenPortada" src="http://medioambiente.nh-hoteles.es/themes/default/images/bgd-biodiversidad-00.png" alt="...">
+										<img id="ImagenPortada" src="/img/users/banner.png" alt="...">
 									@else
 										<img id="ImagenPortada" src="/img/users/{!!$empresa->imagen_portada!!}" alt="...">
 									@endif
