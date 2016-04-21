@@ -1,77 +1,38 @@
-    <div class="col-sm-4">
-
-      <div class="list-group">
-          <div class="list-group-item-full-header">
-            <h6>MENÚ</h6>
-          </div>
-          <div class="list-group-item">
-            Filtros
-          </div>
-          <div class="list-group-item">
-            Empresa
-          </div>
-          <div class="list-group-item">
-            Rubro
-          </div>
-          <div class="list-group-item">
-            Fecha de publicacion
-          </div>
-        </div>  
-
-        <div class="list-group">
-          <div class="list-group-item-full-header">
-            <h6>CONTENIDO DE INTERES</h6>
-          </div>            
-          <div class="list-group-item">          
-          </div>
-          <div class="list-group-item">          
-          </div>
-          <div class="list-group-item">          
-          </div>
-          <div class="list-group-item">          
-          </div>
-        </div>
-
-        <div class="list-group">
-          <div class="list-group-item-full-header">
-            <h6>PUBLICIDAD</h6>
-          </div>            
-          <div class="list-group-item">          
-          </div>
-          <div class="list-group-item">          
-          </div>
-          <div class="list-group-item">          
-          </div>
-          <div class="list-group-item">          
-          </div>
-        </div>
-
-        <div class="list-group">
-          <div class="list-group-item-full-header">
-            <h6>PUBLICIDAD</h6>
-          </div>            
-          <div class="list-group-item">          
-          </div>
-          <div class="list-group-item">          
-          </div>
-          <div class="list-group-item">          
-          </div>
-          <div class="list-group-item">          
-          </div>
-        </div>
-
-        <div class="list-group">
-          <div class="list-group-item-full-header">
-            <h6>PUBLICIDAD</h6>
-          </div>            
-          <div class="list-group-item">          
-          </div>
-          <div class="list-group-item">          
-          </div>
-          <div class="list-group-item">          
-          </div>
-          <div class="list-group-item">          
-          </div>
-        </div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+  <div id="sticky" class="list-group">
+    <div class="list-group-item list-group-item-success">
+      <h5>FILTRO DE BÚSQUEDA</h5>
+      <input id="user_id" value="{!! Auth::user()->get()->id !!}" type="hidden" />
+      {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar publicaciones','id'=>'feedsearch', 'aria-describedby' => 'sizing-addon1'])!!}
+      <br />
+    </div>
+    <div class="list-group-item">
+      <span class="text-danger" id="Mensaje"></span>
+      <a class="btn-link" href="{!! URL::to("/sorteos/create") !!}">
+        Crear nuevo sorteo
+      </a><span class="label label-info">nuevo</span>
+      <br>
+      <a class="btn-link" style="" href="{!! URL::to('/tickets') !!}">
+        Comprar más tickets
+      </a><span class="label label-info">nuevo</span>
+      <br>
+      <a class="btn-link" style="" href="{!! URL::to('/feeds') !!}">
+        Volver a publicaciones
+      </a><span class="label label-info">nuevo</span>
+      <br>
+      <a class="btn-link" style="" href="{!! URL::to('/profile') !!}">
+        Ir a mi perfil
+      </a><span class="label label-info">nuevo</span>
+      <br>
+      <a class="btn-link" style="" href="{!! URL::to('/dashboard') !!}">
+        Inicio
+      </a><span class="label label-info">nuevo</span>
+      <br>
 
     </div>
+  </div>
+</div><!-- fin del col md 4 -->
+<script>
+
+
+</script>

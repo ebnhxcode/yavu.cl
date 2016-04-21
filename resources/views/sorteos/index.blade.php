@@ -33,12 +33,8 @@
                 Crear nuevo sorteo
               </a><span class="label label-info">nuevo</span>
               <br>
-              <a class="btn-link" style="" href="#!" id="ComprarMasTickets">
-                Comprar 1 ticket
-              </a><span class="label label-info">nuevo</span>
-              <br>
               <a class="btn-link" style="" href="{!! URL::to('/tickets') !!}">
-                Asegurate de comprar más tickets
+                Comprar más tickets
               </a><span class="label label-info">nuevo</span>
               <br>
               <a class="btn-link" style="" href="{!! URL::to('/feeds') !!}">
