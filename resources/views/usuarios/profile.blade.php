@@ -14,7 +14,7 @@
 				<div class="col-sm-8">
 					<div class="list-group" >
 						<div class="list-group-item-full-header">
-							<h6>{!!strtoupper(Auth::user()->get()->nombre . ' ' . Auth::user()->get()->apellido)!!}</h6>
+							<h6> Hola!: {!!strtoupper(Auth::user()->get()->nombre . ' ' . Auth::user()->get()->apellido)!!}</h6>
 						</div>
 
 						<!-- SECCION DE LAS FOTO DE PERFIL Y PORTADA -->
@@ -22,13 +22,13 @@
 							<div class="thumbnail">  
 
 								@if(Auth::user()->get()->imagen_portada === "")
-									<img id="ImagenPortada" src="http://medioambiente.nh-hoteles.es/themes/default/images/bgd-biodiversidad-00.png" alt="...">
+									<img id="ImagenPortada" src="/img/users/banner.png" width=100%>
 								@else
 									<img id="ImagenPortada" src="/img/users/{!!Auth::user()->get()->imagen_portada!!}" alt="...">
 								@endif								
 
 								@if(Auth::user()->get()->imagen_perfil === "")
-									<img id="ImagenPerfil" src="https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png" class="img-circle" alt="...">
+									<img id="ImagenPerfil" src="/img/users/usuario_nuevo.png" class="img-circle" >
 								@else
 									<img id="ImagenPerfil" src="/img/users/{!!Auth::user()->get()->imagen_perfil!!}" class="img-circle" alt="...">
 								@endif
@@ -122,8 +122,8 @@
 						<div class="list-group-item">
 							<h6>ACCESOS RÁPIDOS</h6>
 						</div>
-						<a class="list-group-item list-group-item-warning" href="{!! URL::to('/feeds') !!}">Ir a publicaciones</a>
-						<a class="list-group-item list-group-item-info" href="{!! route('usuarios_edit_path', Auth::user()->get()->id) !!}">Editar</a>
+						<a class="list-group-item list-group-item-warning" href="{!! URL::to('/feeds') !!}">Ir a <strong>Publicaciones</strong></a>
+						<a class="list-group-item list-group-item-info" href="{!! route('usuarios_edit_path', Auth::user()->get()->id) !!}">Editar tu <strong>Perfil</strong></a>
 						<a href="{!!URL::to('dashboard')!!}" class="list-group-item list-group-item-warning">Volver a <strong>Inicio</strong></a>
 					</div>
 					<div class="list-group">

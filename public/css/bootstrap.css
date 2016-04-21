@@ -970,15 +970,15 @@ img {
           transition: all .2s ease-in-out;
 }
 .img-circle {
-  width:40%;
-  height:40%;
+  width:25%;
+  height:25%;
   /*display: inherit;*/
   position: absolute;
   border-radius: 2%;
-  top: 20px;
-  right:1%;
+  top: 50px;
+  right:2%;
   z-index: 1000;
-  border: 1px solid #ddd;
+  border: 0px solid #ddd;
 
   -moz-box-shadow: 0px 2px 8px 1px #000;
   -webkit-box-shadow: 0px 2px 8px 1px #000;

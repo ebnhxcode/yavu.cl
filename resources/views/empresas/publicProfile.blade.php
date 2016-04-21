@@ -27,7 +27,7 @@
 							<div class="thumbnail">
                   <!-- Portada -->
 								@if($e->imagen_portada === "" )
-									<img id="ImagenPortada" src="http://medioambiente.nh-hoteles.es/themes/default/images/bgd-biodiversidad-00.png" alt="...">
+									<img id="ImagenPortada" src="/img/users/banner.png" alt="...">
 								@else
 									<img id="ImagenPortada" src="/img/users/{!!$e->imagen_portada!!}" alt="...">
 								@endif
