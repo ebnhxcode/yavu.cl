@@ -17,8 +17,8 @@
       <div class="row">
         <div class="col-md-4 col-sm-12 col-xs-12">
           <div class="list-group">
-            <div class="list-group-item">
-              <h4>FILTRO DE BÚSQUEDA</h4>
+            <div class="list-group-item list-group-item-success">
+              <h5>FILTRO DE BÚSQUEDA</h5>
               @if(Auth::admin()->check())
                 {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar sorteo','id'=>'nombre_sorteo', 'aria-describedby' => 'sizing-addon1'])!!}
               @elseif(Auth::user()->check() || !Auth::user()->check())
@@ -58,8 +58,8 @@
           </div>
 
           <div class="list-group">
-            <div class="list-group-item-full-header">
-              <h6>HISTORIAL DE TICKETS</h6>
+            <div class="list-group-item list-group-item-success">
+              <h5>HISTORIAL DE TICKETS</h5>
             </div>
             <div class="list-group-item">
             </div>
@@ -72,7 +72,7 @@
           </div>
         </div><!-- fin del col md 4 -->
         <div class="col-md-8 col-sm-12 col-xs-12">
-          <div class="panel panel-default">
+          <div class="panel-formato-yavu panel-default">
             <div class="panel-body">
               @if(Auth::admin()->check())
                 @include('sorteos.forms.vistaListaAdmin')

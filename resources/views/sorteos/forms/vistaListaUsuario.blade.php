@@ -26,13 +26,28 @@
 								<span class="MisTicketsUsados" id="{!! $sorteo->id !!}"></span>
 							</div>
 
-							<div align="center" class="col-md-6 col-sm-3 col-xs-3">
+							<div align="center" class="col-md-6 col-sm-6 col-xs-6">
 								<span class="glyphicon glyphicon-time"></span>
 								<span class="" id="{!! $sorteo->id !!}">00:00:00</span>
 							</div>
 
 						</div>
 					</div>
+
+					<div class="row">
+						<div align="center" class="col-md-3 col-sm-3 col-xs-3">
+							<small>Tickets en juego</small>
+						</div>
+
+						<div align="center" class="col-md-3 col-sm-3 col-xs-3">
+							<small>Tickets apostados</small>
+						</div>
+
+						<div align="center" class="col-md-6 col-sm-6 col-xs-6">
+							<small>Tiempo restante</small>
+						</div>
+					</div>
+
 					<div class="semi-amplio">
 						<button class="btn btn-success btn-md UsarTicket" value="{!! $sorteo->id !!}" type="button"   style="display: none; width: 100%;" data-dismiss="modal">Participar / Usar ticket</button>
 					</div>

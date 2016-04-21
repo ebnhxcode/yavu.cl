@@ -72,7 +72,13 @@ class SorteoController extends Controller{
   }
   public function CargarDetallesSorteo($sorteo_id){
     $this->participantes = ParticipanteSorteo::where('sorteo_id', $sorteo_id)->get();
-    return response()->json($this->participantes);
+
+    $OpcionesParticipantes = [];
+    foreach($this->participantes as $participante){
+      array_push($OpcionesParticipantes, $participante->id);
+    }
+    
+    return response()->json($OpcionesParticipantes);
   }
   public function ContarTicketsEnSorteo($id){
     return response()->json(Sorteo::find($id)->participante_sorteos);
@@ -126,8 +132,11 @@ class SorteoController extends Controller{
 //    dd($ArraySeleccionados[0]);
     foreach ($ArraySeleccionados as $key) {
       $this->existe = Winner::where('participante_sorteo_id', $key);
+
       $this->sorteado = ParticipanteSorteo::find($key)->first();
+
       $this->ganador = User::where('id', $this->sorteado->id)->get();
+
       if($this->ganador[0]){
         $this->registrar_ganador = new Winner(['user_id' => $this->sorteado->user_id, 'sorteo_id' => $this->sorteado->sorteo_id,'participante_sorteo_id' => $key,'nombre' => $this->ganador[0]->nombre,'apellido' => $this->ganador[0]->apellido]);
         $this->registrar_ganador->save();
@@ -141,12 +150,11 @@ class SorteoController extends Controller{
   }
   public function show($id){
     $winners = $this->sorteo->winners()->get();
-    if($winners==null){
-      return view('sorteos.show', ['sorteo' => $this->sorteo]);
-    }else{
+    if(count($winners)>0){
       return view('sorteos.show', ['sorteo' => $this->sorteo], ['winners' => $this->sorteo->winners()->get()]);
+    }else{
+      return view('sorteos.show', ['sorteo' => $this->sorteo]);
     }
-
 
   }
   public function store(Request $request){

@@ -4,7 +4,9 @@
 	<div id="contentMiddle">
 		@include('alerts.alertFields')
     @include('sorteos.forms.modalTerminosCondicionesSorteo')
-		<h4>Solicitar Sorteo </h4>
+    <div class="" style="font-size: 4em;">
+      <img id="img" width="8%" src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}"/><span >Sorteos <span class="requerido">\</span> Crear nuevo</span>
+    </div>
 		<div class="row">
 			{!!Form::open(['route'=>'sorteos.store', 'method'=>'POST', 'files' => true, 'id' => 'FormSorteo'  ])!!}
 			@include('sorteos.forms.fieldsSorteo')
@@ -15,8 +17,8 @@
 					</div>
 					<div class="list-group-item">
 						<div class="form-group has-feedback has-feedback-left">
-							{!! Form::checkbox('name', 'acepta', true, ['id' => 'AceptaTerminos']) !!} Aceptar <a href="#!" data-toggle="modal" data-target="#myModal" class="btn-link">términos y condiciones</a>
-							{!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success', 'style'=>'width:100%;', 'id' => 'Registrar' ])!!}
+							{!! Form::checkbox('name', 'acepta', false, ['id' => 'AceptaTerminos']) !!} Aceptar <a href="#!" data-toggle="modal" data-target="#myModal" class="btn-link">términos y condiciones</a>
+							{!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success', 'style'=>'width:100%;', 'id' => 'Registrar' , 'disabled'])!!}
 							{!!Form::close()!!}
 						</div>
 					</div>

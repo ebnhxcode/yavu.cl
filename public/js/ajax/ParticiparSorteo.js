@@ -69,6 +69,9 @@ $(document).ready(function(){
 				if(data.length > 3){
 					$("#ModalGanadorSorteo").modal('show');
 					var inicio, fin;
+
+
+
 					$(data).each(function(key, index){
 						if(key === 0){
 							inicio = index.id;
@@ -77,6 +80,7 @@ $(document).ready(function(){
 						}
 						return true;
 					});
+
 					var tiempo = 100000;
 					var t = 0;
 					var Ganador = 0;
@@ -84,7 +88,9 @@ $(document).ready(function(){
 
 
 					console.log(GanadorFinal);
+
 					RegistrarParticipanteGanador(JSON.stringify(GanadorFinal));
+					
 					var EjecucionSorteo = setInterval(function(){
 						Ganador = aleatorio(inicio, fin);
 						$("#Detalles").text("Número de ticket: "+Ganador);

@@ -75,13 +75,14 @@ $(document).ready(function(){
 					}
 					$("#EstadoEmpresa").append(
 						'<div>'+
-							'<div class="list-group-item-full-header">'
-								+'<div class="panel panel-success">'
-									+'<div class="panel-heading">'
-									+'<a class="btn-link" href="/empresa/'+value.nombre+'">'+"<img class='media-object' src='"+ImagenPerfil+"' data-holder-rendered='true' style='width: 32px; height: 32px; border: 1px solid #73AD21;'/></a>"
-									+'&nbsp;<strong><a class="btn-link" href="/empresa/'+value.nombre+'">'+value.nombre+'</a></strong></div>'
-									+'<div class="list-group">'
-										+'<div class="list-group-item">'
+							'<div class="list-group">'
+
+										+'<div class="list-group-item list-group-item-success">'
+											+'<a class="btn-link" href="/empresa/'+value.nombre+'">'+"<img class='media-object' src='"+ImagenPerfil+"' data-holder-rendered='true' style='width: 32px; height: 32px; border: 1px solid #73AD21;'/></a>"
+											+'&nbsp;<strong><a class="btn-link" href="/empresa/'+value.nombre+'">'+value.nombre+'</a></strong>'
+										+'</div>'
+
+										+'<div class="list-group-item ">'
 											+'<small>Estado de la empresa</small> : '
 											+'<span style="float:right;" class="label label-success">'
 												+'<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>'
@@ -99,8 +100,7 @@ $(document).ready(function(){
 											+"<a style='float:right;' class='btn-xs btn-primary btn-sm' href='empresa/"+value.nombre+"/'>Perfil</a>"
 										+'</div>'
 
-									+'</div>'
-								+'</div>'
+
 							+'</div>'
 						+'</div>'
 					);					
