@@ -51,17 +51,14 @@
                   <div class="list-group-item-full-header">
                     LISTA DE SORTEADOS
                   </div>
-                  @if(isset($winners))
+
+                    {!! $winners !!}
                     <div class="list-group-item-danger">
-                      1°# : <span id="primero">{!! $winners[0]->nombre.' '.$winners[0]->apellido !!}</span>
                     </div>
                     <div class="list-group-item-danger">
-                      2°# : <span id="segundo">{!! $winners[1]->nombre.' '.$winners[1]->apellido !!}</span>
                     </div>
                     <div class="list-group-item-success">
-                      3°# : <span id="tercero">{!! $winners[2]->nombre.' '.$winners[2]->apellido !!}</span>
                     </div>
-                  @endif
 
                 </div>
 

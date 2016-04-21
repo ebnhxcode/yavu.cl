@@ -137,8 +137,10 @@ $(document).ready(function(){
 			console.log(res);
 			if(res>0){
 				$(".UsarTicket").removeAttr('style');
+				$(".UsarTicket").css({width:'100%'});
 			}else{
 				$(".UsarTicket").fadeOut(100);
+				$(".UsarTicket").css({width:'100%'});
 			}
 		});
 		return true;

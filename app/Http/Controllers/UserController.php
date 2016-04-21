@@ -167,10 +167,10 @@ class UserController extends Controller{
     if(isset($this->user)){
       return view('usuarios.profile');
     }
-    $this->user = User::where('validacion', $codigo)->first();
-    if($this->user){
-      $this->user->estado = 'Activo';
-      $this->user->save();
+    $user = User::where('validacion', $codigo)->first();
+    if($user){
+      $user->estado = 'Activo';
+      $user->save();
       Session::flash('message', 'Su cuenta ha sido verificada. Disfrute.');
       return Redirect::to('/login');
     }

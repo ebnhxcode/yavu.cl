@@ -3,10 +3,6 @@ $(document).ready(function(){
 	var Ejecutandose = true;
 /*DECLARACIÓN DE VARIABLES GLOBALES*/
 
-	setInterval(function(){
-		ContarTicketsEnSorteos;
-	}, 3000);
-
 /*MÉTODOS CONSTRUCTORES*/
 	VerificarTickets();
 	var formatNumber = {
@@ -58,7 +54,6 @@ $(document).ready(function(){
 		VerificarTickets();
 		ContarTickets();
 		ContarNotificaciones();
-		//ContarTicketsEnSorteos();
 		return true;
 	});
 /*SELECTORES*/
@@ -188,11 +183,12 @@ $(document).ready(function(){
 
 	function ContarTicketsEnSorteos(){
 		var Tickets = [];
-		$(".TicketsEnSorteo").each(function(){
+		var ctes = $(".TicketsEnSorteo");
+		ctes.each(function(){
 			var CantidadTicketsPorSorteo = $(this);
-			//var CantidadTicketsUsados =
 			var CantidadActual = $(this).attr('value');
 			CantidadActual = CantidadActual | 0;
+			var CantidadTicketsUsados = 0;
 			var route = "http://localhost:8000/contarticketsensorteo/"+$(this).attr('id');
 			$.ajax({
 				url: route,
@@ -210,17 +206,60 @@ $(document).ready(function(){
 					});
 					CantidadTicketsPorSorteo.attr('value', data.length);
 					if(CantidadActual < data.length){
-						CantidadTicketsPorSorteo.fadeOut(function(){
-							CantidadTicketsPorSorteo.text(data.length).fadeIn(50);// + "\n (Haz usado " + j + " tickets para este sorteo)").fadeIn(50);
+						CantidadTicketsPorSorteo.fadeOut(function() {
+							CantidadTicketsPorSorteo.text(data.length).fadeIn(50); // + "\n (Haz usado " + j + " tickets para este sorteo)").fadeIn(50);
+
 						});
 					}else{
 						if(data.length > 0){
-							CantidadTicketsPorSorteo.text(data.length).fadeIn(50);
-							$(".CantidadTicketsUsados").text(j);
-							// + "\n (Haz usado " + j + " tickets para este sorteo)");
+							CantidadTicketsPorSorteo.text(data.length).fadeIn(50); // + "\n (Haz usado " + j + " tickets para este sorteo)");
 						}else{
 							CantidadTicketsPorSorteo.text(data.length);
-							$(".CantidadTicketsUsados").text(j);
+
+						}
+					}
+				}
+			});
+		});
+		return true;
+	}
+
+	function ContarMisTicketsUsados(){
+		var mtu = $('.MisTicketsUsados');
+
+		mtu.each(function(){
+			var MisTicketsUsados = $(this);
+
+			var CantidadActual = $(this).attr('value');
+			CantidadActual = CantidadActual | 0;
+			var route = "http://localhost:8000/contarticketsensorteo/"+$(this).attr('id');
+			$.ajax({
+				url: route,
+				type: 'GET',
+				dataType: 'json',
+				cache: false,
+				async: true,
+				success:function(data){
+					var j = 0;
+					$(data).each(function(key, index){
+						var user_id = $("#user_id");
+						if(index.user_id === user_id.val()){
+							j += 1;
+						}
+					});
+
+					MisTicketsUsados.attr('value', j);
+					if(CantidadActual < j){
+						MisTicketsUsados.fadeOut(function() {
+							MisTicketsUsados.text(j).fadeIn(50); // + "\n (Haz usado " + j + " tickets para este sorteo)").fadeIn(50);
+
+						});
+					}else{
+						if(data.length > 0){
+							MisTicketsUsados.text(j).fadeIn(50); // + "\n (Haz usado " + j + " tickets para este sorteo)");
+						}else{
+							MisTicketsUsados.text(j);
+
 						}
 					}
 				}
@@ -244,7 +283,7 @@ $(document).ready(function(){
 				sorteo_id: sorteo_id
 			},
 			success:function(){
-
+				$(".UsarTicket").css({width:'100%'});
 			}
 		});
 		return true;
@@ -271,6 +310,7 @@ $(document).ready(function(){
 		$.get(route, function(res){
 			if(res>0){
 				$(".UsarTicket").removeAttr('style');
+				$(".UsarTicket").css({width:'100%'});
 			}else{
 				$(".UsarTicket").fadeOut(100);
 				$(".UsarTicket").css({width:'100%'});//.addClass({width:'100%'});

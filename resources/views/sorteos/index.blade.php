@@ -12,7 +12,7 @@
     @include('alerts.warningMessage')
 
     <div class="" style="font-size: 4em;">
-      <img width="8%" src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}"/><span >Sorteos</span>
+      <img id="img" width="8%" src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}"/><span >Sorteos</span>
     </div>
       <div class="row">
         <div class="col-md-4 col-sm-12 col-xs-12">

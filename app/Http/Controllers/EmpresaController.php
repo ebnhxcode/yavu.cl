@@ -34,7 +34,7 @@ class EmpresaController extends Controller{
       if(!$empresa){
         return view('empresas.create');
       }else{
-        Session::flash('message-error', 'Usted ya tiene registrada una empresa');
+        Session::flash('message-info', 'Usted ya tiene registrada una empresa');
         Session::flash('message-warning', 'Si desea registrar una nueva empresa comuniquese con el administrador');
         return Redirect::to('/dashboard');
       }

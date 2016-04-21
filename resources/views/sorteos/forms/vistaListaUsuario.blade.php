@@ -14,34 +14,34 @@
 
 					<div class="amplio">
 						<div style="padding-left: 8px;padding-right: 8px;" class="row">
-							<div align="center" class="col-md-4 col-sm-4 col-xs-4">
+
+							<div align="center" class="col-md-3 col-sm-3 col-xs-3">
 								<span class="glyphicon glyphicon-user"></span>
-								<span class="">
-									<span class="TicketsEnSorteo" id="{!! $sorteo->id !!}"></span>
-									<input type="hidden" name="_token" value="{!! csrf_token() !!}">
-								</span>
+								<span class="TicketsEnSorteo" id="{!! $sorteo->id !!}"></span>
+								<input type="hidden" name="_token" value="{!! csrf_token() !!}">
 							</div>
 
-
-
-							<div align="center" class="col-md-4 col-sm-4 col-xs-4">
-								<div class="well">
-									<span class="glyphicon glyphicon-tag"></span>
-									<span class="CantidadTicketsUsados"></span>
-								</div>
+							<div align="center" class="col-md-3 col-sm-3 col-xs-3">
+								<span class="glyphicon glyphicon-tag"></span>
+								<span class="MisTicketsUsados" id="{!! $sorteo->id !!}"></span>
 							</div>
 
-							<div align="center" class="col-md-4 col-sm-4 col-xs-4">
-								<div class="well">
-									<span class="glyphicon glyphicon-user"></span>
-									<span class=""></span>
-								</div>
+							<div align="center" class="col-md-6 col-sm-3 col-xs-3">
+								<span class="glyphicon glyphicon-time"></span>
+								<span class="" id="{!! $sorteo->id !!}">00:00:00</span>
 							</div>
 
 						</div>
 					</div>
 					<div class="semi-amplio">
 						<button class="btn btn-success btn-md UsarTicket" value="{!! $sorteo->id !!}" type="button"   style="display: none; width: 100%;" data-dismiss="modal">Participar / Usar ticket</button>
+					</div>
+
+					<div class="progress">
+						<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+							<span class="sr-only"></span>
+							<span class="seconds">Actualizando...</span>
+						</div>
 					</div>
 
 				</div>
@@ -60,11 +60,6 @@
 					<a id='participar' href="{!! URL::to('#!') !!}" class="btn btn-primary participar btn-sm" data-toggle="modal" data-target="#myModal" value="{!! $sorteo->id !!}" role="button">Comprar</a>
 					-->
 					{!!link_to_route('sorteos.show', $title = 'Detalles', $parameters = $sorteo->id, $attributes = ['class'=>'btn btn-primary btn-sm'])!!}
-
-
-
-
-
 
 				@else
 					<a href="{!! URL::to('usuarios/create') !!}" class="btn btn-primary btn-sm" role="button">Participar!</a>

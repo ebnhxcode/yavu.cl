@@ -123,7 +123,7 @@
 							<h6>ACCESOS RÁPIDOS</h6>
 						</div>
 						<a class="list-group-item list-group-item-warning" href="{!! URL::to('/feeds') !!}">Ir a publicaciones</a>
-						<a class="list-group-item list-group-item-info" href="{!! route('usuarios_edit_path', $user->id) !!}">Editar</a>
+						<a class="list-group-item list-group-item-info" href="{!! route('usuarios_edit_path', Auth::user()->get()->id) !!}">Editar</a>
 						<a href="{!!URL::to('dashboard')!!}" class="list-group-item list-group-item-warning">Volver a <strong>Inicio</strong></a>
 					</div>
 					<div class="list-group">

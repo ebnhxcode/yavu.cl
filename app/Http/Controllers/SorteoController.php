@@ -141,7 +141,13 @@ class SorteoController extends Controller{
   }
   public function show($id){
     $winners = $this->sorteo->winners()->get();
-    return view('sorteos.show', ['sorteo' => $this->sorteo], ['winners' => $this->sorteo->winners()->get()]);  
+    if($winners==null){
+      return view('sorteos.show', ['sorteo' => $this->sorteo]);
+    }else{
+      return view('sorteos.show', ['sorteo' => $this->sorteo], ['winners' => $this->sorteo->winners()->get()]);
+    }
+
+
   }
   public function store(Request $request){
       if(Sorteo::create($request->all())){

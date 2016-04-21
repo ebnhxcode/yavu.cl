@@ -141,7 +141,7 @@
               <div class="list-group-item">
                 Últimas novedades en yavu
               </div>
-                {!!link_to_route('usuarios.edit', $title = 'Actualizar mis datos', $parameters = Auth::user()->get()->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}
+                <a class="list-group-item list-group-item-info" href="{!! route('usuarios_edit_path', Auth::user()->get()->id) !!}">Editar perfil</a>
               @if(Auth::user()->get()->id == $e->user_id)
                 {!!link_to_route('empresas.edit', $title = 'Modificar datos de mi empresa', $parameters = $e->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}
               @endif

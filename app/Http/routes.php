@@ -4,7 +4,7 @@ Route::get('breweries', ['middleware' => 'cors', function(){return \Response::js
 Route::get('usuarios', 'UserController@index');
 Route::get('usuarios/create', ['uses' => 'UserController@create', 'as' => 'usuarios_create_path',]);
 Route::post('usuarios/create', ['uses' => 'UserController@store', 'as' => 'usuarios_store_path',]);
-
+Route::get('verificarusuario/{codigo}', 'UserController@VerificarUsuario');
 Route::get('logout', 'LogController@logout');
 
 
@@ -30,7 +30,6 @@ Route::group(['middleware' => 'user'], function(){
   Route::resource('dashboard', 'UserController@dashboard');
   Route::resource('profile', 'UserController@profile');
   Route::get('infoempresas/{user_id}','UserController@InfoEmpresas')->where('user_id', '[0-9]+');
-  Route::get('verificarusuario/{codigo}', 'UserController@VerificarUsuario')->where('codigo', '[0-9]+');
 
   Route::get('usuarios/{id}/edit', ['uses' => 'UserController@edit', 'as' => 'usuarios_edit_path',])->where('id', '[0-9]+');
   Route::put('usuarios/{id}/edit', ['uses' => 'UserController@update','as' => 'usuarios_put_path',])->where('id', '[0-9]+');
