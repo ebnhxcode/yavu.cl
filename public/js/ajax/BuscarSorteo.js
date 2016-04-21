@@ -91,7 +91,7 @@ $(document).ready(function(){
 
 /*FUNCIONES Y PROCEDIMIENTOS*/
 	function BuscarSorteo(Busqueda){
-		var route = "http://localhost:8000/buscarsorteo/"+Busqueda+"";
+		var route = "http://yavu.cl/buscarsorteo/"+Busqueda+"";
 		$("#SorteoList").text("");
 		$.get(route, function(res){
 			$("#SorteoList").append(
@@ -129,7 +129,7 @@ $(document).ready(function(){
 			var CantidadTicketsPorSorteo = $(this);
 			var CantidadActual = $(this).attr('value');
 			CantidadActual = CantidadActual | 0;
-			var route = "http://localhost:8000/contarticketsensorteo/"+$(this).attr('id');
+			var route = "http://yavu.cl/contarticketsensorteo/"+$(this).attr('id');
 			$.ajax({
 				url: route,
 				type: 'GET',
@@ -172,7 +172,7 @@ $(document).ready(function(){
 
 			var CantidadActual = $(this).attr('value');
 			CantidadActual = CantidadActual | 0;
-			var route = "http://localhost:8000/contarticketsensorteo/"+$(this).attr('id');
+			var route = "http://yavu.cl/contarticketsensorteo/"+$(this).attr('id');
 			$.ajax({
 				url: route,
 				type: 'GET',
@@ -209,7 +209,7 @@ $(document).ready(function(){
 	}
 
 	function BuscarSorteoThumb(Busqueda){
-		var route = "http://localhost:8000/buscarsorteo/"+Busqueda+"";
+		var route = "http://yavu.cl/buscarsorteo/"+Busqueda+"";
 		$("#SorteoListThumb").text("");
 		$.get(route, function(res){
 			var ImagenSorteo = "";
@@ -242,7 +242,7 @@ $(document).ready(function(){
 
 	function ContarParticipantes(){
 		var sorteo_id = $("#sorteo_id").val();
-		var route = "http://localhost:8000/contarparticipantes/"+sorteo_id;
+		var route = "http://yavu.cl/contarparticipantes/"+sorteo_id;
 		$.ajax({
 			url: route,
 			type: 'GET',

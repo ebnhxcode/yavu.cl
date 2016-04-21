@@ -7,7 +7,7 @@
       <input id="user_id" value="{!! Auth::user()->get()->id !!}" type="hidden" />
       {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar publicaciones','id'=>'feedsearch', 'aria-describedby' => 'sizing-addon1'])!!}
     </div>
-    
+
     <div class="list-group-item">
       Categorias
     </div>
