@@ -129,13 +129,13 @@ class SorteoController extends Controller{
     $ganador = str_replace(']', '', $ganador);
     $ArraySeleccionados = explode(',', $ganador);  
 
-//    dd($ArraySeleccionados[0]);
+    //dd($ArraySeleccionados);
     foreach ($ArraySeleccionados as $key) {
       $this->existe = Winner::where('participante_sorteo_id', $key);
 
-      $this->sorteado = ParticipanteSorteo::find($key)->first();
+      $this->sorteado = ParticipanteSorteo::where('id', $key)->first();
 
-      $this->ganador = User::where('id', $this->sorteado->id)->get();
+      $this->ganador = User::where('id', $this->sorteado->user_id)->get();
 
       if($this->ganador[0]){
         $this->registrar_ganador = new Winner(['user_id' => $this->sorteado->user_id, 'sorteo_id' => $this->sorteado->sorteo_id,'participante_sorteo_id' => $key,'nombre' => $this->ganador[0]->nombre,'apellido' => $this->ganador[0]->apellido]);

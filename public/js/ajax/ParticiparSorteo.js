@@ -68,32 +68,19 @@ $(document).ready(function(){
 			success:function(data){
 				if(data.length > 3){
 					$("#ModalGanadorSorteo").modal('show');
-					var inicio, fin;
-
-
-
-					$(data).each(function(key, index){
-						if(key === 0){
-							inicio = index.id;
-						}else if(data.length === key + 1){
-							fin = index.id;
-						}
-						return true;
-					});
-
 					var tiempo = 100000;
 					var t = 0;
-					var Ganador = 0;
-					var GanadorFinal = [aleatorio(inicio, fin),aleatorio(inicio, fin),aleatorio(inicio, fin)];
-
-
-					console.log(GanadorFinal);
-
+					var GanadorFinal = [];
+					do {
+						var rand = data[aleatorio(0, data.length)];
+						console.log('Random -> '+rand);
+						console.log(GanadorFinal.indexOf(rand));
+						if(GanadorFinal.indexOf(rand) < 0 && rand !== null){
+							GanadorFinal.push(rand);
+						}
+					} while (GanadorFinal.length < 3);
 					RegistrarParticipanteGanador(JSON.stringify(GanadorFinal));
-					
 					var EjecucionSorteo = setInterval(function(){
-						Ganador = aleatorio(inicio, fin);
-						$("#Detalles").text("Número de ticket: "+Ganador);
 						t = tiempo.toString();
 						t = t.substring(0,1);
 						$("#Tiempo").text("¡Empezó el sorteo! (Finaliza en : 	"+t+")");
@@ -102,7 +89,6 @@ $(document).ready(function(){
 							clearInterval(EjecucionSorteo);
 							$("#Tiempo").text("¡¡¡ TIEMPO !!!");
 							Ejecutandose = true;		
-							//MostrarGanador(GanadorFinal);
 						}
 						return true;
 					}, 5);
