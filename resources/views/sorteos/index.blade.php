@@ -1,8 +1,7 @@
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/BuscarSorteo.js')!!}
 {!!Html::script('js/ajax/ParticiparSorteo.js')!!}
-
-@extends('layouts.front') 
+@extends('layouts.front')
 @section('content')
 <div class="jumbotron">
   <div id="contentMiddle">

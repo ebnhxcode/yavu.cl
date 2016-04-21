@@ -1,11 +1,17 @@
 <div class="col-md-4 col-sm-12 col-xs-12">
   <div id="sticky" class="list-group">
     <div class="list-group-item list-group-item-success">
-      <h5>FILTRO DE BÚSQUEDA</h5>
+      <h5>FILTROS DE BÚSQUEDA</h5>
+    </div>
+    <div class="list-group-item">
       <input id="user_id" value="{!! Auth::user()->get()->id !!}" type="hidden" />
       {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar publicaciones','id'=>'feedsearch', 'aria-describedby' => 'sizing-addon1'])!!}
-      <br />
     </div>
+    
+    <div class="list-group-item">
+      Categorias
+    </div>
+
     <div class="list-group-item">
       <span class="text-danger" id="Mensaje"></span>
       <a class="btn-link" href="{!! URL::to("/sorteos/create") !!}">
@@ -30,6 +36,8 @@
       <br>
 
     </div>
+
+
   </div>
 </div><!-- fin del col md 4 -->
 <script>

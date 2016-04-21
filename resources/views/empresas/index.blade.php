@@ -1,7 +1,6 @@
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/BuscarEmpresa.js')!!}
 @extends('layouts.front')	
-
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
@@ -9,7 +8,7 @@
 		@include('alerts.errorsMessage')
 		@include('alerts.successMessage')
 		@include('alerts.warningMessage')
-				<div class="" style="font-size: 4em;">
+		<div class="" style="font-size: 4em;">
 			<img width="8%" src= "{!!URL::to('img/dash/ico_empresa.png')!!}"/><span >Empresas</span>
 		</div>
 	
@@ -17,12 +16,15 @@
 			<span class="glyphicon glyphicon-plus"></span>
 			Crear nueva empresa
 		</a>
+
     <span class="btn btn-success btn-sm" style="" href="#!" id="ComprarMasTickets">
       <span class="glyphicon glyphicon-plus"></span>
       Comprar más tickets
     </span>
+
 		<div class="panel panel-default">
 			<div class="panel-body">
+
 				<div class="form-group">
   				@if(Auth::admin()->check())
 			      <div class="input-group input-group-lg">
@@ -85,11 +87,13 @@
 								</div>
 							</div>
 						@endforeach
-					</div>
+					</div> <!-- /Empresa list thumb -->
 					{!!$empresas->render()!!}
 				@endif
+
 			</div><!-- /panel body -->
 		</div><!-- /panel panel-default -->
+
 	</div><!-- /contentMiddle -->
 </div><!-- /jumbotron -->
 

@@ -13,7 +13,8 @@
     @include('alerts.alertFields')
     @include('alerts.errorsMessage')
     @include('alerts.successMessage')
-    @include('alerts.warningMessage') 
+    @include('alerts.warningMessage')
+
 		@include('feeds.forms.panelLeft')
 
 	<input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
