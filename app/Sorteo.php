@@ -14,6 +14,12 @@ class Sorteo extends Model{
     $name = Carbon::now()->second.$imagen_sorteo->getClientOriginalName();
     \Storage::disk('local')->put($name, \File::get($imagen_sorteo));
   }
+/*al final no se llego a nada pero dejo el codigo por si acaso
+  public function setFechaInicioSorteoAttribute($fecha_inicio_sorteo){
+    $date = Carbon::createFromDate(1970,19,12);
+    $this->attributes['fecha_inicio_sorteo'] = ;
+  }
+*/
   public function participante_sorteos(){
     return $this->hasMany('yavu\ParticipanteSorteo', 'sorteo_id');
   }

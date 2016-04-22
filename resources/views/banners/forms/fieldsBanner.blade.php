@@ -24,7 +24,7 @@
 
         <div class="form-group has-feedback has-feedback-left">
 				{!!Form::label('Descripción a publicitar:')!!}
-				{!!Form::textarea('comentario_banner',null,['class'=>'form-control','maxlength'=>'500','placeholder'=>'Ingrese la descripcion del sorteo'])!!}
+				{!!Form::textarea('comentario_banner',null,['class'=>'form-control-text','maxlength'=>'500','placeholder'=>'Ingrese la descripcion del sorteo'])!!}
       </div>
 
         	 <div class="form-group has-feedback has-feedback-left">

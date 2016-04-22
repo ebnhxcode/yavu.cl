@@ -8,7 +8,7 @@
 		@include('alerts.errorsMessage')
 		@include('alerts.successMessage')
 		@include('alerts.warningMessage')
-		<div class="" style="font-size: 4em;">
+		<div class="" style="font-size: 2em;">
 			<img width="8%" src= "{!!URL::to('img/dash/ico_empresa.png')!!}"/><span >Empresas</span>
 		</div>
 	

@@ -10,7 +10,7 @@
 			</div>
 			<div class="form-group has-feedback has-feedback-left">
 				{!!Form::label('Descripción:')!!}
-				{!!Form::textarea('descripcion_interes',null,['class'=>'form-control','placeholder'=>'Ingrese descripcion del interes','rows' => '5'])!!}
+				{!!Form::textarea('descripcion_interes',null,['class'=>'form-control-textarea','placeholder'=>'Ingrese descripcion del interes','rows' => '5'])!!}
 			</div>			
 
 		</div>

@@ -11,7 +11,14 @@ $(document).ready(function(){
 
   ContarTicketsEnSorteos();
   ContarMisTicketsUsados();
-  var Limitador = 0;
+
+	$('.timer').startTimer({
+		onComplete: function(element){
+			element.addClass('is-complete');
+		}
+	});
+
+	var Limitador = 0;
   setInterval(function () {
     Limitador += 10;
     if(Limitador >= 500){

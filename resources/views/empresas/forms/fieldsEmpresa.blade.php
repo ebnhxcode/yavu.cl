@@ -63,7 +63,7 @@
 			</div>	
 			<div class="form-group has-feedback has-feedback-left">
 				(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Descripción:')!!}
-				{!!Form::textarea('descripcion',null,['class'=>'form-control','placeholder'=>'Agregue una breve descripción de su empresa', 'maxlength'=>'999', 'style'=>'resize:none;', 'rows'=>'5', 'id'=>'descripción'])!!}
+				{!!Form::textarea('descripcion',null,['class'=>'form-control-textarea','placeholder'=>'Agregue una breve descripción de su empresa', 'maxlength'=>'999', 'rows'=>'5', 'id'=>'descripción'])!!}
 			</div>
 
 		</div>

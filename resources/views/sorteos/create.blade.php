@@ -4,7 +4,7 @@
 	<div id="contentMiddle">
 		@include('alerts.alertFields')
     @include('sorteos.forms.modalTerminosCondicionesSorteo')
-    <div class="" style="font-size: 4em;">
+    <div class="" style="font-size: 3em;">
       <img id="img" width="8%" src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}"/><span >Sorteos <span class="requerido">\</span> Crear nuevo</span>
     </div>
 		<div class="row">

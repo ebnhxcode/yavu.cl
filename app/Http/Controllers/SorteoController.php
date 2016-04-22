@@ -116,8 +116,10 @@ class SorteoController extends Controller{
       //return $this->user;
     }
   public function index(){
-    $sorteos = DB::table('sorteos')->paginate(10);
-    return view('sorteos.index', compact('sorteos'));
+    $sorteos = DB::table('sorteos')->paginate(5);
+
+    $this->registro_tickets = $this->user->registro_tickets()->orderBy('created_at', 'desc')->limit('20')->get();
+    return view('sorteos.index', compact('sorteos'), ['rtickets' => $this->registro_tickets]);
   }
   public function MostrarGanador($ganador){
     $ganador = ParticipanteSorteo::find($ganador)->users;
@@ -149,8 +151,29 @@ class SorteoController extends Controller{
     return "true";
   }
   public function show($id){
+
+
     $winners = $this->sorteo->winners()->get();
     if(count($winners)>0){
+
+        /*
+        $date = new Carbon($this->sorteo->fecha_inicio_sorteo.' 21:00:00');
+        */
+
+        //$date2 = new Carbon($sorteo->fecha_inicio_sorteo);
+        //dd(strtotime($sorteo->fecha_inicio_sorteo));
+        //dd(strtotime($date).'/'.strtotime($date2).'/'.strtotime($date)-strtotime($date2));
+
+        /*
+        $this->sorteo->created_at = round((strtotime($date)-strtotime(Carbon::now())));
+        */
+
+        /*
+        dd(strtotime(Carbon::now())-strtotime($sorteo->created_at));
+        dd(Carbon::createFromTimeStamp(strtotime($sorteo->created_at))->diffForHumans());
+        dd(Carbon::now().$sorteo->created_at);
+        */
+
       return view('sorteos.show', ['sorteo' => $this->sorteo], ['winners' => $this->sorteo->winners()->get()]);
     }else{
       return view('sorteos.show', ['sorteo' => $this->sorteo]);

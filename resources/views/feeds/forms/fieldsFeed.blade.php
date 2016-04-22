@@ -1,12 +1,9 @@
 <div class="col-sm-8">
-	<div class="list-group" >
-		<div class="list-group-item">
-			<h4>Datos principales</h4>
-		</div>		
+	<div class="list-group">
 		<div class="list-group-item">	
 			<div class="form-group has-feedback has-feedback-left">
 				{!!Form::label('Descripción:')!!}
-				{!!Form::textarea('descripcion',null,['class'=>'form-control','placeholder'=>'Ingrese el contenido','rows' => '3'])!!}
+				{!!Form::textarea('descripcion',null,['class'=>'form-control-textarea','placeholder'=>'Ingrese el contenido','rows' => '3'])!!}
 			</div>			
 
 		</div>

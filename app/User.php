@@ -47,6 +47,9 @@ class User extends Model implements AuthenticatableContract,
 	public function registro_coins(){
 		return $this->hasMany(RegistroCoin::class);
 	}
+	public function registro_tickets(){
+		return $this->hasMany(Ticket::class);
+	}
 	public function pops(){
 		return $this->hasMany(Pop::class);
 	}

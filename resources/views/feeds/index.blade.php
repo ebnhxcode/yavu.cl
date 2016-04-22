@@ -5,7 +5,7 @@
 @section('content')
 <div class="jumbotron">
   <div id="contentMiddle">
-		<div class="" style="font-size: 4em;">
+		<div class="" style="font-size: 3em;">
 			<img width="8%" src= "{!!URL::to('img/dash/ico_pin03.png')!!}"/><span >Publicaciones</span>
 		</div>
     <div class="row">

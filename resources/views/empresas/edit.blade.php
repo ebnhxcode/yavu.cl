@@ -4,7 +4,9 @@
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		<h4>Informacion de : {!!$empresa->nombre!!}</h4>
+		<div class="" style="font-size: 2em;">
+			<img width="8%" src= "{!!URL::to('img/dash/ico_empresa.png')!!}"/><span>Empresas <span class="requerido">\</span> Informacion de : {!!$empresa->nombre!!}</span>
+		</div>
 		@include('alerts.alertFields')
 		@include('alerts.errorsMessage')
 		@include('alerts.successMessage')
