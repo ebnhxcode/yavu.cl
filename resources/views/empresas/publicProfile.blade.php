@@ -18,11 +18,7 @@
 			<div class="row" style="margin-top:-35px;">
 				<div class="col-sm-8">
 
-					<div class="list-group" >
-						<div class="list-group-item-full-header">
-							{!!Form::hidden('empresa', $e->nombre, ['id'=>'empresa'])!!}
-							<h6>{!! strtoupper("Perfil publico de: ".$e->nombre)!!}</h6>
-						</div>
+					<div class="list-group">
 						<div class="">
 							<div class="thumbnail">
                   <!-- Portada -->
@@ -32,33 +28,20 @@
 									<img id="ImagenPortada" src="/img/users/{!!$e->imagen_portada!!}" alt="...">
 								@endif
                   <!-- /Portada -->
-                  <!-- Perfil -->
-
-
 
 
                 <div class="caption">
-
-
                   @if(Auth::user()->check())
                     <div class="list-group">
+
+                      <div class="list-group-item-full-header">
+                          {!!Form::hidden('empresa', $e->nombre, ['id'=>'empresa'])!!}
+                          <h4>{!! strtoupper("".$e->nombre)!!}</h4>
+
                       <div class="list-group-item">
-                        <h6>DESCRIPCIÓN</h6>
+                          <span class="btn btn-primary btn-sm" id="seguir" value="{!! $e->id !!}" role="button">Seguir</span>
+                          <input type="text" class="btn btn-sm text-success" id="seguidores" size="10" disabled >
                       </div>
-                      <div class="list-group-item">
-                        {!! $e->descripcion !!}
-                      </div>
-                      <div class="list-group-item">
-                        <h6>DATOS</h6>
-                        Email : {!!$e->email!!}<br>
-                        Dirección : {!!$e->direccion!!}<br>
-                        Ciudad : {!!$e->ciudad!!}<br>
-                      </div>
-                    </div>
-                    <div class="list-group-item">
-                      <span class="btn btn-primary btn-sm" id="seguir" value="{!! $e->id !!}" role="button">Seguir</span>
-                      <input type="text" class="btn btn-sm text-success" id="seguidores" size="10" disabled >
-                    </div>
                     <p>
 
                     </p>
@@ -69,6 +52,23 @@
                     </p>
                     <small>Para seguir a esta empresa debes registrarte</small>
                   @endif
+                      </div>
+
+                       <div class="bs-callout bs-callout-default">
+                       <h4><span class="">Descripción</span></h4>
+                       <div class="list-group-item">
+                        <strong>{!! $e->descripcion !!}</strong>
+                      </div>
+                     </div>
+
+                      <div class="bs-callout bs-callout-default">
+                        <h4><span class="">Contacto</span></h4>
+                        <strong>Email : {!!$e->email!!}<br>
+                        Dirección : {!!$e->direccion!!}<br>
+                        Ciudad : {!!$e->ciudad!!}<br></strong>
+                      </div>
+                    </div>
+
 
                 </div>
               </div>
@@ -128,41 +128,49 @@
 				</div>
 				<div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
 
-
-
-
+          <div class="list-group">
+            <div class="list-group-item-full-header">
+                  @if($e->imagen_perfil === "")
+                  <img id="ImagenPerfil" src="/img/users/usuario_nuevo.png" class="center-block" >
+                @else
+                  <img id="ImagenPerfil" src="/img/users/{!!$e->imagen_perfil!!}" class="center-block" alt="...">
+                @endif
+            </div>    
+          </div>
 
           @if(Auth::user()->check())
+             <div class="list-group">
+              <div class="list-group-item-full-header">
+                <h3><span class="list-group-item list-group-item-success">Configuraciones</span></h3>
+                <hr>
+              <a href="{!! route('usuarios_edit_path', Auth::user()->get()->id) !!}"><h4><span class="label label-info">Editar Perfil de Usuario </span></h4></a>
+              <br>
+                            @if(Auth::user()->get()->id == $e->user_id)
+                <h4>{!!link_to_route('empresas.edit', $title = 'Editar Perfil de Empresa', $parameters = $e->id, $attributes = ['class'=>'label label-info'])!!}</h4>
+              @endif
+              
+              </div>
+            </div>
 
             <div class="list-group">
               <div class="list-group-item-full-header">
-                <h6>INFORMACIÓN</h6>
+                <h3><span class="list-group-item list-group-item-success">Accesos Rápidos</span></h3>
+                <HR>
               </div>
-              <div class="list-group-item">
-                Últimas novedades en yavu
-              </div>
-                <a class="list-group-item list-group-item-info" href="{!! route('usuarios_edit_path', Auth::user()->get()->id) !!}">Editar perfil</a>
-              @if(Auth::user()->get()->id == $e->user_id)
-                {!!link_to_route('empresas.edit', $title = 'Modificar datos de mi empresa', $parameters = $e->id, $attributes = ['class'=>'list-group-item list-group-item-info'])!!}
-              @endif
+              <a class="list-group-item" href="{!! URL::to('/feeds') !!}"><h4><span class="label label-info">Ir a Publicaciones</span></h4></a>
+              <a href="{!!URL::to('sorteos/create')!!}" class="list-group-item "><h4><span class="label label-info">Crear un Sorteo</span></h4></a>
+              <a href="{!!URL::to('dashboard')!!}" class="list-group-item "><h4><span class="label label-info">Volver a Inicio</span></h4></a>
             </div>
+
+            @if(Auth::user()->get()->id == $e->user_id)
 
             <div class="list-group">
               <div class="list-group-item">
-                <h6>ACCESOS RÁPIDOS</h6>
-              </div>
-              <a class="list-group-item list-group-item-warning" href="{!! URL::to('/feeds') !!}">Ir a publicaciones</a>
-              <a href="{!!URL::to('sorteos/create')!!}" class="list-group-item list-group-item-warning">Crear sorteo nuevo</a>
-              <a href="{!!URL::to('dashboard')!!}" class="list-group-item list-group-item-warning">Volver a <strong>Inicio</strong></a>
-            </div>
-
-            <div class="list-group">
-              <div class="list-group-item">
-                <h6>GRAFICOS</h6>
+                <h3><span class="list-group-item list-group-item-success">Graficos</span></h3>
                 <div class="wrapper">
                   <div class="counter col_fourth">
                     <i class="fa fa-code fa-2x"></i>
-                    <p class="count-text ">Visitas Al Perfil</p>
+                    <p class="count-text ">Visitas</p>
                     <h2 class="timer count-title" id="count-number" data-to="300" data-speed="1500"></h2>
                   </div>
                   <div class="counter col_fourth">
@@ -178,6 +186,8 @@
                 </div>
               </div>
             </div>
+            @endif
+
           @endif <!-- /AuthCheck -->
           <!-- gmaps -->
           <div class="list-group">
