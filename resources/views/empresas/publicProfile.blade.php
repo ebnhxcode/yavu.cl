@@ -28,7 +28,7 @@
 									<img id="ImagenPortada" src="/img/users/{!!$e->imagen_portada!!}" alt="...">
 								@endif
                   <!-- /Portada -->
-                  <!-- Perfil -->
+
 
                 <div class="caption">
                   @if(Auth::user()->check())
@@ -37,6 +37,21 @@
                       <div class="list-group-item-full-header">
                           {!!Form::hidden('empresa', $e->nombre, ['id'=>'empresa'])!!}
                           <h4>{!! strtoupper("".$e->nombre)!!}</h4>
+
+                      <div class="list-group-item">
+                          <span class="btn btn-primary btn-sm" id="seguir" value="{!! $e->id !!}" role="button">Seguir</span>
+                          <input type="text" class="btn btn-sm text-success" id="seguidores" size="10" disabled >
+                      </div>
+                    <p>
+
+                    </p>
+                  @else
+                    <p>
+                      <a href="{!! URL::to('/usuarios/create') !!}" class="btn btn-primary btn-sm" role="button">Seguir</a>
+                      <input type="text" class="btn btn-sm text-success" id="seguidores" size="10" disabled >
+                    </p>
+                    <small>Para seguir a esta empresa debes registrarte</small>
+                  @endif
                       </div>
 
                        <div class="bs-callout bs-callout-default">
@@ -53,20 +68,7 @@
                         Ciudad : {!!$e->ciudad!!}<br></strong>
                       </div>
                     </div>
-                    <div class="list-group-item">
-                      <span class="btn btn-primary btn-sm" id="seguir" value="{!! $e->id !!}" role="button">Seguir</span>
-                      <input type="text" class="btn btn-sm text-success" id="seguidores" size="10" disabled >
-                    </div>
-                    <p>
 
-                    </p>
-                  @else
-                    <p>
-                      <a href="{!! URL::to('/usuarios/create') !!}" class="btn btn-primary btn-sm" role="button">Seguir</a>
-                      <input type="text" class="btn btn-sm text-success" id="seguidores" size="10" disabled >
-                    </p>
-                    <small>Para seguir a esta empresa debes registrarte</small>
-                  @endif
 
                 </div>
               </div>
@@ -126,17 +128,27 @@
 				</div>
 				<div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
 
-          @if(Auth::user()->check())
+          <div class="list-group">
+            <div class="list-group-item-full-header">
+                  @if($e->imagen_perfil === "")
+                  <img id="ImagenPerfil" src="/img/users/usuario_nuevo.png" class="center-block" >
+                @else
+                  <img id="ImagenPerfil" src="/img/users/{!!$e->imagen_perfil!!}" class="center-block" alt="...">
+                @endif
+            </div>    
+          </div>
 
-            <div class="list-group">
+          @if(Auth::user()->check())
+             <div class="list-group">
               <div class="list-group-item-full-header">
                 <h3><span class="list-group-item list-group-item-success">Configuraciones</span></h3>
                 <hr>
-              @if(Auth::user()->get()->id == $e->user_id)
+              <a href="{!! route('usuarios_edit_path', Auth::user()->get()->id) !!}"><h4><span class="label label-info">Editar Perfil de Usuario </span></h4></a>
+              <br>
+                            @if(Auth::user()->get()->id == $e->user_id)
                 <h4>{!!link_to_route('empresas.edit', $title = 'Editar Perfil de Empresa', $parameters = $e->id, $attributes = ['class'=>'label label-info'])!!}</h4>
               @endif
-              <br>
-              <a href="{!! route('usuarios_edit_path', Auth::user()->get()->id) !!}"><h4><span class="label label-info">Editar Perfil de Usuario </span></h4></a>
+              
               </div>
             </div>
 
@@ -150,13 +162,15 @@
               <a href="{!!URL::to('dashboard')!!}" class="list-group-item "><h4><span class="label label-info">Volver a Inicio</span></h4></a>
             </div>
 
+            @if(Auth::user()->get()->id == $e->user_id)
+
             <div class="list-group">
               <div class="list-group-item">
                 <h3><span class="list-group-item list-group-item-success">Graficos</span></h3>
                 <div class="wrapper">
                   <div class="counter col_fourth">
                     <i class="fa fa-code fa-2x"></i>
-                    <p class="count-text ">Visitas Al Perfil</p>
+                    <p class="count-text ">Visitas</p>
                     <h2 class="timer count-title" id="count-number" data-to="300" data-speed="1500"></h2>
                   </div>
                   <div class="counter col_fourth">
@@ -172,6 +186,8 @@
                 </div>
               </div>
             </div>
+            @endif
+
           @endif <!-- /AuthCheck -->
           <!-- gmaps -->
           <div class="list-group">
