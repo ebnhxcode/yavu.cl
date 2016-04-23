@@ -68,20 +68,25 @@
             <div class="list-group-item wrap">
               <table id="UserList" class="table table-hover" style="font-size: 0.8em;">
                 <thead>
-                <th>Monto</th>
-                <th>Cantidad</th>
+                <th>Transaccion</th>
+                <th>Coins</th>
+                <th>Tickets</th>
                 <th>Fecha</th>
+                <th>Sorteo</th>
+
                 @if(Auth::admin()->check())
                   <th>Operaciones</th>
                 @endif
                 </thead>
                 @foreach($rtickets as $rticket)
                   <tbody>
+                  <td>{!! $rticket->id !!}</td>
                   <td>{!!$rticket->monto!!}</td>
                   <td>{!!$rticket->cantidad_tickets!!}</td>
                   <td>
                     <abbr class="timeago" id="date{!!$rticket->id!!}" title="{!!$rticket->created_at!!}"></abbr>
                   </td>
+                  <td>nombreSorteo</td>
                   </tbody>
                 @endforeach
               </table>
