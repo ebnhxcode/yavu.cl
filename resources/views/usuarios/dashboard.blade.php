@@ -36,7 +36,7 @@
 					@if(Auth::user()->check())
 						<input type="hidden" value="{!!Auth::user()->get()->id!!}" />
 					@endif
-					<div class="col-md-4 col-sm-6 col-xs-6">
+					<div class="col-md-4 col-sm-6 col-xs-12">
 						<div class="list-group" >
 							<div>
 								<a href="{!!URL::to('/feeds')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
@@ -49,7 +49,7 @@
 						</div>
 					</div>
 
-						<div class="col-md-4 col-sm-6 col-xs-6">
+						<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="list-group" >
 								<a href="{!!URL::to('/empresas')!!}" style="text-align:center;" class="list-group-item list-group-item-warning">
 							<span>
@@ -60,7 +60,7 @@
 							</div>
 						</div>
 
-					<div class="col-md-4 col-sm-6 col-xs-6">
+					<div class="col-md-4 col-sm-6 col-xs-12">
 						<div class="list-group" >
 							<a href="{!!URL::to('/empresas/create')!!}" style="text-align:center;" class="list-group-item list-group-item-warning">
 							<span>
@@ -71,7 +71,7 @@
 						</div>
 					</div>
 
-						<div class="col-md-4 col-sm-6 col-xs-6">
+						<div class="col-md-4 col-sm-6 col-xs-12">
 
 							<div class="list-group" >
 								<a href="{!!URL::to('/sorteos')!!}" style="text-align:center;" class="list-group-item list-group-item-warning">
@@ -83,7 +83,7 @@
 							</div>
 						</div>
 
-						<div class="col-md-4 col-sm-6 col-xs-6">
+						<div class="col-md-4 col-sm-6 col-xs-12">
 
 							<div class="list-group" >
 								<a href="{!!URL::to('/sorteos/create')!!}" style="text-align:center;" class="list-group-item list-group-item-warning">
@@ -131,7 +131,7 @@
               -->
 						</div>
 
-					<div class="col-md-4 col-sm-6 col-xs-6">
+					<div class="col-md-4 col-sm-6 col-xs-12">
 						<div class="list-group" >
 							<a href="{!!URL::to('/pops')!!}" style="text-align:center;" class="list-group-item list-group-item-danger">
 								<span>
@@ -152,7 +152,7 @@
 								</a>
 						 </div> -->
 
-					<div class="col-md-4 col-sm-6 col-xs-6">
+					<div class="col-md-4 col-sm-6 col-xs-12">
 
 
 						<div class="list-group" >
@@ -167,7 +167,7 @@
 
 					</div>
 
-					<div class="col-md-4 col-sm-6 col-xs-6">
+					<div class="col-md-4 col-sm-6 col-xs-12">
 
 						<div class="list-group" >
 							<a href="{!!URL::to('/tickets')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
@@ -180,7 +180,7 @@
 
 					</div>
 
-						<div class="col-md-4 col-sm-6 col-xs-6">
+						<div class="col-md-4 col-sm-6 col-xs-12">
 
 							<div class="list-group" >
 								<a href="{!!URL::to('/tickets/create')!!}" style="text-align:center;" class="list-group-item list-group-item-info">

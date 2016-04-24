@@ -50,9 +50,14 @@ class TicketController extends Controller{
   public function find(Route $route){
     $this->ticket = Ticket::find($route->getParameter('tickets'));
   }
+
   public function index(){
     $tickets = Ticket::paginate(5);
-    return view('tickets.index', compact('tickets'));
+    $cantidadtickets = ['1'=>1];
+    for($n=1;$n<10;$n+=1){
+      $cantidadtickets += [$n*5=>$n*5];
+    }
+    return view('tickets.index', compact('tickets'), compact('cantidadtickets'));
   }
   public function show($id){
   }

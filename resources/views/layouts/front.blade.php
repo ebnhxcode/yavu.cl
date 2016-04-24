@@ -127,6 +127,8 @@
 							<li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><strong>Mi cuenta</strong>  <b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									<li><a href="{!!URL::to('/profile')!!}">Perfil</a></li>
+									<li><a href="{!!URL::to('/tickets')!!}">Comprar ticket's</a></li>
+									<li><a href="{!!URL::to('/coins')!!}">Historial de coins</a></li>
 									<li><a href="{!!URL::to('/dashboard')!!}">Mis empresas</a></li>
 									<li><a href="{!!URL::to('/logout')!!}">Cerrar sesión</a></li>
 								</ul>

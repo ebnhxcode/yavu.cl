@@ -119,6 +119,7 @@ class SorteoController extends Controller{
     $sorteos = DB::table('sorteos')->paginate(5);
 
     $this->registro_tickets = $this->user->registro_tickets()->orderBy('created_at', 'desc')->limit('20')->get();
+    //dd($this->registro_tickets);
     return view('sorteos.index', compact('sorteos'), ['rtickets' => $this->registro_tickets]);
   }
   public function MostrarGanador($ganador){
@@ -127,6 +128,9 @@ class SorteoController extends Controller{
   }
   public function RegistrarGanadorSorteo($ganador){
     /*AQUI FALTA TERMINAR*/
+    $ganador = str_replace('"', '', $ganador);
+    $ganador = str_replace('"', '', $ganador);
+    $ganador = addslashes($ganador);
     $ganador = str_replace('[', '', $ganador);
     $ganador = str_replace(']', '', $ganador);
     $ArraySeleccionados = explode(',', $ganador);  

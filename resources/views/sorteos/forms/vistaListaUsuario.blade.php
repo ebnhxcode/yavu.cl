@@ -98,8 +98,9 @@
 							{!!link_to_route('sorteos.show', $title = 'Ver mas detalles', $parameters = $sorteo->id, $attributes = ['class'=>'btn btn-primary btn-xs'])!!}
 							@if(Auth::user()->get()->id == $sorteo->user_id && $sorteo->estado_sorteo == 'Pendiente')
 								<a class="btn btn-primary btn-xs" href="{!! URL::to('sorteos/'.$sorteo->id.'/edit') !!}">Editar</a>
+								{!!link_to_route('sorteos.show', $title = 'Ir a sortear', $parameters = $sorteo->id, $attributes = ['class'=>'btn btn-primary btn-xs'])!!}
 							@endif
-							{!!link_to_route('sorteos.show', $title = 'Ir a sortear', $parameters = $sorteo->id, $attributes = ['class'=>'btn btn-primary btn-xs'])!!}
+
 						</div>
 					@else
 						<a href="{!! URL::to('usuarios/create') !!}" class="btn btn-primary btn-sm" role="button">Participar!</a>
