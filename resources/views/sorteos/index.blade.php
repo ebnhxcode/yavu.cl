@@ -23,47 +23,46 @@
                 <div class="list-group-item list-group-item-success">
                   FILTRO DE BÚSQUEDA
                 </div>
-                <div class="list-group-item">
-                  @if(Auth::admin()->check())
-                    {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar sorteo','id'=>'nombre_sorteo', 'aria-describedby' => 'sizing-addon1'])!!}
-                  @elseif(Auth::user()->check() || !Auth::user()->check())
-                    <input id="user_id" value="{!! Auth::user()->get()->id !!}" type="hidden" />
-                    {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar sorteo','id'=>'sorteothumb', 'aria-describedby' => 'sizing-addon1'])!!}
-                    <br />
-                  @endif
-                </div>
-                <div class="list-group-item">
-                  <span class="text-danger" id="Mensaje"></span>
-                  <a class="btn-link" href="{!! URL::to("/sorteos/create") !!}">
-                    Crear nuevo sorteo
-                  </a><span class="label label-info">nuevo</span>
-                  <br>
-                  <a class="btn-link" style="" href="{!! URL::to('/tickets') !!}">
-                    Comprar más tickets
-                  </a><span class="label label-info">nuevo</span>
-                  <br>
-                  <a class="btn-link" style="" href="{!! URL::to('/feeds') !!}">
-                    Volver a publicaciones
-                  </a><span class="label label-info">nuevo</span>
-                  <br>
-                  <a class="btn-link" style="" href="{!! URL::to('/profile') !!}">
-                    Ir a mi perfil
-                  </a><span class="label label-info">nuevo</span>
-                  <br>
-                  <a class="btn-link" style="" href="{!! URL::to('/dashboard') !!}">
-                    Inicio
-                  </a><span class="label label-info">nuevo</span>
-                  <hr>
+                <br>
+                @if(Auth::admin()->check())
+                  {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar sorteo','id'=>'nombre_sorteo', 'aria-describedby' => 'sizing-addon1'])!!}
+                @elseif(Auth::user()->check() || !Auth::user()->check())
+                  <input id="user_id" value="{!! Auth::user()->get()->id !!}" type="hidden" />
+                  {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar sorteo','id'=>'sorteothumb', 'aria-describedby' => 'sizing-addon1'])!!}
+                  <br />
+                @endif
 
-                  <div class="alert alert-warning alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    Atento al usar tus tickets participar <br>
-                    <span class="glyphicon glyphicon-tag" style="font-size: 1em; color: #BEF781;"></span>
-                    <span class="glyphicon glyphicon-resize-horizontal"></span>
-                    <span class="label label-info">#14</span>&nbsp;(<small class="requerido">Tickets de ejemplo</small>)
-                  </div>
 
+                <span class="text-danger" id="Mensaje"></span>
+                <a class="btn-link" href="{!! URL::to("/sorteos/create") !!}">
+                  Crear nuevo sorteo
+                </a><span class="label label-info">nuevo</span>
+                <br>
+                <a class="btn-link" style="" href="{!! URL::to('/tickets') !!}">
+                  Comprar más tickets
+                </a><span class="label label-info">nuevo</span>
+                <br>
+                <a class="btn-link" style="" href="{!! URL::to('/feeds') !!}">
+                  Volver a publicaciones
+                </a><span class="label label-info">nuevo</span>
+                <br>
+                <a class="btn-link" style="" href="{!! URL::to('/profile') !!}">
+                  Ir a mi perfil
+                </a><span class="label label-info">nuevo</span>
+                <br>
+                <a class="btn-link" style="" href="{!! URL::to('/dashboard') !!}">
+                  Inicio
+                </a><span class="label label-info">nuevo</span>
+                <hr>
+
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  Atento al usar tus tickets participar <br>
+                  <span class="glyphicon glyphicon-tag" style="font-size: 1em; color: #BEF781;"></span>
+                  <span class="glyphicon glyphicon-resize-horizontal"></span>
+                  <span class="label label-info">#14</span>&nbsp;(<small class="requerido">Tickets de ejemplo</small>)
                 </div>
+
               </div> <!-- /list group -->
 
               </div>

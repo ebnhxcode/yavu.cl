@@ -68,7 +68,7 @@
 
 			<div class="col-md-4 col-sm-12 col-xs-12">
 
-				<div class="well">
+				<div class="">
 					<h5>
 						<strong>Nombre Sorteo: </strong>
 						<input class="form-control" type="text" disabled="disabled" value="{!!$sorteo->nombre_sorteo!!}">
@@ -93,6 +93,7 @@
 					<a id='participar' href="{!! URL::to('#!') !!}" class="btn btn-primary participar btn-sm" data-toggle="modal" data-target="#myModal" value="{!! $sorteo->id !!}" role="button">Comprar</a>
 					-->
 						<div class="btn-group" role="group" aria-label="...">
+
 							{!!link_to_route('sorteos.show', $title = 'Ver mas detalles', $parameters = $sorteo->id, $attributes = ['class'=>'btn btn-primary btn-xs'])!!}
 							@if(Auth::user()->get()->id == $sorteo->user_id && $sorteo->estado_sorteo == 'Pendiente')
 								<a class="btn btn-primary btn-xs" href="{!! URL::to('sorteos/'.$sorteo->id.'/edit') !!}">Editar</a>
@@ -100,6 +101,22 @@
 							@endif
 
 						</div>
+
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Dropdown
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </div>
+
+
 					@else
 						<a href="{!! URL::to('usuarios/create') !!}" class="btn btn-primary btn-sm" role="button">Participar!</a>
 					@endif
