@@ -108,6 +108,15 @@
 						@if(Auth::user()->check())
 							{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
 							{!!Form::hidden('idUltimaNotificacion', "0", ['id'=>'idUltimaNotificacion'])!!}
+							<li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><strong>Mi cuenta</strong>  <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li><a href="{!!URL::to('/profile')!!}">Perfil</a></li>
+									<li><a href="{!!URL::to('/tickets')!!}">Comprar ticket's</a></li>
+									<li><a href="{!!URL::to('/coins')!!}">Historial de coins</a></li>
+									<li><a href="{!!URL::to('/dashboard')!!}">Mis empresas</a></li>
+									<li><a href="{!!URL::to('/logout')!!}">Cerrar sesión</a></li>
+								</ul>
+							</li>
 							<li class="dropdown">
 								<a href="{!!URL::to('/dashboard')!!}">
 									<strong>Inicio</strong>
@@ -127,15 +136,6 @@
 								<a href="{!!URL::to('/sorteos')!!}">
 									<strong>Sorteos</strong>
 								</a>
-							</li>
-							<li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><strong>Mi cuenta</strong>  <b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li><a href="{!!URL::to('/profile')!!}">Perfil</a></li>
-									<li><a href="{!!URL::to('/tickets')!!}">Comprar ticket's</a></li>
-									<li><a href="{!!URL::to('/coins')!!}">Historial de coins</a></li>
-									<li><a href="{!!URL::to('/dashboard')!!}">Mis empresas</a></li>
-									<li><a href="{!!URL::to('/logout')!!}">Cerrar sesión</a></li>
-								</ul>
 							</li>
 						@endif
 						@if(Auth::admin()->check())
