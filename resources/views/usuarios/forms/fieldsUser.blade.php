@@ -1,31 +1,31 @@
-<div class="col-sm-8">
-	<div class="list-group" >
-		<div class="list-group-item">
+<div class='col-sm-8'>
+	<div class='list-group' >
+		<div class='list-group-item'>
 			<h4>Datos principales</h4>
 		</div>
-		<div class="list-group-item">
-			<div class="form-group has-feedback has-feedback-left">
-				(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Nombre:')!!}
+		<div class='list-group-item'>
+			<div class='form-group has-feedback has-feedback-left'>
+				(<strong><small><span class='requerido'>Requerido</span></small></strong>) {!!Form::label('Nombre:')!!}
 				{!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre', 'maxlength' => '100'])!!}
 			</div>
-			<div class="form-group has-feedback has-feedback-left">
-				(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Apellido:')!!}
+			<div class='form-group has-feedback has-feedback-left'>
+				(<strong><small><span class='requerido'>Requerido</span></small></strong>) {!!Form::label('Apellido:')!!}
 				{!!Form::text('apellido',null,['class'=>'form-control','placeholder'=>'Ingrese su apellido', 'maxlength' => '100'])!!}
 			</div>
-			<div class="form-group has-feedback has-feedback-left">
-				(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Email:')!!}
+			<div class='form-group has-feedback has-feedback-left'>
+				(<strong><small><span class='requerido'>Requerido</span></small></strong>) {!!Form::label('Email:')!!}
 				{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email', 'maxlength' => '200'])!!}			
 			</div>
-			<div class="form-group has-feedback has-feedback-left">
+			<div class='form-group has-feedback has-feedback-left'>
 				@if(Auth::user()->check() && Request::path() !== 'usuarios/create')
-					(<strong><small><span class="requerido">Ingrese <i>solo</i> si desea cambiarla</span></small></strong>) {!!Form::label('Cambio de clave:')!!}
+					(<strong><small><span class='requerido'>Ingrese <i>solo</i> si desea cambiarla</span></small></strong>) {!!Form::label('Cambio de clave:')!!}
 				@else
 					{!!Form::label('Nueva password:')!!}
 				@endif
 				{!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una password', 'maxlength' => '100'])!!}
 			</div>
-			<div class="form-group has-feedback has-feedback-left">
-				(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Ciudad:')!!}
+			<div class='form-group has-feedback has-feedback-left'>
+				(<strong><small><span class='requerido'>Requerido</span></small></strong>) {!!Form::label('Ciudad:')!!}
 				{!!Form::select('ciudad', 
 					['Tarapacá' => 'Tarapacá',
 					'Parinacota' => 'Parinacota',
@@ -62,52 +62,52 @@
 				!!}		
 			</div>	
 			@if (!Auth::user()->check())
-				<div class="form-group has-feedback has-feedback-left">
+				<div class='form-group has-feedback has-feedback-left'>
 					{!!Form::hidden('tipo_usuario', 'Usuario')!!}
 				</div>
-				<div class="form-group has-feedback has-feedback-left">
+				<div class='form-group has-feedback has-feedback-left'>
 					{!!Form::hidden('estado', 'Activo')!!}	
 				</div>			
 			@endif
 		</div>
 		<!-- GESTION DE LAS FOTOS -->		
-		<div class="list-group-item">
+		<div class='list-group-item'>
 
 
-			<div class="form-group has-feedback has-feedback-left">
-				(<strong><small><span class="requerido">Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar avatar:')!!}<span id="Perfil"></span><br>
-				<div style="border: dashed; border-width: 1px;">
-					<span class="btn btn-primary btn-file btn-md">
+			<div class='form-group has-feedback has-feedback-left'>
+				(<strong><small><span class='requerido'>Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar avatar:')!!}<span id='Perfil'></span><br>
+				<div style='border: dashed; border-width: 1px;'>
+					<span class='btn btn-primary btn-file btn-md'>
 						Buscar imagen{!!Form::file('imagen_perfil', ['id' => 'imagen_perfil',  'maxlength' => '255'])!!}
 					</span>
 					@if(Request::path() !== 'usuarios/create' && Auth::user()->check())
-						@if(Auth::user()->get()->imagen_perfil === "")
-							<img width="15%" id="ImagenPerfil" class="thumbnail img-responsive-centered" src="/img/users/usuario_nuevo.png" alt="...">
+						@if(Auth::user()->get()->imagen_perfil === '')
+							<img width='15%' id='ImagenPerfil' class='thumbnail img-responsive-centered' src='/img/users/usuario_nuevo.png' alt='...'>
 						@else
-							<img width="15%" id="ImagenPerfil" class="thumbnail img-responsive-centered" src="/img/users/{!!Auth::user()->get()->imagen_perfil!!}" alt="...">
+							<img width='15%' id='ImagenPerfil' class='thumbnail img-responsive-centered' src='/img/users/{!!Auth::user()->get()->imagen_perfil!!}' alt='...'>
 						@endif
 					@else
-						<img width="15%" id="ImagenPerfil" class="thumbnail img-responsive-centered" src="/img/users/usuario_nuevo.png" alt="...">
+						<img width='15%' id='ImagenPerfil' class='thumbnail img-responsive-centered' src='/img/users/usuario_nuevo.png' alt='...'>
 					@endif
 				</div>
 					
 
 			</div>
 
-			<div class="form-group has-feedback has-feedback-left">
-				(<strong><small><span class="requerido">Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar banner personal:')!!}<span id="Portada"></span><br>
-				<div style="border: dashed; border-width: 1px;">
-					<span class="btn btn-primary btn-file btn-md">
+			<div class='form-group has-feedback has-feedback-left'>
+				(<strong><small><span class='requerido'>Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar banner personal:')!!}<span id='Portada'></span><br>
+				<div style='border: dashed; border-width: 1px;'>
+					<span class='btn btn-primary btn-file btn-md'>
 						Buscar imagen{!!Form::file('imagen_portada', ['id' => 'imagen_portada',  'maxlength' => '255'])!!}
 					</span>
 					@if(Request::path() !== 'empresas/create' && Auth::user()->check())
-						@if(Auth::user()->get()->imagen_portada === "")
-							<img width="25%" id="ImagenPortada" class="thumbnail img-responsive-centered" src="/img/users/banner.png" alt="...">
+						@if(Auth::user()->get()->imagen_portada === '')
+							<img width='25%' id='ImagenPortada' class='thumbnail img-responsive-centered' src='/img/users/banner.png' alt='...'>
 						@else
-							<img width="35%" id="ImagenPortada" class="thumbnail img-responsive-centered" src="/img/users/{!!Auth::user()->get()->imagen_portada!!}" alt="...">
+							<img width='35%' id='ImagenPortada' class='thumbnail img-responsive-centered' src='/img/users/{!!Auth::user()->get()->imagen_portada!!}' alt='...'>
 						@endif
 					@else
-						<img width="25%" id="ImagenPortada" class="thumbnail img-responsive-centered" src="/img/users/banner.png" alt="...">
+						<img width='25%' id='ImagenPortada' class='thumbnail img-responsive-centered' src='/img/users/banner.png' alt='...'>
 					@endif
 				</div>
 			</div>						
@@ -115,26 +115,26 @@
 
 	</div>
 </div>
-<div class="col-sm-4">
+<div class='col-sm-4'>
 	@if(Auth::user()->check() or Auth::admin()->check())
-		<div class="list-group" >
-			<div class="list-group-item">
+		<div class='list-group' >
+			<div class='list-group-item'>
 				<h4>Datos de Contacto</h4>
 			</div>
-			<div class="list-group-item">
-				<div class="form-group has-feedback has-feedback-left">
+			<div class='list-group-item'>
+				<div class='form-group has-feedback has-feedback-left'>
 					{!!Form::label('Rut:')!!}
 					{!!Form::text('rut',null,['class'=>'form-control','placeholder'=>'Ingrese su rut', 'id' => 'rut', 'maxlength' => '16'])!!}
 				</div>
-				<div class="form-group has-feedback has-feedback-left">
+				<div class='form-group has-feedback has-feedback-left'>
 					{!!Form::label('Nickname:')!!}
 					{!!Form::text('login',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre de usuario', 'maxlength' => '100'])!!}			
 				</div>
-				<div class="form-group has-feedback has-feedback-left">
+				<div class='form-group has-feedback has-feedback-left'>
 					{!!Form::label('Dirección:')!!}
 					{!!Form::text('direccion',null,['class'=>'form-control','placeholder'=>'Ingrese dirección', 'maxlength' => '100'])!!}
 				</div>
-				<div class="form-group has-feedback has-feedback-left">
+				<div class='form-group has-feedback has-feedback-left'>
 					{!!Form::label('Región:')!!}
 					{!!Form::select('region', 
 						['I Región' => 'I Región',
@@ -155,7 +155,7 @@
 						$selected = null, ['class' => 'form-control', 'maxlength' => '100']) 
 					!!}			
 				</div>
-				<div class="form-group has-feedback has-feedback-left">
+				<div class='form-group has-feedback has-feedback-left'>
 					{!!Form::label('País:')!!}
 					{!!Form::select('pais', 
 						['Argentina' => 'Argentina',
@@ -173,15 +173,15 @@
 						$selected = null, ['class' => 'form-control', 'maxlength' => '100']) 
 					!!}	
 				</div>
-				<div class="form-group has-feedback has-feedback-left">
+				<div class='form-group has-feedback has-feedback-left'>
 					{!!Form::label('Teléfono Movil:')!!}
 					{!!Form::text('fono',null,['class'=>'form-control','placeholder'=>'', 'maxlength' => '16'])!!}
 				</div>
-				<div class="form-group has-feedback has-feedback-left">
+				<div class='form-group has-feedback has-feedback-left'>
 					{!!Form::label('Teléfono Fijo:')!!}
 					{!!Form::text('fono_2',null,['class'=>'form-control','placeholder'=>'', 'maxlength' => '16'])!!}
 				</div>
-				<div class="form-group has-feedback has-feedback-left">
+				<div class='form-group has-feedback has-feedback-left'>
 					{!!Form::label('Sexo:')!!}
 					{!!Form::select('sexo', 
 						['Masculino' => 'Masculino',
@@ -190,17 +190,17 @@
 						$selected = null, ['class' => 'form-control', 'maxlength' => '10']) 
 					!!}		
 				</div>
-				<div class="form-group has-feedback has-feedback-left">
+				<div class='form-group has-feedback has-feedback-left'>
 					{!!Form::label('Cumpleaños:')!!}
 					{!!Form::date('fecha_nacimiento',null,['class'=>'form-control','placeholder'=>'', 'maxlength' => '100'])!!}
 				</div>
 
 				@if (Auth::admin()->check()||Auth::user()->check())
-					<div class="form-group has-feedback has-feedback-left">
+					<div class='form-group has-feedback has-feedback-left'>
 						{!!Form::hidden('estado', 'Activo', ['maxlength' => '100'])!!}	
 					</div>	
 					@if (Auth::admin()->check())
-						<div class="form-group has-feedback has-feedback-left">
+						<div class='form-group has-feedback has-feedback-left'>
 							{!!Form::label('Tipo usuario:')!!}
 							{!!Form::select('tipo_usuario', 
 								['Usuario' => 'Usuario',
@@ -216,57 +216,42 @@
 <!--</div>-->
 <script>
 
-	$("#rut").change(function(){
-		ValidarRut($("#rut").val());
+	$('#rut').change(function(){
+		ValidarRut($('#rut').val());
 	});
-	$("#rut").keyup(function(e){
+	$('#rut').keyup(function(e){
 		if (e.keyCode === 13)
 		{
-			ValidarRut($("#rut").val());
+			ValidarRut($('#rut').val());
 		}
 	});
-	$(".form-control").keyup(function(e){
+	$('.form-control').keyup(function(e){
 
 	});
 	function ValidarRut(rut){
-		console.log("click");
-		var route = "http://localhost:8000/validarrutusuario/"+rut+"";
+		console.log('click');
+		var route = 'http://localhost:8000/validarrutusuario/'+rut+'';
 		document.getElementById('FormUsuario').onsubmit = function() {
 		    return false;
 		}	
 		$.get(route, function(res){
 			
 			if(res !== 'false'){
-				$("#rut").val(res);
-				document.getElementById("FormUsuario").onsubmit = function() {
+				$('#rut').val(res);
+				document.getElementById('FormUsuario').onsubmit = function() {
 				    return true;
 				}											
 			}else{
-				$("#rut").val("");
-				$("#rut").focus();
-				alert("Formato de rut invalido");
+				$('#rut').val('');
+				$('#rut').focus();
+				alert('Formato de rut invalido');
 				
 			}
 		});
 	}
-	$("#imagen_perfil").change(function(){
+	$('#imagen_perfil').change(function(){
 		var formato = this.value;
-		var formatosPermitidos = ["jpg", "jpeg", "png", "gif"];
-		formato = formato.split('.');
-		if(formatosPermitidos.indexOf(formato[1]) < 0)
-		{
-			this.value.clear();
-			alert("Formato de imagen invalido, no se subirá");
-		}
-		else
-		{
-			$("#Perfil").addClass("btn btn-success btn-xs").text("ok");
-		}
-	});
-
-	$("#imagen_portada").change(function(){
-		var formato = this.value;
-		var formatosPermitidos = ["jpg", "jpeg", "png", "gif"];
+		var formatosPermitidos = ['jpg', 'jpeg', 'png', 'gif'];
 		formato = formato.split('.');
 		if(formatosPermitidos.indexOf(formato[1]) < 0)
 		{
@@ -275,7 +260,22 @@
 		}
 		else
 		{
-			$("#Portada").addClass('btn btn-success btn-xs').text('ok');
+			$('#Perfil').addClass('btn btn-success btn-xs').text('ok');
+		}
+	});
+
+	$('#imagen_portada').change(function(){
+		var formato = this.value;
+		var formatosPermitidos = ['jpg', 'jpeg', 'png', 'gif'];
+		formato = formato.split('.');
+		if(formatosPermitidos.indexOf(formato[1]) < 0)
+		{
+			this.value.clear();
+			alert('Formato de imagen invalido, no se subirá');
+		}
+		else
+		{
+			$('#Portada').addClass('btn btn-success btn-xs').text('ok');
 		}
 	});
 
