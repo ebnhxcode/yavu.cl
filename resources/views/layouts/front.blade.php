@@ -17,6 +17,9 @@
 		{!!Html::script('js/plugins.js')!!}
 		{!!Html::script('js/ajax/FrontNotificaciones.js')!!}
 		{!!Html::style('css/bootstrap.css')!!}
+
+		{!!Html::style('css/app.css')!!}
+
 		{!!Html::script('js/global.js')!!}
     {!!Html::script('js/ajax/GestionarCoins.js')!!}
 		{!!Html::script('js/ajax/GestionarCompraTicket.js')!!}
@@ -54,7 +57,8 @@
 	</script>
 
 
-		<nav class="navbar navbar-fixed-top" role="navigation">
+
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -64,11 +68,11 @@
 						<span class="icon-bar"></span>
 					</button>
 					<div class="navbar-brand" style="width: 135px;padding-right: 0px;padding-left: 20px;">
-						<a href="{{URL::to('/')}}"><img src={{asset('img/yavu004.png')}} style="transition: width 0.8s;" width="70%"></a>
+						<a href="{{URL::to('/')}}"><img src={{asset('img/yavu004.png')}} width="70%" style="transition: width 0.8s;"></a>
 						{{-- <img id="LogoYavu" src="{!!URL::to('img/yavu004.png')!!}" style="transition: width 0.8s;" width="50%" /> --}}
 					</div>
 					@if(Auth::user()->check())
-						<div class="navbar-brand"  align="center" >
+						<div class="navbar-brand" align="center" >
 							<a href="#!">
 								<span id="Notificaciones" title="Notificaciones" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-globe" style="font-size: 1.2em; color: #BEF781;" aria-hidden="true"></span>
                 <small><span id="CantidadNotificaciones" style="float:right;" class="label label-danger"></span></small>

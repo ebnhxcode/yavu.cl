@@ -10,7 +10,21 @@ var elixir = require('laravel-elixir');
  | file for our application, as well as publishing vendor resources.
  |
  */
-
+/*
 elixir(function(mix) {
     mix.sass('app.scss');
 });
+*/
+/*
+elixir(function(mix) {
+    var bootstrapPath = 'node_modules/bootstrap-sass/assets';
+    mix.sass('app.scss')
+      .copy(bootstrapPath + '/fonts/bootstrap/*.{ttf,woff,eof,svg,woff2}', 'public/fonts')
+      .copy(bootstrapPath + '/javascripts/bootstrap.min.js', 'public/js');
+});
+*/
+elixir(function(mix) {
+    var bootstrapPath = 'node_modules/bootstrap-sass/assets';
+    mix.sass('app.scss')
+        .copy(bootstrapPath + '/fonts', 'public/fonts')
+        .copy(bootstrapPath + '/javascripts/bootstrap.min.js', 'public/js'); });
