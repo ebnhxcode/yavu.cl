@@ -81,6 +81,7 @@
 						-->
 			</div>
 			<div class="col-md-8">
+
 				<div class="list-group">
 					<div class="list-group-item">
 							Compra tus tickets a <span class="label label-warning">$ 100</span>
@@ -92,7 +93,9 @@
 						<input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
 						<input type="hidden" value="{!!Auth::user()->get()->id!!}" id="user_id" />
 					</div>
-				</div>				
+				</div>
+
+
 			</div>		
 
 

@@ -1,21 +1,19 @@
 <div id="SorteoListThumb">
 	{!! $ImagenSorteo = "" !!}
 
-	<div class="semi-amplio">
+
+
+	<script src="js/helpers/jquery.simple.timer.js"></script>
+	<div class="">
 		<div class="progress">
 			<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
 				<span class="sr-only"></span>
-				<span class="seconds">Actualizando sorteos...</span>
+				<span>cargando sorteos</span>
 			</div>
 		</div>
 	</div>
-
-	<script src="js/helpers/jquery.simple.timer.js"></script>
-
-
 	@foreach($sorteos as $sorteo)
 		<div class="row">
-
 
 			<div class="col-md-8 col-sm-12 col-xs-12">
 				<div class="thumbnail">

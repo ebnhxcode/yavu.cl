@@ -95,7 +95,11 @@
   display: flex;
   overflow-y: scroll;
 }
-
+.wrap-long-vertical {
+  height: 100vh;
+  display: flex;
+  overflow-y: scroll;
+}
 /*Login*/
 #contentMini {
 	width: 30%;

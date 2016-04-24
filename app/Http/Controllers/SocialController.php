@@ -16,11 +16,18 @@ use Carbon\Carbon;
 
 class SocialController extends Controller{
   public function getSocialAuth($provider=null){
-    if(!config("services.$provider")) abort('404');
+
+    if(!config("services.$provider")){
+      abort('404');
+      Session::flash('message-warning', 'No estás usando un correo publico en facebook o no tienes asociado tu email a alguna cuenta de yavu. Pero puedes registrarte facilmente <a class="btn-link" href="/usuarios/create">Aquí</a>');
+      return Redirect::to('/');
+    }
     return Socialite::driver($provider)->redirect();
   }
   public function getSocialAuthCallback($provider=null){
+
     $this->status = $user = Socialite::driver($provider)->user();
+
     if($this->status){
       $this->userLogin = User::where('email', $user->email)->first();
       if($this->userLogin) {

@@ -15,86 +15,141 @@
       </div>
       <div class="row">
         <div class="col-md-4 col-sm-12 col-xs-12">
-          <div class="list-group">
-            <div class="list-group-item list-group-item-success">
-              <h5>FILTRO DE BÚSQUEDA</h5>
-              @if(Auth::admin()->check())
-                {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar sorteo','id'=>'nombre_sorteo', 'aria-describedby' => 'sizing-addon1'])!!}
-              @elseif(Auth::user()->check() || !Auth::user()->check())
-                <input id="user_id" value="{!! Auth::user()->get()->id !!}" type="hidden" />
-                {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar sorteo','id'=>'sorteothumb', 'aria-describedby' => 'sizing-addon1'])!!}
-                <br />
-              @endif
-            </div>
-            <div class="list-group-item">
-              <span class="text-danger" id="Mensaje"></span>
-              <a class="btn-link" href="{!! URL::to("/sorteos/create") !!}">
-                Crear nuevo sorteo
-              </a><span class="label label-info">nuevo</span>
-              <br>
-              <a class="btn-link" style="" href="{!! URL::to('/tickets') !!}">
-                Comprar más tickets
-              </a><span class="label label-info">nuevo</span>
-              <br>
-              <a class="btn-link" style="" href="{!! URL::to('/feeds') !!}">
-                Volver a publicaciones
-              </a><span class="label label-info">nuevo</span>
-              <br>
-              <a class="btn-link" style="" href="{!! URL::to('/profile') !!}">
-                Ir a mi perfil
-              </a><span class="label label-info">nuevo</span>
-              <br>
-              <a class="btn-link" style="" href="{!! URL::to('/dashboard') !!}">
-                Inicio
-              </a><span class="label label-info">nuevo</span>
-              <hr>
 
-              <div class="alert alert-warning alert-dismissible" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                Atento al usar tus tickets participar <br>
-                <span class="glyphicon glyphicon-tag" style="font-size: 1em; color: #BEF781;"></span>
-                <span class="glyphicon glyphicon-resize-horizontal"></span>
-                <span class="label label-info">#14</span>&nbsp;(<small class="requerido">Tickets de ejemplo</small>)
+          <div class="panel-formato-yavu panel-default">
+            <div class="panel-body">
+
+              <div class="list-group">
+                <div class="list-group-item list-group-item-success">
+                  FILTRO DE BÚSQUEDA
+                </div>
+                <div class="list-group-item">
+                  @if(Auth::admin()->check())
+                    {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar sorteo','id'=>'nombre_sorteo', 'aria-describedby' => 'sizing-addon1'])!!}
+                  @elseif(Auth::user()->check() || !Auth::user()->check())
+                    <input id="user_id" value="{!! Auth::user()->get()->id !!}" type="hidden" />
+                    {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar sorteo','id'=>'sorteothumb', 'aria-describedby' => 'sizing-addon1'])!!}
+                    <br />
+                  @endif
+                </div>
+                <div class="list-group-item">
+                  <span class="text-danger" id="Mensaje"></span>
+                  <a class="btn-link" href="{!! URL::to("/sorteos/create") !!}">
+                    Crear nuevo sorteo
+                  </a><span class="label label-info">nuevo</span>
+                  <br>
+                  <a class="btn-link" style="" href="{!! URL::to('/tickets') !!}">
+                    Comprar más tickets
+                  </a><span class="label label-info">nuevo</span>
+                  <br>
+                  <a class="btn-link" style="" href="{!! URL::to('/feeds') !!}">
+                    Volver a publicaciones
+                  </a><span class="label label-info">nuevo</span>
+                  <br>
+                  <a class="btn-link" style="" href="{!! URL::to('/profile') !!}">
+                    Ir a mi perfil
+                  </a><span class="label label-info">nuevo</span>
+                  <br>
+                  <a class="btn-link" style="" href="{!! URL::to('/dashboard') !!}">
+                    Inicio
+                  </a><span class="label label-info">nuevo</span>
+                  <hr>
+
+                  <div class="alert alert-warning alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    Atento al usar tus tickets participar <br>
+                    <span class="glyphicon glyphicon-tag" style="font-size: 1em; color: #BEF781;"></span>
+                    <span class="glyphicon glyphicon-resize-horizontal"></span>
+                    <span class="label label-info">#14</span>&nbsp;(<small class="requerido">Tickets de ejemplo</small>)
+                  </div>
+
+                </div>
+              </div> <!-- /list group -->
+
               </div>
+            </div> <!-- /panel formato yavu -->
 
+          <div class="panel-formato-yavu panel-default">
+            <div class="panel-body">
+
+              <div class="list-group">
+                <div class="list-group-item list-group-item-success">
+                  <h5>HISTORIAL DE COMPRA DE TICKETS <span id="resize" name="small" class="glyphicon glyphicon-resize-full" style="float: right;"></span> </h5>
+                </div>
+
+                <script>
+                  $('#resize').click(function(){
+                    if($(this).attr('name') == 'small'){
+                      $('#insideHistory').removeClass('wrap');
+                      $('#insideHistory').addClass('wrap-long-vertical');
+                      $(this).removeClass('glyphicon-resize-full');
+                      $(this).addClass('glyphicon-resize-small');
+                      $(this).attr('name', 'long');
+                      return true;
+                    }else{
+                      $('#insideHistory').removeClass('wrap-long-vertical');
+                      $('#insideHistory').addClass('wrap');
+                      $(this).removeClass('glyphicon-resize-small');
+                      $(this).addClass('glyphicon-resize-full');
+                      $(this).attr('name', 'small');
+                      return true;
+                    }
+                  });
+                </script>
+
+                <div id="insideHistory" class="list-group-item wrap">
+                  <table id="UserList" class="table table-hover" style="font-size: 0.8em;">
+                    <thead>
+                    <th>Transaccion</th>
+                    <th>Coins</th>
+                    <th>Tickets</th>
+                    <th>Fecha</th>
+                    <th>Sorteo</th>
+
+                    @if(Auth::admin()->check())
+                      <th>Operaciones</th>
+                    @endif
+                    </thead>
+                    @foreach($rtickets as $rticket)
+                      <tbody>
+                      <td>{!! $rticket->id !!}</td>
+                      <td>{!!$rticket->monto!!}</td>
+                      <td>{!!$rticket->cantidad_tickets!!}</td>
+                      <td>
+                        <abbr class="timeago" id="date{!!$rticket->id!!}" title="{!!$rticket->created_at!!}"></abbr>
+                      </td>
+                      <td>nombreSorteo</td>
+                      </tbody>
+                    @endforeach
+                  </table>
+                </div>
+
+              </div> <!-- /list group -->
             </div>
-          </div>
+          </div> <!-- /Panel historial -->
 
-          <div class="list-group">
-            <div class="list-group-item list-group-item-success">
-              <h5>HISTORIAL DE COMPRA DE TICKETS</h5>
-            </div>
 
-            <div class="list-group-item wrap">
-              <table id="UserList" class="table table-hover" style="font-size: 0.8em;">
-                <thead>
-                <th>Transaccion</th>
-                <th>Coins</th>
-                <th>Tickets</th>
-                <th>Fecha</th>
-                <th>Sorteo</th>
-
-                @if(Auth::admin()->check())
-                  <th>Operaciones</th>
-                @endif
-                </thead>
-                @foreach($rtickets as $rticket)
-                  <tbody>
-                  <td>{!! $rticket->id !!}</td>
-                  <td>{!!$rticket->monto!!}</td>
-                  <td>{!!$rticket->cantidad_tickets!!}</td>
-                  <td>
-                    <abbr class="timeago" id="date{!!$rticket->id!!}" title="{!!$rticket->created_at!!}"></abbr>
-                  </td>
-                  <td>nombreSorteo</td>
-                  </tbody>
-                @endforeach
-              </table>
-            </div>
-
-          </div>
-        </div><!-- fin del col md 4 -->
+        </div><!-- /col md 4 -->
         <div class="col-md-8 col-sm-12 col-xs-12">
+          <div class="panel-formato-yavu panel-default">
+            <div class="panel-body">
+
+              <div class="list-group">
+                <div class="list-group-item list-group-item-success">
+                  COMPRA TUS TICKET'S A <span class="label label-warning">$ 100</span>
+                </div>
+                <div class="list-group-item">
+                  {!!Form::select('size', [1=>1,5=>5,10=>10,15=>15], null, ['placeholder' => 'Seleciona la cantidad...','id' => 'cantidadtickets', 'class' => 'form-control'])!!}
+                  <br>
+                  <button type="button" style="width: 100%" id='comprar' class="btn btn-primary btn-md comprar">Comprar ticket</button>
+                  <input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
+                  <input type="hidden" value="{!!Auth::user()->get()->id!!}" id="user_id" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+
           <div class="panel-formato-yavu panel-default">
             <div class="panel-body">
               @if(Auth::admin()->check())
