@@ -10,16 +10,17 @@
 		</div>
     <div class="row">
     
-    @include('alerts.alertFields')
-    @include('alerts.errorsMessage')
-    @include('alerts.successMessage')
-    @include('alerts.warningMessage')
+			@include('alerts.alertFields')
+			@include('alerts.errorsMessage')
+			@include('alerts.successMessage')
+			@include('alerts.warningMessage')
 
-		@include('feeds.forms.panelLeft')
+			@include('feeds.forms.panelLeft')
 
-	<input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
-    {!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
-    @include('feeds.forms.panelRight')
+			<input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
+			{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
+
+			@include('feeds.forms.panelRight')
 
     </div>
 

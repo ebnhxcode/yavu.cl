@@ -105,7 +105,7 @@ class SorteoController extends Controller{
     return responde()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function edit($id){
-    if($this->sorteo->user_id == $this->user->id){
+    if($this->sorteo->user_id == $this->user->id && $this->sorteo->estado_sorteo == 'Pendiente'){
       return view('sorteos.edit', ['sorteo' => $this->sorteo]);
     }
     Session::flash('message-warning', 'Creemos que te haz equivocado esta vez, para crear un sorteo debes tener una empresa creada, si es así haz click <a class="btn-success btn-xs" href="/sorteos/create">AQUI</a>, si no tienes una empresa puedes hacer click <a class="btn-success btn-xs" href="/empresas/create">AQUI</a> para crear una');
@@ -116,7 +116,7 @@ class SorteoController extends Controller{
       //return $this->user;
     }
   public function index(){
-    $sorteos = DB::table('sorteos')->paginate(5);
+    $sorteos = DB::table('sorteos')->where('estado_sorteo', 'Lanzado')->paginate(5);
 
     $this->registro_tickets = $this->user->registro_tickets()->orderBy('created_at', 'desc')->limit('20')->get();
     //dd($this->registro_tickets);
@@ -142,6 +142,10 @@ class SorteoController extends Controller{
       $this->sorteado = ParticipanteSorteo::where('id', $key)->first();
 
       $this->ganador = User::where('id', $this->sorteado->user_id)->get();
+
+      $this->sorteo = Sorteo::find($this->sorteado->sorteo_id);
+      $this->sorteo->estado_sorteo = 'Finalizado';
+      $this->sorteo->save();
 
       if($this->ganador[0]){
         $this->registrar_ganador = new Winner(['user_id' => $this->sorteado->user_id, 'sorteo_id' => $this->sorteado->sorteo_id,'participante_sorteo_id' => $key,'nombre' => $this->ganador[0]->nombre,'apellido' => $this->ganador[0]->apellido]);

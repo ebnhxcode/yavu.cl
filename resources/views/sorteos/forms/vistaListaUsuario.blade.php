@@ -94,25 +94,24 @@
 					-->
 						<div class="btn-group" role="group" aria-label="...">
 
-							{!!link_to_route('sorteos.show', $title = 'Ver mas detalles', $parameters = $sorteo->id, $attributes = ['class'=>'btn btn-primary btn-xs'])!!}
-							@if(Auth::user()->get()->id == $sorteo->user_id && $sorteo->estado_sorteo == 'Pendiente')
-								<a class="btn btn-primary btn-xs" href="{!! URL::to('sorteos/'.$sorteo->id.'/edit') !!}">Editar</a>
-								{!!link_to_route('sorteos.show', $title = 'Ir a sortear', $parameters = $sorteo->id, $attributes = ['class'=>'btn btn-primary btn-xs'])!!}
-							@endif
+
+
 
 						</div>
 
-            <div class="dropdown">
-              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                Dropdown
+            <div class="dropup">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Menu
                 <span class="caret"></span>
               </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+
+                <li>{!!link_to_route('sorteos.show', $title = 'Ver mas detalles', $parameters = $sorteo->id, $attributes = [])!!}</li>
+                @if(Auth::user()->get()->id == $sorteo->user_id && $sorteo->estado_sorteo == 'Pendiente')
+                  <li role="separator" class="divider"></li>
+                  <li><a href="{!! URL::to('sorteos/'.$sorteo->id.'/edit') !!}">Editar</a></li>
+                  <li>{!!link_to_route('sorteos.show', $title = 'Ir a sortear', $parameters = $sorteo->id, $attributes = [])!!}</li>
+                @endif
               </ul>
             </div>
 

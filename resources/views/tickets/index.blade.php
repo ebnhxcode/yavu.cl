@@ -197,31 +197,6 @@
 							</div>
 
 						<div class="list-group-item">
-								<span class="text-danger" id="Mensaje"></span>
-								<a class="btn-link" href="{!! URL::to("/sorteos/create") !!}">
-									Crear nuevo sorteo
-								</a><span class="label label-info">nuevo</span>
-								<br>
-								<a class="btn-link" style="" href="{!! URL::to('/tickets') !!}">
-									Volver a sorteos
-								</a><span class="label label-info">nuevo</span>
-								<br>
-								<a class="btn-link" style="" href="{!! URL::to('/feeds') !!}">
-									Volver a publicaciones
-								</a><span class="label label-info">nuevo</span>
-								<br>
-								<a class="btn-link" style="" href="{!! URL::to('/profile') !!}">
-									Ir a mi perfil
-								</a><span class="label label-info">nuevo</span>
-								<br>
-								<a class="btn-link" style="" href="{!! URL::to('/dashboard') !!}">
-									Inicio
-								</a><span class="label label-info">nuevo</span>
-								<hr>
-
-
-
-
 
 								<div class="alert alert-warning alert-dismissible" role="alert">
 									<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
