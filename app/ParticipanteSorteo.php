@@ -5,7 +5,7 @@ class ParticipanteSorteo extends Model
 {
     protected $table = "participante_sorteos";
     protected $fillable = [
-    	"user_id", "sorteo_id",
+    	"user_id", "sorteo_id", "nombre_sorteo",
    	];
   public function sorteos()
   {

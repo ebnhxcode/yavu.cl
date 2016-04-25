@@ -25,7 +25,7 @@ class TicketController extends Controller{
     }
   }
   public function create(){
-    return view('tickets.create');
+    return view('tickets.history');
   }
   public function ContarTickets(){
     return response()->json($this->user->tickets->sum('cantidad_tickets'));
@@ -50,21 +50,25 @@ class TicketController extends Controller{
   public function find(Route $route){
     $this->ticket = Ticket::find($route->getParameter('tickets'));
   }
-
+  public function history(){
+    $this->registros_participante = $this->user->registro_participante_sorteos()->orderBy('created_at', 'desc')->limit('20')->get();
+    $this->registro_tickets = $this->user->registro_tickets()->orderBy('created_at', 'desc')->limit('20')->get();
+    return view('tickets.history', ['registros_participante' => $this->registros_participante], ['rtickets' => $this->registro_tickets]);
+  }
   public function index(){
     $tickets = Ticket::paginate(5);
     $cantidadtickets = ['1'=>1];
     for($n=1;$n<10;$n+=1){
       $cantidadtickets += [$n*5=>$n*5];
     }
-    return view('tickets.index', compact('tickets'), compact('cantidadtickets'));
+    return view('tickets.history', compact('tickets'), compact('cantidadtickets'));
   }
   public function show($id){
   }
   public function store(TicketCreateRequest $request){
     Ticket::create($request->all());
     Session::flash('message', 'Ticket creado correctamente');
-    return Redirect::to('/tickets');
+    return Redirect::to('/tickets/history');
   }
   public function VerificarTickets($user_id){
     return response()->json($this->user->tickets->sum('cantidad_tickets'));

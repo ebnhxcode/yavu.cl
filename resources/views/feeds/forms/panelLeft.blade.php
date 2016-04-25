@@ -48,7 +48,7 @@
             <div class="col-md-4 col-sm-4 col-xs-4">
               <div class="list-group" >
                 <div>
-                  <a href="{!!URL::to('/tickets')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
+                  <a href="{!!URL::to('/tickets/history')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
                         <span>
                           <img width="80%" src= "{!!URL::to('img/dash/ico_ticket01.png')!!}"/>
                         </span>

@@ -51,8 +51,8 @@ Route::group(['middleware' => 'user'], function(){
   /*Gestión de estados*/
 
   /*Gestión de coins*/
+  Route::get('coins/history','CoinController@index');
   Route::resource('coins','CoinController');
-  Route::get('reports','CoinController@index');
   Route::get('contarcoins', 'CoinController@ContarCoins');
   Route::get('historialcoins', 'CoinController@HistorialCoins');
   /*Gestión de coins*/
@@ -102,6 +102,7 @@ Route::group(['middleware' => 'user'], function(){
 
 
   /*Gestión de tickets*/
+  Route::get('tickets/history','TicketController@history');
   Route::resource('tickets','TicketController');
   Route::get('efectuarcompraticket/{user_id}/{cantidadtickets}', 'TicketController@EfectuarCompra')->where(['user_id', 'cantidadtickets'], '[0-9]+');
   Route::get('verificartickets/{user_id}', 'TicketController@VerificarTickets')->where('user_id', '[0-9]+');

@@ -48,7 +48,7 @@
                     <div class="col-md-4 col-sm-4 col-xs-4">
                       <div class="list-group" >
                         <div>
-                          <a href="{!!URL::to('/tickets')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
+                          <a href="{!!URL::to('/tickets/history')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
 										<span>
 											<img width="80%" src= "{!!URL::to('img/dash/ico_ticket01.png')!!}"/>
 										</span>
@@ -263,7 +263,7 @@
                       @if(Auth::user()->get()->id == $sorteo->user_id && $sorteo->estado_sorteo == 'Pendiente')
                         <td><a class="btn btn-primary" href="{!!URL::to('/sorteos/'.$sorteo->id.'/edit')!!}">Editar</a></td>
                       @else
-                        @if($sorteo->estado_sorteo == 'Pendiente')
+                        @if($sorteo->estado_sorteo == 'Finalizado')
                           <td><a class="btn btn-warning" href="{!!URL::to('/sorteos/'.$sorteo->id)!!}">Ver sorteo</a></td>
                         @elseif($sorteo->estado_sorteo == 'Lanzado')
                           <td><a class="btn btn-success" href="{!!URL::to('/sorteos/'.$sorteo->id)!!}">Ver sorteo</a></td>
@@ -331,7 +331,7 @@
                       <td>
                         <abbr class="timeago" id="date{!!$rticket->id!!}" title="{!!$rticket->created_at!!}"></abbr>
                       </td>
-                      <td>nombreSorteo</td>
+                      <td>{!!$rticket->nombre_sorteo!!}</td>
                       </tbody>
                     @endforeach
                   </table>
@@ -358,8 +358,14 @@
                   <input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
                   <input type="hidden" value="{!!Auth::user()->get()->id!!}" id="user_id" />
                 </div>
+
+              </div>
+              <div class="alert alert-info alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                Si el boton participar no aparece refresca la página
               </div>
             </div>
+
           </div>
 
 

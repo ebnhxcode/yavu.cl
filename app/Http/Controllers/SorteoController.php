@@ -114,7 +114,8 @@ class SorteoController extends Controller{
   public function find(Route $route){
       $this->sorteo = Sorteo::find($route->getParameter('sorteos'));
       //return $this->user;
-    }
+  }
+
   public function index(){
 
     //dd($this->user->sorteos()->get());
@@ -126,6 +127,7 @@ class SorteoController extends Controller{
     //dd($this->registro_tickets);
     return view('sorteos.index', compact('sorteos'), ['rtickets' => $this->registro_tickets]);
   }
+
   public function MostrarGanador($ganador){
     $ganador = ParticipanteSorteo::find($ganador)->users;
     return response()->json(['nombre'=>$ganador->nombre, 'apellido'=>$ganador->apellido]);
@@ -148,7 +150,7 @@ class SorteoController extends Controller{
       $this->ganador = User::where('id', $this->sorteado->user_id)->get();
 
       $this->sorteo = Sorteo::find($this->sorteado->sorteo_id);
-      $this->sorteo->estado_sorteo = 'Finalizado';
+      $this->sorteo->estado_sorteo = 2;
       $this->sorteo->save();
 
       if($this->ganador[0]){
@@ -194,7 +196,7 @@ class SorteoController extends Controller{
   }
   public function store(Request $request){
       if(Sorteo::create($request->all())){
-        $this->pop = new Pop(['user_id' => $request->user_id,'empresa_id' => 1,'tipo' => 'sorteo','estado'   => 'pendiente','contenido' => 'Haz creado un nuevo sorteo!','created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]);
+        $this->pop = new Pop(['user_id' => $request->user_id,'empresa_id' => 1,'tipo' => 'sorteo', 'estado'   => 'pendiente','contenido' => 'Haz creado un nuevo sorteo!','created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]);
         $this->user->pops()->save($this->pop);
         Session::flash('message', 'Sorteo creado correctamente');
         return Redirect::to('/sorteos/create');
@@ -217,7 +219,9 @@ class SorteoController extends Controller{
 
         //Ahora rindo el ticket
 
-        $this->participante_sorteos = new ParticipanteSorteo(['user_id' => $user_id,'sorteo_id' => $sorteo_id,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
+        $this->sorteo = Sorteo::find($sorteo_id);
+
+        $this->participante_sorteos = new ParticipanteSorteo(['user_id' => $user_id,'sorteo_id' => $sorteo_id,'nombre_sorteo' => $this->sorteo->nombre_sorteo,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
         $this->user->participante_sorteos()->save($this->participante_sorteos);
 
         //Ahora notifico

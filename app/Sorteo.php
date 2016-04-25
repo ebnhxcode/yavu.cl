@@ -17,17 +17,18 @@ class Sorteo extends Model{
   }
 
   public function setEstadoSorteoAttribute($estado_sorteo){
-
-
-    $estado_sorteo = addslashes($estado_sorteo);
-
-    if($estado_sorteo == 0){
-      $this->attributes['estado_sorteo'] = 'Pendiente';
-    }else if($estado_sorteo == 1){
-      $this->attributes['estado_sorteo'] = 'Lanzado';
-    }else{
-      Session::flash('message-error', 'Usted está intentando hacer algo que no corresponde, modere su conducta.');
-      $this->attributes['estado_sorteo'] = 'Pendiente';
+    if(isset($estado_sorteo)) {
+      $estado_sorteo = addslashes($estado_sorteo);
+      if ($estado_sorteo == 0) {
+        $this->attributes['estado_sorteo'] = 'Pendiente';
+      } else if ($estado_sorteo == 1) {
+        $this->attributes['estado_sorteo'] = 'Lanzado';
+      } else if ($estado_sorteo == 2) {
+        $this->attributes['estado_sorteo'] = 'Finalizado';
+      } else {
+        $this->attributes['estado_sorteo'] = 'Finalizado';
+        Session::flash('message-error', 'Usted está intentando hacer algo que no corresponde, modere su conducta.');
+      }
     }
   }
 

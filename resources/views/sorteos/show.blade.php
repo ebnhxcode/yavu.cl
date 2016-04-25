@@ -94,7 +94,7 @@
 
                   @endif
                 </div>
-
+                {{--
                 @if(Auth::user()->get()->id == $sorteo->user_id)
                   <script language="JavaScript" type="text/javascript">
                     var bPreguntar = true;
@@ -104,7 +104,7 @@
                     }
                   </script>
                 @endif
-
+                --}}
               </div>
 
             </div>
