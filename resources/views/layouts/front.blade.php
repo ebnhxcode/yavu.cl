@@ -16,7 +16,6 @@
 		{!!Html::script('js/vendor/bootstrap.min.js')!!}
 		{!!Html::script('js/plugins.js')!!}
 		{!!Html::script('js/ajax/FrontNotificaciones.js')!!}
-		{!!Html::style('css/bootstrap.css')!!}
 
 		{!!Html::style('css/app.css')!!}
 
@@ -36,7 +35,7 @@
 				padding-bottom: 20px;
 			}
 		</style>
-	</head>
+	</head><!--/head -->
 	<body>
 	<script>
 		window.fbAsyncInit = function() {
@@ -55,8 +54,6 @@
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 	</script>
-
-
 
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 			<div class="container">
@@ -86,8 +83,6 @@
 							<span class="glyphicon glyphicon-tag" style="font-size: 1.2em; color: #BEF781;"></span>
 							<small><span id="CantidadTickets" style="float:right;" class="label label-info"></span></small>
 						</div>
-
-
 						<!--
 						<div class="navbar-brand">
 							<a href="#!">
@@ -98,7 +93,8 @@
 						</div>
 						-->
 					@endif
-				</div>
+				</div><!-- /navbar-header -->
+
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
 						@if(!Auth::user()->check() && !Auth::empresa()->check() && !Auth::admin()->check() && Request::path() !== 'login')
@@ -166,23 +162,27 @@
 						@endif
 					</ul>
 				</div><!--/.navbar-collapse -->
+
 			</div>
 		</nav>
+
+
 		@yield('content')
+
+
 		<div class="container">
-			<!-- footer -->
 			<footer role="contentinfo" class="site-footer" id="colophon">
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-md-12 col-sm-12 col-xs-12">
 						<img alt="Imagen corfo" src= "{!!URL::to('img/footer/corfo.png')!!}" class="img-responsive-centered"/></a>
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-4 col-sm-4 col-xs-4">
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-4 col-sm-4 col-xs-4">
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-4 col-sm-4 col-xs-4">
 					</div>
-					<div class="col-md-12" style="text-align: center;">
+					<div class="col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
 						<span><a href="#!"><img  src= "{!!URL::to('img/footer/icono_facebook.png')!!}" class=""/></a></span>
 						<span><a href="#!"><img  src= "{!!URL::to('img/footer/icono_twitter.png')!!}" class=""/></a></span>
 						<span><a href="#!"><img  src= "{!!URL::to('img/footer/ico_instagram.png')!!}" class=""/></a></span>
@@ -198,9 +198,8 @@
 						<span><a class="btn-link" href="{!!URL::to('/yavucoins/')!!}"><strong>YavuCoins</strong></a></span>
 						<spam> - Copyright© ~ Yavu.cl 2016.</spam>
 					</div>
-				</div>
-			</footer>
-			<!-- /footer -->
+				</div><!-- /div row -->
+			</footer><!-- /footer -->
 		</div> <!-- /container -->
 		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

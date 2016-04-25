@@ -1,3 +1,7 @@
+/* CSS's Helpers -> Esteban Ramos -> Personales + Bootstrap(mutados) */
+
+/* Selectores #id [A-Z]+ please */
+
 #content {
 	width: 94%;
 	margin: 1px auto 0 auto;
@@ -46,6 +50,10 @@
    width: 100%;
    height: 50%;
 }
+
+/* /Selectores #id */
+
+/* clases .class [A-Z]+ please */
 
 .amplio {
   color: #00312D;
@@ -260,3 +268,19 @@
   to { opacity: 0.0; }
 }
 
+.img-responsive-centered,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  margin: 0 auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* /clases .class */
+
+/* @medias [A-Z]+ please */
+
+/* @medias [A-Z]+ please */
