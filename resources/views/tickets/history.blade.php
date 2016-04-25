@@ -1,6 +1,6 @@
 @extends('layouts.front')
 @section('content')
-
+  <div class="jumbotron">
   <div class="jumbotron">
     <div id="contentMiddle">
       @include('alerts.alertFields')
@@ -8,7 +8,7 @@
       @include('alerts.successMessage')
       @include('alerts.warningMessage')
       <div class="" style="font-size: 3em;">
-        <img id="img" width="8%" src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}"/><span>Ticket's</span>
+        <img id="img" width="8%" src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}"/><span >Ticket's <span class="requerido">\</span> Historial</span>
       </div>
       <div class="row">
         <div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
@@ -178,6 +178,7 @@
                       <th>Operaciones</th>
                     @endif
                     </thead>
+
                     @foreach($registros_participante as $rp)
                       <tbody>
                       <td>{!! $rp->id !!}</td>

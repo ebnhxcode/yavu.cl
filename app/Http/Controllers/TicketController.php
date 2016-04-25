@@ -53,6 +53,8 @@ class TicketController extends Controller{
   public function history(){
     $this->registros_participante = $this->user->registro_participante_sorteos()->orderBy('created_at', 'desc')->limit('20')->get();
     $this->registro_tickets = $this->user->registro_tickets()->orderBy('created_at', 'desc')->limit('20')->get();
+
+
     return view('tickets.history', ['registros_participante' => $this->registros_participante], ['rtickets' => $this->registro_tickets]);
   }
   public function index(){
@@ -61,7 +63,7 @@ class TicketController extends Controller{
     for($n=1;$n<10;$n+=1){
       $cantidadtickets += [$n*5=>$n*5];
     }
-    return view('tickets.history', compact('tickets'), compact('cantidadtickets'));
+    return view('tickets.index', compact('tickets'), compact('cantidadtickets'));
   }
   public function show($id){
   }

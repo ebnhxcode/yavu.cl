@@ -8,8 +8,31 @@
 		@include('alerts.errorsMessage')
 		@include('alerts.successMessage')
 		@include('alerts.warningMessage')
-		<h2>Reportes de información</h2>	
+		<div class="" style="font-size: 3em;">
+			<img id="img" width="8%" src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}"/><span >Coins <span class="requerido">\</span> Historial</span>
+		</div>
 		<div class="row">
+
+			<div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
+
+				<div class="panel panel-default">
+					<div class="panel-body">
+
+						<div class="list-group">
+							<div class="list-group-item-full-header">
+								<h6>INFORMACIÓN</h6>
+							</div>
+							<div class="list-group-item">
+								Coins
+								<span id="" style="float:right;" class="label label-warning CantidadCoins">
+									 <img src="http://i601.photobucket.com/albums/tt93/tbg8904/Gaia%20Icon/Coins.png" width="16px" height="16px">
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<div class="col-md-8">
 				<div class="list-group">
 					<div class="list-group-item">
@@ -44,19 +67,9 @@
 					<a class="list-group-item list-group-item-info" href="#!"><small>CARGAR MÁS</small></a>
 				</div>				
 			</div>			
-         <div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
-             <div class="list-group">
-                 <div class="list-group-item-full-header">
-                     <h6>INFORMACIÓN</h6>
-                 </div>
-                 <div class="list-group-item">
-                     Coins 
-                     <span id="" style="float:right;" class="label label-warning CantidadCoins">
-                         <img src="http://i601.photobucket.com/albums/tt93/tbg8904/Gaia%20Icon/Coins.png" width="16px" height="16px">    
-                     </span>
-                 </div>
-             </div>
-         </div>
+
+
+
 		</div>
 	</div>
 </div>

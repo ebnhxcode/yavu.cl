@@ -102,6 +102,7 @@ Route::group(['middleware' => 'user'], function(){
 
 
   /*Gestión de tickets*/
+  Route::get('tickets','TicketController@history');
   Route::get('tickets/history','TicketController@history');
   Route::resource('tickets','TicketController');
   Route::get('efectuarcompraticket/{user_id}/{cantidadtickets}', 'TicketController@EfectuarCompra')->where(['user_id', 'cantidadtickets'], '[0-9]+');

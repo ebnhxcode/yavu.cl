@@ -170,7 +170,7 @@
 					<div class='col-md-4 col-sm-6 col-xs-12'>
 
 						<div class='list-group' >
-							<a href='{!!URL::to('/tickets')!!}' style='text-align:center;' class='list-group-item list-group-item-info'>
+							<a href='{!!URL::to('/tickets/history')!!}' style='text-align:center;' class='list-group-item list-group-item-info'>
 								 <span>
 									 <h4>TICKETS</h4>
 									 <img  src= '{!!URL::to('img/dash/ico_ticket01.png')!!}' class=''/></span>
@@ -183,7 +183,7 @@
 						<div class='col-md-4 col-sm-6 col-xs-12'>
 
 							<div class='list-group' >
-								<a href='{!!URL::to('/tickets/create')!!}' style='text-align:center;' class='list-group-item list-group-item-info'>
+								<a href='{!!URL::to('/tickets/history')!!}' style='text-align:center;' class='list-group-item list-group-item-info'>
 								 <span>
 									 <h4>COMPRAR TICKETS</h4>
 									 <img  src= '{!!URL::to('img/dash/ico_ticket01.png')!!}' class=''/></span>
