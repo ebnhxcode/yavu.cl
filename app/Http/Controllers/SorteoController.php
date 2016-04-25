@@ -121,7 +121,7 @@ class SorteoController extends Controller{
     //dd($this->user->sorteos()->get());
 
 
-    $sorteos = DB::table('sorteos')->paginate(10);
+    $sorteos = DB::table('sorteos')->orderBy('created_at', 'desc')->paginate(10);
 
     $this->registro_tickets = $this->user->registro_tickets()->orderBy('created_at', 'desc')->limit('20')->get();
     //dd($this->registro_tickets);

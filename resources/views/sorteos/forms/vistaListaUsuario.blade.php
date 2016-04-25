@@ -108,10 +108,11 @@
 								<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
 
 									<li>{!!link_to_route('sorteos.show', $title = 'Ver mas detalles', $parameters = $sorteo->id, $attributes = [])!!}</li>
-									@if(Auth::user()->get()->id == $sorteo->user_id && $sorteo->estado_sorteo == 'Pendiente')
+									@if(Auth::user()->get()->id == $sorteo->user_id && $sorteo->estado_sorteo == 'Lanzado')
 										<li role="separator" class="divider"></li>
-										<li><a href="{!! URL::to('sorteos/'.$sorteo->id.'/edit') !!}">Editar</a></li>
 										<li>{!!link_to_route('sorteos.show', $title = 'Ir a sortear', $parameters = $sorteo->id, $attributes = [])!!}</li>
+                  @elseif($sorteo->estado_sorteo == 'Pendiente')
+                    <li><a href="{!! URL::to('sorteos/'.$sorteo->id.'/edit') !!}">Editar</a></li>
 									@endif
 								</ul>
 							</div>
