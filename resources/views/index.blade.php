@@ -2,38 +2,43 @@
 @section('content')
 @include('layouts.bannerFront')
 <div class="jumbotron">
-  <div id="contentMiddle" class="container">
-    @include('alerts.errorsMessage')
-    @include('alerts.warningMessage')
-    @include('alerts.successMessage')
+  <div id="contentMiddle">
     <div class="row">
-      <div class="col-md-5">
-        <img src="/img/icono_que_es.png" class="img-responsive-centered">
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        @include('alerts.errorsMessage')
+        @include('alerts.warningMessage')
+        @include('alerts.successMessage')
+        @include('alerts.infoMessage')
+        <img src="/img/icono_que_es.png" class="img-responsive-centered" />
         <br /><br />
       </div>
-      <div class='col-md-7' align='middle'>
+
+      <div class='col-md-8 col-sm-12 col-xs-12'>
         <div class="panel panel-default">
           <div class="panel-body">
-
             <h3> ¿Qué es Yavu?</h3>
             <h4>
-             Yavu.cl es el portal donde los comercios y los premios coexisten para entregar una amplia gama de beneficios tanto para usuarios como para Empresas. Regístrate hoy en nuestro sitio y podrás conocer empresas en tu ciudad y ver qué hablan en tiempo real, además conocer sus promociones y participar por premios, todo gracias a nuestro sistema de bonificación para nuestros usuarios por medio de las Yavu Coins.
+              Yavü es la plataforma en donde empresas, concursos y premios coexisten para brindar un servicio único a nuestros usuarios. Sigue a comercios de tu interés, conoce promociones y descuentos en tu ciudad, participa en concursos todas las semanas y entérate de los eventos más importantes totalmente gratis en Yavu.cl.
             </h4>
+          </div><!-- /div panel body -->
+        </div><!-- /div panel -->
+      </div><!-- /div col-md-7 col-sm-12 col-xs-12 -->
 
-          </div>
-        </div>
-      </div>
-
-      <!-- DEJAR EN EL FOOTER !!!!!!!!
+      <!-- DEJAR EN EL FOOTER
       <div class="col-md-4">
-        <div class="fb-page" data-href="https://www.facebook.com/Yavucl-1508348302804625/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-width="500" data-height="500" data-hide-cover="false" data-show-facepile="true"></div>        
+        <div class="fb-page" data-href="https://www.facebook.com/Yavucl-1508348302804625/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-width="500" data-height="500" data-hide-cover="false" data-show-facepile="true"></div>
       </div>
       -->
-    </div>
-	  <img src="img/cards/barra_separadora.png" class="img-responsive">
-	  <br>
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <img src="img/cards/barra_separadora.png" class="img-responsive">
+        <br>
+      </div>
+
+    </div><!-- /div row -->
+
     <div class="row">
-      <div class='col-md-4' align='middle'>
+
+      <div class='col-md-4 col-sm-12 col-xs-12' align='middle'>
         <div class="panel panel-default">
           <img src="img/cards/ico_descubre_comercios.png" class="img-responsive">
           <div class="panel-body">
@@ -42,7 +47,7 @@
         </div>
       </div>
 
-      <div class='col-md-4' align='middle'>
+      <div class='col-md-4 col-sm-12 col-xs-12' align='middle'>
         <div class="panel panel-default">
           <img src="img/cards/ico_descubre_panoramas.png" class="img-responsive">
           <div class="panel-body">
@@ -51,7 +56,7 @@
         </div>
       </div>
 
-      <div class='col-md-4' align='middle'>
+      <div class='col-md-4 col-sm-12 col-xs-12' align='middle'>
         <div class="panel panel-default">
           <img src="img/cards/ico_premios.png" class="img-responsive">
           <div class="panel-body">
@@ -59,55 +64,58 @@
           </div>
         </div>
       </div>
-    </div>
-      <br>
-	    @if(!Auth::user()->check())
-        <div align="middle">
+
+    </div><!-- /div row -->
+    <br>
+    @if(!Auth::user()->check())
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12" align="middle">
           <a data-toggle="modal" data-target="#gridSystemModal" role="button" href="#!">
-            <img src="img/cards/registrate_01a.png" class="img-responsive" >
+            <img src="img/cards/registrate_01a.png" class="img-responsive" />
           </a>
           <br>
-          <img src="img/cards/barra_separadora.png" class="img-responsive">
+          <img src="img/cards/barra_separadora.png" class="img-responsive" />
         </div>
-        <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-              <a href="{{URL::to('/')}}"><img src={{asset('img/yavu005.png')}} width="20%"></a>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <div align="center"> <h4 class="modal-title" id="gridSystemModalLabel"></h4></div>
-              </div>
-              <div class="modal-body">
-                <div id="">
-                  @include('alerts.alertFields')
+      </div><!-- /div row -->
 
-                  <div>
-                    {!!Form::open([route('usuarios_store_path'), 'method'=>'POST', 'id' => 'FormRegistroLanding'])!!}
-                      @include('usuarios.forms.fieldsLanding')
-                      <div class="form-group has-feedback has-feedback-left">
-                        {!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success', 'style' => 'width:100%;', 'onclick' => 'ValidarRegistro()'])!!}
-                      </div>
-                      <div class="form-group has-feedback has-feedback-left">
-                        <a class="btn btn-primary" href='{!! url("social/facebook") !!}'>
-                          <span>
-                            <img src="{!! URL::to('/images/facebook.png') !!}" width="7%" alt="">
-                            Iniciar sesión con Facebook
-                          </span>
-                        </a>
-                      </div>
-                    {!!Form::close()!!}
-                  </div>
+      <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+            <a href="{{URL::to('/')}}"><img src={{asset('img/yavu005.png')}} width="20%"></a>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <div align="center"> <h4 class="modal-title" id="gridSystemModalLabel"></h4></div>
+            </div>
+            <div class="modal-body">
+              <div id="">
+                @include('alerts.alertFields')
+
+                <div>
+                  {!!Form::open([route('usuarios_store_path'), 'method'=>'POST', 'id' => 'FormRegistroLanding'])!!}
+                    @include('usuarios.forms.fieldsLanding')
+                    <div class="form-group has-feedback has-feedback-left">
+                      {!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success', 'style' => 'width:100%;', 'onclick' => 'ValidarRegistro()'])!!}
+                    </div>
+                    <div class="form-group has-feedback has-feedback-left">
+                      <a class="btn btn-primary" href='{!! url("social/facebook") !!}'>
+                        <span>
+                          <img src="{!! URL::to('/images/facebook.png') !!}" width="7%" alt="">
+                          Iniciar sesión con Facebook
+                        </span>
+                      </a>
+                    </div>
+                  {!!Form::close()!!}
                 </div>
               </div>
-            </div><!-- /.modal-content -->
-          </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-	    @endif
-    </div><!-- /.row -->
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+    @endif
+    </div><!-- /div contentMiddle -->
   </div>
-</div>
 <div id="fb-root"></div>
 @stop
 

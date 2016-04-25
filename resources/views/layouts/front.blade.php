@@ -3,12 +3,12 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js" lang=""> <!--<![endif]-->
+<html> <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>Yavu.cl</title>
-		<meta name="description" content="">
+		<meta name="description" content="Yavu es una empresa de publicidad que ofrece a sus usuarios activos la oportunidad de obtener coins a partir de las publicaciones para que puedan participar por los sorteos que las empresas publican.">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="apple-touch-icon" href="apple-touch-icon.png">
 		{!!Html::script('js/jquery.js')!!}
@@ -24,7 +24,7 @@
 		{!!Html::script('js/ajax/GestionarCompraTicket.js')!!}
 		{!!Html::style('css/style.css')!!}
 		{!!Html::script('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')!!}
-			<!-- {!!Html::style('css/main.css')!!} -->
+			{{-- {!!Html::style('css/main.css')!!} --}}
 		<script>$.ajaxSetup({ cache:true });</script>
 		<script>$.ajaxSetup({ headers: { 'csrftoken' : '{!! csrf_token() !!}' } });</script>
 		<script>$.ajaxSetup({headers:{'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')}});</script>
@@ -37,24 +37,6 @@
 		</style>
 	</head><!--/head -->
 	<body>
-	<script>
-		window.fbAsyncInit = function() {
-			FB.init({
-				appId      : '457382627805002',
-				xfbml      : true,
-				version    : 'v2.5'
-			});
-		};
-
-		(function(d, s, id){
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) {return;}
-			js = d.createElement(s); js.id = id;
-			js.src = "//connect.facebook.net/en_US/sdk.js";
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-	</script>
-
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
@@ -160,18 +142,16 @@
 								<a href="{!!URL::to('/logout')!!}">Salir</a>
 							</li>
 						@endif
-					</ul>
+					</ul><!-- /ul navbar -->
 				</div><!--/.navbar-collapse -->
 
 			</div>
 		</nav>
 
-
 		@yield('content')
 
-
 		<div class="container">
-			<footer role="contentinfo" class="site-footer" id="colophon">
+			<footer class="site-footer" id="">
 				<div class="row">
 					<div class="col-md-12 col-sm-12 col-xs-12">
 						<img alt="Imagen corfo" src= "{!!URL::to('img/footer/corfo.png')!!}" class="img-responsive-centered"/></a>
@@ -210,6 +190,23 @@
 		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 		  ga('create', 'UA-76614948-1', 'auto');
 		  ga('send', 'pageview');
+		</script>
+		<script>
+			window.fbAsyncInit = function() {
+				FB.init({
+					appId      : '457382627805002',
+					xfbml      : true,
+					version    : 'v2.5'
+				});
+			};
+
+			(function(d, s, id){
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) {return;}
+				js = d.createElement(s); js.id = id;
+				js.src = "//connect.facebook.net/en_US/sdk.js";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
 		</script>
 	</body>
 </html>
