@@ -11,7 +11,7 @@
 
 				<div class="form-group has-feedback has-feedback-left">
 					{!!Form::label('Motivo:')!!}
-					{!!Form::textarea('motivo',null,['class'=>'form-control-textarea','placeholder'=>'Motivo de la carga','rows'=>'5'])!!}
+					{!!Form::textarea('motivo',null,['class'=>'form-control','placeholder'=>'Motivo de la carga','rows'=>'5'])!!}
 				</div>
 
 				<div class="form-group has-feedback has-feedback-left">

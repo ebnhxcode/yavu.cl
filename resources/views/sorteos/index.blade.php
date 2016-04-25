@@ -213,6 +213,75 @@
             </div>
           </div> <!-- /panel -->
 
+
+            <div class="panel panel-default">
+            <div class="panel-body">
+
+              <div class="list-group">
+                <div class="list-group-item list-group-item-success">
+                  <h5>ÚLTIMOS 10 SORTEOS PENDIENTES / FINALIZADOS<span id="resizeCourses" name="small" class="glyphicon glyphicon-resize-full" style="float: right;"></span> </h5>
+                </div>
+
+                <script>
+                  $('#resizeCourses').click(function(){
+                    if($(this).attr('name') == 'small'){
+                      $('#insideCourses').removeClass('wrap');
+                      $('#insideCourses').addClass('wrap-long-vertical');
+                      $(this).removeClass('glyphicon-resize-full');
+                      $(this).addClass('glyphicon-resize-small');
+                      $(this).attr('name', 'long');
+                      return true;
+                    }else{
+                      $('#insideCourses').removeClass('wrap-long-vertical');
+                      $('#insideCourses').addClass('wrap');
+                      $(this).removeClass('glyphicon-resize-small');
+                      $(this).addClass('glyphicon-resize-full');
+                      $(this).attr('name', 'small');
+                      return true;
+                    }
+                  });
+                </script>
+
+                <div id="insideCourses" class="list-group-item wrap">
+                  <table id="UserList" class="table table-hover" style="font-size: 0.8em;">
+                    <thead>
+                    <th>Nombre</th>
+                    <th>Empresa</th>
+                    <th>Estado</th>
+                    <th>Accion</th>
+
+                    @if(Auth::admin()->check())
+                      <th>Operaciones</th>
+                    @endif
+                    </thead>
+                    @foreach($sorteos as $sorteo)
+
+                      <tbody>
+                      <td>{!! $sorteo->nombre_sorteo !!}</td>
+                      <td>{!! $sorteo->nombre_empresa !!}</td>
+                      <td>{!!$sorteo->estado_sorteo!!}</td>
+                      @if(Auth::user()->get()->id == $sorteo->user_id && $sorteo->estado_sorteo == 'Pendiente')
+                        <td><a class="btn btn-primary" href="{!!URL::to('/sorteos/'.$sorteo->id.'/edit')!!}">Editar</a></td>
+                      @else
+                        @if($sorteo->estado_sorteo == 'Pendiente')
+                          <td><a class="btn btn-warning" href="{!!URL::to('/sorteos/'.$sorteo->id)!!}">Ver sorteo</a></td>
+                        @elseif($sorteo->estado_sorteo == 'Lanzado')
+                          <td><a class="btn btn-success" href="{!!URL::to('/sorteos/'.$sorteo->id)!!}">Ver sorteo</a></td>
+                        @else
+                          <td><a class="btn btn-danger" href="{!!URL::to('/sorteos/'.$sorteo->id)!!}">Ver sorteo</a></td>
+                        @endif
+                      @endif
+                      </tbody>
+
+                    @endforeach
+                  </table>
+                </div>
+
+              </div> <!-- /list group -->
+            </div>
+          </div> <!-- /Panel sorteos pendientes -->
+
+
           <div class="panel panel-default">
             <div class="panel-body">
 

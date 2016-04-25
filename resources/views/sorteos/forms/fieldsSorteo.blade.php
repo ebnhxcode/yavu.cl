@@ -9,7 +9,7 @@
 			<div class="form-group has-feedback has-feedback-left">
 				(<strong><small><span class="requerido">Requerido</span></small></strong>)
 				{!!Form::label('Descripción:')!!}
-				{!!Form::textarea('descripcion',null,['class'=>'form-control-textarea','maxlength'=>'500','placeholder'=>'Ingrese la descripcion del sorteo'])!!}
+				{!!Form::textarea('descripcion',null,['class'=>'form-control','maxlength'=>'500','placeholder'=>'Ingrese la descripcion del sorteo'])!!}
 			</div>
 			<div class="form-group has-feedback has-feedback-left">
 				(<strong><small><span class="requerido">Requerido</span></small></strong>)
@@ -27,26 +27,22 @@
 					{!!Form::hidden('estado_sorteo', 'Pendiente')!!}
 			</div>
 
-				<div class="list-group-item">
-					<div class="form-group has-feedback has-feedback-left">
-
-						{!!Form::label('Imagen sorteo:')!!}<br>
-						{!!Form::file('imagen_sorteo', ['class' => 'btn'])!!}
-						<br>
-					</div>
-				</div>			
-			@if (Auth::admin()->check())
-				<div class="form-group has-feedback has-feedback-left">
-					{!!Form::label('Estado Sorteo:')!!}
-					{!!Form::select('estado_sorteo',
-						['Pendiente' => 'Pendiente',
-						'Aprobado' => 'Aprobado'],
-						$selected = null, ['class' => 'form-control'])
-					!!}
-				</div>
-			@endif
-			@if (Auth::user()->check())
+			<div class="form-group has-feedback has-feedback-left">
+				{!!Form::label('Imagen sorteo:')!!}
+				{!!Form::file('imagen_sorteo', ['class' => 'btn'])!!}
+			</div>
+			<div class="form-group has-feedback has-feedback-left">
+				{!!Form::label('Estado Sorteo:')!!}
+				{!!Form::select('estado_sorteo',
+					[0 => 'Pendiente (No visible en sorteos)',
+					1 => 'Lanzado (Terminar)'],
+					$selected = null, ['class' => 'form-control'])
+				!!}
+			</div>
+			@if (Auth::user()->check() && isset($empresa_id))
 				<input type="hidden" name="user_id" value="{!! Auth::user()->get()->id !!}">
+				<input type="hidden" name="empresa_id" value="{!! $empresa_id !!}">
+				<input type="hidden" name="nombre_empresa" value="{!! $nombre_empresa !!}">
 			@endif
 		</div>
 	</div>

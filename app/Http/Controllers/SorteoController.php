@@ -86,7 +86,7 @@ class SorteoController extends Controller{
   public function create(){
     $empresa = Empresa::find($this->user->id);
     if($empresa !== null){
-      return view('sorteos.create');
+      return view('sorteos.create', ['empresa_id' => $empresa->id, 'nombre_empresa' => $empresa->nombre]);
     }
     Session::flash('message', '¡Para crear un sorteo para tus clientes debes tener una empresa creada, creala <a class="btn-info btn-xs" href="/empresas/create">AQUI</a>!');
     return Redirect::to("/dashboard");
@@ -116,7 +116,11 @@ class SorteoController extends Controller{
       //return $this->user;
     }
   public function index(){
-    $sorteos = DB::table('sorteos')->where('estado_sorteo', 'Lanzado')->paginate(5);
+
+    //dd($this->user->sorteos()->get());
+
+
+    $sorteos = DB::table('sorteos')->paginate(10);
 
     $this->registro_tickets = $this->user->registro_tickets()->orderBy('created_at', 'desc')->limit('20')->get();
     //dd($this->registro_tickets);

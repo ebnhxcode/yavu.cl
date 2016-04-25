@@ -79,16 +79,18 @@
           @if((Auth::user()->check()))
             @if($e->user_id == Auth::user()->get()->id)
               <div class="list-group">
-                <div class="list-group-item-full-header">
+                <div class="list-group-item">
                   <h6>PUBLICAR NUEVO ESTADO</h6>
                 </div>
-                {!!Form::open(['route'=>'estadoempresa.store', 'method'=>'POST'])!!}
-                  {!!Form::textarea('status',null,['class'=>'form-control-stat','placeholder'=>'¿Qué deseas compartir en yavu?', 'maxlength'=>'500', 'required'=>'required','style'=>'resize:none;', 'rows'=>'10', 'id'=>'status'])!!}
+                <div class="list-group-item">
+                  {!!Form::open(['route'=>'estadoempresa.store', 'method'=>'POST'])!!}
+                  {!!Form::textarea('status',null,['class'=>'form-control','placeholder'=>'¿Qué deseas compartir en yavu?', 'maxlength'=>'500', 'required'=>'required','style'=>'resize:none;', 'rows'=>'4', 'id'=>'status'])!!}
                   @if(Auth::user()->check())
                     {!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
                   @else
                     {!!Form::hidden('user_id', $e->user_id, ['id'=>'user_id'])!!}
                   @endif
+                </div>
                   <div class="list-group-item">
                     {!!link_to('#!', $title="Publicar estado", $attributes = ['id'=>'publicar', 'class'=>'btn btn-success btn-sm'], $secure = null)!!}
                     {!!link_to('#!', $title="Limpiar", $attributes = ['id'=>'limpiar', 'class'=>'btn btn-success btn-sm'], $secure = null)!!}
@@ -102,7 +104,7 @@
                     </div>
                   </div>
                   {!!Form::close()!!}
-                </div>
+              </div>
             @endif
             <div>
               <div id="Estados">

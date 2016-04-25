@@ -59,7 +59,9 @@ class User extends Model implements AuthenticatableContract,
 	public function empresas (){
 		return $this->hasMany(Empresa::class);
 	}
-
+	public function sorteos(){
+		return $this->hasMany(Sorteo::class);
+	}
 
 	
 }

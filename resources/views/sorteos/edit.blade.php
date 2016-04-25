@@ -21,6 +21,8 @@
 
 							{!!Form::submit('Guardar', ['class'=>'btn btn-success btn-md', 'style'=>'width:100%;'])!!}
 							{!!Form::close()!!}
+
+
 							{{--
 							{!!Form::open(['action'=> ['SorteoController@destroy', $sorteo->id], 'method'=>'DELETE'])!!}
 							{!!Form::submit('Eliminar', ['class'=>'btn btn-danger', 'style'=>'width:100%;']) !!}﻿
