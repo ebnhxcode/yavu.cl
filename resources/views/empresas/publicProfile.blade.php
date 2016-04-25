@@ -135,7 +135,7 @@
                   @if($e->imagen_perfil === "")
                   <img id="ImagenPerfil" src="/img/users/usuario_nuevo.png" class="center-block" >
                 @else
-                  <img id="ImagenPerfil" src="/img/users/{!!$e->imagen_perfil!!}" class="center-block" alt="...">
+                  <img id="ImagenPerfil" src="/img/users/{!!$e->imagen_perfil!!}" class="center-block" class="img-rounded" width="100" height="100" class="img-responsive" >
                 @endif
             </div>    
           </div>
@@ -145,7 +145,7 @@
               <div class="list-group-item-full-header">
                 <h3><span class="list-group-item list-group-item-success">Configuraciones</span></h3>
                 <hr>
-              <a href="{!! route('usuarios_edit_path', Auth::user()->get()->id) !!}"><h4><span class="label label-info">Editar Perfil de Usuario </span></h4></a>
+              <a class="list-group-item" href="{!! route('usuarios_edit_path', Auth::user()->get()->id) !!}"><h4><span class="label label-info">Editar Perfil de Usuario </span></h4></a>
               <br>
                             @if(Auth::user()->get()->id == $e->user_id)
                 <h4>{!!link_to_route('empresas.edit', $title = 'Editar Perfil de Empresa', $parameters = $e->id, $attributes = ['class'=>'label label-info'])!!}</h4>
@@ -168,7 +168,7 @@
 
             <div class="list-group">
               <div class="list-group-item">
-                <h3><span class="list-group-item list-group-item-success">Graficos</span></h3>
+                <h3><span class="list-group-item list-group-item-success">Gráficos</span></h3>
                 <div class="wrapper">
                   <div class="counter col_fourth">
                     <i class="fa fa-code fa-2x"></i>
