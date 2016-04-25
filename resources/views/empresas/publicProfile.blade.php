@@ -133,7 +133,7 @@
           <div class="list-group">
             <div class="list-group-item-full-header">
                   @if($e->imagen_perfil === "")
-                  <img id="ImagenPerfil" src="/img/users/usuario_nuevo.png" class="center-block" >
+                  <img id="ImagenPerfil" src="/img/users/usuario_nuevo.png" class="center-block" class="thumbnail">
                 @else
                   <img id="ImagenPerfil" src="/img/users/{!!$e->imagen_perfil!!}" class="center-block" class="img-rounded" width="100" height="100" class="img-responsive" >
                 @endif

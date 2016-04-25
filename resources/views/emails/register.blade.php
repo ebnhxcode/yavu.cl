@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
+<html>
 <body>
-	<p><strong>Nombre: </strong>{!!$nombre!!}</p>
-	<p><strong>Correo: </strong>{!!$email!!}</p>
-	<p><strong>Enlace de validacion: </strong><a href="http://localhost:8000/verificarusuario/{!! $codigo !!}"> Abrir </a>  </p>
+<h1>¡Hola <strong>{!!$nombre!!}</strong>, bienvenido!</h1>
+	<p><strong>Para validar tu cuenta haz click en el enlace de validación: </strong><a href="http://localhost:8000/verificarusuario/{!! $codigo !!}"> Abrir </a>  </p>
 	</body>
+	<strong>¡Muchas gracias por tu registo y disfruta de los beneficios que tenemos para ofrecerte!</strong>
+	<h1>Equipo Yavu.cl</h1>
 </html>

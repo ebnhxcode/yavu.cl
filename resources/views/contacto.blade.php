@@ -5,12 +5,9 @@
 @include('alerts.errorsMessage')
 @include('alerts.successMessage')
 @include('alerts.warningMessage')
-
-        <div class="colum-md-12">
-            <span><a href="#!"><img  src= "{!!URL::to('img/contacto01.png')!!}" width=100%/></a></span>
-        </div>
-
-
+<div class="colum-md-12">
+  <span><a href="#!"><img  src= "{!!URL::to('img/contacto01.png')!!}" width=100%/></a></span>
+</div>
 {!!Form::open(['route' =>'mail.store','method'=>'POST'])!!}
 <div class="jumbotron">
   <div id="contentIn">

@@ -108,19 +108,19 @@ $(document).ready(function(){
 		$.get(route, function(res){
 			TarjetaEmpresa += '<div class="container" id="tourpackages-carousel">'+'<div class="row">';
 			$(res).each(function(key,value){
-				var ImagenPerfil = "/img/users/"+value.imagen_perfil;
+				//var ImagenPerfil = "/img/users/"+value.imagen_perfil;
 				var ImagenPortada = "/img/users/"+value.imagen_portada;
 				if (value.imagen_perfil === ""){
 					ImagenPerfil = "http://localhost:8000/images/pyme.jpg";
 				}
 				if (value.imagen_portada === ""){
-					ImagenPortada = "http://medioambiente.nh-hoteles.es/themes/default/images/bgd-biodiversidad-00.png";
+					ImagenPortada = "/img/users/banner.png";
 				}
 				TarjetaEmpresa +=
 					'<div class="col-md-4">'
 					+'<div class="thumbnail card">'
 					+'<img src="'+ImagenPortada+'" alt="">'
-					+'<img class="img-circle" src="'+ImagenPerfil+'" alt="">'
+					// +'<img class="img-circle" src="'+ImagenPerfil+'" alt="">'
 					+'<h4><a class="btn-link" href="/empresa/'+value.nombre+'">'+value.nombre+'</a></h4>'
 					+value.ciudad+'<br>'
 					+value.fono+'<br>'
