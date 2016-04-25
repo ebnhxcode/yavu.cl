@@ -11,7 +11,7 @@
 			{!!Form::model($sorteo, ['method'=>'PUT', 'route' => ['sorteos.update', $sorteo->id], 'files' => true ])!!}
 			@include('sorteos.forms.fieldsSorteo', array('sorteo' => $sorteo))
 
-			<div class="col-sm-4">
+			<div class="col-md-4 col-sm-12 col-xs-12">
 				<div class="list-group">
 					<div class="list-group-item">
 						<h4>Todos los campos son requeridos</h4>
@@ -22,24 +22,17 @@
 							{!!Form::submit('Guardar', ['class'=>'btn btn-success btn-md', 'style'=>'width:100%;'])!!}
 							{!!Form::close()!!}
 
-
 							{{--
 							{!!Form::open(['action'=> ['SorteoController@destroy', $sorteo->id], 'method'=>'DELETE'])!!}
 							{!!Form::submit('Eliminar', ['class'=>'btn btn-danger', 'style'=>'width:100%;']) !!}﻿
 							{!!Form::close()!!}
 							--}}
 						</div>
-					</div>
-				</div>
-			</div>
+					</div> <!-- /div list-gruop item -->
+				</div> <!-- /div list-group -->
+			</div> <!-- /div col-md-4 col-sm-12 col-xs-12 -->
 
-		</div>
-
-
-
-
-
-
-	</div>
-</div>
+		</div> <!-- /div row -->
+	</div> <!-- /div contentMiddle -->
+</div> <!-- /div jumbotron -->
 @stop

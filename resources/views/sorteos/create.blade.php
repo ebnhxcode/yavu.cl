@@ -10,7 +10,7 @@
 		<div class="row">
 			{!!Form::open(['route'=>'sorteos.store', 'method'=>'POST', 'files' => true, 'id' => 'FormSorteo'  ])!!}
 			@include('sorteos.forms.fieldsSorteo')
-			<div class="col-sm-4">
+			<div class="col-md-4 col-sm-12 col-xs-12">
 				<div class="list-group">
 					<div class="list-group-item">
 						<h4>Todos los campos son requeridos</h4>
@@ -22,11 +22,11 @@
 							{!!Form::close()!!}
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+				</div><!-- /div list-group -->
+			</div><!-- /div col-md-4 col-sm-12 col-xs-12 -->
+		</div><!-- /div row -->
+	</div><!-- /div content middle -->
+</div><!-- div jumbotron -->
 @stop
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script>

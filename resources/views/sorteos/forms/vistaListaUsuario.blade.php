@@ -1,17 +1,15 @@
 <div id="SorteoListThumb">
 	{!! $ImagenSorteo = "" !!}
 
-
-
 	<script src="js/helpers/jquery.simple.timer.js"></script>
-	<div class="">
+	<div>
 		<div class="progress">
 			<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
 				<span class="sr-only"></span>
 				<span>cargando sorteos</span>
 			</div>
-		</div>
-	</div>
+		</div><!-- /progress bar -->
+	</div><!-- /div -->
 	@foreach($sorteos as $sorteo)
 		@if($sorteo->estado_sorteo == 'Lanzado')
 			<div class="row">
@@ -26,7 +24,6 @@
 
 						<div class="amplio">
 							<div style="padding-left: 8px;padding-right: 8px;" class="row">
-
 								<div align="center" class="col-md-3 col-sm-3 col-xs-3">
 									<span class="glyphicon glyphicon-user"></span>
 									<span class="TicketsEnSorteo" id="{!! $sorteo->id !!}"></span>
@@ -43,8 +40,9 @@
 									<div class="timer" data-seconds-left="{!! $sorteo->created_at !!}" style="float: right;"></div>
 								</div>
 
-							</div>
-						</div>
+							</div> <!-- /div row -->
+						</div><!-- /div amplio -->
+
 						<div class="row">
 							<div align="center" class="col-md-3 col-sm-3 col-xs-3">
 								<small>Tickets en juego</small>
@@ -59,17 +57,18 @@
 								<br>
 								<small><span id="estado"></span></small>
 							</div>
-						</div>
+						</div><!-- /div row -->
+
 						<div class="semi-amplio">
 							<button class="btn btn-success btn-md UsarTicket" value="{!! $sorteo->id !!}" type="button"   style="display: none; width: 100%;" data-dismiss="modal">Participar</button>
 						</div>
 
-					</div>
-				</div>
+					</div> <!-- /thumbnail -->
+				</div> <!-- /col-md-8 col-sm-12 col-xs-12 -->
 
 				<div class="col-md-4 col-sm-12 col-xs-12">
 
-					<div class="">
+					<div>
 						<h5>
 							<strong>Nombre Sorteo: </strong>
 							<input class="form-control" type="text" disabled="disabled" value="{!!$sorteo->nombre_sorteo!!}">
@@ -91,13 +90,9 @@
 							<input id="sorteo_id" value="{!! $sorteo->id !!}" type="hidden" />
 							<input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
 							<!--
-						<a id='participar' href="{!! URL::to('#!') !!}" class="btn btn-primary participar btn-sm" data-toggle="modal" data-target="#myModal" value="{!! $sorteo->id !!}" role="button">Comprar</a>
-						-->
+								<a id='participar' href="{!! URL::to('#!') !!}" class="btn btn-primary participar btn-sm" data-toggle="modal" data-target="#myModal" value="{!! $sorteo->id !!}" role="button">Comprar</a>
+							-->
 							<div class="btn-group" role="group" aria-label="...">
-
-
-
-
 							</div>
 
 							<div class="dropup">
@@ -115,19 +110,17 @@
                     <li><a href="{!! URL::to('sorteos/'.$sorteo->id.'/edit') !!}">Editar</a></li>
 									@endif
 								</ul>
-							</div>
-
+							</div><!-- /dropup button menu -->
 
 						@else
 							<a href="{!! URL::to('usuarios/create') !!}" class="btn btn-primary btn-sm" role="button">Participar!</a>
 						@endif
 					</div>
 
-				</div>
-			</div>
+				</div> <!-- /div col-md-4 col-sm-12 col-xs-12 -->
+			</div><!-- /div row -->
 			<hr>
 		@endif
 	@endforeach
 	{!!$sorteos->render()!!}
-
 </div>

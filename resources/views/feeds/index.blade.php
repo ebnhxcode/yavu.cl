@@ -5,8 +5,8 @@
 @section('content')
 <div class="jumbotron">
   <div id="contentMiddle">
-		<div class="" style="font-size: 3em;">
-			<img width="8%" src= "{!!URL::to('img/dash/ico_pin03.png')!!}"/><span >Publicaciones</span>
+		<div style="font-size: 3em;">
+			<img width="8%" src= "{!!URL::to('img/dash/ico_pin03.png')!!}" /><span>Publicaciones</span>
 		</div>
     <div class="row">
     
@@ -15,11 +15,13 @@
 			@include('alerts.successMessage')
 			@include('alerts.warningMessage')
 
+				<!-- panel izquierdo -->
 			@include('feeds.forms.panelLeft')
 
 			<input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
 			{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
 
+			<!-- panel derecho -->
 			@include('feeds.forms.panelRight')
 
     </div>

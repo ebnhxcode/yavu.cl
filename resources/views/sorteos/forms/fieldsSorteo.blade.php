@@ -1,4 +1,4 @@
-<div class="col-sm-8">
+<div class="col-md-8 col-sm-12 col-xs-12">
 	<div class="list-group" >
 		<div class="list-group-item">
 			<div class="form-group has-feedback has-feedback-left">
@@ -44,6 +44,6 @@
 				<input type="hidden" name="empresa_id" value="{!! $empresa_id !!}">
 				<input type="hidden" name="nombre_empresa" value="{!! $nombre_empresa !!}">
 			@endif
-		</div>
-	</div>
-</div>
+		</div><!-- /div list group item -->
+	</div><!-- list-group -->
+</div><!-- div col-md-8 -->
