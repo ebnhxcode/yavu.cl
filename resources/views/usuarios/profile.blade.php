@@ -26,14 +26,6 @@
 								@else
 									<img id='ImagenPortada' src='/img/users/{!!Auth::user()->get()->imagen_portada!!}' alt='...'>
 								@endif								
-
-								@if(Auth::user()->get()->imagen_perfil === '')
-									<img id='ImagenPerfil' src='/img/users/usuario_nuevo.png' class='img-circle' >
-								@else
-									<img id='ImagenPerfil' src='/img/users/{!!Auth::user()->get()->imagen_perfil!!}' class='img-circle' alt='...'>
-								@endif
-
-
 								<div class='caption'>
 									{!!Auth::user()->get()->email!!}
 									{!!Auth::user()->get()->ciudad!!}
@@ -91,9 +83,19 @@
 
 				</div>
 				<div class='col-sm-4'><!--style='position:fixed;z-index:1000;'-->
+
+					<div class="list-group">
+            			<div class="list-group-item-full-header">
+							@if(Auth::user()->get()->imagen_perfil === '')
+								<img id='ImagenPerfil' src='/img/users/usuario_nuevo.png' class='center-block'>
+							@else
+								<img id='ImagenPerfil' src='/img/users/{!!Auth::user()->get()->imagen_perfil!!}' class='center-block' width='100' height='100' class='img-responsive'>
+							@endif
+           			 	</div>    
+          			</div>
 					<div class='list-group'>
 						<div class='list-group-item-full-header'>
-							<h6>INFORMACIÓN</h6>
+							<h3><span class="list-group-item list-group-item-success">Información</span></h3>
 						</div>
 						<div class='list-group-item'>
 							Coins 
@@ -111,31 +113,31 @@
 					</div>
 					<div class='list-group'  id='EstadoEmpresa'>
 						<div class='list-group-item-full-header'>
-							<h6>MI(S) EMPRESA(S)
+							<h3><span class="list-group-item list-group-item-success">Mi(s) Empresa(s)</span></h3>
+							
 								<span style='float:right;font-size: 0.9em;' class='label label-success'>
 									<a href={!! URL::to('empresas/create/') !!}>REGISTRAR UNA EMPRESA</a>
 								</span>
-							</h6>
+						
 						</div>
 					</div>
 					<div class='list-group'>
 						<div class='list-group-item'>
-							<h6>ACCESOS RÁPIDOS</h6>
+							<h3><span class="list-group-item list-group-item-success">Accesos Rápidos</span></h3>
 						</div>
-						<a class='list-group-item list-group-item-warning' href='{!! URL::to('/feeds') !!}'>Ir a <strong>Publicaciones</strong></a>
-						<a class='list-group-item list-group-item-info' href='{!! route('usuarios_edit_path', Auth::user()->get()->id) !!}'>Editar tu <strong>Perfil</strong></a>
-						<a href='{!!URL::to('dashboard')!!}' class='list-group-item list-group-item-warning'>Volver a <strong>Inicio</strong></a>
+						<a class='list-group-item' href='{!! URL::to('/feeds') !!}'><h4><span class="label label-info">Ir a Publicaciones</span></h4></a>
+						<a class='list-group-item' href='{!! route('usuarios_edit_path', Auth::user()->get()->id) !!}'><h4><span class='label label-info'>Editar tu Perfil</span></h4></a>
+						<a href='{!!URL::to('dashboard')!!}' class='list-group-item'><h4><span class='label label-info'>Volver a Inicio</span></h4></a>
 					</div>
 					<div class='list-group'>
 						<div class='list-group-item'>
 
 
 
-							<button id='Info' type='button' class='btn btn-info btn-sm' data-container='body' data-toggle='popover' data-placement='top' data-content='Con este código tus amigos ganarán coins al registrarse!' data-original-title='Atención {!!Auth::user()->get()->nombre!!} <button type='button' onclick='CloseInfo()' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button> ' >
-								Info
+							<button id='Info' type='button' class='btn btn-info btn-sm' data-container='body' data-toggle='popover' data-placement='top' data-content='Con este código tus amigos ganarán coins al registrarse!' data-original-title='Atención {!!Auth::user()->get()->nombre!!} <button type='button' onclick='CloseInfo()' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button> 
 							</button>
 
-							<h6>CODIGO REFERENTE</h6>
+							<h6>Invita a tus Amigos!</h6>
 							<h6>{!!strtoupper(Auth::user()->get()->id. Auth::user()->get()->referente)!!}</h6>
 						</div>
 						
