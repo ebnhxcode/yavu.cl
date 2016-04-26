@@ -130,44 +130,95 @@
 				</div>
 				<div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
 
-          <div class="list-group">
-            <div class="list-group-item-full-header">
+          <div class="row">
+            <div class="col-md-7 col-sm-7 col-xs-7">
+              <div class="list-group">
+                <div class="list-group-item-full-header">
                   @if($e->imagen_perfil === "")
-                  <img id="ImagenPerfil" src="/img/users/usuario_nuevo.png" class="center-block" class="thumbnail">
-                @else
-                  <img id="ImagenPerfil" src="/img/users/{!!$e->imagen_perfil!!}" class="center-block" class="img-rounded" width="100" height="100" class="img-responsive" >
-                @endif
-            </div>    
+                    <img id="ImagenPerfil" src="/img/users/usuario_nuevo.png" class="center-block" class="thumbnail">
+                  @else
+                    <img id="ImagenPerfil" src="/img/users/{!!$e->imagen_perfil!!}" class="center-block" class="img-rounded" width="60" height="60" class="img-responsive" >
+                  @endif
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-5 col-sm-5 col-xs-5">
+              @if($e->user_id == Auth::user()->get()->id)
+                <div class="">
+                <div class="">
+                  <h3><span class="list-group-item list-group-item-success">Accesos Rápidos</span></h3>
+                </div>
+
+                <div class="">
+                  <div class="" >
+                    <div>
+
+                      <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                          Opciones <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                          <li><a href="{!!URL::to('/feeds')!!}">Inicio</a></li>
+                          <li>
+                            {!!link_to_route('empresas.edit', $title = 'Editar Perfil de Empresa', $parameters = $e->id, $attributes = [])!!}
+                          </li>
+                          <li>
+                            <a href="{!! route('usuarios_edit_path', Auth::user()->get()->id) !!}">Editar Perfil de Usuario</a>
+                          </li>
+                          <li role="separator" class="divider"></li>
+                          <li>
+                            <a href="{!!URL::to('/sorteos/create')!!}" style="text-align:center;" class="">
+                              <span>
+                                Crear sorteo <img width="40%" src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}"/>
+                              </span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href='{!!URL::to('/feeds')!!}' style="text-align:center;" class="">
+                              <span>
+                                Publicaciones <img width="40%" src= "{!!URL::to('img/dash/ico_pin03.png')!!}"/>
+                              </span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+
+
+
+
+
+
+
+                    </div>
+                  </div>
+                </div>
+
+
+                {{--
+                <a class="" href="{!! URL::to('/feeds') !!}"><h4><span class="label label-info">Ir a Publicaciones</span></h4></a>
+                <a href="{!!URL::to('sorteos/create')!!}" class=""><h4><span class="label label-info">Crear un Sorteo</span></h4></a>
+                <a href="{!!URL::to('dashboard')!!}" class=""><h4><span class="label label-info">Volver a Inicio</span></h4></a>
+                --}}
+
+
+              </div>
+              @endif
+            </div>
           </div>
 
-          @if(Auth::user()->check())
-             <div class="list-group">
-              <div class="list-group-item-full-header">
-                <h3><span class="list-group-item list-group-item-success">Configuraciones</span></h3>
-                <hr>
-              <a class="list-group-item" href="{!! route('usuarios_edit_path', Auth::user()->get()->id) !!}"><h4><span class="label label-info">Editar Perfil de Usuario </span></h4></a>
-              <br>
-                            @if(Auth::user()->get()->id == $e->user_id)
-                <h4>{!!link_to_route('empresas.edit', $title = 'Editar Perfil de Empresa', $parameters = $e->id, $attributes = ['class'=>'label label-info'])!!}</h4>
-              @endif
-              
-              </div>
-            </div>
 
-            <div class="list-group">
-              <div class="list-group-item-full-header">
-                <h3><span class="list-group-item list-group-item-success">Accesos Rápidos</span></h3>
-                <HR>
-              </div>
-              <a class="list-group-item" href="{!! URL::to('/feeds') !!}"><h4><span class="label label-info">Ir a Publicaciones</span></h4></a>
-              <a href="{!!URL::to('sorteos/create')!!}" class="list-group-item "><h4><span class="label label-info">Crear un Sorteo</span></h4></a>
-              <a href="{!!URL::to('dashboard')!!}" class="list-group-item "><h4><span class="label label-info">Volver a Inicio</span></h4></a>
-            </div>
+
+
+
+
+          @if(Auth::user()->check())
 
             @if(Auth::user()->get()->id == $e->user_id)
 
-            <div class="list-group">
-              <div class="list-group-item">
+              <div class="list-group">
+                <div class="list-group-item">
                 <h3><span class="list-group-item list-group-item-success">Gráficos</span></h3>
                 <div class="wrapper">
                   <div class="counter col_fourth">
@@ -187,8 +238,8 @@
                   </div>
                 </div>
               </div>
-            </div>
-            @endif
+              </div>
+            @endif <!-- /compare -->
 
           @endif <!-- /AuthCheck -->
           <!-- gmaps -->
