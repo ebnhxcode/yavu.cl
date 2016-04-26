@@ -209,7 +209,7 @@ $(document).ready(function(){
 		var empresa = $("#empresa").val();
 		Global_idUltimaPublicacion = $("#idUltima").val();
 		var route = "http://localhost:8000/estadosempresa/"+Global_idUltimaPublicacion+"/"+empresa;
-		var user_id = $("#user_id");
+		var user_id = $("#user_id").val();
 		var empresa_id = $("#empresa_id");
 		var Contador = 0;
 		$.get(route, function(res){
@@ -234,7 +234,8 @@ $(document).ready(function(){
 					+'<span class="caret"></span>'
 					+'</button>'
 					+'<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">'
-					+'<li ><a onclick="eliminarEstado('+value.id+')" href="#!">'+(user_id!=value.user_id?"Ocultar":"Eliminar")+' publicación</a></li>'
+					+'<li><a onclick="eliminarEstado('+value.id+','+value.user_id+')" href="#!">'+(user_id==value.user_id?"Eliminar":"Ocultar")+' publicación</a></li>'
+					+(user_id==value.user_id?"<li><a onclick='eliminarEstado("+value.id+",0)' href='#!'>Ocultar estado</a></li>":"")
 					+'</ul>'
 					+'</div><!-- /div dropdown -->'
 

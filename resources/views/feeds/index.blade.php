@@ -50,20 +50,27 @@
 		}
 	}
 
-	function eliminarEstado(id){
-		console.log(id);
-		var route = "http://localhost:8000/eliminarfeed/"+id;
-		$.ajax({
-			url: route,
-			type: 'GET',
-			dataType: 'json',
-			success:function(){
-				console.log('exito');
-				$("#publicacion"+id).fadeOut();
-			}
-		});
+	function eliminarEstado(id, user_id){
+		//console.log( $("#user_id").attr('value')+"/"+user_id);
+		user_id = user_id || null;
+		var user_anon = $("#user_id").attr('value') || null;
 
 
+		if( user_anon === user_id){
+			var route = "http://localhost:8000/eliminarfeed/"+id;
+			$.ajax({
+				url: route,
+				type: 'GET',
+				dataType: 'json',
+				success:function(){
+					console.log('exito');
+					return $("#publicacion"+id).fadeOut();
+				}
+			});
+		}else{
+			//console.log(user_anon+"-"+user_id);
+			return $("#publicacion"+id).fadeOut();
+		}
 		return true;
 	}
 
