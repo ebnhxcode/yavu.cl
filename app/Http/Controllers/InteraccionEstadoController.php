@@ -7,6 +7,8 @@ use Session;
 use Redirect;
 use Auth;
 use yavu\Estado;
+use yavu\Pop;
+use yavu\RegistroCoin;
 use yavu\User;
 use yavu\InteraccionEstado;
 use yavu\EstadoEmpresa;
@@ -59,24 +61,19 @@ class InteraccionEstadoController extends Controller{
           'updated_at' => strftime("%Y-%m-%d-%H-%M-%S", time())]
       );
 
-      DB::table('registro_coins')->insert(
-        ['user_id' => $request->user_id,
-          'cantidad' => '10',
-          'motivo' => 'Cobro de coins',
-          'created_at' => strftime("%Y-%m-%d-%H-%M-%S", time()),
-          'updated_at' => strftime("%Y-%m-%d-%H-%M-%S", time())]
-      );
-      //Ahora notifico al cliente
-      DB::table('pops')->insert(
-        ['user_id' => $request->user_id,
-          'empresa_id' => 1,
-          'tipo' => 'coins',
-          'estado' => 'pendiente',
-          'contenido' => 'Tienes coins cobrados de una publicación!',
-          'created_at' => strftime("%Y-%m-%d-%H-%M-%S", time()),
-          'updated_at' => strftime("%Y-%m-%d-%H-%M-%S", time())]
-      );
-      return response()->json(["Mensaje: " => "Creado"]);
+      if($request->user_id == $this->user->id){
+        return 'No puedes cobrar coins de tus propias publicaciones';
+      }else{
+        $this->registro_coins = new RegistroCoin(['user_id' => $request->user_id,'cantidad' => '10','motivo' => 'Cobro de coins','created_at' => strftime("%Y-%m-%d-%H-%M-%S", time()),'updated_at' => strftime("%Y-%m-%d-%H-%M-%S", time())]);
+        $this->registro_coins->save();
+        $this->pop = new Pop(['user_id' => $request->user_id,'empresa_id' => 1,'tipo' => 'coins','estado' => 'pendiente','contenido' => 'Tienes coins cobrados de una publicación!','created_at' => strftime("%Y-%m-%d-%H-%M-%S", time()),'updated_at' => strftime("%Y-%m-%d-%H-%M-%S", time())]);
+        $this->pop->save();
+        //Ahora notifico al cliente
+        return response()->json(["Mensaje: " => "Creado"]);
+      }
+
+
+
   }else{
     if($estado->estado == "activo"){
       DB::table('interaccion_estados')
