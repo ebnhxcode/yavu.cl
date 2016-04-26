@@ -208,11 +208,6 @@
             </div>
           </div>
 
-
-
-
-
-
           @if(Auth::user()->check())
 
             @if(Auth::user()->get()->id == $e->user_id)

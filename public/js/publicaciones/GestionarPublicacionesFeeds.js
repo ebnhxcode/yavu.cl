@@ -147,6 +147,9 @@ $(document).ready(function(){
 					"<div id='publicacion"+value.id+"' class='list-group'>"
 						+"<div class='list-group-item list-group-item-success'>"
 							+'<div class="dropdown">'
+
+
+
 								+'<div style="float: right;" class="dropdown">'
 								 	+'<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
 										+'<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>'
@@ -155,9 +158,12 @@ $(document).ready(function(){
 									+'<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">'
 										+'<li ><a onclick="eliminarEstado('+value.id+')" href="#!">'+(user_id!=value.user_id?"Ocultar":"Eliminar")+' publicación</a></li>'
 									+'</ul>'
-								+'</div>'
+								+'</div><!-- /div dropdown -->'
+
+						
+
 								+'<a href="/empresa/'+value.nombreEmp+'" class="btn btn-primary btn-sm" style="float: right;" id="" value="'+value.id+'" role="button">ver perfil</a>'
-							+'</div>'+
+							+'</div><!-- /div dropdown -->'+
 
 							'<div class="media">'+
 								'<div class="media-left">'+
@@ -169,12 +175,14 @@ $(document).ready(function(){
 									'<h4 class="media-heading"><a href="/empresa/'+value.nombreEmp+'" style="color:#3C5B28;">'+value.nombreEmp+'</a></h4>'+
 									"Publicó <abbr class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr>"+
 								'</div>'+
-							'</div>'
+							'</div><!-- /div media -->'
 
-						+"</div>"
+						+"</div><!-- /div list-group-item-success -->"
+
 						+'<div class="list-group-item">'
-						+"<p>"+value.status+"</p>"
-						+"</div>"
+							+"<p>"+value.status+"</p>"
+						+"</div><!-- /div list-group-item -->"
+
 						+"<div class='list-group-item panel-footer'>"					
 							+"<span id='badge_"+value.id+"' class='label label-success'></span>"+"&nbsp;"
 							+"<a role='button' class='' href='#!' style='color:#3C5B28'>"
@@ -185,9 +193,8 @@ $(document).ready(function(){
 									+"Cobrar coins"
 								+"</span>"
 							+"</a>"
-						+"</div>"
-					+"</div>"
-				).show();
+						+"</div><!-- /div list-group-item panel footer -->"
+					+"</div><!-- /div list-group -->").show();
 				document.getElementById("idUltima").value =  Global_idUltimaPublicacion;
 				Contador += 1;	
 				ContarInteracciones(value.id);
