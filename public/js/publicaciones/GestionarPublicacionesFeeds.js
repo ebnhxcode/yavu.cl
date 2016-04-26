@@ -156,25 +156,20 @@ $(document).ready(function(){
 										+'<li ><a onclick="eliminarEstado('+value.id+')" href="#!">'+(user_id!=value.user_id?"Ocultar":"Eliminar")+' publicación</a></li>'
 									+'</ul>'
 								+'</div>'
-								+'<span class="btn btn-primary btn-sm" style="float: right;" id="" value="'+value.id+'" role="button">ver perfil</span>'
+								+'<a href="/empresa/'+value.nombreEmp+'" class="btn btn-primary btn-sm" style="float: right;" id="" value="'+value.id+'" role="button">ver perfil</a>'
 							+'</div>'+
 
-					'<div class="media">'+
-						'<div class="media-left">'+
-							'<a href="#">'+
-							"<img class='media-object' src='"+ImagenPerfilEmpresa+"' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"+
-							'</a>'+
-						'</div>'+
-						'<div class="media-body">'+
-							'<h4 class="media-heading"><a href="/empresa/'+value.nombreEmp+'" style="color:#3C5B28;">'+value.nombreEmp+'</a></h4>'+
-							"Publicó <abbr class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr>"+
-						'</div>'+
-					'</div>'
-
-
-
-
-
+							'<div class="media">'+
+								'<div class="media-left">'+
+									'<a href="#">'+
+									"<img class='media-object' src='"+ImagenPerfilEmpresa+"' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"+
+									'</a>'+
+								'</div>'+
+								'<div class="media-body">'+
+									'<h4 class="media-heading"><a href="/empresa/'+value.nombreEmp+'" style="color:#3C5B28;">'+value.nombreEmp+'</a></h4>'+
+									"Publicó <abbr class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr>"+
+								'</div>'+
+							'</div>'
 
 						+"</div>"
 						+'<div class="list-group-item">'
