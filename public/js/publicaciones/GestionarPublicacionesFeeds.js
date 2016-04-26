@@ -145,26 +145,40 @@ $(document).ready(function(){
 				}
 				Estados.hide().append(
 					"<div id='publicacion"+value.id+"' class='list-group'>"
-						+"<div class='list-group-item'>"	
+						+"<div class='list-group-item list-group-item-success'>"
 							+'<div class="dropdown">'
-								+'<button class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
-									+'<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>'
-									+'<span class="caret"></span>'
-								+'</button>'
-								+'<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">'
-									+'<li><a onclick="eliminarEstado('+value.id+')" href="#!">'+(user_id!=value.user_id?"Ocultar":"Eliminar")+' publicación</a></li>'
-								+'</ul>'
-							+'</div>'																	  	
-							+"<h4><a href='/empresa/"+value.nombreEmp+"' style='color:#3C5B28;'>"
-								+"<img class='media-object' src='"+ImagenPerfilEmpresa+"' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
-								+'&nbsp;'
-								+value.nombreEmp
+								+'<div style="float: right;" class="dropdown">'
+								 	+'<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
+										+'<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>'
+										+'<span class="caret"></span>'
+									+'</button>'
+									+'<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">'
+										+'<li ><a onclick="eliminarEstado('+value.id+')" href="#!">'+(user_id!=value.user_id?"Ocultar":"Eliminar")+' publicación</a></li>'
+									+'</ul>'
+								+'</div>'
 								+'<span class="btn btn-primary btn-sm" style="float: right;" id="" value="'+value.id+'" role="button">ver perfil</span>'
-							+"</a></h4>"
-							+"<small>"
-								+"Publicó <abbr class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
-							+"</small><hr>"		
-							+"<p>"+value.status+"</p>"
+							+'</div>'+
+
+					'<div class="media">'+
+						'<div class="media-left">'+
+							'<a href="#">'+
+							"<img class='media-object' src='"+ImagenPerfilEmpresa+"' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"+
+							'</a>'+
+						'</div>'+
+						'<div class="media-body">'+
+							'<h4 class="media-heading"><a href="/empresa/'+value.nombreEmp+'" style="color:#3C5B28;">'+value.nombreEmp+'</a></h4>'+
+							"Publicó <abbr class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr>"+
+						'</div>'+
+					'</div>'
+
+
+
+
+
+
+						+"</div>"
+						+'<div class="list-group-item">'
+						+"<p>"+value.status+"</p>"
 						+"</div>"
 						+"<div class='list-group-item panel-footer'>"					
 							+"<span id='badge_"+value.id+"' class='label label-success'></span>"+"&nbsp;"

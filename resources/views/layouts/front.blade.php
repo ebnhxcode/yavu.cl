@@ -9,7 +9,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>Yavu.cl</title>
 		<meta name="description" content="Yavu es una empresa de publicidad que ofrece a sus usuarios activos la oportunidad de obtener coins a partir de las publicaciones para que puedan participar por los sorteos que las empresas publican.">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<link rel="apple-touch-icon" href="apple-touch-icon.png">
 		{!!Html::script('js/jquery.js')!!}
 		{!!Html::script('js/vendor/jquery.timeago.js')!!}
@@ -80,7 +80,10 @@
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
 						@if(!Auth::user()->check() && !Auth::empresa()->check() && !Auth::admin()->check() && Request::path() !== 'login')
-							<li class="dropdown"><a href="{!!URL::to('/login/')!!}"><span role="button" style="background: transparent;" class="btn btn-warning btn-xs">INICIA SESIÓN</span></a></li>
+							<li class="dropdown"><a href="{!!URL::to('/nosotros')!!}"><span role="button" style="background: transparent;" class="btn btn-warning btn-xs">NUESTRA EMPRESA</span></a></li>
+							<li class="dropdown"><a href="{!!URL::to('/yavucoins')!!}"><span role="button" style="background: transparent;" class="btn btn-warning btn-xs">YAVU COINS</span></a></li>
+							<li class="dropdown"><a href="{!!URL::to('/contacto')!!}"><span role="button" style="background: transparent;" class="btn btn-warning btn-xs">CONTACTO</span></a></li>
+							<li class="dropdown"><a href="{!!URL::to('/login')!!}"><span role="button" style="background: transparent;" class="btn btn-warning btn-xs">INICIA SESIÓN</span></a></li>
 							<li class="dropdown"></li>
 						@endif
 						@if(Auth::user()->check())
