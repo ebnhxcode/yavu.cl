@@ -16,64 +16,152 @@
 		@include('alerts.alertFields')
 		@foreach($empresa as $e)
 			<div class="row" style="margin-top:-35px;">
-				<div class="col-sm-8">
+        <div class="col-md-4 col-sm-12 col-xs-12"><!--style="position:fixed;z-index:1000;"-->
 
-					<div class="list-group">
-						<div class="">
-							<div class="thumbnail">
-                  <!-- Portada -->
-								@if($e->imagen_portada === "" )
-									<img id="ImagenPortada" src="/img/users/banner.png" alt="...">
-								@else
-									<img id="ImagenPortada" src="/img/users/{!!$e->imagen_portada!!}" alt="...">
-								@endif
-                  <!-- /Portada -->
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+
+              <div class="list-group">
+                <div class="list-group-item-full-header">
+
+                  <div class="thumbnail">
 
 
-                <div class="caption">
-                  @if(Auth::user()->check())
-                    <div class="list-group">
+                      @if($e->imagen_perfil === "")
+                        <img id="ImagenPerfil" src="/img/users/usuario_nuevo.png" class="center-block" class="thumbnail">
+                      @else
+                        <img id="ImagenPerfil" src="/img/users/{!!$e->imagen_perfil!!}" class="center-block" class="thumbnail" class="img-rounded" width="100" height="100" class="img-responsive" >
+                      @endif
 
-                      <div class="list-group-item-full-header">
-                          {!!Form::hidden('empresa', $e->nombre, ['id'=>'empresa'])!!}
-                          <h4>{!! strtoupper("".$e->nombre)!!}</h4>
 
-                      <div class="list-group-item">
-                          <span class="btn btn-primary btn-sm" id="seguir" value="{!! $e->id !!}" role="button">Seguir</span>
-                          <input type="text" class="btn btn-sm text-success" id="seguidores" size="10" disabled >
+
+                      <div class="caption">
+                        @if(Auth::user()->check())
+                          <div class="list-group">
+
+                            <div>
+                              {!!Form::hidden('empresa', $e->nombre, ['id'=>'empresa'])!!}
+                              <div>
+                                <span class="btn btn-primary btn-sm" id="seguir" value="{!! $e->id !!}" role="button">Seguir</span>
+                                <input type="text" class="btn btn-sm text-success" id="seguidores" size="10" disabled >
+
+
+                                  <div style="float: right;" class="">
+                                    @if($e->user_id == Auth::user()->get()->id)
+                                    <div class="">
+                                      <div class="" >
+                                        <div>
+                                          <div class="dropdown">
+                                            <button class="btn btn-default btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                                              <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                              <li><a href="{!!URL::to('/feeds')!!}">Inicio</a></li>
+                                              <li>
+                                                {!!link_to_route('empresas.edit', $title = 'Editar Perfil de Empresa', $parameters = $e->id, $attributes = [])!!}
+                                              </li>
+                                              <li>
+                                                <a href="{!! route('usuarios_edit_path', Auth::user()->get()->id) !!}">Editar Perfil de Usuario</a>
+                                              </li>
+                                              <li role="separator" class="divider"></li>
+                                              <li>
+                                                <a href="{!!URL::to('/sorteos/create')!!}" style="text-align:center;" class="">
+                                                  <span>
+                                                    Crear sorteo <img width="40%" src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}"/>
+                                                  </span>
+                                                </a>
+                                              </li>
+                                              <li>
+                                                <a href='{!!URL::to('/feeds')!!}' style="text-align:center;" class="">
+                                                  <span>
+                                                    Publicaciones <img width="40%" src= "{!!URL::to('img/dash/ico_pin03.png')!!}"/>
+                                                  </span>
+                                                </a>
+                                              </li>
+                                            </ul>
+                                          </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                    @endif
+                                  </div>
+
+
+                              </div>
+                              @else
+                                <p>
+                                  <a href="{!! URL::to('/usuarios/create') !!}" class="btn btn-primary btn-sm" role="button">Seguir</a>
+                                  <input type="text" class="btn btn-sm text-success" id="seguidores" size="10" disabled >
+                                </p>
+                                <small>Para seguir a esta empresa debes registrarte</small>
+                              @endif
+                            </div>
+
+                            <address>
+                              <strong>{!! strtoupper("".$e->nombre)!!}.</strong><br>
+                              {!!$e->direccion!!}<br>
+                              {!!$e->ciudad!!}<br>
+                              <abbr title="Phone">P:</abbr> {!!$e->fono!!}
+                            </address>
+
+                            <h6>{!! $e->descripcion !!}</h6>
+
+                            <address>
+                              <strong>Contacto</strong><br>
+                              <a href="mailto:#">{!!$e->email!!}</a>
+                            </address>
+
+                          </div>
                       </div>
-                    <p>
 
-                    </p>
-                  @else
-                    <p>
-                      <a href="{!! URL::to('/usuarios/create') !!}" class="btn btn-primary btn-sm" role="button">Seguir</a>
-                      <input type="text" class="btn btn-sm text-success" id="seguidores" size="10" disabled >
-                    </p>
-                    <small>Para seguir a esta empresa debes registrarte</small>
-                  @endif
-                      </div>
-
-                       <div class="bs-callout bs-callout-default">
-                       <h4><span class="">Descripción</span></h4>
-                       <div class="list-group-item">
-                        <strong>{!! $e->descripcion !!}</strong>
-                      </div>
-                     </div>
-
-                      <div class="bs-callout bs-callout-default">
-                        <h4><span class="">Contacto</span></h4>
-                        <strong>Email : {!!$e->email!!}<br>
-                        Dirección : {!!$e->direccion!!}<br>
-                        Ciudad : {!!$e->ciudad!!}<br></strong>
-                      </div>
-                    </div>
+                  </div>
 
 
                 </div>
               </div>
-            </div>
+            </div><!-- /div col-md-7 col-sm-7 col-xs-7 -->
+
+            <div class="col-md-5 col-sm-5 col-xs-5">
+
+            </div><!-- /div col-md-5 col-sm-5 col-xs-5 -->
           </div>
+
+          @if(Auth::user()->check())
+
+            @if(Auth::user()->get()->id == $e->user_id)
+
+              <div class="list-group">
+                <div class="list-group-item">
+                  <h3><span class="list-group-item list-group-item-success">Gráficos</span></h3>
+                  <div class="wrapper">
+                    <div class="counter col_fourth">
+                      <i class="fa fa-code fa-2x"></i>
+                      <p class="count-text ">Visitas</p>
+                      <h2 class="timer count-title" id="count-number" data-to="300" data-speed="1500"></h2>
+                    </div>
+                    <div class="counter col_fourth">
+                      <i class="fa fa-coffee fa-2x"></i>
+                      <p class="count-text ">Impacto Publicaciones</p>
+                      <h2 class="timer count-title" id="count-number" data-to="17870" data-speed="1500"></h2>
+                    </div>
+                    <div class="counter col_fourth">
+                      <i class="fa fa-lightbulb-o fa-2x"></i>
+                      <p class="count-text ">Coins Otorgadas</p>
+                      <h2 class="timer count-title" id="count-number" data-to="847" data-speed="1500"></h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              @endif <!-- /compare -->
+
+              @endif <!-- /AuthCheck -->
+
+        </div>
+				<div class="col-md-8 col-sm-12 col-xs-12">
+
+
 					{!!Form::hidden('empresa_id', $e->id, ['id'=>'empresa_id'])!!}
           <input type="hidden" name="_token" value="{!! csrf_token() !!}" id="token" />
           @if((Auth::user()->check()))
@@ -123,120 +211,20 @@
                 <span id="EstadosNuevos" class="badge"></span>
               </a>
             </div>
+              <br>
           @endif
 
-
-		  		<br>
-				</div>
-				<div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
-
-          <div class="row">
-            <div class="col-md-7 col-sm-7 col-xs-7">
-              <div class="list-group">
-                <div class="list-group-item-full-header">
-                  @if($e->imagen_perfil === "")
-                    <img id="ImagenPerfil" src="/img/users/usuario_nuevo.png" class="center-block" class="thumbnail">
-                  @else
-                    <img id="ImagenPerfil" src="/img/users/{!!$e->imagen_perfil!!}" class="center-block" class="img-rounded" width="60" height="60" class="img-responsive" >
-                  @endif
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-5 col-sm-5 col-xs-5">
-              @if($e->user_id == Auth::user()->get()->id)
-                <div class="">
-                <div class="">
-                  <h3><span class="list-group-item list-group-item-success">Accesos Rápidos</span></h3>
-                </div>
-
-                <div class="">
-                  <div class="" >
-                    <div>
-
-                      <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                          Opciones <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                          <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                          <li><a href="{!!URL::to('/feeds')!!}">Inicio</a></li>
-                          <li>
-                            {!!link_to_route('empresas.edit', $title = 'Editar Perfil de Empresa', $parameters = $e->id, $attributes = [])!!}
-                          </li>
-                          <li>
-                            <a href="{!! route('usuarios_edit_path', Auth::user()->get()->id) !!}">Editar Perfil de Usuario</a>
-                          </li>
-                          <li role="separator" class="divider"></li>
-                          <li>
-                            <a href="{!!URL::to('/sorteos/create')!!}" style="text-align:center;" class="">
-                              <span>
-                                Crear sorteo <img width="40%" src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}"/>
-                              </span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href='{!!URL::to('/feeds')!!}' style="text-align:center;" class="">
-                              <span>
-                                Publicaciones <img width="40%" src= "{!!URL::to('img/dash/ico_pin03.png')!!}"/>
-                              </span>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-
-
-
-
-
-
-
-                    </div>
-                  </div>
-                </div>
-
-
-                {{--
-                <a class="" href="{!! URL::to('/feeds') !!}"><h4><span class="label label-info">Ir a Publicaciones</span></h4></a>
-                <a href="{!!URL::to('sorteos/create')!!}" class=""><h4><span class="label label-info">Crear un Sorteo</span></h4></a>
-                <a href="{!!URL::to('dashboard')!!}" class=""><h4><span class="label label-info">Volver a Inicio</span></h4></a>
-                --}}
-
-
-              </div>
-              @endif
+          <div class="list-group">
+            <div class="thumbnail">
+              <!-- Portada -->
+              @if($e->imagen_portada === "" )
+                <img id="ImagenPortada" src="/img/users/banner.png" alt="...">
+              @else
+                <img id="ImagenPortada" src="/img/users/{!!$e->imagen_portada!!}" alt="...">
+                @endif
+                  <!-- /Portada -->
             </div>
           </div>
-
-          @if(Auth::user()->check())
-
-            @if(Auth::user()->get()->id == $e->user_id)
-
-              <div class="list-group">
-                <div class="list-group-item">
-                <h3><span class="list-group-item list-group-item-success">Gráficos</span></h3>
-                <div class="wrapper">
-                  <div class="counter col_fourth">
-                    <i class="fa fa-code fa-2x"></i>
-                    <p class="count-text ">Visitas</p>
-                    <h2 class="timer count-title" id="count-number" data-to="300" data-speed="1500"></h2>
-                  </div>
-                  <div class="counter col_fourth">
-                    <i class="fa fa-coffee fa-2x"></i>
-                    <p class="count-text ">Impacto Publicaciones</p>
-                    <h2 class="timer count-title" id="count-number" data-to="17870" data-speed="1500"></h2>
-                  </div>
-                  <div class="counter col_fourth">
-                    <i class="fa fa-lightbulb-o fa-2x"></i>
-                    <p class="count-text ">Coins Otorgadas</p>
-                    <h2 class="timer count-title" id="count-number" data-to="847" data-speed="1500"></h2>
-                  </div>
-                </div>
-              </div>
-              </div>
-            @endif <!-- /compare -->
-
-          @endif <!-- /AuthCheck -->
           <!-- gmaps -->
           <div class="list-group">
             <div class="list-group-item">
@@ -244,7 +232,14 @@
             </div>
           </div>
           <!-- /gmaps -->
-			  </div>
+
+
+		  		<br>
+				</div><!-- /div col-md-8 12 12 -->
+        <div class="col-md-12 col-sm-12 col-xs-12 ">
+
+
+        </div>
   			<br />
       </div>
     @endforeach
