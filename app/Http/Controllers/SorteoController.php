@@ -214,22 +214,26 @@ class SorteoController extends Controller{
   public function UsarTicket($user_id, $sorteo_id){
       if($this->user->tickets->sum('cantidad_tickets') > 0){
 
-        $this->ticket = new Ticket(['user_id' => $user_id,'cantidad_tickets' => -1,'monto' => -100,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
-        $this->user->tickets()->save($this->ticket);
+        if($user_id != $this->user->id){
+          $this->ticket = new Ticket(['user_id' => $user_id,'cantidad_tickets' => -1,'monto' => -100,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
+          $this->user->tickets()->save($this->ticket);
 
-        //Ahora rindo el ticket
+          //Ahora rindo el ticket
 
-        $this->sorteo = Sorteo::find($sorteo_id);
+          $this->sorteo = Sorteo::find($sorteo_id);
 
-        $this->participante_sorteos = new ParticipanteSorteo(['user_id' => $user_id,'sorteo_id' => $sorteo_id,'nombre_sorteo' => $this->sorteo->nombre_sorteo,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
-        $this->user->participante_sorteos()->save($this->participante_sorteos);
+          $this->participante_sorteos = new ParticipanteSorteo(['user_id' => $user_id,'sorteo_id' => $sorteo_id,'nombre_sorteo' => $this->sorteo->nombre_sorteo,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
+          $this->user->participante_sorteos()->save($this->participante_sorteos);
+          return 'Exito';
+        }else{
+          return 'No puedes usar tus tickets en tu propio sorteo.';
+        }
 
         //Ahora notifico
-
         //$this->pop = new Pop(['user_id' => $user_id,'empresa_id' => 1,'tipo' => 'ticket','estado'   => 'pendiente','contenido' => 'Haz usado un ticket!','created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]);
         //$this->user->pops()->save($this->pop);
 
-        return 'Exito';
+
       }else{
         return 'sin saldo de tickets';
       }
