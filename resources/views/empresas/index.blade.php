@@ -185,7 +185,6 @@
                                   <span class="VistasPerfil" id="">12</span>
                                 </div>
 
-
                               </div> <!-- /div row -->
                             </div><!-- /div amplio -->
 
@@ -202,17 +201,14 @@
 
                             <hr>
 
-
-
-
-                                <div class="btn-group-vertical" role="group" aria-label="...">
-                                  <a href="{!! URL::to('/empresa/'.$empresa->nombre.'/') !!}" class="btn btn-default btn-sm">Ver perfil</a>
-                                  <a href="{!! URL::to('/empresa/'.$empresa->nombre.'/sorteos') !!}" class="btn btn-default btn-sm">Ver sorteos</a>
-                                </div>
+                            <div class="btn-group" role="group" aria-label="...">
+                              <a href="{!! URL::to('/empresa/'.$empresa->nombre.'/') !!}" class="btn btn-default btn-sm">Ver perfil</a>
+                              <a href="{!! URL::to('/empresa/'.$empresa->nombre.'/sorteos') !!}" class="btn btn-default btn-sm">Ver sorteos</a>
+                            </div>
                             @if(Auth::user()->get()->id == $empresa->user_id)
                               <ul class="dropdown-menu">
                                 <li><a href="{!! URL::to('/empresas/'.$empresa->id.'/edit') !!}">Editar empresa</a></li>
-                                <li><a href="#">Dropdown link</a></li>
+                                <li><a href="{!! URL::to('/sorteos/create') !!}">Crear sorteo</a></li>
                               </ul>
                               <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="glyphicon glyphicon-cog"></span>
@@ -220,23 +216,12 @@
                               </button>
                             @endif
 
-
-
-
-
-
                             <div style="float: right;padding: 4px 0px 20px 0px;" class="btn-group-vertical" role="group" aria-label="...">
                             </div>
 
                           </div>
-                        </div>
-
-
-
-
-
-
-                    </div>
+                        </div><!-- /div row -->
+                    </div><!-- /div thumbnail card -->
                   </div>
                 @endforeach
               </div> <!-- /Empresa list thumb -->

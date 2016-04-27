@@ -31,7 +31,7 @@ class EmpresaController extends Controller{
 
     if(isset($this->user)){
       $empresa = Empresa::where('user_id', $this->user->id)->get();
-      if($empresa === null){
+      if($empresa == null){
         return view('empresas.create');
       }else{
         Session::flash('message-info', 'Usted ya tiene registrada una empresa');
