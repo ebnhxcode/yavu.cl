@@ -53,6 +53,9 @@ class InteraccionEstadoController extends Controller{
 
     if($request->ajax() && !$estado) {
       //InteraccionEstado::create($request->all());
+
+      
+
       DB::table('interaccion_estados')->insert(
         ['user_id' => $request->user_id,
           'status_id' => $request->status_id,

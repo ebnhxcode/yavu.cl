@@ -29,7 +29,7 @@ class SorteoController extends Controller{
     }
 
   }
-  public function BuscarSorteos(){
+  public function BuscarSorteos($nombre){
     if(isset($nombre)){
       $nombre = addslashes($nombre);
       $nombreCompleto="";
@@ -46,6 +46,7 @@ class SorteoController extends Controller{
       $sqlAdd .= " OR newTable.nombre_sorteo like '%".$nombreCompleto."%' OR newTable.descripcion like '%".$nombreCompleto."%' OR newTable.estado_sorteo like '%".$nombreCompleto."%'";
       $sqlAdd .= "ORDER BY newTable.nombre_sorteo DESC";
       $sorteos = DB::select($sqlAdd);
+      return response()->json($sorteos);
     }else{
       $sqlAdd = 'SELECT * FROM (SELECT id, estado_sorteo,imagen_sorteo, nombre_sorteo, descripcion FROM sorteos)newTable WHERE newTable.nombre_sorteo like "%sorteo%" OR newTable.descripcion like "%sorteo%" OR newTable.estado_sorteo like "%activo%" ';
       $sorteos = DB::select($sqlAdd);

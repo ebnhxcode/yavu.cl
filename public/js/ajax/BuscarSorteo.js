@@ -230,16 +230,19 @@ $(document).ready(function(){
 				TarjetaSorteo +=
 				'<div class="col-md-4">'
 					+'<div class="thumbnail">'
-						+'<img src="'+ImagenSorteo+'" alt="">'
+						+'<img src="'+ImagenSorteo+'" alt="" />'
 						+'<div class="caption">'
-						+'<td><h5>Nombre Sorteo</h5></td>'
-						+'<h4>'+value.nombre_sorteo+'</h4>'
-						+'</div>'
-						+'<td><h5>Descripción</h5></td>'
-						+'<td>'+value.descripcion+'</td>'
+							+'<strong>Nombre Sorteo</strong>'
+							+'<input class="form-control" type="text" disabled="disabled" value="'+value.nombre_sorteo+'">'
+							+'<strong>Estado Sorteo</strong>'
+							+'<input class="form-control" type="text" disabled="disabled" value="'+value.estado_sorteo+'">'
+							+'<strong>Descripción</strong>'
+							+'<textarea disabled class="form-control">'+value.descripcion+'</textarea>'
+							+'<a class="btn btn-primary btn-sm col-md-12 col-sm-12 col-xs-12" href="/sorteos/'+value.id+'">Ver sorteo</a>'
+						+'</div><!-- /div caption -->'
 						+'<br><span id="CantidadParticipantes"></span>'
-					+'</div>'
-				+'</div>';
+					+'</div><!-- /div thumbnail -->'
+				+'</div><!-- /div col-md-4 -->';
 			});
 			TarjetaSorteo += '</div>'+'</div>';
 			$("#SorteoListThumb").hide().append(TarjetaSorteo).show('slow');

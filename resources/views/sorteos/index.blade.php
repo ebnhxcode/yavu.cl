@@ -9,6 +9,7 @@
     @include('alerts.errorsMessage')
     @include('alerts.successMessage')
     @include('alerts.warningMessage')
+    @include('alerts.infoMessage')
     <div class="" style="font-size: 3em;">
       <img id="img" width="8%" src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}"/><span>Sorteos</span>
     </div>
