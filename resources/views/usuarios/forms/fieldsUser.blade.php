@@ -78,7 +78,7 @@
 				(<strong><small><span class='requerido'>Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar avatar:')!!}<span id='Perfil'></span><br>
 				<div style='border: dashed; border-width: 1px;'>
 					<span class='btn btn-primary btn-file btn-md'>
-						Buscar imagen{!!Form::file('imagen_perfil', ['id' => 'imagen_perfil',  'maxlength' => '255' 'size' => '2048'])!!}
+						Buscar imagen{!!Form::file('imagen_perfil', ['id' => 'imagen_perfil',  'maxlength' => '255',  'size' => '2048'])!!}
 					</span>
 					@if(Request::path() !== 'usuarios/create' && Auth::user()->check())
 						@if(Auth::user()->get()->imagen_perfil === '')
@@ -98,7 +98,7 @@
 				(<strong><small><span class='requerido'>Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar banner personal:')!!}<span id='Portada'></span><br>
 				<div style='border: dashed; border-width: 1px;'>
 					<span class='btn btn-primary btn-file btn-md'>
-						Buscar imagen{!!Form::file('imagen_portada', ['id' => 'imagen_portada',  'maxlength' => '255' 'size' => '2048'])!!}
+						Buscar imagen{!!Form::file('imagen_portada', ['id' => 'imagen_portada',  'maxlength' => '255', 'size' => '2048'])!!}
 					</span>
 					@if(Request::path() !== 'empresas/create' && Auth::user()->check())
 						@if(Auth::user()->get()->imagen_portada === '')
