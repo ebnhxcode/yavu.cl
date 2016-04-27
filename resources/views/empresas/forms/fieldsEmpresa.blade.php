@@ -74,7 +74,7 @@
 					(<strong><small><span class="requerido">Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar avatar: ')!!}<span id="Perfil" ></span><br>
 					<div style="border: dashed; border-width: 1px;">
 						<span class="btn btn-primary btn-file btn-sm">
-							Buscar imagen{!!Form::file('imagen_perfil', ['id' => 'imagen_perfil',  'maxlength' => '255'])!!}
+							Buscar imagen{!!Form::file('imagen_perfil', ['id' => 'imagen_perfil',  'maxlength' => '255', 'size' => '2048'])!!}
 						</span>
 						@if(Request::path() !== 'empresas/create' && isset($empresa))
 							@if($empresa->imagen_perfil==="")
@@ -92,7 +92,7 @@
 					(<strong><small><span class="requerido">Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar banner personal: ')!!}<span id="Portada"></span><br>
 					<div style="border: dashed; border-width: 1px;">
 						<span class="btn btn-primary btn-file btn-sm">
-							Buscar imagen{!!Form::file('imagen_portada', ['id' => 'imagen_portada', 'maxlength' => '255'])!!}
+							Buscar imagen{!!Form::file('imagen_portada', ['id' => 'imagen_portada', 'maxlength' => '255', 'size' => '2048'])!!}
 						</span>
 						@if(Request::path() !== 'empresas/create' && isset($empresa))
 							@if($empresa->imagen_portada==="")
@@ -324,10 +324,14 @@
 		var formato = this.value;
 		var formatosPermitidos = ["jpg", "jpeg", "png", "gif"];
 		formato = formato.split('.');
-		if(formatosPermitidos.indexOf(formato[1]) < 0)
+		var sizeByte = this.files[0].size;
+     	var siezekiloByte = parseInt(sizeByte / 1024);
+		if((formatosPermitidos.indexOf(formato[1]) < 0) || (siezekiloByte > $(this).attr('size')))
 		{
-			this.value.clear();
-			alert('Formato de imagen invalido, no se subirá');
+
+			alert('Formato de imagen invalido o tamaño supera 1 Mega, no se subirá');
+			this.value = '';
+
 		}
 		else
 		{
@@ -339,10 +343,12 @@
 		var formato = this.value;
 		var formatosPermitidos = ["jpg", "jpeg", "png", "gif"];
 		formato = formato.split('.');
-		if(formatosPermitidos.indexOf(formato[1]) < 0)
+		var sizeByte = this.files[0].size;
+     	var siezekiloByte = parseInt(sizeByte / 1024);
+		if((formatosPermitidos.indexOf(formato[1]) < 0) || (siezekiloByte > $(this).attr('size')))
 		{
-			this.value.clear();
-			alert('Formato de imagen invalido, no se subirá');
+			alert('Formato de imagen invalido o tamaño supera 1 Mega, no se subirá');
+			this.value = '';
 		}
 		else
 		{
