@@ -153,11 +153,76 @@
                         <img width="40%" id="ImagenPerfil" class="img-circle" src="/images/pyme.jpg" alt="...">
                       @endif --}}
 
-                      <h4><a class="btn-link" href="/empresa/{!!$empresa->nombre!!}">{!!$empresa->nombre!!}</a></h4>
-                      {!!$empresa->ciudad!!}
-                      <br>
-                      {!!$empresa->fono!!}
-                      <br>
+                        <div class="row">
+                          <div class="col-md-5">
+                            <address>
+                              <strong><a class="btn-link" href="/empresa/{!!$empresa->nombre!!}">{!! strtoupper("".$empresa->nombre)!!}</a></strong><br>
+                              {!!$empresa->direccion!!}<br>
+                              {!!$empresa->ciudad!!}<br>
+                              <abbr title="Phone">P:</abbr> {!!$empresa->fono!!}
+                            </address>
+
+                            <h6>{!! $empresa->descripcion !!}</h6>
+
+                            <address>
+                              <strong>Contacto</strong><br>
+                              <a href="mailto:#">{!!$empresa->email!!}</a>
+                            </address>
+
+                          </div>
+                          <div class="col-md-7">
+
+                            <div style="padding: 4px 0px 20px 0px;" class="btn-group" role="group" aria-label="...">
+                              <a class="btn btn-default btn-sm">Ver perfil</a>
+                              <a class="btn btn-primary btn-sm">Seguir</a>
+                            </div>
+
+                            <div class="amplio">
+                              <div style="padding-left: 8px;padding-right: 8px;" class="row">
+                                <div align="center" class="col-md-3 col-sm-3 col-xs-3">
+                                  <span class="glyphicon glyphicon-user"></span>
+                                  <span class="SorteosActivos" id=""></span>
+                                  <input type="hidden" name="_token" value="{!! csrf_token() !!}">
+                                </div>
+
+                                <div align="center" class="col-md-3 col-sm-3 col-xs-3">
+                                  <span class="glyphicon glyphicon-tag"></span>
+                                  <span class="SorteosFinalizados" id=""></span>
+                                </div>
+
+                                <div align="center" class="col-md-6 col-sm-6 col-xs-6">
+                                  <span class="glyphicon glyphicon-time"></span>
+                                  <div class="timer" data-seconds-left="" style="float: right;"></div>
+                                </div>
+
+                              </div> <!-- /div row -->
+                            </div><!-- /div amplio -->
+
+                            <div class="row">
+                              <div align="center" class="col-md-3 col-sm-3 col-xs-3">
+                                <small>Tickets en juego</small>
+                              </div>
+
+                              <div align="center" class="col-md-3 col-sm-3 col-xs-3">
+                                <small>Tickets apostados</small>
+                              </div>
+
+                              <div align="center" class="col-md-6 col-sm-6 col-xs-6">
+                                <small>Tiempo restante</small>
+                                <br>
+                                <small><span id="estado"></span></small>
+                              </div>
+                            </div><!-- /div row -->
+
+
+                          </div>
+                        </div>
+
+
+
+
+
+
                     </div>
                   </div>
                 @endforeach
