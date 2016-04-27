@@ -13,7 +13,9 @@
 		<link rel="apple-touch-icon" href="apple-touch-icon.png">
 		{!!Html::script('js/jquery.js')!!}
 		{!!Html::script('js/vendor/jquery.timeago.js')!!}
-		{!!Html::script('js/vendor/bootstrap.min.js')!!}
+		{{--{!!Html::script('js/bootstrap.min.js')!!}--}}
+		{!!Html::script('js/all.js')!!}
+		{!!Html::script('js/all.js.map')!!}
 		{!!Html::script('js/plugins.js')!!}
 		{!!Html::script('js/ajax/FrontNotificaciones.js')!!}
 
