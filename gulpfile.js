@@ -34,18 +34,18 @@ elixir(function(mix) {
         .copy(bootstrapPath + '/javascripts/bootstrap.min.js', 'public/js');
 
     mix.scripts([
-        // paths.bootstrap + 'affix.js',
+        paths.bootstrap + 'affix.js',
         paths.bootstrap + 'alert.js',
-        // paths.bootstrap + 'button.js',
+        paths.bootstrap + 'button.js',
         paths.bootstrap + 'carousel.js',
         paths.bootstrap + 'collapse.js',
         paths.bootstrap + 'dropdown.js',
         paths.bootstrap + 'modal.js',
-        // paths.bootstrap + 'popover.js',
-        // paths.bootstrap + 'scrollspy.js',
-        paths.bootstrap + 'tab.js',
         paths.bootstrap + 'tooltip.js',
-        // paths.bootstrap + 'transition.js',
+        paths.bootstrap + 'popover.js',
+        paths.bootstrap + 'scrollspy.js',
+        paths.bootstrap + 'tab.js',
+        paths.bootstrap + 'transition.js',
     ]);
 
     mix.version(['public/css/app.css', 'public/js/all.js']);

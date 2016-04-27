@@ -1,6 +1,5 @@
-{!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/BuscarEmpresa.js')!!}
-@extends('layouts.front')	
+@extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
@@ -168,52 +167,66 @@
                               <strong>Contacto</strong><br>
                               <a href="mailto:#">{!!$empresa->email!!}</a>
                             </address>
-
                           </div>
+
                           <div class="col-md-7">
 
-                            <div style="padding: 4px 0px 20px 0px;" class="btn-group" role="group" aria-label="...">
-                              <a class="btn btn-default btn-sm">Ver perfil</a>
-                              <a class="btn btn-primary btn-sm">Seguir</a>
-                            </div>
 
                             <div class="amplio">
-                              <div style="padding-left: 8px;padding-right: 8px;" class="row">
-                                <div align="center" class="col-md-3 col-sm-3 col-xs-3">
-                                  <span class="glyphicon glyphicon-user"></span>
-                                  <span class="SorteosActivos" id=""></span>
+                              <div class="row">
+                                <div align="center" class="col-md-6 col-sm-6 col-xs-6">
+                                  <span class="glyphicon glyphicon-sunglasses"></span>
+                                  <span class="SorteosActivos" id="">12</span>
                                   <input type="hidden" name="_token" value="{!! csrf_token() !!}">
                                 </div>
 
-                                <div align="center" class="col-md-3 col-sm-3 col-xs-3">
-                                  <span class="glyphicon glyphicon-tag"></span>
-                                  <span class="SorteosFinalizados" id=""></span>
+                                <div align="center" class="col-md-6 col-sm-6 col-xs-6">
+                                  <span class="glyphicon glyphicon-eye-open"></span>
+                                  <span class="VistasPerfil" id="">12</span>
                                 </div>
 
-                                <div align="center" class="col-md-6 col-sm-6 col-xs-6">
-                                  <span class="glyphicon glyphicon-time"></span>
-                                  <div class="timer" data-seconds-left="" style="float: right;"></div>
-                                </div>
 
                               </div> <!-- /div row -->
                             </div><!-- /div amplio -->
 
                             <div class="row">
-                              <div align="center" class="col-md-3 col-sm-3 col-xs-3">
-                                <small>Tickets en juego</small>
-                              </div>
-
-                              <div align="center" class="col-md-3 col-sm-3 col-xs-3">
-                                <small>Tickets apostados</small>
+                              <div align="center" class="col-md-6 col-sm-6 col-xs-6">
+                                <small>Sorteos activos</small>
                               </div>
 
                               <div align="center" class="col-md-6 col-sm-6 col-xs-6">
-                                <small>Tiempo restante</small>
-                                <br>
-                                <small><span id="estado"></span></small>
+                                <small>Vistas</small>
                               </div>
+
                             </div><!-- /div row -->
 
+                            <hr>
+
+
+
+
+                                <div class="btn-group-vertical" role="group" aria-label="...">
+                                  <a href="{!! URL::to('/empresa/'.$empresa->nombre.'/') !!}" class="btn btn-default btn-sm">Ver perfil</a>
+                                  <a href="{!! URL::to('/empresa/'.$empresa->nombre.'/sorteos') !!}" class="btn btn-default btn-sm">Ver sorteos</a>
+                                </div>
+                            @if(Auth::user()->get()->id == $empresa->user_id)
+                              <ul class="dropdown-menu">
+                                <li><a href="{!! URL::to('/empresas/'.$empresa->id.'/edit') !!}">Editar empresa</a></li>
+                                <li><a href="#">Dropdown link</a></li>
+                              </ul>
+                              <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="glyphicon glyphicon-cog"></span>
+                                <span class="caret"></span>
+                              </button>
+                            @endif
+
+
+
+
+
+
+                            <div style="float: right;padding: 4px 0px 20px 0px;" class="btn-group-vertical" role="group" aria-label="...">
+                            </div>
 
                           </div>
                         </div>

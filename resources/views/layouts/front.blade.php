@@ -15,13 +15,11 @@
 		{!!Html::script('js/vendor/jquery.timeago.js')!!}
 		{{--{!!Html::script('js/bootstrap.min.js')!!}--}}
 		{!!Html::script('js/all.js')!!}
-		{!!Html::script('js/all.js.map')!!}
 		{!!Html::script('js/plugins.js')!!}
 		{!!Html::script('js/ajax/FrontNotificaciones.js')!!}
 
 		{!!Html::style('css/app.css')!!}
 
-		{!!Html::script('js/global.js')!!}
     {!!Html::script('js/ajax/GestionarCoins.js')!!}
 		{!!Html::script('js/ajax/GestionarCompraTicket.js')!!}
 		{!!Html::style('css/style.css')!!}
