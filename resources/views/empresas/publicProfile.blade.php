@@ -100,19 +100,23 @@
                               @endif
                             </div>
 
-                            <address>
-                              <strong>{!! strtoupper("".$e->nombre)!!}.</strong><br>
-                              {!!$e->direccion!!}<br>
-                              {!!$e->ciudad!!}<br>
-                              <abbr title="Phone">P:</abbr> {!!$e->fono!!}
-                            </address>
+                            <div style="font-size: 1.2em;">
+                              <address>
+                                <br>
+                                <strong>{!! strtoupper("".$e->nombre)!!}.</strong><br />
+                                Direcci&oacute;n : {!!$e->direccion!!}<br>
+                                Ciudad : {!!$e->ciudad!!}<br>
+                                N° de contacto : <abbr title="Phone">P:</abbr> {!!$e->fono!!}
+                              </address>
 
-                            <h6>{!! $e->descripcion !!}</h6>
+                              <h3>{!! $e->descripcion !!}</h3>
 
-                            <address>
-                              <strong>Contacto</strong><br>
-                              <a href="mailto:#">{!!$e->email!!}</a>
-                            </address>
+                              <address>
+                                <strong>Contacto</strong><br>
+                                <a href="mailto:#">{!!$e->email!!}</a>
+                              </address>
+                            </div>
+
 
                           </div>
                       </div>
@@ -226,6 +230,7 @@
                   <!-- /Portada -->
             </div>
           </div>
+
           <!-- gmaps -->
           <div class="list-group">
             <div class="list-group-item">
