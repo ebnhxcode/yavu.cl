@@ -71,28 +71,6 @@
 						</div>
 					</div>
 
-						<div class='col-md-4 col-sm-6 col-xs-12'>
-
-							<div class='list-group' >
-								<a href='{!!URL::to('/sorteos')!!}' style='text-align:center;' class='list-group-item list-group-item-warning'>
-								<span>
-									<h4>SORTEOS</h4>
-									<img  src= '{!!URL::to('img/dash/ico_sorteo01.png')!!}' class=''/>
-								</span>
-								</a>
-							</div>
-						</div>
-
-						<div class='col-md-4 col-sm-6 col-xs-12'>
-
-							<div class='list-group' >
-								<a href='{!!URL::to('/sorteos/create')!!}' style='text-align:center;' class='list-group-item list-group-item-warning'>
-								<span>
-									<h4>CREAR SORTEO</h4>
-									<img  src= '{!!URL::to('img/dash/ico_sorteo01.png')!!}' class=''/>
-								</span>
-								</a>
-							</div>
 
 							<!--
              <div class='list-group'>
@@ -129,8 +107,8 @@
                <a href='#' class='list-group-item list-group-item-info'>Ir a ayudas generales</a>
              </div>
               -->
-						</div>
 
+					<!--
 					<div class='col-md-4 col-sm-6 col-xs-12'>
 						<div class='list-group' >
 							<a href='{!!URL::to('/pops')!!}' style='text-align:center;' class='list-group-item list-group-item-danger'>
@@ -140,6 +118,7 @@
 							</a>
 						</div>
 					</div>
+					-->
 					<!-- <div class='col-md-12 col-sm-12 col-xs-12'><!--style='position:fixed;z-index:1000;'
 
 						 <div class='list-group' >
@@ -152,20 +131,7 @@
 								</a>
 						 </div> -->
 
-					<div class='col-md-4 col-sm-6 col-xs-12'>
 
-
-						<div class='list-group' >
-							<a href='{!!URL::to('/reports')!!}' style='text-align:center;' class='list-group-item list-group-item-success'>
-								 <span>
-									 <h4>INFORMES</h4>
-									 <img  src= '{!!URL::to('img/dash/icono_informe01.png')!!}' class=''/></span>
-							</a>
-
-						</div>
-
-
-					</div>
 
 					<div class='col-md-4 col-sm-6 col-xs-12'>
 
@@ -179,19 +145,30 @@
 						</div>
 
 					</div>
+						<div id="sorteo" class='col-md-4 col-sm-6 col-xs-12' style="display: none;">
+
+							<div class='list-group' >
+								<a href='{!!URL::to('/sorteos')!!}' style='text-align:center;' class='list-group-item list-group-item-warning'>
+								<span>
+									<h4>SORTEOS</h4>
+									<img  src= '{!!URL::to('img/dash/ico_sorteo01.png')!!}' class=''/>
+								</span>
+								</a>
+							</div>
+						</div>
 
 						<div class='col-md-4 col-sm-6 col-xs-12'>
 
 							<div class='list-group' >
-								<a href='{!!URL::to('/tickets/history')!!}' style='text-align:center;' class='list-group-item list-group-item-info'>
-								 <span>
-									 <h4>COMPRAR TICKETS</h4>
-									 <img  src= '{!!URL::to('img/dash/ico_ticket01.png')!!}' class=''/></span>
+								<a href='{!!URL::to('/sorteos/create')!!}' style='text-align:center;display: none;' class='list-group-item list-group-item-warning'>
+								<span>
+									<h4>CREAR SORTEO</h4>
+									<img  src= '{!!URL::to('img/dash/ico_sorteo01.png')!!}' class=''/>
+								</span>
 								</a>
-
 							</div>
-
 						</div>
+
 
 				</div><!-- Fin del div id contentIn -->
 			</div>

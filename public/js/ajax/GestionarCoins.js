@@ -73,6 +73,9 @@ $(document).ready(function(){
 					if (value.imagen_perfil === ""){
 						ImagenPerfil = "https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png";
 					}
+
+					$("#sorteo").css("display", "");
+					
 					$("#EstadoEmpresa").append(
 						'<div>'+
 							'<div class="list-group">'

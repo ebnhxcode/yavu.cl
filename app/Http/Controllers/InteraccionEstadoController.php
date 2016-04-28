@@ -46,6 +46,8 @@ class InteraccionEstadoController extends Controller{
   }
   public function store(Request $request){
 
+
+
     $estado = InteraccionEstado::where('user_id', $request->user_id)
       ->where('status_id', $request->status_id)
       ->first();
@@ -64,8 +66,12 @@ class InteraccionEstadoController extends Controller{
           'updated_at' => strftime("%Y-%m-%d-%H-%M-%S", time())]
       );
 
-      if($request->user_id == $this->user->id){
-        return 'No puedes cobrar coins de tus propias publicaciones';
+      $this->interaccion = EstadoEmpresa::find(addslashes($request->status_id));
+
+      if($this->interaccion->user_id == $this->user->id){
+
+        return response()->json(["Mensaje: " => "No puedes cobrar coins de tus propias publicaciones"]);
+
       }else{
         $this->registro_coins = new RegistroCoin(['user_id' => $request->user_id,'cantidad' => '10','motivo' => 'Cobro de coins','created_at' => strftime("%Y-%m-%d-%H-%M-%S", time()),'updated_at' => strftime("%Y-%m-%d-%H-%M-%S", time())]);
         $this->registro_coins->save();
