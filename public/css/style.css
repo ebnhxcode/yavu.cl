@@ -222,7 +222,7 @@
 
 @media (min-width: 1096px) {
   #contentMiddle {
-    width: 80%;
+    width: 100%;
   }
 }
 @media (min-width: 1200px) {
