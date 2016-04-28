@@ -106,10 +106,12 @@
                                 <strong>{!! strtoupper("".$e->nombre)!!}.</strong><br />
                                 Direcci&oacute;n : {!!$e->direccion!!}<br>
                                 Ciudad : {!!$e->ciudad!!}<br>
-                                N° de contacto : <abbr title="Phone">P:</abbr> {!!$e->fono!!}
+                                N° de contacto : <abbr title="Phone"></abbr> {!!$e->fono!!}
                               </address>
 
-                              <h3>{!! $e->descripcion !!}</h3>
+                              <!--<h3>{!! $e->descripcion !!}</h3>-->
+                              <button id='Info' type='button' class='btn btn-info btn-sm' data-container='body' data-toggle='popover' data-placement='top' data-content='{!! $e->descripcion !!}' data-original-title=''> Descripcion
+                              </button>
 
                               <address>
                                 <strong>Contacto</strong><br>
@@ -123,6 +125,13 @@
 
                   </div>
 
+                  <!-- gmaps -->
+                  <div class="list-group">
+                    <div class="list-group-item">
+                      @include('empresas.forms.modalModificarDireccionMapa')
+                    </div>
+                  </div>
+                  <!-- /gmaps -->
 
                 </div>
               </div>
@@ -166,6 +175,17 @@
         </div>
 				<div class="col-md-8 col-sm-12 col-xs-12">
 
+          <div id="IPortada" class="list-group">
+            <div class="thumbnail">
+              <!-- Portada -->
+              @if($e->imagen_portada === "" )
+                <img id="ImagenPortada" src="/img/users/banner.png" alt="...">
+              @else
+                <img id="ImagenPortada" src="/img/users/{!!$e->imagen_portada!!}" alt="...">
+                @endif
+                  <!-- /Portada -->
+            </div>
+          </div>
 
 					{!!Form::hidden('empresa_id', $e->id, ['id'=>'empresa_id'])!!}
           <input type="hidden" name="_token" value="{!! csrf_token() !!}" id="token" />
@@ -173,7 +193,7 @@
             @if($e->user_id == Auth::user()->get()->id)
               <div class="list-group">
                 <div class="list-group-item">
-                  <h6>PUBLICAR NUEVO ESTADO</h6>
+                  <strong>PUBLICAR NUEVO ESTADO</strong>
                 </div>
                 <div class="list-group-item">
                   {!!Form::open(['route'=>'estadoempresa.store', 'method'=>'POST'])!!}
@@ -219,25 +239,7 @@
               <br>
           @endif
 
-          <div class="list-group">
-            <div class="thumbnail">
-              <!-- Portada -->
-              @if($e->imagen_portada === "" )
-                <img id="ImagenPortada" src="/img/users/banner.png" alt="...">
-              @else
-                <img id="ImagenPortada" src="/img/users/{!!$e->imagen_portada!!}" alt="...">
-                @endif
-                  <!-- /Portada -->
-            </div>
-          </div>
 
-          <!-- gmaps -->
-          <div class="list-group">
-            <div class="list-group-item">
-              @include('empresas.forms.modalModificarDireccionMapa')
-            </div>
-          </div>
-          <!-- /gmaps -->
 
 
 		  		<br>

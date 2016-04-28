@@ -118,13 +118,21 @@ $(document).ready(function(){
 					ImagenPortada = "/img/users/banner.png";
 				}
 				TarjetaEmpresa +=
-					'<div class="col-md-4">'
+					'<div class="col-md-6 col-sm-12 col-xs-12">'
 					+'<div class="thumbnail card">'
-					+'<img src="'+ImagenPortada+'" alt="">'
+					+'<img src="'+ImagenPortada+'" style="height: 200px;">'
 					// +'<img class="img-circle" src="'+ImagenPerfil+'" alt="">'
 					+'<h4><a class="btn-link" href="/empresa/'+value.nombre+'">'+value.nombre+'</a></h4>'
-					+value.ciudad+'<br>'
-					+value.fono+'<br>'
+					+'Ciudad : '+value.ciudad+'<br>'
+					+'<strong>Contacto</strong><br>'
+					+'Fono : '+value.fono+'<br>'
+					+value.email+'<br>'
+
+					+'<div class="btn-group" role="group" aria-label="...">'
+						+'<a href="empresa/'+value.nombre+'/" class="btn btn-default btn-xs">Ver perfil</a>'
+						+'<a href="empresa/'+value.nombre+'/sorteos" class="btn btn-default btn-xs">Ver sorteos</a>'
+					+'</div>'
+
 					+'</div>'
 					+'</div>';
 			});

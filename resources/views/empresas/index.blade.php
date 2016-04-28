@@ -13,8 +13,9 @@
     </div>
     <div class="row">
       <div class="col-md-4 col-sm-12 col-xs-12">
-        <div class="panel panel-default">
-          <div class="panel-body">
+
+        <div>
+          <div>
             <div class="list-group">
               <div class="list-group-item list-group-item-success">
                 FILTRO DE BÚSQUEDA
@@ -104,12 +105,8 @@
         </div> <!-- /panel -->
       </div>
       <div class="col-md-8 col-sm-12 col-xs-12">
-        <div class="panel panel-default">
-          <div class="panel-body">
-
-            <div class="form-group">
-
-            </div>
+        <div>
+          <div>
             @if(Auth::admin()->check())
               <table class="table table-hover" id="EmpresaList">
                 <thead>
@@ -140,42 +137,33 @@
                     <div class="thumbnail card">
 
                       @if($empresa->imagen_portada === "" )
-                        <img id="ImagenPortada" src="/img/users/banner.png" alt="...">
+                        <img id="ImagenPortada" src="/img/users/banner.png" alt="..." style="height: 200px;">
                       @else
-                        <img id="ImagenPortada" src="/img/users/{!!$empresa->imagen_portada!!}" alt="...">
+                        <img id="ImagenPortada" src="/img/users/{!!$empresa->imagen_portada!!}" alt="..." style="height: 200px;">
                       @endif
 
-                      {{-- @if($empresa->imagen_perfil !== "")
-                        <img width="40%" class="img-circle" src="{!!URL::to('img/users/'.$empresa->imagen_perfil)!!}" alt="">
-                      @else
-                        <img width="40%" id="ImagenPerfil" class="img-circle" src="/images/pyme.jpg" alt="...">
-                      @endif --}}
-
                         <div class="row">
-                          <div class="col-md-5">
+                          <div class="col-md-6 col-sm-6 col-xs-6">
                             <address>
                               <strong><a class="btn-link" href="/empresa/{!!$empresa->nombre!!}">{!! strtoupper("".$empresa->nombre)!!}</a></strong><br>
-                              {!!$empresa->direccion!!}<br>
-                              {!!$empresa->ciudad!!}<br>
-                              <abbr title="Phone">P:</abbr> {!!$empresa->fono!!}
+                              Ciudad : {!!$empresa->ciudad!!}<br>
                             </address>
-
-                            <h6>{!! $empresa->descripcion !!}</h6>
-
+                            <br>
                             <address>
                               <strong>Contacto</strong><br>
+                              Fono : <abbr title="Phone"></abbr> {!!$empresa->fono!!}
                               <a href="mailto:#">{!!$empresa->email!!}</a>
                             </address>
                           </div>
 
-                          <div class="col-md-7">
+                          <div class="col-md-6 col-sm-6 col-xs-6">
 
 
                             <div class="amplio">
                               <div class="row">
-                                <div align="center" class="col-md-6 col-sm-6 col-xs-6">
+                                <div align="center" class="col-md-12 col-sm-12 col-xs-12">
                                   <span class="glyphicon glyphicon-sunglasses"></span>
-                                  <span class="SorteosActivos" id="{!! $empresa->id !!}"></span>
+                                  <span class="SorteosActivos" id="{!! $empresa->id !!}">12</span>
                                   <input type="hidden" name="_token" value="{!! csrf_token() !!}">
                                 </div>
 
@@ -183,7 +171,7 @@
                             </div><!-- /div amplio -->
 
                             <div class="row">
-                              <div align="center" class="col-md-6 col-sm-6 col-xs-6">
+                              <div align="center" class="col-md-12 col-sm-12 col-xs-12">
                                 <small>Sorteos activos</small>
                               </div>
 
@@ -194,8 +182,8 @@
                             <hr>
 
                             <div class="btn-group" role="group" aria-label="...">
-                              <a href="{!! URL::to('/empresa/'.$empresa->nombre.'/') !!}" class="btn btn-default btn-sm">Ver perfil</a>
-                              <a href="{!! URL::to('/empresa/'.$empresa->nombre.'/sorteos') !!}" class="btn btn-default btn-sm">Ver sorteos</a>
+                              <a href="{!! URL::to('/empresa/'.$empresa->nombre.'/') !!}" class="btn btn-default btn-xs">Ver perfil</a>
+                              <a href="{!! URL::to('/empresa/'.$empresa->nombre.'/sorteos') !!}" class="btn btn-default btn-xs">Ver sorteos</a>
                             </div>
                             @if(Auth::user()->get()->id == $empresa->user_id)
                               <ul class="dropdown-menu">
