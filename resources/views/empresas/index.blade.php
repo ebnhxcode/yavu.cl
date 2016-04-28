@@ -1,6 +1,6 @@
-{!!Html::script('js/ajax/BuscarEmpresa.js')!!}
 @extends('layouts.front')
 @section('content')
+{!!Html::script('js/ajax/BuscarEmpresa.js')!!}
 <div class="jumbotron">
 	<div id="contentMiddle">
 		@include('alerts.alertFields')
@@ -11,7 +11,6 @@
     <div class="" style="font-size: 3em;">
       <img id="img" width="8%" src= "{!!URL::to('img/dash/ico_empresa.png')!!}"/><span>Empresas</span>
     </div>
-
     <div class="row">
       <div class="col-md-4 col-sm-12 col-xs-12">
         <div class="panel panel-default">
@@ -176,13 +175,8 @@
                               <div class="row">
                                 <div align="center" class="col-md-6 col-sm-6 col-xs-6">
                                   <span class="glyphicon glyphicon-sunglasses"></span>
-                                  <span class="SorteosActivos" id="">12</span>
+                                  <span class="SorteosActivos" id="{!! $empresa->id !!}"></span>
                                   <input type="hidden" name="_token" value="{!! csrf_token() !!}">
-                                </div>
-
-                                <div align="center" class="col-md-6 col-sm-6 col-xs-6">
-                                  <span class="glyphicon glyphicon-eye-open"></span>
-                                  <span class="VistasPerfil" id="">12</span>
                                 </div>
 
                               </div> <!-- /div row -->
@@ -193,9 +187,7 @@
                                 <small>Sorteos activos</small>
                               </div>
 
-                              <div align="center" class="col-md-6 col-sm-6 col-xs-6">
-                                <small>Vistas</small>
-                              </div>
+
 
                             </div><!-- /div row -->
 

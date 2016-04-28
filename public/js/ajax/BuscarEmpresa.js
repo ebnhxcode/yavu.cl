@@ -10,6 +10,7 @@ $(document).ready(function(){
 		e.preventDefault();
 		return true;
 	});
+	SorteosEmpresa();
 /*MÉTODOS CONSTRUCTORES*/
 
 /*SELECTORES*/
@@ -130,6 +131,33 @@ $(document).ready(function(){
 			TarjetaEmpresa += '</div>'+'</div>';
 			$("#EmpresaListThumb").hide().append(TarjetaEmpresa).show('slow');
 		});
+		return true;
+	}
+
+	function SorteosEmpresa(){
+		var route = "http://localhost:8000/sorteosempresa/";
+		$.ajax({
+			url: route,
+			type: 'GET',
+			dataType: 'json',
+			cache: false,
+			jsonpCallback: 'mantener',
+			async: true,
+			success: function success(data, status) {
+        var SorteosActivos = document.getElementsByClassName("SorteosActivos");
+        console.log(data[0]);
+        
+        //console.log(SorteosActivos.length);
+
+        //tomar la coleccion de sorteos activos
+        //comparar si le pertenece
+        //asignarselo
+        //console.log(data[0].user_id);
+
+			}
+		});
+
+
 		return true;
 	}
 

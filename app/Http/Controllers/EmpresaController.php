@@ -24,8 +24,7 @@ class EmpresaController extends Controller{
     $this->empresa = Empresa::find($route->getParameter('empresas'));
   }
   public function index(Request $request){
-    $empresas = Empresa::nombre($request->get('nombre'))->orderBy('id', 'DESC')->paginate(10);
-    return view('empresas.index', compact('empresas'));
+    return view('empresas.index', ['empresas' => Empresa::paginate(15)]);
   }
   public function create(){
 
@@ -104,6 +103,14 @@ class EmpresaController extends Controller{
       }
     }
     return response()->json(["Mensaje: " => "Acceso denegado"]);
+  }
+  public function RaffleList($empresa){
+      $empresa = addslashes($empresa);
+      $this->empresa = Empresa::where('nombre', $empresa)->get();
+      $this->user = User::find($this->empresa[0]->user_id);
+      return view('empresas.raffleList', ['sorteos' => $this->user->sorteos()->get()->where('estado_sorteo', 'Lanzado')], ['empresa' => $this->empresa]);
+
+
   }
   public function SolicitarEliminacion($id){
     if(isset($id)){

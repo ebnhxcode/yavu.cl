@@ -184,7 +184,7 @@
 				</div><!-- /div row -->
 			</footer><!-- /footer -->
 		</div> <!-- /container -->
-		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 		<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
