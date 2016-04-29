@@ -17,6 +17,12 @@ Route::get('', '');
 Route::get('', '');
 */
 
+
+/*Gestión de ingreso login*/
+Route::resource('log', 'LogController');
+/*Gestión de ingreso login*/
+
+
 /*Gestión de correos*/
 Route::resource('mail', 'MailController');
 /*Gestión de correos*/
@@ -155,10 +161,6 @@ Route::get('sitemap', function(){
 
 
 
-
-/*Gestión de ingreso login*/
-Route::resource('log', 'LogController');
-/*Gestión de ingreso login*/
 
 
 
