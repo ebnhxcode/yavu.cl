@@ -35,9 +35,9 @@
           </div>
           <div class="form-group has-feedback has-feedback-left ">
             <a class="btn btn-primary" style='width:100%;' href='{!! url("social/facebook") !!}'>
+              <img src="{!! URL::to('/images/facebook.png') !!}" width="7%" alt="">
               <span>
-                <img src="{!! URL::to('/images/facebook.png') !!}" width="7%" alt="">
-                Iniciar sesión con Facebook
+                Registrate con Facebook
               </span>
             </a>
           </div>

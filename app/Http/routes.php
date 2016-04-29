@@ -21,6 +21,10 @@ Route::get('', '');
 Route::resource('mail', 'MailController');
 /*Gestión de correos*/
 
+/*Gestion socialite*/
+Route::get('social/{provider?}', 'SocialController@getSocialAuth');
+Route::get('social/callback/{provider?}', 'SocialController@getSocialAuthCallback');
+/*Gestion socialite*/
 
 Route::group(['middleware' => 'user'], function(){
 
@@ -236,5 +240,3 @@ Route::resource('gmaps', 'GmapsController');
 /*Gestión de Mapas*/
 
 
-Route::get('social/{provider?}', 'SocialController@getSocialAuth');
-Route::get('social/callback/{provider?}', 'SocialController@getSocialAuthCallback');
