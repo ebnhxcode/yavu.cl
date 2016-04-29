@@ -13,12 +13,15 @@
 			@include('alerts.warningMessage')
 				<div class='col-sm-8'>
 					<div class='list-group' >
-						<div class='list-group-item-full-header'>
-							<h6> Hola!: {!!strtoupper(Auth::user()->get()->nombre . ' ' . Auth::user()->get()->apellido)!!}</h6>
+
+						<div class='list-group'>
+							<div class='list-group-item list-group-item-info '>
+								Hola!: {!!strtoupper(Auth::user()->get()->nombre . ' ' . Auth::user()->get()->apellido)!!}
+							</div>
 						</div>
 
 						<!-- SECCION DE LAS FOTO DE PERFIL Y PORTADA -->
-						<div class=''>
+						<div id="IPortada" class=''>
 							<div class='thumbnail'>
 
 								@if(Auth::user()->get()->imagen_portada === '')
@@ -85,24 +88,99 @@
 				<div class='col-sm-4'><!--style='position:fixed;z-index:1000;'-->
 
 					<div class="list-group">
-            			<div class="list-group-item-full-header">
+						<div class="list-group-item">
 							@if(Auth::user()->get()->imagen_perfil === '')
 								<img id='ImagenPerfil' src='/img/users/usuario_nuevo.png' class='center-block'>
 							@else
 								<img id='ImagenPerfil' src='/img/users/{!!Auth::user()->get()->imagen_perfil!!}' class='center-block' width='100' height='100' class='img-responsive'>
 							@endif
-           			 	</div>    
-          			</div>
+						</div>
+					</div>
+
+					<div class="list-group">
+
+
+						<div class="list-group-item">
+							<div class="row">
+
+								<div class="col-md-4 col-sm-4 col-xs-4">
+									<div class="list-group" >
+										<div>
+											<a href="{!!URL::to('/feeds')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
+                          <span>
+                            <img width="80%" src= "{!!URL::to('img/dash/ico_pin03.png')!!}"/>
+                          </span>
+											</a>
+										</div>
+										<div align="center"><small>Publicaciones</small></div>
+									</div>
+								</div>
+
+								<div class="col-md-4 col-sm-4 col-xs-4">
+									<div class="list-group" >
+										<div>
+											<a href="{!!URL::to('/sorteos')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
+                          <span>
+                            <img width="80%" src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}"/>
+                          </span>
+											</a>
+										</div>
+										<div align="center"><small>Sorteos</small></div>
+									</div>
+								</div>
+
+								<div class="col-md-4 col-sm-4 col-xs-4">
+									<div class="list-group" >
+										<div>
+											<a href="{!!URL::to('/tickets/history')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
+                          <span>
+                            <img width="80%" src= "{!!URL::to('img/dash/ico_ticket01.png')!!}"/>
+                          </span>
+											</a>
+										</div>
+										<div align="center"><small>Tickets</small></div>
+									</div>
+								</div>
+
+
+
+								<div class='col-md-4 col-sm-4 col-xs-4'>
+									<div class='list-group' >
+										<div>
+											<a href='{!!URL::to('/coins/history')!!}' style="text-align:center;" class="list-group-item list-group-item-info">
+                          <span>
+                            <img width="80%" src= "{!!URL::to('img/dash/ico_notificacion004.png')!!}"/>
+                          </span>
+											</a>
+										</div>
+										<div align="center"><small>Informe Coins</small></div>
+									</div>
+								</div>
+
+								<div class='col-md-4 col-sm-4 col-xs-4'>
+									<div class='list-group' >
+										<div>
+											<a href='{!!URL::to('/tickets/history')!!}' style="text-align:center;" class="list-group-item list-group-item-info">
+                          <span>
+                            <img width="80%" src= "{!!URL::to('img/dash/icono_informe01.png')!!}"/>
+                          </span>
+											</a>
+										</div>
+										<div align="center"><small>Informe Ticket's</small></div>
+									</div>
+								</div>
+
+							</div><!-- /row -->
+						</div> <!-- /list group item -->
+
+					</div> <!-- /list group -->
+
+					{{--
 					<div class='list-group'>
-						<div class='list-group-item-full-header'>
+						<div class='list-group-item'>
 							<h3><span class="list-group-item list-group-item-success">Información</span></h3>
 						</div>
-						<div class='list-group-item'>
-							Coins 
-							<span id='' style='float:right;' class='label label-warning CantidadCoins'>
-								<img src='https://38.media.tumblr.com/9056c3040c618c65888244befef39321/tumblr_mhpc6eUvag1rrftcdo1_500.gif' width='16px' height='12px'>
-							</span>
-						</div>
+
 						<div class='list-group-item'>
 							Estado usuario
 							<span id='EstadoUsuario' style='float:right;' class='label label-success'>
@@ -110,31 +188,24 @@
 									{!!Auth::user()->get()->estado!!}
 							</span>
 						</div>
+
 					</div>
+					--}}
+
 					<div class='list-group'  id='EstadoEmpresa'>
-						<div class='list-group-item-full-header'>
-							<h3><span class="list-group-item list-group-item-success">Mi(s) Empresa(s)</span></h3>
-							
-								<span style='float:right;font-size: 0.9em;' class='label label-success'>
-									<a href={!! URL::to('empresas/create/') !!}>REGISTRAR UNA EMPRESA</a>
-								</span>
-						
-						</div>
+
+
 					</div>
-					<div class='list-group'>
-						<div class='list-group-item'>
-							<h3><span class="list-group-item list-group-item-success">Accesos Rápidos</span></h3>
-						</div>
-						<a class='list-group-item' href='{!! URL::to('/feeds') !!}'><h4><span class="label label-info">Ir a Publicaciones</span></h4></a>
-						<a class='list-group-item' href='{!! route('usuarios_edit_path', Auth::user()->get()->id) !!}'><h4><span class='label label-info'>Editar tu Perfil</span></h4></a>
-						<a href='{!!URL::to('dashboard')!!}' class='list-group-item'><h4><span class='label label-info'>Volver a Inicio</span></h4></a>
-					</div>
+
+
+
+
 					<div class='list-group'>
 						<div class='list-group-item'>
 
 
 
-							<button id='Info' type='button' class='btn btn-info btn-sm' data-container='body' data-toggle='popover' data-placement='top' data-content='Con este código tus amigos ganarán coins al registrarse!' data-original-title='Atención {!!Auth::user()->get()->nombre!!} <button type='button' onclick='CloseInfo()' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button> 
+							<button id='Info' type='button' class='btn btn-info btn-sm' data-container='body' data-toggle='popover' data-placement='top' data-content='Con este código tus amigos ganarán coins al registrarse!' data-original-title='Atención {!!Auth::user()->get()->nombre!!} <button type='button' onclick='CloseInfo()' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
 							</button>
 
 							<h6>Invita a tus Amigos!</h6>

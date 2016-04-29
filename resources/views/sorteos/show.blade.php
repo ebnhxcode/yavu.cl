@@ -15,7 +15,7 @@
         <div class="row">
           <div class="col-md-8 col-sm-12 col-xs-12">
             <div class="list-group">
-              <div class="list-group-item-full-header">
+              <div class="list-group-item">
                 @if($sorteo->imagen_sorteo === "")
                   <img class="img-responsive-centered" width="40%" src="https://tiendas-asi.com/wp-content/uploads/2015/04/sorteo-diariodebodas.jpg" alt="" />
                 @else
