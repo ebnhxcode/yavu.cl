@@ -1,10 +1,6 @@
 {!!Html::script('js/jquery.js')!!}
 @extends('layouts.front')
 @section('content')
-@include('alerts.alertFields')
-@include('alerts.errorsMessage')
-@include('alerts.successMessage')
-@include('alerts.warningMessage')
 <div class="colum-md-12">
   <span><a href="#!"><img  src= "{!!URL::to('img/contacto01.png')!!}" width=100%/></a></span>
 </div>
@@ -13,36 +9,36 @@
   <div id="contentIn">
     <h1>Contacto</h1>
     <div class="panel panel-default">
-   
+
       <div class="panel-body">
-             
-        {!!Form::open()!!}
-        <table class="table">
-          <tr>
-            <td>Nombre:</td>
-            <td>
-              {!!Form::text('name',null,['class'=>'form-control','placeholder'=>'Ingresa tu nombre', 'required'=>'required'])!!}
-            </td>
-          </tr>
-          <tr>
-            <td>Email:</td>
-            <td>
-              {!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingresa tu email', 'required'=>'required'])!!}
-            </td>
+        @include('alerts.alertFields')
+        @include('alerts.errorsMessage')
+        @include('alerts.successMessage')
+        @include('alerts.warningMessage')
+        @include('alerts.infoMessage')
 
-          </tr>
-          <tr>
-            <td>Mensaje:</td>
-            <td>
-              {!!Form::textarea('mensaje',null,['class'=>'form-control','placeholder'=>'Ingresa tu mensaje', 'required'=>'required','rows'=>'3'])!!}                      
-            </td>
-          </tr>
-        </table>
+        <div class="row">
+          <div class="col-md-12">
 
-        {!!Form::submit('Enviar')!!}
-        {!!Form::close()!!}
+            {!!Form::open()!!}
+            Nombre:
+            {!!Form::text('name',null,['class'=>'form-control','placeholder'=>'Ingresa tu nombre', 'required'=>'required'])!!}
+            Email:
+            {!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingresa tu email', 'required'=>'required'])!!}
+            Mensaje:
+            {!!Form::textarea('mensaje',null,['class'=>'form-control','placeholder'=>'Ingresa tu mensaje', 'required'=>'required','rows'=>'3'])!!}
+            <br>
+            {!!Form::submit('Enviar', ['class' => 'btn btn-success'])!!}
+            {!!Form::close()!!}
+
+
+          </div>
+        </div>
+
+
+
       </div>
-    </div>  
+    </div>
   </div>
 </div>
 {!!Form::close()!!}

@@ -17,6 +17,9 @@ Route::get('', '');
 Route::get('', '');
 */
 
+/*Gestión de correos*/
+Route::resource('mail', 'MailController');
+/*Gestión de correos*/
 
 
 Route::group(['middleware' => 'user'], function(){
@@ -121,9 +124,7 @@ Route::group(['middleware' => 'user'], function(){
   /*Gestión de Notificaciones -> Pops*/
 
 
-  /*Gestión de correos*/
-  Route::resource('mail', 'MailController');
-  /*Gestión de correos*/
+
 
 
 

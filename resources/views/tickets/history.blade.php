@@ -11,8 +11,8 @@
     </div>
     <div class="row">
       <div class="col-md-4 col-sm-12 col-xs-12"><!--style="position:fixed;z-index:1000;"-->
-        <div class="panel panel-default">
-          <div class="panel-body">
+        <div>
+          <div>
             <div class="list-group">
               <div class="list-group-item list-group-item-success">
                 FILTRO DE BÚSQUEDA
@@ -119,8 +119,8 @@
       </div>
 
       <div class="col-md-8 col-sm-12 col-xs-12">
-        <div class="panel panel-default">
-          <div class="panel-body">
+        <div>
+          <div>
 
             <div class="list-group">
               <div class="list-group-item list-group-item-success">
@@ -137,8 +137,8 @@
           </div><!-- /div panel body -->
         </div><!-- /div panel -->
 
-        <div class="panel panel-default">
-          <div class="panel-body">
+        <div>
+          <div>
 
             <div class="list-group">
               <div class="list-group-item list-group-item-success">
@@ -195,8 +195,8 @@
           </div> <!-- /div panel body  -->
         </div> <!-- /Panel historial uso -->
 
-        <div class="panel panel-default">
-          <div class="panel-body">
+        <div>
+          <div>
 
             <div class="list-group">
               <div class="list-group-item list-group-item-success">
