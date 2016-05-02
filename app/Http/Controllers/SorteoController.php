@@ -214,8 +214,9 @@ class SorteoController extends Controller{
   }
   public function UsarTicket($user_id, $sorteo_id){
       if($this->user->tickets->sum('cantidad_tickets') > 0){
+        $this->sorteo = Sorteo::find(addslashes($sorteo_id));
 
-        if($user_id != $this->user->id){
+        if($this->sorteo->user_id != $this->user->id){
           $this->ticket = new Ticket(['user_id' => $user_id,'cantidad_tickets' => -1,'monto' => -100,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
           $this->user->tickets()->save($this->ticket);
 
