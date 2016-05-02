@@ -14,6 +14,25 @@
       <img id="img" width="8%" src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}"/><span>Sorteos</span>
     </div>
     <div class="row">
+
+
+      <div class="col-md-12 col-sm-12 col-xs-12">
+
+        <div class="alert alert-warning alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          Atento al usar tus tickets participar
+          <span class="glyphicon glyphicon-tag" style="font-size: 1em; color: #BEF781;"></span>
+          <span class="glyphicon glyphicon-resize-horizontal"></span>
+          <span class="label label-info">#14</span>&nbsp;(<small class="requerido">Tickets de ejemplo</small>)
+        </div>
+
+        <div class="alert alert-info alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          Si el boton participar no aparece refresca la página
+        </div>
+
+      </div>
+
       <div class="col-md-4 col-sm-12 col-xs-12">
         <div>
           <div>
@@ -34,8 +53,8 @@
 
                   <div class="col-md-4 col-sm-4 col-xs-4">
                     <div class="list-group" >
-                      <div>
-                        <a href="{!!URL::to('/sorteos/create')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
+                      <div align="center">
+                        <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/sorteos/create')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
                           <span>
                             <img width="80%" src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}"/>
                           </span>
@@ -47,8 +66,8 @@
 
                   <div class="col-md-4 col-sm-4 col-xs-4">
                     <div class="list-group" >
-                      <div>
-                        <a href="{!!URL::to('/tickets/history')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
+                      <div align="center">
+                        <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/tickets/history')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
                           <span>
                             <img width="80%" src= "{!!URL::to('img/dash/ico_ticket01.png')!!}"/>
                           </span>
@@ -60,8 +79,8 @@
 
                   <div class="col-md-4 col-sm-4 col-xs-4">
                     <div class="list-group" >
-                      <div>
-                        <a href="{!!URL::to('/feeds')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
+                      <div align="center">
+                        <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/feeds')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
                           <span>
                             <img width="80%" src= "{!!URL::to('img/dash/ico_pin03.png')!!}"/>
                           </span>
@@ -73,8 +92,8 @@
 
                   <div class='col-md-4 col-sm-4 col-xs-4'>
                     <div class='list-group' >
-                      <div>
-                        <a href='{!!URL::to('/coins/history')!!}' style="text-align:center;" class="list-group-item list-group-item-info">
+                      <div align="center">
+                        <a style="padding: 2px 2px 2px 2px;" href='{!!URL::to('/coins/history')!!}' style="text-align:center;" class="list-group-item list-group-item-info">
                           <span>
                             <img width="80%" src= "{!!URL::to('img/dash/ico_notificacion004.png')!!}"/>
                           </span>
@@ -86,8 +105,8 @@
 
                   <div class='col-md-4 col-sm-4 col-xs-4'>
                     <div class='list-group' >
-                      <div>
-                        <a href='{!!URL::to('/tickets/history')!!}' style="text-align:center;" class="list-group-item list-group-item-info">
+                      <div align="center">
+                        <a style="padding: 2px 2px 2px 2px;" href='{!!URL::to('/tickets/history')!!}' style="text-align:center;" class="list-group-item list-group-item-info">
                           <span>
                             <img width="80%" src= "{!!URL::to('img/dash/icono_informe01.png')!!}"/>
                           </span>
@@ -100,15 +119,6 @@
                 </div><!-- /row -->
               </div> <!-- /list group item -->
 
-              <div class="list-group-item">
-                <div class="alert alert-warning alert-dismissible" role="alert">
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  Atento al usar tus tickets participar
-                  <span class="glyphicon glyphicon-tag" style="font-size: 1em; color: #BEF781;"></span>
-                  <span class="glyphicon glyphicon-resize-horizontal"></span>
-                  <span class="label label-info">#14</span>&nbsp;(<small class="requerido">Tickets de ejemplo</small>)
-                </div>
-              </div>
 
             </div> <!-- /list group -->
 
@@ -249,6 +259,8 @@
           <div>
 
             <div class="list-group">
+
+
               <div class="list-group-item list-group-item-success">
                 COMPRA TUS TICKET'S A <span class="label label-warning">$ 100</span>
               </div>
@@ -263,10 +275,7 @@
 
             </div> <!-- /list group -->
 
-            <div class="alert alert-info alert-dismissible" role="alert">
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              Si el boton participar no aparece refresca la página
-            </div>
+
 
           </div> <!-- /panel body -->
         </div> <!-- /panel -->
