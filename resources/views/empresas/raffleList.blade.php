@@ -6,9 +6,19 @@
       <img id="img" width="8%" src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}"/><span>Sorteos de {!! $empresa[0]->nombre !!}</span>
     </div>
     <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="alert alert-warning alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          Atento al usar tus tickets participar
+          <span class="glyphicon glyphicon-tag" style="font-size: 1em; color: #BEF781;"></span>
+          <span class="glyphicon glyphicon-resize-horizontal"></span>
+          <span class="label label-info">#14</span>&nbsp;(<small class="requerido">Tickets de ejemplo</small>)
+        </div>
+      </div>
+
       <div class="col-md-4 col-sm-12 col-xs-12">
-        <div class="panel panel-default">
-          <div class="panel-body">
+        <div>
+          <div>
             <div class="list-group">
 
               <div class="list-group-item">
@@ -16,8 +26,8 @@
 
                   <div class="col-md-4 col-sm-4 col-xs-4">
                     <div class="list-group" >
-                      <div>
-                        <a href="{!!URL::to('/sorteos/create')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
+                      <div align="center">
+                        <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/sorteos/create')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
                           <span>
                             <img width="80%" src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}"/>
                           </span>
@@ -29,8 +39,8 @@
 
                   <div class="col-md-4 col-sm-4 col-xs-4">
                     <div class="list-group" >
-                      <div>
-                        <a href="{!!URL::to('/tickets/history')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
+                      <div align="center">
+                        <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/tickets/history')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
                           <span>
                             <img width="80%" src= "{!!URL::to('img/dash/ico_ticket01.png')!!}"/>
                           </span>
@@ -42,8 +52,8 @@
 
                   <div class="col-md-4 col-sm-4 col-xs-4">
                     <div class="list-group" >
-                      <div>
-                        <a href="{!!URL::to('/feeds')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
+                      <div align="center">
+                        <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/feeds')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
                           <span>
                             <img width="80%" src= "{!!URL::to('img/dash/ico_pin03.png')!!}"/>
                           </span>
@@ -55,8 +65,8 @@
 
                   <div class='col-md-4 col-sm-4 col-xs-4'>
                     <div class='list-group' >
-                      <div>
-                        <a href='{!!URL::to('/coins/history')!!}' style="text-align:center;" class="list-group-item list-group-item-info">
+                      <div align="center">
+                        <a style="padding: 2px 2px 2px 2px;" href='{!!URL::to('/coins/history')!!}' style="text-align:center;" class="list-group-item list-group-item-info">
                           <span>
                             <img width="80%" src= "{!!URL::to('img/dash/ico_notificacion004.png')!!}"/>
                           </span>
@@ -68,8 +78,8 @@
 
                   <div class='col-md-4 col-sm-4 col-xs-4'>
                     <div class='list-group' >
-                      <div>
-                        <a href='{!!URL::to('/tickets/history')!!}' style="text-align:center;" class="list-group-item list-group-item-info">
+                      <div align="center">
+                        <a style="padding: 2px 2px 2px 2px;" href='{!!URL::to('/tickets/history')!!}' style="text-align:center;" class="list-group-item list-group-item-info">
                           <span>
                             <img width="80%" src= "{!!URL::to('img/dash/icono_informe01.png')!!}"/>
                           </span>
@@ -82,24 +92,14 @@
                 </div><!-- /row -->
               </div> <!-- /list group item -->
 
-              <div class="list-group-item">
-                <div class="alert alert-warning alert-dismissible" role="alert">
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  Atento al usar tus tickets participar
-                  <span class="glyphicon glyphicon-tag" style="font-size: 1em; color: #BEF781;"></span>
-                  <span class="glyphicon glyphicon-resize-horizontal"></span>
-                  <span class="label label-info">#14</span>&nbsp;(<small class="requerido">Tickets de ejemplo</small>)
-                </div>
-              </div>
-
             </div> <!-- /list group -->
 
           </div>
         </div> <!-- /panel -->
       </div>
       <div class="col-md-8 col-sm-12 col-xs-12">
-        <div class="panel panel-default">
-          <div class="panel-body">
+        <div>
+          <div>
             @foreach($sorteos as $sorteo)
               <div class="row">
 
@@ -160,20 +160,20 @@
                   <div>
                     <h5>
                       <strong>Nombre Sorteo: </strong>
-                      <input class="form-control" type="text" disabled="disabled" value="{!!$sorteo->nombre_sorteo!!}">
+                      <strong><input class="form-control" type="text" disabled="disabled" value="{!!$sorteo->nombre_sorteo!!}"></strong>
                     </h5>
                     <h5>
                       <strong>Descripción del Sorteo: </strong>
-                      <textarea disabled class="form-control">{!!$sorteo->descripcion!!}</textarea>
+                      <strong><textarea disabled class="form-control">{!!$sorteo->descripcion!!}</textarea></strong>
                     </h5>
                     <h5>
                       <strong>Estado del Sorteo: </strong>
                       <span class="requerido"></span>
-                      <input class="form-control" type="text" disabled="disabled" value="{!!$sorteo->estado_sorteo!!}">
+                      <strong><input class="form-control" type="text" disabled="disabled" value="{!!$sorteo->estado_sorteo!!}"></strong>
                     </h5>
                     <h5>
                       <strong>Fecha del sorteo: </strong>
-                      <input class="form-control" type="text" disabled="disabled" value="{!!$sorteo->fecha_inicio_sorteo!!}">
+                      <strong><input class="form-control" type="text" disabled="disabled" value="{!!$sorteo->fecha_inicio_sorteo!!}"></strong>
                     </h5>
                     @if(Auth::user()->check())
                       <input id="sorteo_id" value="{!! $sorteo->id !!}" type="hidden" />

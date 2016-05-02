@@ -22,6 +22,9 @@ Route::get('', '');
 Route::resource('log', 'LogController');
 /*Gestión de ingreso login*/
 
+Route::get('login', function(){
+  return view('login');
+});
 
 /*Gestión de correos*/
 Route::resource('mail', 'MailController');
@@ -144,7 +147,8 @@ Route::group(['middleware' => 'user'], function(){
 /*Gestión del front*/
 Route::get('/','FrontController@index');
 Route::get('index','FrontController@index');
-Route::get('login','FrontController@login');
+//Route::get('login','FrontController@login');
+
 Route::get('registro','FrontController@registro');
 Route::get('yavucoins','FrontController@yavucoins');
 Route::get('contacto','FrontController@contacto');

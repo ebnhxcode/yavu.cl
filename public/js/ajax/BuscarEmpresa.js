@@ -122,17 +122,19 @@ $(document).ready(function(){
 					+'<div class="thumbnail card">'
 					+'<img src="'+ImagenPortada+'" style="height: 200px;">'
 					// +'<img class="img-circle" src="'+ImagenPerfil+'" alt="">'
+					+'<address>'
 					+'<h4><a class="btn-link" href="/empresa/'+value.nombre+'">'+value.nombre+'</a></h4>'
-					+'Ciudad : '+value.ciudad+'<br>'
-					+'<strong>Contacto</strong><br>'
-					+'Fono : '+value.fono+'<br>'
-					+value.email+'<br>'
-
+					+'<strong>Ciudad :</strong> '+value.ciudad+'<br>'
+					+'<strong>Contacto <span class="caret"></span></strong><br>'
+					+'<strong>Fono :</strong> '+value.fono+'<br>'
+					+'<a href="mailto:#">'+value.email+'</a><br>'
+					+'</address>'
+					+'<div align="center">'
 					+'<div class="btn-group" role="group" aria-label="...">'
 						+'<a href="empresa/'+value.nombre+'/" class="btn btn-default btn-xs">Ver perfil</a>'
 						+'<a href="empresa/'+value.nombre+'/sorteos" class="btn btn-default btn-xs">Ver sorteos</a>'
 					+'</div>'
-
+					+'</div>'
 					+'</div>'
 					+'</div>';
 			});

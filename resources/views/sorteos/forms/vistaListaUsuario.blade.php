@@ -71,20 +71,20 @@
 					<div>
 						<h5>
 							<strong>Nombre Sorteo: </strong>
-							<input class="form-control" type="text" disabled="disabled" value="{!!$sorteo->nombre_sorteo!!}">
+							<strong><input class="form-control" type="text" disabled="disabled" value="{!!$sorteo->nombre_sorteo!!}"></strong>
 						</h5>
 						<h5>
 							<strong>Descripción del Sorteo: </strong>
-							<textarea disabled class="form-control">{!!$sorteo->descripcion!!}</textarea>
+							<strong><textarea disabled class="form-control">{!!$sorteo->descripcion!!}</textarea></strong>
 						</h5>
 						<h5>
 							<strong>Estado del Sorteo: </strong>
 							<span class="requerido"></span>
-							<input class="form-control" type="text" disabled="disabled" value="{!!$sorteo->estado_sorteo!!}">
+							<strong><input class="form-control" type="text" disabled="disabled" value="{!!$sorteo->estado_sorteo!!}"></strong>
 						</h5>
 						<h5>
 							<strong>Fecha del sorteo: </strong>
-							<input class="form-control" type="text" disabled="disabled" value="{!!$sorteo->fecha_inicio_sorteo!!}">
+							<strong><input class="form-control" type="text" disabled="disabled" value="{!!$sorteo->fecha_inicio_sorteo!!}"></strong>
 						</h5>
 						@if(Auth::user()->check())
 							<input id="sorteo_id" value="{!! $sorteo->id !!}" type="hidden" />

@@ -300,3 +300,20 @@
 /* @medias [A-Z]+ please */
 
 /* @medias [A-Z]+ please */
+
+.navbar-button-border {
+  border: #f8f800 1px solid;
+  border-radius: 10px 10px 10px 10px;
+  padding: 6px 5px 6px 5px;
+}
+
+.navbar-button-hover {
+  padding: 6px 5px 6px 5px;
+}
+
+.navbar-button-hover:hover {
+  background: #4F7A06;
+  border-radius: 10px 10px 10px 10px;
+  padding: 6px 5px 6px 5px;
+}
+

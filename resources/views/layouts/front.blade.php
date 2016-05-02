@@ -80,11 +80,11 @@
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
 						@if(!Auth::user()->check() && !Auth::empresa()->check() && !Auth::admin()->check())
-							<li class="dropdown"><a href="{!!URL::to('/nosotros')!!}"><span role="button" style="background: transparent;" class="btn btn-warning btn-xs">NUESTRA EMPRESA</span></a></li>
-							<li class="dropdown"><a href="{!!URL::to('/yavucoins')!!}"><span role="button" style="background: transparent;" class="btn btn-warning btn-xs">YAVU COINS</span></a></li>
-							<li class="dropdown"><a href="{!!URL::to('/contacto')!!}"><span role="button" style="background: transparent;" class="btn btn-warning btn-xs">CONTACTO</span></a></li>
+							<li class="dropdown"><a href="{!!URL::to('/nosotros')!!}"><span role="button" class="navbar-button-hover">NUESTRA EMPRESA</span></a></li>
+							<li class="dropdown"><a href="{!!URL::to('/yavucoins')!!}"><span role="button" class="navbar-button-hover">YAVU COINS</span></a></li>
+							<li class="dropdown"><a href="{!!URL::to('/contacto')!!}"><span role="button" class="navbar-button-hover">CONTACTO</span></a></li>
 							@if(Request::path() != 'login')
-							<li class="dropdown"><a href="{!!URL::to('/login')!!}"><span role="button" style="background: transparent;" class="btn btn-warning btn-xs">INICIA SESIÓN</span></a></li>
+							<li class="dropdown"><a href="{!!URL::to('/login')!!}"><span role="button" style="background: transparent;" class="navbar-button-border">INICIA SESIÓN</span></a></li>
 							@endif
 							<li class="dropdown"></li>
 						@endif

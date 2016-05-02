@@ -1,4 +1,4 @@
-@extends('layouts.front')
+  @extends('layouts.front')
 @section('content')
 {!!Html::script('js/ajax/BuscarEmpresa.js')!!}
 <div class="jumbotron">
@@ -143,61 +143,35 @@
                       @endif
 
                         <div class="row">
-                          <div class="col-md-6 col-sm-6 col-xs-6">
+                          <div class="col-md-12 col-sm-12 col-xs-12">
                             <address>
-                              <strong><a class="btn-link" href="/empresa/{!!$empresa->nombre!!}">{!! strtoupper("".$empresa->nombre)!!}</a></strong><br>
-                              Ciudad : {!!$empresa->ciudad!!}<br>
-                            </address>
-                            <br>
-                            <address>
-                              <strong>Contacto</strong><br>
-                              Fono : <abbr title="Phone"></abbr> {!!$empresa->fono!!}
+                              <h4><a class="btn-link" href="/empresa/{!!$empresa->nombre!!}">{!! $empresa->nombre!!}</a></h4>
+                              <strong>Ciudad :</strong> {!!$empresa->ciudad!!}<br>
+                              <strong>Contacto <span class="caret"></span></strong><br>
+                              <strong>Fono :</strong> <abbr title="Phone"></abbr> {!!$empresa->fono!!}<br>
                               <a href="mailto:#">{!!$empresa->email!!}</a>
                             </address>
-                          </div>
 
-                          <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div align="center">
 
-
-                            <div class="amplio">
-                              <div class="row">
-                                <div align="center" class="col-md-12 col-sm-12 col-xs-12">
-                                  <span class="glyphicon glyphicon-sunglasses"></span>
-                                  <span class="SorteosActivos" id="{!! $empresa->id !!}">12</span>
-                                  <input type="hidden" name="_token" value="{!! csrf_token() !!}">
-                                </div>
-
-                              </div> <!-- /div row -->
-                            </div><!-- /div amplio -->
-
-                            <div class="row">
-                              <div align="center" class="col-md-12 col-sm-12 col-xs-12">
-                                <small>Sorteos activos</small>
+                              <div class="btn-group" role="group" aria-label="...">
+                                <a href="{!! URL::to('/empresa/'.$empresa->nombre.'/') !!}" class="btn btn-default btn-xs">Ver perfil</a>
+                                <a href="{!! URL::to('/empresa/'.$empresa->nombre.'/sorteos') !!}" class="btn btn-default btn-xs">Ver sorteos</a>
                               </div>
 
-
-
-                            </div><!-- /div row -->
-
-                            <hr>
-
-                            <div class="btn-group" role="group" aria-label="...">
-                              <a href="{!! URL::to('/empresa/'.$empresa->nombre.'/') !!}" class="btn btn-default btn-xs">Ver perfil</a>
-                              <a href="{!! URL::to('/empresa/'.$empresa->nombre.'/sorteos') !!}" class="btn btn-default btn-xs">Ver sorteos</a>
+                              @if(Auth::user()->get()->id == $empresa->user_id)
+                                <ul class="dropdown-menu">
+                                  <li><a href="{!! URL::to('/empresas/'.$empresa->id.'/edit') !!}">Editar empresa</a></li>
+                                  <li><a href="{!! URL::to('/sorteos/create') !!}">Crear sorteo</a></li>
+                                </ul>
+                                <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Mi empresa
+                                  <span class="glyphicon glyphicon-cog"></span>
+                                  <span class="caret"></span>
+                                </button>
+                              @endif
                             </div>
-                            @if(Auth::user()->get()->id == $empresa->user_id)
-                              <ul class="dropdown-menu">
-                                <li><a href="{!! URL::to('/empresas/'.$empresa->id.'/edit') !!}">Editar empresa</a></li>
-                                <li><a href="{!! URL::to('/sorteos/create') !!}">Crear sorteo</a></li>
-                              </ul>
-                              <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="glyphicon glyphicon-cog"></span>
-                                <span class="caret"></span>
-                              </button>
-                            @endif
 
-                            <div style="float: right;padding: 4px 0px 20px 0px;" class="btn-group-vertical" role="group" aria-label="...">
-                            </div>
 
                           </div>
                         </div><!-- /div row -->
