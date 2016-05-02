@@ -178,7 +178,9 @@
 #contentMiddle {
   width: 85%;
   margin: 1px auto 0 auto;
-  padding: 25px 15px 15px 15px;
+  /* Arriba / Derecha / Abajo / Izquierda */
+  padding: 0px 15px 15px 1px;
+
   /*padding: 0 60px 30px 60px;*/
   /*
   border: solid 0px #cbcbcb;

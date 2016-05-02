@@ -6,7 +6,7 @@
 <div class="jumbotron">
   <div id="contentMiddle">
 		<div style="font-size: 3em;">
-			<img width="8%" src= "{!!URL::to('img/dash/ico_pin03.png')!!}" /><span>Publicaciones</span>
+			<img width="64px" src= "{!!URL::to('img/dash/ico_pin03.png')!!}" /><span>Publicaciones</span>
 		</div>
     <div class="row">
     
