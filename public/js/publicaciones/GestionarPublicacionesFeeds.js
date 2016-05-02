@@ -145,25 +145,21 @@ $(document).ready(function(){
 				}
 				Estados.hide().append(
 					"<div id='publicacion"+value.id+"' class='list-group'>"
-						+"<div class='list-group-item list-group-item-success'>"
+						+"<div style='padding: 0px 2px 2px 2px;' class='list-group-item list-group-item-success'>"
 							+'<div class="dropdown">'
 
-
-
-								+'<div style="float: right;" class="dropdown">'
+								+'<div  style="float: right; padding-top: 2px;" class="dropdown">'
 								 	+'<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
 										+'<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>'
 										+'<span class="caret"></span>'
 									+'</button>'
 									+'<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">'
-										+'<li ><a onclick="eliminarEstado('+value.id+','+value.user_id+')" href="#!">'+(user_id==value.user_id?"Eliminar":"Ocultar")+' publicación</a></li>'
+										+'<li><a href="/empresa/'+value.nombreEmp+'" id="" value="'+value.id+'" role="button">Ver perfil</a></li>'
+										+'<li><a onclick="eliminarEstado('+value.id+','+value.user_id+')" href="#!">'+(user_id==value.user_id?"Eliminar":"Ocultar")+' publicación</a></li>'
 										+(user_id==value.user_id?"<li><a onclick='eliminarEstado("+value.id+",0)' href='#!'>Ocultar estado</a></li>":"")
 									+'</ul>'
 								+'</div><!-- /div dropdown -->'
 
-
-
-								+'<a href="/empresa/'+value.nombreEmp+'" class="btn btn-primary btn-sm" style="float: right;" id="" value="'+value.id+'" role="button">ver perfil</a>'
 							+'</div><!-- /div dropdown -->'+
 
 							'<div class="media">'+
@@ -174,7 +170,7 @@ $(document).ready(function(){
 								'</div>'+
 								'<div class="media-body">'+
 									'<h4 class="media-heading"><a href="/empresa/'+value.nombreEmp+'" style="color:#3C5B28;">'+value.nombreEmp+'</a></h4>'+
-									"Publicó <abbr class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr>"+
+									"<small>Publicó <abbr class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr></small>"+
 								'</div>'+
 							'</div><!-- /div media -->'
 

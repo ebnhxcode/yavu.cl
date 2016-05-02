@@ -38,6 +38,7 @@ return array(
     'CreateTicketsTable' => $baseDir . '/database/migrations/2016_02_29_161238_create_tickets_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'CreateVendorsTable' => $baseDir . '/database/migrations/2016_04_04_120353_create_vendors_table.php',
+    'CreateVisitsTable' => $baseDir . '/database/migrations/2016_04_29_145918_create_visits_table.php',
     'CreateWinnersTable' => $baseDir . '/database/migrations/2016_03_29_103327_create_winners_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',

@@ -18,6 +18,7 @@ class EmpresaController extends Controller{
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
     if(Auth::user()->check()){
       $this->user = User::find(Auth::user()->get()->id);
+      $this->empresa = Empresa::where('user_id', $this->user->id);
     }
   }
   public function find(Route $route){
@@ -84,6 +85,8 @@ class EmpresaController extends Controller{
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function MostrarEmpresaPublica($empresa){
+
+
     if(isset($empresa)){
       $empresa = addslashes($empresa);
 
