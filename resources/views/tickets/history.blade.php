@@ -7,24 +7,22 @@
     @include('alerts.successMessage')
     @include('alerts.warningMessage')
     <div class="" style="font-size: 3em;">
-      <img id="img" width="8%" src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}"/><span >Ticket's <span class="requerido">\</span> Historial</span>
+      <img id="img" width="8%" src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}"/><span> <a href="{!! URL::to('tickets') !!}">Ticket's</a><span class="requerido">\</span> Historial</span>
     </div>
     <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="alert alert-warning alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          Atento al usar tus tickets participar <br>
+          <span class="glyphicon glyphicon-tag" style="font-size: 1em; color: #BEF781;"></span>
+          <span class="glyphicon glyphicon-resize-horizontal"></span>
+          <span class="label label-info">#14</span>&nbsp;(<small class="requerido">Tickets de ejemplo</small>)
+        </div>
+      </div>
       <div class="col-md-4 col-sm-12 col-xs-12"><!--style="position:fixed;z-index:1000;"-->
         <div>
           <div>
             <div class="list-group">
-              <div class="list-group-item list-group-item-success">
-                FILTRO DE BÚSQUEDA
-              </div>
-              <div class="list-group-item">
-                @if(Auth::admin()->check())
-                  {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar sorteo','id'=>'nombre_sorteo', 'aria-describedby' => 'sizing-addon1'])!!}
-                @elseif(Auth::user()->check() || !Auth::user()->check())
-                  <input id='user_id' value='{!! Auth::user()->get()->id !!}' type='hidden' />
-                  {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar sorteo','id'=>'sorteothumb', 'aria-describedby' => 'sizing-addon1'])!!}
-                @endif
-              </div>
               <div class='list-group-item'>
                 <div class='row'>
 
@@ -95,23 +93,9 @@
 
 
               </div>
-              <div class="list-group">
-
 
               </div>
-              </div>
 
-              <div class="list-group-item">
-
-                <div class="alert alert-warning alert-dismissible" role="alert">
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  Atento al usar tus tickets participar <br>
-                  <span class="glyphicon glyphicon-tag" style="font-size: 1em; color: #BEF781;"></span>
-                  <span class="glyphicon glyphicon-resize-horizontal"></span>
-                  <span class="label label-info">#14</span>&nbsp;(<small class="requerido">Tickets de ejemplo</small>)
-                </div>
-
-              </div><!-- /div list group item -->
             </div><!-- /div list group -->
 
           </div><!-- /div panel body -->
@@ -200,7 +184,7 @@
 
             <div class="list-group">
               <div class="list-group-item list-group-item-success">
-                <h5>HISTORIAL DE COMPRA DE TICKETS <span id="resizeBuy" name="small" class="glyphicon glyphicon-resize-full" style="float: right;"></span> </h5>
+                <h5>HISTORIAL DE COMPRA/GASTO DE TICKETS <span id="resizeBuy" name="small" class="glyphicon glyphicon-resize-full" style="float: right;"></span> </h5>
               </div>
 
               <script>

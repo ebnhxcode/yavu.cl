@@ -4,7 +4,7 @@
 	<div id="contentMiddle">
 		@include('alerts.alertFields')
 		<div class="" style="font-size: 3em;">
-			<img id="img" width="8%" src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}"/><span >Sorteos <span class="requerido">\</span> Editar</span>
+			<img id="img" width="8%" src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}"/><span ><a href="{!! URL::to('sorteos') !!}" class="btn-link">Sorteos</a>  <span class="requerido">\</span> Editar</span>
 		</div>
 		<div class="row">
 

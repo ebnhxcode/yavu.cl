@@ -18,7 +18,7 @@
       
         <div class="panel-body">
           <div>
-            <h2>Inicio de sesión</h2>
+            <h2>Inicio de sesión <img width="150" style="float: right;" src="{!! URL::to('img/yavu005.png') !!}" alt=""></h2>
           </div>
           <hr>
           <div class="form-group has-feedback has-feedback-left ">

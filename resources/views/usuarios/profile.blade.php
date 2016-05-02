@@ -33,8 +33,6 @@
 									{!!Auth::user()->get()->email!!}
 									{!!Auth::user()->get()->ciudad!!}
 
-									<p>
-									</p>
 
 								</div>
 
@@ -94,6 +92,38 @@
 							@else
 								<img id='ImagenPerfil' src='/img/users/{!!Auth::user()->get()->imagen_perfil!!}' class='center-block' width='100' height='100' class='img-responsive'>
 							@endif
+                <div class="">
+                  <div class="" >
+                    <div>
+
+                      <div class="dropdown">
+                        <button class="btn btn-default btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                          <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                          <li>
+                            <a href="{!! route('usuarios_edit_path', Auth::user()->get()->id) !!}">Editar Perfil de Usuario</a>
+                          </li>
+                          <li role="separator" class="divider"></li>
+                          <li>
+                            <a href="#!">M&aacute;s informaci&oacute;n acerca de la privacidad</a>
+                          </li>
+                          <li>
+                            <a href="#!">Preguntas frecuentes</a>
+                          </li>
+                          <li>
+                            <a href="#!">Ayuda</a>
+                          </li>
+                          <li>
+                            <a href="#!"></a>
+                          </li>
+                        </ul>
+                      </div><!-- /div dropdown -->
+
+                    </div>
+                  </div>
+                </div>
 						</div>
 					</div>
 
@@ -201,15 +231,20 @@
 
 
 					<div class='list-group'>
+						<div class='list-group-item list-group-item-success'>
+							<h4>C&oacute;digo de referidos</h4>
+						</div>
 						<div class='list-group-item'>
+							<h5>¡Invita a tus Amigos a registrarse y entregales este c&oacute;digo!</h5>
 
 
+							<div align="center">
+								<button id='Info' type='button' class='btn btn-info btn-sm' data-container='body' data-toggle='popover' data-placement='top' data-content='Con este código tus amigos ganarán coins al registrarse!' data-original-title='Atención {!!Auth::user()->get()->nombre!!}'>
+									Info
+								</button>
+								<h3>{!!strtoupper(Auth::user()->get()->id. Auth::user()->get()->referente)!!}</h3>
+							</div>
 
-							<button id='Info' type='button' class='btn btn-info btn-sm' data-container='body' data-toggle='popover' data-placement='top' data-content='Con este código tus amigos ganarán coins al registrarse!' data-original-title='Atención {!!Auth::user()->get()->nombre!!} <button type='button' onclick='CloseInfo()' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-							</button>
-
-							<h6>Invita a tus Amigos!</h6>
-							<h6>{!!strtoupper(Auth::user()->get()->id. Auth::user()->get()->referente)!!}</h6>
 						</div>
 						
 					</div>   
