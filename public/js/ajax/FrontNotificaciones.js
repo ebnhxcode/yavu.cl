@@ -74,7 +74,7 @@ $(document).ready(function(){
 		var Contador = 0;
 		var pops = "";
 		$.ajax({
-			url: "http://yavu.cl/cargarpops/"+Global_idUltimaNotificacion+"/"+user_id+"/todas",
+			url: "http://localhost:8000/cargarpops/"+Global_idUltimaNotificacion+"/"+user_id+"/todas",
 			type: 'GET',
 			dataType: 'json',
 			cache: false,
@@ -149,7 +149,7 @@ $(document).ready(function(){
 	function ContarNotificaciones(){
 		var user_id = $("#user_id").val();
 		$.ajax({
-			url: "http://yavu.cl/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
+			url: "http://localhost:8000/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
 			type: 'GET',
 			dataType: 'json',
 			cache: false,
