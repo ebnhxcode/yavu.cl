@@ -1,58 +1,65 @@
 @extends('layouts.front')
 {!!Html::style('css/ycoins.css')!!}
-{!!Html::script('js/ycoins.js')!!}
 @section('content')
 
-
+<!DOCTYPE html>
 <html>
-  <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>YavuCoins</title>
-
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-<script type="text/javascript" src="http://ianlunn.co.uk/plugins/jquery-parallax/scripts/jquery.parallax-1.1.3.js"></script>
-<script type="text/javascript" src="http://ianlunn.co.uk/plugins/jquery-parallax/scripts/jquery.localscroll-1.2.7-min.js"></script>
-<script type="text/javascript" src="http://ianlunn.co.uk/plugins/jquery-parallax/scripts/jquery.scrollTo-1.4.2-min.js"></script>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
 </head>
-
 <body>
-  <ul id="nav">
-    <li><a href="#intro" title="Next Section"><img src="http://ianlunn.co.uk/plugins/jquery-parallax/images/dot.png" alt="Link" /></a></li>
-      <li><a href="#second" title="Next Section"><img src="http://ianlunn.co.uk/plugins/jquery-parallax/images/dot.png" alt="Link" /></a></li>
-      <li><a href="#third" title="Next Section"><img src="http://ianlunn.co.uk/plugins/jquery-parallax/images/dot.png" alt="Link" /></a></li>
-  </ul>
-  
-  <div id="intro">
-    <div class="story">
-        <div class="float-left">
-      <h2>(Almost) Static Background</h2>
-          <p>This section has a background that moves slightly slower than the user scrolls. This is achieved by changing the top position of the background for every pixel the page is scrolled.</p>
-          </div>
-      </div> <!--.story-->
-  </div> <!--#intro-->
-  
-  <div id="second">
-    <div class="story"><div class="bg"></div>
-        <div class="float-right">
-              <h2>Multiple Backgrounds</h2>
-              <p>The multiple backgrounds applied to this section are moved in a similar way to the first section -- every time the user scrolls down the page by a pixel, the positions of the backgrounds are changed.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nibh erat, sagittis sit amet congue at, aliquam eu libero. Integer molestie, turpis vel ultrices facilisis, nisi mauris sollicitudin mauris, volutpat elementum enim urna eget odio. Donec egestas aliquet facilisis. Nunc eu nunc eget neque ornare fringilla. Nam vel sodales lectus. Nulla in pellentesque eros. Donec ultricies, enim vitae varius cursus, risus mauris iaculis neque, euismod sollicitudin metus erat vitae sapien. Sed pulvinar.</p>
-          </div>
-      </div> <!--.story-->
-      
-  </div> <!--#second-->
-  
-  <div id="third">
-    <div class="story">
-        <div class="float-left">
-            <h2>What Happens When JavaScript is Disabled?</h2>
-              <p>The user gets a slap! Actually, all that jQuery does is moves the backgrounds relative to the position of the scrollbar. Without it, the backgrounds simply stay put and the user would never know they are missing out on the awesome! CSS2 does a good enough job to still make the effect look cool.</p>
-          </div>
-      </div> <!--.story-->
-  </div> <!--#third-->
-  
+
+  <div id="main">
+<header data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -200px;">
+<div id="headercontent" data-top=" opacity:1; transform[swing]:scale(1) " data-top-bottom=" opacity:0; transform[swing]:scale(0.5) " data-anchor-target="header">
+<div class="paralaxtext" data-bottom-top=" opacity:0; transform[swing]:scale(0.5) " data-top=" opacity:1; transform[swing]:scale(1) ">
+<h1 style="color:white">¿Qué son las yavu coins?</h1>
+</div>
+<div class="mouse animated fadeInUp" data-top=" opacity:1;  " data-top-bottom=" opacity:0; " data-anchor-target="header">
+<div class="scroll">
+</div>
+</header>
+<div class="container" style="padding-top:100px;padding-bottom:100px">
+<h1><p>Yavu coins es la moneda virtual de yavu.cl que te permitirá canjear grandes premios y participar dentro de las actividades de nuestra comunidad online. 
+</p></h1>
+</div>
+</div>
+</div>
+<section class="fullwidth">
+<div class="paralax1" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -200px;" data-bottom-top="background-position: 50% 100px;">
+<div class="paralaxtext" data-bottom-top=" opacity:0; transform[swing]:scale(0.5) " data-top=" opacity:1; transform[swing]:scale(1) ">
+<h1 style="color:white">¿Cómo obtengo yavu coins?</h1>
+</div>
+</div>
+</section>
+<div class="container" style="padding-top:100px;padding-bottom:100px">
+<h1><p>Ganar Yavu Coins es simple, interactúa diariamente con nuestro sitio web. Acciones como Iniciar Sesión, Solicitar Promociones, Seguir Empresas, Valorizar Publicaciones, Referir Amistades a nuestro sitio, entre otras, entregan bonificación. </p></h1>
+</div>
+<section class="fullwidth">
+<div class="paralax2" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -200px;" data-bottom-top="background-position: 50% 100px;">
+<div class="paralaxtext">
+<h1 style="color:white" data-bottom-top="letter-spacing: 10px;" data-top="letter-spacing: 20px; "> ¿Cuánto dura una yavu coin?
+ </h2>
+</div>
+</section>
+<div class="container" style="padding-top:100px;padding-bottom:100px">
+<h1><p>Cada vez que sumes Yavu Coins a tu cuenta esta permanecerá allí hasta que decidas utilizarla, no tienen fecha de expiración o eliminación, ¡Por lo que solo dependerá de ti decidir el límite de Yavu Coins que quieras tener! ;)
+</p></h1>
+</div>
+<br>
+<br>
+<hr>
+<br> <br> <br>
+<a href="http://arielbeninca.com" target="_blank"> arielbeninca.com </a>
+<br> <br> <br> <br>
+</div>
+</div>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://arielbeninca.com/Storage/skrollr.min.js"></script>
+<script type="text/javascript">var s=skrollr.init({forceHeight:false});</script>
 </body>
 </html>
-
-
 @stop
