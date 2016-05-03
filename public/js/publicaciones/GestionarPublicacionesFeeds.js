@@ -180,16 +180,15 @@ $(document).ready(function(){
 							+"<p>"+value.status+"</p>"
 						+"</div><!-- /div list-group-item -->"
 
-						+"<div class='list-group-item panel-footer'>"					
-							+"<span id='badge_"+value.id+"' class='label label-success'></span>"+"&nbsp;"
-							+"<a role='button' class='' href='#!' style='color:#3C5B28'>"
+						+"<div class='list-group-item panel-footer'>"
+
+							+"<span id='badge_"+value.id+"' class='label label-warning'></span>"+"&nbsp;"
+							+"<a role='button' class='btn-coins' href='#!' style='color:#3C5B28'>"
 								+"<span name='megusta' onclick='Interactuar(this.id)' id='estado_"+value.id+"' value='"+value.id+"'>"
-									+"<span class='glyphicon glyphicon-hand-up'>"
-										+"&nbsp;"
-									+"</span>"
-									+"Cobrar coins"
+									+"Coins"
 								+"</span>"
 							+"</a>"
+
 						+"</div><!-- /div list-group-item panel footer -->"
 					+"</div><!-- /div list-group -->").show();
 				document.getElementById("idUltima").value =  Global_idUltimaPublicacion;
