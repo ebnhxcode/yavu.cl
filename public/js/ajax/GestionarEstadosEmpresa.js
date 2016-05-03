@@ -264,16 +264,15 @@ $(document).ready(function(){
 					+'</div><!-- /div list-group-item -->'
 
 
-						+"<div class='list-group-item panel-footer'>"					
-							+"<span id='badge_"+value.id+"' class='label label-success'></span>"+"&nbsp;"
-							+"<a role='button' class='' href='#!' style='color:#3C5B28'>"
-								+"<span name='megusta' onclick='Interactuar(this.id)' id='estado_"+value.id+"' value='"+value.id+"'>"
-									+"<span class='glyphicon glyphicon-hand-up'>"
-									+"&nbsp;"
-									+"</span>"
-									+"Cobrar coins"
-								+"</span>"
-							+"</a>"
+						+"<div class='list-group-item panel-footer'>"
+
+							+"<span id='badge_"+value.id+"' class='label label-warning'></span>"+"&nbsp;"
+							+"<span role='button' class='btn-coins' href='#!' style='color:#3C5B28'>"
+							+"<span name='megusta' class='text-warning' onclick='Interactuar(this.id)' id='estado_"+value.id+"' value='"+value.id+"'>"
+							+"Cobrar coins"
+							+"</span>"
+							+"</span>"
+
 						+"</div>"
 					+"</div>"
 				).show();

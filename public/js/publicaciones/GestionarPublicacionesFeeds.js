@@ -183,11 +183,11 @@ $(document).ready(function(){
 						+"<div class='list-group-item panel-footer'>"
 
 							+"<span id='badge_"+value.id+"' class='label label-warning'></span>"+"&nbsp;"
-							+"<a role='button' class='btn-coins' href='#!' style='color:#3C5B28'>"
-								+"<span name='megusta' onclick='Interactuar(this.id)' id='estado_"+value.id+"' value='"+value.id+"'>"
-									+"Coins"
+							+"<span role='button' class='btn-coins' href='#!' style='color:#3C5B28'>"
+								+"<span name='megusta' class='text-warning' onclick='Interactuar(this.id)' id='estado_"+value.id+"' value='"+value.id+"'>"
+									+"Cobrar coins"
 								+"</span>"
-							+"</a>"
+							+"</span>"
 
 						+"</div><!-- /div list-group-item panel footer -->"
 					+"</div><!-- /div list-group -->").show();
