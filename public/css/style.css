@@ -319,11 +319,19 @@
 
 .btn-coins {
 
-  border: #ffdd88 1px ridge ;
+  border: #ffdd88 1px solid;
+  background: #ffdd88;
   box-shadow: #ec971f;
   border-radius: 5px 5px 5px 5px;
   padding: 6px 5px 6px 5px;
   -webkit-transition-delay: 2s;
+
+}
+
+.btn-coins-down {
+  border: #ffdd88 1px ridge ;
+  position: relative;
+  top: 2px;
 
 }
 .btn-coins:active {
@@ -334,7 +342,7 @@
   /* Movemos ligeramente el botón hacia abajo */
 
   position: relative;
-  top: 1px;
+  top: 2px;
 
 }
 .btn-coins:hover {

@@ -111,6 +111,7 @@
 				Contador += 1;
 			});
 			$("#badge_"+status_id).text(Contador);
+			$('#estado_'+status_id).addClass("btn-coins-down").fadeIn();
 		});
 	}
 
