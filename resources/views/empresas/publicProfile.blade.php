@@ -282,14 +282,18 @@
   function ContarInteracciones(status_id){
     status_id = status_id;
     var route = "http://localhost:8000/contarinteracciones/"+status_id;
-    var user_id = $("#user_id");
+    var user_id = $("#user_id").val();
     var Contador = 0;
     $.get(route, function(res){
       $(res).each(function(key,value){
+        if(value.user_id === user_id){
+          $('#estado_'+status_id).addClass("btn-coins-down").fadeIn();
+        }
         Contador += 1;
       });
       $("#badge_"+status_id).text(Contador);
     });
+    return true;
   }
 
   function ContarNotificaciones(){
