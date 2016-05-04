@@ -195,6 +195,11 @@ class SorteoController extends Controller{
     }
 
   }
+
+  public function SorteosPendientes(){
+    return view('admins.sorteosPendientes');
+  }
+
   public function store(Request $request){
       if(Sorteo::create($request->all())){
         $this->pop = new Pop(['user_id' => $request->user_id,'empresa_id' => 1,'tipo' => 'sorteo', 'estado'   => 'pendiente','contenido' => 'Haz creado un nuevo sorteo!','created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]);

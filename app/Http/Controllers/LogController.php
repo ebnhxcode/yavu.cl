@@ -76,6 +76,9 @@ class LogController extends Controller{
   public function show($id){
   }
   public function store(LoginRequest $request){
+      if(Auth::user()->check()){
+        return $this->logout();
+      }
       if(!Input::get('_token')){
         Session::flash('message-error', 'El tiempo de espera para el inicio de sesión ha caducado, por favor intente nuevamente.');
         Redirect::to('/login');

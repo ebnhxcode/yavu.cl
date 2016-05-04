@@ -23,6 +23,11 @@ Route::resource('log', 'LogController');
 /*Gestión de ingreso login*/
 
 Route::get('login', function(){
+  if(Auth::user()->check()){
+    $log = new \yavu\Http\Controllers\LogController();
+    $log->logout();
+    return view('login');
+  }
   return view('login');
 });
 
@@ -143,6 +148,15 @@ Route::group(['middleware' => 'user'], function(){
 
 }); /*Fin del middleware user*/
 
+Route::group(['middleware' => 'admin'], function(){
+
+  Route::get('sorteospendientes', 'SorteoController@SorteosPendientes');
+  /*Gestión de Admins*/
+  Route::resource('admins','AdminController');
+  /*Gestión de Admins*/
+
+});
+
 
 /*Gestión del front*/
 Route::get('/','FrontController@index');
@@ -162,16 +176,6 @@ Route::get('sitemap', function(){
 */
 /*Gestión del front*/
 
-
-
-
-
-
-
-
-/*Gestión de Admins*/
-Route::resource('admins','AdminController');  
-/*Gestión de Admins*/
 
 
 
