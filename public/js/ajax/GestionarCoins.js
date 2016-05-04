@@ -86,7 +86,8 @@ $(document).ready(function(){
 										+'</div>'
 
 										+'<div class="list-group-item ">'
-											+'<small>Estado de la empresa</small> : '
+
+											+'<strong>Estado de la Empresa :</strong>'
 											+'<span style="float:right;" class="label label-success">'
 												+'<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>'
 												+value.estado
@@ -94,12 +95,12 @@ $(document).ready(function(){
 										+'</div>'
 
 										+'<div class="list-group-item">'
-											+'<small>Modificar datos de la empresa</small> : '
+											+'<strong>Modificar Datos Empresa :</strong>'
 											+'<a style="float:right;" class="btn-xs btn-primary btn-sm" href="empresas/'+value.id+'/edit">Editar</a>'
 										+'</div>'
 
 										+'<div class="list-group-item">'
-											+'<small>Perfil de la empresa</small> : '
+											+'<strong>Perfil de la Empresa :</strong>'
 											+"<a style='float:right;' class='btn-xs btn-primary btn-sm' href='empresa/"+value.nombre+"/'>Perfil</a>"
 										+'</div>'
 

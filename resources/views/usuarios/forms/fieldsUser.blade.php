@@ -157,12 +157,12 @@
 				</div>
 				<div class='form-group has-feedback has-feedback-left'>
 					{!!Form::label('País:')!!}
-					{!!Form::select('pais', 
-						['Argentina' => 'Argentina',
+					{!!Form::select('pais',
+						['Chile' => 'Chile',	 
+						'Argentina' => 'Argentina',
 						'Bolivia' => 'Bolivia',	
 						'Brasil' => 'Brasil',	
 						'Colombia' => 'Colombia',	
-						'Chile' => 'Chile',	
 						'Ecuador' => 'Ecuador',	
 						'Mexico' => 'Mexico',	
 						'Panama' => 'Panama',	
