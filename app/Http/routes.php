@@ -18,6 +18,7 @@ Route::get('', '');
 */
 
 
+
 /*Gestión de ingreso login*/
 Route::resource('log', 'LogController');
 /*Gestión de ingreso login*/
@@ -150,10 +151,14 @@ Route::group(['middleware' => 'user'], function(){
 
 Route::group(['middleware' => 'admin'], function(){
 
-  Route::get('sorteospendientes', 'SorteoController@SorteosPendientes');
+
   /*Gestión de Admins*/
   Route::resource('admins','AdminController');
+  Route::get('sorteospendientes', 'SorteoController@SorteosPendientes');
+  Route::get('aprobarsorteopendiente', 'SorteoController@AprobarSorteoPendiente');
   /*Gestión de Admins*/
+
+
 
 });
 

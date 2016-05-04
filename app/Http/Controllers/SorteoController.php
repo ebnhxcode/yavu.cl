@@ -54,9 +54,7 @@ class SorteoController extends Controller{
         $sorteos
       );
     }
-    return response()->json(
-      'Acceso denegado'
-    );
+    return response()->json(['Mensaje: ','Acceso denegado']);
   }
   public function CanjearTicket($user_id){
     if($this->user->registro_coins->sum('cantidad') >= 100){
@@ -196,8 +194,21 @@ class SorteoController extends Controller{
 
   }
 
+  public function AprobarSorteoPendiente(Request $request){
+    if($request->ajax()){
+      $this->sorteo = Sorteo::find(addslashes($request->id));
+
+      if($this->sorteo->estado_sorteo == 'Pendiente'){
+        $this->sorteo->estado_sorteo = '1';
+        $this->sorteo->save();
+      }
+      return response()->json(['Mensaje: ', 'ok']);
+    }else{
+      return response()->json(['Mensaje: ', 'Acceso denegado']);
+    }
+  }
   public function SorteosPendientes(){
-    return view('admins.sorteosPendientes');
+    return view('admins.sorteosPendientes', ['sorteospendientes' => Sorteo::where('estado_sorteo', 'Pendiente')->get()]);
   }
 
   public function store(Request $request){

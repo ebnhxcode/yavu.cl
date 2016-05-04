@@ -96,7 +96,7 @@
 									<li><a href="{!!URL::to('/profile')!!}">Perfil</a></li>
 									<li><a href="{!!URL::to('/tickets/history')!!}">Historial de ticket's</a></li>
 									<li><a href="{!!URL::to('/coins/history')!!}">Historial de coins</a></li>
-									<li><a href="{!!URL::to('/dashboard')!!}">Mis empresas</a></li>
+									<li><a href="{!!URL::to('/empresas/create')!!}">Crear empresa</a></li>
 									<li><a href="{!!URL::to('/logout')!!}">Cerrar sesión</a></li>
 								</ul>
 							</li>
