@@ -11,6 +11,7 @@
     </div>
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
+      <!--
         <div class="alert alert-warning alert-dismissible" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           Atento al usar tus tickets participar <br>
@@ -18,6 +19,7 @@
           <span class="glyphicon glyphicon-resize-horizontal"></span>
           <span class="label label-info">#14</span>&nbsp;(<small class="requerido">Tickets de ejemplo</small>)
         </div>
+       -->
       </div>
       <div class="col-md-4 col-sm-12 col-xs-12"><!--style="position:fixed;z-index:1000;"-->
         <div>
