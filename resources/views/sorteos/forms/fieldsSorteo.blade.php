@@ -31,6 +31,8 @@
 				{!!Form::label('Imagen sorteo:')!!}
 				{!!Form::file('imagen_sorteo', ['class' => 'btn'])!!}
 			</div>
+
+{{--
 			<div class="form-group has-feedback has-feedback-left">
 				{!!Form::label('Estado Sorteo:')!!}
 				{!!Form::select('estado_sorteo',
@@ -39,6 +41,8 @@
 					$selected = null, ['class' => 'form-control'])
 				!!}
 			</div>
+--}}
+
 			@if (Auth::user()->check() && isset($empresa_id))
 				<input type="hidden" name="user_id" value="{!! Auth::user()->get()->id !!}">
 				<input type="hidden" name="empresa_id" value="{!! $empresa_id !!}">

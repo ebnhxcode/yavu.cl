@@ -193,7 +193,13 @@ class SorteoController extends Controller{
     }
 
   }
-
+  public function VisualizarEmpresaSorteoPendiente(Request $request){
+    if($request->ajax()){
+      return response()->json(Empresa::find(addslashes($request->id)));
+    }else{
+      response()->json(['Mensaje: ', 'Acceso denegado']);
+    }
+  }
   public function AprobarSorteoPendiente(Request $request){
     if($request->ajax()){
       $this->sorteo = Sorteo::find(addslashes($request->id));

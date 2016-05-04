@@ -156,6 +156,7 @@ Route::group(['middleware' => 'admin'], function(){
   Route::resource('admins','AdminController');
   Route::get('sorteospendientes', 'SorteoController@SorteosPendientes');
   Route::get('aprobarsorteopendiente', 'SorteoController@AprobarSorteoPendiente');
+  Route::get('visualizarempresasorteopendiente', 'SorteoController@VisualizarEmpresaSorteoPendiente');
   /*Gestión de Admins*/
 
 

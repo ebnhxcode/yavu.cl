@@ -12,12 +12,6 @@ $(document).ready(function(){
   ContarTicketsEnSorteos();
   ContarMisTicketsUsados();
 
-	$('.timer').startTimer({
-		onComplete: function(element){
-			element.addClass('is-complete');
-		}
-	});
-
 	var Limitador = 0;
   setInterval(function () {
     Limitador += 10;

@@ -122,11 +122,11 @@
           </li>
         @endif
         @if(Auth::admin()->check())
-          <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Registrar empresa<b class="caret"></b></a>
+          <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Gesti&oacute;n<b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="{!!URL::to('/empresas/create')!!}">Registro de empresas</a></li>
               <li><a href="{!!URL::to('/empresas')!!}">Mostrar listado de empresas</a></li>
-              <li><a href="{!!URL::to('/sorteos')!!}">Sorteos por confirmar</a></li>
+              <li><a href="{!!URL::to('/sorteospendientes')!!}">Sorteos por confirmar</a></li>
             </ul>
           </li>
           <!--
@@ -137,7 +137,7 @@
 								</ul>
 							</li>
 							-->
-          <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Admintración<b class="caret"></b></a>
+          <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Administración<b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="{!!URL::to('/admins/create')!!}">Registro de Administradores</a></li>
               <li><a href="{!!URL::to('/admins')!!}">Mostrar listado de Administradores</a></li>
