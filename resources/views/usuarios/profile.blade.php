@@ -7,7 +7,7 @@
 <div class='jumbotron'>
 	<div id='contentMiddle'>
 		<div class='row' style='margin-top:-35px;'>
-				<div class="col-md-12">
+				<div class="col-md-12 col-sm-12 col-xs-12">
 					@include('alerts.alertFields')
 					@include('alerts.errorsMessage')
 					@include('alerts.successMessage')
