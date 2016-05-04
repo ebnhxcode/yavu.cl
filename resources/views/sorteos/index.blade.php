@@ -32,7 +32,7 @@
 
         <div class="alert alert-info alert-dismissible" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          Si el boton participar no aparece refresca la página
+          Si el botón participar no aparece refresca la página
         </div>
 
 
