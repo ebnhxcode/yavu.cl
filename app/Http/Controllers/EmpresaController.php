@@ -1,5 +1,6 @@
 <?php
 namespace yavu\Http\Controllers;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use yavu\Http\Requests;
 use yavu\Http\Requests\EmpresaCreateRequest;
@@ -13,6 +14,8 @@ use Illuminate\Routing\Route;
 use Auth;
 use DB;
 use RUT;
+use yavu\Visit;
+
 class EmpresaController extends Controller{
   public function __construct(){
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
@@ -41,6 +44,18 @@ class EmpresaController extends Controller{
     }
     return Redirect::to('/');
   }
+
+  public function EstadisticasDeMiEmpresa(){
+    if(isset($this->empresa)){
+
+      dd(Visit::where('empresa_id', $this->empresa->id));
+
+
+    }else{
+      return Redirect::to('/login');
+    }
+  }
+
   public function store(EmpresaCreateRequest $request){
     if(isset($request) && isset($this->user)){
       DB::table('pops')->insert(
@@ -88,14 +103,18 @@ class EmpresaController extends Controller{
 
 
     if(isset($empresa)){
-      $empresa = addslashes($empresa);
 
       $empresa = DB::table('empresas')
         ->join('users', 'users.id', '=', 'empresas.user_id')
         ->select('empresas.*', 'users.id as user_id')
-        ->where('empresas.nombre', '=', $empresa)
+        ->where('empresas.nombre', '=', addslashes($empresa))
         ->orderBy('empresas.created_at','desc')
         ->get();
+
+      $this->visita = new Visit(['user_id'=>$this->user->id, 'empresa_id' => $empresa[0]->id, 'sexo' => $this->user->sexo, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now() ]);
+      if($empresa[0]->user_id != $this->user->id){
+        $this->visita->save();
+      }
 
       $mapa = Empresa::find($empresa[0]->id)->gmaps;
 

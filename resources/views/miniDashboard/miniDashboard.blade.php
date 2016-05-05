@@ -45,6 +45,22 @@
       </div>
     </div>
     @endif
+
+    @if(Request::path() != 'empresas')
+      <div style="display: none;" class="col-md-4 col-sm-2 col-xs-3 hasoneempresa">
+        <div class="list-group" >
+          <div align="center">
+            <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/estadisticasdemiempresa')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
+          <span>
+            <img width="80%" src= "{!!URL::to('img/dash/icono_informe01.png')!!}"/>
+          </span>
+            </a>
+          </div>
+          <div align="center"><small>Estad&iacute;sticas de mi empresa</small></div>
+        </div>
+      </div>
+    @endif
+
     @if(Request::path() != 'sorteos')
     <div class="col-md-4 col-sm-2 col-xs-3">
       <div class="list-group" >
@@ -118,6 +134,7 @@
       </div>
     </div>
     @endif
+
 
 
 
