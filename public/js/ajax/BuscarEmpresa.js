@@ -74,7 +74,7 @@ $(document).ready(function(){
 /*FUNCIONES Y PROCEDIMIENTOS*/
 	function BuscarEmpresa(){
 		var NombreEmpresa = $("#empresa").val();
-		var route = "http://localhost:8000/buscarempresa/"+NombreEmpresa+"";
+		var route = "http://yavu.cl/buscarempresa/"+NombreEmpresa+"";
 		$("#EmpresaList").text("");
 		$.get(route, function(res){
 			$("#EmpresaList").append(
@@ -103,7 +103,7 @@ $(document).ready(function(){
 
 	function BuscarEmpresaThumb(){
 		var NombreEmpresa = $("#empresathumb").val();
-		var route = "http://localhost:8000/buscarempresa/"+NombreEmpresa+"";
+		var route = "http://yavu.cl/buscarempresa/"+NombreEmpresa+"";
 		$("#EmpresaListThumb").text("");
 		var TarjetaEmpresa = "";
 		$.get(route, function(res){
@@ -112,7 +112,7 @@ $(document).ready(function(){
 				//var ImagenPerfil = "/img/users/"+value.imagen_perfil;
 				var ImagenPortada = "/img/users/"+value.imagen_portada;
 				if (value.imagen_perfil === ""){
-					ImagenPerfil = "http://localhost:8000/images/pyme.jpg";
+					ImagenPerfil = "http://yavu.cl/images/pyme.jpg";
 				}
 				if (value.imagen_portada === ""){
 					ImagenPortada = "/img/users/banner.png";
@@ -145,7 +145,7 @@ $(document).ready(function(){
 	}
 
 	function SorteosEmpresa(){
-		var route = "http://localhost:8000/sorteosempresa/";
+		var route = "http://yavu.cl/sorteosempresa/";
 		$.ajax({
 			url: route,
 			type: 'GET',
