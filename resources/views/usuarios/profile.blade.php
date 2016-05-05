@@ -14,7 +14,8 @@
 					@include('alerts.warningMessage')
 					@include('alerts.infoMessage')
 				</div>
-				<div class='col-md-8 col-sm-8 col-xs-8'>
+
+				<div class='col-md-8 col-sm-6 col-xs-12'>
 					<div class='list-group' >
 
 						<div class='list-group'>
@@ -86,7 +87,7 @@
 					-->
 
 				</div>
-				<div class='col-md-4 col-sm-4 col-xs-4'><!--style='position:fixed;z-index:1000;'-->
+				<div class='col-md-4 col-sm-6 col-xs-12'><!--style='position:fixed;z-index:1000;'-->
 
 					<div class="list-group">
 						<div class="list-group-item">
