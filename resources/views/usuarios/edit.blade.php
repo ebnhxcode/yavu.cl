@@ -3,12 +3,18 @@
 @section('content')
 <div class='jumbotron'>
 	<div id='contentMiddle'>
-		<h4>Actualización de usuario : {!!$user->nombre .' '. $user->apellido!!}</h4>
-		@include('alerts.alertFields')
-		@include('alerts.errorsMessage')
-		@include('alerts.successMessage')
-		@include('alerts.warningMessage')	
+		<!--Actualización de usuario : {!!$user->nombre .' '. $user->apellido!!}-->
+		<div class="" style="font-size: 2em;">
+			<img width="8%" src= "{!!URL::to('/img/users/usuario_nuevo.png')!!}"/><span>Usuarios <span class="requerido">\</span> Informacion de : {!!$user->nombre!!}</span>
+		</div>
 		<div class='row'>
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				@include('alerts.alertFields')
+				@include('alerts.errorsMessage')
+				@include('alerts.successMessage')
+				@include('alerts.warningMessage')
+				@include('alerts.infoMessage')
+			</div>
 			{!!Form::model($user, ['method'=>'PUT', route('usuarios_put_path', $user->id), 'files' => true, 'id' => 'FormUsuario'])!!}
 			@include('usuarios.forms.fieldsUser')
 				<div class='list-group'>

@@ -72,8 +72,8 @@
 			<div class="list-group-item">
 				<div class="form-group has-feedback has-feedback-left">
 					(<strong><small><span class="requerido">Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar avatar: ')!!}<span id="Perfil" ></span><br>
-					<div style="border: dashed; border-width: 1px;">
-						<span class="btn btn-primary btn-file btn-sm">
+					<div>
+						<span class="btn-file btn-sm">
 							Buscar imagen{!!Form::file('imagen_perfil', ['id' => 'imagen_perfil',  'maxlength' => '255', 'size' => '2048'])!!}
 						</span>
 						@if(Request::path() !== 'empresas/create' && isset($empresa))
@@ -90,8 +90,8 @@
 
 				<div class="form-group has-feedback has-feedback-left">
 					(<strong><small><span class="requerido">Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar banner personal: ')!!}<span id="Portada"></span><br>
-					<div style="border: dashed; border-width: 1px;">
-						<span class="btn btn-primary btn-file btn-sm">
+					<div>
+						<span class="btn-file btn-sm">
 							Buscar imagen{!!Form::file('imagen_portada', ['id' => 'imagen_portada', 'maxlength' => '255', 'size' => '2048'])!!}
 						</span>
 						@if(Request::path() !== 'empresas/create' && isset($empresa))

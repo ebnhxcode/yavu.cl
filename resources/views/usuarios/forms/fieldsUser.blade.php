@@ -1,7 +1,7 @@
 <div class='col-sm-8'>
 	<div class='list-group' >
-		<div class='list-group-item'>
-			<h4>Datos principales</h4>
+		<div class='list-group-item list-group-item-success'>
+			DATOS PRINCIPALES
 		</div>
 		<div class='list-group-item'>
 			<div class='form-group has-feedback has-feedback-left'>
@@ -76,8 +76,8 @@
 
 			<div class='form-group has-feedback has-feedback-left'>
 				(<strong><small><span class='requerido'>Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar avatar:')!!}<span id='Perfil'></span><br>
-				<div style='border: dashed; border-width: 1px;'>
-					<span class='btn btn-primary btn-file btn-md'>
+				<div>
+					<span class='btn-file btn-md'>
 						Buscar imagen{!!Form::file('imagen_perfil', ['id' => 'imagen_perfil',  'maxlength' => '255',  'size' => '2048'])!!}
 					</span>
 					@if(Request::path() !== 'usuarios/create' && Auth::user()->check())
@@ -96,8 +96,8 @@
 
 			<div class='form-group has-feedback has-feedback-left'>
 				(<strong><small><span class='requerido'>Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar banner personal:')!!}<span id='Portada'></span><br>
-				<div style='border: dashed; border-width: 1px;'>
-					<span class='btn btn-primary btn-file btn-md'>
+				<div>
+					<span class='btn-file btn-md'>
 						Buscar imagen{!!Form::file('imagen_portada', ['id' => 'imagen_portada',  'maxlength' => '255', 'size' => '2048'])!!}
 					</span>
 					@if(Request::path() !== 'empresas/create' && Auth::user()->check())
@@ -118,8 +118,8 @@
 <div class='col-sm-4'>
 	@if(Auth::user()->check() or Auth::admin()->check())
 		<div class='list-group' >
-			<div class='list-group-item'>
-				<h4>Datos de Contacto</h4>
+			<div class='list-group-item list-group-item-success'>
+				DATOS DE CONTACTO
 			</div>
 			<div class='list-group-item'>
 				<div class='form-group has-feedback has-feedback-left'>

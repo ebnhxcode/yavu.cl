@@ -91,33 +91,50 @@
 						@if(Auth::user()->check())
 							{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
 							{!!Form::hidden('idUltimaNotificacion', "0", ['id'=>'idUltimaNotificacion'])!!}
-							<li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><strong>Mi cuenta</strong>  <b class="caret"></b></a>
+							<li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><strong>Mi cuenta</strong> <span class="label label-success">Gratis!</span> <b class="caret"></b></a>
 								<ul class="dropdown-menu">
-									<li><a href="{!!URL::to('/profile')!!}">Perfil</a></li>
 									<li><a href="{!!URL::to('/tickets/history')!!}">Historial de ticket's</a></li>
 									<li><a href="{!!URL::to('/coins/history')!!}">Historial de coins</a></li>
 									<li><a href="{!!URL::to('/empresas/create')!!}">Crear empresa</a></li>
+								</ul>
+							</li>
+
+							<li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><img width="40" src={{asset('img/yavu019.png')}} alt=""><b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li class="dropdown">
+										<a href="{!!URL::to('/dashboard')!!}">
+											Inicio
+										</a>
+									</li>
+									<li class="dropdown">
+										<a href="{!!URL::to('/feeds')!!}">
+											Publicaciones
+										</a>
+									</li>
+									<li class="dropdown">
+										<a href="{!!URL::to('/empresas')!!}">
+											Empresas
+										</a>
+									</li>
+									<li class="dropdown">
+										<a href="{!!URL::to('/sorteos')!!}">
+											Sorteos
+										</a>
+									</li>
+								</ul>
+							</li>
+
+							<li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-cog" style="font-size: 1.3em; color: #BEF781;"></span><b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li><a href="{!!URL::to('/profile')!!}">Perfil</a></li>
+									<li><a href="{!!URL::to('/usuarios/'.Auth::user()->get()->id.'/edit')!!}">Editar Perfil</a></li>
 									<li><a href="{!!URL::to('/logout')!!}">Cerrar sesión</a></li>
 								</ul>
 							</li>
-							<li class="dropdown">
-								<a href="{!!URL::to('/dashboard')!!}">
-									<strong>Inicio</strong>
-								</a>
-							</li>
-							<li class="dropdown">
-								<a href="{!!URL::to('/feeds')!!}">
-									<strong>Publicaciones</strong>
-								</a>
-							</li>
-							<li class="dropdown">
-								<a href="{!!URL::to('/empresas')!!}">
-									<strong>Empresas</strong>
-								</a>
-							</li>
+
 							<li class="dropdown">
 								<a href="{!!URL::to('/sorteos')!!}">
-									<strong>Sorteos</strong>
+
 								</a>
 							</li>
 						@endif
