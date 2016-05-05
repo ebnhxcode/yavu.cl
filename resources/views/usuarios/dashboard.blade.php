@@ -7,7 +7,7 @@
 	<div id='fullWidth'>
 		<h4 style='margin-top:-40px;'></h4>
 		<div class='row'>
-			<div class='col-md-3 col-sm-3 col-xs-3'>
+			<div class='col-md-3 col-sm-3 col-xs-12'>
         @include('alerts.alertFields')
         @include('alerts.errorsMessage')
         @include('alerts.successMessage')
@@ -21,7 +21,7 @@
         <div id='EstadoEmpresa'></div>
 			</div>
 
-			<div class='col-md-9 col-sm-9 col-xs-9 '>
+			<div class='col-md-9 col-sm-9 col-xs-12 '>
 				<div class='row'>
 					@if(Auth::user()->check())
 						<input type='hidden' value='{!!Auth::user()->get()->id!!}' />

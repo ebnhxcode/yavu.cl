@@ -28,6 +28,7 @@
 			</div>
 
 			<div class="form-group has-feedback has-feedback-left">
+				(<strong><small><span class="requerido">Requerido</span></small></strong>)
 				{!!Form::label('Imagen sorteo:')!!}
 				{!!Form::file('imagen_sorteo', ['class' => 'btn'])!!}
 			</div>

@@ -92,7 +92,7 @@ $(document).ready(function(){
 						pops +=
 						"<div class='list-group-item-hover'>"
 							+"<div class='text-info' >"
-								+"<img src='img/yavu017.jpg' style='width: 32px;' />&nbsp;"+value.contenido+"<br>"
+								+"<img src='/img/yavu017.jpg' style='width: 32px;' />&nbsp;"+value.contenido+"<br>"
 								+"<small>"
 									+"<abbr class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
 								+"</small>"
@@ -102,7 +102,7 @@ $(document).ready(function(){
 						pops +=
 						"<div class='list-group-item-hover'>"
 							+"<div class='text-info' >"
-								+"<img src='img/yavu017.jpg' style='width: 32px;' />&nbsp;"+value.contenido+"<br>"
+								+"<img src='/img/yavu017.jpg' style='width: 32px;' />&nbsp;"+value.contenido+"<br>"
 								+"<small>"
 									+"<abbr class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
 								+"</small>"
@@ -112,7 +112,7 @@ $(document).ready(function(){
 						pops +=
 						"<div class='list-group-item-hover'>"
 							+"<div class='text-info' >"
-								+"<img src='img/yavu017.jpg' style='width: 32px;' />&nbsp;"
+								+"<img src='/img/yavu017.jpg' style='width: 32px;' />&nbsp;"
 								+value.contenido+"<br>"
 								+"<small>"
 									+"<abbr class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
