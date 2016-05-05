@@ -76,8 +76,10 @@
 		return true;
 	}
 
-	function Interactuar(valor){
-		var status_id = valor.replace('estado_','');
+	function Interactuar(valor) {
+		var status_id = valor.replace('estado_', '');
+		var e_id = $('#estado_' + status_id).attr('value').replace('e','');
+		console.log(e_id);
 		var user_id = $("#user_id").val();
 		var token = $("#token").val();
 		var route = "http://localhost:8000/interactuar";
@@ -88,7 +90,8 @@
 			dataType: 'json',
 			data: {
 				status_id: status_id,
-				user_id: user_id
+				user_id: user_id,
+				empresa_id: e_id
 			},
 			success:function(){
 				$('#'+valor).addClass("text-info").fadeIn();

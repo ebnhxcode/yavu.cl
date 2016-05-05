@@ -61,6 +61,7 @@ class InteraccionEstadoController extends Controller{
       DB::table('interaccion_estados')->insert(
         ['user_id' => $request->user_id,
           'status_id' => $request->status_id,
+          'empresa_id' => $request->empresa_id,
           'estado' => 'activo',
           'created_at' => strftime("%Y-%m-%d-%H-%M-%S", time()),
           'updated_at' => strftime("%Y-%m-%d-%H-%M-%S", time())]

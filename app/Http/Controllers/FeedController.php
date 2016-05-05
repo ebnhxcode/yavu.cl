@@ -29,7 +29,7 @@ class FeedController extends Controller{
       if((int) $idUltima == "0"){
         $feeds = DB::table('estado_empresas')
           ->join('empresas'  , 'empresas.id', '=', 'estado_empresas.empresa_id')
-          ->select('estado_empresas.*', 'empresas.nombre as nombreEmp', 'empresas.imagen_perfil as imagen_perfil_empresa')
+          ->select('estado_empresas.*', 'empresas.nombre as nombreEmp', 'empresas.imagen_perfil as imagen_perfil_empresa', 'empresas.id as idEmpresa')
           ->where('estado_empresas.id', '>', (int) $idUltima)
           ->orderBy('estado_empresas.created_at','desc')
           ->limit('10')
@@ -38,7 +38,7 @@ class FeedController extends Controller{
       }elseif((int) $idUltima <> "0"){
         $feeds = DB::table('estado_empresas')
           ->join('empresas'  , 'empresas.id', '=', 'estado_empresas.empresa_id')
-          ->select('estado_empresas.*', 'empresas.nombre as nombreEmp', 'empresas.imagen_perfil as imagen_perfil_empresa')
+          ->select('estado_empresas.*', 'empresas.nombre as nombreEmp', 'empresas.imagen_perfil as imagen_perfil_empresa', 'empresas.id as idEmpresa')
           ->where('estado_empresas.id', '<', (int) $idUltima)
           ->orderBy('estado_empresas.created_at','desc')
           ->limit('10')

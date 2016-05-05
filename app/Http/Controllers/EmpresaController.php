@@ -46,14 +46,31 @@ class EmpresaController extends Controller{
   }
 
   public function EstadisticasDeMiEmpresa(){
-    if(isset($this->empresa)){
+    $this->empresa = Empresa::where('user_id', $this->user->id)->get();
+    $this->data = $this->empresa[0]->visits()->get();
+    $this->cMasculino = 0; $this->cFemenino = 0; $this->cSinDefinir = 0;
 
-      dd(Visit::where('empresa_id', $this->empresa->id));
+    $this->coinsOtorgadas = 1;
 
-
-    }else{
-      return Redirect::to('/login');
+    foreach ($this->data as $d){
+      if($d->sexo == 'Masculino'){
+        $this->cMasculino+=1;
+      }else if($d->sexo == 'Femenino'){
+        $this->cFemenino+=1;
+      }else{
+        $this->cSinDefinir+=1;
+      }
     }
+
+    $this->statistics = [
+      0 => $this->cMasculino,
+      1 => $this->cFemenino,
+      2 => $this->cSinDefinir,
+    ];
+
+    ///dd( $this->statistics );
+    return view('empresas.companyStatistics', ['statistics' => $this->statistics]);
+
   }
 
   public function store(EmpresaCreateRequest $request){
