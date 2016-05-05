@@ -117,7 +117,7 @@
     @endif
 
 
-    <div class="col-md-4 col-sm-2 col-xs-3">
+    <div style="display: none;" class="col-md-4 col-sm-2 col-xs-3 hasoneempresa">
       <div class="list-group" >
         <div align="center">
           <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/sorteos/create')!!}" style="text-align:center;" class="list-group-item list-group-item-info">

@@ -15,12 +15,12 @@
 
 			<div class="col-sm-4"><!--style="position:fixed;z-index:1000;"-->
 
-				<div class="panel panel-default">
-					<div class="panel-body">
+				<div>
+					<div>
 
 						<div class="list-group">
-							<div class="list-group-item-full-header">
-								<h6>INFORMACIÓN</h6>
+							<div class="list-group-item list-group-item-success">
+								INFORMACIÓN
 							</div>
 							<div class="list-group-item">
 								Coins
@@ -28,6 +28,7 @@
 									 <img src="http://i601.photobucket.com/albums/tt93/tbg8904/Gaia%20Icon/Coins.png" width="16px" height="16px">
 								</span>
 							</div>
+							@include('miniDashboard.miniDashboard')
 						</div>
 					</div>
 				</div>
@@ -36,8 +37,8 @@
 
 			<div class="col-md-8">
 				<div class="list-group">
-					<div class="list-group-item">
-						<h6>HISTORIAL DE USO DE COINS</h6>
+					<div class="list-group-item list-group-item-success">
+						HISTORIAL DE USO DE COINS
 					</div>
 					<div class="list-group-item wrap">
 						<table id="UserList" class="table table-hover" style="font-size: 0.8em;">

@@ -12,7 +12,8 @@ class SorteoCreateRequest extends Request
       return [
          'nombre_sorteo' => 'required',
          'descripcion' => 'required',
-         'fecha_inicio' => 'required',
+         'fecha_inicio_sorteo' => 'required|date',
+         'imagen_sorteo' => 'required',
          //'password' => 'required'
       ];
    }

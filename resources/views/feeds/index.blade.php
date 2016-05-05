@@ -9,11 +9,13 @@
 			<img width="64px" src= "{!!URL::to('img/dash/ico_pin03.png')!!}" /><span>Publicaciones</span>
 		</div>
     <div class="row">
-    
-			@include('alerts.alertFields')
-			@include('alerts.errorsMessage')
-			@include('alerts.successMessage')
-			@include('alerts.warningMessage')
+    	<div class="col-md-12 col-sm-12 col-xs-12">
+				@include('alerts.alertFields')
+				@include('alerts.errorsMessage')
+				@include('alerts.successMessage')
+				@include('alerts.warningMessage')
+				@include('alerts.infoMessage')
+			</div>
 
 				<!-- panel izquierdo -->
 			@include('feeds.forms.panelLeft')

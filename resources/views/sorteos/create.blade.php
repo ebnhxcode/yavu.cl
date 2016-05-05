@@ -38,7 +38,9 @@
 			var checked = $("input[id=AceptaTerminos]:checked").length;
 			//Opcional//if($("#AceptaTerminos").is(":checked")){return:true;}
 			if(checked === 0){
-				$("#Registrar").attr('disabled','disabled');
+				if($('#ImagenSorteo').val()){
+					$("#Registrar").attr('disabled','disabled');
+				}
 			}
 			else{
 				$("#Registrar").removeAttr('disabled');
