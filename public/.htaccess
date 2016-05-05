@@ -1,6 +1,8 @@
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews
+        Options -Indexes
+        ErrorDocument 403 /cuack.php
     </IfModule>
 
     RewriteEngine On
@@ -14,3 +16,5 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+
+
