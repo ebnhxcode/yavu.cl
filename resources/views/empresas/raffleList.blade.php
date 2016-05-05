@@ -6,16 +6,6 @@
       <img id="img" width="8%" src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}"/><span>Sorteos de {!! $empresa[0]->nombre !!}</span>
     </div>
     <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="alert alert-warning alert-dismissible" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          Atento al usar tus tickets participar
-          <span class="glyphicon glyphicon-tag" style="font-size: 1em; color: #BEF781;"></span>
-          <span class="glyphicon glyphicon-resize-horizontal"></span>
-          <span class="label label-info">#14</span>&nbsp;(<small class="requerido">Tickets de ejemplo</small>)
-        </div>
-      </div>
-
       <div class="col-md-4 col-sm-12 col-xs-12">
         <div>
           <div>
