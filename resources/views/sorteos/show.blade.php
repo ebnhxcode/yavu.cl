@@ -15,12 +15,51 @@
         <div class="row">
           <div class="col-md-8 col-sm-12 col-xs-12">
             <div class="list-group">
+              <div class="list-group-item list-group-item-success">
+                GANADOR DEL SORTEO
+              </div>
+              @if(isset($winners))
+                <div class="list-group-item list-group-item-success">
+                  <div class="well well-xs">
+                    <span class="label label-success">1</span>
+                    ¡Ganador! : {!! $winners[0]->nombre.' '.$winners[0]->apellido !!}
+                  </div>
+                </div>
+                {{--
+                <div class="list-group-item list-group-item-danger">
+                  <div class="well well-xs">
+                    <span class="label label-danger">2</span>
+                    ¡Segundo lugar! : {!! $winners[1]->nombre.' '.$winners[1]->apellido !!}
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-danger">
+                  <div class="well well-xs">
+                    <span class="label label-danger">3</span>
+                    ¡Tercer lugar! : {!! $winners[2]->nombre.' '.$winners[2]->apellido !!}
+                  </div>
+                </div>
+                 --}}
+              @else
+                <div class="list-group-item list-group-item-success">
+                  <div class="well well-xs">
+                    <span class="label label-success">1</span>
+                    ¡Ganador! : <span class="text-danger">¡Espera hasta las 21!</span><img width="80" style="float: right;" src="{!! URL::to('img/yavu005.png') !!}" alt="">
+                  </div>
+                </div>
+              @endif
+            </div><!-- /div list-group -->
+
+            <div class="list-group">
               <div class="list-group-item">
                 @if($sorteo->imagen_sorteo === "")
                   <img class="img-responsive-centered" width="40%" src="https://tiendas-asi.com/wp-content/uploads/2015/04/sorteo-diariodebodas.jpg" alt="" />
                 @else
                   <img class="img-responsive-centered" src="/img/users/{!! $sorteo->imagen_sorteo !!}" alt="" />
                 @endif
+                  <div class="semi-amplio">
+                    <input id="token" type="hidden" name="_token" value="{!! csrf_token() !!}">
+                    <button class="btn btn-success btn-md UsarTicket" value="{!! $sorteo->id !!}" type="button"   style="display: none; width: 100%;" data-dismiss="modal">Participar</button>
+                  </div>
               </div><!-- /div list-group-item-full-header -->
             </div><!-- /div list-group -->
           </div><!-- /div col-md-8 col-sm-12 col-xs-12 -->
@@ -48,7 +87,10 @@
                     <strong>Fecha del sorteo: </strong>
                     <input class="form-control" type="text" disabled="disabled" value="{!!$sorteo->fecha_inicio_sorteo!!}">
                   </h5>
-
+                  <h5>
+                    <strong>Hora del sorteo: </strong>
+                    <input class="form-control" type="text" disabled="disabled" value="21:00:00">
+                  </h5>
                   @if($sorteo->user_id == Auth::user()->get()->id && !isset($winners))
                     {!!link_to_route('sorteos.edit', $title = 'Editar', $parameters = $sorteo->id, $attributes = ['class'=>'btn btn-primary btn-sm'])!!}
                     <a id="SortearGanador" data-toggle="modal"  class="btn btn-primary btn-sm" value="{!! $sorteo->id !!}">Sortear ganador</a>
@@ -57,33 +99,7 @@
                 </div><!-- /div well -->
               </div><!-- /div list-group-item -->
             </div><!-- /div list-group-item -->
-            <div class="list-group">
-              <div class="list-group-item list-group-item-success">
-                GANADOR DEL SORTEO
-              </div>
-              @if(isset($winners))
-                <div class="list-group-item list-group-item-success">
-                  <div class="well well-xs">
-                    <span class="label label-success">1</span>
-                    ¡Ganador! : {!! $winners[0]->nombre.' '.$winners[0]->apellido !!}
-                  </div>
-                </div>
-                {{--
-                <div class="list-group-item list-group-item-danger">
-                  <div class="well well-xs">
-                    <span class="label label-danger">2</span>
-                    ¡Segundo lugar! : {!! $winners[1]->nombre.' '.$winners[1]->apellido !!}
-                  </div>
-                </div>
-                <div class="list-group-item list-group-item-danger">
-                  <div class="well well-xs">
-                    <span class="label label-danger">3</span>
-                    ¡Tercer lugar! : {!! $winners[2]->nombre.' '.$winners[2]->apellido !!}
-                  </div>
-                </div>
-                 --}}
-              @endif
-            </div><!-- /div list-group -->
+
             {{--
             @if(Auth::user()->get()->id == $sorteo->user_id)
               <script language="JavaScript" type="text/javascript">

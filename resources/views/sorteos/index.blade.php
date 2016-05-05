@@ -29,13 +29,6 @@
 
       -->
 
-
-        <div class="alert alert-info alert-dismissible" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          Si el botón participar no aparece refresca la página
-        </div>
-
-
       </div>
 
       <div class="col-md-4 col-sm-12 col-xs-12">
@@ -62,7 +55,7 @@
           </div>
         </div> <!-- /panel -->
 
-
+        {{--
         <div>
           <div>
 
@@ -188,6 +181,8 @@
             </div> <!-- /list group -->
           </div> <!-- /panel body -->
         </div> <!-- /Panel historial -->
+
+        --}}
 
       </div><!-- /col md 4 -->
 

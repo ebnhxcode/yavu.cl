@@ -35,6 +35,7 @@ $(document).ready(function(){
 	$("#comprar").click(function(e){
 		EfectuarCompra();
     ContarNotificaciones();
+		VerificarTickets();
 		e.preventDefault();
 		return true;
 	});
