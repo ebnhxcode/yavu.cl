@@ -128,7 +128,7 @@
 								<ul class="dropdown-menu">
 									<li><a href="{!!URL::to('/profile')!!}">Perfil</a></li>
 									<li><a href="{!!URL::to('/usuarios/'.Auth::user()->get()->id.'/edit')!!}">Editar Perfil</a></li>
-									<li><a href="{!!URL::to('/logout')!!}">Cerrar sesión</a></li>
+									<li><a href="{!!URL::to('/logout')!!}">Cerrar sesión <span class="glyphicon glyphicon-off text-danger"></span></a></li>
 								</ul>
 							</li>
 

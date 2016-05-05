@@ -55,7 +55,6 @@
           </div>
         </div> <!-- /panel -->
 
-        {{--
         <div>
           <div>
 
@@ -122,6 +121,7 @@
           </div>
         </div> <!-- /Panel sorteos pendientes -->
 
+        {{--
 
         <div>
           <div>
