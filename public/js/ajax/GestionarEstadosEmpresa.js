@@ -268,7 +268,7 @@ $(document).ready(function(){
 
 							+"<span id='badge_"+value.id+"' class='label label-warning'></span>"+"&nbsp;"
 							+"<span role='button' class='' href='#!' style='color:#3C5B28'>"
-							+"<span name='megusta' class='text-warning btn-coins' onclick='Interactuar(this.id)' id='estado_"+value.id+"' value='"+value.id+"'>"
+							+"<span name='megusta' class='text-warning btn-coins' onclick='Interactuar(this.id)' id='estado_"+value.id+"' value='e"+value.idEmpresa+"'>"
 							+"Cobrar coins"
 							+"</span>"
 							+"</span>"

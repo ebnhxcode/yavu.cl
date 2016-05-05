@@ -50,7 +50,7 @@ class EmpresaController extends Controller{
     $this->data = $this->empresa[0]->visits()->get();
     $this->cMasculino = 0; $this->cFemenino = 0; $this->cSinDefinir = 0;
 
-    $this->coinsOtorgadas = 1;
+    $this->coinsOtorgadas = $this->empresa[0]->coins_otorgadas()->get()->count('user_id');
 
     foreach ($this->data as $d){
       if($d->sexo == 'Masculino'){
@@ -66,6 +66,8 @@ class EmpresaController extends Controller{
       0 => $this->cMasculino,
       1 => $this->cFemenino,
       2 => $this->cSinDefinir,
+      3 => $this->cMasculino+$this->cFemenino+$this->cSinDefinir,
+      4 => $this->coinsOtorgadas,
     ];
 
     ///dd( $this->statistics );
