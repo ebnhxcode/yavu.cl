@@ -54,9 +54,7 @@ class SorteoController extends Controller{
         $sorteos
       );
     }
-    return response()->json(
-      'Acceso denegado'
-    );
+    return response()->json(['Mensaje: ','Acceso denegado']);
   }
   public function CanjearTicket($user_id){
     if($this->user->registro_coins->sum('cantidad') >= 100){
@@ -195,6 +193,30 @@ class SorteoController extends Controller{
     }
 
   }
+  public function VisualizarEmpresaSorteoPendiente(Request $request){
+    if($request->ajax()){
+      return response()->json(Empresa::find(addslashes($request->id)));
+    }else{
+      response()->json(['Mensaje: ', 'Acceso denegado']);
+    }
+  }
+  public function AprobarSorteoPendiente(Request $request){
+    if($request->ajax()){
+      $this->sorteo = Sorteo::find(addslashes($request->id));
+
+      if($this->sorteo->estado_sorteo == 'Pendiente'){
+        $this->sorteo->estado_sorteo = '1';
+        $this->sorteo->save();
+      }
+      return response()->json(['Mensaje: ', 'ok']);
+    }else{
+      return response()->json(['Mensaje: ', 'Acceso denegado']);
+    }
+  }
+  public function SorteosPendientes(){
+    return view('admins.sorteosPendientes', ['sorteospendientes' => Sorteo::where('estado_sorteo', 'Pendiente')->get()]);
+  }
+
   public function store(Request $request){
       if(Sorteo::create($request->all())){
         $this->pop = new Pop(['user_id' => $request->user_id,'empresa_id' => 1,'tipo' => 'sorteo', 'estado'   => 'pendiente','contenido' => 'Haz creado un nuevo sorteo!','created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]);

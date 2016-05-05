@@ -18,11 +18,17 @@ Route::get('', '');
 */
 
 
+
 /*Gestión de ingreso login*/
 Route::resource('log', 'LogController');
 /*Gestión de ingreso login*/
 
 Route::get('login', function(){
+  if(Auth::user()->check()){
+    $log = new \yavu\Http\Controllers\LogController();
+    $log->logout();
+    return view('login');
+  }
   return view('login');
 });
 
@@ -47,10 +53,10 @@ Route::group(['middleware' => 'user'], function(){
   Route::resource('profile', 'UserController@profile');
   Route::get('infoempresas/{user_id}','UserController@InfoEmpresas')->where('user_id', '[0-9]+');
 
-  Route::get('usuarios/{id}/edit', ['uses' => 'UserController@edit', 'as' => 'usuarios_edit_path',])->where('id', '[0-9]+');
-  Route::put('usuarios/{id}/edit', ['uses' => 'UserController@update','as' => 'usuarios_put_path',])->where('id', '[0-9]+');
-  Route::delete('usuarios/{id}/edit', ['uses' => 'UserController@destroy','as' => 'usuarios_delete_path',])->where('id', '[0-9]+');
-  Route::get('usuarios/{id}', function(){return redirect()->to('/');})->where('id', '[1-9]+');
+  Route::get('usuarios/{id}/edit', ['uses' => 'UserController@edit', 'as' => 'usuarios_edit_path',]);
+  Route::put('usuarios/{id}/edit', ['uses' => 'UserController@update','as' => 'usuarios_put_path',]);
+  Route::delete('usuarios/{id}/edit', ['uses' => 'UserController@destroy','as' => 'usuarios_delete_path',]);
+  Route::get('usuarios/{id}', function(){return redirect()->to('/');});
   /*Gestión de Usuarios*/
 
 
@@ -143,6 +149,20 @@ Route::group(['middleware' => 'user'], function(){
 
 }); /*Fin del middleware user*/
 
+Route::group(['middleware' => 'admin'], function(){
+
+
+  /*Gestión de Admins*/
+  Route::resource('admins','AdminController');
+  Route::get('sorteospendientes', 'SorteoController@SorteosPendientes');
+  Route::get('aprobarsorteopendiente', 'SorteoController@AprobarSorteoPendiente');
+  Route::get('visualizarempresasorteopendiente', 'SorteoController@VisualizarSorteoPendiente');
+  /*Gestión de Admins*/
+
+
+
+});
+
 
 /*Gestión del front*/
 Route::get('/','FrontController@index');
@@ -162,16 +182,6 @@ Route::get('sitemap', function(){
 */
 /*Gestión del front*/
 
-
-
-
-
-
-
-
-/*Gestión de Admins*/
-Route::resource('admins','AdminController');  
-/*Gestión de Admins*/
 
 
 

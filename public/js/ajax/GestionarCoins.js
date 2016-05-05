@@ -36,7 +36,7 @@ $(document).ready(function(){
 /*FUNCIONES Y PROCEDIMIENTOS*/
 	function ContarCoins(){
 		var CargarEstados = $("#CargarEstados"); 
-		var route = "http://yavu.cl/contarcoins";
+		var route = "http://localhost:8000/contarcoins";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
 			$(".CantidadCoins").value = "";
@@ -50,7 +50,7 @@ $(document).ready(function(){
 	}
 	function InfoEmpresas(){
 		var user_id = $("#user_id").val();
-		var route = "http://yavu.cl/infoempresas/"+user_id;
+		var route = "http://localhost:8000/infoempresas/"+user_id;
 		var Pendiente = false;
 		$.get(route, function(res){
 			$("#EstadoEmpresa").value = "";
@@ -86,7 +86,8 @@ $(document).ready(function(){
 										+'</div>'
 
 										+'<div class="list-group-item ">'
-											+'<small>Estado de la empresa</small> : '
+
+											+'<strong>Estado de la Empresa :</strong>'
 											+'<span style="float:right;" class="label label-success">'
 												+'<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>'
 												+value.estado
@@ -94,12 +95,12 @@ $(document).ready(function(){
 										+'</div>'
 
 										+'<div class="list-group-item">'
-											+'<small>Modificar datos de la empresa</small> : '
+											+'<strong>Modificar Datos Empresa :</strong>'
 											+'<a style="float:right;" class="btn-xs btn-primary btn-sm" href="empresas/'+value.id+'/edit">Editar</a>'
 										+'</div>'
 
 										+'<div class="list-group-item">'
-											+'<small>Perfil de la empresa</small> : '
+											+'<strong>Perfil de la Empresa :</strong>'
 											+"<a style='float:right;' class='btn-xs btn-primary btn-sm' href='empresa/"+value.nombre+"/'>Perfil</a>"
 										+'</div>'
 

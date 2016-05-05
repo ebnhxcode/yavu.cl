@@ -1,17 +1,20 @@
 {!!Html::script('js/jquery.js')!!}
-<!--{!!Html::script('js/ajax/GestionarEstados.js')!!}-->
-<!--{!!Html::script('js/ajax/GestionarInteraccionesEstadosUsuario.js')!!}-->
-<!--{!!Html::script('js/ajax/InteraccionPublicaciones.js')!!}-->
+{{--{!!Html::script('js/ajax/GestionarEstados.js')!!}--}}
+{{--{!!Html::script('js/ajax/GestionarInteraccionesEstadosUsuario.js')!!}--}}
+{{--{!!Html::script('js/ajax/InteraccionPublicaciones.js')!!}--}}
 @extends('layouts.front')
 @section('content')
 <div class='jumbotron'>
 	<div id='contentMiddle'>
 		<div class='row' style='margin-top:-35px;'>
-			@include('alerts.alertFields')
-			@include('alerts.errorsMessage')
-			@include('alerts.successMessage')
-			@include('alerts.warningMessage')
-				<div class='col-sm-8'>
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					@include('alerts.alertFields')
+					@include('alerts.errorsMessage')
+					@include('alerts.successMessage')
+					@include('alerts.warningMessage')
+					@include('alerts.infoMessage')
+				</div>
+				<div class='col-md-8 col-sm-8 col-xs-8'>
 					<div class='list-group' >
 
 						<div class='list-group'>
@@ -83,7 +86,7 @@
 					-->
 
 				</div>
-				<div class='col-sm-4'><!--style='position:fixed;z-index:1000;'-->
+				<div class='col-md-4 col-sm-4 col-xs-4'><!--style='position:fixed;z-index:1000;'-->
 
 					<div class="list-group">
 						<div class="list-group-item">
@@ -92,143 +95,49 @@
 							@else
 								<img id='ImagenPerfil' src='/img/users/{!!Auth::user()->get()->imagen_perfil!!}' class='center-block' width='100' height='100' class='img-responsive'>
 							@endif
-                <div class="">
-                  <div class="" >
-                    <div>
+							<div class="">
+								<div class="" >
+									<div>
+										<div class="dropdown">
+											<button class="btn btn-default btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+												<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+												<span class="caret"></span>
+											</button>
+											<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+												<li>
+													<a href="{!! route('usuarios_edit_path', Auth::user()->get()->id) !!}">Editar Perfil de Usuario</a>
+												</li>
+												<li role="separator" class="divider"></li>
+												<li>
+													<a href="#!">M&aacute;s informaci&oacute;n acerca de la privacidad</a>
+												</li>
+												<li>
+													<a href="#!">Preguntas frecuentes</a>
+												</li>
+												<li>
+													<a href="#!">Ayuda</a>
+												</li>
+												<li>
+													<a href="#!"></a>
+												</li>
+											</ul>
+										</div><!-- /div dropdown -->
 
-                      <div class="dropdown">
-                        <button class="btn btn-default btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                          <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                          <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                          <li>
-                            <a href="{!! route('usuarios_edit_path', Auth::user()->get()->id) !!}">Editar Perfil de Usuario</a>
-                          </li>
-                          <li role="separator" class="divider"></li>
-                          <li>
-                            <a href="#!">M&aacute;s informaci&oacute;n acerca de la privacidad</a>
-                          </li>
-                          <li>
-                            <a href="#!">Preguntas frecuentes</a>
-                          </li>
-                          <li>
-                            <a href="#!">Ayuda</a>
-                          </li>
-                          <li>
-                            <a href="#!"></a>
-                          </li>
-                        </ul>
-                      </div><!-- /div dropdown -->
-
-                    </div>
-                  </div>
-                </div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 
 					<div class="list-group">
 
-
-						<div class="list-group-item">
-							<div class="row">
-
-								<div class="col-md-4 col-sm-4 col-xs-4">
-									<div class="list-group" >
-										<div align="center">
-											<a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/feeds')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
-                          <span>
-                            <img width="80%" src= "{!!URL::to('img/dash/ico_pin03.png')!!}"/>
-                          </span>
-											</a>
-										</div>
-										<div align="center"><small>Publicaciones</small></div>
-									</div>
-								</div>
-
-								<div class="col-md-4 col-sm-4 col-xs-4">
-									<div class="list-group" >
-										<div align="center">
-											<a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/sorteos')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
-                          <span>
-                            <img width="80%" src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}"/>
-                          </span>
-											</a>
-										</div>
-										<div align="center"><small>Sorteos</small></div>
-									</div>
-								</div>
-
-								<div class="col-md-4 col-sm-4 col-xs-4">
-									<div class="list-group" >
-										<div align="center">
-											<a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/tickets/history')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
-                          <span>
-                            <img width="80%" src= "{!!URL::to('img/dash/ico_ticket01.png')!!}"/>
-                          </span>
-											</a>
-										</div>
-										<div align="center"><small>Tickets</small></div>
-									</div>
-								</div>
-
-
-
-								<div class='col-md-4 col-sm-4 col-xs-4'>
-									<div class='list-group' >
-										<div align="center">
-											<a style="padding: 2px 2px 2px 2px;" href='{!!URL::to('/coins/history')!!}' style="text-align:center;" class="list-group-item list-group-item-info">
-                          <span>
-                            <img width="80%" src= "{!!URL::to('img/dash/ico_notificacion004.png')!!}"/>
-                          </span>
-											</a>
-										</div>
-										<div align="center"><small>Informe Coins</small></div>
-									</div>
-								</div>
-
-								<div class='col-md-4 col-sm-4 col-xs-4'>
-									<div class='list-group' >
-										<div align="center">
-											<a style="padding: 2px 2px 2px 2px;" href='{!!URL::to('/tickets/history')!!}' style="text-align:center;" class="list-group-item list-group-item-info">
-                          <span>
-                            <img width="80%" src= "{!!URL::to('img/dash/icono_informe01.png')!!}"/>
-                          </span>
-											</a>
-										</div>
-										<div align="center"><small>Informe Ticket's</small></div>
-									</div>
-								</div>
-
-							</div><!-- /row -->
-						</div> <!-- /list group item -->
+						@include('miniDashboard.miniDashboard')
 
 					</div> <!-- /list group -->
 
-					{{--
-					<div class='list-group'>
-						<div class='list-group-item'>
-							<h3><span class="list-group-item list-group-item-success">Información</span></h3>
-						</div>
-
-						<div class='list-group-item'>
-							Estado usuario
-							<span id='EstadoUsuario' style='float:right;' class='label label-success'>
-							<span class='glyphicon glyphicon-chevron-up' aria-hidden='true'></span>
-									{!!Auth::user()->get()->estado!!}
-							</span>
-						</div>
-
-					</div>
-					--}}
-
 					<div class='list-group'  id='EstadoEmpresa'>
 
-
 					</div>
-
-
-
 
 					<div class='list-group'>
 						<div class='list-group-item list-group-item-success'>
@@ -236,7 +145,6 @@
 						</div>
 						<div class='list-group-item'>
 							<h5>¡Invita a tus Amigos a registrarse y entregales este c&oacute;digo!</h5>
-
 
 							<div align="center">
 								<button id='Info' type='button' class='btn btn-info btn-sm' data-container='body' data-toggle='popover' data-placement='top' data-content='Con este código tus amigos ganarán coins al registrarse!' data-original-title='Atención {!!Auth::user()->get()->nombre!!}'>
@@ -270,7 +178,7 @@
 				var status_id = valor.replace('estado_','');
 				var user_id = $('#user_id').val();
 				var token = $('#token').val();
-				var route = 'http://yavu.cl/interactuar';
+				var route = 'http://localhost:8000/interactuar';
 				$.ajax({
 					url: route,
 					headers: {'X-CSRF-TOKEN': token},
@@ -293,7 +201,7 @@
 
 			function ContarInteracciones(status_id){
 				status_id = status_id;
-				var route = 'http://yavu.cl/contarinteracciones/'+status_id;
+				var route = 'http://localhost:8000/contarinteracciones/'+status_id;
 				var user_id = $('#user_id');
 				var Contador = 0;
 				$.get(route, function(res){

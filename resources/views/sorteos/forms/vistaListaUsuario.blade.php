@@ -1,7 +1,6 @@
 <div id="SorteoListThumb">
 	{!! $ImagenSorteo = "" !!}
 
-	<script src="js/helpers/jquery.simple.timer.js"></script>
 	<div>
 		<div class="progress">
 			<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
@@ -37,7 +36,7 @@
 
 								<div align="center" class="col-md-6 col-sm-6 col-xs-6">
 									<span class="glyphicon glyphicon-time"></span>
-									<div class="timer" data-seconds-left="{!! $sorteo->created_at !!}" style="float: right;"></div>
+									<abbr title="{!! $sorteo->fecha_inicio_sorteo !!}">21:00:00 hrs</abbr>
 								</div>
 
 							</div> <!-- /div row -->
@@ -53,7 +52,7 @@
 							</div>
 
 							<div align="center" class="col-md-6 col-sm-6 col-xs-6">
-								<small>Tiempo restante</small>
+								<small>Recuerda</small>
 								<br>
 								<small><span id="estado"></span></small>
 							</div>

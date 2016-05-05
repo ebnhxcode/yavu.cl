@@ -75,7 +75,7 @@ class UserController extends Controller{
   }
 
   public function getCodigoVerificacion(){
-    return Carbon::now()->second.Carbon::now()->minute.Carbon::now()->hour."V";
+    return Carbon::now()->day.Carbon::now()->minute.Carbon::now()->hour."V";
   }
 
   public function index(){
@@ -109,7 +109,7 @@ class UserController extends Controller{
 
     if ($existeReferente){
       //CUANDO EXISTE REFERENTE
-      $this->newuser = new User(["nombre"=>$request->nombre,"apellido"=>$request->apellido,"email"=>$request->email,"password"=>$request->password,"estado"=>"inactivo","referido"=>$request ->referido,"referente"=>Carbon::now()->second.Carbon::now()->minute.Carbon::now()->hour.Carbon::now()->year.Carbon::now()->month.Carbon::now()->day."RY","validacion"=> $this->getCodigoVerificacion(),"ciudad"=>$request->ciudad]);
+      $this->newuser = new User(["nombre"=>$request->nombre,"apellido"=>$request->apellido,"email"=>$request->email,"password"=>$request->password,"estado"=>"inactivo","referido"=>$request ->referido,"referente"=>Carbon::now()->minute.Carbon::now()->hour.Carbon::now()->year.Carbon::now()->month.Carbon::now()->day."RY","validacion"=> $this->getCodigoVerificacion(),"ciudad"=>$request->ciudad]);
       $this->newuser->save();
       $this->registro_coins = new RegistroCoin(['user_id'=>$this->newuser->id,'cantidad'=>'70','motivo'=>'Uso de código referido','created_at'=>strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at'=>strftime( "%Y-%m-%d-%H-%M-%S", time())]);
       $this->registro_coins->save();
@@ -127,7 +127,7 @@ class UserController extends Controller{
       return Redirect::to('/login');
     }else{
       //CUANDO NO EXISTE REFERENTE
-      $this->newuser = new User(["nombre"=>$request->nombre,"apellido"=>$request->apellido,"email"=>$request->email,"password"=>$request->password,"estado"=>"inactivo","referido"=>"","referente"=>Carbon::now()->second.Carbon::now()->minute.Carbon::now()->hour.Carbon::now()->year.Carbon::now()->month.Carbon::now()->day."RY","validacion"=>$this->getCodigoVerificacion(),"ciudad"=>$request->ciudad]);
+      $this->newuser = new User(["nombre"=>$request->nombre,"apellido"=>$request->apellido,"email"=>$request->email,"password"=>$request->password,"estado"=>"inactivo","referido"=>"","referente"=>Carbon::now()->minute.Carbon::now()->hour.Carbon::now()->year.Carbon::now()->month.Carbon::now()->day."RY","validacion"=>$this->getCodigoVerificacion(),"ciudad"=>$request->ciudad]);
       $this->newuser->save();
 
       Mail::send('emails.register', ['email'=>\Input::get('email'), 'nombre' => \Input::get('nombre'), 'codigo' => $this->getCodigoVerificacion()], function($msj){

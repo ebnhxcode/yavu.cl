@@ -11,6 +11,7 @@
     </div>
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
+      <!--
         <div class="alert alert-warning alert-dismissible" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           Atento al usar tus tickets participar <br>
@@ -18,83 +19,14 @@
           <span class="glyphicon glyphicon-resize-horizontal"></span>
           <span class="label label-info">#14</span>&nbsp;(<small class="requerido">Tickets de ejemplo</small>)
         </div>
+       -->
       </div>
       <div class="col-md-4 col-sm-12 col-xs-12"><!--style="position:fixed;z-index:1000;"-->
         <div>
           <div>
             <div class="list-group">
-              <div class='list-group-item'>
-                <div class='row'>
 
-                  <div class='col-md-4 col-sm-4 col-xs-4'>
-                    <div class='list-group'>
-                      <div align="center">
-                        <a style="padding: 1px 1px 1px 1px;" href='{!!URL::to('/sorteos/create')!!}' style='text-align:center;' class='list-group-item list-group-item-info'>
-                      <span>
-                        <img width='80%' src= '{!!URL::to('img/dash/ico_sorteo01.png')!!}'/>
-                      </span>
-                        </a>
-                      </div>
-                      <div align='center'><small>Crear sorteo</small></div>
-                    </div>
-                  </div>
-
-                  <div class='col-md-4 col-sm-4 col-xs-4'>
-                    <div class='list-group'>
-                      <div align="center">
-                        <a style="padding: 1px 1px 1px 1px;" href='{!!URL::to('/sorteos')!!}' style='text-align:center;' class='list-group-item list-group-item-info'>
-                      <span>
-                        <img width='80%' src= '{!!URL::to('img/dash/ico_sorteo01.png')!!}'/>
-                      </span>
-                        </a>
-                      </div>
-                      <div align='center'><small>Sorteos</small></div>
-                    </div>
-                  </div>
-
-                  <div class='col-md-4 col-sm-4 col-xs-4'>
-                    <div class='list-group' >
-                      <div align="center">
-                        <a style="padding: 1px 1px 1px 1px;" href='{!!URL::to('/feeds')!!}' style="text-align:center;" class="list-group-item list-group-item-info">
-                      <span>
-                        <img width="80%" src= "{!!URL::to('img/dash/ico_pin03.png')!!}"/>
-                      </span>
-                        </a>
-                      </div>
-                      <div align="center"><small>Publicaciones</small></div>
-                    </div>
-                  </div>
-
-                  <div class='col-md-4 col-sm-4 col-xs-4'>
-                    <div class='list-group' >
-                      <div align="center">
-                        <a style="padding: 1px 1px 1px 1px;" href='{!!URL::to('/coins/history')!!}' style="text-align:center;" class="list-group-item list-group-item-info">
-                      <span>
-                        <img width="80%" src= "{!!URL::to('img/dash/ico_notificacion004.png')!!}"/>
-                      </span>
-                        </a>
-                      </div>
-                      <div align="center"><small>Informe Coins</small></div>
-                    </div>
-                  </div>
-
-                  <div class='col-md-4 col-sm-4 col-xs-4'>
-                    <div class='list-group' >
-                      <div align="center">
-                        <a style="padding: 1px 1px 1px 1px;" href='{!!URL::to('/tickets/history')!!}' style="text-align:center;" class="list-group-item list-group-item-info">
-                      <span>
-                        <img width="80%" src= "{!!URL::to('img/dash/icono_informe01.png')!!}"/>
-                      </span>
-                        </a>
-                      </div>
-                      <div align="center"><small>Informe Ticket's</small></div>
-                    </div>
-                  </div>
-
-
-              </div>
-
-              </div>
+              @include('miniDashboard.miniDashboard')
 
             </div><!-- /div list group -->
 

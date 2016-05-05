@@ -26,8 +26,7 @@ class Sorteo extends Model{
       } else if ($estado_sorteo == 2) {
         $this->attributes['estado_sorteo'] = 'Finalizado';
       } else {
-        $this->attributes['estado_sorteo'] = 'Finalizado';
-        Session::flash('message-error', 'Usted está intentando hacer algo que no corresponde, modere su conducta.');
+        $this->attributes['estado_sorteo'] = 'Pendiente';
       }
     }
   }

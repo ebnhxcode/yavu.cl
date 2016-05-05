@@ -4482,13 +4482,13 @@ a.thumbnail.active {
   list-style: none; }
 
 .list-group {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding-left: 0; }
 
 .list-group-item {
   position: relative;
   display: block;
-  padding: 10px 15px;
+  padding: 5px 5px;
   margin-bottom: -1px;
   background-color: #fff;
   border: 1px solid #ddd; }

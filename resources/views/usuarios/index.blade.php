@@ -8,17 +8,15 @@
 		@include('alerts.errorsMessage')
 		@include('alerts.successMessage')
 		@include('alerts.warningMessage')
+		@include('alerts.infoMessage')
 		<h2>Panel de administración</h2>		
 		<div class='panel panel-default'>
 			<div class='panel-heading'><h4>Mantenedor de usuarios</h4></div>
 			<div class='panel-body'>
-
-					<div class='form-group'>
-						{!!Form::text('usuario',null,['class'=>'form-control','placeholder'=>'buscar...','id'=>'usuario'])!!}
-					</div>
-					<!--<a href='#!' class='btn btn-primary btn-sm' id='BuscarUsuario'>Buscar</a>-->
+				<div class='form-group'>
+					{!!Form::text('usuario',null,['class'=>'form-control','placeholder'=>'buscar...','id'=>'usuario'])!!}
+				</div>
 				<div class='wrap'>
-
 					<table id='UserList' class='table table-hover'>
 						<thead>
 							<th>Nombre</th>
@@ -41,12 +39,10 @@
 						</tbody>
 						@endforeach
 					</table>	
-								
-				</div>
-
-			</div>
-		</div>
+				</div><!-- div wrap -->
+			</div><!-- /div panel body -->
+		</div><!-- /div panel defaul -->
 		{!!$users->render()!!}
-	</div>
-</div>
+	</div><!-- /div contentMiddle -->
+</div><!-- /div jumbotron -->
 @stop

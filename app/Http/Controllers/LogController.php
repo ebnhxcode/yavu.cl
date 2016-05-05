@@ -76,6 +76,9 @@ class LogController extends Controller{
   public function show($id){
   }
   public function store(LoginRequest $request){
+      if(Auth::user()->check()){
+        return $this->logout();
+      }
       if(!Input::get('_token')){
         Session::flash('message-error', 'El tiempo de espera para el inicio de sesión ha caducado, por favor intente nuevamente.');
         Redirect::to('/login');
@@ -92,7 +95,7 @@ class LogController extends Controller{
             if(Auth::admin()->attempt(['email' => Input::get('email'), 'password' => Input::get('password')])){
               return Redirect::to('/admins');
             }
-            Session::flash('message-error', 'Datos son incorrectos');
+            Session::flash('message-error', 'Datos son incorrectos para admin');
             return Redirect::to('/login');
           }
         }else{
