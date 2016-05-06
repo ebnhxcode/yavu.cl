@@ -59,7 +59,7 @@
 
 
 		if( user_anon === user_id){
-			var route = "http://localhost:8000/eliminarfeed/"+id;
+			var route = "http://yavu.cl/eliminarfeed/"+id;
 			$.ajax({
 				url: route,
 				type: 'GET',
@@ -81,7 +81,7 @@
 		var e_id = $('#estado_' + status_id).attr('value').replace('e','');
 		var user_id = $("#user_id").val();
 		var token = $("#token").val();
-		var route = "http://localhost:8000/interactuar";
+		var route = "http://yavu.cl/interactuar";
 		$.ajax({
 			url: route,
 			headers: {'X-CSRF-TOKEN': token},
@@ -107,17 +107,19 @@
 
 	function ContarInteracciones(status_id){
 		status_id = status_id;
-		var route = "http://localhost:8000/contarinteracciones/"+status_id;
+		var route = "http://yavu.cl/contarinteracciones/"+status_id;
 		var user_id = $("#user_id").val();
 		var Contador = 0;
 		$.get(route, function(res){
 			$(res).each(function(key,value){
 				if(value.user_id === user_id){
-					$('#estado_'+status_id).addClass("btn-coins-down").fadeIn();
+					//$('#estado_'+status_id).addClass("btn-coins-down").fadeIn();
+					$('#imgcoin'+status_id).attr('src', '/img/newGraphics/yavucoin_neo01_small02.png').fadeIn();
+					//+"<img id='imgcoin"+value.id+"' src='/img/newGraphics/yavucoin_neo01_small01.png' />"
 				}
-				Contador += 1;
+				//Contador += 1;
 			});
-			$("#badge_"+status_id).text(Contador);
+			//$("#badge_"+status_id).text(Contador);
 		});
 		return true;
 	}
@@ -125,7 +127,7 @@
 	function ContarNotificaciones(){
 		var user_id = $("#user_id").val();
 		$.ajax({
-			url: "http://localhost:8000/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
+			url: "http://yavu.cl/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
 			type: 'GET',
 			dataType: 'json',
 			cache: false,
@@ -146,7 +148,7 @@
 		return true;
 	}
 	function ContarCoins(){
-		var route = "http://localhost:8000/contarcoins";
+		var route = "http://yavu.cl/contarcoins";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
 			$(".CantidadCoins").text("");

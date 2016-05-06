@@ -43,7 +43,7 @@ $(document).ready(function(){
 			status = limpiar(status);
 			var user_id = $("#user_id").val();
 			var token = $("#token").val();
-			var route = "http://localhost:8000/estados";
+			var route = "http://yavu.cl/estados";
 			$.ajax({
 				url: route,
 				headers: {'X-CSRF-TOKEN': token},
@@ -94,7 +94,7 @@ $(document).ready(function(){
 	function ActualizarEstados(){
 		var EstadosUsuario = $("#Estados").val(); 
 		$("#Estados").value = "";
-		var route = "http://localhost:8000/estadosusuario";
+		var route = "http://yavu.cl/estadosusuario";
 		var user_id = $("#user_id");
 		var Contador = 0;
 		$.get(route, function(res){
@@ -108,7 +108,7 @@ $(document).ready(function(){
 					"<div id='status' class='list-group'>"
 						+"<div class='list-group-item'>"	
 							+"<h4><a href='/profile' style='color:#3C5B28;'>"
-								+"<img class='media-object' src='http://localhost:8000/images/user.png' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
+								+"<img class='media-object' src='http://yavu.cl/images/user.png' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
 								+value.nombre+" "+value.apellido
 							+"</a></h4>"
 							+"<small>"
@@ -130,7 +130,7 @@ $(document).ready(function(){
 
 	function CargarEstados(){
 		var Estados = $("#Estados");
-		var route = "http://localhost:8000/cargarfeeds/"+$("#idUltima").val();
+		var route = "http://yavu.cl/cargarfeeds/"+$("#idUltima").val();
 		var Contador = 0;
 		var user_id = $("#user_id").val();
 		$.get(route, function(res){
@@ -182,10 +182,9 @@ $(document).ready(function(){
 
 						+"<div class='list-group-item panel-footer'>"
 
-							+"<span id='badge_"+value.id+"' class='label label-warning'></span>"+"&nbsp;"
 							+"<span role='button' class='' href='#!' style='color:#3C5B28'>"
-								+"<span name='megusta' class='text-warning btn-coins' onclick='Interactuar(this.id)' id='estado_"+value.id+"' value='e"+value.idEmpresa+"'>"
-									+"Cobrar coins"
+								+"<span name='megusta' class='' onclick='Interactuar(this.id)' id='estado_"+value.id+"' value='e"+value.idEmpresa+"'>"
+									+"<img id='imgcoin"+value.id+"' src='/img/newGraphics/yavucoin_neo01_small01.png' />"
 								+"</span>"
 							+"</span>"
 
@@ -212,25 +211,27 @@ $(document).ready(function(){
 
   function ContarInteracciones(status_id){
     status_id = status_id;
-    var route = "http://localhost:8000/contarinteracciones/"+status_id;
+    var route = "http://yavu.cl/contarinteracciones/"+status_id;
     var user_id = $("#user_id").val();
     var Contador = 0;
     $.get(route, function(res){
       $(res).each(function(key,value){
 				if(value.user_id === user_id){
-					$('#estado_'+status_id).addClass("btn-coins-down").fadeIn();
+					//$('#estado_'+status_id).addClass("btn-coins-down").fadeIn();
+					$('#imgcoin'+status_id).attr('src', '/img/newGraphics/yavucoin_neo01_small02.png').fadeIn();
+					//+"<img id='imgcoin"+value.id+"' src='/img/newGraphics/yavucoin_neo01_small01.png' />"
 				}
 				Contador += 1;
       });
       $("#badge_"+status_id).text(Contador);
     });
 		return true;
-  }    
+  }
 
 	function ContarEstados(){
 		var CargarEstados = $("#CargarEstados");
 		var EstadosNuevos = ("#EstadosNuevos");
-		var route = "http://localhost:8000/contarestados";
+		var route = "http://yavu.cl/contarestados";
 		var user_id = $("#user_id");
 		var Contador = 0;
 		$.get(route, function(res){
