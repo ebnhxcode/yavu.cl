@@ -140,6 +140,8 @@
 
 					</div>
 
+
+					{{--
 					<div class='list-group'>
 						<div class='list-group-item list-group-item-success'>
 							<h4>C&oacute;digo de referidos</h4>
@@ -156,7 +158,9 @@
 
 						</div>
 						
-					</div>   
+					</div>
+					--}}
+
 				</div>
 		</div>
 	</div><!-- Fin del div id contentIn -->
@@ -179,7 +183,7 @@
 				var status_id = valor.replace('estado_','');
 				var user_id = $('#user_id').val();
 				var token = $('#token').val();
-				var route = 'http://yavu.cl/interactuar';
+				var route = 'http://localhost:8000/interactuar';
 				$.ajax({
 					url: route,
 					headers: {'X-CSRF-TOKEN': token},
@@ -202,7 +206,7 @@
 
 			function ContarInteracciones(status_id){
 				status_id = status_id;
-				var route = 'http://yavu.cl/contarinteracciones/'+status_id;
+				var route = 'http://localhost:8000/contarinteracciones/'+status_id;
 				var user_id = $('#user_id');
 				var Contador = 0;
 				$.get(route, function(res){

@@ -40,7 +40,7 @@ $(document).ready(function(){
 			var user_id = $("#user_id").val();
 			var empresa_id = $("#empresa_id").val();
 			var token = $("#token").val();
-			var route = "http://yavu.cl/estadoempresa";
+			var route = "http://localhost:8000/estadoempresa";
 			$.ajax({
 				url: route,
 				headers: {'X-CSRF-TOKEN': token},
@@ -97,7 +97,7 @@ $(document).ready(function(){
 	function ActualizarEstados(){
 		var EstadosUsuario = $("#Estados").val();
 		$("#Estados").value ="";
-		var route = "http://yavu.cl/estadosempresa";
+		var route = "http://localhost:8000/estadosempresa";
 		var user_id = $("#user_id");
 		var Contador = 0;
 		$.get(route, function(res){
@@ -111,7 +111,7 @@ $(document).ready(function(){
 					"<div id='status' class='list-group'>"
 						+"<div class='list-group-item'>"
 							+"<h4><a href='/profile' style='color:#3C5B28;'>"
-								+"<img class='media-object' src='http://yavu.cl/images/user.png' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
+								+"<img class='media-object' src='http://localhost:8000/images/user.png' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
 								+value.nombre+" "+value.apellido
 							+"</a></h4>"
 							+"<small>"
@@ -131,7 +131,7 @@ $(document).ready(function(){
 
   function ContarInteracciones(status_id){
     status_id = status_id;
-    var route = "http://yavu.cl/contarinteracciones/"+status_id;
+    var route = "http://localhost:8000/contarinteracciones/"+status_id;
     var user_id = $("#user_id").val();
     var Contador = 0;
     $.get(route, function(res){
@@ -148,7 +148,7 @@ $(document).ready(function(){
 
 	function ContarEstados(){
 		var CargarEstados = $("#CargarEstados"); 
-		var route = "http://yavu.cl/contarestados";
+		var route = "http://localhost:8000/contarestados";
 		var user_id = $("#user_id");
 		var Contador = 0;
 		$.get(route, function(res){
@@ -208,7 +208,7 @@ $(document).ready(function(){
 		var Estados = $("#Estados"); 
 		var empresa = $("#empresa").val();
 		Global_idUltimaPublicacion = $("#idUltima").val();
-		var route = "http://yavu.cl/estadosempresa/"+Global_idUltimaPublicacion+"/"+empresa;
+		var route = "http://localhost:8000/estadosempresa/"+Global_idUltimaPublicacion+"/"+empresa;
 		var user_id = $("#user_id").val();
 		var empresa_id = $("#empresa_id");
 		var Contador = 0;
@@ -228,7 +228,7 @@ $(document).ready(function(){
 							+'<div class="dropdown">'
 
 
-					+'<div style="float: right; padding-top: 2px;" class="dropdown">'
+					+'<div style="float: right; padding-top: 8px; padding-right: 5px" class="dropdown">'
 					+'<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
 					+'<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>'
 					+'<span class="caret"></span>'
@@ -245,7 +245,7 @@ $(document).ready(function(){
 							+'</div><!-- /div dropdown -->'+
 
 							'<div class="media">'+
-								'<div class="media-left">'+
+								'<div style="padding-left: 8px;" class="media-left">'+
 									'<a href="#">'+
 										"<img class='media-object' src='"+ImagenPerfilEmpresa+"' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"+
 									'</a>'+
@@ -306,7 +306,7 @@ $(document).ready(function(){
 
 	function ContarEstados(){
 		var CargarEstados = $("#CargarEstados"); 
-		var route = "http://yavu.cl/contarestados";
+		var route = "http://localhost:8000/contarestados";
 		var user_id = $("#user_id");
 		var Contador = 0;
 		$.get(route, function(res){
@@ -326,7 +326,7 @@ $(document).ready(function(){
 	}
 	function ContarCoins(){
 		var CargarEstados = $("#CargarEstados");
-		var route = "http://yavu.cl/contarcoins";
+		var route = "http://localhost:8000/contarcoins";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
 			$(".CantidadCoins").value = "";
@@ -341,7 +341,7 @@ $(document).ready(function(){
 	function ContarNotificaciones(){
 		var user_id = $("#user_id").val();
 		$.ajax({
-			url: "http://yavu.cl/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
+			url: "http://localhost:8000/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
 			type: 'GET',
 			dataType: 'json',
 			cache: false,
@@ -365,7 +365,7 @@ $(document).ready(function(){
 		var status_id = valor.replace('estado_','');
 		var user_id = $("#user_id").val();
 		var token = $("#token").val();
-		var route = "http://yavu.cl/interactuar";
+		var route = "http://localhost:8000/interactuar";
 		$.ajax({
 			url: route,
 			headers: {'X-CSRF-TOKEN': token},
