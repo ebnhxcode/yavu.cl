@@ -82,13 +82,13 @@
             </div>
 
             <div class="list-group-item">
-            BENEFICIOS OTORGADOS <i class="glyphicon glyphicon-plane" ></i>
+            BENEFICIOS OTORGADOS <i class="glyphicon glyphicon-ok" ></i>
             <hr>
               <div class="row">
                 <div class="col-sm-12">
                   <div class="hero-widget well well-sm">
                     <div>
-                     <i class="glyphicon glyphicon-plane"></i>
+                     <i class="glyphicon glyphicon-ok"></i>
                     </div>
                   <div>
                     <label class="text-muted">Total Coins Otorgadas:<br></label>
