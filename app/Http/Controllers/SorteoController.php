@@ -155,6 +155,9 @@ class SorteoController extends Controller{
       if($this->ganador[0]){
         $this->registrar_ganador = new Winner(['user_id' => $this->sorteado->user_id, 'sorteo_id' => $this->sorteado->sorteo_id,'participante_sorteo_id' => $key,'nombre' => $this->ganador[0]->nombre,'apellido' => $this->ganador[0]->apellido]);
         $this->registrar_ganador->save();
+
+        $this->pop = new Pop(['user_id' => $this->sorteado->user_id,'empresa_id' => 1,'tipo' => 'coins','estado' => 'pendiente','contenido' => 'Haz sido el ganador del sorteo '.$this->sorteo->nombre_sorteo.'!','created_at' => strftime("%Y-%m-%d-%H-%M-%S", time()),'updated_at' => strftime("%Y-%m-%d-%H-%M-%S", time())]);
+        $this->pop->save();
       }
     }
 
