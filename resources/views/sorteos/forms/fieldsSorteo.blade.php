@@ -30,7 +30,7 @@
 			<div class="form-group has-feedback has-feedback-left">
 				(<strong><small><span class="requerido">Requerido</span></small></strong>)
 				{!!Form::label('Imagen sorteo:')!!}
-				{!!Form::file('imagen_sorteo', ['class' => 'btn', 'id' => 'ImagenSorteo'])!!}
+				{!!Form::file('imagen_sorteo', ['class' => 'btn', 'id' => 'ImagenSorteo', 'size' => '2048'])!!}
 			</div>
 
 {{--
@@ -52,3 +52,27 @@
 		</div><!-- /div list group item -->
 	</div><!-- list-group -->
 </div><!-- div col-md-8 -->
+
+
+<script>
+
+	$('#ImagenSorteo').change(function(){
+		var formato = this.value;
+		var formatosPermitidos = ['jpg', 'jpeg', 'png', 'gif'];
+		formato = formato.split('.');
+		var sizeByte = this.files[0].size;
+     	var siezekiloByte = parseInt(sizeByte / 1024);
+		if((formatosPermitidos.indexOf(formato[1]) < 0) || (siezekiloByte > $(this).attr('size')))
+
+		{	
+
+			alert('Formato de imagen invalido o tamaño supera 1 Mega, no se subirá');
+			this.value = '';
+		}
+		else
+		{
+			$('#Sorteo').addClass('btn btn-success btn-xs').text('ok');
+		}
+	});
+
+</script>

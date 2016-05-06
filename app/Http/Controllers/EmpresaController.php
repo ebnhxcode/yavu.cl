@@ -10,6 +10,7 @@ use Session;
 use Redirect;
 use yavu\Empresa;
 use yavu\User;
+use yavu\Sorteo;
 use Illuminate\Routing\Route;
 use Auth;
 use DB;
