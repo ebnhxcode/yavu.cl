@@ -9,7 +9,7 @@
 		@include('alerts.warningMessage')
 		@include('alerts.infoMessage')
     <div class="" style="font-size: 3em;">
-      <img id="img" width="8%" src= "{!!URL::to('img/dash/ico_empresa.png')!!}"/><span>Empresas</span>
+      <img id="img" width="8%" src= "{!!URL::to('img/newGraphics/neo_icono_empresa.png')!!}"/><span>Empresas</span>
     </div>
     <div class="row">
       <div class="col-md-4 col-sm-12 col-xs-12">

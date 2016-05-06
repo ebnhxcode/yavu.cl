@@ -9,7 +9,7 @@
 		@include('alerts.successMessage')
 		@include('alerts.warningMessage')
 		<div class="" style="font-size: 3em;">
-			<img id="img" width="8%" src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}"/><span >Coins <span class="requerido">\</span> Historial</span>
+			<img id="img" width="8%" src= "{!!URL::to('img/newGraphics/yavucoin_neo03b.png')!!}"/><span >Coins <span class="requerido">\</span> Historial</span>
 		</div>
 		<div class="row">
 

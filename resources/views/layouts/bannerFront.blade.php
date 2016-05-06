@@ -29,7 +29,7 @@
 
     <div class = "item active">
       <!-- Set the second background image using inline CSS below. -->    
-      <div class="fill"><img style="background-size:cover;" src = "img/BannerFront/banner1.jpg" width=100%></div>
+      <div class="fill"><img style="background-size:cover;" src = "img/newGraphics/neobanner01.jpg" width=100%></div>
         <div class = "carousel-caption">
 
            <!--
@@ -44,7 +44,7 @@
     </div>
     <div class = "item">
       <!-- Set the third background image using inline CSS below. -->    
-      <div class="fill"><img style="background-size:cover;" src = "img/BannerFront/banner2.jpg" width=100%></div>
+      <div class="fill"><img style="background-size:cover;" src = "img/newGraphics/neobanner02.jpg" width=100%></div>
         <!--
         <div class = "carousel-caption">
           <div class="title-slide"><br>
@@ -56,7 +56,7 @@
     </div>
     <div class = "item">
           <!-- Set the fourth background image using inline CSS below. -->    
-      <div class="fill"><img style="background-size:cover;" src = "img/BannerFront/banner3.jpg" width=100%></div>
+      <div class="fill"><img style="background-size:cover;" src = "img/newGraphics/neobanner03.jpg" width=100%></div>
        
         <!--
         <div class = "carousel-caption">

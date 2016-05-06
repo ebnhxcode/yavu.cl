@@ -4,7 +4,14 @@
 	<div id="contentMiddle">
 		@include('alerts.alertFields')
 		@include('empresas.forms.modalTerminosCondiciones')
-		<h1>Registro de Empresas</h1>
+		<div class="" style="font-size: 2em;">
+			<img width="8%" src= "{!!URL::to('img/newGraphics/neo_icono_empresa.png')!!}"/><a href="{!! URL::to('/empresas') !!}"><span>Empresas</span></a><span class="requerido">\</span><span>Crear nueva empresa</span>
+		</div>
+		@include('alerts.alertFields')
+		@include('alerts.errorsMessage')
+		@include('alerts.successMessage')
+		@include('alerts.warningMessage')
+		@include('alerts.infoMessage')
 		<div class="row">
 			{!!Form::open(['route'=>'empresas.store', 'method'=>'POST', 'files' => true, 'id' => 'FormEmpresa' ])!!}
 			@include('empresas.forms.fieldsEmpresa')

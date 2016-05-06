@@ -9,12 +9,12 @@
         @include('alerts.warningMessage')
         @include('alerts.successMessage')
         @include('alerts.infoMessage')
-        <img src="/img/icono_que_es.png" class="img-responsive-centered" />
+        <img src="/img/newGraphics/icono_mac01.png" class="img-responsive-centered" />
         <br /><br />
       </div>
 
       <div class='col-md-8 col-sm-12 col-xs-12'>
-        <div class="panel panel-default">
+        <div>
           <div class="panel-body">
             <h3> ¿Qué es Yavu?</h3>
             <h4>
@@ -39,7 +39,7 @@
     <div class="row">
 
       <div class='col-md-4 col-sm-12 col-xs-12' align='middle'>
-        <div class="panel panel-default">
+        <div>
           <img src="img/cards/ico_descubre_comercios.png" class="img-responsive">
           <div class="panel-body">
             <p class='lead'>Hay cientos de comercios esperando por ti!</p>
@@ -48,7 +48,7 @@
       </div>
 
       <div class='col-md-4 col-sm-12 col-xs-12' align='middle'>
-        <div class="panel panel-default">
+        <div>
           <img src="img/cards/ico_descubre_panoramas.png" class="img-responsive">
           <div class="panel-body">
             <p class='lead'>Conoce que comentan los comercios en tiempo real.</p>
@@ -57,7 +57,7 @@
       </div>
 
       <div class='col-md-4 col-sm-12 col-xs-12' align='middle'>
-        <div class="panel panel-default">
+        <div>
           <img src="img/cards/ico_premios.png" class="img-responsive">
           <div class="panel-body">
             <p class='lead'>Acumula Yavu Coins y accede a beneficios.</p>
@@ -71,7 +71,7 @@
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12" align="middle">
           <a data-toggle="modal" data-target="#gridSystemModal" role="button" href="#!">
-            <img src="img/cards/registrate_01a.png" class="img-responsive" />
+            <img src="img/newGraphics/registrate_02a.png" class="img-responsive" />
           </a>
           <br>
           <img src="img/cards/barra_separadora.png" class="img-responsive" />

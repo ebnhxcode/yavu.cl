@@ -3,6 +3,9 @@
 
   <div class="jumbotron">
     <div id="contentMiddle">
+
+
+
       <div class="row">
         <div class="col-md-4 col-sm-12 col-xs-12">
           <div>
