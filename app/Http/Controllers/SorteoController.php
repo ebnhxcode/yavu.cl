@@ -158,6 +158,12 @@ class SorteoController extends Controller{
 
         $this->pop = new Pop(['user_id' => $this->sorteado->user_id,'empresa_id' => 1,'tipo' => 'coins','estado' => 'pendiente','contenido' => 'Haz sido el ganador del sorteo '.$this->sorteo->nombre_sorteo.'!','created_at' => strftime("%Y-%m-%d-%H-%M-%S", time()),'updated_at' => strftime("%Y-%m-%d-%H-%M-%S", time())]);
         $this->pop->save();
+
+        Mail::send('emails.winner', ['email'=>\Input::get('email'), 'nombre' => \Input::get('nombre'), 'codigo' => $this->getCodigoVerificacion()], function($msj){
+          $msj->subject('Correo de Contacto');
+          $msj->to(\Input::get('email'));
+        });
+
       }
     }
 
