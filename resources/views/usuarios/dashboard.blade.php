@@ -31,7 +31,7 @@
               <a href='{!!URL::to('/feeds')!!}' style='text-align:center;' class='list-group-item list-group-item-info'>
                 <span>
                   <h4>PUBLICACIONES</h4>
-                  <img src= '{!!URL::to('img/dash/ico_pin03.png')!!}'/>
+                  <img src= '{!!URL::to('img/newGraphics/neo_icono_publicaciones.png')!!}'/>
                 </span>
               </a>
 						</div>
@@ -42,7 +42,7 @@
               <a href='{!!URL::to('/empresas')!!}' style='text-align:center;' class='list-group-item list-group-item-warning'>
                 <span>
                   <h4>EMPRESAS</h4>
-                  <img  src= '{!!URL::to('img/dash/ico_empresa.png')!!}' class=''/>
+                  <img  src= '{!!URL::to('img/newGraphics/neo_icono_empresa.png')!!}' class=''/>
                 </span>
               </a>
             </div>
@@ -53,7 +53,7 @@
 							<a href='{!!URL::to('/empresas/create')!!}' style='text-align:center;' class='list-group-item list-group-item-warning'>
                 <span>
                   <h4>CREAR EMPRESA</h4>
-                  <img  src= '{!!URL::to('img/dash/ico_empresa.png')!!}' class=''/>
+                  <img  src= '{!!URL::to('img/newGraphics/neo_icono_empresa_crear.png')!!}' class=''/>
                 </span>
 							</a>
 						</div>
@@ -64,7 +64,7 @@
 							<a href='{!!URL::to('/tickets/history')!!}' style='text-align:center;' class='list-group-item list-group-item-info'>
                 <span>
                   <h4>TICKETS</h4>
-                  <img  src= '{!!URL::to('img/dash/ico_ticket01.png')!!}' class=''/>
+                  <img  src= '{!!URL::to('img/newGraphics/neo_icono_tickets.png')!!}' class=''/>
                 </span>
 							</a>
 						</div>
@@ -75,7 +75,7 @@
               <a href='{!!URL::to('/sorteos')!!}' style='text-align:center;' class='list-group-item list-group-item-warning'>
                 <span>
                   <h4>SORTEOS</h4>
-                  <img  src= '{!!URL::to('img/dash/ico_sorteo01.png')!!}' class=''/>
+                  <img  src= '{!!URL::to('img/newGraphics/neo_icono_sorteo.png')!!}' class=''/>
                 </span>
               </a>
             </div>
@@ -86,7 +86,7 @@
               <a href='{!!URL::to('/sorteos/create')!!}' style='text-align:center;display: none;' class='list-group-item list-group-item-warning'>
                 <span>
                   <h4>CREAR SORTEO</h4>
-                  <img  src= '{!!URL::to('img/dash/ico_sorteo01.png')!!}' class=''/>
+                  <img  src= '{!!URL::to('img/newGraphics/neo_icono_sorteo.png')!!}' class=''/>
                 </span>
               </a>
             </div>

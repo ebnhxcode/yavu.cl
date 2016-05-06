@@ -28,13 +28,63 @@
 		<script>$.ajaxSetup({ cache:false });</script>
 		<script>$.ajaxSetup({ headers: { 'csrftoken' : '{!! csrf_token() !!}' } });</script>
 		<script>$.ajaxSetup({headers:{'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')}});</script>
-
+		@if(Request::path() != 'login' )
 		<style>
 			body {
 				padding-top:50px;
 				padding-bottom: 20px;
 			}
 		</style>
+		@else
+
+			<!--
+			<video autoplay="autoplay" loop="loop" id="video_background" preload="auto" volume="0"/>
+				<source src="/img/users/fondo.mp4" type="video/mp4" />
+			</video/>
+
+
+			<style>
+				body {
+					padding-top:50px;
+					padding-bottom: 20px;
+				}
+				/*
+				#video_background {
+					position: absolute;
+					bottom: 0px;
+					right: 0px;
+					min-width: 100%;
+					min-height: 100%;
+					width: auto;
+					height: auto;
+					z-index: -1000;
+					overflow: hidden;
+				}
+				#video_pattern {
+					background:#fff;
+					position: fixed;
+					opacity: 0.8;
+					left: 0px;
+					top: 0px;
+					width: 100%;
+					height: 100%;
+					z-index: 1;
+				}
+				*/
+			</style>
+			-->
+
+			<style type="text/css">
+				body {
+					background-image: url(/img/users/iniciar_sesion.jpg);
+					background-repeat: no-repeat;
+					background-position: top center;
+					background-attachment: fixed;
+					padding-top:50px;
+					padding-bottom: 20px;
+				}
+			</style>
+		@endif
 	</head><!--/head -->
 	<body>
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -171,7 +221,7 @@
 		</nav>
 
 		@yield('content')
-
+		@if(Request::path() != 'login' )
 		<div class="container">
 			<footer class="site-footer" id="">
 				<div class="row">
@@ -203,7 +253,7 @@
 				</div><!-- /div row -->
 			</footer><!-- /footer -->
 		</div> <!-- /container -->
-
+		@endif
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 		<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

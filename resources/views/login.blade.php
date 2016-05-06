@@ -1,7 +1,9 @@
 @extends('layouts.front')
 @section('content')
 {!!Form::open(['route' => 'log.store', 'method' => 'POST'])!!}
-<div class="jumbotron">
+
+
+<div class="">
   <div id="contentMini">
     @include('alerts.successMessage')
     @include('alerts.warningMessage')
@@ -9,15 +11,10 @@
     @include('alerts.alertFields')
     @include('alerts.infoMessage')
 
-    
-      <div id="contentMiddle">
-
-
-      </div>
-    <div class="panel panel-default">
+    <div>
       
-        <div class="panel-body">
-          <div>
+        <div style="color: #fff">
+          <div >
             <h2>Inicio de sesión <img width="35%" style="float: right;" src="{!! URL::to('img/yavu005.png') !!}" alt=""></h2>
           </div>
           <hr>

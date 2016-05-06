@@ -44,9 +44,9 @@ class SocialController extends Controller{
 
       if($this->userLogin) {
         if (Auth::user()->login($this->userLogin)) {
-          return Redirect::to('/dashboard');
+          return Redirect::to('/feeds');
         } else {
-          return Redirect::to('/dashboard');
+          return Redirect::to('/feeds');
         }
       }else{
         if($user->email != null){
