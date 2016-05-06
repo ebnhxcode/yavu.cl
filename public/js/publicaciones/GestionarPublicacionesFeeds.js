@@ -148,7 +148,7 @@ $(document).ready(function(){
 						+"<div style='padding: 0px 2px 2px 2px;' class='list-group-item list-group-item-success'>"
 							+'<div class="dropdown">'
 
-								+'<div  style="float: right; padding-top: 8px; padding-right: 5px" class="dropdown">'
+								+'<div style="float: right; padding-top: 8px; padding-right: 5px" class="dropdown">'
 								 	+'<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
 										+'<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>'
 										+'<span class="caret"></span>'
@@ -163,9 +163,9 @@ $(document).ready(function(){
 							+'</div><!-- /div dropdown -->'+
 
 							'<div class="media">'+
-								'<div class="media-left">'+
+								'<div style="padding-left: 8px;" class="media-left">'+
 									'<a href="#">'+
-					 					"<img class='media-object' src='"+ImagenPerfilEmpresa+"' data-holder-|rendered='true' style='width: 48px; height: 48px;'/>"+
+					 					"<img class='media-object' src='"+ImagenPerfilEmpresa+"' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"+
 									'</a>'+
 								'</div>'+
 								'<div class="media-body">'+
