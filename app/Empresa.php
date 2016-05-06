@@ -64,5 +64,13 @@ class Empresa extends Model implements AuthenticatableContract,
         return $this->hasMany(EstadoEmpresas::class, 'empresa_id');
     }
 
+    public function visits(){
+        return $this->hasMany(Visit::class);
+    }
+
+    public function coins_otorgadas(){
+        return $this->hasMany(InteraccionEstado::class, 'empresa_id');
+    }
+
 }
 

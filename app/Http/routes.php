@@ -83,6 +83,7 @@ Route::group(['middleware' => 'user'], function(){
 
 
   /*Gestión de Empresas*/
+  Route::get('estadisticasdemiempresa', 'EmpresaController@EstadisticasDeMiEmpresa');
   Route::get('sorteosempresa' ,'EmpresaController@SorteosEmpresa');
   Route::resource('empresas','EmpresaController');
   Route::get('empresa/{empresa}/', 'EmpresaController@MostrarEmpresaPublica');

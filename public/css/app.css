@@ -4449,6 +4449,7 @@ a.thumbnail.active {
   width: 10000px; }
 
 .media-object {
+  padding: 5px 5px 5px 5px;
   display: block; }
   .media-object.img-thumbnail {
     max-width: none; }
@@ -4482,13 +4483,13 @@ a.thumbnail.active {
   list-style: none; }
 
 .list-group {
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   padding-left: 0; }
 
 .list-group-item {
   position: relative;
   display: block;
-  padding: 5px 5px;
+  padding: 10px 15px;
   margin-bottom: -1px;
   background-color: #fff;
   border: 1px solid #ddd; }

@@ -43,7 +43,7 @@
                 <div class="list-group-item list-group-item-success">
                   <div class="well well-xs">
                     <span class="label label-success">1</span>
-                    ¡Ganador! : <span class="text-danger">¡Espera hasta las 21!</span><img width="80" style="float: right;" src="{!! URL::to('img/yavu005.png') !!}" alt="">
+                    ¡Ganador! : <span class="text-danger">¡Espera hasta las 21 hrs el d&iacute;a {!!$sorteo->fecha_inicio_sorteo!!}!</span><img width="80" style="float: right;" src="{!! URL::to('img/yavu005.png') !!}" alt="">
                   </div>
                 </div>
               @endif
@@ -75,6 +75,7 @@
                     <input class="form-control" type="text" disabled="disabled" value="{!!$sorteo->nombre_sorteo!!}">
                   </h5>
                   <h5>
+                    <strong>Descripción del Sorteo: </strong>
                     <strong>Descripción del Sorteo: </strong>
                     <textarea disabled class="form-control">{!!$sorteo->descripcion!!}</textarea>
                   </h5>

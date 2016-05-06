@@ -1,5 +1,6 @@
 <?php
 namespace yavu\Http\Controllers;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use yavu\Http\Requests;
 use yavu\Http\Requests\EmpresaCreateRequest;
@@ -9,10 +10,13 @@ use Session;
 use Redirect;
 use yavu\Empresa;
 use yavu\User;
+use yavu\Sorteo;
 use Illuminate\Routing\Route;
 use Auth;
 use DB;
 use RUT;
+use yavu\Visit;
+
 class EmpresaController extends Controller{
   public function __construct(){
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
@@ -41,6 +45,37 @@ class EmpresaController extends Controller{
     }
     return Redirect::to('/');
   }
+
+  public function EstadisticasDeMiEmpresa(){
+    $this->empresa = Empresa::where('user_id', $this->user->id)->get();
+    $this->data = $this->empresa[0]->visits()->get();
+    $this->cMasculino = 0; $this->cFemenino = 0; $this->cSinDefinir = 0;
+
+    $this->coinsOtorgadas = $this->empresa[0]->coins_otorgadas()->get()->count('user_id');
+
+    foreach ($this->data as $d){
+      if($d->sexo == 'Masculino'){
+        $this->cMasculino+=1;
+      }else if($d->sexo == 'Femenino'){
+        $this->cFemenino+=1;
+      }else{
+        $this->cSinDefinir+=1;
+      }
+    }
+
+    $this->statistics = [
+      0 => $this->cMasculino,
+      1 => $this->cFemenino,
+      2 => $this->cSinDefinir,
+      3 => $this->cMasculino+$this->cFemenino+$this->cSinDefinir,
+      4 => $this->coinsOtorgadas,
+    ];
+
+    ///dd( $this->statistics );
+    return view('empresas.companyStatistics', ['statistics' => $this->statistics]);
+
+  }
+
   public function store(EmpresaCreateRequest $request){
     if(isset($request) && isset($this->user)){
       DB::table('pops')->insert(
@@ -88,14 +123,18 @@ class EmpresaController extends Controller{
 
 
     if(isset($empresa)){
-      $empresa = addslashes($empresa);
 
       $empresa = DB::table('empresas')
         ->join('users', 'users.id', '=', 'empresas.user_id')
         ->select('empresas.*', 'users.id as user_id')
-        ->where('empresas.nombre', '=', $empresa)
+        ->where('empresas.nombre', '=', addslashes($empresa))
         ->orderBy('empresas.created_at','desc')
         ->get();
+
+      $this->visita = new Visit(['user_id'=>$this->user->id, 'empresa_id' => $empresa[0]->id, 'sexo' => $this->user->sexo, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now() ]);
+      if($empresa[0]->user_id != $this->user->id){
+        $this->visita->save();
+      }
 
       $mapa = Empresa::find($empresa[0]->id)->gmaps;
 

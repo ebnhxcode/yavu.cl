@@ -45,6 +45,22 @@
       </div>
     </div>
     @endif
+
+    @if(Request::path() != 'estadisticasdemiempresa')
+      <div style="display: none;" class="col-md-4 col-sm-2 col-xs-3 hasoneempresa">
+        <div class="list-group" >
+          <div align="center">
+            <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/estadisticasdemiempresa')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
+          <span>
+            <img width="80%" src= "{!!URL::to('img/dash/icono_informe01.png')!!}"/>
+          </span>
+            </a>
+          </div>
+          <div align="center"><small>Estad&iacute;sticas de mi empresa</small></div>
+        </div>
+      </div>
+    @endif
+
     @if(Request::path() != 'sorteos')
     <div class="col-md-4 col-sm-2 col-xs-3">
       <div class="list-group" >
@@ -129,6 +145,7 @@
 
 
 
+
   </div><!-- /row -->
 </div> <!-- /list group item -->
 
@@ -144,7 +161,7 @@
 
         <div class="row">
 
-          <div class="col-md-6 col-sm-6 col-xs-6">
+          <div class="col-md-4 col-sm-4 col-xs-4">
             <div class='list-group' >
               <div align="center">
                 <a style="padding: 2px 2px 2px 2px;" href='{!!URL::to('/coins/history')!!}' style="text-align:center;" class="list-group-item list-group-item-info">
@@ -157,7 +174,7 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-sm-6 col-xs-6">
+          <div class="col-md-4 col-sm-4 col-xs-4">
             <div class="list-group" >
               <div align="center">
                 <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/tickets/history')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
@@ -167,6 +184,20 @@
                 </a>
               </div>
               <div align="center"><small>Informe de Tickets</small></div>
+            </div>
+          </div>
+
+
+          <div style="display: none;" class="col-md-4 col-sm-4 col-xs-4 hasoneempresa">
+            <div class="list-group" >
+              <div align="center">
+                <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/estadisticasdemiempresa')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
+          <span>
+            <img width="80%" src= "{!!URL::to('img/dash/icono_informe01.png')!!}"/>
+          </span>
+                </a>
+              </div>
+              <div align="center"><small>Estad&iacute;sticas de mi empresa</small></div>
             </div>
           </div>
 
