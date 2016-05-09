@@ -6,5 +6,5 @@ class Categoria extends Model
 {
     protected $table = 'categorias';
     protected $primaryKey = 'id';
-    protected $fillable = array('nombre_categoria', 'tipo_categoria');	
+    protected $fillable = array('nombre_categoria', 'hash_categoria');	
 }
