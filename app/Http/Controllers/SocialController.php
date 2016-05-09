@@ -5,6 +5,7 @@ namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use Mockery\CountValidator\Exception;
+use Symfony\Component\HttpFoundation\Session\Flash\FlashBag;
 use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
 use yavu\User;
@@ -31,10 +32,9 @@ class SocialController extends Controller{
   //public function getSocialAuthCallback($provider=null){
     public function getSocialAuthCallback($provider){
 
-    //$this->status =
     $user = Socialite::driver($provider)->user();
 
-    if(count($user) > 0){
+    if(isset($user) || $user =! null){
 
       if($user->email == null){
         $user->email = str_replace(" ","",addslashes($user->name))."@facebook.com";
@@ -92,7 +92,8 @@ class SocialController extends Controller{
         }
       }
     }else{
-       return '¡¡¡Algo fue mal!!!';
+      Session::flash('mesagge-info', 'Usted no tiene ningun correo publico, no podrá iniciar sesion con facebook');
+      return Redirect::to('/login');
     }
   }
 }
