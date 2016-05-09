@@ -100,14 +100,16 @@ $(document).ready(function(){
 						+"</div>";
 					}else if($.trim(value.tipo) === 'activacion'){
 						pops +=
-						"<div class='list-group-item'>"
-							+"<div class='text-info' >"
-								+"<img src='/img/newGraphics/neo_icono_empresa_crear.png' style='width: 32px;' />&nbsp;"+value.contenido+"<br>"
-								+"<small>"
-									+"<abbr class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
-								+"</small>"
-							+"</div>"
-						+"</div>";
+							"<a class='list-group-item' href='/empresas/"+value.empresa_id+"'>"
+								+"<div >"
+									+"<div class='text-info' >"
+										+"<img src='/img/newGraphics/neo_icono_empresa_crear.png' style='width: 32px;' />&nbsp;"+value.contenido+"<br>"
+										+"<small>"
+											+"<abbr class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
+										+"</small>"
+									+"</div>"
+								+"</div>"
+							+"</a>";
 					}else if($.trim(value.tipo) === 'ticket') {
 						Notificaciones.hide().append(
 							"<div id='notificacion" + value.id + "' class='list-group'>"
@@ -122,9 +124,9 @@ $(document).ready(function(){
 							+ "</div>"
 							+ "</div>"
 						).show();
-					}else{
+					}else if($.trim(value.tipo) === 'sorteo'){
 						pops +=
-						"<div class='list-group-item'>"
+						"<a href='/sorteos/"+value.poptype_id_helper+"' class='list-group-item'>"
 							+"<div class='text-info' >"
 								+"<img src='/img/newGraphics/neo_icono_sorteo.png' style='width: 32px;' />&nbsp;"
 								+value.contenido+"<br>"
@@ -132,7 +134,7 @@ $(document).ready(function(){
 									+"<abbr class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
 								+"</small>"
 							+"</div>"
-						+"</div>";
+						+"</a>";
 					}
 					Contador += 1;
 				});

@@ -103,7 +103,7 @@ $(document).ready(function(){
 								+"</div>"
 							+"</div>"
 						).show();
-					}else{ //if(value.tipo === 'coins')
+					}else if(value.tipo === 'sorteo') {
 						Notificaciones.hide().append(
 							"<div id='notificacion"+value.id+"' class='list-group'>"
 								+"<div class='list-group-item'>"

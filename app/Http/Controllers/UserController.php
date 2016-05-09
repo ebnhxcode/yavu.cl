@@ -16,7 +16,9 @@ use Carbon\Carbon;
 class UserController extends Controller{
   private $user;
   public function __construct(){
-    return $this->user = $this->getSessionData();
+    if(Auth::user()->check()){
+      return $this->user = $this->getSessionData();
+    }
   }
 
   public function BuscarUsuarios($nombre){
@@ -88,8 +90,8 @@ class UserController extends Controller{
 
   public function store(UserCreateRequest $request){
     //User::create($request->all());
-    $existeReferente = User::where('referente', $request->referido)->first();
-
+    //$existeReferente = User::where('referente', $request->referido)->first();
+    $existeReferente = false;
     if ($existeReferente){
       //CUANDO EXISTE REFERENTE
       $this->newuser = new User(["nombre"=>$request->nombre,"apellido"=>$request->apellido,"email"=>$request->email,"password"=>$request->password,"estado"=>"inactivo","referido"=>$request ->referido,"referente"=>Carbon::now()->minute.Carbon::now()->hour.Carbon::now()->year.Carbon::now()->month.Carbon::now()->day."RY","validacion"=> $this->getCodigoVerificacion(),"ciudad"=>$request->ciudad]);

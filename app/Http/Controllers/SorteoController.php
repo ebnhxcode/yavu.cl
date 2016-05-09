@@ -228,8 +228,9 @@ class SorteoController extends Controller{
   }
 
   public function store(SorteoCreateRequest $request){
-      if(Sorteo::create($request->all())){
-        $this->pop = new Pop(['user_id' => $request->user_id,'empresa_id' => 1,'tipo' => 'sorteo', 'estado'   => 'pendiente','contenido' => 'Haz creado un nuevo sorteo!','created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]);
+      $this->sorteo = Sorteo::create($request->all());
+      if($this->sorteo){
+        $this->pop = new Pop(['user_id' => $request->user_id,'empresa_id' => 1, 'poptype_id_helper' => $this->sorteo->id, 'tipo' => 'sorteo', 'estado'   => 'pendiente','contenido' => 'Haz creado un nuevo sorteo!','created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]);
         $this->user->pops()->save($this->pop);
         Session::flash('message', 'Sorteo creado correctamente');
         return Redirect::to('/sorteos/create');

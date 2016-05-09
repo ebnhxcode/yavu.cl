@@ -2,8 +2,10 @@
 Route::get('breweries', ['middleware' => 'cors', function(){return \Response::json(\yavu\Brewery::with('beers', 'geocode')->paginate(10), 200);}]);
 
 Route::get('usuarios', 'UserController@index');
-Route::get('usuarios/create', ['uses' => 'UserController@create', 'as' => 'usuarios_create_path',]);
-Route::post('usuarios/create', ['uses' => 'UserController@store', 'as' => 'usuarios_store_path',]);
+
+Route::get('usuarios/create', ['uses' => 'UserController@create', 'as' => 'usuarios_create_path']);
+Route::post('usuarios/create', ['uses' => 'UserController@store', 'as' => 'usuarios_store_path']);
+
 Route::get('verificarusuario/{codigo}', 'LogController@VerificarUsuario');
 Route::get('logout', 'LogController@logout');
 
