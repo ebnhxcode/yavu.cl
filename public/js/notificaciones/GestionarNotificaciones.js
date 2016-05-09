@@ -62,7 +62,7 @@ $(document).ready(function(){
 						Notificaciones.hide().append(
 							"<div id='notificacion"+value.id+"' class='list-group'>"
 								+"<div class='list-group-item'>"
-									+"<img src='img/yavu017.jpg' style='width: 32px;' />&nbsp;"
+									+"<img src='/img/newGraphics/yavucoin_neo01_small01.png' style='width: 32px;' />&nbsp;"
 									+value.contenido
 								+"</div>"
 								+"<div class='list-group-item panel-footer-small'>"
@@ -76,10 +76,13 @@ $(document).ready(function(){
 							Notificaciones.hide().append(
 								"<div id='notificacion"+value.id+"' class='list-group'>"
 									+"<div class='list-group-item'>"
-										+"<img src='img/yavu017.jpg' style='width: 32px; />&nbsp;"
+										+"<img src='/img/newGraphics/neo_icono_empresa_crear.png' style='width: 32px; />&nbsp;"
 										+value.contenido
 									+"</div>"
 									+"<div class='>"
+										+value.contenido
+										+"</div>"
+										+"<div class='list-group-item panel-footer-small'>"
 										+"<small>"
 										+"<abbr	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\' datetime='"+TimeAgo+"'></abbr	>"
 										+"</small>"
@@ -90,7 +93,7 @@ $(document).ready(function(){
 						Notificaciones.hide().append(
 							"<div id='notificacion"+value.id+"' class='list-group'>"
 								+"<div class='list-group-item'>"
-									+"<img src='img/yavu017.jpg' style='width: 32px;' />&nbsp;"
+									+"<img src='/img/newGraphics/neo_icono_tickets.png' style='width: 32px;' />&nbsp;"
 									+value.contenido
 								+"</div>"
 								+"<div class='list-group-item panel-footer-small'>"
@@ -104,6 +107,7 @@ $(document).ready(function(){
 						Notificaciones.hide().append(
 							"<div id='notificacion"+value.id+"' class='list-group'>"
 								+"<div class='list-group-item'>"
+									+"<img src='/img/newGraphics/neo_icono_sorteo.png' style='width: 32px;' />&nbsp;"
 									+value.contenido
 								+"</div>"
 								+"<div class='list-group-item panel-footer-small'>"

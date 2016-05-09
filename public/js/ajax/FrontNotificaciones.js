@@ -92,7 +92,7 @@ $(document).ready(function(){
 						pops +=
 						"<div class='list-group-item'>"
 							+"<div class='text-info' >"
-								+"<img src='/img/yavu017.jpg' style='width: 32px;' />&nbsp;"+value.contenido+"<br>"
+								+"<img src='/img/newGraphics/yavucoin_neo01_small01.png' style='width: 32px;' />&nbsp;"+value.contenido+"<br>"
 								+"<small>"
 									+"<abbr class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
 								+"</small>"
@@ -102,17 +102,31 @@ $(document).ready(function(){
 						pops +=
 						"<div class='list-group-item'>"
 							+"<div class='text-info' >"
-								+"<img src='/img/yavu017.jpg' style='width: 32px;' />&nbsp;"+value.contenido+"<br>"
+								+"<img src='/img/newGraphics/neo_icono_empresa_crear.png' style='width: 32px;' />&nbsp;"+value.contenido+"<br>"
 								+"<small>"
 									+"<abbr class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
 								+"</small>"
 							+"</div>"
 						+"</div>";
+					}else if($.trim(value.tipo) === 'ticket') {
+						Notificaciones.hide().append(
+							"<div id='notificacion" + value.id + "' class='list-group'>"
+							+ "<div class='list-group-item'>"
+							+ "<img src='/img/newGraphics/neo_icono_tickets.png' style='width: 32px;' />&nbsp;"
+							+ value.contenido
+							+ "</div>"
+							+ "<div class='list-group-item panel-footer-small'>"
+							+ "<small>"
+							+ "<abbr	 class='timeago' id='timeago" + value.id + "' value='" + TimeAgo + "' title='" + TimeAgo + "\' datetime='" + TimeAgo + "'></abbr	>"
+							+ "</small>"
+							+ "</div>"
+							+ "</div>"
+						).show();
 					}else{
 						pops +=
 						"<div class='list-group-item'>"
 							+"<div class='text-info' >"
-								+"<img src='/img/yavu017.jpg' style='width: 32px;' />&nbsp;"
+								+"<img src='/img/newGraphics/neo_icono_sorteo.png' style='width: 32px;' />&nbsp;"
 								+value.contenido+"<br>"
 								+"<small>"
 									+"<abbr class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
