@@ -1,9 +1,6 @@
 {!!Html::script('js/jquery.js')!!}
 @extends('layouts.front')
 @section('content')
-<div class="colum-md-12">
-  <span><a href="#!"><img  src= "{!!URL::to('img/contacto01.png')!!}" width=100%/></a></span>
-</div>
 {!!Form::open(['route' =>'mail.store','method'=>'POST'])!!}
 <div class="jumbotron">
   <div id="contentMini">

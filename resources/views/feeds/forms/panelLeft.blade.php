@@ -2,6 +2,7 @@
   <div>
     <div>
       <div class="list-group">
+        {{--
         <div class="list-group-item list-group-item-success">
           FILTROS DE BÚSQUEDA
         </div>
@@ -14,7 +15,7 @@
           Categorias
           {!! Form::checkbox('name', 'value') !!}
         </div>
-
+--}}
         @include('miniDashboard.miniDashboard')
 
 

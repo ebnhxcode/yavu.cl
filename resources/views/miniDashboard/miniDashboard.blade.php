@@ -160,15 +160,16 @@
           </div>
 
           <div class="col-md-4 col-sm-4 col-xs-4">
-            <div class="list-group" >
+            <div class="list-group">
               <div align="center">
                 <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/tickets/history')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
             <span>
-              <img width="80%" src= "{!!URL::to('img/newGraphics/neo_icono_tickets.png')!!}"/>
+              <img style="padding-bottom: 10px;" width="80%"src= "{!!URL::to('img/newGraphics/neo_icono_tickets.png')!!}"/>
             </span>
                 </a>
               </div>
               <div align="center"><small>Informe de Tickets</small></div>
+              <br>
             </div>
           </div>
 
