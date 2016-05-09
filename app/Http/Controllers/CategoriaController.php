@@ -43,8 +43,8 @@ class CategoriaController extends Controller{
   public function store(Request $request){
     if(Auth::user()->check()){
       Categoria::create($request->all());
-      Session::flash('message', 'Categoria creado correctamente');
-      return Redirect::to('/categorias/create');
+      Session::flash('message', 'Empresa y categorizacion de esta ha sido creado correctamente');
+      return Redirect::to('/empresas/');
     }
     return Redirect::to("/");
     //return response()->json(["Mensaje: " => "Acceso denegado"]);
