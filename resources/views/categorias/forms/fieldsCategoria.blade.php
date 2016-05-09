@@ -6,14 +6,37 @@
 		<div class="list-group-item">
             <div class="form-group has-feedback has-feedback-left">
                 {!!Form::label('Nombre categoría:')!!}
-                {!!Form::text('nombre_categoria',null,['class'=>'form-control','placeholder'=>''])!!}
+                {!!Form::select('nombre_categoria', 
+                    ['Gastronomia' => 'Gastronomia',
+                    'Tiempo libre' => 'Tiempo libre',
+                    'Belleza' => 'Belleza',
+                    'Bienestar' => 'Bienestar',
+                    'Servicios' => 'Servicios',
+                    'Tecnología' => 'Tecnología', 
+                    'Accesorios' => 'Accesorios', 
+                    'Hogar' => 'Hogar',
+                    'Productos' => 'Productos',
+                    'Viajes' => 'Viajes',
+                    'Deportes y Fitness' => 'Deportes y Fitness',
+                    'Centros médicos' => 'Centros médicos',
+                    'Entretenimiento Nocturno' => 'Entretenimiento Nocturno',
+                    'Mascotas' => 'Mascotas',
+                    'Automotriz' => 'Automotriz',
+                    'Vestuario y Calzado' => 'Vestuario y Calzado',  
+                    'Otra' => 'Otras...'], 
+                    $selected = null, ['class' => 'form-control', 'maxlength' => '100']) 
+                !!} 
+            </div>
+            <div>
+                <input type="hidden" value="{!! $empresa -> id  !!} " name="empresa_id"></input>
             </div> 
             <div class="form-group has-feedback has-feedback-left">
-                {!!Form::label('Tipo categoría:')!!}
-                {!!Form::text('tipo_categoria',null,['class'=>'form-control','placeholder'=>''])!!}
+                {!!Form::label('Hash tags de tu empresa:')!!}
+                {!!Form::text('hash_categoria',null,['class'=>'form-control','placeholder'=>''])!!}
             </div> 
         </div>
 	</div>
 </div>
 
 <div class="col-sm-4">
+

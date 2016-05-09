@@ -66,7 +66,7 @@
 						@endforeach
 						</table>	
 					</div>
-					<a class="list-group-item list-group-item-info" href="#!"><small>CARGAR MÁS</small></a>
+					{{--<a class="list-group-item list-group-item-info" href="#!"><small>CARGAR MÁS</small></a>--}}
 				</div>				
 			</div>			
 

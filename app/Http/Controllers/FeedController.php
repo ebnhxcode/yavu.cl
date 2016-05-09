@@ -16,6 +16,7 @@ use yavu\User;
 
 class FeedController extends Controller{
   public function __construct(){
+
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
     if(Auth::user()->check()){
       $this->user = User::find(Auth::user()->get()->id);

@@ -40,7 +40,7 @@ $(document).ready(function(){
 		Global_idUltimaNotificacion = $("#idUltima").val();
 		var user_id = $("#user_id").val();
 		var Contador = 0;
-		var route = "http://yavu.cl/cargarpops/"+Global_idUltimaNotificacion+"/"+user_id+"/todas";
+		var route = "http://localhost:8000/cargarpops/"+Global_idUltimaNotificacion+"/"+user_id+"/todas";
 		$.ajax({
 			url: route,
 			type: 'GET',
@@ -62,10 +62,10 @@ $(document).ready(function(){
 						Notificaciones.hide().append(
 							"<div id='notificacion"+value.id+"' class='list-group'>"
 								+"<div class='list-group-item'>"
-									+"<img src='img/yavu017.jpg' style='width: 32px;' />&nbsp;"
+									+"<img src='/img/newGraphics/yavucoin_neo01_small01.png' style='width: 32px;' />&nbsp;"
 									+value.contenido
 								+"</div>"
-								+"<div class='list-group-item-full panel-footer-small'>"
+								+"<div class='list-group-item panel-footer-small'>"
 									+"<small>"
 										+"<abbr	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\' datetime='"+TimeAgo+"'></abbr	>"
 									+"</small>"
@@ -76,10 +76,13 @@ $(document).ready(function(){
 							Notificaciones.hide().append(
 								"<div id='notificacion"+value.id+"' class='list-group'>"
 									+"<div class='list-group-item'>"
-										+"<img src='img/yavu017.jpg' style='width: 32px; />&nbsp;"
+										+"<img src='/img/newGraphics/neo_icono_empresa_crear.png' style='width: 32px; />&nbsp;"
 										+value.contenido
 									+"</div>"
-									+"<div class='list-group-item-full panel-footer-small'>"
+									+"<div class='>"
+										+value.contenido
+										+"</div>"
+										+"<div class='list-group-item panel-footer-small'>"
 										+"<small>"
 										+"<abbr	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\' datetime='"+TimeAgo+"'></abbr	>"
 										+"</small>"
@@ -90,23 +93,24 @@ $(document).ready(function(){
 						Notificaciones.hide().append(
 							"<div id='notificacion"+value.id+"' class='list-group'>"
 								+"<div class='list-group-item'>"
-									+"<img src='img/yavu017.jpg' style='width: 32px;' />&nbsp;"
+									+"<img src='/img/newGraphics/neo_icono_tickets.png' style='width: 32px;' />&nbsp;"
 									+value.contenido
 								+"</div>"
-								+"<div class='list-group-item-full panel-footer-small'>"
+								+"<div class='list-group-item panel-footer-small'>"
 									+"<small>"
 										+"<abbr	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\' datetime='"+TimeAgo+"'></abbr	>"
 									+"</small>"
 								+"</div>"
 							+"</div>"
 						).show();
-					}else{ //if(value.tipo === 'coins')
+					}else if(value.tipo === 'sorteo') {
 						Notificaciones.hide().append(
 							"<div id='notificacion"+value.id+"' class='list-group'>"
 								+"<div class='list-group-item'>"
+									+"<img src='/img/newGraphics/neo_icono_sorteo.png' style='width: 32px;' />&nbsp;"
 									+value.contenido
 								+"</div>"
-								+"<div class='list-group-item-full panel-footer-small'>"
+								+"<div class='list-group-item panel-footer-small'>"
 									+"<small>"
 									+"<abbr	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\' datetime='"+TimeAgo+"'></abbr	>"
 									+"</small>"
@@ -137,7 +141,7 @@ $(document).ready(function(){
 
   function ContarInteracciones(status_id) {
     status_id = status_id;
-    var route = "http://yavu.cl/contarinteracciones/"+status_id;
+    var route = "http://localhost:8000/contarinteracciones/"+status_id;
     var user_id = $("#user_id").val();
     var Contador = 0;
     $.get(route, function(res){
@@ -154,7 +158,7 @@ $(document).ready(function(){
 
 	function ContarEstados(){
 		var CargarEstados = $("#CargarEstados"); 
-		var route = "http://yavu.cl/contarestados";
+		var route = "http://localhost:8000/contarestados";
 		var user_id = $("#user_id");
 		var Contador = 0;
 		$.get(route, function(res){

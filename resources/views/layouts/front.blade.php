@@ -103,8 +103,11 @@
 					@if(Auth::user()->check())
 						<div class="navbar-brand" align="center" >
 							<a href="#!">
-								<span id="Notificaciones" title="Notificaciones" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-globe" style="font-size: 1.2em; color: #BEF781;" aria-hidden="true"></span>
-                <small><span id="CantidadNotificaciones" style="float:right;" class="label label-danger"></span></small>
+								<span id="Notificaciones" title="Notificaciones <a href='/pops' style='float: right;'>ver todas</a>" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-globe" style="font-size: 1.2em; color: #BEF781;" aria-hidden="true"></span>
+
+                <small>
+									<span id="CantidadNotificaciones" style="float:right;" class="label label-danger"></span>
+								</small>
 							</a>
 						</div>
 						<div class="navbar-brand" align="center">
@@ -256,13 +259,13 @@
 			</footer><!-- /footer -->
 		</div> <!-- /container -->
 		@endif
-		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+		<!-- Google Analytics -->
 		<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-		  ga('create', 'UA-76614948-1', 'auto');
+		  ga('create', 'UA-76276902-1', 'auto');
 		  ga('send', 'pageview');
 		</script>
 		<script>

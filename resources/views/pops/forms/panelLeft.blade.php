@@ -1,60 +1,11 @@
-    <div class="col-sm-4">
+<div class="col-md-4 col-sm-12 col-xs-12">
+  <div>
+    <div>
+      <div class="list-group">
 
-  
-        <div class="list-group">
-          <div class="list-group-item-full-header">
-            <h6>CONTENIDO DE INTERES</h6>
-          </div>            
-          <div class="list-group-item">          
-          </div>
-          <div class="list-group-item">          
-          </div>
-          <div class="list-group-item">          
-          </div>
-          <div class="list-group-item">          
-          </div>
-        </div>
+        @include('miniDashboard.miniDashboard')
 
-        <div class="list-group">
-          <div class="list-group-item-full-header">
-            <h6>PUBLICIDAD</h6>
-          </div>            
-          <div class="list-group-item">          
-          </div>
-          <div class="list-group-item">          
-          </div>
-          <div class="list-group-item">          
-          </div>
-          <div class="list-group-item">          
-          </div>
-        </div>
-
-        <div class="list-group">
-          <div class="list-group-item-full-header">
-            <h6>PUBLICIDAD</h6>
-          </div>            
-          <div class="list-group-item">          
-          </div>
-          <div class="list-group-item">          
-          </div>
-          <div class="list-group-item">          
-          </div>
-          <div class="list-group-item">          
-          </div>
-        </div>
-
-        <div class="list-group">
-          <div class="list-group-item-full-header">
-            <h6>PUBLICIDAD</h6>
-          </div>            
-          <div class="list-group-item">          
-          </div>
-          <div class="list-group-item">          
-          </div>
-          <div class="list-group-item">          
-          </div>
-          <div class="list-group-item">          
-          </div>
-        </div>
-
-    </div>
+      </div> <!-- /list group -->
+    </div> <!-- /panel body -->
+  </div> <!-- /panel -->
+</div><!-- fin del col md 4 -->

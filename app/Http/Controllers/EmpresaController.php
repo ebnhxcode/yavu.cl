@@ -38,9 +38,18 @@ class EmpresaController extends Controller{
       if(count($empresa) < 1){
         return view('empresas.create');
       }else{
-        Session::flash('message-info', 'Usted ya tiene registrada una empresa');
-        Session::flash('message-warning', 'Si desea registrar una nueva empresa comuniquese con el administrador');
-        return Redirect::to('/dashboard');
+        $this->categorias = $empresa[0]->categorias()->get()->count('empresa_id'); 
+        if($this->categorias == 3) {
+            Session::flash('message-info', 'Usted ya tiene registrada una empresa');
+            Session::flash('message-error', 'Ya ha registrado un numero maximo de categorias y empresa ');
+            Session::flash('message-warning', 'Si desea registrar una nueva empresa comuniquese con el administrador');
+            return Redirect::to('/empresas');
+        }
+        else{
+          Session::flash('message-info', 'Usted ya tiene registrada una empresa');
+          Session::flash('message-warning', 'Si desea registrar una nueva empresa comuniquese con el administrador');
+          return view('categorias.create', ['empresa' => $empresa[0]]);
+        }
       }
     }
     return Redirect::to('/');
@@ -94,7 +103,14 @@ class EmpresaController extends Controller{
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function show($id){
-    Redirect::to("/");
+    $this->empresa = Empresa::find($id);
+    if ($this->empresa) {
+      return $this->MostrarEmpresaPublica($this->empresa->nombre);
+    }else{
+      return redirect()->to('/empresas');
+    }
+
+
   }
   public function edit($id){
 

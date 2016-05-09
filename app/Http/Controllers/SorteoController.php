@@ -23,6 +23,7 @@ use yavu\Winner;
 
 class SorteoController extends Controller{
   public function __construct(){
+
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy', 'show']]);
     if(Auth::user()->check()){
       $this->user = User::find(Auth::user()->get()->id);
@@ -227,8 +228,9 @@ class SorteoController extends Controller{
   }
 
   public function store(SorteoCreateRequest $request){
-      if(Sorteo::create($request->all())){
-        $this->pop = new Pop(['user_id' => $request->user_id,'empresa_id' => 1,'tipo' => 'sorteo', 'estado'   => 'pendiente','contenido' => 'Haz creado un nuevo sorteo!','created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]);
+      $this->sorteo = Sorteo::create($request->all());
+      if($this->sorteo){
+        $this->pop = new Pop(['user_id' => $request->user_id,'empresa_id' => 1, 'poptype_id_helper' => $this->sorteo->id, 'tipo' => 'sorteo', 'estado'   => 'pendiente','contenido' => 'Haz creado un nuevo sorteo!','created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]);
         $this->user->pops()->save($this->pop);
         Session::flash('message', 'Sorteo creado correctamente');
         return Redirect::to('/sorteos/create');
@@ -248,16 +250,23 @@ class SorteoController extends Controller{
         $this->sorteo = Sorteo::find(addslashes($sorteo_id));
 
         if($this->sorteo->user_id != $this->user->id){
-          $this->ticket = new Ticket(['user_id' => $user_id,'cantidad_tickets' => -1,'monto' => -100,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
-          $this->user->tickets()->save($this->ticket);
+          if($this->sorteo->estado_sorteo == 'Lanzado'){
+            $this->ticket = new Ticket(['user_id' => $user_id,'cantidad_tickets' => -1,'monto' => -100,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
+            $this->user->tickets()->save($this->ticket);
 
-          //Ahora rindo el ticket
+            //Ahora rindo el ticket
 
-          $this->sorteo = Sorteo::find($sorteo_id);
+            $this->sorteo = Sorteo::find($sorteo_id);
 
-          $this->participante_sorteos = new ParticipanteSorteo(['user_id' => $user_id,'sorteo_id' => $sorteo_id,'nombre_sorteo' => $this->sorteo->nombre_sorteo,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
-          $this->user->participante_sorteos()->save($this->participante_sorteos);
-          return 'Exito';
+            $this->participante_sorteos = new ParticipanteSorteo(['user_id' => $user_id,'sorteo_id' => $sorteo_id,'nombre_sorteo' => $this->sorteo->nombre_sorteo,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
+            $this->user->participante_sorteos()->save($this->participante_sorteos);
+            return 'Exito';
+          }else if($this->sorteo->estado_sorteo == 'Pendiente'){
+            return response()->json(['Mensaje : ', 'Este sorteo aun no permite el uso de tickets']);
+          }else{
+            return response()->json(['Mensaje : ', 'Este sorteo ya no permite el uso de tickets']);
+          }
+
         }else{
           return 'No puedes usar tus tickets en tu propio sorteo.';
         }

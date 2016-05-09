@@ -74,7 +74,7 @@ $(document).ready(function(){
 		var Contador = 0;
 		var pops = "";
 		$.ajax({
-			url: "http://yavu.cl/cargarpops/"+Global_idUltimaNotificacion+"/"+user_id+"/todas",
+			url: "http://localhost:8000/cargarpops/"+Global_idUltimaNotificacion+"/"+user_id+"/todas",
 			type: 'GET',
 			dataType: 'json',
 			cache: false,
@@ -90,9 +90,9 @@ $(document).ready(function(){
 					}					
 					if($.trim(value.tipo) === 'coins'){
 						pops +=
-						"<div class='list-group-item-hover'>"
+						"<div class='list-group-item'>"
 							+"<div class='text-info' >"
-								+"<img src='/img/yavu017.jpg' style='width: 32px;' />&nbsp;"+value.contenido+"<br>"
+								+"<img src='/img/newGraphics/yavucoin_neo01_small01.png' style='width: 32px;' />&nbsp;"+value.contenido+"<br>"
 								+"<small>"
 									+"<abbr class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
 								+"</small>"
@@ -100,32 +100,48 @@ $(document).ready(function(){
 						+"</div>";
 					}else if($.trim(value.tipo) === 'activacion'){
 						pops +=
-						"<div class='list-group-item-hover'>"
-							+"<div class='text-info' >"
-								+"<img src='/img/yavu017.jpg' style='width: 32px;' />&nbsp;"+value.contenido+"<br>"
-								+"<small>"
-									+"<abbr class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
-								+"</small>"
-							+"</div>"
-						+"</div>";
-					}else{
+							"<a class='list-group-item' href='/empresas/"+value.empresa_id+"'>"
+								+"<div >"
+									+"<div class='text-info' >"
+										+"<img src='/img/newGraphics/neo_icono_empresa_crear.png' style='width: 32px;' />&nbsp;"+value.contenido+"<br>"
+										+"<small>"
+											+"<abbr class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
+										+"</small>"
+									+"</div>"
+								+"</div>"
+							+"</a>";
+					}else if($.trim(value.tipo) === 'ticket') {
+						Notificaciones.hide().append(
+							"<div id='notificacion" + value.id + "' class='list-group'>"
+							+ "<div class='list-group-item'>"
+							+ "<img src='/img/newGraphics/neo_icono_tickets.png' style='width: 32px;' />&nbsp;"
+							+ value.contenido
+							+ "</div>"
+							+ "<div class='list-group-item panel-footer-small'>"
+							+ "<small>"
+							+ "<abbr	 class='timeago' id='timeago" + value.id + "' value='" + TimeAgo + "' title='" + TimeAgo + "\' datetime='" + TimeAgo + "'></abbr	>"
+							+ "</small>"
+							+ "</div>"
+							+ "</div>"
+						).show();
+					}else if($.trim(value.tipo) === 'sorteo'){
 						pops +=
-						"<div class='list-group-item-hover'>"
+						"<a href='/sorteos/"+value.poptype_id_helper+"' class='list-group-item'>"
 							+"<div class='text-info' >"
-								+"<img src='/img/yavu017.jpg' style='width: 32px;' />&nbsp;"
+								+"<img src='/img/newGraphics/neo_icono_sorteo.png' style='width: 32px;' />&nbsp;"
 								+value.contenido+"<br>"
 								+"<small>"
 									+"<abbr class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\'>"+TimeAgo+"</abbr>"
 								+"</small>"
 							+"</div>"
-						+"</div>";
+						+"</a>";
 					}
 					Contador += 1;
 				});
+
 				var finalData =
 				"<div class='list-group' style='overflow-y: scroll;height:200px;'>"
 						+pops
-					+"<div class='list-group-item'><a class='text-warning' href='/pops'>ver todas</a></div>"
 				+"</div>";
 				$('#Notificaciones').attr('data-content', finalData);
 				Global_idUltimaNotificacion = 0;
@@ -149,7 +165,7 @@ $(document).ready(function(){
 	function ContarNotificaciones(){
 		var user_id = $("#user_id").val();
 		$.ajax({
-			url: "http://yavu.cl/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
+			url: "http://localhost:8000/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
 			type: 'GET',
 			dataType: 'json',
 			cache: false,

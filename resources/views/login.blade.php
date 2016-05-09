@@ -34,7 +34,7 @@
             <a class="btn btn-primary" style='width:100%;' href='{!! url("social/facebook") !!}'>
               <img src="{!! URL::to('/img/users/facebook.png') !!}" width="7%" alt="">
               <span>
-                Registrate con Facebook
+                Registrate o Inicia sesi&oacute;n con Facebook
               </span>
             </a>
           </div>

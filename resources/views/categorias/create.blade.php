@@ -3,7 +3,7 @@
 <div class="jumbotron">
 	<div id="contentMiddle">
 		@include('alerts.alertFields')
-		<h1>Ingresar Categoria</h1>
+		<h1>Categoriza tu Empresa</h1>
 		<div class="row">
 			{!!Form::open(['route'=>'categorias.store', 'method'=>'POST'])!!}
 			@include('categorias.forms.fieldsCategoria')

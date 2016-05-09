@@ -9,6 +9,7 @@ class CreatePopsTable extends Migration
             $table->increments('id');
             $table->string('user_id');
             $table->string('empresa_id');
+            $table->string('poptype_id_helper');
             $table->string('tipo');
             $table->string('estado');
             $table->string('contenido');

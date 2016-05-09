@@ -93,20 +93,23 @@
                 @include('alerts.alertFields')
 
                 <div>
-                  {!!Form::open([route('usuarios_store_path'), 'method'=>'POST', 'id' => 'FormRegistroLanding'])!!}
+                  {!!Form::open(['action'=>'UserController@store', 'method'=>'POST', 'id' => 'FormRegistroLanding'])!!}
                     @include('usuarios.forms.fieldsLanding')
+                    {!! csrf_field() !!}
                     <div class="form-group has-feedback has-feedback-left">
-                      {!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success', 'style' => 'width:100%;', 'onclick' => 'ValidarRegistro()'])!!}
+                      {!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success', 'style' => 'width:100%;'])!!}
                     </div>
+                  {!!Form::close()!!}
+
                     <div class="form-group has-feedback has-feedback-left">
-                      <a class="btn btn-primary" href='{!! url("social/facebook") !!}'>
+                      <a class="btn btn-primary" href='{!! URL::to("/social/facebook") !!}'>
                         <span>
-                          <img src="{!! URL::to('/images/facebook.png') !!}" width="7%" alt="">
-                          Iniciar sesión con Facebook
+                          <img src="{!! URL::to('/img/users/facebook.png') !!}" width="7%" alt="">
+                          Registrate o Inicia sesi&oacute;n con Facebook
                         </span>
                       </a>
                     </div>
-                  {!!Form::close()!!}
+
                 </div>
               </div>
             </div>
