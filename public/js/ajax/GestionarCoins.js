@@ -31,12 +31,21 @@ $(document).ready(function(){
       $("#Info").popover('show');
       return true;
     });
+
+
+		$('#RenovarClave').click(function(){
+
+			console.log($('#emailRenovarClave'));
+
+		});
+
+
 /*SELECTORES*/
 
 /*FUNCIONES Y PROCEDIMIENTOS*/
 	function ContarCoins(){
 		var CargarEstados = $("#CargarEstados"); 
-		var route = "http://localhost:8000/contarcoins";
+		var route = "http://yavu.cl/contarcoins";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
 			$(".CantidadCoins").value = "";
@@ -50,7 +59,7 @@ $(document).ready(function(){
 	}
 	function InfoEmpresas(){
 		var user_id = $("#user_id").val();
-		var route = "http://localhost:8000/infoempresas/"+user_id;
+		var route = "http://yavu.cl/infoempresas/"+user_id;
 		var Pendiente = false;
 		$.get(route, function(res){
 			$("#EstadoEmpresa").value = "";
@@ -125,6 +134,9 @@ $(document).ready(function(){
 			return true;
 		});
 		return true;
+	}
+	function RenovarClave(){
+
 	}
 /*FUNCIONES Y PROCEDIMIENTOS*/
 	return true;
