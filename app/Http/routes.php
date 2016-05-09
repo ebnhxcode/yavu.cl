@@ -4,6 +4,7 @@ Route::get('breweries', ['middleware' => 'cors', function(){return \Response::js
 Route::get('usuarios', 'UserController@index');
 
 Route::post('usuarios/create', ['uses' => 'UserController@store', 'as' => 'usuarios_store_path',]);
+
 Route::get('usuarios/create', ['uses' => 'UserController@create', 'as' => 'usuarios_create_path',]);
 
 
