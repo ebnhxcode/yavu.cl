@@ -31,13 +31,13 @@ class SocialController extends Controller{
   //public function getSocialAuthCallback($provider=null){
     public function getSocialAuthCallback($provider){
 
-    $this->status = $user = Socialite::driver($provider)->user();
+    //$this->status =
+    $user = Socialite::driver($provider)->user();
 
+    if(count($user) > 0){
 
-    if($this->status){
-
-      if($this->status->email == null){
-        $this->status->email = str_replace(" ","",addslashes($this->status->name))."@facebook.com";
+      if($user->email == null){
+        $user->email = str_replace(" ","",addslashes($user->name))."@facebook.com";
       }
 
       $this->userLogin = User::where('email', $user->email)->first();
