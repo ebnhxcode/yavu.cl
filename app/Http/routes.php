@@ -8,6 +8,8 @@ Route::post('usuarios/create', ['uses' => 'UserController@store', 'as' => 'usuar
 Route::get('usuarios/create', ['uses' => 'UserController@create', 'as' => 'usuarios_create_path',]);
 
 
+
+
 Route::get('verificarusuario/{codigo}', 'LogController@VerificarUsuario');
 Route::get('logout', 'LogController@logout');
 

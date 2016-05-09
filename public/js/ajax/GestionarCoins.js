@@ -31,6 +31,15 @@ $(document).ready(function(){
       $("#Info").popover('show');
       return true;
     });
+
+
+		$('#RenovarClave').click(function(){
+
+			console.log($('#emailRenovarClave'));
+
+		});
+
+
 /*SELECTORES*/
 
 /*FUNCIONES Y PROCEDIMIENTOS*/
@@ -125,6 +134,9 @@ $(document).ready(function(){
 			return true;
 		});
 		return true;
+	}
+	function RenovarClave(){
+
 	}
 /*FUNCIONES Y PROCEDIMIENTOS*/
 	return true;

@@ -84,6 +84,10 @@ class UserController extends Controller{
     return view('usuarios.profile', ['user' => $this->user]);
   }
 
+  public function reset(Request $request){
+    dd($request);
+  }
+
   public function show($id){
     return $this->profile();
   }
