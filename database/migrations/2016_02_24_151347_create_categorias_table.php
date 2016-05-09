@@ -9,7 +9,8 @@ class CreateCategoriasTable extends Migration
         Schema::create('categorias', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre_categoria', 200);
-            $table->string('hash_categoria', 200);     
+            $table->string('hash_categoria', 200);   
+            $table->string('empresa_id', 200);  
             $table->rememberToken();
             $table->timestamps();
         });

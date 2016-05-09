@@ -6,5 +6,11 @@ class Categoria extends Model
 {
     protected $table = 'categorias';
     protected $primaryKey = 'id';
-    protected $fillable = array('nombre_categoria', 'hash_categoria');	
+    protected $fillable = ['nombre_categoria', 'hash_categoria', 'empresa_id'];	
+
+
+	   public function categoria(){
+        return $this->belongsTo(Categoria::class);
+    }
+
 }
