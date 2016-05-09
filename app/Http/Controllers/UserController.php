@@ -1,28 +1,23 @@
 <?php
 namespace yavu\Http\Controllers;
 use Auth;
-use Illuminate\Http\Request;
 use yavu\Http\Requests;
 use yavu\Http\Requests\UserCreateRequest;
 use yavu\Http\Requests\UserUpdateRequest;
-use yavu\Http\Controllers\Controller;
 use Session;
 use Redirect;
 use yavu\Pop;
 use yavu\RegistroCoin;
 use yavu\User;
-use yavu\Estado;
-use Illuminate\Routing\Route;
 use DB;
 use RUT;
 use Mail;
 use Carbon\Carbon;
-use Malahierba\ChileRut\ChileRut;
 class UserController extends Controller{
-
-  public function __construct(Route $route){
+  private $user;
+  public function __construct(){
     if(Auth::user()->check()){
-      return $this->user = User::find(Auth::user()->get()->id);
+      return $this->user = $this->getSessionData();
     }
   }
 
@@ -62,33 +57,23 @@ class UserController extends Controller{
   }
 
   public function edit($id){
-    if(isset($id) && isset($this->user)){
-      if($id == $this->user->id){
-        return view('usuarios.edit', ['user' => $this->user]);
-      }else{
-        Session::flash('message-warning', '¡Creemos que es esto lo que andabas buscando!');
-        return Redirect::to('/usuarios/'.$this->user->id.'/edit');
-      }
+    if($id == $this->user->id){
+      return view('usuarios.edit', ['user' => $this->user]);
+    }else{
+      return Redirect::to('/usuarios/'.$this->user->id.'/edit');
     }
-    Session::flash('message-warning', '¡Creemos que es esto lo que andabas buscando!');
-    return Redirect::to('/');
   }
 
   public function getCodigoVerificacion(){
     return Carbon::now()->day.Carbon::now()->minute.Carbon::now()->hour."V";
   }
 
+  private function getSessionData(){
+    return User::find(Auth::user()->get()->id);
+  }
+
   public function index(){
-    if(Auth::admin()->check()){
-      $users = User::paginate(10);
-      //$users = User::onlyTrashed()->paginate(5);
-      return view('usuarios.index', compact('users'));
-    }elseif (isset($this->user)){
-      Session::flash('message-warning', '¡Creemos que estabas un poco perdido por eso te trajimos hasta acá :)!');
-      return Redirect::to('/dashboard');
-    }
-    Session::flash('message-warning', '¡Creemos que estabas un poco perdido, por eso te trajimos hasta acá :)!');
-    return Redirect::to('/login');
+    return $this->profile();
   }
 
   public function InfoEmpresas($user_id){
@@ -100,13 +85,13 @@ class UserController extends Controller{
   }
 
   public function show($id){
-    return Redirect::to('/profile');
+    return $this->profile();
   }
 
   public function store(UserCreateRequest $request){
     //User::create($request->all());
-    $existeReferente = User::where('referente', $request->referido)->first();
-
+    //$existeReferente = User::where('referente', $request->referido)->first();
+    $existeReferente = false;
     if ($existeReferente){
       //CUANDO EXISTE REFERENTE
       $this->newuser = new User(["nombre"=>$request->nombre,"apellido"=>$request->apellido,"email"=>$request->email,"password"=>$request->password,"estado"=>"inactivo","referido"=>$request ->referido,"referente"=>Carbon::now()->minute.Carbon::now()->hour.Carbon::now()->year.Carbon::now()->month.Carbon::now()->day."RY","validacion"=> $this->getCodigoVerificacion(),"ciudad"=>$request->ciudad]);
@@ -165,7 +150,7 @@ class UserController extends Controller{
 
   public function VerificarUsuario($codigo){
     if(isset($this->user)){
-      return view('usuarios.profile');
+      return $this->profile();
     }
     $user = User::where('validacion', $codigo)->first();
     if($user){
@@ -174,6 +159,7 @@ class UserController extends Controller{
       Session::flash('message', 'Su cuenta ha sido verificada. Disfrute.');
       return Redirect::to('/login');
     }
-    return response()->json(['Mensaje: ' => 'No se encontró el usuario']);
+    Session::flash('error', 'No se ha encontrado registros de este usuario');
+    return redirect()->to('/login');
   }
 }

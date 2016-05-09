@@ -94,7 +94,14 @@ class EmpresaController extends Controller{
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function show($id){
-    Redirect::to("/");
+    $this->empresa = Empresa::find($id);
+    if ($this->empresa) {
+      return $this->MostrarEmpresaPublica($this->empresa->nombre);
+    }else{
+      return redirect()->to('/empresas');
+    }
+
+
   }
   public function edit($id){
 

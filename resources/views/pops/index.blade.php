@@ -6,19 +6,25 @@
 @section('content')
 <div class="jumbotron">
   <div id="contentMiddle">
-    <h1>Notificaciones</h1>
-    <br />
+		<div class="" style="font-size: 3em;">
+			<img id="img" width="8%" src= "{!!URL::to('img/newGraphics/yavucoin_neo02a.png')!!}"/><span>Notificaciones</span>
+		</div>
+
     <div class="row">
-    
-    @include('alerts.alertFields')
-    @include('alerts.errorsMessage')
-    @include('alerts.successMessage')
-    @include('alerts.warningMessage') 
 
+			<div class="col-md-12">
+				@include('alerts.alertFields')
+				@include('alerts.errorsMessage')
+				@include('alerts.successMessage')
+				@include('alerts.warningMessage')
+				@include('alerts.infoMessage')
+			</div>
 
-	<input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
-    {!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
-    @include('pops.forms.panelRight')
+			@include('pops.forms.panelLeft')
+
+			<input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
+			{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
+			@include('pops.forms.panelRight')
 
     </div>
 

@@ -66,6 +66,9 @@
 				</div> <!-- /col-md-8 col-sm-12 col-xs-12 -->
 
 				<div class="col-md-4 col-sm-12 col-xs-12">
+					<div class="well well-sm">
+						<a href="{!! URL::to('/empresa/'.$sorteo->nombre_empresa) !!}">{!! $sorteo->nombre_empresa !!}</a>
+					</div>
 
 					<div>
 						<h5>
@@ -96,11 +99,11 @@
 
 							<div class="dropup">
 								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Menu
+									<span class="glyphicon glyphicon-cog"></span>
 									<span class="caret"></span>
 								</button>
 								<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-
+									<li><a href="{!! URL::to('empresa/'.$sorteo->nombre_empresa.'/sorteos') !!}">Ver m&aacute;s sorteos de {!! $sorteo->nombre_empresa !!}</a></li>
 									<li>{!!link_to_route('sorteos.show', $title = 'Ver mas detalles', $parameters = $sorteo->id, $attributes = [])!!}</li>
 									@if(Auth::user()->get()->id == $sorteo->user_id && $sorteo->estado_sorteo == 'Lanzado')
 										<li role="separator" class="divider"></li>
@@ -110,7 +113,6 @@
 									@endif
 								</ul>
 							</div><!-- /dropup button menu -->
-
 						@else
 							<a href="{!! URL::to('usuarios/create') !!}" class="btn btn-primary btn-sm" role="button">Participar!</a>
 						@endif

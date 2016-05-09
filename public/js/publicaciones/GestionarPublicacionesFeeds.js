@@ -148,7 +148,7 @@ $(document).ready(function(){
 						+"<div style='padding: 0px 2px 2px 2px;' class='list-group-item list-group-item-success'>"
 							+'<div class="dropdown">'
 
-								+'<div  style="float: right; padding-top: 8px; padding-right: 5px" class="dropdown">'
+								+'<div style="float: right; padding-top: 8px; padding-right: 5px" class="dropdown">'
 								 	+'<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
 										+'<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>'
 										+'<span class="caret"></span>'
@@ -163,9 +163,9 @@ $(document).ready(function(){
 							+'</div><!-- /div dropdown -->'+
 
 							'<div class="media">'+
-								'<div class="media-left">'+
+								'<div style="padding-left: 8px;" class="media-left">'+
 									'<a href="#">'+
-					 					"<img class='media-object' src='"+ImagenPerfilEmpresa+"' data-holder-|rendered='true' style='width: 48px; height: 48px;'/>"+
+					 					"<img class='media-object' src='"+ImagenPerfilEmpresa+"' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"+
 									'</a>'+
 								'</div>'+
 								'<div class="media-body">'+
@@ -182,10 +182,9 @@ $(document).ready(function(){
 
 						+"<div class='list-group-item panel-footer'>"
 
-							+"<span id='badge_"+value.id+"' class='label label-warning'></span>"+"&nbsp;"
 							+"<span role='button' class='' href='#!' style='color:#3C5B28'>"
-								+"<span name='megusta' class='text-warning btn-coins' onclick='Interactuar(this.id)' id='estado_"+value.id+"' value='e"+value.idEmpresa+"'>"
-									+"Cobrar coins"
+								+"<span name='megusta' class='' onclick='Interactuar(this.id)' id='estado_"+value.id+"' value='e"+value.idEmpresa+"'>"
+									+"<img id='imgcoin"+value.id+"' src='/img/newGraphics/yavucoin_neo01_small01.png' />"
 								+"</span>"
 							+"</span>"
 
@@ -218,14 +217,16 @@ $(document).ready(function(){
     $.get(route, function(res){
       $(res).each(function(key,value){
 				if(value.user_id === user_id){
-					$('#estado_'+status_id).addClass("btn-coins-down").fadeIn();
+					//$('#estado_'+status_id).addClass("btn-coins-down").fadeIn();
+					$('#imgcoin'+status_id).attr('src', '/img/newGraphics/yavucoin_neo01_small02.png').fadeIn();
+					//+"<img id='imgcoin"+value.id+"' src='/img/newGraphics/yavucoin_neo01_small01.png' />"
 				}
 				Contador += 1;
       });
       $("#badge_"+status_id).text(Contador);
     });
 		return true;
-  }    
+  }
 
 	function ContarEstados(){
 		var CargarEstados = $("#CargarEstados");

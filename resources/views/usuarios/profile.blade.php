@@ -140,6 +140,8 @@
 
 					</div>
 
+
+					{{--
 					<div class='list-group'>
 						<div class='list-group-item list-group-item-success'>
 							<h4>C&oacute;digo de referidos</h4>
@@ -156,7 +158,9 @@
 
 						</div>
 						
-					</div>   
+					</div>
+					--}}
+
 				</div>
 		</div>
 	</div><!-- Fin del div id contentIn -->

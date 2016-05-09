@@ -14,11 +14,12 @@
 	(<strong><small><span class='requerido'>Requerido</span></small></strong>) {!!Form::label('Clave:')!!}
 	{!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una clave', 'required' => 'required'])!!}
 </div>
-
+{{--
 <div class='form-group has-feedback has-feedback-left'>
 	(<strong><small><span class='requerido'>Requerido</span></small></strong>) {!!Form::label('Codigo Referido:')!!}
 	{!!Form::text('referido',null,['class'=>'form-control','placeholder'=>''])!!}
 </div>
+--}}
 
 
 <div class='form-group has-feedback has-feedback-left'>

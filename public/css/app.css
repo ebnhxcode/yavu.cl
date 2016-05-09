@@ -4449,7 +4449,6 @@ a.thumbnail.active {
   width: 10000px; }
 
 .media-object {
-  padding: 5px 5px 5px 5px;
   display: block; }
   .media-object.img-thumbnail {
     max-width: none; }

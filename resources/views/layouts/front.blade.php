@@ -103,8 +103,11 @@
 					@if(Auth::user()->check())
 						<div class="navbar-brand" align="center" >
 							<a href="#!">
-								<span id="Notificaciones" title="Notificaciones" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-globe" style="font-size: 1.2em; color: #BEF781;" aria-hidden="true"></span>
-                <small><span id="CantidadNotificaciones" style="float:right;" class="label label-danger"></span></small>
+								<span id="Notificaciones" title="Notificaciones <a href='/pops' style='float: right;'>ver todas</a>" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-globe" style="font-size: 1.2em; color: #BEF781;" aria-hidden="true"></span>
+
+                <small>
+									<span id="CantidadNotificaciones" style="float:right;" class="label label-danger"></span>
+								</small>
 							</a>
 						</div>
 						<div class="navbar-brand" align="center">
@@ -143,6 +146,7 @@
 							{!!Form::hidden('idUltimaNotificacion', "0", ['id'=>'idUltimaNotificacion'])!!}
 							<li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><strong>Mi cuenta</strong> <span class="label label-success">Gratis!</span> <b class="caret"></b></a>
 								<ul class="dropdown-menu">
+									<li><a href="{!!URL::to('/profile')!!}">Perfil</a></li>
 									<li><a href="{!!URL::to('/tickets/history')!!}">Historial de ticket's</a></li>
 									<li><a href="{!!URL::to('/coins/history')!!}">Historial de coins</a></li>
 									<li><a href="{!!URL::to('/empresas/create')!!}">Crear empresa</a></li>
@@ -176,9 +180,10 @@
 
 							<li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-cog" style="font-size: 1.3em; color: #BEF781;"></span><b class="caret"></b></a>
 								<ul class="dropdown-menu">
-									<li><a href="{!!URL::to('/profile')!!}">Perfil</a></li>
-									<li><a href="{!!URL::to('/usuarios/'.Auth::user()->get()->id.'/edit')!!}">Editar Perfil</a></li>
+
+
 									<li><a href="{!!URL::to('/logout')!!}">Cerrar sesión <span class="glyphicon glyphicon-off text-danger"></span></a></li>
+
 								</ul>
 							</li>
 
