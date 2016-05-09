@@ -11,7 +11,7 @@
   <div>
 
 	 <div id="msj-estado" class="alert alert-dismissible list-group-item" role="alert" style="display:none;">
-		<img width="30%"  src='/images/iconoCargando.gif'/>
+		<img width="30%"  src='/img/users/iconoCargando.gif'/>
 	 </div>
 
 	 <div id='msj-finPublicaciones' class="alert alert-dismissible list-group-item-warning" role="alert" style="display:none;">
