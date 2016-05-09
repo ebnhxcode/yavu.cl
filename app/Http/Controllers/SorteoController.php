@@ -23,6 +23,7 @@ use yavu\Winner;
 
 class SorteoController extends Controller{
   public function __construct(){
+
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy', 'show']]);
     if(Auth::user()->check()){
       $this->user = User::find(Auth::user()->get()->id);

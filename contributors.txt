@@ -1,5 +1,6 @@
-Developers
+Dev Team
 
 Esteban Ramos -> CTO Development
 Luis Zepeda -> CTO Seguridad
+Ignacio Rojas -> CTO SEO & Analytics Engeneer
 

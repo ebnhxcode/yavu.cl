@@ -90,7 +90,7 @@ $(document).ready(function(){
 					}					
 					if($.trim(value.tipo) === 'coins'){
 						pops +=
-						"<div class='list-group-item-hover'>"
+						"<div class='list-group-item'>"
 							+"<div class='text-info' >"
 								+"<img src='/img/yavu017.jpg' style='width: 32px;' />&nbsp;"+value.contenido+"<br>"
 								+"<small>"
@@ -100,7 +100,7 @@ $(document).ready(function(){
 						+"</div>";
 					}else if($.trim(value.tipo) === 'activacion'){
 						pops +=
-						"<div class='list-group-item-hover'>"
+						"<div class='list-group-item'>"
 							+"<div class='text-info' >"
 								+"<img src='/img/yavu017.jpg' style='width: 32px;' />&nbsp;"+value.contenido+"<br>"
 								+"<small>"
@@ -110,7 +110,7 @@ $(document).ready(function(){
 						+"</div>";
 					}else{
 						pops +=
-						"<div class='list-group-item-hover'>"
+						"<div class='list-group-item'>"
 							+"<div class='text-info' >"
 								+"<img src='/img/yavu017.jpg' style='width: 32px;' />&nbsp;"
 								+value.contenido+"<br>"
@@ -122,10 +122,10 @@ $(document).ready(function(){
 					}
 					Contador += 1;
 				});
+
 				var finalData =
 				"<div class='list-group' style='overflow-y: scroll;height:200px;'>"
 						+pops
-					+"<div class='list-group-item'><a class='text-warning' href='/pops'>ver todas</a></div>"
 				+"</div>";
 				$('#Notificaciones').attr('data-content', finalData);
 				Global_idUltimaNotificacion = 0;

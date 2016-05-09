@@ -16,9 +16,10 @@ use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
 use DB;
 class LogController extends Controller{
+
   public function index(){
   }
-  public function CargarCoinSesion(){
+  private function CargarCoinSesion(){
     if(isset($this->user->id)){
       $fechaRegistro = "";
       $fechaActual = strftime( "%m/%d/%Y", time());
@@ -119,7 +120,7 @@ class LogController extends Controller{
           array_push($bolsaCoins, 10);
           //dd(array_sum($bolsaCoins));
           */
-          Session::flash('message-info', '¡Hay publicaciones nuevas, cobra tus coins <a class="btn-warning btn-xs" href="/feeds">YA</a>!');
+          //Session::flash('message-info', '¡Hay publicaciones nuevas, cobra tus coins <a class="btn-warning btn-xs" href="/feeds">YA</a>!');
           return Redirect::to('/feeds');
         }else{
           //dd($sesion);
@@ -134,5 +135,19 @@ class LogController extends Controller{
   public function update(Request $request, $id){
     }
 
+  public function VerificarUsuario($codigo){
+    if(Auth::user()->check()){
+      return Redirect::to('/profile');
+    }
+    $user = User::where('validacion', $codigo)->first();
+    if($user){
+      $user->estado = 'Activo';
+      $user->save();
+      Session::flash('message', 'Su cuenta ha sido verificada. Disfrute.');
+      return Redirect::to('/login');
+    }
+    Session::flash('message-error', 'No se ha encontrado registros de este c&oacute;digo.');
+    return Redirect::to('/login');
+  }
   
 }

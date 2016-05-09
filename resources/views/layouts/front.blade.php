@@ -103,8 +103,11 @@
 					@if(Auth::user()->check())
 						<div class="navbar-brand" align="center" >
 							<a href="#!">
-								<span id="Notificaciones" title="Notificaciones" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-globe" style="font-size: 1.2em; color: #BEF781;" aria-hidden="true"></span>
-                <small><span id="CantidadNotificaciones" style="float:right;" class="label label-danger"></span></small>
+								<span id="Notificaciones" title="Notificaciones <a href='/pops' style='float: right;'>ver todas</a>" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-globe" style="font-size: 1.2em; color: #BEF781;" aria-hidden="true"></span>
+
+                <small>
+									<span id="CantidadNotificaciones" style="float:right;" class="label label-danger"></span>
+								</small>
 							</a>
 						</div>
 						<div class="navbar-brand" align="center">

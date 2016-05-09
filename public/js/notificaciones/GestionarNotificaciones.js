@@ -65,7 +65,7 @@ $(document).ready(function(){
 									+"<img src='img/yavu017.jpg' style='width: 32px;' />&nbsp;"
 									+value.contenido
 								+"</div>"
-								+"<div class='list-group-item-full panel-footer-small'>"
+								+"<div class='list-group-item panel-footer-small'>"
 									+"<small>"
 										+"<abbr	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\' datetime='"+TimeAgo+"'></abbr	>"
 									+"</small>"
@@ -79,7 +79,7 @@ $(document).ready(function(){
 										+"<img src='img/yavu017.jpg' style='width: 32px; />&nbsp;"
 										+value.contenido
 									+"</div>"
-									+"<div class='list-group-item-full panel-footer-small'>"
+									+"<div class='>"
 										+"<small>"
 										+"<abbr	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\' datetime='"+TimeAgo+"'></abbr	>"
 										+"</small>"
@@ -93,7 +93,7 @@ $(document).ready(function(){
 									+"<img src='img/yavu017.jpg' style='width: 32px;' />&nbsp;"
 									+value.contenido
 								+"</div>"
-								+"<div class='list-group-item-full panel-footer-small'>"
+								+"<div class='list-group-item panel-footer-small'>"
 									+"<small>"
 										+"<abbr	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\' datetime='"+TimeAgo+"'></abbr	>"
 									+"</small>"
@@ -106,7 +106,7 @@ $(document).ready(function(){
 								+"<div class='list-group-item'>"
 									+value.contenido
 								+"</div>"
-								+"<div class='list-group-item-full panel-footer-small'>"
+								+"<div class='list-group-item panel-footer-small'>"
 									+"<small>"
 									+"<abbr	 class='timeago' id='timeago"+value.id+"' value='"+TimeAgo+"' title='"+TimeAgo+"\' datetime='"+TimeAgo+"'></abbr	>"
 									+"</small>"
