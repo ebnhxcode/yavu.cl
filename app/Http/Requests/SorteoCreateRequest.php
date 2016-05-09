@@ -1,5 +1,6 @@
 <?php
 namespace yavu\Http\Requests;
+use Carbon\Carbon;
 use yavu\Http\Requests\Request;
 class SorteoCreateRequest extends Request
 {
@@ -12,7 +13,7 @@ class SorteoCreateRequest extends Request
       return [
          'nombre_sorteo' => 'required',
          'descripcion' => 'required',
-         'fecha_inicio_sorteo' => 'required|date',
+         'fecha_inicio_sorteo' => 'required|date|after:'.Carbon::now()->addDays(3),
          'imagen_sorteo' => 'required',
          //'password' => 'required'
       ];
