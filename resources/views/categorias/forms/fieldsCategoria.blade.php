@@ -30,10 +30,6 @@
             <div>
                 <input type="hidden" value="{!! $empresa -> id  !!} " name="empresa_id"></input>
             </div> 
-            <div class="form-group has-feedback has-feedback-left">
-                {!!Form::label('Hash tags de tu empresa:')!!}
-                {!!Form::text('hash_categoria',null,['class'=>'form-control','placeholder'=>''])!!}
-            </div> 
         </div>
 	</div>
 </div>

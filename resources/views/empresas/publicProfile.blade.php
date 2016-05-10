@@ -238,15 +238,9 @@
             </div>
               <br>
           @endif
-
-
-
-
 		  		<br>
 				</div><!-- /div col-md-8 12 12 -->
         <div class="col-md-12 col-sm-12 col-xs-12 ">
-
-
         </div>
   			<br />
       </div>
