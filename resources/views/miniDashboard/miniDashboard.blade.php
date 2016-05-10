@@ -1,9 +1,6 @@
 <div class="list-group-item">
   <div class="row">
 
-    @if(Request::path() != 'login')
-    @endif
-
     <div class="col-md-4 col-sm-2 col-xs-3">
       <div class='list-group' >
         <div align="center">
@@ -13,9 +10,9 @@
             </span>
           </a>
         </div>
-        <div align="center"><small>Configuraciones</small></div>
+        <div align="center"><small>Config</small></div>
       </div>
-    </div>
+    </div><!-- /div col -->
 
     @if(Request::path() != 'feeds')
       <div class="col-md-4 col-sm-2 col-xs-3">
@@ -31,105 +28,81 @@
         </div>
       </div>
     @endif
+
     @if(Request::path() != 'empresas')
-    <div class="col-md-4 col-sm-2 col-xs-3">
-      <div class="list-group" >
-        <div align="center">
-          <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/empresas')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
-            <span>
-              <img width="80%" src= "{!!URL::to('img/newGraphics/neo_icono_empresa.png')!!}"/>
-            </span>
-          </a>
+      <div class="col-md-4 col-sm-2 col-xs-3">
+        <div class="list-group" >
+          <div align="center">
+            <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/empresas')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
+              <span>
+                <img width="80%" src= "{!!URL::to('img/newGraphics/neo_icono_empresa.png')!!}"/>
+              </span>
+            </a>
+          </div>
+          <div align="center"><small>Empresas</small></div>
         </div>
-        <div align="center"><small>Empresas</small></div>
-      </div>
-    </div>
+      </div><!-- /div col -->
     @endif
 
     @if(Request::path() != 'sorteos')
-    <div class="col-md-4 col-sm-2 col-xs-3">
-      <div class="list-group" >
-        <div align="center">
-          <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/sorteos')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
-            <span>
-              <img width="80%" src= "{!!URL::to('img/newGraphics/neo_icono_sorteo.png')!!}"/>
-            </span>
-          </a>
+      <div class="col-md-4 col-sm-2 col-xs-3">
+        <div class="list-group" >
+          <div align="center">
+            <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/sorteos')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
+              <span>
+                <img width="80%" src= "{!!URL::to('img/newGraphics/neo_icono_sorteo.png')!!}"/>
+              </span>
+            </a>
+          </div>
+          <div align="center"><small>Sorteos</small></div>
         </div>
-        <div align="center"><small>Sorteos</small></div>
-      </div>
-    </div>
+      </div><!-- /div col -->
     @endif
+
     @if(Request::path() != 'tickets')
-    <div class="col-md-4 col-sm-2 col-xs-3">
-      <div class="list-group" >
-        <div align="center">
-          <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/tickets')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
-            <span>
-              <img width="80%" src= "{!!URL::to('img/newGraphics/neo_icono_tickets.png')!!}"/>
-            </span>
-          </a>
+      <div class="col-md-4 col-sm-2 col-xs-3">
+        <div class="list-group" >
+          <div align="center">
+            <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/tickets')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
+              <span>
+                <img width="80%" src= "{!!URL::to('img/newGraphics/neo_icono_tickets.png')!!}"/>
+              </span>
+            </a>
+          </div>
+          <div align="center"><small>Tickets</small></div>
         </div>
-        <div align="center"><small>Tickets</small></div>
-      </div>
-    </div>
+      </div><!-- /div col -->
     @endif
-    {{--
-    @if(Request::path() != 'coins' || Request::path() != 'coins/history')
-    <div class="col-md-4 col-sm-2 col-xs-3">
-      <div class='list-group' >
-        <div align="center">
-          <a style="padding: 2px 2px 2px 2px;" href='{!!URL::to('/coins/history')!!}' style="text-align:center;" class="list-group-item list-group-item-info">
-            <span>
-              <img width="80%" src= "{!!URL::to('img/dash/ico_notificacion004.png')!!}"/>
-            </span>
-          </a>
-        </div>
-        <div align="center"><small>Informes</small></div>
-      </div>
-    </div>
-    @endif
-    --}}
+
     @if((Request::path() != 'tickets/history') && (Request::path() != 'coins' && Request::path() != 'coins/history'))
-    <div class="col-md-4 col-sm-2 col-xs-3">
-      <div class='list-group' >
-        <div align="center">
-          <a style="padding: 2px 2px 2px 2px;"  style="text-align:center;" data-toggle="modal" data-target="#myModal" class="list-group-item list-group-item-info">
-            <span>
-              <img width="80%" src= "{!!URL::to('img/newGraphics/neo_icono_informe.png')!!}"/>
-            </span>
-          </a>
+      <div class="col-md-4 col-sm-2 col-xs-3">
+        <div class='list-group' >
+          <div align="center">
+            <a style="padding: 2px 2px 2px 2px;"  style="text-align:center;" data-toggle="modal" data-target="#myModal" class="list-group-item list-group-item-info">
+              <span>
+                <img width="80%" src= "{!!URL::to('img/newGraphics/neo_icono_informe.png')!!}"/>
+              </span>
+            </a>
+          </div>
+          <div align="center"><small>Informes</small></div>
         </div>
-        <div align="center"><small>Informes</small></div>
-      </div>
-    </div>
+      </div><!-- /div col -->
     @endif
 
     @if(Request::path() != 'sorteos/create')
-    <div style="display: none;" class="col-md-4 col-sm-2 col-xs-3 hasoneempresa">
-      <div class="list-group" >
-        <div align="center">
-          <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/sorteos/create')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
-            <span>
-              <img width="80%" src= "{!!URL::to('img/newGraphics/neo_icono_sorteo.png')!!}"/>
-            </span>
-          </a>
+      <div style="display: none;" class="col-md-4 col-sm-2 col-xs-3 hasoneempresa">
+        <div class="list-group" >
+          <div align="center">
+            <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/sorteos/create')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
+              <span>
+                <img width="80%" src= "{!!URL::to('img/newGraphics/neo_icono_sorteo.png')!!}"/>
+              </span>
+            </a>
+          </div>
+          <div align="center"><small>Crear sorteo</small></div>
         </div>
-        <div align="center"><small>Crear sorteo</small></div>
-      </div>
-    </div>
+      </div><!-- /div col -->
     @endif
-
-
-
-
-
-
-
-
-
-
-
 
   </div><!-- /row -->
 </div> <!-- /list group item -->
@@ -157,43 +130,43 @@
               </div>
               <div align="center"><small>Informe de Coins</small></div>
             </div>
-          </div>
+          </div><!-- /div col -->
 
           <div class="col-md-4 col-sm-4 col-xs-4">
             <div class="list-group">
               <div align="center">
                 <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/tickets/history')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
-            <span>
-              <img style="padding-bottom: 10px;" width="80%"src= "{!!URL::to('img/newGraphics/neo_icono_tickets.png')!!}"/>
-            </span>
+                  <span>
+                    <img style="padding-bottom: 10px;" width="80%"src= "{!!URL::to('img/newGraphics/neo_icono_tickets.png')!!}"/>
+                  </span>
                 </a>
               </div>
               <div align="center"><small>Informe de Tickets</small></div>
               <br>
             </div>
-          </div>
+          </div><!-- /div col -->
 
 
           <div style="display: none;" class="col-md-4 col-sm-4 col-xs-4 hasoneempresa">
             <div class="list-group" >
               <div align="center">
                 <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/estadisticasdemiempresa')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
-          <span>
-            <img width="80%" src= "{!!URL::to('img/dash/icono_informe01.png')!!}"/>
-          </span>
+                  <span>
+                    <img width="80%" src= "{!!URL::to('img/dash/icono_informe01.png')!!}"/>
+                  </span>
                 </a>
               </div>
               <div align="center"><small>Estad&iacute;sticas de mi empresa</small></div>
             </div>
-          </div>
+          </div><!-- /div col -->
 
-        </div>
+        </div><!-- /div row -->
 
 
-      </div>
+      </div><!-- /div modal-body -->
       <div class="modal-footer">
 
-      </div>
-    </div>
-  </div>
-</div>
+      </div><!-- /modal footer -->
+    </div><!-- /modal conten -->
+  </div><!-- /modal dialog -->
+</div><!-- /modal fade -->

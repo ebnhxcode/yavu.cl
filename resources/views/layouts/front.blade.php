@@ -12,22 +12,23 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<link rel="apple-touch-icon" href="apple-touch-icon.png">
 		{!!Html::script('js/jquery.js')!!}
-		{!!Html::script('js/vendor/jquery.timeago.js')!!}
-		{{--{!!Html::script('js/bootstrap.min.js')!!}--}}
 		{!!Html::script('js/all.js')!!}
-		{!!Html::script('js/plugins.js')!!}
-		{!!Html::script('js/ajax/FrontNotificaciones.js')!!}
+		@if(Auth::user()->check())
+			{!!Html::script('js/vendor/jquery.timeago.js')!!}
+			{!!Html::script('js/ajax/FrontNotificaciones.js')!!}
+			{!!Html::script('js/ajax/GestionarCoins.js')!!}
+			{!!Html::script('js/plugins.js')!!}
+			{!!Html::script('js/ajax/GestionarCompraTicket.js')!!}
+		@endif
 
-		{!!Html::style('css/app.css')!!}
 
-    {!!Html::script('js/ajax/GestionarCoins.js')!!}
-		{!!Html::script('js/ajax/GestionarCompraTicket.js')!!}
-		{!!Html::style('css/style.css')!!}
 		{!!Html::script('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')!!}
-			{{-- {!!Html::style('css/main.css')!!} --}}
-		<script>$.ajaxSetup({ cache:false });</script>
+		{!!Html::style('css/app.css')!!}
+		{!!Html::style('css/style.css')!!}
+
+		<script>$.ajaxSetup({ cache:true });</script>
 		<script>$.ajaxSetup({ headers: { 'csrftoken' : '{!! csrf_token() !!}' } });</script>
-		<script>$.ajaxSetup({headers:{'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')}});</script>
+		<script>$.ajaxSetup({ headers: { 'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')}});</script>
 		@if(Request::path() != 'login' )
 		<style>
 			body {
@@ -36,50 +37,9 @@
 			}
 		</style>
 		@else
-
-			<!--
-			<video autoplay="autoplay" loop="loop" id="video_background" preload="auto" volume="0"/>
-				<source src="/img/users/fondo.mp4" type="video/mp4" />
-			</video/>
-
-
-			<style>
-				body {
-					padding-top:50px;
-					padding-bottom: 20px;
-				}
-				/*
-				#video_background {
-					position: absolute;
-					bottom: 0px;
-					right: 0px;
-					min-width: 100%;
-					min-height: 100%;
-					width: auto;
-					height: auto;
-					z-index: -1000;
-					overflow: hidden;
-				}
-				#video_pattern {
-					background:#fff;
-					position: fixed;
-					opacity: 0.8;
-					left: 0px;
-					top: 0px;
-					width: 100%;
-					height: 100%;
-					z-index: 1;
-				}
-				*/
-			</style>
-			-->
-
 			<style type="text/css">
 				body {
-					background-image: url(/img/users/iniciar_sesion.jpg);
-					background-repeat: no-repeat;
-					background-position: top center;
-					background-attachment: fixed;
+					background: url(/img/users/iniciar_sesion.jpg) no-repeat fixed top center;
 					padding-top:50px;
 					padding-bottom: 20px;
 				}
@@ -97,22 +57,22 @@
 						<span class="icon-bar"></span>
 					</button>
 					<div class="navbar-brand" style="width: 135px;padding-right: 0px;padding-left: 20px;">
-						<a href="{{URL::to('/')}}"><img src={{asset('img/yavu004.png')}} width="70%" style="transition: width 0.8s;"></a>
-						{{-- <img id="LogoYavu" src="{!!URL::to('img/yavu004.png')!!}" style="transition: width 0.8s;" width="50%" /> --}}
+						<a href="{{URL::to('/')}}"><img id="LogoYavu" src="{!! asset('img/yavu004.png') !!}" width="70%" style="transition: width 0.8s;" width="50%"></a>
 					</div>
 					@if(Auth::user()->check())
 						<div class="navbar-brand" align="center" >
 							<a href="#!">
 								<span id="Notificaciones" title="Notificaciones <a href='/pops' style='float: right;'>ver todas</a>" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-globe" style="font-size: 1.2em; color: #BEF781;" aria-hidden="true"></span>
-
                 <small>
 									<span id="CantidadNotificaciones" style="float:right;" class="label label-danger"></span>
 								</small>
 							</a>
 						</div>
 						<div class="navbar-brand" align="center">
-							<span class="glyphicon glyphicon-certificate" style="font-size: 1.2em; color: #BEF781;"></span>
-							<small><span id="" style="float:right;" class="label label-warning CantidadCoins"></span></small>
+							<small>
+								<img width="24px" src="/img/newGraphics/yavucoin_neo01_small01.png" alt="">
+								<span id="" style="float:right;" class="label label-warning CantidadCoins"></span>
+							</small>
 						</div>
 						<div class="navbar-brand" align="center">
 							<span class="glyphicon glyphicon-tag" style="font-size: 1.2em; color: #BEF781;"></span>
@@ -144,7 +104,7 @@
 						@if(Auth::user()->check())
 							{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
 							{!!Form::hidden('idUltimaNotificacion', "0", ['id'=>'idUltimaNotificacion'])!!}
-							<li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><strong>Mi cuenta</strong> <span class="label label-success">Gratis!</span> <b class="caret"></b></a>
+							<li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><strong>Mi cuenta</strong> <b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									<li><a href="{!!URL::to('/profile')!!}">Perfil</a></li>
 									<li><a href="{!!URL::to('/tickets/history')!!}">Historial de ticket's</a></li>
@@ -153,7 +113,7 @@
 								</ul>
 							</li>
 
-							<li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><img width="40" src={{asset('img/yavu019.png')}} alt=""><b class="caret"></b></a>
+							<li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><img width="40" src="{!! asset('img/yavu019.png') !!}" alt=""><b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									<li class="dropdown">
 										<a href="{!!URL::to('/dashboard')!!}">
