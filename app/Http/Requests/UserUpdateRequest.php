@@ -11,7 +11,7 @@ class UserUpdateRequest extends Request
    {
       return [
          'rut' => 'required',
-         'email' => 'required',
+         //'email' => 'required',
          //'login' => 'required',
          'nombre' => 'required',
          'apellido' => 'required',

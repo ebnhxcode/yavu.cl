@@ -1,6 +1,11 @@
 <?php
 Route::get('breweries', ['middleware' => 'cors', function(){return \Response::json(\yavu\Brewery::with('beers', 'geocode')->paginate(10), 200);}]);
 
+Route::get('/clear-cache', function() {
+
+   view('index');
+});
+
 Route::get('usuarios', 'UserController@index');
 
 Route::post('usuarios/create', ['uses' => 'UserController@store', 'as' => 'usuarios_store_path',]);
@@ -30,6 +35,7 @@ Route::resource('log', 'LogController');
 /*Gestión de ingreso login*/
 
 Route::get('login', function(){
+  $exitCode = Artisan::call('cache:clear');
   if(Auth::user()->check()){
     $log = new \yavu\Http\Controllers\LogController();
     $log->logout();

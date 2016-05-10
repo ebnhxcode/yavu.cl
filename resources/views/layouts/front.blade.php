@@ -26,7 +26,7 @@
 		{!!Html::style('css/app.css')!!}
 		{!!Html::style('css/style.css')!!}
 
-		<script>$.ajaxSetup({ cache:true });</script>
+		<script>$.ajaxSetup({ cache:false });</script>
 		<script>$.ajaxSetup({ headers: { 'csrftoken' : '{!! csrf_token() !!}' } });</script>
 		<script>$.ajaxSetup({ headers: { 'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')}});</script>
 		@if(Request::path() != 'login' )
@@ -62,7 +62,7 @@
 					@if(Auth::user()->check())
 						<div class="navbar-brand" align="center" >
 							<a href="#!">
-								<span id="Notificaciones" title="Notificaciones <a href='/pops' style='float: right;'>ver todas</a>" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-globe" style="font-size: 1.2em; color: #BEF781;" aria-hidden="true"></span>
+                <img src="{!! asset('/img/dash/ico_notificacion005.png') !!}" width="24px" id="Notificaciones" title="Notificaciones <a href='/pops' style='float: right;'>ver todas</a>" data-toggle="popover" title="Popover title" data-placement="bottom" aria-hidden="true" alt="">
                 <small>
 									<span id="CantidadNotificaciones" style="float:right;" class="label label-danger"></span>
 								</small>
@@ -76,8 +76,12 @@
 						</div>
 						<div class="navbar-brand" align="center">
 
-							<span class="glyphicon glyphicon-tag" style="font-size: 1.2em; color: #BEF781;"></span>
-							<small><span id="CantidadTickets" style="float:right;" class="label label-info"></span></small>
+							<!-- <span class="glyphicon glyphicon-tag" style="font-size: 1.2em; color: #BEF781;"></span> -->
+
+							<small>
+                <img width="22px" src="/images/ticket.png" alt="">
+                <span id="CantidadTickets" style="float:right;" class="label label-info"></span>
+              </small>
 						</div>
 						<!--
 						<div class="navbar-brand">
