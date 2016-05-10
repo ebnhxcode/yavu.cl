@@ -16,8 +16,16 @@
 				(<strong><small><span class='requerido'>Requerido</span></small></strong>) {!!Form::label('Email:')!!}
 				{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email', 'maxlength' => '200'])!!}			
 			</div>
-			<div class='form-group has-feedback has-feedback-left'>
+
+
+
 				@if(Auth::user()->check() && Request::path() !== 'usuarios/create')
+				<div class='form-group has-feedback has-feedback-left'>
+					{!!Form::label('Email secundario:')!!}
+					{!!Form::email('email_2',null,['class'=>'form-control','placeholder'=>'Ingrese un segundo email', 'maxlength' => '200'])!!}
+				</div>
+				<div class='form-group has-feedback has-feedback-left'>
+
 					(<strong><small><span class='requerido'>Ingrese <i>solo</i> si desea cambiarla</span></small></strong>) {!!Form::label('Cambio de clave:')!!}
 				@else
 					{!!Form::label('Nueva password:')!!}
