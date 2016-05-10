@@ -40,10 +40,6 @@ class SocialController extends Controller{
   }
   //public function getSocialAuthCallback($provider=null){
   public function getSocialAuthCallback($provider){
-    if ($this->hasInvalidState()) {
-      Session::flash('mesagge-info', 'Usted no tiene ningun correo publico, no podrá iniciar sesion con facebook');
-      return Redirect::to('/login');
-    }
 
     //dd(Socialite::driver('facebook')->user());
 
