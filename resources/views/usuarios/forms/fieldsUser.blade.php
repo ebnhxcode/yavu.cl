@@ -13,7 +13,10 @@
 				{!!Form::text('apellido',null,['class'=>'form-control','placeholder'=>'Ingrese su apellido', 'maxlength' => '100'])!!}
 			</div>
 			<div class='form-group has-feedback has-feedback-left'>
-				(<strong><small><span class='requerido'>Requerido</span></small></strong>) {!!Form::label('Email:')!!}
+				(<strong><small><span class='requerido'>Requerido</span></small></strong>) {!!Form::label('Email login:')!!}
+				<button id='Info' type='button' class='btn btn-info btn-xs' data-container='body' data-toggle='popover' data-placement='top' data-content='Con este email podr&aacute;s iniciar sesi&oacute;n. ¡En caso que este email <strong>no</strong> haya sido ingresado por ti te invitamos a ingresar uno v&aacute;lido abajo !' data-original-title='<strong>Atención {!!Auth::user()->get()->nombre!!}</strong>'>
+					Informaci&oacute;n adicional
+				</button>
 				{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email', 'maxlength' => '200'])!!}			
 			</div>
 
@@ -238,7 +241,7 @@
 	});
 	function ValidarRut(rut){
 		console.log('click');
-		var route = 'http://localhost:8000/validarrutusuario/'+rut+'';
+		var route = 'http://yavu.cl/validarrutusuario/'+rut+'';
 		document.getElementById('FormUsuario').onsubmit = function() {
 		    return false;
 		}	
