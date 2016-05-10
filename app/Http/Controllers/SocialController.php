@@ -30,7 +30,8 @@ class SocialController extends Controller{
     return Socialite::driver($provider)->redirect();
   }
   //public function getSocialAuthCallback($provider=null){
-    public function getSocialAuthCallback($provider){
+  public function getSocialAuthCallback($provider){
+    dd(Socialite::driver($provider)->user());
 
     $user = Socialite::driver($provider)->user();
 
@@ -91,6 +92,7 @@ class SocialController extends Controller{
           return Redirect::to('/login');
         }
       }
+
     }else{
       Session::flash('mesagge-info', 'Usted no tiene ningun correo publico, no podrá iniciar sesion con facebook');
       return Redirect::to('/login');

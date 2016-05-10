@@ -1,7 +1,7 @@
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
- 	<div id="contentIn">
+ 	<div id="contentMiddle">
 		<h1>Terminos y condiciones</h1>
 
 	
