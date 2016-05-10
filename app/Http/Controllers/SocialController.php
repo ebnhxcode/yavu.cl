@@ -31,7 +31,8 @@ class SocialController extends Controller{
       if(isset($this->test)){
         return Socialite::driver($provider)->redirect();
       }else{
-        return 0;
+        Session::flash('mesagge-warning', 'Ocurri&oacute; un error al enlazar la informaci&oacute;n');
+        return Reditect::to('/login');
       }
 
     }
@@ -40,6 +41,7 @@ class SocialController extends Controller{
   //public function getSocialAuthCallback($provider=null){
   public function getSocialAuthCallback($provider){
 
+    dd($provider);
 
     $user = Socialite::driver($provider)->user();
 
