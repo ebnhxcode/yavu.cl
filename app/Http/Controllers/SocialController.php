@@ -45,6 +45,8 @@ class SocialController extends Controller{
 
     $user = Socialite::driver('facebook')->user();
 
+    dd($user->email);
+
     if(isset($user) || $user =! null){
 
       if($user->email == null){
