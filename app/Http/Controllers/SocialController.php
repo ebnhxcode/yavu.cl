@@ -25,7 +25,10 @@ class SocialController extends Controller{
       Session::flash('message-warning', 'No estás usando un correo publico en facebook o no tienes asociado tu email a alguna cuenta de yavu. Pero puedes registrarte facilmente <a class="btn-link" href="/usuarios/create">Aquí</a>');
       return Redirect::to('/');
     }else{
-      return Socialite::driver($provider)->redirect();
+      $this->test = Socialite::driver($provider)->redirect();
+
+      dd($this->test);
+      return 1;
     }
     return Socialite::driver($provider)->redirect();
   }
