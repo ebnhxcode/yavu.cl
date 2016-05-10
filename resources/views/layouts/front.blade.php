@@ -75,6 +75,7 @@
 							</small>
 						</div>
 						<div class="navbar-brand" align="center">
+
 							<span class="glyphicon glyphicon-tag" style="font-size: 1.2em; color: #BEF781;"></span>
 							<small><span id="CantidadTickets" style="float:right;" class="label label-info"></span></small>
 						</div>
@@ -99,7 +100,6 @@
 							@if(Request::path() != 'login')
 							<li class="dropdown"><a href="{!!URL::to('/login')!!}"><span role="button" style="background: transparent;" class="navbar-button-border">INICIA SESIÓN</span></a></li>
 							@endif
-							<li class="dropdown"></li>
 						@endif
 						@if(Auth::user()->check())
 							{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
@@ -140,17 +140,12 @@
 
 							<li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-cog" style="font-size: 1.3em; color: #BEF781;"></span><b class="caret"></b></a>
 								<ul class="dropdown-menu">
-
-
 									<li><a href="{!!URL::to('/logout')!!}">Cerrar sesión <span class="glyphicon glyphicon-off text-danger"></span></a></li>
-
 								</ul>
 							</li>
 
 							<li class="dropdown">
-								<a href="{!!URL::to('/sorteos')!!}">
-
-								</a>
+								<a href="{!!URL::to('/sorteos')!!}"></a>
 							</li>
 						@endif
 						@if(Auth::admin()->check())
@@ -161,14 +156,6 @@
 									<li><a href="{!!URL::to('/sorteos')!!}">Sorteos por confirmar</a></li>
 								</ul>
 							</li>
-							<!--
-							<li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Pagos<b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li><a href="{!!URL::to('/empresas')!!}">Registrar pago</a></li>
-									<li><a href="{!!URL::to('/empresas')!!}">Mostrar listado de deudores</a></li>
-								</ul>
-							</li>
-							-->
 							<li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Admintración<b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									<li><a href="{!!URL::to('/admins/create')!!}">Registro de Administradores</a></li>
@@ -182,22 +169,17 @@
 					</ul><!-- /ul navbar -->
 				</div><!--/.navbar-collapse -->
 
-			</div>
-		</nav>
+			</div><!-- /container -->
+		</nav><!-- /navbar-inverse -->
 
 		@yield('content')
+
 		@if(Request::path() != 'login' )
 		<div class="container">
-			<footer class="site-footer" id="">
+			<footer class="site-footer">
 				<div class="row">
 					<div class="col-md-12 col-sm-12 col-xs-12">
 						<img alt="Imagen corfo" src= "{!!URL::to('img/footer/corfo.png')!!}" class="img-responsive-centered"/></a>
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-4">
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-4">
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-4">
 					</div>
 					<div class="col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
 						<span><a href="#!"><img  src= "{!!URL::to('img/footer/icono_facebook.png')!!}" class=""/></a></span>
