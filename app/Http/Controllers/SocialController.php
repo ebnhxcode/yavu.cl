@@ -41,7 +41,7 @@ class SocialController extends Controller{
   //public function getSocialAuthCallback($provider=null){
   public function getSocialAuthCallback($provider){
 
-    dd(Socialite::driver('facebook')->user());
+    //dd(Socialite::driver('facebook')->user());
 
     $user = Socialite::driver('facebook')->user();
 
