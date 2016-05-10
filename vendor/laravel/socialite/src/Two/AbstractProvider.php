@@ -2,6 +2,7 @@
 
 namespace Laravel\Socialite\Two;
 
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use GuzzleHttp\ClientInterface;
@@ -188,7 +189,9 @@ abstract class AbstractProvider implements ProviderContract
     public function user()
     {
         if ($this->hasInvalidState()) {
-            throw new InvalidStateException;
+            //throw new InvalidStateException;
+            Session::flash('message-warning', 'No hemos podido crear tu perfil, no existe un correo p&uacute;blico en facebook');
+            return Redirect::to('/login');
         }
 
         $user = $this->mapUserToObject($this->getUserByToken(
