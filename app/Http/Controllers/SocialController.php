@@ -29,7 +29,7 @@ class SocialController extends Controller{
       $this->test = Socialite::driver($provider)->redirect();
 
       if(isset($this->test)){
-        return 1;
+        return Socialite::driver($provider)->redirect();
       }else{
         return 0;
       }
