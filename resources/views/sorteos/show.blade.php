@@ -15,10 +15,11 @@
         <div class="row">
           <div class="col-md-8 col-sm-12 col-xs-12">
             <div class="list-group">
+
+              @if(isset($winners))
               <div class="list-group-item list-group-item-success">
                 GANADOR DEL SORTEO
               </div>
-              @if(isset($winners))
                 <div class="list-group-item list-group-item-success">
                   <div class="well well-xs">
                     <span class="label label-success">1</span>
@@ -40,10 +41,13 @@
                 </div>
                  --}}
               @else
+              <div class="list-group-item list-group-item-success">
+                SORTEO PENDIENTE :( 
+              </div>
                 <div class="list-group-item list-group-item-success">
                   <div class="well well-xs">
-                    <span class="label label-success">1</span>
-                    ¡Ganador! : <span class="text-danger">¡Espera hasta las 21 hrs el d&iacute;a {!!$sorteo->fecha_inicio_sorteo!!}!</span><img width="80" style="float: right;" src="{!! URL::to('img/yavu005.png') !!}" alt="">
+                    ¡Habrá <span class="label label-success">1</span>
+                     Ganador! : <span class="text-danger">¡Espera hasta las 21 hrs el d&iacute;a {!!$sorteo->fecha_inicio_sorteo!!}!</span><img width="80" style="float: right;" src="{!! URL::to('img/yavu005.png') !!}" alt="">
                   </div>
                 </div>
               @endif
