@@ -29,7 +29,7 @@
 		<script>$.ajaxSetup({ cache:false });</script>
 		<script>$.ajaxSetup({ headers: { 'csrftoken' : '{!! csrf_token() !!}' } });</script>
 		<script>$.ajaxSetup({ headers: { 'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')}});</script>
-		@if(Request::path() != 'login' )
+		@if(Request::path() != 'login' && Request::path() != 'contacto')
 		<style>
 			body {
 				padding-top:50px;
@@ -181,7 +181,7 @@
 
 		@yield('content')
 
-		@if(Request::path() != 'login' )
+		@if(Request::path() != 'login' && Request::path() != 'contacto')
 		<div class="container">
 			<footer class="site-footer">
 				<div class="row">

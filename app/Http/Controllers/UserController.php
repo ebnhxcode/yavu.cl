@@ -1,6 +1,7 @@
 <?php
 namespace yavu\Http\Controllers;
 use Auth;
+use Illuminate\Http\Request;
 use yavu\Http\Requests;
 use yavu\Http\Requests\UserCreateRequest;
 use yavu\Http\Requests\UserUpdateRequest;
@@ -85,7 +86,28 @@ class UserController extends Controller{
   }
 
   public function reset(Request $request){
-    dd($request);
+
+    $this->user = User::where('email', $request->emailRenovarClave)->get();
+
+    if(count($this->user)>0) {
+
+      $this->user[0]->password = $pass = 'yavu2016#'.Carbon::now()->day;
+      $this->user[0]->save();
+      Mail::send('emails.forResetPassword', ['email' => $this->user[0]->email, 'nombre' => $this->user[0]->nombre, 'clave' => $pass ], function($msj){
+        $msj->subject('Correo de Reestablecimiento de claves');
+        $msj->to($this->user[0]->email);
+        return true;
+      });
+      Session::flash('message-info', '¡Hemos enviado tu nueva clave al correo con el que te haz registrado!. ¡Gracias!.');
+
+      return redirect()->to('/login');
+
+    }else{
+
+
+      return redirect()->to('/login');
+    }
+
   }
 
   public function show($id){
