@@ -5,7 +5,7 @@
 		@include('alerts.alertFields')
 		@include('empresas.forms.modalTerminosCondiciones')
 		<div class="" style="font-size: 2em;">
-			<img width="8%" src= "{!!URL::to('img/newGraphics/neo_icono_empresa_crear.png')!!}"/><a href="{!! URL::to('/empresas') !!}"><span>Empresas</span></a><span class="requerido">\</span><span>Crear nueva empresa</span>
+			<img width="8%" style="padding-bottom: 20px;" src= "{!!URL::to('img/newGraphics/neo_icono_empresa_crear.png')!!}"/><a href="{!! URL::to('/empresas') !!}"><span>Empresas</span></a><span class="requerido">\</span><span>Crear nueva empresa</span>
 		</div>
 		@include('alerts.alertFields')
 		@include('alerts.errorsMessage')

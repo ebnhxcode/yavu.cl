@@ -3,7 +3,7 @@
 <div class='jumbotron'>
 	<div id='contentMiddle'>
 		@include('alerts.alertFields')
-		<h4>Registro de cliente </h4>
+		<h4>Registro de usuarios </h4>
 		<div class='row'>
 			{!!Form::open([route('usuarios_create_path'), 'method'=>'POST', 'files' => true])!!}
 			@include('usuarios.forms.fieldsUser')

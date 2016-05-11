@@ -6,7 +6,7 @@
 <div class="jumbotron">
   <div id="contentMiddle">
 		<div style="font-size: 3em;">
-			<img width="64px" src= "{!!URL::to('img/newGraphics/neo_icono_publicaciones.png')!!}" /><span>Publicaciones</span>
+			<img width="64px" style="padding-bottom: 20px;" src= "{!!URL::to('img/newGraphics/neo_icono_publicaciones.png')!!}" /><span>Publicaciones</span>
 		</div>
     <div class="row">
     	<div class="col-md-12 col-sm-12 col-xs-12">

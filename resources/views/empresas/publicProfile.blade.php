@@ -30,7 +30,7 @@
                       @if($e->imagen_perfil === "")
                         <img id="ImagenPerfil" src="/img/users/usuario_nuevo.png" class="center-block" class="thumbnail">
                       @else
-                        <img id="ImagenPerfil" src="/img/users/{!!$e->imagen_perfil!!}" class="center-block" class="thumbnail" class="img-rounded" width="100" height="100" class="img-responsive" >
+                        <img id="ImagenPerfil" src="/img/users/{!!$e->imagen_perfil!!}" class="center-block" class="thumbnail" class="img-rounded" width="300px" height="100px" class="img-responsive" >
                       @endif
 
 
@@ -57,7 +57,7 @@
                                               <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
                                               <span class="caret"></span>
                                             </button>
-                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                            <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">
                                               <li><a href="{!!URL::to('/feeds')!!}">Inicio</a></li>
                                               <li>
                                                 {!!link_to_route('empresas.edit', $title = 'Editar Perfil de Empresa', $parameters = $e->id, $attributes = [])!!}
@@ -106,17 +106,17 @@
                                 <strong>{!! strtoupper("".$e->nombre)!!}.</strong><br />
                                 Direcci&oacute;n : {!!$e->direccion!!}<br>
                                 Ciudad : {!!$e->ciudad!!}<br>
-                                N° de contacto : <abbr title="Phone"></abbr> {!!$e->fono!!}
+                                Fono : <abbr title="Phone"></abbr> {!!$e->fono!!}
+                              </address>
+
+                              <address>
+                                <strong>Contacto: <a href="mailto:#">{!!$e->email!!}</a></strong><br>                             
                               </address>
 
                               <!--<h3>{!! $e->descripcion !!}</h3>-->
                               <button id='Info' type='button' class='btn btn-info btn-sm' data-container='body' data-toggle='popover' data-placement='top' data-content='{!! $e->descripcion !!}' data-original-title=''> Descripcion
                               </button>
 
-                              <address>
-                                <strong>Contacto</strong><br>
-                                <a href="mailto:#">{!!$e->email!!}</a>
-                              </address>
                             </div>
 
 
@@ -142,35 +142,6 @@
             </div><!-- /div col-md-5 col-sm-5 col-xs-5 -->
           </div>
 
-          @if(Auth::user()->check())
-
-            @if(Auth::user()->get()->id == $e->user_id)
-
-              <div class="list-group">
-                <div class="list-group-item">
-                  <h3><span class="list-group-item list-group-item-success">Gráficos</span></h3>
-                  <div class="wrapper">
-                    <div class="counter col_fourth">
-                      <i class="fa fa-code fa-2x"></i>
-                      <p class="count-text ">Visitas</p>
-                      <h2 class="timer count-title" id="count-number" data-to="300" data-speed="1500"></h2>
-                    </div>
-                    <div class="counter col_fourth">
-                      <i class="fa fa-coffee fa-2x"></i>
-                      <p class="count-text ">Impacto Publicaciones</p>
-                      <h2 class="timer count-title" id="count-number" data-to="17870" data-speed="1500"></h2>
-                    </div>
-                    <div class="counter col_fourth">
-                      <i class="fa fa-lightbulb-o fa-2x"></i>
-                      <p class="count-text ">Coins Otorgadas</p>
-                      <h2 class="timer count-title" id="count-number" data-to="847" data-speed="1500"></h2>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              @endif <!-- /compare -->
-
-              @endif <!-- /AuthCheck -->
 
         </div>
 				<div class="col-md-8 col-sm-12 col-xs-12">

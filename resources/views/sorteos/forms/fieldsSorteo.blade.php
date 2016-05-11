@@ -1,3 +1,6 @@
+ <div class="col-md-4 col-sm-12 col-xs-12">
+		@include('miniDashboard.miniDashboard')
+	</div>
 <div class="col-md-8 col-sm-12 col-xs-12">
 	<div class="list-group" >
 		<div class="list-group-item">
@@ -13,7 +16,7 @@
 			</div>
 			<div class="form-group has-feedback has-feedback-left">
 				(<strong><small><span class="requerido">Requerido</span></small></strong>)
-				{!!Form::label('Fecha de inicio Sorteo:')!!}
+				{!!Form::label('Fecha a realizar el Sorteo:')!!}
 				{!!Form::text('fecha_inicio_sorteo',null,['class'=>'form-control','placeholder'=>'','id'=>'datepicker'])!!}
 				<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 				<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
