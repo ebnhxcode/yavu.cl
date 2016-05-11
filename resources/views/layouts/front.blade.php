@@ -82,23 +82,23 @@
 				</div><!-- /navbar-header -->
 
 				<div id="navbar" class="navbar-collapse collapse">
+					@if(Auth::user()->check())
+						<div class="navbar-brand" align="center">
+							<small>
+								<img width="24px" src="/img/newGraphics/yavucoin_neo01_small01.png" alt="">
+								<span id="" style="float:right;" class="label label-warning CantidadCoins"></span>
+							</small>
+						</div>
+						<div class="navbar-brand" align="center">
 
-          <div class="navbar-brand" align="center">
-            <small>
-              <img width="24px" src="/img/newGraphics/yavucoin_neo01_small01.png" alt="">
-              <span id="" style="float:right;" class="label label-warning CantidadCoins"></span>
-            </small>
-          </div>
-          <div class="navbar-brand" align="center">
+							<!-- <span class="glyphicon glyphicon-tag" style="font-size: 1.2em; color: #BEF781;"></span> -->
 
-            <!-- <span class="glyphicon glyphicon-tag" style="font-size: 1.2em; color: #BEF781;"></span> -->
-
-            <small>
-              <img width="22px" src="/images/ticket.png" alt="">
-              <span id="CantidadTickets" style="float:right;" class="label label-info"></span>
-            </small>
-          </div>
-
+							<small>
+								<img width="22px" src="/images/ticket.png" alt="">
+								<span id="CantidadTickets" style="float:right;" class="label label-info"></span>
+							</small>
+						</div>
+					@endif
 					<ul class="nav navbar-nav navbar-right">
 						@if(!Auth::user()->check() && !Auth::empresa()->check() && !Auth::admin()->check())
 							<li class="dropdown"><a href="{!!URL::to('/nosotros')!!}"><span role="button" class="navbar-button-hover">NUESTRA EMPRESA</span></a></li>
