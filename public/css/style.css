@@ -69,6 +69,13 @@
 
 }
 
+@media (max-width: 767px) {
+  #myCarousel {
+    display: none;
+  }
+
+}
+
 @media (min-width: 768px) {
   #contentIn {
     width: 90%;
@@ -77,9 +84,6 @@
     width: 90%;
     transition: width 0.5s;    
   }  
-  .carousel {
-    display: none;
-  }
 }
 @media (min-width: 880px) {
   #contentIn {
