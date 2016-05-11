@@ -10,7 +10,7 @@
 		<div class="row">
 			{!!Form::open(['route'=>'sorteos.store', 'method'=>'POST', 'files' => true, 'id' => 'FormSorteo'  ])!!}
 			@include('sorteos.forms.fieldsSorteo')
-			<div class="col-md-4 col-sm-12 col-xs-12">
+			<div class="col-md-12 col-sm-12 col-xs-12">
 				<div class="list-group">
 					<div class="list-group-item">
 						<h4>Todos los campos son requeridos</h4>

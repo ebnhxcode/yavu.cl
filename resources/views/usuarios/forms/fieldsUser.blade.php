@@ -22,17 +22,13 @@
 
 
 
-				@if(Auth::user()->check() && Request::path() !== 'usuarios/create')
-				<div class='form-group has-feedback has-feedback-left'>
-					{!!Form::label('Email secundario:')!!}
-					{!!Form::email('email_2',null,['class'=>'form-control','placeholder'=>'Ingrese un segundo email', 'maxlength' => '200'])!!}
-				</div>
+		
 				<div class='form-group has-feedback has-feedback-left'>
 
 					(<strong><small><span class='requerido'>Ingrese <i>solo</i> si desea cambiarla</span></small></strong>) {!!Form::label('Cambio de clave:')!!}
-				@else
+
 					{!!Form::label('Nueva password:')!!}
-				@endif
+	
 				{!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una password', 'maxlength' => '100'])!!}
 			</div>
 			<div class='form-group has-feedback has-feedback-left'>

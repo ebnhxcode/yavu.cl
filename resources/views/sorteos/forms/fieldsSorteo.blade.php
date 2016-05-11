@@ -1,3 +1,6 @@
+ <div class="col-md-4 col-sm-12 col-xs-12">
+		@include('miniDashboard.miniDashboard')
+	</div>
 <div class="col-md-8 col-sm-12 col-xs-12">
 	<div class="list-group" >
 		<div class="list-group-item">

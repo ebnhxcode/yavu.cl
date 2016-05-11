@@ -114,7 +114,7 @@
                               </button>
 
                               <address>
-                                <strong>Contacto</strong><br>
+                                <strong>Contacto: <a href="mailto:#">{!!$e->email!!}</a></strong><br>
                                 <a href="mailto:#">{!!$e->email!!}</a>
                               </address>
                             </div>
@@ -142,35 +142,6 @@
             </div><!-- /div col-md-5 col-sm-5 col-xs-5 -->
           </div>
 
-          @if(Auth::user()->check())
-
-            @if(Auth::user()->get()->id == $e->user_id)
-
-              <div class="list-group">
-                <div class="list-group-item">
-                  <h3><span class="list-group-item list-group-item-success">Gráficos</span></h3>
-                  <div class="wrapper">
-                    <div class="counter col_fourth">
-                      <i class="fa fa-code fa-2x"></i>
-                      <p class="count-text ">Visitas</p>
-                      <h2 class="timer count-title" id="count-number" data-to="300" data-speed="1500"></h2>
-                    </div>
-                    <div class="counter col_fourth">
-                      <i class="fa fa-coffee fa-2x"></i>
-                      <p class="count-text ">Impacto Publicaciones</p>
-                      <h2 class="timer count-title" id="count-number" data-to="17870" data-speed="1500"></h2>
-                    </div>
-                    <div class="counter col_fourth">
-                      <i class="fa fa-lightbulb-o fa-2x"></i>
-                      <p class="count-text ">Coins Otorgadas</p>
-                      <h2 class="timer count-title" id="count-number" data-to="847" data-speed="1500"></h2>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              @endif <!-- /compare -->
-
-              @endif <!-- /AuthCheck -->
 
         </div>
 				<div class="col-md-8 col-sm-12 col-xs-12">
