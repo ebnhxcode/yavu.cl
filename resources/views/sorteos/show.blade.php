@@ -15,7 +15,6 @@
         <div class="row">
           <div class="col-md-8 col-sm-12 col-xs-12">
             <div class="list-group">
-
               @if(isset($winners))
               <div class="list-group-item list-group-item-success">
                 GANADOR DEL SORTEO
