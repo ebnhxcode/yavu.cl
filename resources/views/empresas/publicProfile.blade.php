@@ -30,7 +30,7 @@
                       @if($e->imagen_perfil === "")
                         <img id="ImagenPerfil" src="/img/users/usuario_nuevo.png" class="center-block" class="thumbnail">
                       @else
-                        <img id="ImagenPerfil" src="/img/users/{!!$e->imagen_perfil!!}" class="center-block" class="thumbnail" class="img-rounded" width="100" height="100" class="img-responsive" >
+                        <img id="ImagenPerfil" src="/img/users/{!!$e->imagen_perfil!!}" class="center-block" class="thumbnail" class="img-rounded" width="300px" height="100px" class="img-responsive" >
                       @endif
 
 
@@ -57,7 +57,7 @@
                                               <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
                                               <span class="caret"></span>
                                             </button>
-                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                            <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">
                                               <li><a href="{!!URL::to('/feeds')!!}">Inicio</a></li>
                                               <li>
                                                 {!!link_to_route('empresas.edit', $title = 'Editar Perfil de Empresa', $parameters = $e->id, $attributes = [])!!}
@@ -106,17 +106,17 @@
                                 <strong>{!! strtoupper("".$e->nombre)!!}.</strong><br />
                                 Direcci&oacute;n : {!!$e->direccion!!}<br>
                                 Ciudad : {!!$e->ciudad!!}<br>
-                                N° de contacto : <abbr title="Phone"></abbr> {!!$e->fono!!}
+                                Fono : <abbr title="Phone"></abbr> {!!$e->fono!!}
+                              </address>
+
+                              <address>
+                                <strong>Contacto: <a href="mailto:#">{!!$e->email!!}</a></strong><br>                             
                               </address>
 
                               <!--<h3>{!! $e->descripcion !!}</h3>-->
                               <button id='Info' type='button' class='btn btn-info btn-sm' data-container='body' data-toggle='popover' data-placement='top' data-content='{!! $e->descripcion !!}' data-original-title=''> Descripcion
                               </button>
 
-                              <address>
-                                <strong>Contacto: <a href="mailto:#">{!!$e->email!!}</a></strong><br>
-                                <a href="mailto:#">{!!$e->email!!}</a>
-                              </address>
                             </div>
 
 

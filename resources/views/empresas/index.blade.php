@@ -79,9 +79,9 @@
                             <address>
                               <h4><a class="btn-link" href="/empresa/{!!$empresa->nombre!!}">{!! $empresa->nombre!!}</a></h4>
                               <strong>Ciudad :</strong> {!!$empresa->ciudad!!}<br>
-                              <strong>Contacto <span class="caret"></span></strong><br>
+                              <strong>Contacto :<strong><a href="mailto:#">{!!$empresa->email!!}</a></strong><br>
                               <strong>Fono :</strong> <abbr title="Phone"></abbr> {!!$empresa->fono!!}<br>
-                              <a href="mailto:#">{!!$empresa->email!!}</a>
+
                             </address>
 
                             <div align="center">
