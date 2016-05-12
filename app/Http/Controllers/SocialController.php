@@ -16,6 +16,7 @@ use Carbon\Carbon;
 
 
 class SocialController extends Controller{
+  private $userLogin;
   public function getSocialAuth($provider){
 
     //dd(config("services.$provider"));
@@ -44,26 +45,19 @@ class SocialController extends Controller{
 
   public function getSocialAuthCallback($provider){
 
-
-
     $user = Socialite::driver($provider)->user();
 
-    if(isset($user) && $user =! null){
+    if(!empty($user) && $user->email){
 
 
-
-      /*
-      if($user->email == null){
-        $user->email = str_replace(" ","",addslashes($user->name))."@facebook.com";
-      }
-      */
 
       $this->userLogin = User::where('email', $user->email)->first();
 
-      if($this->userLogin) {
-        if (Auth::user()->login($this->userLogin)) {
-          return Redirect::to('/feeds');
-        }
+      if($this->userLogin){
+        //Auth::user()->attempt(['email' => $this->userLogin->email, 'password' => $this->userLogin->password]);
+        Auth::user()->login($this->userLogin);
+        return Redirect::to('/feeds');
+
       }else{
 
         //if($user->email != null){
@@ -113,8 +107,8 @@ class SocialController extends Controller{
       }
 
     }else{
-      Session::flash('message-info', 'Usted no tiene ningun correo publico, no podrá iniciar sesion con facebook');
-      return Redirect::to('/login');
+      Session::flash('message-info', '<h3>Usted no tiene ningun correo publico, no podrá iniciar sesion con facebook, te invitamos a registrarte a trav&eacute;s de nuestro formulario.</h3>');
+      return Redirect::to('/usuarios/create');
     }
   }
 }
