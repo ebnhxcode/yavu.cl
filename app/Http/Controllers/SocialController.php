@@ -27,17 +27,14 @@ class SocialController extends Controller{
       return Redirect::to('/login');
     }else{
 
-      if($provider){
-
-      }
 
       $this->test = Socialite::driver($provider)->redirect();
 
       if(isset($this->test)){
         return Socialite::driver($provider)->redirect();
       }else{
-        Session::flash('message-warning', 'Ocurri&oacute; un error al enlazar la informaci&oacute;n');
-        return Redirect::to('/login');
+        Session::flash('message-warning', 'Ocurri&oacute; un error al enlazar la informaci&oacute;n te invitamos a completar el formulario de registro manual!');
+        return Redirect::to('/usuarios/create');
       }
 
     }
