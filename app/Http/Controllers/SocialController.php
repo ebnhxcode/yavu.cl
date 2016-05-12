@@ -48,7 +48,7 @@ class SocialController extends Controller{
 
     $user = Socialite::driver($provider)->user();
 
-    if(isset($user) || $user =! null){
+    if(isset($user) && $user =! null){
 
 
 
