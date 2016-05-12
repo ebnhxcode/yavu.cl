@@ -22,8 +22,10 @@
 				<div class='form-group has-feedback has-feedback-left'>
 
 					@if(Request::path() != 'usuarios/create')
-						(<strong><small><span class='requerido'>Ingrese <i>solo</i> si desea cambiarla</span></small></strong>) {!!Form::label('Cambio de clave:')!!}
+						(<strong><small><span class='requerido'>Ingrese <i>solo</i> si desea cambiarla</span></small></strong>)
+						{!!Form::label('Cambio de clave:')!!}
 					@else
+						(<strong><small><span class='requerido'>Requerido</span></small></strong>)
 						{!!Form::label('Nueva password:')!!}
 					@endif
 				{!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una password', 'maxlength' => '100'])!!}
@@ -79,7 +81,7 @@
 
 
 			<div class='form-group has-feedback has-feedback-left'>
-				(<strong><small><span class='requerido'>Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar avatar:')!!}<span id='Perfil'></span><br>
+				(<strong><small><span class='requerido'>Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar foto de perfil:')!!}<span id='Perfil'></span><br>
 				<div>
 					<span class='btn-file btn-md'>
 						Buscar imagen{!!Form::file('imagen_perfil', ['id' => 'imagen_perfil',  'maxlength' => '255',  'size' => '2048'])!!}
@@ -99,7 +101,7 @@
 			</div>
 
 			<div class='form-group has-feedback has-feedback-left'>
-				(<strong><small><span class='requerido'>Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar banner personal:')!!}<span id='Portada'></span><br>
+				(<strong><small><span class='requerido'>Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar portada:')!!}<span id='Portada'></span><br>
 				<div>
 					<span class='btn-file btn-md'>
 						Buscar imagen{!!Form::file('imagen_portada', ['id' => 'imagen_portada',  'maxlength' => '255', 'size' => '2048'])!!}

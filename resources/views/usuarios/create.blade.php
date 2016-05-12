@@ -3,6 +3,10 @@
 <div class='jumbotron'>
 	<div id='contentMiddle'>
 		@include('alerts.alertFields')
+		@include('alerts.errorsMessage')
+		@include('alerts.successMessage')
+		@include('alerts.warningMessage')
+		@include('alerts.infoMessage')
 		<h4>Registro de usuarios </h4>
 		<div class='row'>
 			{!!Form::open([route('usuarios_create_path'), 'method'=>'POST', 'files' => true])!!}
