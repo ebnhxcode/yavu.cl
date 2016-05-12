@@ -114,7 +114,7 @@
 			$(res).each(function(key,value){
 				if(value.user_id === user_id){
 					//$('#estado_'+status_id).addClass("btn-coins-down").fadeIn();
-					$('#imgcoin'+status_id).attr('src', '/img/newGraphics/yavucoin_neo01_small02.png').fadeIn();
+					$('#imgcoin'+status_id).attr('src', '/img/newGraphics/cobrar_coins02.png').fadeIn();
 					//+"<img id='imgcoin"+value.id+"' src='/img/newGraphics/yavucoin_neo01_small01.png' />"
 				}
 				//Contador += 1;
