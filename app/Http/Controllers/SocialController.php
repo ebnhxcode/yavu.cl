@@ -47,7 +47,7 @@ class SocialController extends Controller{
 
     $user = Socialite::driver($provider)->user();
 
-    if(!empty($user) && $user->email){
+    if(!empty($user) && !empty($user->email)){
 
 
 
