@@ -252,7 +252,7 @@
 
 	function ValidarRut(rut){
 		console.log("click");
-		var route = "http://localhost:8000/validarrutempresa/"+rut+"";
+		var route = "http://yavu.cl/validarrutempresa/"+rut+"";
 		document.getElementById('FormEmpresa').onsubmit = function() {
 		    return false;
 		}

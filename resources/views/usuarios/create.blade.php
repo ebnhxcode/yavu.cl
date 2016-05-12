@@ -1,4 +1,7 @@
 @extends('layouts.front')
+@if(isset($var))
+	{!! $var !!}
+@endif
 @section('content')
 <div class='jumbotron'>
 	<div id='contentMiddle'>
