@@ -40,7 +40,7 @@ $(document).ready(function(){
 		Global_idUltimaNotificacion = $("#idUltima").val();
 		var user_id = $("#user_id").val();
 		var Contador = 0;
-		var route = "http://localhost:8000/cargarpops/"+Global_idUltimaNotificacion+"/"+user_id+"/todas";
+		var route = "http://yavu.cl/cargarpops/"+Global_idUltimaNotificacion+"/"+user_id+"/todas";
 		$.ajax({
 			url: route,
 			type: 'GET',
@@ -141,7 +141,7 @@ $(document).ready(function(){
 
   function ContarInteracciones(status_id) {
     status_id = status_id;
-    var route = "http://localhost:8000/contarinteracciones/"+status_id;
+    var route = "http://yavu.cl/contarinteracciones/"+status_id;
     var user_id = $("#user_id").val();
     var Contador = 0;
     $.get(route, function(res){
@@ -158,7 +158,7 @@ $(document).ready(function(){
 
 	function ContarEstados(){
 		var CargarEstados = $("#CargarEstados"); 
-		var route = "http://localhost:8000/contarestados";
+		var route = "http://yavu.cl/contarestados";
 		var user_id = $("#user_id");
 		var Contador = 0;
 		$.get(route, function(res){
