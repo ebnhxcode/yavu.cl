@@ -155,13 +155,13 @@ class UserController extends Controller{
   }
 
   public function update($id, UserUpdateRequest $request){
-    if(RUT::check($request->rut)){
+    if(RUT::check($request->rut) || !$request->rut){
       $this->user->fill($request->all());
       $this->user->save();
       Session::flash('message', 'Usuario editado correctamente');
       return Redirect::to('/profile');
     }else{
-      Session::flash('message-error', 'El rut ingresado no es válido.');
+      //Session::flash('message-error', 'El rut ingresado no es válido.');
       return Redirect::to('/profile');
     }
   }
