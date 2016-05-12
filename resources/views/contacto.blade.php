@@ -19,11 +19,11 @@
           <div class="col-md-12">
             {!!Form::open(['route' =>'mail.store','method'=>'POST'])!!}
             Nombre:
-            {!!Form::text('name',null,['class'=>'form-control','placeholder'=>'Ingresa tu nombre', 'required'=>'required'])!!}
+            {!!Form::text('name',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre', 'required'=>'required'])!!}
             Email:
-            {!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingresa tu email', 'required'=>'required'])!!}
+            {!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su e-mail', 'required'=>'required'])!!}
             Mensaje:
-            {!!Form::textarea('mensaje',null,['class'=>'form-control','placeholder'=>'Ingresa tu mensaje', 'required'=>'required','rows'=>'6'])!!}
+            {!!Form::textarea('mensaje',null,['class'=>'form-control','placeholder'=>'Tema...', 'required'=>'required','rows'=>'6'])!!}
             <br>
             {!!Form::submit('Enviar', ['class' => 'btn btn-primary'])!!}
             {!!Form::close()!!}

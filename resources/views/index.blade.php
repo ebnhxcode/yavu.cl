@@ -42,7 +42,7 @@
         <div>
           <img src="/img/newGraphics/neo_icono_premios.png" class="img-responsive">
           <div class="panel-body">
-            <p class='lead'>Hay cientos de comercios esperando por ti!</p>
+            <p class='lead'>Descubre comercios en tu ciudad y participa por premios.</p>
           </div>
         </div>
       </div>
@@ -51,7 +51,7 @@
         <div>
           <img src="/img/newGraphics/neo_icono_comercio02.png" class="img-responsive">
           <div class="panel-body">
-            <p class='lead'>Conoce que comentan los comercios en tiempo real.</p>
+            <p class='lead'>Acumula nuestras Yavü Coins en las publicaciones de las empresas.</p>
           </div>
         </div>
       </div>
@@ -60,7 +60,7 @@
         <div>
           <img src="/img/newGraphics/neo_icono_conoce_empresa.png" class="img-responsive">
           <div class="panel-body">
-            <p class='lead'>Acumula Yavu Coins y accede a beneficios.</p>
+            <p class='lead'>Compra Tickets con tus Coins y úsalos en los sorteos.</p>
           </div>
         </div>
       </div>
