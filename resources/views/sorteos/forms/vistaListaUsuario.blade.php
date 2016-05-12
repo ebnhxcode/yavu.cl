@@ -66,6 +66,7 @@
 				</div> <!-- /col-md-8 col-sm-12 col-xs-12 -->
 
 				<div class="col-md-4 col-sm-12 col-xs-12">
+					<strong>Empresa: </strong>
 					<div class="well well-sm">
 						<a href="{!! URL::to('/empresa/'.$sorteo->nombre_empresa) !!}">{!! $sorteo->nombre_empresa !!}</a>
 					</div>
@@ -113,6 +114,14 @@
 									@endif
 								</ul>
 							</div><!-- /dropup button menu -->
+							<br>
+
+							<div id="msjs{!! $sorteo->id !!}" class="alert alert-info alert-dismissible" style="display: none;" role="alert">
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+
 						@else
 							<a href="{!! URL::to('usuarios/create') !!}" class="btn btn-primary btn-sm" role="button">Participar!</a>
 						@endif

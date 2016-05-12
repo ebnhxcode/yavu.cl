@@ -53,16 +53,25 @@
             </div><!-- /div list-group -->
 
             <div class="list-group">
+
+              <div id="msjs{!! $sorteo->id !!}" class="alert alert-info alert-dismissible" style="display: none;" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
               <div class="list-group-item">
+                <div class="amplio">
+                  <input id="token" type="hidden" name="_token" value="{!! csrf_token() !!}">
+                  <button class="btn btn-success btn-md UsarTicket" value="{!! $sorteo->id !!}" type="button"   style="display: none; width: 100%;" data-dismiss="modal">Participar</button>
+                </div>
+
                 @if($sorteo->imagen_sorteo === "")
                   <img class="img-responsive-centered" width="40%" src="https://tiendas-asi.com/wp-content/uploads/2015/04/sorteo-diariodebodas.jpg" alt="" />
                 @else
                   <img class="img-responsive-centered" src="/img/users/{!! $sorteo->imagen_sorteo !!}" alt="" />
                 @endif
-                  <div class="semi-amplio">
-                    <input id="token" type="hidden" name="_token" value="{!! csrf_token() !!}">
-                    <button class="btn btn-success btn-md UsarTicket" value="{!! $sorteo->id !!}" type="button"   style="display: none; width: 100%;" data-dismiss="modal">Participar</button>
-                  </div>
+
               </div><!-- /div list-group-item-full-header -->
             </div><!-- /div list-group -->
           </div><!-- /div col-md-8 col-sm-12 col-xs-12 -->
@@ -78,7 +87,6 @@
                     <input class="form-control" type="text" disabled="disabled" value="{!!$sorteo->nombre_sorteo!!}">
                   </h5>
                   <h5>
-                    <strong>Descripción del Sorteo: </strong>
                     <strong>Descripción del Sorteo: </strong>
                     <textarea disabled class="form-control">{!!$sorteo->descripcion!!}</textarea>
                   </h5>

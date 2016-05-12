@@ -1,4 +1,4 @@
-@extends('layouts.front')
+	@extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
@@ -9,8 +9,11 @@
     </div>
 		<div class="row">
 			{!!Form::open(['route'=>'sorteos.store', 'method'=>'POST', 'files' => true, 'id' => 'FormSorteo'  ])!!}
-			@include('sorteos.forms.fieldsSorteo')
-			<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="col-md-4 col-sm-12 col-xs-12">
+				@include('miniDashboard.miniDashboard')
+			</div>
+			<div class="col-md-8 col-sm-12 col-xs-12">
+				@include('sorteos.forms.fieldsSorteo')
 				<div class="list-group">
 					<div class="list-group-item">
 						<h4>Todos los campos son requeridos</h4>
@@ -23,6 +26,12 @@
 						</div>
 					</div>
 				</div><!-- /div list-group -->
+			</div><!-- div col-md-8 -->
+
+
+
+			<div class="col-md-12 col-sm-12 col-xs-12">
+
 			</div><!-- /div col-md-4 col-sm-12 col-xs-12 -->
 		</div><!-- /div row -->
 	</div><!-- /div content middle -->
