@@ -2,7 +2,7 @@
 @section('content')
 <div class="jumbotron">
  	<div id="contentMiddle">
-		<h1>Terminos y condiciones</h1>
+		<h2>Terminos y condiciones</h2>
 
 	
 		<div class="panel panel-default">
@@ -22,7 +22,7 @@
 				</div>		    
 		  	</div>
 		</div>
-			<h1>Registro de usuario</h1>
+			<h2>Registro de usuario</h2>
 		<div class="panel panel-default">
 
 			<div id="contentMiddle">
@@ -53,7 +53,7 @@
 
 		</div>
 
-		<h1>Condiciones generales</h1>
+		<h2>Condiciones generales</h2>
 		<div class="panel panel-default">
 
 			
@@ -96,7 +96,7 @@
 		  </div>
 
 		</div>
-		<h1>Jurisdicción y Ley Aplicable</h1>
+		<h2>Jurisdicción y Ley Aplicable</h2>
 		<div class="panel panel-default">
 			<div id="contentMiddle">
 		

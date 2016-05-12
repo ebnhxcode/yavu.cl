@@ -29,7 +29,7 @@
 		<script>$.ajaxSetup({ cache:false });</script>
 		<script>$.ajaxSetup({ headers: { 'csrftoken' : '{!! csrf_token() !!}' } });</script>
 		<script>$.ajaxSetup({ headers: { 'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')}});</script>
-		@if(Request::path() != 'login' )
+		@if(Request::path() != 'login' && Request::path() != 'contacto')
 		<style>
 			body {
 				padding-top:50px;
@@ -62,27 +62,13 @@
 					@if(Auth::user()->check())
 						<div class="navbar-brand" align="center" >
 							<a href="#!">
-                <img src="{!! asset('/img/dash/ico_notificacion005.png') !!}" width="24px" id="Notificaciones" title="Notificaciones <a href='/pops' style='float: right;'>ver todas</a>" data-toggle="popover" title="Popover title" data-placement="bottom" aria-hidden="true" alt="">
+                <img src="{!! asset('/img/newGraphics/neo_notificacion02_32x32.gif') !!}" width="24px" id="Notificaciones" title="Notificaciones <a href='/pops' style='float: right;'>ver todas</a>" data-toggle="popover" title="Popover title" data-placement="bottom" aria-hidden="true" alt="">
                 <small>
 									<span id="CantidadNotificaciones" style="float:right;" class="label label-danger"></span>
 								</small>
 							</a>
 						</div>
-						<div class="navbar-brand" align="center">
-							<small>
-								<img width="24px" src="/img/newGraphics/yavucoin_neo01_small01.png" alt="">
-								<span id="" style="float:right;" class="label label-warning CantidadCoins"></span>
-							</small>
-						</div>
-						<div class="navbar-brand" align="center">
 
-							<!-- <span class="glyphicon glyphicon-tag" style="font-size: 1.2em; color: #BEF781;"></span> -->
-
-							<small>
-                <img width="22px" src="/images/ticket.png" alt="">
-                <span id="CantidadTickets" style="float:right;" class="label label-info"></span>
-              </small>
-						</div>
 						<!--
 						<div class="navbar-brand">
 							<a href="#!">
@@ -96,6 +82,23 @@
 				</div><!-- /navbar-header -->
 
 				<div id="navbar" class="navbar-collapse collapse">
+					@if(Auth::user()->check())
+						<div class="navbar-brand" align="center">
+							<small>
+								<img width="24px" src="/img/newGraphics/neo_yavucoin01_32x32.png" alt="">
+								<span id="" style="float:right;" class="label label-warning CantidadCoins"></span>
+							</small>
+						</div>
+						<div class="navbar-brand" align="center">
+
+							<!-- <span class="glyphicon glyphicon-tag" style="font-size: 1.2em; color: #BEF781;"></span> -->
+
+							<small>
+								<img width="22px" src="/img/newGraphics/neo_tickets01_32x32.gif" alt="">
+								<span id="CantidadTickets" style="float:right;" class="label label-info"></span>
+							</small>
+						</div>
+					@endif
 					<ul class="nav navbar-nav navbar-right">
 						@if(!Auth::user()->check() && !Auth::empresa()->check() && !Auth::admin()->check())
 							<li class="dropdown"><a href="{!!URL::to('/nosotros')!!}"><span role="button" class="navbar-button-hover">NUESTRA EMPRESA</span></a></li>
@@ -178,7 +181,7 @@
 
 		@yield('content')
 
-		@if(Request::path() != 'login' )
+		@if(Request::path() != 'login' && Request::path() != 'contacto')
 		<div class="container">
 			<footer class="site-footer">
 				<div class="row">

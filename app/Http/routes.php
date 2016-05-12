@@ -2,7 +2,6 @@
 Route::get('breweries', ['middleware' => 'cors', function(){return \Response::json(\yavu\Brewery::with('beers', 'geocode')->paginate(10), 200);}]);
 
 Route::get('/clear-cache', function() {
-
    view('index');
 });
 
@@ -12,6 +11,10 @@ Route::post('usuarios/create', ['uses' => 'UserController@store', 'as' => 'usuar
 
 Route::get('usuarios/create', ['uses' => 'UserController@create', 'as' => 'usuarios_create_path',]);
 
+Route::post('usuarios/reset', [
+  'uses' => 'UserController@reset',
+  'as' => 'usuarios_resetpassword_path',
+]);
 
 
 
@@ -20,7 +23,7 @@ Route::get('logout', 'LogController@logout');
 
 
 /*
-Route::get('', '');
+
 Route::get('', '');
 Route::get('', '');
 Route::get('', '');

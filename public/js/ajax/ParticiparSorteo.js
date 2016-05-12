@@ -274,8 +274,21 @@ $(document).ready(function(){
 				user_id: user_id,
 				sorteo_id: sorteo_id
 			},
-			success:function(){
+			success:function(msj){
 				$(".UsarTicket").css({width:'100%'});
+				$('#msjs'+sorteo_id).text('');
+				$('#msjs'+sorteo_id).append('<button type="button" class="close" data-dismiss="alert" aria-label="Close">'+
+					'<span aria-hidden="true">&times;</span>'+
+					'</button>');
+				$('#msjs'+sorteo_id).append(msj[1]).fadeIn();
+			},
+			error:function(msj){
+				//console.log(msj.responseText);
+				$('#msjs'+sorteo_id).text('');
+				$('#msjs'+sorteo_id).append('<button type="button" class="close" data-dismiss="alert" aria-label="Close">'+
+					'<span aria-hidden="true">&times;</span>'+
+				'</button>');
+				$('#msjs'+sorteo_id).append(msj.responseText).fadeIn();
 			}
 		});
 		return true;

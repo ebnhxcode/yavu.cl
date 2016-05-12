@@ -1,18 +1,14 @@
 {!!Html::script('js/jquery.js')!!}
 @extends('layouts.front')
 @section('content')
-{!!Form::open(['route' =>'mail.store','method'=>'POST'])!!}
-<div class="jumbotron">
+
+<div class="">
   <div id="contentMini">
 
-    <div class="panel panel-default">
-      <div class="panel-body">
+    <div style="color: #fff">
+      <div>
         <h2>Contacto <img width="150" style="float: right;" src="{!! URL::to('img/yavu005.png') !!}" alt=""></h2>
-        <hr>
-          <div align="center">
-            <h6>¡ANTE CUALQUIER CONSULTA NO DUDES EN CONTACTARNOS!</h6>
-          </div>
-        <hr>
+
         @include('alerts.alertFields')
         @include('alerts.errorsMessage')
         @include('alerts.successMessage')
@@ -21,8 +17,7 @@
 
         <div class="row">
           <div class="col-md-12">
-
-            {!!Form::open()!!}
+            {!!Form::open(['route' =>'mail.store','method'=>'POST'])!!}
             Nombre:
             {!!Form::text('name',null,['class'=>'form-control','placeholder'=>'Ingresa tu nombre', 'required'=>'required'])!!}
             Email:
@@ -30,11 +25,14 @@
             Mensaje:
             {!!Form::textarea('mensaje',null,['class'=>'form-control','placeholder'=>'Ingresa tu mensaje', 'required'=>'required','rows'=>'6'])!!}
             <br>
-            {!!Form::submit('Enviar', ['class' => 'btn btn-success'])!!}
+            {!!Form::submit('Enviar', ['class' => 'btn btn-primary'])!!}
             {!!Form::close()!!}
 
-
           </div>
+        </div>
+
+        <div align="center">
+          <h4>¡ANTE CUALQUIER CONSULTA NO DUDES EN CONTACTARNOS!</h4>
         </div>
 
 
@@ -43,7 +41,7 @@
     </div>
   </div>
 </div>
-{!!Form::close()!!}
+
 
 @stop
 

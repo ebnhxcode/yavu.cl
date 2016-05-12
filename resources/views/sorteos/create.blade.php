@@ -1,16 +1,19 @@
-@extends('layouts.front')
+	@extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
 		@include('alerts.alertFields')
     @include('sorteos.forms.modalTerminosCondicionesSorteo')
     <div class="" style="font-size: 3em;">
-      <img id="img" width="8%" src= "{!!URL::to('img/newGraphics/neo_icono_sorteo.png')!!}"/><span ><a href="{!! URL::to('sorteos') !!}" class="btn-link">Sorteos</a> <span class="requerido">\</span> Crear nuevo</span>
+      <img id="img" style="padding-bottom: 20px;" width="8%" src= "{!!URL::to('img/newGraphics/neo_icono_sorteo.png')!!}"/><span ><a href="{!! URL::to('sorteos') !!}" class="btn-link">Sorteos</a> <span class="requerido">\</span> Crear nuevo</span>
     </div>
 		<div class="row">
 			{!!Form::open(['route'=>'sorteos.store', 'method'=>'POST', 'files' => true, 'id' => 'FormSorteo'  ])!!}
-			@include('sorteos.forms.fieldsSorteo')
 			<div class="col-md-4 col-sm-12 col-xs-12">
+				@include('miniDashboard.miniDashboard')
+			</div>
+			<div class="col-md-8 col-sm-12 col-xs-12">
+				@include('sorteos.forms.fieldsSorteo')
 				<div class="list-group">
 					<div class="list-group-item">
 						<h4>Todos los campos son requeridos</h4>
@@ -23,6 +26,12 @@
 						</div>
 					</div>
 				</div><!-- /div list-group -->
+			</div><!-- div col-md-8 -->
+
+
+
+			<div class="col-md-12 col-sm-12 col-xs-12">
+
 			</div><!-- /div col-md-4 col-sm-12 col-xs-12 -->
 		</div><!-- /div row -->
 	</div><!-- /div content middle -->

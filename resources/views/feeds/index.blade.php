@@ -6,7 +6,7 @@
 <div class="jumbotron">
   <div id="contentMiddle">
 		<div style="font-size: 3em;">
-			<img width="64px" src= "{!!URL::to('img/newGraphics/neo_icono_publicaciones.png')!!}" /><span>Publicaciones</span>
+			<img width="64px" style="padding-bottom: 20px;" src= "{!!URL::to('img/newGraphics/neo_icono_publicaciones.png')!!}" /><span>Publicaciones</span>
 		</div>
     <div class="row">
     	<div class="col-md-12 col-sm-12 col-xs-12">
@@ -114,7 +114,7 @@
 			$(res).each(function(key,value){
 				if(value.user_id === user_id){
 					//$('#estado_'+status_id).addClass("btn-coins-down").fadeIn();
-					$('#imgcoin'+status_id).attr('src', '/img/newGraphics/yavucoin_neo01_small02.png').fadeIn();
+					$('#imgcoin'+status_id).attr('src', '/img/newGraphics/cobrar_coins02.png').fadeIn();
 					//+"<img id='imgcoin"+value.id+"' src='/img/newGraphics/yavucoin_neo01_small01.png' />"
 				}
 				//Contador += 1;

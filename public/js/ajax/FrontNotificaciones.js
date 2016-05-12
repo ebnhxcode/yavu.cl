@@ -82,6 +82,7 @@ $(document).ready(function(){
 			success: function success(data, status) {
 				var ImagenPerfilEmpresa = "";
 				$(data).each(function(key, value){
+					console.log(value);
 					var TimeAgo = value.created_at;
 					Global_idUltimaNotificacion = value.id;		
 					ImagenPerfilEmpresa = "/img/users/"+value.imagen_perfil_empresa;
@@ -100,7 +101,7 @@ $(document).ready(function(){
 						+"</div>";
 					}else if($.trim(value.tipo) === 'activacion'){
 						pops +=
-							"<a class='list-group-item' href='/empresas/"+value.empresa_id+"'>"
+							"<a class='list-group-item' href='/empresas/"+value.ide+"'>"
 								+"<div >"
 									+"<div class='text-info' >"
 										+"<img src='/img/newGraphics/neo_icono_empresa_crear.png' style='width: 32px;' />&nbsp;"+value.contenido+"<br>"
@@ -115,7 +116,7 @@ $(document).ready(function(){
 							"<div id='notificacion" + value.id + "' class='list-group'>"
 							+ "<div class='list-group-item'>"
 							+ "<img src='/img/newGraphics/neo_icono_tickets.png' style='width: 32px;' />&nbsp;"
-							+ value.contenido
+							+ value.contenidoe
 							+ "</div>"
 							+ "<div class='list-group-item panel-footer-small'>"
 							+ "<small>"

@@ -5,7 +5,7 @@
 <div class="jumbotron">
 	<div id="contentMiddle">
 		<div class="" style="font-size: 2em;">
-			<img width="8%" src= "{!!URL::to('img/newGraphics/neo_icono_empresa.png')!!}"/><span>Empresas <span class="requerido">\</span> Informacion de : {!!$empresa->nombre!!}</span>
+			<img width="8%" style="padding-bottom: 20px;" src= "{!!URL::to('img/newGraphics/neo_icono_empresa.png')!!}"/><span>Empresas <span class="requerido">\</span> Informacion de : {!!$empresa->nombre!!}</span>
 		</div>
 		@include('alerts.alertFields')
 		@include('alerts.errorsMessage')

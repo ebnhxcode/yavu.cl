@@ -7,7 +7,7 @@
 <div class="jumbotron">
   <div id="contentMiddle">
 		<div class="" style="font-size: 3em;">
-			<img id="img" width="8%" src= "{!!URL::to('img/newGraphics/yavucoin_neo02a.png')!!}"/><span>Notificaciones</span>
+			<img id="img" style="padding-bottom: 20px;" width="8%" src= "{!!URL::to('img/newGraphics/yavucoin_neo02a.png')!!}"/><span>Notificaciones</span>
 		</div>
 
     <div class="row">

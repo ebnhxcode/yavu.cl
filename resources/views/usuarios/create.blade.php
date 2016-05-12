@@ -1,9 +1,16 @@
 @extends('layouts.front')
+@if(isset($var))
+	{!! $var !!}
+@endif
 @section('content')
 <div class='jumbotron'>
 	<div id='contentMiddle'>
 		@include('alerts.alertFields')
-		<h4>Registro de cliente </h4>
+		@include('alerts.errorsMessage')
+		@include('alerts.successMessage')
+		@include('alerts.warningMessage')
+		@include('alerts.infoMessage')
+		<h4>Registro de usuarios </h4>
 		<div class='row'>
 			{!!Form::open([route('usuarios_create_path'), 'method'=>'POST', 'files' => true])!!}
 			@include('usuarios.forms.fieldsUser')

@@ -7,7 +7,7 @@
     @include('alerts.successMessage')
     @include('alerts.warningMessage')
     <div class="" style="font-size: 3em;">
-      <img id="img" width="8%" src= "{!!URL::to('img/newGraphics/neo_icono_tickets.png')!!}"/><span> <a href="{!! URL::to('tickets') !!}">Ticket's</a><span class="requerido">\</span> Historial</span>
+      <img id="img" style="padding-bottom: 20px;" width="8%" src= "{!!URL::to('img/newGraphics/neo_icono_tickets.png')!!}"/><span> <a href="{!! URL::to('tickets') !!}">Ticket's</a><span class="requerido">\</span> Historial</span>
     </div>
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">

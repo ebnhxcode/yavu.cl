@@ -9,7 +9,7 @@
 		@include('alerts.warningMessage')
 		@include('alerts.infoMessage')
     <div class="" style="font-size: 3em;">
-      <img id="img" width="8%" src= "{!!URL::to('img/newGraphics/neo_icono_empresa.png')!!}"/><span>Empresas</span>
+      <img id="img" style="padding-bottom: 20px;" width="8%" src= "{!!URL::to('img/newGraphics/neo_icono_empresa.png')!!}"/><span>Empresas</span>
     </div>
     <div class="row">
       <div class="col-md-4 col-sm-12 col-xs-12">
@@ -79,9 +79,9 @@
                             <address>
                               <h4><a class="btn-link" href="/empresa/{!!$empresa->nombre!!}">{!! $empresa->nombre!!}</a></h4>
                               <strong>Ciudad :</strong> {!!$empresa->ciudad!!}<br>
-                              <strong>Contacto <span class="caret"></span></strong><br>
+                              <strong>Contacto :<strong><a href="mailto:#">{!!$empresa->email!!}</a></strong><br>
                               <strong>Fono :</strong> <abbr title="Phone"></abbr> {!!$empresa->fono!!}<br>
-                              <a href="mailto:#">{!!$empresa->email!!}</a>
+
                             </address>
 
                             <div align="center">
