@@ -102,11 +102,9 @@ class SocialController extends Controller{
           }
 
         }else{
-          Session::flash('message-warning', '<h2>Estimado usuario:</h2> <h3>No se ha podido obtener la informaci&oacute;n para poder registrarte desde facebook, te invitamos a usar el siguiente formulario para que puedas registrarte.</h3>');
+          Session::flash('message-warning', '<h2>Estimado usuario:</h2> <h3>Su configuración de seguridad en facebook no nos permite realizar el registro, le invitamos a utiliar el siguiente formualario para registrarse.</h3>');
           return Redirect::to('/usuarios/create');
         }
-
-
 
       }
 
