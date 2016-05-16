@@ -25,7 +25,7 @@
 						<!-- SECCION DE LAS FOTO DE PERFIL Y PORTADA -->
 						<div id="IPortada" class=''>
 							<div class='thumbnail'>
-								@if($user->imagen_portada === '')
+								@if($user->imagen_portada == '')
 									<img id='ImagenPortada' src='/img/users/banner.png' width=100%>
 								@else
 									<img id='ImagenPortada' src='/img/users/{!!$user->imagen_portada!!}' alt='...'>
@@ -43,7 +43,7 @@
 
 					<div class="list-group">
 						<div class="list-group-item">
-							@if($user->imagen_perfil === '')
+							@if($user->imagen_perfil == '')
 								<img id='ImagenPerfil' src='/img/users/usuario_nuevo.png' class='center-block'>
 							@else
 								<img id='ImagenPerfil' src='/img/users/{!!$user->imagen_perfil!!}' class='center-block' width='100' height='100' class='img-responsive'>

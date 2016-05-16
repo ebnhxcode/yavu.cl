@@ -13,12 +13,19 @@
 		<link rel="apple-touch-icon" href="apple-touch-icon.png">
 		{!!Html::script('js/jquery.js')!!}
 		{!!Html::script('js/all.js')!!}
+
 		@if(Auth::user()->check())
+
 			{!!Html::script('js/vendor/jquery.timeago.js')!!}
+
 			{!!Html::script('js/ajax/FrontNotificaciones.js')!!}
+
 			{!!Html::script('js/ajax/GestionarCoins.js')!!}
+
 			{!!Html::script('js/plugins.js')!!}
+
 			{!!Html::script('js/ajax/GestionarCompraTicket.js')!!}
+
 		@endif
 
 
