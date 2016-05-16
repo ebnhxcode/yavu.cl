@@ -16,6 +16,7 @@ use Mail;
 use Carbon\Carbon;
 class UserController extends Controller{
   private $user;
+  private $userNormalData;
   public function __construct(){
     if(Auth::user()->check()){
       return $this->user = $this->getSessionData();
@@ -73,6 +74,10 @@ class UserController extends Controller{
     return User::find(Auth::user()->get()->id);
   }
 
+  private function getNormalDataForUser(){
+    return ['id' => $this->user->id,'nombre' => $this->user->nombre,'email' => $this->user->email,'ciudad' => $this->user->ciudad,'imagen_portada' => $this->user->imagen_portada,'imagen_perfil' => $this->user->imagen_perfil,];
+  }
+
   public function index(){
     return $this->profile();
   }
@@ -82,7 +87,7 @@ class UserController extends Controller{
   }
 
   public function profile(){
-    return view('usuarios.profile', ['user' => $this->user]);
+    return view('usuarios.profile', ['user' => $this->getNormalDataForUser()]);
   }
 
   public function reset(Request $request){
