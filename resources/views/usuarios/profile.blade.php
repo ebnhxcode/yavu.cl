@@ -29,11 +29,12 @@
 									<img id='ImagenPortada' src='/img/users/banner.png' width=100%>
 								@else
 									<img id='ImagenPortada' src='/img/users/{!!$user->imagen_portada!!}' alt='...'>
-								@endif								
+								@endif
+								{{--
 								<div class='caption'>
-									{!!$user->email!!}
-									{!!$user->ciudad!!}
+
 								</div>
+								--}}
 							</div>
 						</div>
 					</div>
@@ -48,11 +49,14 @@
 							@else
 								<img id='ImagenPerfil' src='/img/users/{!!$user->imagen_perfil!!}' class='center-block' class='thumbnail' class='img-rounded' width='300px' height='300px' class='img-responsive'>
 							@endif
+								<h3>{!! $user->nombre.' '.$user->apellido !!}</h3>
 							<div class="dropdown">
-								<button class="btn btn-default btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-									<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-									<span class="caret"></span>
-								</button>
+
+									<button class="btn btn-default btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+										<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+										<span class="caret"></span>
+									</button>
+
 								<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 									<li>
 										<a href="{!! route('usuarios_edit_path', $user->id) !!}">Editar Perfil de Usuario</a>
