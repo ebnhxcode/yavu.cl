@@ -33,7 +33,6 @@ class EmpresaController extends Controller{
   }
   public function create(){
 
-    if(isset($this->user)){
       $empresa = Empresa::where('user_id', '=', $this->user->id)->get();
       if(count($empresa) < 1){
         return view('empresas.create');
@@ -51,8 +50,6 @@ class EmpresaController extends Controller{
           return view('categorias.create', ['empresa' => $empresa[0]]);
         }
       }
-    }
-    return Redirect::to('/');
   }
 
   public function EstadisticasDeMiEmpresa(){
