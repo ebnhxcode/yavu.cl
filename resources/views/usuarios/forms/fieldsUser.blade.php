@@ -226,13 +226,11 @@
 		ValidarRut($('#rut').val());
 	});
 	$('#rut').keyup(function(e){
-		if (e.keyCode === 13)
-		{
+		if (e.keyCode === 13){
 			ValidarRut($('#rut').val());
 		}
 	});
 	$('.form-control').keyup(function(e){
-
 	});
 	function ValidarRut(rut){
 		console.log('click');

@@ -66,7 +66,7 @@ Route::group(['middleware' => 'user'], function(){
 
   Route::resource('dashboard', 'UserController@dashboard');
   Route::resource('profile', 'UserController@profile');
-  Route::get('infoempresas/{user_id}','UserController@InfoEmpresas')->where('user_id', '[0-9]+');
+  Route::get('infoempresas','UserController@InfoEmpresas');
 
   Route::get('usuarios/{id}/edit', ['uses' => 'UserController@edit', 'as' => 'usuarios_edit_path',]);
   Route::put('usuarios/{id}/edit', ['uses' => 'UserController@update','as' => 'usuarios_put_path',]);

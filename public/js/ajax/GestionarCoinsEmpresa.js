@@ -49,8 +49,7 @@ $(document).ready(function(){
 	}
 
 	function InfoEmpresas(){
-		var user_id = $("#user_id").val();
-		var route = "http://localhost:8000/infoempresas/"+user_id;
+		var route = "http://localhost:8000/infoempresas/";
 		var Pendiente = false;
 		$.get(route, function(res){
 			$("#EstadoEmpresa").value = "";

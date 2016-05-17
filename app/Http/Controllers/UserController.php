@@ -37,6 +37,7 @@ class UserController extends Controller{
   }
 
   public function BuscarUsuarios($nombre){
+    /*
     if(isset($nombre)){
       $nombre = addslashes($nombre);
       $usuarios = DB::table('users')
@@ -51,7 +52,8 @@ class UserController extends Controller{
         ->get();
       return response()->json($usuarios);
     }
-    return response()->json(["Mensaje: " => "No se encontró la búsqueda."]);
+    */
+    return response()->json(["Mensaje: " => "No se encontro la busqueda."]);
   }
 
   public function create(){
@@ -112,7 +114,7 @@ class UserController extends Controller{
     return $this->profile();
   }
 
-  public function InfoEmpresas($user_id){
+  public function InfoEmpresas(){
     return response()->json($this->user->empresas);
   }
 
