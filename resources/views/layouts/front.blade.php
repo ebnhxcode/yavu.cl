@@ -1,7 +1,7 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang=""><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html> <!--<![endif]-->
 	<head>
@@ -13,12 +13,19 @@
 		<link rel="apple-touch-icon" href="apple-touch-icon.png">
 		{!!Html::script('js/jquery.js')!!}
 		{!!Html::script('js/all.js')!!}
+
 		@if(Auth::user()->check())
+
 			{!!Html::script('js/vendor/jquery.timeago.js')!!}
+
 			{!!Html::script('js/ajax/FrontNotificaciones.js')!!}
+
 			{!!Html::script('js/ajax/GestionarCoins.js')!!}
+
 			{!!Html::script('js/plugins.js')!!}
+
 			{!!Html::script('js/ajax/GestionarCompraTicket.js')!!}
+
 		@endif
 
 
@@ -105,7 +112,7 @@
 							<li class="dropdown"><a href="{!!URL::to('/yavucoins')!!}"><span role="button" class="navbar-button-hover">YAVU COINS</span></a></li>
 							<li class="dropdown"><a href="{!!URL::to('/contacto')!!}"><span role="button" class="navbar-button-hover">CONTACTO</span></a></li>
 							@if(Request::path() != 'login')
-							<li class="dropdown"><a href="{!!URL::to('/login')!!}"><span role="button" style="background: transparent;" class="navbar-button-border">INICIA SESIÓN</span></a></li>
+							<li class="dropdown"><a href="{!!URL::to('/login')!!}"><span role="button" style="background: transparent;" class="navbar-button-border">INICIAR SESIÓN</span></a></li>
 							@endif
 						@endif
 						@if(Auth::user()->check())

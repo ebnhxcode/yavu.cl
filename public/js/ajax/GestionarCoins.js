@@ -51,8 +51,7 @@ $(document).ready(function(){
 		return true;
 	}
 	function InfoEmpresas(){
-		var user_id = $("#user_id").val();
-		var route = "http://yavu.cl/infoempresas/"+user_id;
+		var route = "http://yavu.cl/infoempresas/";
 		var Pendiente = false;
 		$.get(route, function(res){
 			$("#EstadoEmpresa").value = "";

@@ -36,14 +36,15 @@ $(document).ready(function(){
 	});
 
 	$("#publicar").click(function(e){
-		document.getElementById("idUltima").value = "0";	
+		document.getElementById("idUltima").value = "0";
 		$("#Estados").empty();
 		if (document.getElementById("status").value !== "") {
 			var status = $("#status").val();
 			status = limpiar(status);
 			var user_id = $("#user_id").val();
+			var empresa_id = $("#empresa_id").val();
 			var token = $("#token").val();
-			var route = "http://yavu.cl/estados";
+			var route = "http://yavu.cl/estadoempresa";
 			$.ajax({
 				url: route,
 				headers: {'X-CSRF-TOKEN': token},
@@ -51,15 +52,20 @@ $(document).ready(function(){
 				dataType: 'json',
 				data: {
 					status: status,
-					user_id: user_id
+					user_id: user_id,
+					empresa_id: empresa_id
 				},
 				success:function(){
+					$("#msj-success").fadeIn();
+					setTimeout(function() {
+						$("#msj-success").fadeOut(1000);
+					},800);
 					document.getElementById("status").value = "";
 				}
-			});	
+			});
 		}else{
 			document.getElementById("status").focus();
-		}	
+		}
 		CargarEstados();
 		e.preventDefault();
 		return true;

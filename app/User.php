@@ -19,6 +19,7 @@ class User extends Model implements AuthenticatableContract,
 		protected $fillable = ['rut', 'email', 'login', 'nombre', 'apellido', 'direccion', 'ciudad', 'region', 'pais', 'fono', 'fono_2', 'sexo', 'fecha_nacimiento', 'password', 'estado', 'tipo_usuario','referido', 'referente', 'validacion' , 'imagen_perfil', 'imagen_portada'];
 		protected $hidden = ['password', 'remember_token'];
 		protected $dates = ['deleted_at'];
+
 		public function setPasswordAttribute($valor){
 				if(!empty($valor)){
 					$this->attributes['password'] = \Hash::make($valor);
@@ -60,7 +61,7 @@ class User extends Model implements AuthenticatableContract,
 		return $this->hasMany(Ticket::class, 'user_id');
 	}
 	public function empresas (){
-		return $this->hasMany(Empresa::class);
+		return $this->hasMany(Empresa::class)->select('id','user_id','nombre','estado','imagen_perfil');
 	}
 	public function sorteos(){
 		return $this->hasMany(Sorteo::class);

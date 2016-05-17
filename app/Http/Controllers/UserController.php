@@ -15,14 +15,29 @@ use RUT;
 use Mail;
 use Carbon\Carbon;
 class UserController extends Controller{
+  private $id;
   private $user;
+  private $email;
+  private $nombre;
+  private $apellido;
+  private $password;
+  private $ciudad;
+  private $referido;
+  private $typeNotification;
+  private $contentNotification;
+  private $coinsMount;
+  private $reason;
+  private $arrayToSendEmailAndNotify;
+  private $viewName;
+  private $emailSubject;
   public function __construct(){
     if(Auth::user()->check()){
-      return $this->user = $this->getSessionData();
+      return $this->user = $this->getNormalSessionData();
     }
   }
 
   public function BuscarUsuarios($nombre){
+    /*
     if(isset($nombre)){
       $nombre = addslashes($nombre);
       $usuarios = DB::table('users')
@@ -37,7 +52,8 @@ class UserController extends Controller{
         ->get();
       return response()->json($usuarios);
     }
-    return response()->json(["Mensaje: " => "No se encontró la búsqueda."]);
+    */
+    return response()->json(["Mensaje: " => "No se encontro la busqueda."]);
   }
 
   public function create(){
@@ -45,21 +61,21 @@ class UserController extends Controller{
   }
 
   public function dashboard(){
-    return view('usuarios.dashboard', ['users' => $this->user]);
+    return view('usuarios.dashboard');
   }
 
   public function destroy($id){
       $this->user->estado = 'Inactivo';
       $this->user->save();
       //$this->user->delete();
-      Session::flash('message-error', 'Se inhabilitó tu cuenta, lamentamos tu decisión, éxito !');
+      Session::flash('message-warning', 'Se inhabilitó tu cuenta, lamentamos tu decisión. Esperamos volverte a ver pronto.');
       Auth::user()->logout();
       return Redirect::to('/login');
   }
 
   public function edit($id){
     if($id == $this->user->id){
-      return view('usuarios.edit', ['user' => $this->user]);
+      return view('usuarios.edit', ['user' => $this->getFullSessionData()]);
     }else{
       return Redirect::to('/usuarios/'.$this->user->id.'/edit');
     }
@@ -69,16 +85,48 @@ class UserController extends Controller{
     return Carbon::now()->day.Carbon::now()->minute.Carbon::now()->hour."V";
   }
 
-  private function getSessionData(){
-    return User::find(Auth::user()->get()->id);
+  /**
+   * @private
+   */
+  private function getNormalSessionData(){
+    return User::find(Auth::user()->get()->id)->where('estado', 'Activo')->select('id','nombre','email','ciudad','imagen_perfil','imagen_portada')->get()->first();
+  }
+
+  /**
+   * @private
+   */
+  private function getFullSessionData(){
+    return User::find(Auth::user()->get()->id)->where('estado', 'Activo')->select('id','nombre','apellido','password','email','ciudad','imagen_perfil','imagen_portada','rut','login','direccion','region','pais','fono','fono_2','sexo','fecha_nacimiento')->get()->first();
+  }
+
+  /**
+   * @private
+   */
+  private function GiveCoinsBy($id, $coinsMount, $reason){
+    $this->id = $id;
+    $this->coinsMount = $coinsMount;
+    $this->reason = $reason;
+    $this->registro_coins = new RegistroCoin(['user_id'=>$this->id,'cantidad'=>$this->coinsMount,'motivo'=>$this->reason,'created_at'=>strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at'=>strftime( "%Y-%m-%d-%H-%M-%S", time())]);
+    $this->registro_coins->save();
   }
 
   public function index(){
     return $this->profile();
   }
 
-  public function InfoEmpresas($user_id){
+  public function InfoEmpresas(){
     return response()->json($this->user->empresas);
+  }
+
+  /**
+   * @private
+   */
+  private function notify($id, $typeNotification, $contentNotification){
+    $this->id = $id;
+    $this->typeNotification = $typeNotification;
+    $this->contentNotification = $contentNotification;
+    $this->pop = new Pop(['user_id'=>$this->id,'empresa_id'=>1,'tipo'=>$this->typeNotification,'estado'=>'pendiente','contenido'=>$this->contentNotification,'created_at'=>strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at'=>strftime( "%Y-%m-%d-%H-%M-%S", time())]);
+    return $this->pop->save();
   }
 
   public function profile(){
@@ -86,27 +134,49 @@ class UserController extends Controller{
   }
 
   public function reset(Request $request){
-
-    $this->user = User::where('email', $request->emailRenovarClave)->get();
-
-    if(count($this->user)>0) {
+    if(count($this->user = User::where('email', $request->emailRenovarClave)->get())>0) {
 
       $this->user[0]->password = $pass = 'yavu2016#'.Carbon::now()->day;
       $this->user[0]->save();
-      Mail::send('emails.forResetPassword', ['email' => $this->user[0]->email, 'nombre' => $this->user[0]->nombre, 'clave' => $pass ], function($msj){
-        $msj->subject('Correo de Reestablecimiento de claves');
-        $msj->to($this->user[0]->email);
-        return true;
-      });
+
+      $this->SendEmailForResetPassword($this->user[0]->email, $this->user[0]->nombre, $pass,'emails.forResetPassword', 'Correo de Reestablecimiento de claves');
+
       Session::flash('message-info', '¡Hemos enviado tu nueva clave al correo con el que te haz registrado!. ¡Gracias!.');
-
       return redirect()->to('/login');
-
     }else{
-
-
+      Session::flash('message-error', 'Usuario no registrado.');
       return redirect()->to('/login');
     }
+  }
+
+
+  /**
+   * @private
+   */
+  private function RecordUser($nombre, $apellido, $email, $password, $ciudad, $referido){
+    $this->nombre = $nombre ; $this->apellido = $apellido; $this->email = $email; $this->password = $password; $this->ciudad = $ciudad; $this->referido = $referido;
+    $this->newuser = new User(["nombre"=>$this->nombre,"apellido"=>$this->apellido,"email"=>$this->email,"password"=>$this->password,"estado"=>"inactivo","referido"=>$this->referido,"referente"=>Carbon::now()->minute.Carbon::now()->hour.Carbon::now()->year.Carbon::now()->month.Carbon::now()->day."RY","validacion"=>$this->getCodigoVerificacion(),"ciudad"=>$this->ciudad]);
+    $this->newuser->save();
+    return ['id' => $this->newuser->id, 'nombre' => $this->newuser->nombre, 'email' => $this->newuser->email];
+
+  }
+
+  /**
+   * @private
+   */
+  private function SendEmailForRegisterSuccessfully($email, $nombre, $viewName, $emailSubject){
+    $this->email = $email; $this->nombre = $nombre; $this->viewName = $viewName; $this->emailSubject = $emailSubject;
+    Mail::send($this->viewName, ['email' => $this->email, 'nombre' => $this->nombre, 'codigo' => $this->getCodigoVerificacion()], function($msj){
+      $msj->subject($this->emailSubject);
+      $msj->to($this->email);
+    });
+  }
+  private function SendEmailForResetPassword($email, $nombre, $password,$viewName, $emailSubject){
+    $this->email = $email; $this->nombre = $nombre; $this->password = $password; $this->viewName = $viewName; $this->emailSubject = $emailSubject;
+    Mail::send($this->viewName, ['email' => $this->email, 'nombre' => $this->nombre, 'clave' => $this->password], function($msj){
+      $msj->subject($this->emailSubject);
+      $msj->to($this->email);
+    });
 
   }
 
@@ -115,43 +185,14 @@ class UserController extends Controller{
   }
 
   public function store(UserCreateRequest $request){
-    //User::create($request->all());
-    //$existeReferente = User::where('referente', $request->referido)->first();
-    $existeReferente = false;
-    if ($existeReferente){
-      //CUANDO EXISTE REFERENTE
-      $this->newuser = new User(["nombre"=>$request->nombre,"apellido"=>$request->apellido,"email"=>$request->email,"password"=>$request->password,"estado"=>"inactivo","referido"=>$request ->referido,"referente"=>Carbon::now()->minute.Carbon::now()->hour.Carbon::now()->year.Carbon::now()->month.Carbon::now()->day."RY","validacion"=> $this->getCodigoVerificacion(),"ciudad"=>$request->ciudad]);
-      $this->newuser->save();
-      $this->registro_coins = new RegistroCoin(['user_id'=>$this->newuser->id,'cantidad'=>'70','motivo'=>'Uso de código referido','created_at'=>strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at'=>strftime( "%Y-%m-%d-%H-%M-%S", time())]);
-      $this->registro_coins->save();
-      $this->pop = new Pop(['user_id'=>$this->newuser->id,'empresa_id'=>1,'tipo'=>'referido','estado'=>'pendiente','contenido'=>'Se cargaron coins por código de referido! ','created_at'=>strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at'=>strftime( "%Y-%m-%d-%H-%M-%S", time())]);
-      $this->pop->save();
-
-      Mail::send('emails.register', ['email' => $this->newuser->email, 'nombre' => $this->newuser->nombre, 'codigo' => $this->getCodigoVerificacion() ], function($msj){
-        $msj->subject('Correo de Contacto');
-        $msj->to($this->newuser->email);
-        return true;
-      });
-
-      Session::flash('message', 'Usuario creado correctamente. Debes validar tu cuenta para entrar a yavu.');
-      Session::flash('message-warning', 'Para validar tu cuenta revisa el correo con el te acabas de registrar y encontrarás las instrucciones.');
-      return Redirect::to('/login');
-    }else{
-      //CUANDO NO EXISTE REFERENTE
-      $this->newuser = new User(["nombre"=>$request->nombre,"apellido"=>$request->apellido,"email"=>$request->email,"password"=>$request->password,"estado"=>"inactivo","referido"=>"","referente"=>Carbon::now()->minute.Carbon::now()->hour.Carbon::now()->year.Carbon::now()->month.Carbon::now()->day."RY","validacion"=>$this->getCodigoVerificacion(),"ciudad"=>$request->ciudad]);
-      $this->newuser->save();
-
-      Mail::send('emails.register', ['email'=>\Input::get('email'), 'nombre' => \Input::get('nombre'), 'codigo' => $this->getCodigoVerificacion()], function($msj){
-        $msj->subject('Correo de Contacto');
-        $msj->to(\Input::get('email'));
-      });
-
-      Session::flash('message', 'Usuario creado correctamente. Debes validar tu cuenta para entrar a yavu.');
-      Session::flash('message-warning', 'Para validar tu cuenta revisa el correo con el te acabas de registrar y encontrarás las instrucciones.');
-      return Redirect::to('/login');
+    $this->arrayToSendEmailAndNotify = $this->RecordUser($request->nombre,$request->apellido,$request->email,$request->password,'',$request->ciudad);
+    if ($this->GiveCoinsBy($this->arrayToSendEmailAndNotify['id'], 500, 'Carga por registro en el Yavü')){
+      $this->notify($this->arrayToSendEmailAndNotify['id'],'carga_inicial','Se cargaron coins por registro en Yavü');
     }
-    Session::flash('error', 'Ocurrio un error inesperado');
-    return Redirect::to('/usuarios');
+    $this->SendEmailForRegisterSuccessfully($this->arrayToSendEmailAndNotify['email'], $this->arrayToSendEmailAndNotify['nombre'], 'emails.register', 'Correo de Contacto');
+    Session::flash('message', 'Usuario creado correctamente. Debes validar tu cuenta para entrar a yavu.');
+    Session::flash('message-warning', 'Para validar tu cuenta revisa el correo con el te acabas de registrar y encontrarás las instrucciones.');
+    return Redirect::to('/login');
   }
 
   public function update($id, UserUpdateRequest $request){

@@ -13,19 +13,17 @@
         @include('alerts.successMessage')
         @include('alerts.warningMessage')
         @include('alerts.infoMessage')
-        <div class='list-group'>
-          <div class='list-group-item list-group-item-info '>
-            Hola {!! $users->nombre.' '.$users->apellido !!}
-          </div>
-        </div>
+
         <div id='EstadoEmpresa'></div>
 			</div>
 
 			<div class='col-md-9 col-sm-9 col-xs-12 '>
 				<div class='row'>
+          {{--
 					@if(Auth::user()->check())
 						<input type='hidden' value='{!!Auth::user()->get()->id!!}' />
 					@endif
+          --}}
 					<div class='col-md-4 col-sm-6 col-xs-12'>
 						<div class='list-group' >
               <a href='{!!URL::to('/feeds')!!}' style='text-align:center;' class='list-group-item list-group-item-info'>
