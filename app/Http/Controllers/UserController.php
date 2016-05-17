@@ -96,7 +96,7 @@ class UserController extends Controller{
    * @private
    */
   private function getFullSessionData(){
-    return User::find(Auth::user()->get()->id)->where('estado', 'Activo')->select('id','nombre','apellido','password','email','ciudad','imagen_perfil','imagen_portada','rut','login','direccion','region','pais','fono','fono_2','sexo','fecha_nacimiento')->get()->first();
+    return User::where('estado', 'Activo')->where('id', Auth::user()->get()->id)->select('id','nombre','apellido','password','email','ciudad','imagen_perfil','imagen_portada','rut','login','direccion','region','pais','fono','fono_2','sexo','fecha_nacimiento')->get()->first();
   }
 
   /**
