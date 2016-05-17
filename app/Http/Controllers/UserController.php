@@ -89,7 +89,7 @@ class UserController extends Controller{
    * @private
    */
   private function getNormalSessionData(){
-    return User::where('estado', 'Activo')->where('id', Auth::user()->get()->id)->select('id','nombre','email','ciudad','imagen_perfil','imagen_portada')->get();
+    return User::where('estado', 'Activo')->where('id', Auth::user()->get()->id)->select('id','nombre','email','ciudad','imagen_perfil','imagen_portada')->get()->first();
   }
 
   /**
