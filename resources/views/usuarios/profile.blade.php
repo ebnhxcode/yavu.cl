@@ -46,7 +46,7 @@
 							@if($user->imagen_perfil == '')
 								<img id='ImagenPerfil' src='/img/users/usuario_nuevo.png' class='center-block'>
 							@else
-								<img id='ImagenPerfil' src='/img/users/{!!$user->imagen_perfil!!}' class='center-block' width='100' height='100' class='img-responsive'>
+								<img id='ImagenPerfil' src='/img/users/{!!$user->imagen_perfil!!}' class='center-block' class='thumbnail' class='img-rounded' width='300px' height='300px' class='img-responsive'>
 							@endif
 							<div class="dropdown">
 								<button class="btn btn-default btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">

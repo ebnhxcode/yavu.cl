@@ -88,7 +88,7 @@ class SocialController extends Controller{
           $sesion = Auth::user()->attempt(['email' => $this->userLogin->email, 'password' => 'yavu', 'estado' => 'activo']);
 
           if($sesion){
-            Session::flash('message-warning', '<h3>Registro finalizado. Ahora debes cambiar tu <strong> clave actual, que es </strong>: <small>yavu</small></h3>  ');
+            Session::flash('message-warning', '<h3>Registro finalizado. Ahora debes cambiar tu <strong> clave actual, que es : yavu </strong></h3>  ');
             return Redirect::to('/usuarios/'.$this->userLogin->id.'/edit');
           }else{
             Session::flash('message-warning', '<h3>Registro finalizado. Ahora puedes iniciar sesión. Tu <strong> clave actual, que es </strong>: <small>yavu</small> Recuerda modificarla desde tu perfil </h3>');
