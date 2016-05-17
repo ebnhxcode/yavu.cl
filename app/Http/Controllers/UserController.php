@@ -32,7 +32,8 @@ class UserController extends Controller{
   private $emailSubject;
   public function __construct(){
     if(Auth::user()->check()){
-      return $this->user = $this->getNormalSessionData();
+      $this->user = $this->getNormalSessionData();
+      dd($this->user);
     }
   }
 
