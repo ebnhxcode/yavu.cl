@@ -186,7 +186,7 @@ class UserController extends Controller{
 
   public function store(UserCreateRequest $request){
     $this->arrayToSendEmailAndNotify = $this->RecordUser($request->nombre,$request->apellido,$request->email,$request->password,'',$request->ciudad);
-    if ($this->GiveCoinsBy($this->arrayToSendEmailAndNotify['id'], 1000, 'Carga por registro en el Yavü')){
+    if ($this->GiveCoinsBy($this->arrayToSendEmailAndNotify['id'], 500, 'Carga por registro en el Yavü')){
       $this->notify($this->arrayToSendEmailAndNotify['id'],'carga_inicial','Se cargaron coins por registro en Yavü');
     }
     $this->SendEmailForRegisterSuccessfully($this->arrayToSendEmailAndNotify['email'], $this->arrayToSendEmailAndNotify['nombre'], 'emails.register', 'Correo de Contacto');

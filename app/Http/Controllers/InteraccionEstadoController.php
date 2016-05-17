@@ -74,7 +74,7 @@ class InteraccionEstadoController extends Controller{
         return response()->json(["Mensaje: " => "No puedes cobrar coins de tus propias publicaciones"]);
 
       }else{
-        $this->registro_coins = new RegistroCoin(['user_id' => $request->user_id,'cantidad' => '10','motivo' => 'Cobro de coins','created_at' => strftime("%Y-%m-%d-%H-%M-%S", time()),'updated_at' => strftime("%Y-%m-%d-%H-%M-%S", time())]);
+        $this->registro_coins = new RegistroCoin(['user_id' => $request->user_id,'cantidad' => '40','motivo' => 'Cobro de coins','created_at' => strftime("%Y-%m-%d-%H-%M-%S", time()),'updated_at' => strftime("%Y-%m-%d-%H-%M-%S", time())]);
         $this->registro_coins->save();
         $this->pop = new Pop(['user_id' => $request->user_id,'empresa_id' => 1,'tipo' => 'coins','estado' => 'pendiente','contenido' => 'Tienes coins cobrados de una publicación!','created_at' => strftime("%Y-%m-%d-%H-%M-%S", time()),'updated_at' => strftime("%Y-%m-%d-%H-%M-%S", time())]);
         $this->pop->save();
