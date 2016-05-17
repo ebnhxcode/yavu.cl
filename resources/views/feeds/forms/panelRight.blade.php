@@ -1,7 +1,7 @@
 <div class="col-md-8 col-sm-12 col-xs-12">
 
 
-	@if((Auth::user()->check()))
+	@if((Auth::user()->check()) && isset($user_id))
 		@if($user_id == Auth::user()->get()->id)
 			<div class="list-group">
 				<div class="list-group-item">
