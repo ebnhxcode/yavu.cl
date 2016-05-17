@@ -32,8 +32,7 @@ class UserController extends Controller{
   private $emailSubject;
   public function __construct(){
     if(Auth::user()->check()){
-      $this->user = $this->getNormalSessionData();
-      dd($this->user);
+      return $this->user = $this->getNormalSessionData();
     }
   }
 
@@ -90,7 +89,7 @@ class UserController extends Controller{
    * @private
    */
   private function getNormalSessionData(){
-    return User::find(Auth::user()->get()->id)->where('estado', 'Activo')->select('id','nombre','email','ciudad','imagen_perfil','imagen_portada')->get();
+    return User::where('estado', 'Activo')->where('id', Auth::user()->get()->id)->select('id','nombre','email','ciudad','imagen_perfil','imagen_portada')->get()->first();
   }
 
   /**
