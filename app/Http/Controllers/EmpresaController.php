@@ -107,11 +107,10 @@ class EmpresaController extends Controller{
 
   }
   public function edit($id){
-    if(isset($this->empresa)){
       if($this->empresa->user_id == Auth::user()->get()->id){
         return view('empresas.edit', ['empresa' => $this->empresa]);
       }
-    }
+    
     return Redirect::to('/');
   }
   public function update(EmpresaUpdateRequest $request, $id){
