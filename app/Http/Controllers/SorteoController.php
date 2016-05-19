@@ -232,7 +232,8 @@ class SorteoController extends Controller{
       if($this->sorteo){
         $this->pop = new Pop(['user_id' => $request->user_id,'empresa_id' => 1, 'poptype_id_helper' => $this->sorteo->id, 'tipo' => 'sorteo', 'estado'   => 'pendiente','contenido' => 'Haz creado un nuevo sorteo!','created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]);
         $this->user->pops()->save($this->pop);
-        Session::flash('message', 'Sorteo creado correctamente');
+        Session::flash('message', 'Su sorteo se ha creado con éxito, será publicado 
+previa confirmación por parte del equipo <a href="/">Yavu.cl</a>. Miralo <a href="/sorteos/'.$this->sorteo->id.'">Aquí</a>');
         return Redirect::to('/sorteos/create');
       }
       return response()->json('Acceso denegado');

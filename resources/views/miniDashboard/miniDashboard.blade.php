@@ -1,7 +1,7 @@
 <div style="padding: 30px 30px 5px 30px;" class="list-group-item">
   <div class="row">
 
-    <div class="col-md-4 col-sm-4 col-xs-4">
+    <div class="col-md-4 col-sm-4 col-xs-6">
       <div class='list-group' >
         <div align="center">
           <a style="padding: 2px 2px 2px 2px;" href='{!!URL::to('/usuarios/'.Auth::user()->get()->id.'/edit')!!}' style="text-align:center;" class="list-group-item list-group-item-info">
@@ -15,7 +15,7 @@
     </div><!-- /div col -->
 
     @if(Request::path() != 'feeds')
-      <div class="col-md-4 col-sm-4 col-xs-4">
+      <div class="col-md-4 col-sm-4 col-xs-6">
         <div class="list-group" >
           <div align="center">
             <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/feeds')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
@@ -30,7 +30,7 @@
     @endif
 
     @if(Request::path() != 'empresas')
-      <div class="col-md-4 col-sm-4 col-xs-4">
+      <div class="col-md-4 col-sm-4 col-xs-6">
         <div class="list-group" >
           <div align="center">
             <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/empresas')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
@@ -45,7 +45,7 @@
     @endif
 
     @if(Request::path() != 'sorteos')
-      <div class="col-md-4 col-sm-4 col-xs-4">
+      <div class="col-md-4 col-sm-4 col-xs-6">
         <div class="list-group" >
           <div align="center">
             <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/sorteos')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
@@ -60,7 +60,7 @@
     @endif
 
     @if(Request::path() != 'tickets')
-      <div class="col-md-4 col-sm-4 col-xs-4">
+      <div class="col-md-4 col-sm-4 col-xs-6">
         <div class="list-group" >
           <div align="center">
             <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/tickets')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
@@ -75,7 +75,7 @@
     @endif
 
     @if((Request::path() != 'tickets/history') && (Request::path() != 'coins' && Request::path() != 'coins/history'))
-      <div class="col-md-4 col-sm-4 col-xs-4">
+      <div class="col-md-4 col-sm-4 col-xs-6">
         <div class='list-group' >
           <div align="center">
             <a style="padding: 2px 2px 2px 2px;"  style="text-align:center;" data-toggle="modal" data-target="#myModal" class="list-group-item list-group-item-info">
@@ -90,7 +90,7 @@
     @endif
 
     @if(Request::path() != 'sorteos/create')
-      <div style="display: none;" class="col-md-4 col-sm-4 col-xs-4 hasoneempresa">
+      <div style="display: none;" class="col-md-4 col-sm-4 col-xs-6 hasoneempresa">
         <div class="list-group" >
           <div align="center">
             <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/sorteos/create')!!}" style="text-align:center;" class="list-group-item list-group-item-info">

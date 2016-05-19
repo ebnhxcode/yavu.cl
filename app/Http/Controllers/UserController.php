@@ -89,14 +89,14 @@ class UserController extends Controller{
    * @private
    */
   private function getNormalSessionData(){
-    return User::find(Auth::user()->get()->id)->where('estado', 'Activo')->select('id','nombre','email','ciudad','imagen_perfil','imagen_portada')->get()->first();
+    return User::where('estado', 'Activo')->where('id', Auth::user()->get()->id)->select('id','nombre','apellido','email','ciudad','imagen_perfil','imagen_portada')->get()->first();
   }
 
   /**
    * @private
    */
   private function getFullSessionData(){
-    return User::find(Auth::user()->get()->id)->where('estado', 'Activo')->select('id','nombre','apellido','password','email','ciudad','imagen_perfil','imagen_portada','rut','login','direccion','region','pais','fono','fono_2','sexo','fecha_nacimiento')->get()->first();
+    return User::where('estado', 'Activo')->where('id', Auth::user()->get()->id)->select('id','nombre','apellido','password','email','ciudad','imagen_perfil','imagen_portada','rut','login','direccion','region','pais','fono','fono_2','sexo','fecha_nacimiento')->get()->first();
   }
 
   /**
@@ -186,7 +186,7 @@ class UserController extends Controller{
 
   public function store(UserCreateRequest $request){
     $this->arrayToSendEmailAndNotify = $this->RecordUser($request->nombre,$request->apellido,$request->email,$request->password,'',$request->ciudad);
-    if ($this->GiveCoinsBy($this->arrayToSendEmailAndNotify['id'], 1000, 'Carga por registro en el Yavü')){
+    if ($this->GiveCoinsBy($this->arrayToSendEmailAndNotify['id'], 500, 'Carga por registro en el Yavü')){
       $this->notify($this->arrayToSendEmailAndNotify['id'],'carga_inicial','Se cargaron coins por registro en Yavü');
     }
     $this->SendEmailForRegisterSuccessfully($this->arrayToSendEmailAndNotify['email'], $this->arrayToSendEmailAndNotify['nombre'], 'emails.register', 'Correo de Contacto');

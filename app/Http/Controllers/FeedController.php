@@ -15,6 +15,8 @@ use DB;
 use yavu\User;
 
 class FeedController extends Controller{
+  private $id;
+  private $user_id;
   public function __construct(){
 
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
@@ -82,10 +84,16 @@ class FeedController extends Controller{
     //return $this->user;
   }
   public function index(){
-    if(Auth::user()->check()){
+
+    if(count($this->user->empresas)>0){
+      $this->user_id = $this->user->empresas[0]->user_id; $this->id = $this->user->empresas[0]->id;
+      return view('feeds.index', ['user_id' => $this->user_id], ['empresa_id' => $this->id]);
+    }else{
       return view('feeds.index');
     }
-    return Redirect::to('/');
+
+
+
   }
   public function show($id){
     return Redirect::to('/');

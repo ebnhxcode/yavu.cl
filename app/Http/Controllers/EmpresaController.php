@@ -107,6 +107,7 @@ class EmpresaController extends Controller{
 
   }
   public function edit($id){
+    dd($this->empresa);
     if(isset($this->empresa)){
       if($this->empresa->user_id == Auth::user()->get()->id){
         return view('empresas.edit', ['empresa' => $this->empresa]);
