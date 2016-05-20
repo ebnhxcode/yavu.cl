@@ -32,27 +32,21 @@ class EmpresaController extends Controller{
     return view('empresas.index', ['empresas' => Empresa::paginate(15)]);
   }
   public function create(){
-
-    if(isset($this->user)){
-      $empresa = Empresa::where('user_id', '=', $this->user->id)->get();
-      if(count($empresa) < 1){
-        return view('empresas.create');
-      }else{
-        $this->categorias = $empresa[0]->categorias()->get()->count('empresa_id'); 
-        if($this->categorias == 3) {
-            Session::flash('message-info', 'Usted ya tiene registrada una empresa');
-            Session::flash('message-error', 'Ya ha registrado un numero maximo de categorias y empresa ');
-            Session::flash('message-warning', 'Si desea registrar una nueva empresa comuniquese con el administrador');
-            return Redirect::to('/empresas');
-        }
-        else{
-          Session::flash('message-info', 'Usted ya tiene registrada una empresa');
-          Session::flash('message-warning', 'Si desea registrar una nueva empresa comuniquese con el administrador');
-          return view('categorias.create', ['empresa' => $empresa[0]]);
-        }
+    $empresa = Empresa::where('user_id', '=', $this->user->id)->get();
+    if(count($empresa) < 1){
+      return view('empresas.create');
+    }else{
+      $this->categorias = $empresa[0]->categorias()->get()->count('empresa_id');
+      if($this->categorias == 3) {
+        Session::flash('message-error', 'Ya ha registrado un numero maximo de categorias y empresa ');
+        return Redirect::to('/empresas');
+      }
+      else{
+        Session::flash('message-info', 'Usted ya tiene registrada una empresa');
+        Session::flash('message-warning', 'Si desea registrar una nueva empresa comuniquese con el administrador');
+        return view('categorias.create', ['empresa' => $empresa[0]]);
       }
     }
-    return Redirect::to('/');
   }
 
   public function EstadisticasDeMiEmpresa(){
@@ -86,7 +80,6 @@ class EmpresaController extends Controller{
   }
 
   public function store(EmpresaCreateRequest $request){
-    if(isset($request) && isset($this->user)){
 
       $this->empresa = Empresa::create($request->all());
       DB::table('pops')->insert(
@@ -100,8 +93,6 @@ class EmpresaController extends Controller{
       );
       Session::flash('message', 'Empresa creada correctamente');
       return Redirect::to('/empresas/create');
-    }
-    return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function show($id){
     $this->empresa = Empresa::find($id);
