@@ -57,8 +57,10 @@ class SorteoController extends Controller{
     }
     return response()->json(['Mensaje: ','Acceso denegado']);
   }
+
   public function CanjearTicket($user_id){
-    if($this->user->registro_coins->sum('cantidad') >= 100){
+    if($this->getMyCoins() >= 100){
+
       $this->registro_coins = new RegistroCoin(['user_id'=>$user_id,'motivo'=>'Canje (compra) de ticket','cantidad'=>'-100','created_at'=>Carbon::now(),'updated_at'=>Carbon::now()]);
       $this->user->registro_coins()->save($this->registro_coins);
       $this->ticket = new Ticket(['user_id'=>$user_id,'cantidad_tickets'=>1,'monto'=>100,'created_at'=>Carbon::now(),'updated_at'=>Carbon::now()]);
@@ -114,6 +116,14 @@ class SorteoController extends Controller{
   public function find(Route $route){
       $this->sorteo = Sorteo::find($route->getParameter('sorteos'));
       //return $this->user;
+  }
+
+  private function getMyCoins(){
+    return $this->user->registro_coins->sum('cantidad');
+  }
+
+  private function getMyTickets(){
+    return $this->user->tickets->sum('cantidad_tickets');
   }
 
   public function index(){
@@ -247,11 +257,15 @@ previa confirmación por parte del equipo <a href="/">Yavu.cl</a>. Miralo <a hre
     return Redirect::to("/dashboard");
   }
   public function UsarTicket($user_id, $sorteo_id){
-      if($this->user->tickets->sum('cantidad_tickets') > 0){
+      if($this->getMyTickets() > 0){
+
+
         $this->sorteo = Sorteo::find(addslashes($sorteo_id));
 
         if($this->sorteo->user_id != $this->user->id){
+
           if($this->sorteo->estado_sorteo == 'Lanzado'){
+
             $this->ticket = new Ticket(['user_id' => $user_id,'cantidad_tickets' => -1,'monto' => -100,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
             $this->user->tickets()->save($this->ticket);
 
@@ -262,6 +276,7 @@ previa confirmación por parte del equipo <a href="/">Yavu.cl</a>. Miralo <a hre
             $this->participante_sorteos = new ParticipanteSorteo(['user_id' => $user_id,'sorteo_id' => $sorteo_id,'nombre_sorteo' => $this->sorteo->nombre_sorteo,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
             $this->user->participante_sorteos()->save($this->participante_sorteos);
             return 'Exito';
+
           }else if($this->sorteo->estado_sorteo == 'Pendiente'){
             return response()->json(['Mensaje : ', 'Este sorteo aun no permite el uso de tickets']);
           }else{

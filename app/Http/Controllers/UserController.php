@@ -164,7 +164,7 @@ class UserController extends Controller{
   /**
    * @private
    */
-  private function SendEmailForRegisterSuccessfully($email, $nombre, $viewName, $emailSubject){
+  public function SendEmailForRegisterSuccessfully($email, $nombre, $viewName, $emailSubject){
     $this->email = $email; $this->nombre = $nombre; $this->viewName = $viewName; $this->emailSubject = $emailSubject;
     Mail::send($this->viewName, ['email' => $this->email, 'nombre' => $this->nombre, 'codigo' => $this->getCodigoVerificacion()], function($msj){
       $msj->subject($this->emailSubject);

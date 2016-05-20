@@ -17,6 +17,7 @@ use Carbon\Carbon;
 
 class SocialController extends Controller{
   private $userLogin;
+  private $UserController;
   public function getSocialAuth($provider){
 
     //dd(config("services.$provider"));
@@ -84,6 +85,9 @@ class SocialController extends Controller{
 
           //$userLogin = User::where('email', $user->email)->first();
           $this->userLogin = User::where('email', $user->email)->first();
+
+          $this->UserController = new UserController();
+          $this->UserController->SendEmailForRegisterSuccessfully($this->userLogin->email, $this->userLogin->nombre, 'emails.register', 'Correo de Contacto');
 
           $sesion = Auth::user()->attempt(['email' => $this->userLogin->email, 'password' => 'yavu', 'estado' => 'activo']);
 

@@ -8,6 +8,7 @@ use Session;
 
 class User{
   protected $auth;
+  protected $user;
   public function __construct(Guard $auth){
     $this->auth = $auth;
   }
@@ -20,9 +21,13 @@ class User{
    * @return mixed
    */
   public function handle($request, Closure $next){
-    if(!Auth::user()->check()){
-      Session::flash('message-info', '!Debe iniciar sesión antes de continuar!');
-      return redirect()->to('login');
+    if (Auth::user()->guest()) {
+      if ($request->ajax()) {
+        return response('Unauthorized.', 401);
+      } else {
+        Session::flash('message-info', '¡Debe iniciar sesión antes de continuar!');
+        return redirect()->guest('login');
+      }
     }
 
     return $next($request);

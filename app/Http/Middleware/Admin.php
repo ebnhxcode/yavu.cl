@@ -21,10 +21,16 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        if(!Auth::admin()->check()){
-            Session::flash('message-info', '!Debe iniciar sesión antes de continuar!');
-            return redirect()->to('login');
+
+        if (Auth::admin()->guest()) {
+            if ($request->ajax()) {
+                return response('Unauthorized.', 401);
+            } else {
+                Session::flash('message-info', '¡Debe iniciar sesión antes de continuar!');
+                return redirect()->guest('login');
+            }
         }
+        
         return $next($request);
     }
 }
