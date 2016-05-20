@@ -68,13 +68,32 @@
 					</div>
 					@if(Auth::user()->check())
 						<div class="navbar-brand" align="center" >
-							<a href="#!">
-                <img src="{!! asset('/img/newGraphics/neo_notificacion02_32x32.gif') !!}" width="24px" id="Notificaciones" title="Notificaciones <a href='/pops' style='float: right;'>ver todas</a>" data-toggle="popover" title="Popover title" data-placement="bottom" aria-hidden="true" alt="">
-                <small>
-									<span id="CantidadNotificaciones" style="float:right;" class="label label-danger"></span>
-								</small>
-							</a>
+							<small>
+                <!-- <img src="{!! asset('/img/newGraphics/neo_notificacion04_16x16.png') !!}" width="" id="Notificaciones" title="Notificaciones <a href='/pops' style='float: right;'>ver todas</a>" data-toggle="popover" title="Popover title" data-placement="bottom" aria-hidden="true" alt=""> -->
+								<span id="Notificaciones" title="<span style='color: #000;'>Notificaciones</span> <a href='/pops' style='float: right;'>ver todas</a>" class="glyphicon glyphicon-bell" data-toggle="popover" title="Popover title" data-placement="bottom" aria-hidden="true" alt=""></span>
+
+								<span id="CantidadNotificaciones" style="float:right;" class="label label-danger"></span>
+							</small>
 						</div>
+
+						<div class="navbar-brand" align="center">
+							<small>
+								<!-- <img width="" src="/img/newGraphics/neo_tickets02_16x16.png" alt=""> -->
+								<span class="glyphicon glyphicon-piggy-bank"></span>
+								<span id="" style="float:right;" class="label label-warning CantidadCoins"></span>
+							</small>
+						</div>
+						<div class="navbar-brand" align="center">
+
+							<!-- <span class="glyphicon glyphicon-tag" style="font-size: 1.2em; color: #BEF781;"></span> -->
+
+							<small>
+								<!-- <img width="22px" src="/img/newGraphics/neo_tickets01_32x32.gif" alt=""> -->
+								<span class="glyphicon glyphicon-tag"></span>
+								<span id="CantidadTickets" style="float:right;" class="label label-info"></span>
+							</small>
+						</div>
+
 
 						<!--
 						<div class="navbar-brand">
@@ -90,21 +109,7 @@
 
 				<div id="navbar" class="navbar-collapse collapse">
 					@if(Auth::user()->check())
-						<div class="navbar-brand" align="center">
-							<small>
-								<img width="24px" src="/img/newGraphics/neo_yavucoin01_32x32.png" alt="">
-								<span id="" style="float:right;" class="label label-warning CantidadCoins"></span>
-							</small>
-						</div>
-						<div class="navbar-brand" align="center">
 
-							<!-- <span class="glyphicon glyphicon-tag" style="font-size: 1.2em; color: #BEF781;"></span> -->
-
-							<small>
-								<img width="22px" src="/img/newGraphics/neo_tickets01_32x32.gif" alt="">
-								<span id="CantidadTickets" style="float:right;" class="label label-info"></span>
-							</small>
-						</div>
 					@endif
 					<ul class="nav navbar-nav navbar-right">
 						@if(!Auth::user()->check() && !Auth::empresa()->check() && !Auth::admin()->check())
