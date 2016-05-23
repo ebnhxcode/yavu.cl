@@ -6,6 +6,7 @@ use yavu\Http\Controllers\Controller;
 use yavu\Http\Requests\BannerCreateRequest;
 use yavu\Http\Requests\BannerUpdateRequest;
 use yavu\Banner;
+use Empresa;
 use Session;
 use Auth;
 use Redirect;
@@ -25,13 +26,8 @@ class BannerController extends Controller{
     //return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function index(){
-    if(Auth::admin()->check()){
-      $banners = Banner::all();
-      return view('banners.index', compact('banners'));
-    }
-    return Redirect::to("/");
-    //return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
+
   public function create(){
     if(Auth::admin()->check()){
       return view('banners.create');

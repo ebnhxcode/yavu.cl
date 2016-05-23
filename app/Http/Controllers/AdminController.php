@@ -24,6 +24,9 @@ class AdminController extends Controller
         $admins = Admin::paginate(5);
         return view('admins.index', compact('admins'));
     }
+    public function indexbanner(){
+    return view('admins.banneradmin.index');
+    }
     public function create()
     {
         return view('admins.create');
