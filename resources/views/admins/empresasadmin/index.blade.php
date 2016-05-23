@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7499f462f0c9270294a616b285757a534888bd96
 @extends('layouts.frontadm')
 @section('content')
   <div class="jumbotron">
@@ -15,6 +18,7 @@
           </div>
         </div>
 
+<<<<<<< HEAD
         <div class="col-md-6 col-sm-6 col-xs-12">
           <div class="list-group">
 
@@ -70,5 +74,37 @@
   </div><!-- /div jumbotron -->
 
 
+=======
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          {{-- ESTÁ PENDIENTE EL BUSCADOR DE LA EMPRESA EN ADMIN --}}
+          {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar...','id'=>'empresa', 'aria-describedby' => 'sizing-addon1'])!!}
+          <br>
+          <div id="EmpresaListThumb">
+            <div class="row">
+              @foreach($empresas as $empresa)
+                <div class="col-md-3 col-sm-4 col-xs-12">
+                  <div class="thumbnail card">
+                    <img id="ImagenPortada" src="{!! ($empresa->imagen_portada!="")?'/img/users/'.$empresa->imagen_portada:"/img/users/banner.png" !!}" alt="..." style="height: 170px;">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <address>
+                          <h4><a class="btn-link" href="/empresa/{!!$empresa->nombre!!}">{!! $empresa->nombre!!}</a></h4>
+                          <strong>Ciudad :</strong> {!!$empresa->ciudad!!}<br>
+                          <strong>Contacto :<strong><a href="mailto:#">{!!$empresa->email!!}</a></strong><br>
+                            <strong>Fono :</strong> <abbr title="Phone"></abbr> {!!$empresa->fono!!}<br></strong>
+                        </address>
+                      </div>
+                    </div><!-- /div row -->
+                  </div>
+                </div>
+              @endforeach
+            </div>
+          </div> <!-- /Empresa list thumb -->
+          {!!$empresas->render()!!}
+        </div>
+      </div><!-- /div row -->
+    </div><!-- /div contentMiddle -->
+  </div><!-- /div jumbotron -->
+>>>>>>> 7499f462f0c9270294a616b285757a534888bd96
 @stop
 

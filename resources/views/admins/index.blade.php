@@ -64,10 +64,17 @@
 						<a href="{!! URL::to('/sorteospendientes') !!}">Confirmar sorteos</a>
 					</div>
 					<div class="list-group-item">
+<<<<<<< HEAD
 						<a href="{!! URL::to('#!') !!}">Listar empresas</a>
 					</div>
 					<div class="list-group-item">
 						<a href="{!! URL::to('#!') !!}">Pre-Crear empresa</a>
+=======
+						<a href="{!! URL::to('/admins/empresas/index') !!}">Listar empresas</a>
+					</div>
+					<div class="list-group-item">
+						<a href="{!! URL::to('/admins/empresas/create') !!}">Pre-Crear empresa</a>
+>>>>>>> 7499f462f0c9270294a616b285757a534888bd96
 					</div>
 					<div class="list-group-item">
 						<a href="{!! URL::to('#!') !!}"></a>
