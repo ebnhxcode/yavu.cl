@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use yavu\Empresa;
 use yavu\Http\Requests;
 use yavu\Http\Requests\EmpresaCreateRequest;
+use yavu\Http\Requests\EmpresaUpdateRequest;
 use yavu\Http\Requests\AdminCreateRequest;
 use yavu\Http\Requests\AdminUpdateRequest;
 use yavu\Http\Controllers\Controller;
@@ -11,6 +12,7 @@ use Session;
 use Redirect;
 use yavu\Admin;
 use yavu\User;
+use RUT;
 use Illuminate\Routing\Route;
 class AdminController extends Controller
 {
@@ -39,6 +41,24 @@ class AdminController extends Controller
     }
     public function empresascreate(){
         return view('admins.empresasadmin.create');
+    }
+    public function empresasedit($id){
+        $this->empresa = Empresa::find($id);
+        $this->user = User::find($this->empresa->user_id);
+        return view('admins.empresasadmin.edit', ['empresa' => $this->empresa], ['user_email' => $this->user->email]);
+    }
+    public function empresasupdate(EmpresaUpdateRequest $request, $id){
+        //AQUI VOY
+        dd($request);
+        if(RUT::check($request->rut)){
+            $this->empresa->fill($request->all());
+            $this->empresa->save();
+            Session::flash('message', 'Empresa editada correctamente');
+            return Redirect::to('/admins/empresa');
+        }else{
+            Session::flash('message-error', 'El rut ingresado no es válido.');
+            return Redirect::to('/dashboard');
+        }
     }
     public function empresasstore(EmpresaCreateRequest $request){
         $this->user = User::where('email', $request->user_email)->get();

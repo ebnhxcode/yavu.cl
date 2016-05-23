@@ -173,6 +173,10 @@ Route::group(['middleware' => 'admin'], function(){
   
   Route::get('admins/banneradmin','AdminController@indexbanner');
   Route::get('admins/empresas/index', 'AdminController@empresasindex');
+
+  Route::get('admins/empresas/{id}/edit', ['uses' => 'AdminController@empresasedit', 'as' => 'admins_empresas_edit_path',]);
+  Route::put('admins/empresas/{id}/edit', ['uses' => 'AdminController@empresasupdate','as' => 'admins_empresas_put_path',]);
+
   Route::post('admins/empresas/create', [ 'uses' => 'AdminController@empresasstore', 'as' => 'admins_empresas_create_path' ]);
   Route::get('admins/empresas/create', 'AdminController@empresascreate');
   Route::resource('admins','AdminController');

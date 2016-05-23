@@ -31,6 +31,7 @@
                           <strong>Ciudad :</strong> {!!$empresa->ciudad!!}<br>
                           <strong>Contacto :<strong><a href="mailto:#">{!!$empresa->email!!}</a></strong><br>
                             <strong>Fono :</strong> <abbr title="Phone"></abbr> {!!$empresa->fono!!}<br></strong>
+                          <a href="{!! URL::to('/admins/empresas/'.$empresa->id.'/edit') !!}">editar</a>
                         </address>
                       </div>
                     </div><!-- /div row -->
