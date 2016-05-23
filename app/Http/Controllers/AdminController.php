@@ -1,6 +1,7 @@
 <?php
 namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
+use yavu\Empresa;
 use yavu\Http\Requests;
 use yavu\Http\Requests\AdminCreateRequest;
 use yavu\Http\Requests\AdminUpdateRequest;
@@ -33,7 +34,10 @@ class AdminController extends Controller
     }
 
     public function empresasindex(){
-        return view('admins.empresasadmin.index');
+        return view('admins.empresasadmin.index', ['empresas' => Empresa::paginate(20)]);
+    }
+    public function empresascreate(){
+        return view('admins.empresasadmin.create');
     }
 
     public function store(AdminCreateRequest $request)

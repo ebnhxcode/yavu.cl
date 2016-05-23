@@ -170,7 +170,10 @@ Route::group(['middleware' => 'admin'], function(){
 
 
   /*Gestión de Admins*/
+  
   Route::get('admins/banneradmin','AdminController@indexbanner');
+  Route::get('admins/empresas/index', 'AdminController@empresasindex');
+  Route::get('admins/empresa/create', 'AdminController@empresascreate');
   Route::resource('admins','AdminController');
   Route::get('sorteospendientes', 'SorteoController@SorteosPendientes');
   Route::get('aprobarsorteopendiente', 'SorteoController@AprobarSorteoPendiente');
