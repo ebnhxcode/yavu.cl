@@ -6,7 +6,7 @@
 		@include('alerts.errorsMessage')
 		@include('alerts.successMessage')
 		@include('alerts.warningMessage')
-		<h2>Panel de administración de banner</h2>
+		<h2>Empresas con Banner</h2>
 	</div>
 </div>
 @stop

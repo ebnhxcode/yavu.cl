@@ -16,12 +16,9 @@
   {{--{!!Html::script('js/bootstrap.min.js')!!}--}}
   {!!Html::script('js/all.js')!!}
   {!!Html::script('js/plugins.js')!!}
-  {!!Html::script('js/ajax/FrontNotificaciones.js')!!}
 
   {!!Html::style('css/app.css')!!}
 
-  {!!Html::script('js/ajax/GestionarCoins.js')!!}
-  {!!Html::script('js/ajax/GestionarCompraTicket.js')!!}
   {!!Html::style('css/style.css')!!}
   {!!Html::script('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')!!}
   {{-- {!!Html::style('css/main.css')!!} --}}

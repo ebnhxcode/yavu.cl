@@ -35,6 +35,11 @@ class AdminController extends Controller
     {
         return view('admins.create');
     }
+
+    public function empresasindex(){
+        return view('admins.empresasadmin.index');
+    }
+
     public function store(AdminCreateRequest $request)
     {
         Admin::create($request->all());
