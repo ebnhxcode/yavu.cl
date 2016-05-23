@@ -165,12 +165,13 @@ Route::group(['middleware' => 'user'], function(){
 
 }); /*Fin del middleware user*/
 
+
 Route::group(['middleware' => 'admin'], function(){
 
 
   /*Gestión de Admins*/
+  Route::get('admins/banneradmin','AdminController@indexbanner');
   Route::resource('admins','AdminController');
-  Route::resource('admins/adminbanner','BannerController');
   Route::get('sorteospendientes', 'SorteoController@SorteosPendientes');
   Route::get('aprobarsorteopendiente', 'SorteoController@AprobarSorteoPendiente');
   Route::get('visualizarempresasorteopendiente', 'SorteoController@VisualizarSorteoPendiente');
