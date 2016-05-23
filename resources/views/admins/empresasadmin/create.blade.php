@@ -5,7 +5,7 @@
       @include('alerts.alertFields')
       @include('empresas.forms.modalTerminosCondiciones')
       <div class="" style="font-size: 2em;">
-        <img width="8%" style="padding-bottom: 20px;" src= "{!!URL::to('img/newGraphics/neo_icono_empresa_crear.png')!!}"/><a href="{!! URL::to('/empresas') !!}"><span>Empresas</span></a><span class="requerido">\</span><span>Crear nueva empresa</span>
+        <img width="8%" style="padding-bottom: 20px;" src= "{!!URL::to('img/newGraphics/neo_icono_config02.png')!!}"/><a href="{!! URL::to('/empresas') !!}"><span>Administracion</span></a><span class="requerido">\</span><span>Crear nueva empresa</span>
       </div>
       @include('alerts.alertFields')
       @include('alerts.errorsMessage')
@@ -13,8 +13,9 @@
       @include('alerts.warningMessage')
       @include('alerts.infoMessage')
       <div class="row">
-        {!!Form::open(['route'=>'empresas.store', 'method'=>'POST', 'files' => true, 'id' => 'FormEmpresa' ])!!}
-        @include('empresas.forms.fieldsEmpresa')
+
+        {!!Form::open(['route'=>'admins_empresas_create_path', 'method'=>'POST', 'files' => true, 'id' => 'FormEmpresa' ])!!}
+        @include('admins.forms.fieldsEmpresa')
         <div class="list-group">
           <div class="list-group-item">
             <div class="form-group has-feedback has-feedback-left">

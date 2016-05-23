@@ -67,7 +67,7 @@
 						<a href="{!! URL::to('/admins/empresas/index') !!}">Listar empresas</a>
 					</div>
 					<div class="list-group-item">
-						<a href="{!! URL::to('/admins/empresa/create') !!}">Pre-Crear empresa</a>
+						<a href="{!! URL::to('/admins/empresas/create') !!}">Pre-Crear empresa</a>
 					</div>
 					<div class="list-group-item">
 						<a href="{!! URL::to('#!') !!}"></a>

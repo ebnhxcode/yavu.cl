@@ -173,11 +173,13 @@ Route::group(['middleware' => 'admin'], function(){
   
   Route::get('admins/banneradmin','AdminController@indexbanner');
   Route::get('admins/empresas/index', 'AdminController@empresasindex');
-  Route::get('admins/empresa/create', 'AdminController@empresascreate');
+  Route::post('admins/empresas/create', [ 'uses' => 'AdminController@empresasstore', 'as' => 'admins_empresas_create_path' ]);
+  Route::get('admins/empresas/create', 'AdminController@empresascreate');
   Route::resource('admins','AdminController');
   Route::get('sorteospendientes', 'SorteoController@SorteosPendientes');
   Route::get('aprobarsorteopendiente', 'SorteoController@AprobarSorteoPendiente');
   Route::get('visualizarempresasorteopendiente', 'SorteoController@VisualizarSorteoPendiente');
+  Route::get('validarrutempresa/{rut}', 'EmpresaController@ValidarRutEmpresa');
   /*Gestión de Admins*/
 
 
