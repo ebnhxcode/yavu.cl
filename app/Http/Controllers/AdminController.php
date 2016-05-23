@@ -26,7 +26,11 @@ class AdminController extends Controller
     }
     public function indexbanner(){
     return view('admins.banneradmin.index');
+    
     }
+      public function SorteosPendientes(){
+    return view('admins.sorteosPendientes', ['sorteospendientes' => Sorteo::where('estado_sorteo', 'Pendiente')->get()]);
+  }
     public function create()
     {
         return view('admins.create');
