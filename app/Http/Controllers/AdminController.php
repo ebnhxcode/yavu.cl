@@ -8,6 +8,7 @@ use yavu\Http\Controllers\Controller;
 use Session;
 use Redirect;
 use yavu\Admin;
+use yavu\Empresa;
 use Illuminate\Routing\Route;
 class AdminController extends Controller
 {
@@ -27,9 +28,17 @@ class AdminController extends Controller
     public function indexbanner(){
     return view('admins.banneradmin.index');
     }
-      public function SorteosPendientes(){
+    public function SorteosPendientes(){
     return view('admins.sorteosPendientes', ['sorteospendientes' => Sorteo::where('estado_sorteo', 'Pendiente')->get()]);
-  }
+    }
+    public function bannercreate()
+    {
+        return view('admins.banneradmin.bannercreate');
+    }
+    public function bannerassign()
+    {
+        return view('admins.banneradmin.bannerassign');
+    }
     public function create()
     {
         return view('admins.create');
@@ -43,6 +52,10 @@ class AdminController extends Controller
     public function show($id)
     {
 
+    }
+    public function banneredit($id)
+    {
+        return view('admins.banneradmin.banneredit');
     }
     public function edit($id)
     {
