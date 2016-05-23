@@ -30,7 +30,7 @@ class BannerController extends Controller{
 
   public function create(){
     if(Auth::admin()->check()){
-      return view('banners.create');
+      return view('admins.banneradmin.bannercreate');
     }
     return Redirect::to("/");
     //return response()->json(["Mensaje: " => "Acceso denegado"]);

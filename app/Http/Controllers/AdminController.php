@@ -26,7 +26,6 @@ class AdminController extends Controller
     }
     public function indexbanner(){
     return view('admins.banneradmin.index');
-    
     }
       public function SorteosPendientes(){
     return view('admins.sorteosPendientes', ['sorteospendientes' => Sorteo::where('estado_sorteo', 'Pendiente')->get()]);
@@ -35,11 +34,6 @@ class AdminController extends Controller
     {
         return view('admins.create');
     }
-
-    public function empresasindex(){
-        return view('admins.empresasadmin.index');
-    }
-
     public function store(AdminCreateRequest $request)
     {
         Admin::create($request->all());
