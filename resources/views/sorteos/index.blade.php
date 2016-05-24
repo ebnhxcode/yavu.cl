@@ -1,4 +1,3 @@
-{!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/BuscarSorteo.js')!!}
 {!!Html::script('js/ajax/ParticiparSorteo.js')!!}
 @extends('layouts.front')
@@ -14,22 +13,6 @@
       <img id="img" style="padding-bottom: 20px;" width="8%" src= "{!!URL::to('img/newGraphics/neo_icono_sorteo.png')!!}"/><span>Sorteos</span>
     </div>
     <div class="row">
-
-
-      <div class="col-md-12 col-sm-12 col-xs-12">
-
-      <!-- 
-        <div class="alert alert-warning alert-dismissible" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          Atento al usar tus tickets participar
-          <span class="glyphicon glyphicon-tag" style="font-size: 1em; color: #BEF781;"></span>
-          <span class="glyphicon glyphicon-resize-horizontal"></span>
-          <span class="label label-info">#14</span>&nbsp;(<small class="requerido">Tickets de ejemplo</small>)
-        </div>
-
-      -->
-
-      </div>
 
       <div class="col-md-4 col-sm-12 col-xs-12">
         <div>

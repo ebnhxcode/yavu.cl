@@ -39,7 +39,7 @@ Route::resource('log', 'LogController');
 
 Route::get('login', function(){
   $exitCode = Artisan::call('cache:clear');
-  if(Auth::user()->check()){
+  if(Auth::user()->check()||Auth::admin()->check()){
     $log = new \yavu\Http\Controllers\LogController();
     $log->logout();
     return view('login');
