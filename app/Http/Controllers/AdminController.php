@@ -34,11 +34,21 @@ class AdminController extends Controller
     }
       public function SorteosPendientes(){
     return view('admins.sorteosPendientes', ['sorteospendientes' => Sorteo::where('estado_sorteo', 'Pendiente')->get()]);
-  }
+    }
     public function bannercreate()
     {
         return view('admins.banneradmin.bannercreate');
     }
+    public function empresasindex(){
+        return view('admins.empresasadmin.index', ['empresas' => Empresa::paginate(20)]);
+    }
+
+    public function empresascreate()
+    {
+        return view('admins.empresasadmin.create');
+    }
+
+
     public function empresasedit($id){
         $this->empresa = Empresa::find($id);
         $this->user = User::find($this->empresa->user_id);

@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 7499f462f0c9270294a616b285757a534888bd96
 @extends('layouts.frontadm')
 @section('content')
   <div class="jumbotron">
@@ -18,63 +14,6 @@
           </div>
         </div>
 
-<<<<<<< HEAD
-        <div class="col-md-6 col-sm-6 col-xs-12">
-          <div class="list-group">
-
-            <div class="list-group">
-              <div class="list-group-item">
-                {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar...','id'=>'empresa', 'aria-describedby' => 'sizing-addon1'])!!}
-              </div>
-            </div>
-
-            <div class="list-group-item">
-              <h3>Lista de empresas</h3>
-            </div>
-            <div class="list-group-item">
-              <div class="wrap">
-
-
-                <table class="table table-hover" id="EmpresaList">
-                  <thead>
-                  <th>Nombre</th>
-                  <th>Correo</th>
-                  <th>ciudad</th>
-                  <th>Fono</th>
-                  <th>Aniversario Empresa</th>
-                  <th>Encargado</th>
-                  <th>Operaciones</th>
-                  </thead>
-                  @foreach($empresas as $empresa)
-                    <tbody>
-                    <td>{!!$empresa->nombre!!}</td>
-                    <td>{!!$empresa->email!!}</td>
-                    <td>{!!$empresa->ciudad!!}</td>
-                    <td>{!!$empresa->fono!!}</td>
-                    <td>{!!$empresa->fecha_creacion!!}</td>
-                    <td>{!!$empresa->nombre_encargado!!}</td>
-                    <td>{!!link_to_route('empresas.edit', $title = 'Editar', $parameters = $empresa->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
-                    </tbody>
-                  @endforeach
-                </table>
-
-
-                {!!$admins->render()!!}
-
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <div class="col-md-6 col-sm-6 col-xs-12">
-
-        </div><!-- /div col-md-6-sm-6-xs-12 -->
-      </div><!-- /div row -->
-    </div><!-- /div contentMiddle -->
-  </div><!-- /div jumbotron -->
-
-
-=======
         <div class="col-md-12 col-sm-12 col-xs-12">
           {{-- ESTÁ PENDIENTE EL BUSCADOR DE LA EMPRESA EN ADMIN --}}
           {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar...','id'=>'empresa', 'aria-describedby' => 'sizing-addon1'])!!}
@@ -106,6 +45,5 @@
       </div><!-- /div row -->
     </div><!-- /div contentMiddle -->
   </div><!-- /div jumbotron -->
->>>>>>> 7499f462f0c9270294a616b285757a534888bd96
 @stop
 

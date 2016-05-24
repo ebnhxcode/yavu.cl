@@ -175,7 +175,7 @@
 									<li><a href="{!!URL::to('/sorteos')!!}">Sorteos por confirmar</a></li>
 								</ul>
 							</li>
-							<li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Admintración<b class="caret"></b></a>
+							<li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Administraci&oacute;n<b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									<li><a href="{!!URL::to('/admins/create')!!}">Registro de Administradores</a></li>
 									<li><a href="{!!URL::to('/admins')!!}">Mostrar listado de Administradores</a></li>

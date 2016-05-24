@@ -168,7 +168,7 @@
 
       <div class="form-group has-feedback has-feedback-left">
         (<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Email cliente:')!!}
-        {!!Form::email('user_email',$user_email,['class'=>'form-control','placeholder'=>'Ingrese email del cliente', 'maxlength' => '200'])!!}
+        {!!Form::email('user_email',(isset($user_email)?$user_email:null),['class'=>'form-control','placeholder'=>'Ingrese email del cliente', 'maxlength' => '200'])!!}
         <i class="form-control-feedback glyphicon glyphicon-user"></i>
       </div>
 
