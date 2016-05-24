@@ -1,7 +1,6 @@
 <?php
 namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
-use yavu\Empresa;
 use yavu\Http\Requests;
 use yavu\Http\Requests\EmpresaCreateRequest;
 use yavu\Http\Requests\EmpresaUpdateRequest;
@@ -13,6 +12,7 @@ use Redirect;
 use yavu\Admin;
 use yavu\User;
 use RUT;
+use yavu\Empresa;
 use Illuminate\Routing\Route;
 class AdminController extends Controller
 {
@@ -32,15 +32,12 @@ class AdminController extends Controller
     public function indexbanner(){
     return view('admins.banneradmin.index');
     }
-    public function create(){
-        return view('admins.create');
-    }
-
-    public function empresasindex(){
-        return view('admins.empresasadmin.index', ['empresas' => Empresa::paginate(20)]);
-    }
-    public function empresascreate(){
-        return view('admins.empresasadmin.create');
+      public function SorteosPendientes(){
+    return view('admins.sorteosPendientes', ['sorteospendientes' => Sorteo::where('estado_sorteo', 'Pendiente')->get()]);
+  }
+    public function bannercreate()
+    {
+        return view('admins.banneradmin.bannercreate');
     }
     public function empresasedit($id){
         $this->empresa = Empresa::find($id);
@@ -60,20 +57,25 @@ class AdminController extends Controller
             return Redirect::to('/dashboard');
         }
     }
-    public function empresasstore(EmpresaCreateRequest $request){
+    public function empresasstore(EmpresaCreateRequest $request)
+    {
         $this->user = User::where('email', $request->user_email)->get();
-        if(count($this->user)>0){
+        if (count($this->user) > 0) {
             $this->empresa = Empresa::create($request->all());
             $this->empresa->user_id = $this->user[0]->id;
             $this->empresa->save();
             Session::flash('message', 'La empresa se creó correctamente.');
-        }else{
-            Session::flash('message-error', 'El cliente "'.$request->user_email.'" no existe');
+        } else {
+            Session::flash('message-error', 'El cliente "' . $request->user_email . '" no existe');
         }
         return redirect()->to('/admins/empresas/create');
     }
-
-    public function store(AdminCreateRequest $request){
+    public function create()
+    {
+        return view('admins.create');
+    }
+    public function store(AdminCreateRequest $request)
+    {
         Admin::create($request->all());
         Session::flash('message', 'Aministrador creado correctamente');
         return Redirect::to('/admins');        
