@@ -35,9 +35,9 @@ class AdminController extends Controller
       public function SorteosPendientes(){
     return view('admins.sorteosPendientes', ['sorteospendientes' => Sorteo::where('estado_sorteo', 'Pendiente')->get()]);
     }
-    public function bannercreate()
+    public function bannercreate($empresa_id)
     {
-        return view('admins.banneradmin.bannercreate');
+        return view('admins.banneradmin.bannercreate', ['empresa' => Empresa::find(addslashes($empresa_id))]);
     }
     public function empresasindex(){
         return view('admins.empresasadmin.index', ['empresas' => Empresa::paginate(20)]);

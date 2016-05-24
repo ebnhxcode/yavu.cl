@@ -172,6 +172,7 @@ Route::group(['middleware' => 'admin'], function(){
   /*Gestión de Admins*/
   
   Route::get('admins/banneradmin','AdminController@indexbanner');
+  Route::get('/admins/bannercreate/{empresa_id}', 'AdminController@bannercreate');
   Route::get('admins/empresas/index', 'AdminController@empresasindex');
 
   Route::get('admins/empresas/{id}/edit', ['uses' => 'AdminController@empresasedit', 'as' => 'admins_empresas_edit_path',]);
