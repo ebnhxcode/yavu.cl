@@ -126,14 +126,7 @@
               <li><a href="{!!URL::to('/sorteospendientes')!!}">Sorteos por confirmar</a></li>
             </ul>
           </li>
-          <!--
-							<li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Pagos<b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li><a href="{!!URL::to('/empresas')!!}">Registrar pago</a></li>
-									<li><a href="{!!URL::to('/empresas')!!}">Mostrar listado de deudores</a></li>
-								</ul>
-							</li>
-							-->
+
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Administraci&oacute;n<b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="{!!URL::to('/admins/create')!!}">Registro de Administradores</a></li>
