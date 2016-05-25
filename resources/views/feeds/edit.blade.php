@@ -2,11 +2,20 @@
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		<h4>Edición de publicacion</h4>
+		<div style="font-size: 3em;">
+			<img width="64px" style="padding-bottom: 20px;" src= "{!!URL::to('img/newGraphics/neo_icono_publicaciones.png')!!}" />
+			<span>
+				<a href="{!! URL::to('/feeds') !!}">Publicaciones</a>
+				<span class="requerido">\</span>
+					Editar
+			</span>
+		</div>
+
 		@include('alerts.alertFields')
 		@include('alerts.errorsMessage')
 		@include('alerts.successMessage')
-		@include('alerts.warningMessage')	
+		@include('alerts.warningMessage')
+		@include('alerts.infoMessage')
 		<div class="row">
 			{!!Form::model($feed, ['method'=>'PUT', 'route' => ['feeds.update', $feed->id] ])!!}
 			@include('feeds.forms.fieldsFeed')

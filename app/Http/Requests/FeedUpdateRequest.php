@@ -10,8 +10,8 @@ class FeedUpdateRequest extends Request
     public function rules()
     {
         return [
-            'titulo' => 'required',
-            'descripcion' => 'required'            
+            //'titulo' => 'required',
+            'status' => 'required',
         ];
     }
 }
