@@ -98,6 +98,9 @@ FeedController extends Controller{
   }
   public function show($id){
 
+    $this->EmpresaEstado = EstadoEmpresa::find($id)->estado_empresa()->get();
+    return view('feeds.show', ['feed' => EstadoEmpresa::find($id)], ['EmpresaEstado' => [''=>'',''=>'',''=>'']]);
+
 
   }
   public function store(FeedCreateRequest $request){
@@ -112,6 +115,6 @@ FeedController extends Controller{
     $this->feed->fill($request->all());
     $this->feed->save();
     Session::flash('message', 'Feed editado correctamente');
-    return Redirect::to('/feeds');
+    return Redirect::to('/feeds/'.$this->feed->id);
   }
 }

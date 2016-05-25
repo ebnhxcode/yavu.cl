@@ -4,5 +4,9 @@ use Illuminate\Database\Eloquent\Model;
 class EstadoEmpresa extends Model
 {
     protected $table = "estado_empresas";
-    protected $fillable = array('user_id','empresa_id','status');	
+    protected $fillable = array('user_id','empresa_id','status');
+
+    public function estado_empresa(){
+        return $this->belongsTo(Empresa::class, 'empresa_id');
+    }
 }
