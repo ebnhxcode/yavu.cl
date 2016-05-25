@@ -63,16 +63,17 @@ class AdminController extends Controller
     }
 
     public function bannerstore(Request $request){
+
         $this->bannerdata = BannerData($request->banner_data_id);
         $this->bannerdata->titulo_banner = $request->titulo;
         $this->bannerdata->descripcion_banner = $request->descripcion;
+         $this->bannerdata->imagenbanner = $request->banner;
         $this->bannerdata->estado_banner = 'Creado';
         $this->bannerdata->empresa_id = $request->empresa_id;
         $this->linkbannerdata = new LinkBannerData();
-        $this->linkbannerdata->banner_data_id = addslashes($banner_data_id);
+        $this->linkbannerdata->banner_data_id = addslashes($request->id);
         $this->linkbannerdata = new CategoryBannerData();
-        $this->categorybannerdata->category = addslashes($nombre_categoria);
-        dd($request);
+        $this->categorybannerdata->category = addslashes($nombre_categoria); 
         $this->bannerdata-> save();
     }
 

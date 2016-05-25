@@ -4,7 +4,7 @@
 			<h4>Datos principales</h4>
 		</div>
 		<div class="list-group-item">
-		@if(Request::path() === 'empresas/create' && Auth::user()->check())			
+		@if(Request::path() === 'empresas/create' && Auth::user()->check())		
 			<div class="form-group has-feedback has-feedback-left">
 				(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Nombre Único de empresa:')!!}
 				{!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese el nombre de la empresa', 'maxlength' => '100'])!!}

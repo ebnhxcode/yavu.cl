@@ -8,6 +8,7 @@ class CreateBannerDataTable extends Migration
         Schema::create('banner_data', function (Blueprint $table) {
             $table->increments('id');
             $table->string('titulo_banner', 20);
+            $table->string('banner');
             $table->string('descripcion_banner', 80);
             $table->string('estado_banner');  
             $table->string('empresa_id');

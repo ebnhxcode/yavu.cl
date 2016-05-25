@@ -23,7 +23,7 @@
         (<strong><small><span class="requerido">Solo jpg, png</span></small></strong>) {!!Form::label('Subir imagen banner: ')!!}<span id="Perfil" ></span><br>
         <div>
           <span class="btn-file btn-sm">
-            Buscar imagen{!!Form::file('imagen_banner', ['id' => 'imagen_perfil',  'maxlength' => '255', 'size' => '2048'])!!}
+            Buscar imagen{!!Form::file('Imagenbanner', ['banner' => 'banner',  'maxlength' => '255', 'size' => '2048'])!!}
           </span>
           @if(isset($empresa))
             <img width="15%" id="ImagenBanner" class="thumbnail img-responsive-centered" src="/img/users/{!! ($empresa->imagen_perfil!="")?$empresa->imagen_perfil:'usuario_nuevo.png'!!}" alt="...">
@@ -63,7 +63,7 @@
          <div class="form-group has-feedback has-feedback-left">
         (<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Link 2:')!!}
         {!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese el link 2', 'maxlength' => '100'])!!}
-      </div>     
+      </div>   
   </div>
 
   <!--</div>-->
