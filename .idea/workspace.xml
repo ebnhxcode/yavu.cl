@@ -2,12 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="393d4c96-d1b4-44a8-950e-0a55378b6180" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/feeds/show.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/newGraphics/neo_notificacion03_16x16.png" afterPath="$PROJECT_DIR$/public/img/newGraphics/neo_notificacion03_16x16.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/newGraphics/neo_notificacion04_16x16.png" afterPath="$PROJECT_DIR$/public/img/newGraphics/neo_notificacion04_16x16.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/newGraphics/neo_tickets02_16x16.png" afterPath="$PROJECT_DIR$/public/img/newGraphics/neo_tickets02_16x16.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/EstadoEmpresa.php" afterPath="$PROJECT_DIR$/app/EstadoEmpresa.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FeedController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FeedController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/feeds/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/feeds/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/feeds/forms/fieldsFeed.blade.php" afterPath="$PROJECT_DIR$/resources/views/feeds/forms/fieldsFeed.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/BannerData.php" afterPath="$PROJECT_DIR$/app/BannerData.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CategoryBannerData.php" afterPath="$PROJECT_DIR$/app/CategoryBannerData.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/EmpresaController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmpresaController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/BannerDataCreateRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/BannerDataCreateRequest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/LinkBannerData.php" afterPath="$PROJECT_DIR$/app/LinkBannerData.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.php" afterPath="$PROJECT_DIR$/config/database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_05_24_124722_create_banner_data_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_05_24_124722_create_banner_data_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_05_24_124725_create_link_banner_data_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_05_24_124725_create_link_banner_data_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_05_24_124736_create_category_banner_data_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_05_24_124736_create_category_banner_data_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admins/banneradmin/bannerassign.blade.php" afterPath="$PROJECT_DIR$/resources/views/admins/banneradmin/bannerassign.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admins/banneradmin/bannercreate.blade.php" afterPath="$PROJECT_DIR$/resources/views/admins/banneradmin/bannercreate.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admins/banneradmin/banneredit.blade.php" afterPath="$PROJECT_DIR$/resources/views/admins/banneradmin/banneredit.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admins/banneradmin/forms/fieldsBanner.blade.php" afterPath="$PROJECT_DIR$/resources/views/admins/banneradmin/forms/fieldsBanner.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admins/banneradmin/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/admins/banneradmin/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admins/empresasadmin/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/admins/empresasadmin/create.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admins/empresasadmin/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/admins/empresasadmin/edit.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admins/empresasadmin/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/admins/empresasadmin/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admins/forms/fieldsEmpresa.blade.php" afterPath="$PROJECT_DIR$/resources/views/admins/forms/fieldsEmpresa.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/empresas/forms/fieldsEmpresa.blade.php" afterPath="$PROJECT_DIR$/resources/views/empresas/forms/fieldsEmpresa.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/feeds/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/feeds/show.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
     </list>
     <ignored path="yavu.cl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,26 +52,97 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="publicProfile.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/empresas/publicProfile.blade.php">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4106">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="376">
+              <caret line="187" column="36" selection-start-line="187" selection-start-column="36" selection-end-line="187" selection-end-column="36" />
               <folding>
-                <marker date="1463779979812" expanded="true" signature="8321:8521" placeholder="..." />
-                <marker date="1463779979812" expanded="true" signature="8336:8520" placeholder="..." />
+                <element signature="e#1509#7052#1#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admins/empresasadmin/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="256" column="43" selection-start-line="256" selection-start-column="43" selection-end-line="256" selection-end-column="43" />
+            <state relative-caret-position="-176">
+              <caret line="7" column="147" selection-start-line="7" selection-start-column="147" selection-end-line="7" selection-end-column="147" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fieldsEmpresa.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/admins/forms/fieldsEmpresa.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="195" column="63" selection-start-line="195" selection-start-column="63" selection-end-line="195" selection-end-column="63" />
               <folding>
-                <element signature="e#1509#7052#1#PHP" expanded="false" />
+                <marker date="1464208118252" expanded="true" signature="1080:2304" placeholder="..." />
+                <marker date="1464208118252" expanded="true" signature="1093:2294" placeholder="..." />
+                <marker date="1464208118252" expanded="true" signature="1114:2214" placeholder="..." />
+                <marker date="1464208118252" expanded="true" signature="5627:6319" placeholder="..." />
+                <marker date="1464208118252" expanded="true" signature="5640:6309" placeholder="..." />
+                <marker date="1464208118252" expanded="true" signature="5661:6229" placeholder="..." />
+                <marker date="1464208118252" expanded="true" signature="6520:7034" placeholder="..." />
+                <marker date="1464208118252" expanded="true" signature="6533:7024" placeholder="..." />
+                <marker date="1464208118252" expanded="true" signature="6552:6944" placeholder="..." />
+                <marker date="1464208118252" expanded="true" signature="8415:8596" placeholder="..." />
+                <marker date="1464208118252" expanded="true" signature="8428:8586" placeholder="..." />
+                <marker date="1464208118252" expanded="true" signature="8449:8507" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EmpresaController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EmpresaController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2220">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding>
+                <marker date="1464207988659" expanded="true" signature="6829:7008" placeholder="SELECT * FRO... id" />
+                <marker date="1464207988659" expanded="true" signature="6844:6999" placeholder="SELECT id, u... empresas" />
+                <marker date="1464207988659" expanded="true" signature="8518:8827" placeholder="SELECT * FRO... id" />
+                <marker date="1464207988659" expanded="true" signature="8533:8688" placeholder="SELECT id, u... empresas" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/empresas/create.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="229">
+              <caret line="32" column="67" selection-start-line="32" selection-start-column="67" selection-end-line="32" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fieldsEmpresa.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/empresas/forms/fieldsEmpresa.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="109">
+              <caret line="253" column="0" selection-start-line="253" selection-start-column="0" selection-end-line="253" selection-end-column="0" />
+              <folding>
+                <marker date="1464207854845" expanded="true" signature="1415:2485" placeholder="..." />
+                <marker date="1464207854845" expanded="true" signature="1428:2478" placeholder="..." />
+                <marker date="1464207854845" expanded="true" signature="1445:2402" placeholder="..." />
+                <marker date="1464207854845" expanded="true" signature="6045:6674" placeholder="..." />
+                <marker date="1464207854845" expanded="true" signature="6058:6666" placeholder="..." />
+                <marker date="1464207854845" expanded="true" signature="6076:6590" placeholder="..." />
+                <marker date="1464207854845" expanded="true" signature="6868:7338" placeholder="..." />
+                <marker date="1464207854845" expanded="true" signature="6881:7330" placeholder="..." />
+                <marker date="1464207854845" expanded="true" signature="6897:7253" placeholder="..." />
+                <marker date="1464207854845" expanded="true" signature="8527:8698" placeholder="..." />
+                <marker date="1464207854845" expanded="true" signature="8540:8690" placeholder="..." />
+                <marker date="1464207854845" expanded="true" signature="8565:8613" placeholder="..." />
+                <marker date="1464207854845" expanded="true" signature="9961:10135" placeholder="..." />
+                <marker date="1464207854845" expanded="true" signature="9974:10127" placeholder="..." />
+                <marker date="1464207854845" expanded="true" signature="9992:10051" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -64,17 +158,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fieldsFeed.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/feeds/forms/fieldsFeed.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/feeds/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="199">
@@ -82,43 +166,6 @@
               <folding>
                 <element signature="e#867#900#0#HTML" expanded="true" />
                 <element signature="e#1109#1422#0#HTML" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GestionarPublicacionesFeeds.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/publicaciones/GestionarPublicacionesFeeds.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="147" column="69" selection-start-line="147" selection-start-column="69" selection-end-line="147" selection-end-column="69" />
-              <folding>
-                <marker date="1464113682986" expanded="true" signature="2641:3416" placeholder="..." />
-                <marker date="1464113682986" expanded="true" signature="2680:3122" placeholder="..." />
-                <marker date="1464113682986" expanded="true" signature="2696:2945" placeholder="..." />
-                <marker date="1464113682986" expanded="false" signature="2723:2737" placeholder="..." />
-                <marker date="1464113682986" expanded="true" signature="2738:2940" placeholder="..." />
-                <marker date="1464113682986" expanded="false" signature="2856:2882" placeholder="..." />
-                <marker date="1464113682986" expanded="true" signature="2963:3066" placeholder="..." />
-                <marker date="1464113682986" expanded="true" signature="3174:3401" placeholder="..." />
-                <marker date="1464113682986" expanded="false" signature="3330:3344" placeholder="..." />
-                <marker date="1464113682986" expanded="true" signature="3345:3385" placeholder="..." />
-                <marker date="1464113682986" expanded="true" signature="4274:6753" placeholder="..." />
-                <marker date="1464113682986" expanded="false" signature="4297:4322" placeholder="..." />
-                <marker date="1464113682986" expanded="true" signature="4371:6148" placeholder="..." />
-                <marker date="1464113682986" expanded="true" signature="4404:5459" placeholder="..." />
-                <marker date="1464113682986" expanded="false" signature="4430:4480" placeholder="..." />
-                <marker date="1464113682986" expanded="true" signature="4498:5419" placeholder="..." />
-                <marker date="1464113682986" expanded="true" signature="4658:4799" placeholder="..." />
-                <marker date="1464113682986" expanded="true" signature="4870:5401" placeholder="..." />
-                <marker date="1464113682986" expanded="false" signature="5537:5555" placeholder="..." />
-                <marker date="1464113682986" expanded="false" signature="5707:5733" placeholder="..." />
-                <marker date="1464113682986" expanded="false" signature="5892:5906" placeholder="..." />
-                <marker date="1464113682986" expanded="true" signature="6225:6275" placeholder="..." />
-                <marker date="1464113682986" expanded="true" signature="6357:6696" placeholder="..." />
-                <marker date="1464113682986" expanded="false" signature="6416:6429" placeholder="..." />
-                <marker date="1464113682986" expanded="true" signature="6430:6679" placeholder="..." />
-                <marker date="1464113682986" expanded="true" signature="6557:6661" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -154,16 +201,13 @@
       <list>
         <option value="$PROJECT_DIR$/resources/views/admins/empresasadmin/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admins/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admins/forms/fieldsEmpresa.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admins/empresasadmin/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
         <option value="$PROJECT_DIR$/resources/views/admins/empresasadmin/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/front.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/frontadm.blade.php" />
-        <option value="$PROJECT_DIR$/config/database.php" />
         <option value="$PROJECT_DIR$/resources/views/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/sorteos/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/FeedUpdateRequest.php" />
         <option value="$PROJECT_DIR$/public/js/ajax/GestionarEstadosEmpresa.js" />
         <option value="$PROJECT_DIR$/public/js/publicaciones/GestionarPublicacionesFeeds.js" />
@@ -173,6 +217,12 @@
         <option value="$PROJECT_DIR$/resources/views/feeds/show.blade.php" />
         <option value="$PROJECT_DIR$/app/EstadoEmpresa.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FeedController.php" />
+        <option value="$PROJECT_DIR$/config/database.php" />
+        <option value="$PROJECT_DIR$/resources/views/empresas/create.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/empresas/forms/fieldsEmpresa.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/EmpresaController.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/resources/views/admins/forms/fieldsEmpresa.blade.php" />
       </list>
     </option>
   </component>
@@ -337,6 +387,106 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="empresas" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forms" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admins" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admins" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forms" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admins" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="empresasadmin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -344,7 +494,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="EstadoEmpresa&#9;null&#9;null&#10;FeedContr&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;Gestiona&#9;FILE&#9;file:///var/www/html/yavu.cl/public/js/publicaciones/GestionarPublicacionesFeeds.js&#10;feedcontro&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;feedco&#9;null&#9;null&#10;routes&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;FeedCo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;Feec&#9;null&#9;null&#10;routes.php &#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;logcon&#9;null&#9;null&#10;front.blade&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/front.blade.php&#10;front.bla&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/frontadm.blade.php&#10;config/database&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;frontadm.&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/frontadm.blade.php&#10;EmpresaContro&#9;null&#9;null&#10;routes.php&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;admincontroller&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="EmpresaContro&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/EmpresaController.php&#10;/empresas/create&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/empresas/create.blade.php&#10;route&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;config/database&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;EstadoEmpresa&#9;null&#9;null&#10;FeedContr&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;Gestiona&#9;FILE&#9;file:///var/www/html/yavu.cl/public/js/publicaciones/GestionarPublicacionesFeeds.js&#10;feedcontro&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;feedco&#9;null&#9;null&#10;routes&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;FeedCo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;Feec&#9;null&#9;null&#10;routes.php &#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;logcon&#9;null&#9;null&#10;front.blade&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/front.blade.php&#10;front.bla&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/frontadm.blade.php&#10;frontadm.&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/frontadm.blade.php&#10;routes.php&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;admincontroller&#9;null&#9;null" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -399,12 +549,12 @@
       <workItem from="1464101430471" duration="8308000" />
       <workItem from="1464115224234" duration="689000" />
       <workItem from="1464189928099" duration="1836000" />
-      <workItem from="1464200768513" duration="4592000" />
+      <workItem from="1464200768513" duration="6831000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18713000" />
+    <option name="totallyTimeSpent" value="20952000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
@@ -448,14 +598,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/FeedUpdateRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/sorteos/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1365">
@@ -578,38 +720,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EmpresaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admins/empresasadmin/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="147" selection-start-line="7" selection-start-column="147" selection-end-line="7" selection-end-column="147" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admins/forms/fieldsEmpresa.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="170" column="73" selection-start-line="170" selection-start-column="73" selection-end-line="170" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admins/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="57" column="14" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -758,16 +872,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="256" column="43" selection-start-line="256" selection-start-column="43" selection-end-line="256" selection-end-column="43" />
-          <folding>
-            <element signature="e#1509#7052#1#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/publicaciones/GestionarPublicacionesFeeds.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -811,14 +915,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/feeds/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/EstadoEmpresa.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -835,10 +931,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/empresas/create.blade.php">
+    <entry file="file://$PROJECT_DIR$/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="360">
+          <caret line="57" column="14" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="75" />
           <folding />
         </state>
       </provider>
@@ -850,6 +946,98 @@
           <folding>
             <element signature="e#867#900#0#HTML" expanded="true" />
             <element signature="e#1109#1422#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/feeds/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/empresas/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="32" column="67" selection-start-line="32" selection-start-column="67" selection-end-line="32" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/empresas/forms/fieldsEmpresa.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="253" column="0" selection-start-line="253" selection-start-column="0" selection-end-line="253" selection-end-column="0" />
+          <folding>
+            <marker date="1464207854845" expanded="true" signature="1415:2485" placeholder="..." />
+            <marker date="1464207854845" expanded="true" signature="1428:2478" placeholder="..." />
+            <marker date="1464207854845" expanded="true" signature="1445:2402" placeholder="..." />
+            <marker date="1464207854845" expanded="true" signature="6045:6674" placeholder="..." />
+            <marker date="1464207854845" expanded="true" signature="6058:6666" placeholder="..." />
+            <marker date="1464207854845" expanded="true" signature="6076:6590" placeholder="..." />
+            <marker date="1464207854845" expanded="true" signature="6868:7338" placeholder="..." />
+            <marker date="1464207854845" expanded="true" signature="6881:7330" placeholder="..." />
+            <marker date="1464207854845" expanded="true" signature="6897:7253" placeholder="..." />
+            <marker date="1464207854845" expanded="true" signature="8527:8698" placeholder="..." />
+            <marker date="1464207854845" expanded="true" signature="8540:8690" placeholder="..." />
+            <marker date="1464207854845" expanded="true" signature="8565:8613" placeholder="..." />
+            <marker date="1464207854845" expanded="true" signature="9961:10135" placeholder="..." />
+            <marker date="1464207854845" expanded="true" signature="9974:10127" placeholder="..." />
+            <marker date="1464207854845" expanded="true" signature="9992:10051" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EmpresaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2220">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <marker date="1464207988659" expanded="true" signature="6829:7008" placeholder="SELECT * FRO... id" />
+            <marker date="1464207988659" expanded="true" signature="6844:6999" placeholder="SELECT id, u... empresas" />
+            <marker date="1464207988659" expanded="true" signature="8518:8827" placeholder="SELECT * FRO... id" />
+            <marker date="1464207988659" expanded="true" signature="8533:8688" placeholder="SELECT id, u... empresas" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="187" column="36" selection-start-line="187" selection-start-column="36" selection-end-line="187" selection-end-column="36" />
+          <folding>
+            <element signature="e#1509#7052#1#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admins/empresasadmin/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-176">
+          <caret line="7" column="147" selection-start-line="7" selection-start-column="147" selection-end-line="7" selection-end-column="147" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admins/forms/fieldsEmpresa.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="195" column="63" selection-start-line="195" selection-start-column="63" selection-end-line="195" selection-end-column="63" />
+          <folding>
+            <marker date="1464208118252" expanded="true" signature="1080:2304" placeholder="..." />
+            <marker date="1464208118252" expanded="true" signature="1093:2294" placeholder="..." />
+            <marker date="1464208118252" expanded="true" signature="1114:2214" placeholder="..." />
+            <marker date="1464208118252" expanded="true" signature="5627:6319" placeholder="..." />
+            <marker date="1464208118252" expanded="true" signature="5640:6309" placeholder="..." />
+            <marker date="1464208118252" expanded="true" signature="5661:6229" placeholder="..." />
+            <marker date="1464208118252" expanded="true" signature="6520:7034" placeholder="..." />
+            <marker date="1464208118252" expanded="true" signature="6533:7024" placeholder="..." />
+            <marker date="1464208118252" expanded="true" signature="6552:6944" placeholder="..." />
+            <marker date="1464208118252" expanded="true" signature="8415:8596" placeholder="..." />
+            <marker date="1464208118252" expanded="true" signature="8428:8586" placeholder="..." />
+            <marker date="1464208118252" expanded="true" signature="8449:8507" placeholder="..." />
           </folding>
         </state>
       </provider>

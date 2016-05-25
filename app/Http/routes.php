@@ -185,7 +185,7 @@ Route::group(['middleware' => 'admin'], function(){
   Route::get('sorteospendientes', 'SorteoController@SorteosPendientes');
   Route::get('aprobarsorteopendiente', 'SorteoController@AprobarSorteoPendiente');
   Route::get('visualizarempresasorteopendiente', 'SorteoController@VisualizarSorteoPendiente');
-  Route::get('validarrutempresa/{rut}', 'EmpresaController@ValidarRutEmpresa');
+  Route::get('validarrutempresaadmin/{rut}', 'EmpresaController@ValidarRutEmpresa');
   /*Gestión de Admins*/
 
 

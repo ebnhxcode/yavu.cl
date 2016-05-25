@@ -118,7 +118,7 @@
 			</div>
 			<div class="list-group-item">
 				<div class="form-group has-feedback has-feedback-left">
-					(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Rut:')!!} <small>(Si no lo tiene ingrese su rut personal)</small>
+					(<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Rut	:')!!} <small>(Si no lo tiene ingrese su rut personal)</small>
 					{!!Form::text('rut',null,['class'=>'form-control','placeholder'=>'Ingrese rut de la empresa', 'id' => 'rut',  'maxlength' => '16'])!!}			
 					<i class="form-control-feedback glyphicon glyphicon-user"></i>
 				</div>
@@ -251,7 +251,6 @@
 	});
 
 	function ValidarRut(rut){
-		console.log("click");
 		var route = "http://localhost:8000/validarrutempresa/"+rut+"";
 		document.getElementById('FormEmpresa').onsubmit = function() {
 		    return false;
