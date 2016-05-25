@@ -1,6 +1,7 @@
 <?php
 namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
+use yavu\Estado;
 use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
 use yavu\Http\Requests\FeedCreateRequest;
@@ -14,7 +15,8 @@ use Illuminate\Routing\Route;
 use DB;
 use yavu\User;
 
-class FeedController extends Controller{
+class
+FeedController extends Controller{
   private $id;
   private $user_id;
   public function __construct(){
@@ -67,8 +69,7 @@ class FeedController extends Controller{
     }
   }
   public function edit($id){
-    return Redirect::to('/');
-    //return view('feeds.edit', ['feed' => $this->feed]);
+    return view('feeds.edit', ['feed' => EstadoEmpresa::find($id)]);
   }
   public function EliminarFeed($id){
 
@@ -96,7 +97,8 @@ class FeedController extends Controller{
 
   }
   public function show($id){
-    return Redirect::to('/');
+
+
   }
   public function store(FeedCreateRequest $request){
     if(isset($request) && $request->ajax()){
@@ -106,7 +108,7 @@ class FeedController extends Controller{
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function update(FeedUpdateRequest $request, $id){
-    return Redirect::to('/');
+    $this->feed = EstadoEmpresa::find($id);
     $this->feed->fill($request->all());
     $this->feed->save();
     Session::flash('message', 'Feed editado correctamente');

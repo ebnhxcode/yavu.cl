@@ -163,6 +163,7 @@ $(document).ready(function(){
 										+'<li><a href="/empresa/'+value.nombreEmp+'" id="" value="'+value.id+'" role="button">Ver perfil</a></li>'
 										+'<li><a onclick="eliminarEstado('+value.id+','+value.user_id+')" href="#!">'+(user_id==value.user_id?"Eliminar":"Ocultar")+' publicación</a></li>'
 										+(user_id==value.user_id?"<li><a onclick='eliminarEstado("+value.id+",0)' href='#!'>Ocultar estado</a></li>":"")
+										+(user_id==value.user_id?"<li><a href='/feeds/"+value.id+"/edit'>Editar publicaci&oacute;n</a></li>":"")
 									+'</ul>'
 								+'</div><!-- /div dropdown -->'
 
