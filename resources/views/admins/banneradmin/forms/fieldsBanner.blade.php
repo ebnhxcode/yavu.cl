@@ -6,12 +6,13 @@
     <div class="list-group-item">
       <div class="form-group has-feedback has-feedback-left">
         (<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Titulo:')!!}
-        {!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese el titulo del banner', 'maxlength' => '100'])!!}
+        {!!Form::text('titulo',null,['class'=>'form-control','placeholder'=>'Ingrese el titulo del banner', 'maxlength' => '100'])!!}
       </div>
+
 
       <div class="form-group has-feedback has-feedback-left">
         (<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Descripción:')!!}
-        {!!Form::textarea('descripcion',null,['class'=>'form-control','placeholder'=>'Agregue una breve descripción para su banner', 'maxlength'=>'999', 'rows'=>'5', 'id'=>'descripción'])!!}
+        {!!Form::textarea('descripcion',null,['class'=>'form-control','placeholder'=>'Agregue una breve descripción para su banner', 'maxlength'=>'999', 'rows'=>'5',[0] 'id'=>'descripción'])!!}
       </div>
 
     </div>
@@ -22,12 +23,12 @@
         (<strong><small><span class="requerido">Solo jpg, png</span></small></strong>) {!!Form::label('Subir imagen banner: ')!!}<span id="Perfil" ></span><br>
         <div>
           <span class="btn-file btn-sm">
-            Buscar imagen{!!Form::file('imagen_perfil', ['id' => 'imagen_perfil',  'maxlength' => '255', 'size' => '2048'])!!}
+            Buscar imagen{!!Form::file('imagen_banner', ['id' => 'imagen_perfil',  'maxlength' => '255', 'size' => '2048'])!!}
           </span>
           @if(isset($empresa))
-            <img width="15%" id="ImagenPerfil" class="thumbnail img-responsive-centered" src="/img/users/{!! ($empresa->imagen_perfil!="")?$empresa->imagen_perfil:'usuario_nuevo.png'!!}" alt="...">
+            <img width="15%" id="ImagenBanner" class="thumbnail img-responsive-centered" src="/img/users/{!! ($empresa->imagen_perfil!="")?$empresa->imagen_perfil:'usuario_nuevo.png'!!}" alt="...">
           @else
-            <img width="15%" id="ImagenPerfil" class="thumbnail img-responsive-centered" src="/img/users/usuario_nuevo.png" alt="...">
+            <img width="15%" id="ImagenBanner" class="thumbnail img-responsive-centered" src="/img/users/usuario_nuevo.png" alt="...">
           @endif
         </div>
       </div>

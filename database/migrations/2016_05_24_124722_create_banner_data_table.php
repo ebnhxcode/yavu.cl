@@ -11,7 +11,6 @@ class CreateBannerDataTable extends Migration
             $table->string('descripcion_banner', 80);
             $table->string('estado_banner');  
             $table->string('empresa_id');
-            $table->string('link_id');
             $table->timestamps();
         });
     }
