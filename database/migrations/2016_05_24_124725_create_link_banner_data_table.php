@@ -7,10 +7,9 @@ class CreateLinkBannerDataTable extends Migration
     {
         Schema::create('link_banner_data', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('titulo_banner', 20);
-            $table->string('descripcion_banner', 80);
-            $table->string('estado_banner');  
-            $table->string('enlace_id');
+            $table->string('link', 400);
+            $table->string('titulo_link', 50);
+            $table->string('banner_data_id');
             $table->timestamps();
         });
     }

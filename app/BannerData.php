@@ -2,9 +2,9 @@
 namespace yavu;
 use Illuminate\Database\Eloquent\Model;
 
-class Banner extends Model
+class BannerData extends Model
 {
     protected $table = 'banner_data';
-    protected $primaryKey = 'banner_data_id';
-    protected $fillable = array( 'titulo_banner','descripcion_banner', 'estado_banner','empresa_id', 'link_id');	
+    protected $primaryKey = 'id';
+    protected $fillable = array( 'titulo_banner','descripcion_banner', 'estado_banner', 'banner', 'empresa_id');	
 }

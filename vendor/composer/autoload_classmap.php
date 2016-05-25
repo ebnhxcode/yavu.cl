@@ -17,6 +17,7 @@ return array(
     'CreateBeneficiosTable' => $baseDir . '/database/migrations/2016_02_24_145949_create_beneficios_table.php',
     'CreateCategoriasTable' => $baseDir . '/database/migrations/2016_02_24_151347_create_categorias_table.php',
     'CreateCategoryBannerDataTable' => $baseDir . '/database/migrations/2016_05_24_124736_create_category_banner_data_table.php',
+    'CreateCheckPointsTable' => $baseDir . '/database/migrations/2016_05_25_122910_create_check_points_table.php',
     'CreateCoinsTable' => $baseDir . '/database/migrations/2016_04_12_232920_create_coins_table.php',
     'CreateEmpresasTable' => $baseDir . '/database/migrations/2015_12_08_142111_create_empresas_table.php',
     'CreateEncuestasTable' => $baseDir . '/database/migrations/2016_02_24_104857_create_encuestas_table.php',
