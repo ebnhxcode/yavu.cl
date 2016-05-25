@@ -16,6 +16,7 @@
 		@include('alerts.successMessage')
 		@include('alerts.warningMessage')
 		@include('alerts.infoMessage')
+
 		<div class="row">
 			{!!Form::model($feed, ['method'=>'PUT', 'route' => ['feeds.update', $feed->id] ])!!}
 			@include('feeds.forms.fieldsFeed')
