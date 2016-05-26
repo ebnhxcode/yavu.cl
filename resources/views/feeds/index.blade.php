@@ -75,7 +75,7 @@
 		}
 		return true;
 	}
-	
+
 
 	function Interactuar(valor) {
 		var status_id = valor.replace('estado_', '');
