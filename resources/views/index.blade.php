@@ -103,10 +103,10 @@
 
                   <div class="form-group has-feedback has-feedback-left">
                     <a class="btn btn-primary" href='{!! URL::to("/social/facebook") !!}'>
-                        <span>
-                          <img src="{!! URL::to('/img/users/facebook.png') !!}" width="7%" alt="">
-                          Registrate o Inicia sesi&oacute;n con Facebook
-                        </span>
+                      <span>
+                        <img src="{!! URL::to('/img/users/facebook.png') !!}" width="7%" alt="">
+                        Registrate o Inicia sesi&oacute;n con Facebook
+                      </span>
                     </a>
                   </div>
 

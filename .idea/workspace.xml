@@ -3,17 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="393d4c96-d1b4-44a8-950e-0a55378b6180" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/EmpresaController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmpresaController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/SorteoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/SorteoController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Sorteo.php" afterPath="$PROJECT_DIR$/app/Sorteo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.php" afterPath="$PROJECT_DIR$/config/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/admins/admins.js" afterPath="$PROJECT_DIR$/public/js/admins/admins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/empresas/raffleList.blade.php" afterPath="$PROJECT_DIR$/resources/views/empresas/raffleList.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FeedController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FeedController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/feeds/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/feeds/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/sorteos/forms/fieldsSorteo.blade.php" afterPath="$PROJECT_DIR$/resources/views/sorteos/forms/fieldsSorteo.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/sorteos/forms/vistaListaUsuario.blade.php" afterPath="$PROJECT_DIR$/resources/views/sorteos/forms/vistaListaUsuario.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/sorteos/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/sorteos/index.blade.php" />
     </list>
     <ignored path="yavu.cl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,18 +31,81 @@
       <file leaf-file-name="front.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/front.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="619">
-              <caret line="109" column="58" selection-start-line="109" selection-start-column="58" selection-end-line="109" selection-end-column="58" />
+            <state relative-caret-position="379">
+              <caret line="201" column="18" selection-start-line="201" selection-start-column="18" selection-end-line="201" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/feeds/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="903">
-              <caret line="119" column="10" selection-start-line="119" selection-start-column="10" selection-end-line="119" selection-end-column="10" />
+            <state relative-caret-position="480">
+              <caret line="77" column="2" selection-start-line="77" selection-start-column="2" selection-end-line="77" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="publicProfile.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/empresas/publicProfile.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="301" column="0" selection-start-line="301" selection-start-column="0" selection-end-line="323" selection-end-column="3" />
+              <folding>
+                <marker date="1464122000948" expanded="true" signature="8321:8521" placeholder="..." />
+                <marker date="1464122000948" expanded="true" signature="8336:8520" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GestionarPublicacionesFeeds.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/publicaciones/GestionarPublicacionesFeeds.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="163" column="63" selection-start-line="163" selection-start-column="63" selection-end-line="163" selection-end-column="63" />
+              <folding>
+                <marker date="1464286852039" expanded="true" signature="2723:2737" placeholder="..." />
+                <marker date="1464286852039" expanded="true" signature="2856:2882" placeholder="..." />
+                <marker date="1464286852039" expanded="true" signature="3330:3344" placeholder="..." />
+                <marker date="1464286852039" expanded="true" signature="4297:4322" placeholder="..." />
+                <marker date="1464286852039" expanded="true" signature="4430:4480" placeholder="..." />
+                <marker date="1464286852039" expanded="true" signature="5537:5555" placeholder="..." />
+                <marker date="1464286852039" expanded="true" signature="5707:5733" placeholder="..." />
+                <marker date="1464286852039" expanded="true" signature="5892:5906" placeholder="..." />
+                <marker date="1464286852039" expanded="true" signature="6416:6429" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GestionarEstadosEmpresa.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/ajax/GestionarEstadosEmpresa.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="610">
+              <caret line="238" column="53" selection-start-line="238" selection-start-column="53" selection-end-line="238" selection-end-column="53" />
+              <folding>
+                <marker date="1464286856107" expanded="true" signature="3057:3071" placeholder="..." />
+                <marker date="1464286856107" expanded="true" signature="3190:3216" placeholder="..." />
+                <marker date="1464286856107" expanded="true" signature="3596:3610" placeholder="..." />
+                <marker date="1464286856107" expanded="true" signature="7356:7381" placeholder="..." />
+                <marker date="1464286856107" expanded="true" signature="7487:7537" placeholder="..." />
+                <marker date="1464286856107" expanded="true" signature="8435:8453" placeholder="..." />
+                <marker date="1464286856107" expanded="true" signature="8604:8630" placeholder="..." />
+                <marker date="1464286856107" expanded="true" signature="8789:8803" placeholder="..." />
+                <marker date="1464286856107" expanded="true" signature="9311:9324" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FeedController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FeedController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="64" column="18" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -70,14 +126,11 @@
         <option value="$PROJECT_DIR$/resources/views/layouts/frontadm.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/login.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/FeedUpdateRequest.php" />
-        <option value="$PROJECT_DIR$/public/js/ajax/GestionarEstadosEmpresa.js" />
-        <option value="$PROJECT_DIR$/public/js/publicaciones/GestionarPublicacionesFeeds.js" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/resources/views/feeds/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/feeds/forms/fieldsFeed.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/feeds/show.blade.php" />
         <option value="$PROJECT_DIR$/app/EstadoEmpresa.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/FeedController.php" />
         <option value="$PROJECT_DIR$/resources/views/empresas/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/empresas/forms/fieldsEmpresa.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
@@ -88,8 +141,12 @@
         <option value="$PROJECT_DIR$/config/database.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
         <option value="$PROJECT_DIR$/resources/views/sorteos/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/front.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/front.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/FeedController.php" />
+        <option value="$PROJECT_DIR$/public/js/publicaciones/GestionarPublicacionesFeeds.js" />
+        <option value="$PROJECT_DIR$/public/js/ajax/GestionarEstadosEmpresa.js" />
+        <option value="$PROJECT_DIR$/resources/views/feeds/index.blade.php" />
       </list>
     </option>
   </component>
@@ -504,7 +561,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="front&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/front.blade.php&#10;/sorteos/inde&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/sorteos/index.blade.php&#10;config/database&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;EmpresaContro&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/EmpresaController.php&#10;/empresas/create&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/empresas/create.blade.php&#10;route&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;EstadoEmpresa&#9;null&#9;null&#10;FeedContr&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;Gestiona&#9;FILE&#9;file:///var/www/html/yavu.cl/public/js/publicaciones/GestionarPublicacionesFeeds.js&#10;feedcontro&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;feedco&#9;null&#9;null&#10;routes&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;FeedCo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;Feec&#9;null&#9;null&#10;routes.php &#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;logcon&#9;null&#9;null&#10;front.blade&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/front.blade.php&#10;front.bla&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/frontadm.blade.php&#10;frontadm.&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/frontadm.blade.php&#10;routes.php&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;admincontroller&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="feedcontro&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;Gestion&#9;FILE&#9;file:///var/www/html/yavu.cl/public/js/ajax/GestionarEstadosEmpresa.js&#10;front&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/front.blade.php&#10;/sorteos/inde&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/sorteos/index.blade.php&#10;config/database&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;EmpresaContro&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/EmpresaController.php&#10;/empresas/create&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/empresas/create.blade.php&#10;route&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;EstadoEmpresa&#9;null&#9;null&#10;FeedContr&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;Gestiona&#9;FILE&#9;file:///var/www/html/yavu.cl/public/js/publicaciones/GestionarPublicacionesFeeds.js&#10;feedco&#9;null&#9;null&#10;routes&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;FeedCo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;Feec&#9;null&#9;null&#10;routes.php &#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;logcon&#9;null&#9;null&#10;front.blade&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/front.blade.php&#10;front.bla&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/frontadm.blade.php&#10;frontadm.&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/frontadm.blade.php&#10;routes.php&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;admincontroller&#9;null&#9;null" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -561,12 +618,12 @@
       <workItem from="1464115224234" duration="689000" />
       <workItem from="1464189928099" duration="1836000" />
       <workItem from="1464200768513" duration="6831000" />
-      <workItem from="1464275264010" duration="3414000" />
+      <workItem from="1464275264010" duration="6501000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24366000" />
+    <option name="totallyTimeSpent" value="27453000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="21" width="1920" height="1059" extended-state="6" />
@@ -610,20 +667,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/admins/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admins/forms/fieldsEmpresa.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2550">
-          <caret line="170" column="47" selection-start-line="170" selection-start-column="47" selection-end-line="170" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -739,24 +782,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/feeds/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/FeedUpdateRequest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/ajax/GestionarEstadosEmpresa.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="240" column="10" selection-start-line="240" selection-start-column="10" selection-end-line="240" selection-end-column="114" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -784,24 +814,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/empresas/publicProfile.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4106">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/sorteos/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/publicaciones/GestionarPublicacionesFeeds.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="147" column="69" selection-start-line="147" selection-start-column="69" selection-end-line="147" selection-end-column="69" />
         </state>
       </provider>
     </entry>
@@ -877,14 +893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="32" column="93" selection-start-line="32" selection-start-column="93" selection-end-line="32" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FeedController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="633">
-          <caret line="106" column="44" selection-start-line="106" selection-start-column="44" selection-end-line="106" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -986,18 +994,97 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/front.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="109" column="58" selection-start-line="109" selection-start-column="58" selection-end-line="109" selection-end-column="58" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Sorteo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="903">
-          <caret line="119" column="10" selection-start-line="119" selection-start-column="10" selection-end-line="119" selection-end-column="10" />
+        <state relative-caret-position="1515">
+          <caret line="101" column="35" selection-start-line="101" selection-start-column="35" selection-end-line="101" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/front.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="201" column="18" selection-start-line="201" selection-start-column="18" selection-end-line="201" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FeedController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="64" column="18" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/ajax/GestionarEstadosEmpresa.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="610">
+          <caret line="238" column="53" selection-start-line="238" selection-start-column="53" selection-end-line="238" selection-end-column="53" />
+          <folding>
+            <marker date="1464286856107" expanded="true" signature="3057:3071" placeholder="..." />
+            <marker date="1464286856107" expanded="true" signature="3190:3216" placeholder="..." />
+            <marker date="1464286856107" expanded="true" signature="3596:3610" placeholder="..." />
+            <marker date="1464286856107" expanded="true" signature="7356:7381" placeholder="..." />
+            <marker date="1464286856107" expanded="true" signature="7487:7537" placeholder="..." />
+            <marker date="1464286856107" expanded="true" signature="8435:8453" placeholder="..." />
+            <marker date="1464286856107" expanded="true" signature="8604:8630" placeholder="..." />
+            <marker date="1464286856107" expanded="true" signature="8789:8803" placeholder="..." />
+            <marker date="1464286856107" expanded="true" signature="9311:9324" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/publicaciones/GestionarPublicacionesFeeds.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="163" column="63" selection-start-line="163" selection-start-column="63" selection-end-line="163" selection-end-column="63" />
+          <folding>
+            <marker date="1464286852039" expanded="true" signature="2723:2737" placeholder="..." />
+            <marker date="1464286852039" expanded="true" signature="2856:2882" placeholder="..." />
+            <marker date="1464286852039" expanded="true" signature="3330:3344" placeholder="..." />
+            <marker date="1464286852039" expanded="true" signature="4297:4322" placeholder="..." />
+            <marker date="1464286852039" expanded="true" signature="4430:4480" placeholder="..." />
+            <marker date="1464286852039" expanded="true" signature="5537:5555" placeholder="..." />
+            <marker date="1464286852039" expanded="true" signature="5707:5733" placeholder="..." />
+            <marker date="1464286852039" expanded="true" signature="5892:5906" placeholder="..." />
+            <marker date="1464286852039" expanded="true" signature="6416:6429" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/empresas/publicProfile.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="301" column="0" selection-start-line="301" selection-start-column="0" selection-end-line="323" selection-end-column="3" />
+          <folding>
+            <marker date="1464122000948" expanded="true" signature="8321:8521" placeholder="..." />
+            <marker date="1464122000948" expanded="true" signature="8336:8520" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/feeds/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="77" column="2" selection-start-line="77" selection-start-column="2" selection-end-line="77" selection-end-column="2" />
           <folding />
         </state>
       </provider>
