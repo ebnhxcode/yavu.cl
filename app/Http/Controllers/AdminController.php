@@ -1,4 +1,5 @@
 <?php
+
 namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
 use yavu\Http\Requests;
@@ -14,7 +15,10 @@ use yavu\User;
 use RUT;
 use yavu\Empresa;
 use yavu\BannerData;
+use yavu\LinkBannerData;
+use yavu\CategoryBannerData;
 use Illuminate\Routing\Route;
+
 class AdminController extends Controller
 {
     private $bannerdata;
@@ -64,16 +68,16 @@ class AdminController extends Controller
 
     public function bannerstore(Request $request){
 
-        $this->bannerdata = BannerData($request->banner_data_id);
+        $this->bannerdata = BannerData::find($request->banner_data_id);
         $this->bannerdata->titulo_banner = $request->titulo;
         $this->bannerdata->descripcion_banner = $request->descripcion;
-         $this->bannerdata->imagenbanner = $request->banner;
+
         $this->bannerdata->estado_banner = 'Creado';
         $this->bannerdata->empresa_id = $request->empresa_id;
         $this->linkbannerdata = new LinkBannerData();
         $this->linkbannerdata->banner_data_id = addslashes($request->id);
-        $this->linkbannerdata = new CategoryBannerData();
-        $this->categorybannerdata->category = addslashes($nombre_categoria); 
+        $this->categorybannerdata = new CategoryBannerData();
+        $this->categorybannerdata->nombre_categoria = addslashes($request->id); 
         $this->bannerdata-> save();
     }
 

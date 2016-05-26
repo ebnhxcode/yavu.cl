@@ -9,12 +9,12 @@
         {!!Form::text('titulo',null,['class'=>'form-control','placeholder'=>'Ingrese el titulo del banner', 'maxlength' => '100'])!!}
       </div>
 
-
-      <div class="form-group has-feedback has-feedback-left">
+<div class="form-group has-feedback has-feedback-left">
         (<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Descripción:')!!}
-        {!!Form::textarea('descripcion',null,['class'=>'form-control','placeholder'=>'Agregue una breve descripción para su banner', 'maxlength'=>'999', 'rows'=>'5',[0] 'id'=>'descripción'])!!}
-      </div>
+        {!!Form::textarea('descripcion',null,['class'=>'form-control','placeholder'=>'Agregue una breve descripción para su banner', 'maxlength'=>'999', 'rows'=>'5', 'id'=>'descripción'])!!}
+      </div> 
 
+      
     </div>
     <!-- GESTION DE LAS FOTOS -->
 
@@ -58,11 +58,11 @@
           </div>  
              <div class="form-group has-feedback has-feedback-left">
         (<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Link 1:')!!}
-        {!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese el link 1', 'maxlength' => '100'])!!}
+        {!!Form::text('link1',null,['class'=>'form-control','placeholder'=>'Ingrese el link 1', 'maxlength' => '100'])!!}
       </div> 
          <div class="form-group has-feedback has-feedback-left">
         (<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Link 2:')!!}
-        {!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese el link 2', 'maxlength' => '100'])!!}
+        {!!Form::text('link2',null,['class'=>'form-control','placeholder'=>'Ingrese el link 2', 'maxlength' => '100'])!!}
       </div>   
   </div>
 
