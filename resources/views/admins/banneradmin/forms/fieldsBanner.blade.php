@@ -20,13 +20,13 @@
 
     <div class="list-group-item">
       <div class="form-group has-feedback has-feedback-left">
-        (<strong><small><span class="requerido">Solo jpg, png</span></small></strong>) {!!Form::label('Subir imagen banner: ')!!}<span id="Perfil" ></span><br>
+        (<strong><small><span class="requerido">Solo jpg, png</span></small></strong>) {!!Form::label('Subir imagen banner: ')!!}<span id="ImagenBanner" ></span><br>
         <div>
           <span class="btn-file btn-sm">
-            Buscar imagen{!!Form::file('Imagenbanner', ['banner' => 'banner',  'maxlength' => '255', 'size' => '2048'])!!}
+            Buscar imagen{!!Form::file('ImagenBanner', ['banner' => 'banner',  'maxlength' => '255', 'size' => '2048'])!!}
           </span>
           @if(isset($empresa))
-            <img width="15%" id="ImagenBanner" class="thumbnail img-responsive-centered" src="/img/users/{!! ($empresa->imagen_perfil!="")?$empresa->imagen_perfil:'usuario_nuevo.png'!!}" alt="...">
+            <img width="15%" id="ImagenBanner" class="thumbnail img-responsive-centered" src="/img/users/{!! ($banner_data->banner!="")?$banner_data->banner:'usuario_nuevo.png'!!}" alt="...">
           @else
             <img width="15%" id="ImagenBanner" class="thumbnail img-responsive-centered" src="/img/users/usuario_nuevo.png" alt="...">
           @endif
@@ -65,5 +65,28 @@
         {!!Form::text('link2',null,['class'=>'form-control','placeholder'=>'Ingrese el link 2', 'maxlength' => '100'])!!}
       </div>   
   </div>
+
+  <script>
+
+  $('#ImagenBanner').change(function(){
+    var formato = this.value;
+    var formatosPermitidos = ['jpg', 'jpeg', 'png', 'gif'];
+    formato = formato.split('.');
+    var sizeByte = this.files[0].size;
+      var siezekiloByte = parseInt(sizeByte / 1024);
+    if((formatosPermitidos.indexOf(formato[1]) < 0) || (siezekiloByte > $(this).attr('size')))
+
+    { 
+
+      alert('Formato de imagen invalido o tamaño supera 1 Mega, no se subirá');
+      this.value = '';
+    }
+    else
+    {
+      $('#ImagenBanner').addClass('btn btn-success btn-xs').text('ok');
+    }
+  });
+
+</script>
 
   <!--</div>-->
