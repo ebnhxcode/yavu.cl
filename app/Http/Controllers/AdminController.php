@@ -73,8 +73,7 @@ class AdminController extends Controller
         $this->bannerdata->descripcion_banner = $request->descripcion;
         $this->bannerdata->banner = $request->imagenbanner;
         $this->bannerdata->estado_banner = 'Creado';
-        dd($this->bannerdata);
-        $this->bannerdata->empresa_id = $request->empresa_id;
+    
         $this->linkbannerdata = new LinkBannerData();
         $this->linkbannerdata->banner_data_id = addslashes($request->id);
         $this->categorybannerdata = new CategoryBannerData();
