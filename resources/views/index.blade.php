@@ -1,8 +1,6 @@
 @extends('layouts.front')
 @section('content')
-
-  {{--
-  @include('layouts.bannerFront')
+@include('layouts.bannerFront')
 
 <div class="jumbotron">
   <div id="contentMiddle">
@@ -123,38 +121,6 @@
     @endif
     </div><!-- /div contentMiddle -->
   </div>
-  --}}
-
-  <div class="jumbotron">
-    <div id="contentMiddle">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-          <h3>Estimados</h3>
-          <p>
-            Junto con saludar,
-            <br>
-            Se les informa que el sitio <a href="http://www.yavu.cl">yavü</a> tiene este sitio como test de desarrollo, considere las siguientes directivas:
-            <br>
-            <ol>
-              <li>
-                El bot&oacute;n de iniciar sesi&oacute;n con facebook solo funciona en el sitio oficial de <a href="http://www.yavu.cl">yavü</a>.
-              </li>
-              <li>
-                Esta p&aacute;gina de landing tiene este formato para que est&eacute;n en conocimiento sobre el sitio test.
-              </li>
-              <li>
-                Este sitio tiene como objetivo principal la detecci&oacute;n de bugs, consideraciones, requerimientos nuevos, sugerencias y cualquier tipo de comentarios.
-              </li>
-              <li>
-                Ante alguna consideraci&oacute;n se solicita que pueda ser por escrito para listarlo en la task list.
-              </li>
-            </ol>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
 
 <div id="fb-root"></div>
 
