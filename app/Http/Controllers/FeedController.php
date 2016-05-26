@@ -62,6 +62,7 @@ FeedController extends Controller{
   }
   public function destroy($id){
     return response()->json(["Mensaje: " => "Acceso denegado"]);
+    dd($this->feed);
     if(isset($this->feed)){
       $this->feed->delete();
       Session::flash('message', 'Feed eliminado correctamente');

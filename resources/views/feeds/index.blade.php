@@ -58,7 +58,7 @@
 		var user_anon = $("#user_id").attr('value') || null;
 
 
-		if( user_anon === user_id){
+		if( user_anon == user_id){
 			var route = "http://localhost:8000/eliminarfeed/"+id;
 			$.ajax({
 				url: route,
@@ -75,6 +75,7 @@
 		}
 		return true;
 	}
+	
 
 	function Interactuar(valor) {
 		var status_id = valor.replace('estado_', '');
