@@ -10,7 +10,7 @@
 		</div><!-- /progress bar -->
 	</div><!-- /div -->
 	@foreach($sorteos as $sorteo)
-		@if($sorteo->estado_sorteo == 'Lanzado')
+		@if($sorteo->estado_sorteo == 'Activo')
 			<div class="row">
 
 				<div class="col-md-8 col-sm-12 col-xs-12">
@@ -106,7 +106,7 @@
 								<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
 									<li><a href="{!! URL::to('empresa/'.$sorteo->nombre_empresa.'/sorteos') !!}">Ver m&aacute;s sorteos de {!! $sorteo->nombre_empresa !!}</a></li>
 									<li>{!!link_to_route('sorteos.show', $title = 'Ver mas detalles', $parameters = $sorteo->id, $attributes = [])!!}</li>
-									@if(Auth::user()->get()->id == $sorteo->user_id && $sorteo->estado_sorteo == 'Lanzado')
+									@if(Auth::user()->get()->id == $sorteo->user_id && $sorteo->estado_sorteo == 'Activo')
 										<li role="separator" class="divider"></li>
 										<li>{!!link_to_route('sorteos.show', $title = 'Ir a sortear', $parameters = $sorteo->id, $attributes = [])!!}</li>
                   @elseif($sorteo->estado_sorteo == 'Pendiente')

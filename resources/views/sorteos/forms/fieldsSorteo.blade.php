@@ -39,7 +39,7 @@
 				{!!Form::label('Estado Sorteo:')!!}
 				{!!Form::select('estado_sorteo',
 					[0 => 'Pendiente (No visible en sorteos)',
-					1 => 'Lanzado (Terminar)'],
+					1 => 'Activo (Terminar)'],
 					$selected = null, ['class' => 'form-control'])
 				!!}
 			</div>
