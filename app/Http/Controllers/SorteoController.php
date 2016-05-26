@@ -264,7 +264,7 @@ previa confirmación por parte del equipo <a href="/">Yavu.cl</a>. Miralo <a hre
 
         if($this->sorteo->user_id != $this->user->id){
 
-          if($this->sorteo->estado_sorteo == 'Lanzado'){
+          if($this->sorteo->estado_sorteo == 'Activo'){
 
             $this->ticket = new Ticket(['user_id' => $user_id,'cantidad_tickets' => -1,'monto' => -100,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
             $this->user->tickets()->save($this->ticket);

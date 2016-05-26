@@ -70,13 +70,52 @@
     @if(!Auth::user()->check())
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12" align="middle">
-        <a href="{{URL::to('/login')}}"><img src="{!! asset('img/newGraphics/registrate_02a.png') !!}" class="img-responsive"></a>
+          <a data-toggle="modal" data-target="#gridSystemModal" role="button" href="#!">
+            <img src="img/newGraphics/registrate_02a.png" class="img-responsive" />
+          </a>
           <br>
           <img src="img/cards/barra_separadora.png" class="img-responsive" />
         </div>
       </div><!-- /div row -->
 
+      <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <a href="{{URL::to('/')}}"><img src={{asset('img/yavu005.png')}} width="20%"></a>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <div align="center"> <h4 class="modal-title" id="gridSystemModalLabel"></h4></div>
+            </div>
+            <div class="modal-body">
+              <div id="">
+                @include('alerts.alertFields')
 
+                <div>
+                  {!!Form::open(['action'=>'UserController@store', 'method'=>'POST', 'id' => 'FormRegistroLanding'])!!}
+                  @include('usuarios.forms.fieldsLanding')
+                  {!! csrf_field() !!}
+                  <div class="form-group has-feedback has-feedback-left">
+                    {!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success', 'style' => 'width:100%;'])!!}
+                  </div>
+                  {!!Form::close()!!}
+
+                  <div class="form-group has-feedback has-feedback-left">
+                    <a class="btn btn-primary" href='{!! URL::to("/social/facebook") !!}'>
+                        <span>
+                          <img src="{!! URL::to('/img/users/facebook.png') !!}" width="7%" alt="">
+                          Registrate o Inicia sesi&oacute;n con Facebook
+                        </span>
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
 
     @endif
     </div><!-- /div contentMiddle -->
