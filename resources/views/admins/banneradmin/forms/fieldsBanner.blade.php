@@ -20,10 +20,10 @@
 
     <div class="list-group-item">
       <div class="form-group has-feedback has-feedback-left">
-        (<strong><small><span class="requerido">Solo jpg, png</span></small></strong>) {!!Form::label('Subir imagen banner: ')!!}<span id="ImagenBanner" ></span><br>
+        (<strong><small><span class="requerido">Solo jpg, png</span></small></strong>) {!!Form::label('Subir imagen banner: ')!!}<span id="Banner" ></span><br>
         <div>
           <span class="btn-file btn-sm">
-            Buscar imagen{!!Form::file('ImagenBanner', ['banner' => 'banner',  'maxlength' => '255', 'size' => '2048'])!!}
+            Buscar imagen{!!Form::file('banner', ['id' => 'ImagenBanner',  'maxlength' => '255', 'size' => '2048'])!!}
           </span>
           @if(isset($empresa))
             <img width="15%" id="ImagenBanner" class="thumbnail img-responsive-centered" src="/img/users/{!! ($banner_data->banner!="")?$banner_data->banner:'usuario_nuevo.png'!!}" alt="...">
@@ -33,6 +33,7 @@
         </div>
       </div>
     </div>
+
         <div class="form-group has-feedback has-feedback-left">
                 {!!Form::label('Nombre categoría:')!!}
                 {!!Form::select('nombre_categoria', 
@@ -73,7 +74,7 @@
     var formatosPermitidos = ['jpg', 'jpeg', 'png', 'gif'];
     formato = formato.split('.');
     var sizeByte = this.files[0].size;
-      var siezekiloByte = parseInt(sizeByte / 1024);
+    var siezekiloByte = parseInt(sizeByte / 1024);
     if((formatosPermitidos.indexOf(formato[1]) < 0) || (siezekiloByte > $(this).attr('size')))
 
     { 
