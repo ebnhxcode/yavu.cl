@@ -71,14 +71,17 @@ class AdminController extends Controller
         $this->bannerdata = BannerData::find($request->banner_data_id);
         $this->bannerdata->titulo_banner = $request->titulo;
         $this->bannerdata->descripcion_banner = $request->descripcion;
-        $this->bannerdata->banner = $request->imagenbanner;
+        $this->bannerdata->banner = $request->banner;
         $this->bannerdata->estado_banner = 'Creado';
-    
-        $this->linkbannerdata = new LinkBannerData();
-        $this->linkbannerdata->banner_data_id = addslashes($request->id);
-        $this->categorybannerdata = new CategoryBannerData();
-        $this->categorybannerdata->nombre_categoria = addslashes($request->id); 
         $this->bannerdata-> save();
+
+        LinkBannerData::create(['link'=>$request->link1,'titulo_link'=>$request->titulo_link1,'banner_data_id'=>$this->bannerdata->id])->save();
+        LinkBannerData::create(['link'=>$request->link2,'titulo_link'=>$request->titulo_link2,'banner_data_id'=>$this->bannerdata->id])->save();
+
+        $this->categorybannerdata = new CategoryBannerData();
+        $this->categorybannerdata->category = addslashes($request->category);
+        $this->categorybannerdata->banner_data_id = addslashes($this->bannerdata->id); 
+        $this->categorybannerdata-> save();
 
         Session::flash('message', 'Banner para la empresa creado correctamente');
             return view('admins.banneradmin.index');

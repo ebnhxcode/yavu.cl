@@ -20,7 +20,7 @@
 
     <div class="list-group-item">
       <div class="form-group has-feedback has-feedback-left">
-        (<strong><small><span class="requerido">Solo jpg, png</span></small></strong>) {!!Form::label('Subir imagen banner: ')!!}<span id="Banner" ></span><br>
+        (<strong><small><span class="requerido">Solo jpg, png</span></small></strong>) {!!Form::label('Subir imagen banner: ')!!}<br>
         <div>
           <span class="btn-file btn-sm">
             Buscar imagen{!!Form::file('banner', ['id' => 'ImagenBanner',  'maxlength' => '255', 'size' => '2048'])!!}
@@ -36,7 +36,7 @@
 
         <div class="form-group has-feedback has-feedback-left">
                 {!!Form::label('Nombre categoría:')!!}
-                {!!Form::select('nombre_categoria', 
+                {!!Form::select('category', 
                     ['Gastronomia' => 'Gastronomia',
                     'Tiempo libre' => 'Tiempo libre',
                     'Belleza' => 'Belleza',
@@ -57,10 +57,23 @@
                     $selected = null, ['class' => 'form-control', 'maxlength' => '100']) 
                 !!} 
           </div>  
+
+             <div class="form-group has-feedback has-feedback-left">
+        (<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Titulo para el enlace:')!!}
+        {!!Form::text('titulo_link1',null,['class'=>'form-control','placeholder'=>'Ingrese el titulo para el enlace', 'maxlength' => '100'])!!}
+      </div>
+
+        
              <div class="form-group has-feedback has-feedback-left">
         (<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Link 1:')!!}
         {!!Form::text('link1',null,['class'=>'form-control','placeholder'=>'Ingrese el link 1', 'maxlength' => '100'])!!}
       </div> 
+
+             <div class="form-group has-feedback has-feedback-left">
+        (<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Titulo para el enlace 2:')!!}
+        {!!Form::text('titulo_link2',null,['class'=>'form-control','placeholder'=>'Ingrese el titulo para el enlace', 'maxlength' => '100'])!!}
+      </div>
+
          <div class="form-group has-feedback has-feedback-left">
         (<strong><small><span class="requerido">Requerido</span></small></strong>) {!!Form::label('Link 2:')!!}
         {!!Form::text('link2',null,['class'=>'form-control','placeholder'=>'Ingrese el link 2', 'maxlength' => '100'])!!}
