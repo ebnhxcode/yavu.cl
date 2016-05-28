@@ -39,11 +39,10 @@ class AdminController extends Controller
         return view('admins.index', compact('admins'));
     }
     public function indexbanner(){
-    return view('admins.banneradmin.index');
+        return view('admins.banneradmin.index', ['empresas' => BannerData::where('estado_banner', 'Creado')->get()]);
+
     }
-      public function SorteosPendientes(){
-    return view('admins.sorteosPendientes', ['sorteospendientes' => Sorteo::where('estado_sorteo', 'Pendiente')->get()]);
-    }
+      
     public function bannercreate($empresa_id)
     {
         $this->existeEmpresa = Empresa::find(addslashes($empresa_id));
