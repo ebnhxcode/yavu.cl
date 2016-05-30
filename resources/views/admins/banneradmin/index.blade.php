@@ -1,63 +1,78 @@
 @extends('layouts.frontadm')
 @section('content')
+  {!!Html::script('/js/admins/admins.js')!!}
   <div class="jumbotron">
     <div id="contentMiddle">
+      @include('alerts.alertFields')
+      @include('alerts.errorsMessage')
+      @include('alerts.successMessage')
+      @include('alerts.warningMessage')
+
+      <div class="" style="font-size: 3em;">
+        <img id="img" style="padding-bottom: 20px;" width="8%" src= "{!!URL::to('img/newGraphics/neo_icono_config02.png')!!}"/><span> <a href="{!! URL::to('/admins') !!}">Administraci&oacute;n</a></span><span class="requerido"> \ </span><span>Empresas con Banner</span>
+      </div>
+
+
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
-          @include('alerts.alertFields')
-          @include('alerts.errorsMessage')
-          @include('alerts.successMessage')
-          @include('alerts.warningMessage')
-          @include('alerts.infoMessage')
-          <div class="" style="font-size: 3em;">
-            <img id="img" style="padding-bottom: 20px;" width="8%" src= "{!!URL::to('img/newGraphics/neo_icono_config02.png')!!}"/><span> <a href="{!! URL::to('/admins') !!}">Administraci&oacute;n</a></span><span class="requerido"> \ </span><span>Lista de empresas</span>
-          </div>
+
+            <div class="list-group">
+
+              <div class="list-group-item list-group-item-success">
+                <h5>Lista de empresas con banner<span id="resizePendingCourses" name="small" class="glyphicon glyphicon-resize-full" style="float: right;"></span> </h5>
+              </div>
+
+              <script>
+                $('#resizePendingCourses').click(function(){
+                  if($(this).attr('name') == 'small'){
+                    $('#insidePendingCourses').removeClass('wrap');
+                    $('#insidePendingCourses').addClass('wrap-long-vertical');
+                    $(this).removeClass('glyphicon-resize-full');
+                    $(this).addClass('glyphicon-resize-small');
+                    $(this).attr('name', 'long');
+                    return true;
+                  }else{
+                    $('#insidePendingCourses').removeClass('wrap-long-vertical');
+                    $('#insidePendingCourses').addClass('wrap');
+                    $(this).removeClass('glyphicon-resize-small');
+                    $(this).addClass('glyphicon-resize-full');
+                    $(this).attr('name', 'small');
+                    return true;
+                  }
+                });
+              </script>
+
+              <div id="insidePendingCourses" class="list-group-item wrap">
+                <table id="CoursesList" class="table table-hover" style="font-size: 0.8em;">
+                  <thead>
+                  <th>Id banner</th>
+                  <th>Titulo Banner</th>
+                  <th>Descripción Banner</th>
+                  <th>Estado</th>  
+                  <th>Imagen</th>
+                  </thead>
+                  <input id="token" type="hidden" name="_token" value="{!! csrf_token() !!}">
+                  @foreach($empresas as $empresa)
+                    <tbody>
+                      <td>{!! $empresa->id!!}</td>
+                      <td>{!! $empresa->titulo_banner!!}</td>
+                      <td>{!! $empresa->descripcion_banner !!}</td>
+                      <td>{!! $empresa->estado_banner !!}</td>
+                       @if($empresa->banner != null)
+                      <td><img width="100" src="/img/users/{!! $empresa->banner !!}" alt=""></td>
+                      @else
+                      <td>Sin imagen</td>
+                      @endif
+                    </tbody>
+                  @endforeach
+                </table>
+              </div> <!-- /div inside courses -->
+            </div> <!-- /list group -->
         </div>
-
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          {{-- ESTÁ PENDIENTE EL BUSCADOR DE LA EMPRESA EN ADMIN --}}
-          {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar...','id'=>'empresa', 'aria-describedby' => 'sizing-addon1'])!!}
-          <br>
-          <div id="EmpresaListThumb">
-            <div class="row">
-              @foreach($empresas[0] as $empresa)
-
-                <div class="col-md-3 col-sm-4 col-xs-12">
-                  <div class="thumbnail card">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12 col-xs-12">
-                        <address>
-                          <strong>Titulo:</strong> {!!$empresa[0]->titulo_banner!!}<br>
-                           <strong>estado_banner:</strong> {!!$empresa->estado_banner!!}<br>
-                        </address>
-                      </div>
-                    </div><!-- /div row -->
-                  </div>
-                </div>
-
-    0 => "titulo_banner"
-    1 => "descripcion_banner"
-    2 => "estado_banner"
-    3 => "banner"
-
-    "id" => 22
-    "titulo_banner" => "asdasdasd"
-    "banner" => "196.jpg"
-    "descripcion_banner" => "asdasd"
-    "estado_banner" => "Creado"
-    "empresa_id" => "1"
-    "created_at" => "2016-05-27 15:09:01"
-    "updated_at" => "2016-05-27 15:16:19"
+      </div>
+    </div>
+  </div>
 
 
 
-              @endforeach
-            </div>
-          </div> <!-- /Empresa list thumb -->
-          {!!$empresas->render()!!}
-        </div>
-      </div><!-- /div row -->
-    </div><!-- /div contentMiddle -->
-  </div><!-- /div jumbotron -->
 @stop
-

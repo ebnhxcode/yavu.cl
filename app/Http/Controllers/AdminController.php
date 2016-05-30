@@ -41,6 +41,17 @@ class AdminController extends Controller
     public function indexbanner(){
         return view('admins.banneradmin.index', ['empresas' => BannerData::where('estado_banner', 'Creado')->get()]);
 
+     
+        /* $empresas = DB::table('empresas')
+
+        ->join('banner_data', 'banner_data.id', '=', 'empresas.empresa_id')
+        ->select('empresas.*', 'banner_data.id as bannerdata_id')
+        ->where('empresas.nombre', '=', addslashes($empresa))
+        ->orderBy('empresas.created_at','desc')
+
+        ->get(); 
+
+        */
     }
       
     public function bannercreate($empresa_id)
