@@ -13,6 +13,7 @@ use Redirect;
 use yavu\Admin;
 use yavu\User;
 use RUT;
+use DB;
 use yavu\Empresa;
 use yavu\BannerData;
 use yavu\LinkBannerData;
@@ -39,20 +40,20 @@ class AdminController extends Controller
         return view('admins.index', compact('admins'));
     }
     public function indexbanner(){
-        return view('admins.banneradmin.index', ['empresas' => BannerData::where('estado_banner', 'Creado')->get()]);
 
-     
-        /* $empresas = DB::table('empresas')
+        // return view('admins.banneradmin.index', ['empresas' => BannerData::where('estado_banner', 'Creado')->get()]); 
 
-        ->join('banner_data', 'banner_data.id', '=', 'empresas.empresa_id')
-        ->select('empresas.*', 'banner_data.id as bannerdata_id')
-        ->where('empresas.nombre', '=', addslashes($empresa))
-        ->orderBy('empresas.created_at','desc')
+        $empresas = DB::table('empresas')
+            ->select(['empresas.nombre', 'banner_data.id', 'banner_data.banner', 'banner_data.titulo_banner','banner_data.descripcion_banner', 'banner_data.estado_banner'])
+            ->where('estado_banner', '=', 'Creado')
+            ->join('banner_data', 'banner_data.id', '=', 'empresas.id')
+            ->get();
 
-        ->get(); 
 
-        */
+
+            return view('admins.banneradmin.index', compact('empresas'));
     }
+            
       
     public function bannercreate($empresa_id)
     {
@@ -94,7 +95,8 @@ class AdminController extends Controller
         $this->categorybannerdata-> save();
 
         Session::flash('message', 'Banner para la empresa creado correctamente');
-            return view('admins.banneradmin.index');
+             return Redirect::to('/admins/banneradmin/');
+            //return view('admins.banneradmin.index');
     }
 
     public function empresasindex(){
