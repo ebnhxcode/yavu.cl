@@ -4,40 +4,25 @@
   <div class="row">
            <div id="EmpresaListThumb">
             <div class="row">
-           
-              @foreach($empresas as $empresa)
-                <div class="col-md-12 col-sm-12 col-xs-12">
-            
-                    <img id="ImagenPortada" src="{!! ($empresa->imagen_portada!="")?'/img/users/'.$empresa->imagen_portada:"/img/users/banner.png" !!}" alt="..." style="height: 170px;">
-                    <div class="row">
-                      <div class="col-md-12 col-sm-12 col-xs-12">
-                        <address>
-                          <h4><a class="btn-link" href="/empresa/{!!$empresa->nombre!!}">{!! $empresa->nombre!!}</a></h4>
-                          <strong>Titulo :</strong> {!!$empresa->titulo_banner!!}<br>
-                          <strong>Link :<strong><a href="mailto:#">{!!$empresa->link!!}</a></strong><br>
-                        </address>
-                      </div>
-                    </div><!-- /div row -->
-        
-                </div>
-              @endforeach
+              @if(isset($mostrarbanner))
+                @foreach($mostrarbanner as $banner)
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+              
+                      <img id="ImagenPortada" src="{!! ($banner->banner!="")?'/img/users/'.$banner->banner:"/img/users/banner.png" !!}" alt="..." style="height: 170px;">
+                      <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <address>
+                            <h4><a class="btn-link" href="/empresa/{!!$banner->nombre!!}">{!! $banner->nombre!!}</a></h4>
+                            <strong>Titulo :</strong> {!!$banner->titulo_banner!!}<br>
+                          </address>
+                        </div>
+                      </div><!-- /div row -->
+          
+                  </div>
+                @endforeach
+              @endif  
             </div>
           </div> <!-- /Empresa list thumb -->
-
-              @if(Request::path() != 'sorteos')
-      <div class="col-md-4 col-sm-4 col-xs-6">
-        <div class="list-group" >
-          <div align="center">
-            <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/sorteos')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
-              <span>
-                <img width="80%" src= "{!!URL::to('img/newGraphics/neo_icono_sorteo.png')!!}"/>
-              </span>
-            </a>
-          </div>
-          <div align="center"><small>Sorteos</small></div>
-        </div>
-      </div><!-- /div col -->
-    @endif
   </div><!-- /row -->
 </div> <!-- /list group item -->
 
