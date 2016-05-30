@@ -136,10 +136,7 @@ class EmpresaController extends Controller{
     }
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
-
-
-
-    public function MostrarBannerPublico(){
+  public function MostrarBannerPublico(){
 
         return DB::table('empresas')
             ->select(['empresas.nombre', 'banner_data.id', 'banner_data.banner', 'banner_data.titulo_banner','banner_data.descripcion_banner', 'banner_data.estado_banner'])
@@ -147,14 +144,7 @@ class EmpresaController extends Controller{
             ->join('banner_data', 'banner_data.id', '=', 'empresas.id')
             ->get();
     }
-  
-
-
-
-
-
   public function MostrarEmpresaPublica($empresa){
-
 
     if(isset($empresa)){
 
