@@ -12,7 +12,7 @@ class Kernel extends ConsoleKernel
     private $raffle;
     private $raffleController;
 
-    public function __construct(SorteoController $raffleController, Sorteo $raffle){
+    private function loadVars(SorteoController $raffleController, Sorteo $raffle){
         $this->raffleController = $raffleController;
         $this->raffle = $raffle;
     }
@@ -35,8 +35,7 @@ class Kernel extends ConsoleKernel
     {
 
         $schedule->call(function(){
-
-
+            $this->loadVars(SorteoController::class, Sorteo::class);
 
         })->dailyAt('21:00');
 
