@@ -1,3 +1,4 @@
+{!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/BuscarSorteo.js')!!}
 {!!Html::script('js/ajax/ParticiparSorteo.js')!!}
 @extends('layouts.front')
@@ -81,6 +82,7 @@
                   </thead>
                   @foreach($sorteos as $sorteo)
                   <tbody>
+                  @if($sorteo->estado_sorteo != 'Pendiente')
                     <td>{!! $sorteo->nombre_sorteo !!}</td>
                     <td>{!! $sorteo->nombre_empresa !!}</td>
                     <td>{!!$sorteo->estado_sorteo!!}</td>
@@ -89,13 +91,15 @@
                     @else
                       @if($sorteo->estado_sorteo == 'Finalizado')
                         <td><a class="btn btn-warning" href="{!!URL::to('/sorteos/'.$sorteo->id)!!}">Ver sorteo</a></td>
-                      @elseif($sorteo->estado_sorteo == 'Lanzado')
+                      @elseif($sorteo->estado_sorteo == 'Activo')
                         <td><a class="btn btn-success" href="{!!URL::to('/sorteos/'.$sorteo->id)!!}">Ver sorteo</a></td>
                       @else
                         <td><a class="btn btn-danger" href="{!!URL::to('/sorteos/'.$sorteo->id)!!}">Ver sorteo</a></td>
                       @endif
                     @endif
+                  @endif
                   </tbody>
+
                   @endforeach
                 </table>
               </div> <!-- /div inside courses -->

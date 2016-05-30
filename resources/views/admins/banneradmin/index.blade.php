@@ -19,7 +19,7 @@
             <div class="list-group">
 
               <div class="list-group-item list-group-item-success">
-                <h5>Empresas con Banner<span id="resizePendingCourses" name="small" class="glyphicon glyphicon-resize-full" style="float: right;"></span> </h5>
+                <h5>Lista de empresas con banner<span id="resizePendingCourses" name="small" class="glyphicon glyphicon-resize-full" style="float: right;"></span> </h5>
               </div>
 
               <script>
@@ -45,16 +45,26 @@
               <div id="insidePendingCourses" class="list-group-item wrap">
                 <table id="CoursesList" class="table table-hover" style="font-size: 0.8em;">
                   <thead>
-                  <th>Id Empresa</th>
-                  <th>Nombre Empresa</th>
-                  <th>Estado</th>
-                  <th>Descripci&oacute;n</th>
-                  <th>Se cre&oacute;</th>
-                  <th>&Uacute;ltima modificaci&oacute;n</th>
-                    <th>Operaciones</th>
+                  <th>Id banner</th>
+                  <th>Titulo Banner</th>
+                  <th>Descripción Banner</th>
+                  <th>Estado</th>  
+                  <th>Imagen</th>
                   </thead>
+                  <input id="token" type="hidden" name="_token" value="{!! csrf_token() !!}">
+                  @foreach($empresas as $empresa)
                     <tbody>
+                      <td>{!! $empresa->id!!}</td>
+                      <td>{!! $empresa->titulo_banner!!}</td>
+                      <td>{!! $empresa->descripcion_banner !!}</td>
+                      <td>{!! $empresa->estado_banner !!}</td>
+                       @if($empresa->banner != null)
+                      <td><img width="100" src="/img/users/{!! $empresa->banner !!}" alt=""></td>
+                      @else
+                      <td>Sin imagen</td>
+                      @endif
                     </tbody>
+                  @endforeach
                 </table>
               </div> <!-- /div inside courses -->
             </div> <!-- /list group -->
@@ -62,6 +72,7 @@
       </div>
     </div>
   </div>
+
 
 
 @stop

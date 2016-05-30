@@ -22,7 +22,7 @@ class Sorteo extends Model{
       if ($estado_sorteo == 0) {
         $this->attributes['estado_sorteo'] = 'Pendiente';
       } else if ($estado_sorteo == 1) {
-        $this->attributes['estado_sorteo'] = 'Lanzado';
+        $this->attributes['estado_sorteo'] = 'Activo';
       } else if ($estado_sorteo == 2) {
         $this->attributes['estado_sorteo'] = 'Finalizado';
       } else {

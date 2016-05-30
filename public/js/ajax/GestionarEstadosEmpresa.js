@@ -263,7 +263,7 @@ $(document).ready(function(){
 						+"</div><!-- /div list-group-item-success -->"
 
 					+'<div class="list-group-item">'
-						+"<p>"+value.status+"</p>"
+						+"<h4>"+value.status+"</h4>"
 					+'</div><!-- /div list-group-item -->'
 
 

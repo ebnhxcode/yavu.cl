@@ -1,4 +1,5 @@
 <?php
+
 namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
 use yavu\Http\Requests;
@@ -14,7 +15,10 @@ use yavu\User;
 use RUT;
 use yavu\Empresa;
 use yavu\BannerData;
+use yavu\LinkBannerData;
+use yavu\CategoryBannerData;
 use Illuminate\Routing\Route;
+
 class AdminController extends Controller
 {
     private $bannerdata;
@@ -35,11 +39,21 @@ class AdminController extends Controller
         return view('admins.index', compact('admins'));
     }
     public function indexbanner(){
-    return view('admins.banneradmin.index');
+        return view('admins.banneradmin.index', ['empresas' => BannerData::where('estado_banner', 'Creado')->get()]);
+
+     
+        /* $empresas = DB::table('empresas')
+
+        ->join('banner_data', 'banner_data.id', '=', 'empresas.empresa_id')
+        ->select('empresas.*', 'banner_data.id as bannerdata_id')
+        ->where('empresas.nombre', '=', addslashes($empresa))
+        ->orderBy('empresas.created_at','desc')
+
+        ->get(); 
+
+        */
     }
-      public function SorteosPendientes(){
-    return view('admins.sorteosPendientes', ['sorteospendientes' => Sorteo::where('estado_sorteo', 'Pendiente')->get()]);
-    }
+      
     public function bannercreate($empresa_id)
     {
         $this->existeEmpresa = Empresa::find(addslashes($empresa_id));
@@ -64,17 +78,23 @@ class AdminController extends Controller
 
     public function bannerstore(Request $request){
 
-        $this->bannerdata = BannerData($request->banner_data_id);
+        $this->bannerdata = BannerData::find($request->banner_data_id);
         $this->bannerdata->titulo_banner = $request->titulo;
         $this->bannerdata->descripcion_banner = $request->descripcion;
-         $this->bannerdata->imagenbanner = $request->banner;
+        $this->bannerdata->banner = $request->banner;
         $this->bannerdata->estado_banner = 'Creado';
-        $this->bannerdata->empresa_id = $request->empresa_id;
-        $this->linkbannerdata = new LinkBannerData();
-        $this->linkbannerdata->banner_data_id = addslashes($request->id);
-        $this->linkbannerdata = new CategoryBannerData();
-        $this->categorybannerdata->category = addslashes($nombre_categoria); 
         $this->bannerdata-> save();
+
+        LinkBannerData::create(['link'=>$request->link1,'titulo_link'=>$request->titulo_link1,'banner_data_id'=>$this->bannerdata->id])->save();
+        LinkBannerData::create(['link'=>$request->link2,'titulo_link'=>$request->titulo_link2,'banner_data_id'=>$this->bannerdata->id])->save();
+
+        $this->categorybannerdata = new CategoryBannerData();
+        $this->categorybannerdata->category = addslashes($request->category);
+        $this->categorybannerdata->banner_data_id = addslashes($this->bannerdata->id); 
+        $this->categorybannerdata-> save();
+
+        Session::flash('message', 'Banner para la empresa creado correctamente');
+            return view('admins.banneradmin.index');
     }
 
     public function empresasindex(){
