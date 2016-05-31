@@ -45,6 +45,7 @@
               <div id="insidePendingCourses" class="list-group-item wrap">
                 <table id="CoursesList" class="table table-hover" style="font-size: 0.8em;">
                   <thead>
+                  <th>Nombre Empresa</th>
                   <th>Id banner</th>
                   <th>Titulo Banner</th>
                   <th>Descripción Banner</th>
@@ -52,8 +53,11 @@
                   <th>Imagen</th>
                   </thead>
                   <input id="token" type="hidden" name="_token" value="{!! csrf_token() !!}">
+           @if(isset($empresas))
+
                   @foreach($empresas as $empresa)
                     <tbody>
+                      <td>{!! $empresa->nombre!!}</td>
                       <td>{!! $empresa->id!!}</td>
                       <td>{!! $empresa->titulo_banner!!}</td>
                       <td>{!! $empresa->descripcion_banner !!}</td>
@@ -65,6 +69,7 @@
                       @endif
                     </tbody>
                   @endforeach
+            @endif
                 </table>
               </div> <!-- /div inside courses -->
             </div> <!-- /list group -->

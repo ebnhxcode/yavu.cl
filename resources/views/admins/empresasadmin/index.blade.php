@@ -18,6 +18,7 @@
           {{-- ESTÁ PENDIENTE EL BUSCADOR DE LA EMPRESA EN ADMIN --}}
           {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar...','id'=>'empresa', 'aria-describedby' => 'sizing-addon1'])!!}
           <br>
+         
           <div id="EmpresaListThumb">
             <div class="row">
               @foreach($empresas as $empresa)

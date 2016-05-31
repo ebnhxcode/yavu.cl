@@ -27,9 +27,10 @@
                     {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar...','id'=>'empresathumb', 'role' => 'combobox', 'aria-describedby' => 'sizing-addon1'])!!}
                 @endif
               </div>
-
+             
               @include('miniDashboard.miniDashboard')
-
+      
+              @include('listarBanner.listaBanner')
 
             </div> <!-- /list group -->
 

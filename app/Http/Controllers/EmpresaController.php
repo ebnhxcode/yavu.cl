@@ -27,8 +27,10 @@ class EmpresaController extends Controller{
     $this->empresa = Empresa::find($route->getParameter('empresas'));
   }
   public function index(Request $request){
-    return view('empresas.index', ['empresas' => Empresa::paginate(15)]);
+
+    return view('empresas.index', ['empresas' => Empresa::paginate(15)], ['mostrarbanner' => $this->MostrarBannerPublico()]);
   }
+  
   public function create(){
 
     if(isset($this->user)){
@@ -134,8 +136,17 @@ class EmpresaController extends Controller{
     }
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
-  public function MostrarEmpresaPublica($empresa){
+  public function MostrarBannerPublico(){
 
+        return DB::table('empresas')
+            ->select(['empresas.nombre', 'banner_data.id', 'banner_data.banner', 'banner_data.titulo_banner','banner_data.descripcion_banner', 'banner_data.estado_banner'])
+            ->where('estado_banner', '=', 'Creado')
+            ->join('banner_data', 'banner_data.id', '=', 'empresas.id')
+            ->orderByRaw("RAND()")
+            ->take(3)
+            ->get();
+    }
+  public function MostrarEmpresaPublica($empresa){
 
     if(isset($empresa)){
 

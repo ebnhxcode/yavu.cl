@@ -206,8 +206,20 @@ class SorteoController extends Controller{
 
     $this->registro_tickets = $this->user->registro_tickets()->orderBy('created_at', 'desc')->limit('20')->get();
     //dd($this->registro_tickets);
-    return view('sorteos.index', compact('sorteos'), ['rtickets' => $this->registro_tickets]);
+    return view('sorteos.index', compact('sorteos'), ['rtickets' => $this->registro_tickets, 'mostrarbanner' => $this->MostrarBannerPublico()]);
+   
   }
+
+  public function MostrarBannerPublico(){
+
+        return DB::table('empresas')
+            ->select(['empresas.nombre', 'banner_data.id', 'banner_data.banner', 'banner_data.titulo_banner','banner_data.descripcion_banner', 'banner_data.estado_banner'])
+            ->where('estado_banner', '=', 'Creado')
+            ->join('banner_data', 'banner_data.id', '=', 'empresas.id')
+             ->orderByRaw("RAND()")
+            ->take(3)
+            ->get();
+    }
 
   public function MostrarGanador($ganador){
     $ganador = ParticipanteSorteo::find($ganador)->users;
