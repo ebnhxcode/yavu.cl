@@ -144,7 +144,6 @@ class EmpresaController extends Controller{
             ->join('banner_data', 'banner_data.id', '=', 'empresas.id')
             ->orderByRaw("RAND()")
             ->take(3)
-
             ->get();
     }
   public function MostrarEmpresaPublica($empresa){
