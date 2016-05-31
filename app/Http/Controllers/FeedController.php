@@ -89,13 +89,20 @@ FeedController extends Controller{
 
     if(count($this->user->empresas)>0){
       $this->user_id = $this->user->empresas[0]->user_id; $this->id = $this->user->empresas[0]->id;
-      return view('feeds.index', ['user_id' => $this->user_id], ['empresa_id' => $this->id]);
+      return view('feeds.index', ['user_id' => $this->user_id], ['empresa_id' => $this->id, 'mostrarbanner' => $this->MostrarBannerPublico() ] );
     }else{
       return view('feeds.index');
     }
+  }
+  public function MostrarBannerPublico(){
 
-
-
+        return DB::table('empresas')
+            ->select(['empresas.nombre', 'banner_data.id', 'banner_data.banner', 'banner_data.titulo_banner','banner_data.descripcion_banner', 'banner_data.estado_banner'])
+            ->where('estado_banner', '=', 'Creado')
+            ->join('banner_data', 'banner_data.id', '=', 'empresas.id')
+            ->orderByRaw("RAND()")
+            ->take(3)
+            ->get();
   }
   public function show($id){
 
