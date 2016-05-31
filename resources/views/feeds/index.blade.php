@@ -19,6 +19,7 @@
 
 				<!-- panel izquierdo -->
 			@include('feeds.forms.panelLeft')
+		
 			
 
 			<input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
