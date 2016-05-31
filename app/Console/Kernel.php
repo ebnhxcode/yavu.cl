@@ -98,9 +98,9 @@ class Kernel extends ConsoleKernel
             $this->cronjob();
             #OBJETIVOS
             #-Enviar Mail a los ganadores
-        })->weekly()
-          ->tuesdays()
-          ->at('15:44');//->everyMinute();//->dailyAt('21:00');
+        })->dailyAt('21:00');#->weekly()
+          #->tuesdays()
+          #->at('15:44');//->everyMinute();//->dailyAt('21:00');
         /*$schedule->command('inspire')->hourly();*/
     }
 }
