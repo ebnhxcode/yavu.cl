@@ -166,6 +166,60 @@ Route::group(['middleware' => 'user'], function(){
 
 
 
+  /*Gestión de Encuestas*/
+  Route::resource('encuestas', 'EncuestaController');
+  /*Gestión de Encuestas*/
+
+  /*Gestión de Preguntas*/
+  Route::resource('preguntas', 'PreguntaController');
+  /*Gestión de Preguntas*/
+
+  /*Gestión de Alternativas*/
+  Route::resource('alternativas', 'AlternativaController');
+  /*Gestión de Alternativas*/
+
+  /*Gestión de Servicio*/
+  Route::resource('servicios', 'ServicioController');
+  /*Gestión de Servicio*/
+
+  /*Gestión de Banners */
+  Route::resource('banners', 'BannerController');
+  /*Gestión de Banners */
+
+  /*Gestión de Categorías */
+  Route::resource('categorias', 'CategoriaController');
+  /*Gestión de Categorías */
+
+  /*Gestión de Pago*/
+  Route::resource('pagos', 'PagoController');
+  /*Gestión de Pago*/
+
+  /*Gestión de Beneficio*/
+  Route::resource('beneficios', 'BeneficioController');
+  /*Gestión de Beneficio*/
+
+  /*Gestión de Role*/
+  Route::resource('roles', 'RoleController');
+  /*Gestión de Role*/
+
+  /*Gestión de Evento*/
+  Route::resource('eventos', 'EventoController');
+  /*Gestión de Evento*/
+
+  /*Gestión de Banners */
+  Route::resource('feeds', 'FeedController');
+  Route::get('eliminarfeed/{id}', 'FeedController@EliminarFeed');
+  /*Gestión de Banners */
+
+  /*Gestión de  Interacciones */
+  Route::resource('interacciones', 'InteraccionController');
+  /*Gestión de Interacciones */
+
+  /*Gestión de  Interes */
+  Route::resource('intereses', 'InteresController');
+  /*Gestión de Interes */
+
+
 
 
 }); /*Fin del middleware user*/
@@ -196,6 +250,11 @@ Route::group(['middleware' => 'admin'], function(){
   
   /*Gestión de Admins*/
 
+  /*Gestión de Mapas*/
+  Route::resource('gmaps', 'GmapsController');
+  /*Gestión de Mapas*/
+
+
 
 
 });
@@ -219,77 +278,5 @@ Route::get('sitemap', function(){
 */
 /*Gestión del front*/
 
-
-
-
-/*Gestión de Encuestas*/
-Route::resource('encuestas', 'EncuestaController');
-/*Gestión de Encuestas*/
-
-/*Gestión de Preguntas*/
-Route::resource('preguntas', 'PreguntaController');
-/*Gestión de Preguntas*/
-
-/*Gestión de Alternativas*/
-Route::resource('alternativas', 'AlternativaController');
-/*Gestión de Alternativas*/
-
-/*Gestión de Servicio*/
-Route::resource('servicios', 'ServicioController');
-/*Gestión de Servicio*/
-
-/*Gestión de Banners */
-Route::resource('banners', 'BannerController');
-/*Gestión de Banners */
-
-/*Gestión de Categorías */
-Route::resource('categorias', 'CategoriaController');
-/*Gestión de Categorías */
-
-/*Gestión de Pago*/
-Route::resource('pagos', 'PagoController');
-/*Gestión de Pago*/
-
-/*Gestión de Beneficio*/
-Route::resource('beneficios', 'BeneficioController');
-/*Gestión de Beneficio*/
-
-/*Gestión de Role*/
-Route::resource('roles', 'RoleController');
-/*Gestión de Role*/
-
-/*Gestión de Evento*/
-Route::resource('eventos', 'EventoController');
-/*Gestión de Evento*/
-
-/*Gestión de Banners */
-Route::resource('feeds', 'FeedController');
-Route::get('eliminarfeed/{id}', 'FeedController@EliminarFeed');
-/*Gestión de Banners */
-
-/*Gestión de  Interacciones */
-Route::resource('interacciones', 'InteraccionController');
-/*Gestión de Interacciones */
-
-/*Gestión de  Interes */
-Route::resource('intereses', 'InteresController');
-/*Gestión de Interes */
-
-
-/*Gestión de Mapas*/	
-Route::get('vendor/add', function(){
-
-  //view
-  return View::make('add');
-});
-Route::post('vendor/add', function(){
-
-});
-Route::get('vendor/{id}', function($id){
-
-});
-
-Route::resource('gmaps', 'GmapsController');
-/*Gestión de Mapas*/
 
 

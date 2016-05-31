@@ -23,12 +23,15 @@ class Admin
     {
 
         if (Auth::admin()->guest()) {
+
             if ($request->ajax()) {
                 return response('Unauthorized.', 401);
             } else {
                 Session::flash('message-info', '¡Debe iniciar sesión antes de continuar!');
                 return redirect()->guest('login');
             }
+
+            
         }
         
         return $next($request);
