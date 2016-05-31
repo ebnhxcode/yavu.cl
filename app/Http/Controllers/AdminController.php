@@ -102,17 +102,19 @@ class AdminController extends Controller
     public function empresasindex(){
         return view('admins.empresasadmin.index', ['empresas' => Empresa::paginate(20)]);
     }
-
     public function empresascreate()
     {
         return view('admins.empresasadmin.create');
     }
-
-
     public function empresasedit($id){
         $this->empresa = Empresa::find($id);
         $this->user = User::find($this->empresa->user_id);
         return view('admins.empresasadmin.edit', ['empresa' => $this->empresa], ['user_email' => $this->user->email]);
+    }
+    public function banneredit($id){
+        $this->bannerdata = BannerData::find($id);
+        //$this->user = User::find($this->empresa->user_id);
+        //return view('admins.banneradmin.banneredit', ['empresa' => $this->empresa], ['user_email' => $this->user->email]);
     }
     public function empresasupdate(EmpresaUpdateRequest $request, $id){
         //AQUI VOY

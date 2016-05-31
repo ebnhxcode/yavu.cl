@@ -27,7 +27,6 @@ class EmpresaController extends Controller{
     $this->empresa = Empresa::find($route->getParameter('empresas'));
   }
   public function index(Request $request){
-
     return view('empresas.index', ['empresas' => Empresa::paginate(15)], ['mostrarbanner' => $this->MostrarBannerPublico()]);
   }
   

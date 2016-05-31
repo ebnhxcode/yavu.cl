@@ -65,6 +65,7 @@
               </table>
             @elseif(Auth::user()->check() || !Auth::user()->check())
               <div id="EmpresaListThumb">
+           
                 @foreach($empresas as $empresa)
                   <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="thumbnail card">

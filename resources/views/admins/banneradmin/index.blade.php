@@ -51,6 +51,9 @@
                   <th>Descripción Banner</th>
                   <th>Estado</th>  
                   <th>Imagen</th>
+                     @if(Auth::admin()->check())
+                    <th>Operaciones</th>
+                  @endif
                   </thead>
                   <input id="token" type="hidden" name="_token" value="{!! csrf_token() !!}">
            @if(isset($empresas))
@@ -66,7 +69,9 @@
                       <td><img width="100" src="/img/users/{!! $empresa->banner !!}" alt=""></td>
                       @else
                       <td>Sin imagen</td>
-                      @endif
+                      @endif                      
+                      
+                  </thead>
                     </tbody>
                   @endforeach
             @endif
