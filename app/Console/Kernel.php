@@ -4,9 +4,6 @@ namespace yavu\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Redirect;
-use yavu\Http\Controllers\SorteoController;
 use yavu\Pop;
 use yavu\Sorteo;
 use Carbon\Carbon;

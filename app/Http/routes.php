@@ -112,6 +112,10 @@ Route::group(['middleware' => 'user'], function(){
   /*Gestión de Servicios*/
 
   /*Gestión de Sorteos*/
+
+  Route::get('cronjob', 'SorteoController@cronjob');
+
+
   Route::resource('sorteos', 'SorteoController');
   Route::get('listasorteos', 'SorteoController@ListaSorteos');
   Route::get('buscarsorteo/{nombre?}', 'SorteoController@BuscarSorteos');
