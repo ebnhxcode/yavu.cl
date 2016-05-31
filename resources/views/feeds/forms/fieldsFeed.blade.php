@@ -9,6 +9,5 @@
 		</div>
 	</div>
 </div>
-@include('listarBanner.listaBanner')
            
 <div class="col-sm-4">

@@ -2,7 +2,7 @@
 
 <div style="padding: 30px 30px 5px 30px;" class="list-group-item">
   <div class="row">
-           <div id="EmpresaListThumb">
+           <div id="EmpresaListThumbBanner">
             <div class="row">
               @if(isset($mostrarbanner))
                 @foreach($mostrarbanner as $banner)

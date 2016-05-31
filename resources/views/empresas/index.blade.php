@@ -29,7 +29,7 @@
               </div>
              
               @include('miniDashboard.miniDashboard')
-              
+      
               @include('listarBanner.listaBanner')
 
             </div> <!-- /list group -->
