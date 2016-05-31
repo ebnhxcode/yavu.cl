@@ -119,10 +119,14 @@
           </li>
         @endif
         @if(Auth::admin()->check())
+           <li>
+            <a href="{!!URL::to('/admins')!!}">Inicio</a>
+          </li>
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Gesti&oacute;n<b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="{!!URL::to('/admins/empresas/create')!!}">Registro de empresas</a></li>
               <li><a href="{!!URL::to('/admins/empresas/index')!!}">Mostrar listado de empresas</a></li>
+              <li><a href="{!!URL::to('/admins/banneradmin/')!!}">Mostrar listado de empresas con banner</a></li>
               <li><a href="{!!URL::to('/sorteospendientes')!!}">Sorteos por confirmar</a></li>
             </ul>
           </li>
