@@ -45,26 +45,14 @@ class Kernel extends ConsoleKernel
         $this->year = Carbon::now()->year;
         $raffles = Sorteo::where('fecha_inicio_sorteo', $this->month.'/'.$this->day.'/'.$this->year)->where('estado_sorteo','Activo')->get();
         foreach ($raffles as $raffle){
-            //array_push($this->raffleIdListTo, $raffle->id);
             $var = $this->loadRaffleDetails($raffle->id);
             if(count($var)>2){
                 $this->registerWinner($var[rand(0,count($var))]);
             }
         }
-
-
-        #dd($this->raffleIdListTo); #-> Aquí tengo los sorteos que se van a lanzar hoy
-        //$var = $this->loadRaffleDetails($this->raffleIdListTo[1]); #le doy a $var el listado de los participantes en un arreglo json
-        #dd($var);
-        #dd($var[rand(0,count($var))]); #obtengo un random desde el valor 0 hasta el ultimo del arreglo
-        //$this->registerWinner($var[rand(0,count($var))]);
-
-
     }
 
     #<DEPENDENCIAS DEL CRON JOB>
-
-
     public function loadRaffleDetails($sorteo_id){
         $this->participantes = ParticipanteSorteo::where('sorteo_id', $sorteo_id)->get();
         $OpcionesParticipantes = [];
@@ -89,21 +77,8 @@ class Kernel extends ConsoleKernel
             $this->pop = new Pop(['user_id' => $this->sorteado->user_id, 'empresa_id' => 1, 'tipo' => 'coins', 'estado' => 'pendiente', 'contenido' => 'Haz sido el ganador del sorteo ' . $this->sorteo->nombre_sorteo . '!', 'created_at' => strftime("%Y-%m-%d-%H-%M-%S", time()), 'updated_at' => strftime("%Y-%m-%d-%H-%M-%S", time())]);
             $this->pop->save();
         }
-
-
-
-
-
     }
-
-
-
     #</DEPENDENCIAS DEL CRON JOB>
-
-
-
-
-
     /**
      * The Artisan commands provided by your application.
      *
@@ -118,41 +93,14 @@ class Kernel extends ConsoleKernel
      * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
      * @return void
      */
-    protected function schedule(Schedule $schedule)
-    {
-
+    protected function schedule(Schedule $schedule){
         $schedule->call(function(){
-
-            //$this->cronjob();
-
-
-
-            #Verifica los sorteos para el dia
-            //$this->raffle = new Pop();
-            //$this->raffleLists = $this->checkRafflesToToday();
-
-            #Tengo toda la lista de sorteos para el día en $this->raffleLists[0]
-            #$this->raffle->estado=count($this->raffleLists[0]);
-
-            //count($this->raffleLists[0])>0?$this->performRaffle($this->raffleLists[0]):$this->raffle->estado='error';
-            //$this->raffle->save();
-
-
+            $this->cronjob();
             #OBJETIVOS
-            /*
-                -Verificar si hay sorteos que se lancen en el día
-                -Definir que por cada sorteo activo se busque a sus ganadores
-                -Traer a los ganadores
-                -Sortear a los ganadores
-                -Registrar ganadores
-                -Notificar a los ganadores (personalizar esta notificacion)
-                -Enviar Mail a los ganadores
-            */
-
-
-
-
-        })->everyMinute();//->dailyAt('21:00');
+            #-Enviar Mail a los ganadores
+        })->weekly()
+          ->tuesdays()
+          ->at('15:44');//->everyMinute();//->dailyAt('21:00');
         /*$schedule->command('inspire')->hourly();*/
     }
 }

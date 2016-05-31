@@ -23,7 +23,6 @@ use Illuminate\Routing\Route;
 use yavu\Winner;
 
 class SorteoController extends Controller{
-  private $day, $month, $year; private $raffleIdListTo = [];
   public function __construct(){
 
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy', 'show']]);
@@ -32,73 +31,6 @@ class SorteoController extends Controller{
     }
 
   }
-
-  public function cronjob(){
-    $this->day = strlen(Carbon::now()->day)<2?'0'.Carbon::now()->day:Carbon::now()->day;
-    $this->month = strlen(Carbon::now()->month)<2?'0'.Carbon::now()->month:Carbon::now()->month;
-    $this->year = Carbon::now()->year;
-    $raffles = Sorteo::where('fecha_inicio_sorteo', $this->month.'/'.$this->day.'/'.$this->year)->where('estado_sorteo','Activo')->get();
-
-    foreach ( $raffles[0] as $raffle ){
-      //array_push($this->raffleIdListTo, $raffle->id);
-      $var = $this->loadRaffleDetails($raffle->id);
-      if(count($var)>2){
-        $this->registerWinner($var[rand(0,count($var))]);
-      }
-    }
-
-
-      #dd($this->raffleIdListTo); #-> Aquí tengo los sorteos que se van a lanzar hoy
-      //$var = $this->loadRaffleDetails($this->raffleIdListTo[1]); #le doy a $var el listado de los participantes en un arreglo json
-      #dd($var);
-      #dd($var[rand(0,count($var))]); #obtengo un random desde el valor 0 hasta el ultimo del arreglo
-      //$this->registerWinner($var[rand(0,count($var))]);
-
-
-  }
-
-  #<DEPENDENCIAS DEL CRON JOB>
-
-
-  public function loadRaffleDetails($sorteo_id){
-    $this->participantes = ParticipanteSorteo::where('sorteo_id', $sorteo_id)->get();
-    $OpcionesParticipantes = [];
-    foreach($this->participantes as $participante){
-      array_push($OpcionesParticipantes, $participante->id);
-    }
-    return $OpcionesParticipantes;
-  }
-
-  public function registerWinner($key){
-    $this->sorteado = ParticipanteSorteo::where('id', $key)->first();
-    $this->ganador = User::where('id', $this->sorteado->user_id)->get();
-
-    $this->sorteo = Sorteo::find($this->sorteado->sorteo_id);
-    $this->sorteo->estado_sorteo = 2;
-    $this->sorteo->save();
-
-    if($this->ganador[0]) {
-      $this->registrar_ganador = new Winner(['user_id' => $this->sorteado->user_id, 'sorteo_id' => $this->sorteado->sorteo_id, 'participante_sorteo_id' => $key, 'nombre' => $this->ganador[0]->nombre, 'apellido' => $this->ganador[0]->apellido]);
-      $this->registrar_ganador->save();
-
-      $this->pop = new Pop(['user_id' => $this->sorteado->user_id, 'empresa_id' => 1, 'tipo' => 'coins', 'estado' => 'pendiente', 'contenido' => 'Haz sido el ganador del sorteo ' . $this->sorteo->nombre_sorteo . '!', 'created_at' => strftime("%Y-%m-%d-%H-%M-%S", time()), 'updated_at' => strftime("%Y-%m-%d-%H-%M-%S", time())]);
-      $this->pop->save();
-    }
-
-
-
-
-
-  }
-
-
-
-  #</DEPENDENCIAS DEL CRON JOB>
-
-
-
-
-
 
   public function BuscarSorteos($nombre){
     if(isset($nombre)){
