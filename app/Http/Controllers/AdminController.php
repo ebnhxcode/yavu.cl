@@ -113,8 +113,11 @@ class AdminController extends Controller
     }
     public function banneredit($id){
         $this->bannerdata = BannerData::find($id);
-        //$this->user = User::find($this->empresa->user_id);
-        //return view('admins.banneradmin.banneredit', ['empresa' => $this->empresa], ['user_email' => $this->user->email]);
+        dd($this->bannerdata);
+    }
+    public function bannerupdate(Request $request, $id)
+    {
+        
     }
     public function empresasupdate(EmpresaUpdateRequest $request, $id){
         //AQUI VOY
@@ -167,6 +170,7 @@ class AdminController extends Controller
         Session::flash('message', 'Admin editado correctamente');
         return Redirect::to('/admins');
     }
+
     public function destroy($id)
     {
         $this->admin->delete();

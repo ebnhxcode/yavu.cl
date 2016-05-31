@@ -69,7 +69,10 @@
                       <td><img width="100" src="/img/users/{!! $empresa->banner !!}" alt=""></td>
                       @else
                       <td>Sin imagen</td>
-                      @endif                      
+                      @endif
+
+                       <td>{!!link_to_route('admins_banner_edit_path', $title = 'Editar', $parameters = $empresa->id, $attributes = ['class'=>'btn btn-primary btn-sm'])!!}</td>
+                      
                       
                   </thead>
                     </tbody>
