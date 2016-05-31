@@ -51,6 +51,9 @@
                   <th>Descripción Banner</th>
                   <th>Estado</th>  
                   <th>Imagen</th>
+                     @if(Auth::admin()->check())
+                    <th>Operaciones</th>
+                  @endif
                   </thead>
                   <input id="token" type="hidden" name="_token" value="{!! csrf_token() !!}">
            @if(isset($empresas))
@@ -67,6 +70,11 @@
                       @else
                       <td>Sin imagen</td>
                       @endif
+
+                       <td>{!!link_to_route('admins_banner_edit_path', $title = 'Editar', $parameters = $empresa->id, $attributes = ['class'=>'btn btn-primary btn-sm'])!!}</td>
+                      
+                      
+                  </thead>
                     </tbody>
                   @endforeach
             @endif
