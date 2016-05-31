@@ -113,11 +113,28 @@ class AdminController extends Controller
     }
     public function banneredit($id){
         $this->bannerdata = BannerData::find($id);
-        dd($this->bannerdata);
+        return view('admins.banneradmin.banneredit', ['bannerdata' => $this->bannerdata]);
+          
     }
     public function bannerupdate(Request $request, $id)
     {
-        
+        $this->bannerdata = BannerData::find($request->banner_data_id);
+        $this->bannerdata->titulo_banner = $request->titulo;
+        $this->bannerdata->descripcion_banner = $request->descripcion;
+        $this->bannerdata->banner = $request->banner;
+        $this->bannerdata->estado_banner = 'Creado';
+        $this->bannerdata-> save();
+
+        LinkBannerData::create(['link'=>$request->link1,'titulo_link'=>$request->titulo_link1,'banner_data_id'=>$this->bannerdata->id])->save();
+        LinkBannerData::create(['link'=>$request->link2,'titulo_link'=>$request->titulo_link2,'banner_data_id'=>$this->bannerdata->id])->save();
+
+        $this->categorybannerdata = new CategoryBannerData();
+        $this->categorybannerdata->category = addslashes($request->category);
+        $this->categorybannerdata->banner_data_id = addslashes($this->bannerdata->id); 
+        $this->categorybannerdata-> save();
+
+       return Redirect::to('/admins/banneradmin/');
+
     }
     public function empresasupdate(EmpresaUpdateRequest $request, $id){
         //AQUI VOY
