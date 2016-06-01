@@ -40,7 +40,7 @@ $(document).ready(function(){
 			var user_id = $("#user_id").val();
 			var empresa_id = $("#empresa_id").val();
 			var token = $("#token").val();
-			var route = "http://localhost:8000/estadoempresa";
+			var route = "http://186.64.123.143/estadoempresa";
 			$.ajax({
 				url: route,
 				headers: {'X-CSRF-TOKEN': token},
@@ -97,7 +97,7 @@ $(document).ready(function(){
 	function ActualizarEstados(){
 		var EstadosUsuario = $("#Estados").val();
 		$("#Estados").value ="";
-		var route = "http://localhost:8000/estadosempresa";
+		var route = "http://186.64.123.143/estadosempresa";
 		var user_id = $("#user_id");
 		var Contador = 0;
 		$.get(route, function(res){
@@ -111,7 +111,7 @@ $(document).ready(function(){
 					"<div id='status' class='list-group'>"
 						+"<div class='list-group-item'>"
 							+"<h4><a href='/profile' style='color:#3C5B28;'>"
-								+"<img class='media-object' src='http://localhost:8000/images/user.png' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
+								+"<img class='media-object' src='http://186.64.123.143/images/user.png' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
 								+value.nombre+" "+value.apellido
 							+"</a></h4>"
 							+"<small>"
@@ -129,29 +129,11 @@ $(document).ready(function(){
 		return true;
 	}
 
-  function ContarInteracciones(status_id){
-    status_id = status_id;
-    var route = "http://localhost:8000/contarinteracciones/"+status_id;
-    var user_id = $("#user_id").val();
-    var Contador = 0;
-    $.get(route, function(res){
-      $(res).each(function(key,value){
-				if(value.user_id === user_id){
-					//$('#estado_'+status_id).addClass("btn-coins-down").fadeIn();
-					//$('#imgcoin'+status_id).attr('src', '/img/newGraphics/cobrar_coins02.png').fadeIn();
-					$('#cobrarcoins'+status_id).addClass("text-info").fadeIn();
-					//+"<img id='imgcoin"+value.id+"' src='/img/newGraphics/yavucoin_neo01_small01.png' />"
-				}
-				Contador += 1;
-      });
-      $("#badge_"+status_id).text(Contador);
-    });
-		return true;
-  }    
+
 
 	function ContarEstados(){
 		var CargarEstados = $("#CargarEstados"); 
-		var route = "http://localhost:8000/contarestados";
+		var route = "http://186.64.123.143/contarestados";
 		var user_id = $("#user_id");
 		var Contador = 0;
 		$.get(route, function(res){
@@ -211,7 +193,7 @@ $(document).ready(function(){
 		var Estados = $("#Estados"); 
 		var empresa = $("#empresa").val();
 		Global_idUltimaPublicacion = $("#idUltima").val();
-		var route = "http://localhost:8000/estadosempresa/"+Global_idUltimaPublicacion+"/"+empresa;
+		var route = "http://186.64.123.143/estadosempresa/"+Global_idUltimaPublicacion+"/"+empresa;
 		var user_id = $("#user_id").val();
 		var empresa_id = $("#empresa_id");
 		var Contador = 0;
@@ -309,7 +291,7 @@ $(document).ready(function(){
 
 	function ContarEstados(){
 		var CargarEstados = $("#CargarEstados"); 
-		var route = "http://localhost:8000/contarestados";
+		var route = "http://186.64.123.143/contarestados";
 		var user_id = $("#user_id");
 		var Contador = 0;
 		$.get(route, function(res){
@@ -329,7 +311,7 @@ $(document).ready(function(){
 	}
 	function ContarCoins(){
 		var CargarEstados = $("#CargarEstados");
-		var route = "http://localhost:8000/contarcoins";
+		var route = "http://186.64.123.143/contarcoins";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
 			$(".CantidadCoins").value = "";
@@ -344,7 +326,7 @@ $(document).ready(function(){
 	function ContarNotificaciones(){
 		var user_id = $("#user_id").val();
 		$.ajax({
-			url: "http://localhost:8000/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
+			url: "http://186.64.123.143/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
 			type: 'GET',
 			dataType: 'json',
 			cache: false,
@@ -364,11 +346,12 @@ $(document).ready(function(){
 		});
 		return true;
 	}
+	/*
 	function Interactuar(valor){
 		var status_id = valor.replace('estado_','');
 		var user_id = $("#user_id").val();
 		var token = $("#token").val();
-		var route = "http://localhost:8000/interactuar";
+		var route = "http://186.64.123.143/interactuar";
 		$.ajax({
 			url: route,
 			headers: {'X-CSRF-TOKEN': token},
@@ -391,7 +374,27 @@ $(document).ready(function(){
 		$('#'+valor).removeClass("text-info").fadeIn();
 		return true;
 	}
+	function ContarInteracciones(status_id){
+		status_id = status_id;
+		var route = "http://186.64.123.143/contarinteracciones/"+status_id;
+		var user_id = $("#user_id").val();
+		var Contador = 0;
+		$.get(route, function(res){
+			$(res).each(function(key,value){
+				if(value.user_id === user_id){
+					//$('#estado_'+status_id).addClass("btn-coins-down").fadeIn();
+					//$('#imgcoin'+status_id).attr('src', '/img/newGraphics/cobrar_coins02.png').fadeIn();
+					$('#cobrarcoins'+status_id).addClass("text-info").fadeIn();
+					//+"<img id='imgcoin"+value.id+"' src='/img/newGraphics/yavucoin_neo01_small01.png' />"
+				}
+				Contador += 1;
+			});
+			$("#badge_"+status_id).text(Contador);
+		});
+		return true;
+	}
+	*/
 
-/*FUNCIONES Y PROCEDIMIENTOS*/
+	/*FUNCIONES Y PROCEDIMIENTOS*/
 	return true;
 });
