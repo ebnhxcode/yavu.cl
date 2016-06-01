@@ -1,3 +1,4 @@
+@section('favicon') {!!Html::favicon('favicons/raffle.png')!!} @stop
 @section('title') New raffle @stop
 @extends('layouts.front')
 @section('content')
@@ -7,9 +8,11 @@
 		@include('alerts.allAlerts')
 
     @include('sorteos.forms.modalTerminosCondicionesSorteo')
+		<!--
     <div class="" style="font-size: 3em;">
       <img id="img" style="padding-bottom: 20px;" width="8%" src= "{!!URL::to('img/newGraphics/neo_icono_sorteo.png')!!}"/><span ><a href="{!! URL::to('sorteos') !!}" class="btn-link">Sorteos</a> <span class="requerido">\</span> Crear nuevo</span>
     </div>
+		-->
 		<div class="row">
 			{!!Form::open(['route'=>'sorteos.store', 'method'=>'POST', 'files' => true, 'id' => 'FormSorteo'  ])!!}
 			<div class="col-md-4 col-sm-12 col-xs-12">

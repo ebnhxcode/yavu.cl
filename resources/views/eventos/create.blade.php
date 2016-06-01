@@ -1,10 +1,11 @@
+@section('favicon') {!!Html::favicon('favicons/events.png')!!} @stop
 @section('title') New event @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
 		@include('alerts.allAlerts')
-		<h4>Crear un nuevo evento</h4>
+		<!--<h4>Crear un nuevo evento</h4>-->
 		<div class="row">
 			{!!Form::open(['route'=>'eventos.store', 'method'=>'POST'])!!}
 			@include('eventos.forms.fieldsEvento')

@@ -1,10 +1,11 @@
+@section('favicon') {!!Html::favicon('favicons/feed.png')!!} @stop
 @section('title') New feed @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
 		@include('alerts.allAlerts')
-		<h4>Crear un nuevo feed</h4>
+		<!--<h4>Crear un nuevo feed</h4>-->
 		<div class="row">
 			{!!Form::open(['route'=>'feeds.store', 'method'=>'POST'])!!}
 			@include('feeds.forms.fieldsFeed')

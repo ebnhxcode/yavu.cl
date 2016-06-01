@@ -1,3 +1,4 @@
+@section('favicon') {!!Html::favicon('favicons/raffle.png')!!} @stop
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/ParticiparSorteo.js')!!}
 @if(isset($sorteo))
@@ -7,9 +8,11 @@
     <div class="jumbotron">
       <div id="contentMiddle">
         @include('alerts.allAlerts')
+        <!--
         <div class="" style="font-size: 3em;">
           <img id="img" style="padding-bottom: 20px;" width="8%" src= "{!!URL::to('img/newGraphics/neo_icono_sorteo.png')!!}"/><span ><a href="{!! URL::to('sorteos') !!}" class="btn-link">Sorteos</a>  <span class="requerido">\</span> {!! $sorteo->nombre_sorteo !!}</span>
         </div>
+        -->
         <div class="row">
           <div class="col-md-8 col-sm-12 col-xs-12">
             <div class="list-group">

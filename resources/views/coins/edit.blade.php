@@ -1,3 +1,4 @@
+@section('favicon') {!!Html::favicon('favicons/config.png')!!} @stop
 @section('title') Edit coin record @stop
 @extends('layouts.front')
 @section('content')

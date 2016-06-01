@@ -1,10 +1,11 @@
+@section('favicon') {!!Html::favicon('favicons/coin.png')!!} @stop
 @section('title') New coin record @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
 		@include('alerts.allAlerts')
-		<h4>Registro de Coins</h4>
+		<!--<h4>Registro de Coins</h4>-->
 		<div class="row">
 			{!!Form::open(['route'=>'coins.store', 'method'=>'POST'])!!}
 			@include('coins.forms.fieldsCoins')

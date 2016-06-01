@@ -1,9 +1,10 @@
+@section('favicon') {!!Html::favicon('favicons/config.png')!!} @stop
 @section('title') Edit {!! $categoria->nombre_categoria !!} @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		<h4>Edición de categorias</h4>
+		<!--<h4>Edición de categorias</h4>-->
 		@include('alerts.allAlerts')
 		<div class="row">
 			{!!Form::model($categoria, ['method'=>'PUT', 'route' => ['categorias.update', $categoria->id] ])!!}

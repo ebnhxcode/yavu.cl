@@ -1,3 +1,4 @@
+@section('favicon') {!!Html::favicon('favicons/reports.png')!!} @stop
 @section('title') Company statistics @stop
 @extends('layouts.front')
 @section('content')

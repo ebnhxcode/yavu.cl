@@ -1,3 +1,4 @@
+@section('favicon') {!!Html::favicon('favicons/changeFaviconNameHere.png')!!} @stop
 @section('title') Interests @stop
 @extends('layouts.front')
 @section('content')

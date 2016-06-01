@@ -1,10 +1,11 @@
+@section('favicon') {!!Html::favicon('favicons/config.png')!!} @stop
 @section('title') Edit {!!$admin->nombre!!} @stop
 @extends('layouts.frontadm')
 @section('content')
 <div class="jumbotron">
 	<div id="contentIn">
 		@include('alerts.allAlerts')
-		<h4>Actualización de administrador : {!!$admin->nombre .' '. $admin->apellido!!}</h4>
+		<!--<h4>Actualización de administrador : {!!$admin->nombre .' '. $admin->apellido!!}</h4>-->
 		<div class="panel panel-default">
 			<div class="panel-heading"><h4>Mantenedor de administradores</h4></div>
 			<div class="panel-body">

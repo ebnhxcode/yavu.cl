@@ -1,3 +1,4 @@
+@section('favicon') {!!Html::favicon('favicons/company.png')!!} @stop
 @section('title') {!! ($empresa[0]->nombre) !!} profile @stop
 {!!Html::script('js/jquery.js')!!}
 @if(Auth::user()->check())

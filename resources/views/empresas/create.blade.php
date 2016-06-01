@@ -1,3 +1,4 @@
+@section('favicon') {!!Html::favicon('favicons/newcompany.png')!!} @stop
 @section('title') New company @stop
 @extends('layouts.front')
 @section('content')
@@ -5,9 +6,11 @@
     <div id="contentMiddle">
         @include('alerts.alertFields')
         @include('empresas.forms.modalTerminosCondiciones')
+        <!--
         <div class="" style="font-size: 2em;">
             <img width="8%" style="padding-bottom: 20px;" src= "{!!URL::to('img/newGraphics/neo_icono_empresa_crear.png')!!}"/><a href="{!! URL::to('/empresas') !!}"><span>Empresas</span></a><span class="requerido">\</span><span>Crear nueva empresa</span>
         </div>
+        -->
         @include('alerts.allAlerts')
         <div class="row">
             {!!Form::open(['route'=>'empresas.store', 'method'=>'POST', 'files' => true, 'id' => 'FormEmpresa' ])!!}

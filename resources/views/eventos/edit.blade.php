@@ -1,9 +1,10 @@
+@section('favicon') {!!Html::favicon('favicons/config.png')!!} @stop
 @section('title') Edit event @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		<h4>Edición de eventos</h4>
+		<!--<h4>Edición de eventos</h4>-->
 		@include('alerts.allAlerts')
 		<div class="row">
 			{!!Form::model($evento, ['method'=>'PUT', 'route' => ['eventos.update', $evento->id] ])!!}

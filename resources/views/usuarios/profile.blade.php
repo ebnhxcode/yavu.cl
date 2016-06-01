@@ -1,3 +1,4 @@
+@section('favicon') {!!Html::favicon('favicons/user.png')!!} @stop
 @section('title') {!! $user->nombre !!} profile @stop
 @extends('layouts.front')
 @section('content')

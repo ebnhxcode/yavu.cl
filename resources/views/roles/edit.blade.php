@@ -1,9 +1,10 @@
+@section('favicon') {!!Html::favicon('favicons/config.png')!!} @stop
 @section('title') Edit {!! $role->nombre !!} @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		<h4>Edición de roles</h4>
+		<!--<h4>Edición de roles</h4>-->
 		@include('alerts.allAlerts')
 		<div class="row">
 			{!!Form::model($role, ['method'=>'PUT', 'route' => ['roles.update', $role->id] ])!!}

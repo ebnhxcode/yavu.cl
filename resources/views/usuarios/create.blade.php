@@ -1,3 +1,4 @@
+@section('favicon') {!!Html::favicon('favicons/user.png')!!} @stop
 @section('title') Create new @stop
 @extends('layouts.front')
 @if(isset($var))
@@ -9,7 +10,7 @@
 
 		@include('alerts.allAlerts')
 
-		<h4>Registro de usuarios </h4>
+		<!--<h4>Registro de usuarios </h4>-->
 		<div class='row'>
 			{!!Form::open([route('usuarios_create_path'), 'method'=>'POST', 'files' => true])!!}
 			@include('usuarios.forms.fieldsUser')

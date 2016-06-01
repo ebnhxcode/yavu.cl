@@ -1,3 +1,4 @@
+@section('favicon') {!!Html::favicon('favicons/dashboard.png')!!} @stop
 @section('title') Dashboard @stop
 {{--{!!Html::script('js/jquery.js')!!}--}}
 {{--{!!Html::script('js/ajax/HistorialCoins.js')!!}--}}

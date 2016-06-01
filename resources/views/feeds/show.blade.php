@@ -1,3 +1,4 @@
+@section('favicon') {!!Html::favicon('favicons/feed.png')!!} @stop
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/ParticiparSorteo.js')!!}
 @if(isset($feed))
@@ -7,13 +8,14 @@
   <div class="jumbotron">
     <div id="contentMiddle">
       @include('alerts.allAlerts')
+      <!--
       <div style="font-size: 3em;">
         <img width="64px" style="padding-bottom: 20px;" src= "{!!URL::to('img/newGraphics/neo_icono_publicaciones.png')!!}" />
         <span>
           <a href="{!! URL::to('/feeds') !!}">Publicaciones</a>
         </span>
       </div>
-
+      -->
 
       <div class="row">
         <div class="col-md-8 col-sm-12 col-xs-12">

@@ -11,6 +11,8 @@
   <meta name="description" content="Yavu es una empresa de publicidad que ofrece a sus usuarios activos la oportunidad de obtener coins a partir de las publicaciones para que puedan participar por los sorteos que las empresas publican.">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  @section('favicon') {!!Html::favicon('favicons/changeFaviconNameHere.png')!!} @stop
+  @yield('favicon')
   {!!Html::script('js/jquery.js')!!}
   {!!Html::script('js/vendor/jquery.timeago.js')!!}
   {{--{!!Html::script('js/bootstrap.min.js')!!}--}}

@@ -1,3 +1,4 @@
+@section('favicon') {!!Html::favicon('favicons/feed.png')!!} @stop
 @section('title') Feeds @stop
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/publicaciones/GestionarPublicacionesFeeds.js')!!}
@@ -6,9 +7,11 @@
 @section('content')
 <div class="jumbotron">
   <div id="contentMiddle">
+		<!--
 		<div style="font-size: 3em;">
 			<img width="64px" style="padding-bottom: 20px;" src= "{!!URL::to('img/newGraphics/neo_icono_publicaciones.png')!!}" /><span>Publicaciones</span>
 		</div>
+		-->
     <div class="row">
     	<div class="col-md-12 col-sm-12 col-xs-12">
 				@include('alerts.allAlerts')

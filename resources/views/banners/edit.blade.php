@@ -1,3 +1,4 @@
+@section('favicon') {!!Html::favicon('favicons/config.png')!!} @stop
 @section('title') Edit {!! $banner->nombre !!} @stop
 @extends('layouts.frontadm')
 @section('content')

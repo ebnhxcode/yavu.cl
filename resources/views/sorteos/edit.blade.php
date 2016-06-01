@@ -1,3 +1,4 @@
+@section('favicon') {!!Html::favicon('favicons/config.png')!!} @stop
 @section('title') Edit {!! $sorteo->nombre_sorteo !!} @stop
 @extends('layouts.front')
 @section('content')
@@ -5,12 +6,12 @@
 	<div id="contentMiddle">
 
 		@include('alerts.allAlerts')
-
+		<!--
 		<div class="" style="font-size: 3em;">
 			<img id="img" style="padding-bottom: 20px;" width="8%" src= "{!!URL::to('img/newGraphics/neo_icono_sorteo.png')!!}"/><span ><a href="{!! URL::to('sorteos') !!}" class="btn-link">Sorteos</a>  <span class="requerido">\</span> Editar</span>
 		</div>
+		-->
 		<div class="row">
-
 			{!!Form::model($sorteo, ['method'=>'PUT', 'route' => ['sorteos.update', $sorteo->id], 'files' => true ])!!}
 			@include('sorteos.forms.fieldsSorteo', array('sorteo' => $sorteo))
 

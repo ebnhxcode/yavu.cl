@@ -1,12 +1,16 @@
+@section('favicon') {!!Html::favicon('favicons/config.png')!!} @stop
 @section('title') Edit {!!$user->nombre!!} @stop
 @extends('layouts.front')
 @section('content')
 <div class='jumbotron'>
 	<div id='contentMiddle'>
 		<!--Actualización de usuario : {!!$user->nombre .' '. $user->apellido!!}-->
+		<!--
 		<div class="" style="font-size: 2em;">
 			<img width="8%" style="padding-bottom: 20px;" src= "{!!URL::to('/img/users/usuario_nuevo.png')!!}"/><span><a href="{!! URL::to('/profile') !!}">Perfil</a> <span class="requerido">\</span> Informacion de : {!!$user->nombre!!}</span>
 		</div>
+		-->
+
 		<div class='row'>
 			<div class="col-md-12 col-sm-12 col-xs-12">
 

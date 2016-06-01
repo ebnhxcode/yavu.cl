@@ -1,8 +1,10 @@
+@section('favicon') {!!Html::favicon('favicons/config.png')!!} @stop
 @section('title') Edit feed @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
+		{{--
 		<div style="font-size: 3em;">
 			<img width="64px" style="padding-bottom: 20px;" src= "{!!URL::to('img/newGraphics/neo_icono_publicaciones.png')!!}" />
 			<span>
@@ -11,6 +13,7 @@
 					Editar
 			</span>
 		</div><!-- /div de titulo -->
+		--}}
 
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12">

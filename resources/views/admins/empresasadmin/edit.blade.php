@@ -1,3 +1,4 @@
+@section('favicon') {!!Html::favicon('favicons/config.png')!!} @stop
 @section('title') Edit {!! $empresa->nombre !!} @stop
 @extends('layouts.front')
 @section('content')
@@ -5,9 +6,11 @@
     <div id="contentMiddle">
       @include('alerts.alertFields')
       @include('empresas.forms.modalTerminosCondiciones')
+      <!--
       <div class="" style="font-size: 3em;">
         <img width="8%" style="padding-bottom: 20px;" src= "{!!URL::to('img/newGraphics/neo_icono_config02.png')!!}"/><a href="{!! URL::to('/empresas') !!}"><span>Administraci&oacute;n</span></a><span class="requerido"> \ </span><span>Editar empresa</span>
       </div>
+      -->
       @include('alerts.allAlerts')
       <div class="row">
         {!!Form::model($empresa, ['method'=>'PUT', 'route' => ['admins_empresas_put_path', $empresa->id], 'files' => true , 'id' => 'FormEmpresa'])!!}

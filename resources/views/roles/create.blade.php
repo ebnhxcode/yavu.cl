@@ -1,10 +1,11 @@
+@section('favicon') {!!Html::favicon('favicons/changeFaviconNameHere.png')!!} @stop
 @section('title') New role @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
 		@include('alerts.allAlerts')
-		<h4>Crear un nuevo role</h4>
+		<!--<h4>Crear un nuevo role</h4>-->
 		<div class="row">
 			{!!Form::open(['route'=>'roles.store', 'method'=>'POST'])!!}
 			@include('roles.forms.fieldsRole')

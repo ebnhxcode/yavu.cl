@@ -1,9 +1,10 @@
+@section('favicon') {!!Html::favicon('favicons/admin.png')!!} @stop
 @section('title') New admin @stop
 @extends('layouts.frontadm')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-	<h1>Registro de Admins</h1>
+	<!--<h1>Registro de Admins</h1>-->
 	</div>
 	<div id="contentIn">
 		@include('alerts.allAlerts')

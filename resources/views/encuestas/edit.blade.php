@@ -1,9 +1,10 @@
+@section('favicon') {!!Html::favicon('favicons/config.png')!!} @stop
 @section('title') Edit survey @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		<h4>Edición de encuestas</h4>
+		<!--<h4>Edición de encuestas</h4>-->
 		@include('alerts.allAlerts')
 		<div class="row">
 			{!!Form::model($encuesta, ['method'=>'PUT', 'route' => ['encuestas.update', $encuesta->id] ])!!}

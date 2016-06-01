@@ -1,10 +1,11 @@
+@section('favicon') {!!Html::favicon('favicons/changeFaviconNameHere.png')!!} @stop
 @section('title') New survey @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
 		@include('alerts.allAlerts')
-		<h4>Crear una nueva encuesta</h4>
+		<!--<h4>Crear una nueva encuesta</h4>-->
 		<div class="row">
 			{!!Form::open(['route'=>'encuestas.store', 'method'=>'POST'])!!}
 			@include('encuestas.forms.fieldsEncuesta')

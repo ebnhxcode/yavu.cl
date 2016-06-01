@@ -1,10 +1,11 @@
+@section('favicon') {!!Html::favicon('favicons/changeFaviconNameHere.png')!!} @stop
 @section('title') New benefit @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
 		@include('alerts.allAlerts')
-		<h4>Crear un nuevo beneficio</h4>
+		<!--<h4>Crear un nuevo beneficio</h4>-->
 		<div class="row">
 			{!!Form::open(['route'=>'beneficios.store', 'method'=>'POST'])!!}
 			@include('beneficios.forms.fieldsBeneficio')

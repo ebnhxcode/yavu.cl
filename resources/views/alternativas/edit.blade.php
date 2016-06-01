@@ -1,9 +1,10 @@
+@section('favicon') {!!Html::favicon('favicons/config.png')!!} @stop
 @section('title') Edit alternative @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		<h4>Edición de alternativas</h4>
+		<!--<h4>Edición de alternativas</h4>-->
 		@include('alerts.allAlerts')
 		<div class="row">
 			{!!Form::model($alternativa, ['method'=>'PUT', 'route' => ['alternativas.update', $alternativa->id] ])!!}

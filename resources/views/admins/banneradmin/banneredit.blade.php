@@ -1,3 +1,4 @@
+@section('favicon') {!!Html::favicon('favicons/config.png')!!} @stop
 @section('title') Edit banner @stop
 @extends('layouts.frontadm')
 @section('content')
@@ -5,10 +6,11 @@
   <div class="jumbotron">
     <div id="contentMiddle">
       @include('alerts.allAlerts')
-
+        <!--
         <div class="" style="font-size: 3em;">
           <img id="img" style="padding-bottom: 20px;" width="8%" src= "{!!URL::to('img/newGraphics/neo_icono_config02.png')!!}"/><span> <a href="{!! URL::to('/admins') !!}">Administraci&oacute;n</a></span><span class="requerido"> \ </span><span>Editar Banner</span>
         </div>
+        -->
 
          @include('alerts.alertFields')
 
