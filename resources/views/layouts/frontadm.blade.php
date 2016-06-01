@@ -16,12 +16,9 @@
   {{--{!!Html::script('js/bootstrap.min.js')!!}--}}
   {!!Html::script('js/all.js')!!}
   {!!Html::script('js/plugins.js')!!}
-  {!!Html::script('js/ajax/FrontNotificaciones.js')!!}
 
   {!!Html::style('css/app.css')!!}
 
-  {!!Html::script('js/ajax/GestionarCoins.js')!!}
-  {!!Html::script('js/ajax/GestionarCompraTicket.js')!!}
   {!!Html::style('css/style.css')!!}
   {!!Html::script('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')!!}
   {{-- {!!Html::style('css/main.css')!!} --}}
@@ -122,22 +119,19 @@
           </li>
         @endif
         @if(Auth::admin()->check())
+           <li>
+            <a href="{!!URL::to('/admins')!!}">Inicio</a>
+          </li>
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Gesti&oacute;n<b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="{!!URL::to('/empresas/create')!!}">Registro de empresas</a></li>
-              <li><a href="{!!URL::to('/empresas')!!}">Mostrar listado de empresas</a></li>
+              <li><a href="{!!URL::to('/admins/empresas/create')!!}">Registro de empresas</a></li>
+              <li><a href="{!!URL::to('/admins/empresas/index')!!}">Mostrar listado de empresas</a></li>
+              <li><a href="{!!URL::to('/admins/banneradmin/')!!}">Mostrar listado de empresas con banner</a></li>
               <li><a href="{!!URL::to('/sorteospendientes')!!}">Sorteos por confirmar</a></li>
             </ul>
           </li>
-          <!--
-							<li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Pagos<b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li><a href="{!!URL::to('/empresas')!!}">Registrar pago</a></li>
-									<li><a href="{!!URL::to('/empresas')!!}">Mostrar listado de deudores</a></li>
-								</ul>
-							</li>
-							-->
-          <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Administración<b class="caret"></b></a>
+
+          <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Administraci&oacute;n<b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="{!!URL::to('/admins/create')!!}">Registro de Administradores</a></li>
               <li><a href="{!!URL::to('/admins')!!}">Mostrar listado de Administradores</a></li>

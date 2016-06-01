@@ -15,22 +15,6 @@
     </div>
     <div class="row">
 
-
-      <div class="col-md-12 col-sm-12 col-xs-12">
-
-      <!-- 
-        <div class="alert alert-warning alert-dismissible" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          Atento al usar tus tickets participar
-          <span class="glyphicon glyphicon-tag" style="font-size: 1em; color: #BEF781;"></span>
-          <span class="glyphicon glyphicon-resize-horizontal"></span>
-          <span class="label label-info">#14</span>&nbsp;(<small class="requerido">Tickets de ejemplo</small>)
-        </div>
-
-      -->
-
-      </div>
-
       <div class="col-md-4 col-sm-12 col-xs-12">
         <div>
           <div>
@@ -48,8 +32,8 @@
               </div>
 
             @include('miniDashboard.miniDashboard')
-
-
+              @include('listarBanner.listaBanner')
+           
             </div> <!-- /list group -->
 
           </div>
@@ -98,6 +82,7 @@
                   </thead>
                   @foreach($sorteos as $sorteo)
                   <tbody>
+                  @if($sorteo->estado_sorteo != 'Pendiente')
                     <td>{!! $sorteo->nombre_sorteo !!}</td>
                     <td>{!! $sorteo->nombre_empresa !!}</td>
                     <td>{!!$sorteo->estado_sorteo!!}</td>
@@ -106,13 +91,15 @@
                     @else
                       @if($sorteo->estado_sorteo == 'Finalizado')
                         <td><a class="btn btn-warning" href="{!!URL::to('/sorteos/'.$sorteo->id)!!}">Ver sorteo</a></td>
-                      @elseif($sorteo->estado_sorteo == 'Lanzado')
+                      @elseif($sorteo->estado_sorteo == 'Activo')
                         <td><a class="btn btn-success" href="{!!URL::to('/sorteos/'.$sorteo->id)!!}">Ver sorteo</a></td>
                       @else
                         <td><a class="btn btn-danger" href="{!!URL::to('/sorteos/'.$sorteo->id)!!}">Ver sorteo</a></td>
                       @endif
                     @endif
+                  @endif
                   </tbody>
+
                   @endforeach
                 </table>
               </div> <!-- /div inside courses -->

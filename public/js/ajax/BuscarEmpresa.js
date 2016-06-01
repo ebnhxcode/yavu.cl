@@ -10,7 +10,7 @@ $(document).ready(function(){
 		e.preventDefault();
 		return true;
 	});
-	SorteosEmpresa();
+	//SorteosEmpresa();
 /*MÉTODOS CONSTRUCTORES*/
 
 /*SELECTORES*/
@@ -154,7 +154,7 @@ $(document).ready(function(){
 			async: true,
 			success: function success(data, status) {
         var SorteosActivos = document.getElementsByClassName("SorteosActivos");
-        console.log(data[0]);
+        //console.log(data[0]);
         
         //console.log(SorteosActivos.length);
 

@@ -1,6 +1,7 @@
 <?php
 namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
+use yavu\Estado;
 use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
 use yavu\Http\Requests\FeedCreateRequest;
@@ -14,7 +15,8 @@ use Illuminate\Routing\Route;
 use DB;
 use yavu\User;
 
-class FeedController extends Controller{
+class
+FeedController extends Controller{
   private $id;
   private $user_id;
   public function __construct(){
@@ -60,6 +62,7 @@ class FeedController extends Controller{
   }
   public function destroy($id){
     return response()->json(["Mensaje: " => "Acceso denegado"]);
+    dd($this->feed);
     if(isset($this->feed)){
       $this->feed->delete();
       Session::flash('message', 'Feed eliminado correctamente');
@@ -67,8 +70,7 @@ class FeedController extends Controller{
     }
   }
   public function edit($id){
-    return Redirect::to('/');
-    //return view('feeds.edit', ['feed' => $this->feed]);
+    return view('feeds.edit', ['feed' => EstadoEmpresa::find($id)]);
   }
   public function EliminarFeed($id){
 
@@ -87,16 +89,27 @@ class FeedController extends Controller{
 
     if(count($this->user->empresas)>0){
       $this->user_id = $this->user->empresas[0]->user_id; $this->id = $this->user->empresas[0]->id;
-      return view('feeds.index', ['user_id' => $this->user_id], ['empresa_id' => $this->id]);
+      return view('feeds.index', ['user_id' => $this->user_id], ['empresa_id' => $this->id, 'mostrarbanner' => $this->MostrarBannerPublico() ] );
     }else{
       return view('feeds.index');
     }
+  }
+  public function MostrarBannerPublico(){
 
-
-
+        return DB::table('empresas')
+            ->select(['empresas.nombre', 'banner_data.id', 'banner_data.banner', 'banner_data.titulo_banner','banner_data.descripcion_banner', 'banner_data.estado_banner'])
+            ->where('estado_banner', '=', 'Creado')
+            ->join('banner_data', 'banner_data.id', '=', 'empresas.id')
+            ->orderByRaw("RAND()")
+            ->take(3)
+            ->get();
   }
   public function show($id){
-    return Redirect::to('/');
+
+    $this->EmpresaEstado = EstadoEmpresa::find($id)->estado_empresa()->get();
+    return view('feeds.show', ['feed' => EstadoEmpresa::find($id)], ['EmpresaEstado' => [''=>'',''=>'',''=>'']]);
+
+
   }
   public function store(FeedCreateRequest $request){
     if(isset($request) && $request->ajax()){
@@ -106,10 +119,10 @@ class FeedController extends Controller{
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function update(FeedUpdateRequest $request, $id){
-    return Redirect::to('/');
+    $this->feed = EstadoEmpresa::find($id);
     $this->feed->fill($request->all());
     $this->feed->save();
     Session::flash('message', 'Feed editado correctamente');
-    return Redirect::to('/feeds');
+    return Redirect::to('/feeds/'.$this->feed->id);
   }
 }

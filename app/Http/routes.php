@@ -39,7 +39,7 @@ Route::resource('log', 'LogController');
 
 Route::get('login', function(){
   $exitCode = Artisan::call('cache:clear');
-  if(Auth::user()->check()){
+  if(Auth::user()->check()||Auth::admin()->check()){
     $log = new \yavu\Http\Controllers\LogController();
     $log->logout();
     return view('login');
@@ -99,9 +99,10 @@ Route::group(['middleware' => 'user'], function(){
 
   /*Gestión de Empresas*/
   Route::get('estadisticasdemiempresa', 'EmpresaController@EstadisticasDeMiEmpresa');
-  Route::get('sorteosempresa' ,'EmpresaController@SorteosEmpresa');
+  //Route::get('sorteosempresa' ,'EmpresaController@SorteosEmpresa');
   Route::resource('empresas','EmpresaController');
   Route::get('empresa/{empresa}/', 'EmpresaController@MostrarEmpresaPublica');
+  Route::get('listarbanner/listabanner', 'EmpresaController@MostrarBannerPublico');
   Route::get('empresa/{empresa}/sorteos', 'EmpresaController@RaffleList');
   Route::get('listaempresas', 'EmpresaController@ListaEmpresas');
   Route::get('solicitareliminacionempresa/{id}', 'EmpresaController@SolicitarEliminacion')->where('id', '[0-9]+');
@@ -112,6 +113,10 @@ Route::group(['middleware' => 'user'], function(){
   /*Gestión de Servicios*/
 
   /*Gestión de Sorteos*/
+
+  Route::get('cronjob', 'SorteoController@cronjob');
+
+
   Route::resource('sorteos', 'SorteoController');
   Route::get('listasorteos', 'SorteoController@ListaSorteos');
   Route::get('buscarsorteo/{nombre?}', 'SorteoController@BuscarSorteos');
@@ -161,19 +166,94 @@ Route::group(['middleware' => 'user'], function(){
 
 
 
+  /*Gestión de Encuestas*/
+  Route::resource('encuestas', 'EncuestaController');
+  /*Gestión de Encuestas*/
+
+  /*Gestión de Preguntas*/
+  Route::resource('preguntas', 'PreguntaController');
+  /*Gestión de Preguntas*/
+
+  /*Gestión de Alternativas*/
+  Route::resource('alternativas', 'AlternativaController');
+  /*Gestión de Alternativas*/
+
+  /*Gestión de Servicio*/
+  Route::resource('servicios', 'ServicioController');
+  /*Gestión de Servicio*/
+
+  /*Gestión de Banners */
+  Route::resource('banners', 'BannerController');
+  /*Gestión de Banners */
+
+  /*Gestión de Categorías */
+  Route::resource('categorias', 'CategoriaController');
+  /*Gestión de Categorías */
+
+  /*Gestión de Pago*/
+  Route::resource('pagos', 'PagoController');
+  /*Gestión de Pago*/
+
+  /*Gestión de Beneficio*/
+  Route::resource('beneficios', 'BeneficioController');
+  /*Gestión de Beneficio*/
+
+  /*Gestión de Role*/
+  Route::resource('roles', 'RoleController');
+  /*Gestión de Role*/
+
+  /*Gestión de Evento*/
+  Route::resource('eventos', 'EventoController');
+  /*Gestión de Evento*/
+
+  /*Gestión de Banners */
+  Route::resource('feeds', 'FeedController');
+  Route::get('eliminarfeed/{id}', 'FeedController@EliminarFeed');
+  /*Gestión de Banners */
+
+  /*Gestión de  Interacciones */
+  Route::resource('interacciones', 'InteraccionController');
+  /*Gestión de Interacciones */
+
+  /*Gestión de  Interes */
+  Route::resource('intereses', 'InteresController');
+  /*Gestión de Interes */
+
+
 
 
 }); /*Fin del middleware user*/
+
 
 Route::group(['middleware' => 'admin'], function(){
 
 
   /*Gestión de Admins*/
+  
+  Route::get('admins/banneradmin','AdminController@indexbanner');
+  Route::get('/admins/bannercreate/{empresa_id}', 'AdminController@bannercreate');
+  Route::post('/admins/bannercreate/', ['uses' => 'AdminController@bannerstore' , 'as' => 'admins_banner_create_path']);
+  Route::get('admins/banneradmin/{id}/edit/', ['uses' => 'AdminController@banneredit','as' => 'admins_banner_edit_path']);
+   Route::put('admins/banneradmin/{id}/edit/', ['uses' => 'AdminController@bannerupdate','as' => 'admins_banner_put_path']);
+  Route::get('admins/empresas/index', 'AdminController@empresasindex');
+
+  Route::get('admins/empresas/{id}/edit', ['uses' => 'AdminController@empresasedit', 'as' => 'admins_empresas_edit_path',]);
+  Route::put('admins/empresas/{id}/edit', ['uses' => 'AdminController@empresasupdate','as' => 'admins_empresas_put_path',]);
+
+  Route::post('admins/empresas/create', [ 'uses' => 'AdminController@empresasstore', 'as' => 'admins_empresas_create_path' ]);
+  Route::get('admins/empresas/create', 'AdminController@empresascreate');
   Route::resource('admins','AdminController');
   Route::get('sorteospendientes', 'SorteoController@SorteosPendientes');
   Route::get('aprobarsorteopendiente', 'SorteoController@AprobarSorteoPendiente');
   Route::get('visualizarempresasorteopendiente', 'SorteoController@VisualizarSorteoPendiente');
+  Route::get('validarrutempresaadmin/{rut}', 'EmpresaController@ValidarRutEmpresa');
+  
   /*Gestión de Admins*/
+
+  /*Gestión de Mapas*/
+  Route::resource('gmaps', 'GmapsController');
+  /*Gestión de Mapas*/
+
 
 
 
@@ -198,77 +278,5 @@ Route::get('sitemap', function(){
 */
 /*Gestión del front*/
 
-
-
-
-/*Gestión de Encuestas*/
-Route::resource('encuestas', 'EncuestaController');
-/*Gestión de Encuestas*/
-
-/*Gestión de Preguntas*/
-Route::resource('preguntas', 'PreguntaController');
-/*Gestión de Preguntas*/
-
-/*Gestión de Alternativas*/
-Route::resource('alternativas', 'AlternativaController');
-/*Gestión de Alternativas*/
-
-/*Gestión de Servicio*/
-Route::resource('servicios', 'ServicioController');
-/*Gestión de Servicio*/
-
-/*Gestión de Banners */
-Route::resource('banners', 'BannerController');
-/*Gestión de Banners */
-
-/*Gestión de Categorías */
-Route::resource('categorias', 'CategoriaController');
-/*Gestión de Categorías */
-
-/*Gestión de Pago*/
-Route::resource('pagos', 'PagoController');
-/*Gestión de Pago*/
-
-/*Gestión de Beneficio*/
-Route::resource('beneficios', 'BeneficioController');
-/*Gestión de Beneficio*/
-
-/*Gestión de Role*/
-Route::resource('roles', 'RoleController');
-/*Gestión de Role*/
-
-/*Gestión de Evento*/
-Route::resource('eventos', 'EventoController');
-/*Gestión de Evento*/
-
-/*Gestión de Banners */
-Route::resource('feeds', 'FeedController');
-Route::get('eliminarfeed/{id}', 'FeedController@EliminarFeed');
-/*Gestión de Banners */
-
-/*Gestión de  Interacciones */
-Route::resource('interacciones', 'InteraccionController');
-/*Gestión de Interacciones */
-
-/*Gestión de  Interes */
-Route::resource('intereses', 'InteresController');
-/*Gestión de Interes */
-
-
-/*Gestión de Mapas*/	
-Route::get('vendor/add', function(){
-
-  //view
-  return View::make('add');
-});
-Route::post('vendor/add', function(){
-
-});
-Route::get('vendor/{id}', function($id){
-
-});
-
-Route::resource('gmaps', 'GmapsController');
-/*Gestión de Mapas*/
 
 

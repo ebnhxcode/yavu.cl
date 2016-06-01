@@ -17,6 +17,7 @@ use Session;
 use Redirect;
 use Auth;
 use DB;
+use Mail;
 use Carbon\Carbon;
 use Illuminate\Routing\Route;
 use yavu\Winner;
@@ -30,6 +31,7 @@ class SorteoController extends Controller{
     }
 
   }
+
   public function BuscarSorteos($nombre){
     if(isset($nombre)){
       $nombre = addslashes($nombre);
@@ -82,6 +84,7 @@ class SorteoController extends Controller{
     
     return response()->json($OpcionesParticipantes);
   }
+
   public function ContarTicketsEnSorteo($id){
     return response()->json(Sorteo::find($id)->participante_sorteos);
   }
@@ -135,8 +138,20 @@ class SorteoController extends Controller{
 
     $this->registro_tickets = $this->user->registro_tickets()->orderBy('created_at', 'desc')->limit('20')->get();
     //dd($this->registro_tickets);
-    return view('sorteos.index', compact('sorteos'), ['rtickets' => $this->registro_tickets]);
+    return view('sorteos.index', compact('sorteos'), ['rtickets' => $this->registro_tickets, 'mostrarbanner' => $this->MostrarBannerPublico()]);
+   
   }
+
+  public function MostrarBannerPublico(){
+
+        return DB::table('empresas')
+            ->select(['empresas.nombre', 'banner_data.id', 'banner_data.banner', 'banner_data.titulo_banner','banner_data.descripcion_banner', 'banner_data.estado_banner'])
+            ->where('estado_banner', '=', 'Creado')
+            ->join('banner_data', 'banner_data.id', '=', 'empresas.id')
+             ->orderByRaw("RAND()")
+            ->take(3)
+            ->get();
+    }
 
   public function MostrarGanador($ganador){
     $ganador = ParticipanteSorteo::find($ganador)->users;
@@ -170,10 +185,12 @@ class SorteoController extends Controller{
         $this->pop = new Pop(['user_id' => $this->sorteado->user_id,'empresa_id' => 1,'tipo' => 'coins','estado' => 'pendiente','contenido' => 'Haz sido el ganador del sorteo '.$this->sorteo->nombre_sorteo.'!','created_at' => strftime("%Y-%m-%d-%H-%M-%S", time()),'updated_at' => strftime("%Y-%m-%d-%H-%M-%S", time())]);
         $this->pop->save();
 
+        /*
         Mail::send('emails.winner', ['email'=>\Input::get('email'), 'nombre' => \Input::get('nombre'), 'codigo' => $this->getCodigoVerificacion()], function($msj){
           $msj->subject('Correo de Contacto');
           $msj->to(\Input::get('email'));
         });
+        */
 
       }
     }
@@ -264,7 +281,7 @@ previa confirmación por parte del equipo <a href="/">Yavu.cl</a>. Miralo <a hre
 
         if($this->sorteo->user_id != $this->user->id){
 
-          if($this->sorteo->estado_sorteo == 'Lanzado'){
+          if($this->sorteo->estado_sorteo == 'Activo'){
 
             $this->ticket = new Ticket(['user_id' => $user_id,'cantidad_tickets' => -1,'monto' => -100,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
             $this->user->tickets()->save($this->ticket);

@@ -5,12 +5,10 @@ use Illuminate\Http\Request;
 use yavu\Http\Requests;
 use yavu\Http\Requests\EmpresaCreateRequest;
 use yavu\Http\Requests\EmpresaUpdateRequest;
-use yavu\Http\Controllers\Controller;
 use Session;
 use Redirect;
 use yavu\Empresa;
 use yavu\User;
-use yavu\Sorteo;
 use Illuminate\Routing\Route;
 use Auth;
 use DB;
@@ -29,24 +27,31 @@ class EmpresaController extends Controller{
     $this->empresa = Empresa::find($route->getParameter('empresas'));
   }
   public function index(Request $request){
-    return view('empresas.index', ['empresas' => Empresa::paginate(15)]);
+    return view('empresas.index', ['empresas' => Empresa::paginate(15)], ['mostrarbanner' => $this->MostrarBannerPublico()]);
   }
+  
   public function create(){
-    $empresa = Empresa::where('user_id', '=', $this->user->id)->get();
-    if(count($empresa) < 1){
-      return view('empresas.create');
-    }else{
-      $this->categorias = $empresa[0]->categorias()->get()->count('empresa_id');
-      if($this->categorias == 3) {
-        Session::flash('message-error', 'Ya ha registrado un numero maximo de categorias y empresa ');
-        return Redirect::to('/empresas');
-      }
-      else{
-        Session::flash('message-info', 'Usted ya tiene registrada una empresa');
-        Session::flash('message-warning', 'Si desea registrar una nueva empresa comuniquese con el administrador');
-        return view('categorias.create', ['empresa' => $empresa[0]]);
+
+    if(isset($this->user)){
+      $empresa = Empresa::where('user_id', '=', $this->user->id)->get();
+      if(count($empresa) < 1){
+        return view('empresas.create');
+      }else{
+        $this->categorias = $empresa[0]->categorias()->get()->count('empresa_id'); 
+        if($this->categorias == 3) {
+            Session::flash('message-info', 'Usted ya tiene registrada una empresa');
+            Session::flash('message-error', 'Ya ha registrado un numero maximo de categorias y empresa ');
+            Session::flash('message-warning', 'Si desea registrar una nueva empresa comuniquese con el administrador');
+            return Redirect::to('/empresas');
+        }
+        else{
+          Session::flash('message-info', 'Usted ya tiene registrada una empresa');
+          Session::flash('message-warning', 'Si desea registrar una nueva empresa comuniquese con el administrador');
+          return view('categorias.create', ['empresa' => $empresa[0]]);
+        }
       }
     }
+    return Redirect::to('/');
   }
 
   public function EstadisticasDeMiEmpresa(){
@@ -80,6 +85,7 @@ class EmpresaController extends Controller{
   }
 
   public function store(EmpresaCreateRequest $request){
+    if(isset($request) && isset($this->user)){
 
       $this->empresa = Empresa::create($request->all());
       DB::table('pops')->insert(
@@ -93,6 +99,8 @@ class EmpresaController extends Controller{
       );
       Session::flash('message', 'Empresa creada correctamente');
       return Redirect::to('/empresas/create');
+    }
+    return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function show($id){
     $this->empresa = Empresa::find($id);
@@ -127,8 +135,17 @@ class EmpresaController extends Controller{
     }
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
-  public function MostrarEmpresaPublica($empresa){
+  public function MostrarBannerPublico(){
 
+        return DB::table('empresas')
+            ->select(['empresas.nombre', 'banner_data.id', 'banner_data.banner', 'banner_data.titulo_banner','banner_data.descripcion_banner', 'banner_data.estado_banner'])
+            ->where('estado_banner', '=', 'Creado')
+            ->join('banner_data', 'banner_data.id', '=', 'empresas.id')
+            ->orderByRaw("RAND()")
+            ->take(3)
+            ->get();
+    }
+  public function MostrarEmpresaPublica($empresa){
 
     if(isset($empresa)){
 
@@ -158,7 +175,7 @@ class EmpresaController extends Controller{
       $empresa = addslashes($empresa);
       $this->empresa = Empresa::where('nombre', $empresa)->get();
       $this->user = User::find($this->empresa[0]->user_id);
-      return view('empresas.raffleList', ['sorteos' => $this->user->sorteos()->get()->where('estado_sorteo', 'Lanzado')], ['empresa' => $this->empresa]);
+      return view('empresas.raffleList', ['sorteos' => $this->user->sorteos()->get()->where('estado_sorteo', 'Activo')], ['empresa' => $this->empresa]);
 
 
   }

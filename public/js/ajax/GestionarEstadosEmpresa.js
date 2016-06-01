@@ -129,24 +129,7 @@ $(document).ready(function(){
 		return true;
 	}
 
-  function ContarInteracciones(status_id){
-    status_id = status_id;
-    var route = "http://yavu.cl/contarinteracciones/"+status_id;
-    var user_id = $("#user_id").val();
-    var Contador = 0;
-    $.get(route, function(res){
-      $(res).each(function(key,value){
-				if(value.user_id === user_id){
-					//$('#estado_'+status_id).addClass("btn-coins-down").fadeIn();
-					$('#imgcoin'+status_id).attr('src', '/img/newGraphics/cobrar_coins02.png').fadeIn();
-					//+"<img id='imgcoin"+value.id+"' src='/img/newGraphics/yavucoin_neo01_small01.png' />"
-				}
-				Contador += 1;
-      });
-      $("#badge_"+status_id).text(Contador);
-    });
-		return true;
-  }    
+
 
 	function ContarEstados(){
 		var CargarEstados = $("#CargarEstados"); 
@@ -238,6 +221,7 @@ $(document).ready(function(){
 					+'<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">'
 					+'<li><a onclick="eliminarEstado('+value.id+','+value.user_id+')" href="#!">'+(user_id==value.user_id?"Eliminar":"Ocultar")+' publicación</a></li>'
 					+(user_id==value.user_id?"<li><a onclick='eliminarEstado("+value.id+",0)' href='#!'>Ocultar estado</a></li>":"")
+					+(user_id==value.user_id?"<li><a href='/feeds/"+value.id+"/edit'>Editar publicaci&oacute;n</a></li>":"")
 					+'</ul>'
 					+'</div><!-- /div dropdown -->'
 
@@ -262,7 +246,7 @@ $(document).ready(function(){
 						+"</div><!-- /div list-group-item-success -->"
 
 					+'<div class="list-group-item">'
-						+"<p>"+value.status+"</p>"
+						+"<h4>"+value.status+"</h4>"
 					+'</div><!-- /div list-group-item -->'
 
 
@@ -270,7 +254,7 @@ $(document).ready(function(){
 
 						+"<span role='button' class='' href='#!' style='color:#3C5B28'>"
 						+"<span name='megusta' class='' onclick='Interactuar(this.id)' id='estado_"+value.id+"' value='e"+value.idEmpresa+"'>"
-							+"<img id='imgcoin"+value.id+"' src='/img/newGraphics/cobrar_coins.png' />"
+							+"<!--<img id='imgcoin"+value.id+"' src='/img/newGraphics/cobrar_coins.png' />--><span id='cobrarcoins"+value.id+"'>Cobrar Coins</span>"
 						+"</span>"
 					+"</span>"
 
@@ -362,6 +346,7 @@ $(document).ready(function(){
 		});
 		return true;
 	}
+	/*
 	function Interactuar(valor){
 		var status_id = valor.replace('estado_','');
 		var user_id = $("#user_id").val();
@@ -389,7 +374,27 @@ $(document).ready(function(){
 		$('#'+valor).removeClass("text-info").fadeIn();
 		return true;
 	}
+	function ContarInteracciones(status_id){
+		status_id = status_id;
+		var route = "http://yavu.cl/contarinteracciones/"+status_id;
+		var user_id = $("#user_id").val();
+		var Contador = 0;
+		$.get(route, function(res){
+			$(res).each(function(key,value){
+				if(value.user_id === user_id){
+					//$('#estado_'+status_id).addClass("btn-coins-down").fadeIn();
+					//$('#imgcoin'+status_id).attr('src', '/img/newGraphics/cobrar_coins02.png').fadeIn();
+					$('#cobrarcoins'+status_id).addClass("text-info").fadeIn();
+					//+"<img id='imgcoin"+value.id+"' src='/img/newGraphics/yavucoin_neo01_small01.png' />"
+				}
+				Contador += 1;
+			});
+			$("#badge_"+status_id).text(Contador);
+		});
+		return true;
+	}
+	*/
 
-/*FUNCIONES Y PROCEDIMIENTOS*/
+	/*FUNCIONES Y PROCEDIMIENTOS*/
 	return true;
 });

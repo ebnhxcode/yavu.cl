@@ -17,6 +17,8 @@
         </div>
 --}}
         @include('miniDashboard.miniDashboard')
+        @include('listarBanner.listaBanner')
+           
 
 
 

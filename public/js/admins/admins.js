@@ -13,7 +13,7 @@ function aprobarSorteo(id){
     dataType: 'json',
     data:{ id:id },
     success: function success() {
-      $('#estado'+id).text('Lanzado');
+      $('#estado'+id).text('Activo');
       $('#estado'+id).addClass('list-group-item-success');
     }
   });

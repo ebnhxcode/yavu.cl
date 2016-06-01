@@ -13,7 +13,7 @@
 /*
 elixir(function(mix) {
     mix.sass('app.scss');
-});
+});Captura de pantalla de 2016-05-25 14-09-40.png
 */
 /*
 elixir(function(mix) {

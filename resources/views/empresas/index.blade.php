@@ -27,9 +27,10 @@
                     {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar...','id'=>'empresathumb', 'role' => 'combobox', 'aria-describedby' => 'sizing-addon1'])!!}
                 @endif
               </div>
-
+             
               @include('miniDashboard.miniDashboard')
-
+      
+              @include('listarBanner.listaBanner')
 
             </div> <!-- /list group -->
 
@@ -64,6 +65,7 @@
               </table>
             @elseif(Auth::user()->check() || !Auth::user()->check())
               <div id="EmpresaListThumb">
+           
                 @foreach($empresas as $empresa)
                   <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="thumbnail card">

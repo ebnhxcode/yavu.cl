@@ -7,13 +7,14 @@
       @include('alerts.errorsMessage')
       @include('alerts.successMessage')
       @include('alerts.warningMessage')
+
       <div class="" style="font-size: 3em;">
-        <img id="img" width="8%" src= "{!!URL::to('img/dash/ico_sorteo01.png')!!}"/><span>Sorteos Pendientes</span>
+        <img id="img" style="padding-bottom: 20px;" width="8%" src= "{!!URL::to('img/newGraphics/neo_icono_config02.png')!!}"/><span> <a href="{!! URL::to('/admins') !!}">Administraci&oacute;n</a></span><span class="requerido"> \ </span><span>Sorteos Pendientes</span>
       </div>
+
+
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
-
-
 
             <div class="list-group">
 

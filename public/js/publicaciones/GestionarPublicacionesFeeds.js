@@ -163,6 +163,7 @@ $(document).ready(function(){
 										+'<li><a href="/empresa/'+value.nombreEmp+'" id="" value="'+value.id+'" role="button">Ver perfil</a></li>'
 										+'<li><a onclick="eliminarEstado('+value.id+','+value.user_id+')" href="#!">'+(user_id==value.user_id?"Eliminar":"Ocultar")+' publicación</a></li>'
 										+(user_id==value.user_id?"<li><a onclick='eliminarEstado("+value.id+",0)' href='#!'>Ocultar estado</a></li>":"")
+										+(user_id==value.user_id?"<li><a href='/feeds/"+value.id+"/edit'>Editar publicaci&oacute;n</a></li>":"")
 									+'</ul>'
 								+'</div><!-- /div dropdown -->'
 
@@ -183,14 +184,14 @@ $(document).ready(function(){
 						+"</div><!-- /div list-group-item-success -->"
 
 						+'<div class="list-group-item">'
-							+"<p>"+value.status+"</p>"
+							+"<h4>"+value.status+"</h4>"
 						+"</div><!-- /div list-group-item -->"
 
 						+"<div class='list-group-item panel-footer'>"
 
 							+"<span role='button' class='' href='#!' style='color:#3C5B28'>"
 								+"<span name='megusta' class='' onclick='Interactuar(this.id)' id='estado_"+value.id+"' value='e"+value.idEmpresa+"'>"
-									+"<img id='imgcoin"+value.id+"' src='/img/newGraphics/cobrar_coins.png' />"
+									+"<!--<img id='imgcoin"+value.id+"' src='/img/newGraphics/cobrar_coins.png' />--><span id='cobrarcoins"+value.id+"'>Cobrar coins</span>"
 								+"</span>"
 							+"</span>"
 
@@ -214,7 +215,7 @@ $(document).ready(function(){
 		});
 		return true;
 	}
-
+/*
   function ContarInteracciones(status_id){
     status_id = status_id;
     var route = "http://yavu.cl/contarinteracciones/"+status_id;
@@ -224,7 +225,8 @@ $(document).ready(function(){
       $(res).each(function(key,value){
 				if(value.user_id === user_id){
 					//$('#estado_'+status_id).addClass("btn-coins-down").fadeIn();
-					$('#imgcoin'+status_id).attr('src', '/img/newGraphics/cobrar_coins02.png').fadeIn();
+					//$('#imgcoin'+status_id).attr('src', '/img/newGraphics/cobrar_coins02.png').fadeIn();
+					$('#cobrarcoins'+status_id).addClass("text-info").fadeIn();
 					//+"<img id='imgcoin"+value.id+"' src='/img/newGraphics/yavucoin_neo01_small01.png' />"
 				}
 				Contador += 1;
@@ -233,7 +235,7 @@ $(document).ready(function(){
     });
 		return true;
   }
-
+*/
 	function ContarEstados(){
 		var CargarEstados = $("#CargarEstados");
 		var EstadosNuevos = ("#EstadosNuevos");

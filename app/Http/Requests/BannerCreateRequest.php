@@ -10,9 +10,9 @@ class BannerCreateRequest extends Request
    public function rules()  
    {
       return [
-         'banner_empresa' => 'required',
+         'titulo_banner' => 'required',
          'enlace_empresa' => 'required|unique:banners',
-         'imagen_empresa' => 'required',
+         'imagen_banner' => 'required',
          'comentario_banner' => 'required',
          //'password' => 'required'
       ];

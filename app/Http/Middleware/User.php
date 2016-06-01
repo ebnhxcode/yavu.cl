@@ -22,12 +22,17 @@ class User{
    */
   public function handle($request, Closure $next){
     if (Auth::user()->guest()) {
+
+      return redirect()->guest('/');
+      /*
       if ($request->ajax()) {
         return response('Unauthorized.', 401);
       } else {
-        Session::flash('message-info', '¡Debe iniciar sesión antes de continuar!');
-        return redirect()->guest('login');
+        //Session::flash('message-info', '¡Debe iniciar sesión antes de continuar!');
+        return redirect()->guest('/');
       }
+      */
+
     }
 
     return $next($request);

@@ -244,24 +244,6 @@
 
 
   /*FUNCIONES Y PROCEDIMIENTOS*/
-  function ContarInteracciones(status_id){
-    status_id = status_id;
-    var route = "http://yavu.cl/contarinteracciones/"+status_id;
-    var user_id = $("#user_id").val();
-    var Contador = 0;
-    $.get(route, function(res){
-      $(res).each(function(key,value){
-        if(value.user_id === user_id){
-          //$('#estado_'+status_id).addClass("btn-coins-down").fadeIn();
-          $('#imgcoin'+status_id).attr('src', '/img/newGraphics/cobrar_coins02.png').fadeIn();
-          //+"<img id='imgcoin"+value.id+"' src='/img/newGraphics/yavucoin_neo01_small01.png' />"
-        }
-        //Contador += 1;
-      });
-      //$("#badge_"+status_id).text(Contador);
-    });
-    return true;
-  }
 
   function ContarNotificaciones(){
     var user_id = $("#user_id").val();
@@ -322,6 +304,7 @@
     }
     return true;
   }
+
   function Interactuar(valor){
     var status_id = valor.replace('estado_','');
     var user_id = $("#user_id").val();
@@ -348,6 +331,25 @@
     });
     ContarInteracciones(status_id);
     $('#'+valor).removeClass("text-info").fadeIn();
+    return true;
+  }
+  function ContarInteracciones(status_id){
+    status_id = status_id;
+    var route = "http://yavu.cl/contarinteracciones/"+status_id;
+    var user_id = $("#user_id").val();
+    var Contador = 0;
+    $.get(route, function(res){
+      $(res).each(function(key,value){
+        if(value.user_id === user_id){
+          //$('#estado_'+status_id).addClass("btn-coins-down").fadeIn();
+          //$('#imgcoin'+status_id).attr('src', '/img/newGraphics/cobrar_coins02.png').fadeIn();
+          $('#cobrarcoins'+status_id).addClass("text-info").fadeIn();
+          //+"<img id='imgcoin"+value.id+"' src='/img/newGraphics/yavucoin_neo01_small01.png' />"
+        }
+        //Contador += 1;
+      });
+      //$("#badge_"+status_id).text(Contador);
+    });
     return true;
   }
 

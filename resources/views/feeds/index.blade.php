@@ -19,6 +19,8 @@
 
 				<!-- panel izquierdo -->
 			@include('feeds.forms.panelLeft')
+		
+			
 
 			<input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
 			{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
@@ -58,7 +60,7 @@
 		var user_anon = $("#user_id").attr('value') || null;
 
 
-		if( user_anon === user_id){
+		if( user_anon == user_id){
 			var route = "http://yavu.cl/eliminarfeed/"+id;
 			$.ajax({
 				url: route,
@@ -114,7 +116,8 @@
 			$(res).each(function(key,value){
 				if(value.user_id === user_id){
 					//$('#estado_'+status_id).addClass("btn-coins-down").fadeIn();
-					$('#imgcoin'+status_id).attr('src', '/img/newGraphics/cobrar_coins02.png').fadeIn();
+					//$('#imgcoin'+status_id).attr('src', '/img/newGraphics/cobrar_coins02.png').fadeIn();
+					$('#cobrarcoins'+status_id).addClass("text-info").fadeIn();
 					//+"<img id='imgcoin"+value.id+"' src='/img/newGraphics/yavucoin_neo01_small01.png' />"
 				}
 				//Contador += 1;
