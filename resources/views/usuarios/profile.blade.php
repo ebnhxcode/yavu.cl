@@ -1,3 +1,4 @@
+@section('title') {!! $user->nombre !!} profile @stop
 @extends('layouts.front')
 @section('content')
 <div class='jumbotron'>

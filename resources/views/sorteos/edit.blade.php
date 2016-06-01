@@ -1,3 +1,4 @@
+@section('title') Edit {!! $sorteo->nombre_sorteo !!} @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">

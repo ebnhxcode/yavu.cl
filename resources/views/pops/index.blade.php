@@ -1,5 +1,5 @@
+@section('title') Pops @stop
 {!!Html::script('js/jquery.js')!!}
-
 {!!Html::script('js/notificaciones/GestionarNotificaciones.js')!!}
 <!--{!!Html::script('js/ajax/InteraccionPublicaciones.js')!!}-->
 @extends('layouts.front') 

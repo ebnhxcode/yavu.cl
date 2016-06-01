@@ -1,4 +1,5 @@
-@extends('layouts.frontadm')	
+@section('title') Banners @stop
+@extends('layouts.frontadm')
 @section('content')
 <div class="jumbotron">
 	<div id="contentIn">

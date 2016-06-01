@@ -1,3 +1,4 @@
+@section('title') Edit {!! $pregunta->nombre !!} @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">

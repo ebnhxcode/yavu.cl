@@ -1,3 +1,4 @@
+@section('title') Coins @stop
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/BuscarUsuario.js')!!}
 @extends('layouts.front')

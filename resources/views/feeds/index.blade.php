@@ -1,3 +1,4 @@
+@section('title') Feeds @stop
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/publicaciones/GestionarPublicacionesFeeds.js')!!}
 {!!Html::script('js/ajax/InteraccionPublicaciones.js')!!}

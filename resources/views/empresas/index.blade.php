@@ -1,4 +1,6 @@
-  @extends('layouts.front')
+@section('favicon') {!!Html::favicon('favicons/company.png')!!} @stop
+@section('title') Companies @stop
+@extends('layouts.front')
 @section('content')
 {!!Html::script('js/ajax/BuscarEmpresa.js')!!}
 <div class="jumbotron">

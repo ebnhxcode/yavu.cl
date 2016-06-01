@@ -1,3 +1,4 @@
+@section('title') Tickets @stop
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/BuscarUsuario.js')!!}
 @extends('layouts.front')

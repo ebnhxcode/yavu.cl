@@ -1,4 +1,4 @@
-
+@section('title') Edit banner @stop
 @extends('layouts.frontadm')
 @section('content')
   {!!Html::script('/js/admins/admins.js')!!}

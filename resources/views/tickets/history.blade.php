@@ -1,3 +1,4 @@
+@section('title') Ticket history @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">

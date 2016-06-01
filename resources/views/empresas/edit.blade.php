@@ -1,3 +1,4 @@
+@section('title') Edit {!! $empresa->nombre !!} @stop
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/SolicitudEliminacionEmpresa.js')!!}
 @extends('layouts.front')

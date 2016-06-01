@@ -1,3 +1,4 @@
+@section('title') {!! ($empresa[0]->nombre) !!} profile @stop
 {!!Html::script('js/jquery.js')!!}
 @if(Auth::user()->check())
   {!!Html::script('js/ajax/GestionarEstadosEmpresa.js')!!}

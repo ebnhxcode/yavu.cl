@@ -1,4 +1,5 @@
-@extends('layouts.front') 
+@section('title') Services @stop
+@extends('layouts.front')
 @section('content')
 <div class="jumbotron">
   <div id="contentMiddle">

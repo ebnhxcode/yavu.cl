@@ -1,3 +1,4 @@
+@section('title') Dashboard @stop
 {{--{!!Html::script('js/jquery.js')!!}--}}
 {{--{!!Html::script('js/ajax/HistorialCoins.js')!!}--}}
 {{--{!!Html::script('js/ajax/EmpresasDashboardUsuario.js')!!}--}}

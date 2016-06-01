@@ -1,3 +1,4 @@
+@section('title') New category @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">

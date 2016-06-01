@@ -7,10 +7,11 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>Yavu.cl</title>
+		<title>@yield('title') | Yavu.cl</title>
 		<meta name="description" content="Yavu es una empresa de publicidad que ofrece a sus usuarios activos la oportunidad de obtener coins a partir de las publicaciones para que puedan participar por los sorteos que las empresas publican.">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<link rel="apple-touch-icon" href="apple-touch-icon.png">
+		@yield('favicon')
 		{!!Html::script('js/jquery.js')!!}
 		{!!Html::script('js/all.js')!!}
 

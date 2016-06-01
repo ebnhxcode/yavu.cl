@@ -1,3 +1,4 @@
+@section('title') {!! $empresa[0]->nombre !!} - Raffle list @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">

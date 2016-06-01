@@ -1,3 +1,4 @@
+@section('title') Edit {!! $role->nombre !!} @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">

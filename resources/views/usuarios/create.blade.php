@@ -1,3 +1,4 @@
+@section('title') Create new @stop
 @extends('layouts.front')
 @if(isset($var))
 	{!! $var !!}

@@ -1,3 +1,4 @@
+@section('title') Assign banner @stop
 @extends('layouts.frontadm')
 @section('content')
   {!!Html::script('/js/admins/admins.js')!!}

@@ -1,7 +1,8 @@
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/ParticiparSorteo.js')!!}
 @if(isset($feed))
-  @extends('layouts.front')
+@section('title') Show a feed @stop
+@extends('layouts.front')
 @section('content')
   <div class="jumbotron">
     <div id="contentMiddle">

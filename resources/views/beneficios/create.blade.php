@@ -1,3 +1,4 @@
+@section('title') New benefit @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">

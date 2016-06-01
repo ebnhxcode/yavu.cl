@@ -1,3 +1,4 @@
+@section('title') Edit {!! $categoria->nombre_categoria !!} @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">

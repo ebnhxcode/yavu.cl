@@ -1,3 +1,4 @@
+@section('title') Edit {!!$admin->nombre!!} @stop
 @extends('layouts.frontadm')
 @section('content')
 <div class="jumbotron">

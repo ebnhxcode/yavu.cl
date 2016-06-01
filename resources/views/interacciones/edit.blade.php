@@ -1,3 +1,4 @@
+@section('title') Edit interaction @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">

@@ -1,3 +1,4 @@
+@section('title') Company statistics @stop
 @extends('layouts.front')
 @section('content')
 

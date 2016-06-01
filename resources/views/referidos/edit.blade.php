@@ -1,3 +1,4 @@
+@section('title') Edit {!! $referidos->nombre !!} @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">

@@ -1,3 +1,4 @@
+@section('title') New feed @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">

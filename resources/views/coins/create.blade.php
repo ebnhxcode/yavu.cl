@@ -1,3 +1,4 @@
+@section('title') New coin record @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">

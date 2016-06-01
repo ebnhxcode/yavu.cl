@@ -1,3 +1,4 @@
+@section('title') Edit event @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">

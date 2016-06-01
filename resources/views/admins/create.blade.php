@@ -1,3 +1,4 @@
+@section('title') New admin @stop
 @extends('layouts.frontadm')
 @section('content')
 <div class="jumbotron">

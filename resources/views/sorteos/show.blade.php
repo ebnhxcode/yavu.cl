@@ -1,6 +1,7 @@
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/ParticiparSorteo.js')!!}
 @if(isset($sorteo))
+  @section('title') {!! $sorteo->nombre_sorteo !!} @stop
   @extends('layouts.front')
   @section('content')
     <div class="jumbotron">

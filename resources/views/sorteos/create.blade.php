@@ -1,13 +1,10 @@
-	@extends('layouts.front')
+@section('title') New raffle @stop
+@extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
 
-		@include('alerts.alertFields')
-		@include('alerts.errorsMessage')
-		@include('alerts.successMessage')
-		@include('alerts.warningMessage')
-		@include('alerts.infoMessage')
+		@include('alerts.allAlerts')
 
     @include('sorteos.forms.modalTerminosCondicionesSorteo')
     <div class="" style="font-size: 3em;">

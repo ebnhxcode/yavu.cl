@@ -1,3 +1,4 @@
+@section('title') New interest @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
