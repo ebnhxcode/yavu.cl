@@ -3,10 +3,7 @@
 <div class="jumbotron">
 	<div id="contentMiddle">
 		<h4>Edición de categorias</h4>
-		@include('alerts.alertFields')
-		@include('alerts.errorsMessage')
-		@include('alerts.successMessage')
-		@include('alerts.warningMessage')	
+		@include('alerts.allAlerts')
 		<div class="row">
 			{!!Form::model($categoria, ['method'=>'PUT', 'route' => ['categorias.update', $categoria->id] ])!!}
 			@include('categorias.forms.fieldsCategoria')

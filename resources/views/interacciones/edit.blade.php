@@ -3,10 +3,7 @@
 <div class="jumbotron">
 	<div id="contentMiddle">
 		<h4>Edición de interacciones</h4>
-		@include('alerts.alertFields')
-		@include('alerts.errorsMessage')
-		@include('alerts.successMessage')
-		@include('alerts.warningMessage')	
+		@include('alerts.allAlerts')
 		<div class="row">
 			{!!Form::model($interaccion, ['method'=>'PUT', 'route' => ['interacciones.update', $interaccion->id] ])!!}
 			@include('interacciones.forms.fieldsInteraccion')

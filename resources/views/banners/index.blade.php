@@ -2,10 +2,7 @@
 @section('content')
 <div class="jumbotron">
 	<div id="contentIn">
-		@include('alerts.alertFields')
-		@include('alerts.errorsMessage')
-		@include('alerts.successMessage')
-		@include('alerts.warningMessage')
+		@include('alerts.allAlerts')
 		<h2>Panel de administración</h2>		
 		<div class="panel panel-default">
 			<div class="panel-heading"><h4>Mantenedor de banner</h4></div>

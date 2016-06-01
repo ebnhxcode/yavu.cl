@@ -4,10 +4,7 @@
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		@include('alerts.alertFields')
-		@include('alerts.errorsMessage')
-		@include('alerts.successMessage')
-		@include('alerts.warningMessage')
+		@include('alerts.allAlerts')
 		<div class="" style="font-size: 3em;">
 			<img id="img" width="8%" src= "{!!URL::to('img/newGraphics/yavucoin_neo03b.png')!!}"/><span >Coins <span class="requerido">\</span> Historial</span>
 		</div>

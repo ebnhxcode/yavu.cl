@@ -6,10 +6,7 @@
   <div id="contentMiddle">
     <div class="row">
       <div class="col-md-4 col-sm-12 col-xs-12">
-        @include('alerts.errorsMessage')
-        @include('alerts.warningMessage')
-        @include('alerts.successMessage')
-        @include('alerts.infoMessage')
+        @include('alerts.allAlerts')
         <img src="/img/newGraphics/icono_mac01.png" class="img-responsive-centered" />
         <br /><br />
       </div>

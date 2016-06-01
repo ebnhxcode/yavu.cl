@@ -2,7 +2,7 @@
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		@include('alerts.alertFields')
+		@include('alerts.allAlerts')
 		<h1>Categoriza tu Empresa</h1>
 		<div class="row">
 			{!!Form::open(['route'=>'categorias.store', 'method'=>'POST'])!!}

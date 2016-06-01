@@ -13,7 +13,7 @@
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		@include('alerts.alertFields')
+    @include('alerts.allAlerts')
 		@foreach($empresa as $e)
 			<div class="row" style="margin-top:-35px;">
         <div class="col-md-4 col-sm-12 col-xs-12"><!--style="position:fixed;z-index:1000;"-->

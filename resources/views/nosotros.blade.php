@@ -3,6 +3,7 @@
 <div class="jumbotron">
 	<div align="center" id="contentMiddle">
 		<h2>Nuestra Empresa</h2>
+		@include('alerts.allAlerts')
 		<div class="panel panel-default">
 			<div class="panel-body">
 				Somos una agencia de publicidad enfocada al publico de internet, siendo un canal de comunicación entre sus productos y nuestra comunidad que crece día a día. Hacia nuestros ususarios nos perfilamos como un sitio de beneficios, en el cual trabajamos diariamente para ofrecer la mayor variedad en descuentos y premios.

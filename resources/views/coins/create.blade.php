@@ -2,7 +2,7 @@
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		@include('alerts.alertFields')
+		@include('alerts.allAlerts')
 		<h4>Registro de Coins</h4>
 		<div class="row">
 			{!!Form::open(['route'=>'coins.store', 'method'=>'POST'])!!}

@@ -2,7 +2,7 @@
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		@include('alerts.alertFields')
+		@include('alerts.allAlerts')
 		<h4>Crear un nuevo evento</h4>
 		<div class="row">
 			{!!Form::open(['route'=>'eventos.store', 'method'=>'POST'])!!}

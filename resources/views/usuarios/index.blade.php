@@ -4,11 +4,7 @@
 @section('content')
 <div class='jumbotron'>
 	<div id='contentMiddle'>
-		@include('alerts.alertFields')
-		@include('alerts.errorsMessage')
-		@include('alerts.successMessage')
-		@include('alerts.warningMessage')
-		@include('alerts.infoMessage')
+		@include('alerts.allAlerts')
 		<h2>Panel de administración</h2>		
 		<div class='panel panel-default'>
 			<div class='panel-heading'><h4>Mantenedor de usuarios</h4></div>

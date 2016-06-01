@@ -3,10 +3,7 @@
 <div class="jumbotron">
 	<div id="contentMiddle">
 		<h4>Edición de pagos</h4>
-		@include('alerts.alertFields')
-		@include('alerts.errorsMessage')
-		@include('alerts.successMessage')
-		@include('alerts.warningMessage')	
+		@include('alerts.allAlerts')
 		<div class="row">
 			{!!Form::model($pago, ['method'=>'PUT', 'route' => ['pagos.update', $pago->id] ])!!}
 			@include('pagos.forms.fieldsPago')

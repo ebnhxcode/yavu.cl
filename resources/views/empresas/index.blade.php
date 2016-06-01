@@ -3,11 +3,7 @@
 {!!Html::script('js/ajax/BuscarEmpresa.js')!!}
 <div class="jumbotron">
 	<div id="contentMiddle">
-		@include('alerts.alertFields')
-		@include('alerts.errorsMessage')
-		@include('alerts.successMessage')
-		@include('alerts.warningMessage')
-		@include('alerts.infoMessage')
+    @include('alerts.allAlerts')
     <div class="" style="font-size: 3em;">
       <img id="img" style="padding-bottom: 20px;" width="8%" src= "{!!URL::to('img/newGraphics/neo_icono_empresa.png')!!}"/><span>Empresas</span>
     </div>

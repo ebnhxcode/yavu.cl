@@ -2,7 +2,7 @@
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		@include('alerts.alertFields')
+		@include('alerts.allAlerts')
 		<h4>Crear una nueva pregunta</h4>
 		<div class="row">
 			{!!Form::open(['route'=>'preguntas.store', 'method'=>'POST'])!!}

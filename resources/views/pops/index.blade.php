@@ -13,11 +13,7 @@
     <div class="row">
 
 			<div class="col-md-12">
-				@include('alerts.alertFields')
-				@include('alerts.errorsMessage')
-				@include('alerts.successMessage')
-				@include('alerts.warningMessage')
-				@include('alerts.infoMessage')
+				@include('alerts.allAlerts')
 			</div>
 
 			@include('pops.forms.panelLeft')

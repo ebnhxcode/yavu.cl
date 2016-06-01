@@ -3,10 +3,7 @@
 <div class="jumbotron">
 	<div id="contentMiddle">
 		<h4>Edición de servicios</h4>
-		@include('alerts.alertFields')
-		@include('alerts.errorsMessage')
-		@include('alerts.successMessage')
-		@include('alerts.warningMessage')	
+		@include('alerts.allAlerts')
 		<div class="row">
 			{!!Form::model($servicio, ['method'=>'PUT', 'route' => ['servicios.update', $servicio->id] ])!!}
 			@include('servicios.forms.fieldsServicio')

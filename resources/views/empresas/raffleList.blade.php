@@ -5,6 +5,7 @@
     <div class="" style="font-size: 3em;">
       <img id="img" style="padding-bottom: 20px;" width="8%" src= "{!!URL::to('img/newGraphics/neo_icono_sorteo.png')!!}"/><span>Sorteos de {!! $empresa[0]->nombre !!}</span>
     </div>
+    @include('alerts.allAlerts')
     <div class="row">
       <div class="col-md-4 col-sm-12 col-xs-12">
         <div>

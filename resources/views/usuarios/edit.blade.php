@@ -8,11 +8,9 @@
 		</div>
 		<div class='row'>
 			<div class="col-md-12 col-sm-12 col-xs-12">
-				@include('alerts.alertFields')
-				@include('alerts.errorsMessage')
-				@include('alerts.successMessage')
-				@include('alerts.warningMessage')
-				@include('alerts.infoMessage')
+
+				@include('alerts.allAlerts')
+
 			</div>
 			{!!Form::model($user, ['method'=>'PUT', route('usuarios_put_path', $user->id), 'files' => true, 'id' => 'FormUsuario'])!!}
 			@include('usuarios.forms.fieldsUser')

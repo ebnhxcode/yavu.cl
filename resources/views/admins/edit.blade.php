@@ -2,7 +2,7 @@
 @section('content')
 <div class="jumbotron">
 	<div id="contentIn">
-		@include('alerts.alertFields')
+		@include('alerts.allAlerts')
 		<h4>Actualización de administrador : {!!$admin->nombre .' '. $admin->apellido!!}</h4>
 		<div class="panel panel-default">
 			<div class="panel-heading"><h4>Mantenedor de administradores</h4></div>

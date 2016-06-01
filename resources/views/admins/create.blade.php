@@ -5,7 +5,7 @@
 	<h1>Registro de Admins</h1>
 	</div>
 	<div id="contentIn">
-		@include('alerts.alertFields')
+		@include('alerts.allAlerts')
 		
 
 		{!!Form::open(['route'=>'admins.store', 'method'=>'POST'])!!}

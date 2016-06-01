@@ -5,11 +5,7 @@
 @section('content')
   <div class="jumbotron">
     <div id="contentMiddle">
-      @include('alerts.alertFields')
-      @include('alerts.errorsMessage')
-      @include('alerts.successMessage')
-      @include('alerts.warningMessage')
-      @include('alerts.infoMessage')
+      @include('alerts.allAlerts')
       <div style="font-size: 3em;">
         <img width="64px" style="padding-bottom: 20px;" src= "{!!URL::to('img/newGraphics/neo_icono_publicaciones.png')!!}" />
         <span>

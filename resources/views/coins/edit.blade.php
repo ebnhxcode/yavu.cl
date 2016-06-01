@@ -2,10 +2,7 @@
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		@include('alerts.alertFields')
-		@include('alerts.errorsMessage')
-		@include('alerts.successMessage')
-		@include('alerts.warningMessage')	
+		@include('alerts.allAlerts')
 		<div class="row">
 			{!!Form::model($coin, ['method'=>'PUT', 'route' => ['coins.update', $coin->id] ])!!}
 			@include('coins.forms.fieldsCoins')
