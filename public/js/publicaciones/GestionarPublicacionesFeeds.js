@@ -191,7 +191,7 @@ $(document).ready(function(){
 
 							+"<span role='button' class='' href='#!' style='color:#3C5B28'>"
 								+"<span name='megusta' class='' onclick='Interactuar(this.id)' id='estado_"+value.id+"' value='e"+value.idEmpresa+"'>"
-									+"<!--<img id='imgcoin"+value.id+"' src='/img/newGraphics/cobrar_coins.png' />--><span id='cobrarcoins"+value.id+"'>Cobrar coins</span><span id='cobrarcoinspig"+value.id+"'></span>"
+									+"<!--<img id='imgcoin"+value.id+"' src='/img/newGraphics/cobrar_coins.png' />--><span id='cobrarcoins"+value.id+"'>Cobrar coins</span>&nbsp;<span id='cobrarcoinspig"+value.id+"'></span>"
 								+"</span>"
 							+"</span>"
 
