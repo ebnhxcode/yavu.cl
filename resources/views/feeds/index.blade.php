@@ -26,6 +26,7 @@
 			<!-- panel derecho -->
 			@include('feeds.forms.panelRight')
 
+
     </div><!-- /div row -->
 
   </div><!-- /div contentMiddle -->
