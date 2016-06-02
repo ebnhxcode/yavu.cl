@@ -1,7 +1,8 @@
+{!! dd($feeds) !!}
 @section('favicon') {!!Html::favicon('favicons/feed.png')!!} @stop
 @section('title') Feeds @stop
 {!!Html::script('js/jquery.js')!!}
-{!!Html::script('js/publicaciones/GestionarPublicacionesFeeds.js')!!}
+{{-- {!!Html::script('js/publicaciones/GestionarPublicacionesFeeds.js')!!}--}}
 {!!Html::script('js/ajax/InteraccionPublicaciones.js')!!}
 @extends('layouts.front') 
 @section('content')
