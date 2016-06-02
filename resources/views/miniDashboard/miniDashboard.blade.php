@@ -1,4 +1,9 @@
-<div style="padding: 30px 30px 5px 30px;" class="list-group-item">
+<button  class="btn btn-success btn-md btn-block" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Menu 
+</button>
+<div class="collapse" id="collapseExample">
+  <div>
+    <div style="padding: 30px 30px 5px 30px;" class="list-group-item">
   <div class="row">
 
     <div class="col-md-4 col-sm-4 col-xs-6">
@@ -170,3 +175,6 @@
     </div><!-- /modal conten -->
   </div><!-- /modal dialog -->
 </div><!-- /modal fade -->
+  </div>
+</div>
+
