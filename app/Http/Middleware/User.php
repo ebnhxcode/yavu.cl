@@ -4,6 +4,7 @@ namespace yavu\Http\Middleware;
 use Illuminate\Contracts\Auth\Guard;
 use Closure;
 use Illuminate\Support\Facades\Auth;
+use Mockery\CountValidator\Exception;
 use Session;
 
 class User{
@@ -21,20 +22,22 @@ class User{
    * @return mixed
    */
   public function handle($request, Closure $next){
-    if (Auth::user()->guest()) {
-
-      return redirect()->guest('/');
-      /*
-      if ($request->ajax()) {
-        return response('Unauthorized.', 401);
-      } else {
-        //Session::flash('message-info', '¡Debe iniciar sesión antes de continuar!');
+    try {
+      if (Auth::user()->guest()) {
         return redirect()->guest('/');
+        /*
+        if ($request->ajax()) {
+          return response('Unauthorized.', 401);
+        } else {
+          //Session::flash('message-info', '¡Debe iniciar sesión antes de continuar!');
+          return redirect()->guest('/');
+        }
+        */
       }
-      */
-
+    } catch (Exception $e) {
+      throw new $e->getMessage();
+    } finally {
+      return $next($request);
     }
-
-    return $next($request);
   }
 }
