@@ -5,7 +5,7 @@
             <div class="row">
               @if(isset($mostrarbanner))
                 @foreach($mostrarbanner as $banner)
-                  <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="col-md-12 col-sm-12 col-xs-12 text-center">
               
                       <img id="ImagenPortada" src="{!! ($banner->banner!="")?'/img/users/'.$banner->banner:"/img/users/banner.png" !!}" alt="..." style="height: 170px;">
                       <div class="row">
