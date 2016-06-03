@@ -62,13 +62,13 @@
 		No hay mas publicaciones.
 	 </div>
 
+		<!--
 	 <a id="CargarEstados" href="#!" class="list-group-item list-group-item-info">
 		Cargar estados 
 		<span id="EstadosNuevos" class="badge"></span>                  
 	 </a>
-		<div id="demo">
-			wasasasasasasaasap
-		</div>
+	 -->
+
   </div>
 
 </div>
