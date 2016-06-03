@@ -262,8 +262,14 @@ $(document).ready(function(){
 					+"</div>"
 				).show();
 				document.getElementById("idUltima").value =  Global_idUltimaPublicacion;
-				Contador += 1;	
-				ContarInteracciones(value.id);
+				Contador += 1;
+				try {
+					ContarInteracciones(value.id);
+				}
+				catch(err) {
+					document.getElementById("demo").innerHTML = err.message;
+					console.log(err.message);
+				}
 			});
 			if(Contador < 5){	
 				if (Global_Control) { 
