@@ -1,4 +1,3 @@
-{!! dd($feeds) !!}
 @section('favicon') {!!Html::favicon('favicons/feed.png')!!} @stop
 @section('title') Feeds @stop
 {!!Html::script('js/jquery.js')!!}
