@@ -1,17 +1,17 @@
+@section('favicon') {!!Html::favicon('favicons/company.png')!!} @stop
+@section('title') Companies @stop
 @extends('layouts.frontadm')
 @section('content')
   <div class="jumbotron">
     <div id="contentMiddle">
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
-          @include('alerts.alertFields')
-          @include('alerts.errorsMessage')
-          @include('alerts.successMessage')
-          @include('alerts.warningMessage')
-          @include('alerts.infoMessage')
+          @include('alerts.allAlerts')
+          <!--
           <div class="" style="font-size: 3em;">
             <img id="img" style="padding-bottom: 20px;" width="8%" src= "{!!URL::to('img/newGraphics/neo_icono_config02.png')!!}"/><span> <a href="{!! URL::to('/admins') !!}">Administraci&oacute;n</a></span><span class="requerido"> \ </span><span>Lista de empresas</span>
           </div>
+          -->
         </div>
 
         <div class="col-md-12 col-sm-12 col-xs-12">

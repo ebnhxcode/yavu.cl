@@ -1,3 +1,5 @@
+@section('favicon') {!!Html::favicon('favicons/raffle.png')!!} @stop
+@section('title') Raffles @stop
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/BuscarSorteo.js')!!}
 {!!Html::script('js/ajax/ParticiparSorteo.js')!!}
@@ -5,14 +7,12 @@
 @section('content')
 <div class="jumbotron">
   <div id="contentMiddle">
-    @include('alerts.alertFields')
-    @include('alerts.errorsMessage')
-    @include('alerts.successMessage')
-    @include('alerts.warningMessage')
-    @include('alerts.infoMessage')
+    @include('alerts.allAlerts')
+    <!--
     <div class="" style="font-size: 3em;">
       <img id="img" style="padding-bottom: 20px;" width="8%" src= "{!!URL::to('img/newGraphics/neo_icono_sorteo.png')!!}"/><span>Sorteos</span>
     </div>
+    -->
     <div class="row">
 
       <div class="col-md-4 col-sm-12 col-xs-12">

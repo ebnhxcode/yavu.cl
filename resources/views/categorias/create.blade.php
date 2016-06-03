@@ -1,9 +1,11 @@
+@section('favicon') {!!Html::favicon('favicons/changeFaviconNameHere.png')!!} @stop
+@section('title') New category @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		@include('alerts.alertFields')
-		<h1>Categoriza tu Empresa</h1>
+		@include('alerts.allAlerts')
+		<!--<h1>Categoriza tu Empresa</h1>-->
 		<div class="row">
 			{!!Form::open(['route'=>'categorias.store', 'method'=>'POST'])!!}
 			@include('categorias.forms.fieldsCategoria')

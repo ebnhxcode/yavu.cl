@@ -1,14 +1,12 @@
+@section('favicon') {!!Html::favicon('favicons/user.png')!!} @stop
+@section('title') {!! $user->nombre !!} profile @stop
 @extends('layouts.front')
 @section('content')
 <div class='jumbotron'>
 	<div id='contentMiddle'>
 		<div class='row' style='margin-top:-35px;'>
 				<div class="col-md-12 col-sm-12 col-xs-12">
-					@include('alerts.alertFields')
-					@include('alerts.errorsMessage')
-					@include('alerts.successMessage')
-					@include('alerts.warningMessage')
-					@include('alerts.infoMessage')
+					@include('alerts.allAlerts')
 				</div>
 
 				<div class='col-md-8 col-sm-6 col-xs-12'>

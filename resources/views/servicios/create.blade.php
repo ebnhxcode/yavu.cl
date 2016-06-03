@@ -1,9 +1,11 @@
+@section('favicon') {!!Html::favicon('favicons/changeFaviconNameHere.png')!!} @stop
+@section('title') New service @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		@include('alerts.alertFields')
-		<h4>Crear un nuevo servicio</h4>
+		@include('alerts.allAlerts')
+		<!--<h4>Crear un nuevo servicio</h4>-->
 		<div class="row">
 			{!!Form::open(['route'=>'servicios.store', 'method'=>'POST'])!!}
 			@include('servicios.forms.fieldsServicio')

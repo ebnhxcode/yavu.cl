@@ -1,3 +1,5 @@
+@section('favicon') {!!Html::favicon('favicons/dashboard.png')!!} @stop
+@section('title') Dashboard @stop
 {{--{!!Html::script('js/jquery.js')!!}--}}
 {{--{!!Html::script('js/ajax/HistorialCoins.js')!!}--}}
 {{--{!!Html::script('js/ajax/EmpresasDashboardUsuario.js')!!}--}}
@@ -8,11 +10,8 @@
 		<h4 style='margin-top:-40px;'></h4>
 		<div class='row'>
 			<div class='col-md-3 col-sm-3 col-xs-12'>
-        @include('alerts.alertFields')
-        @include('alerts.errorsMessage')
-        @include('alerts.successMessage')
-        @include('alerts.warningMessage')
-        @include('alerts.infoMessage')
+
+        @include('alerts.allAlerts')
 
         <div id='EstadoEmpresa'></div>
 			</div>

@@ -1,3 +1,5 @@
+@section('favicon') {!!Html::favicon('favicons/user.png')!!} @stop
+@section('title') Create new @stop
 @extends('layouts.front')
 @if(isset($var))
 	{!! $var !!}
@@ -5,12 +7,10 @@
 @section('content')
 <div class='jumbotron'>
 	<div id='contentMiddle'>
-		@include('alerts.alertFields')
-		@include('alerts.errorsMessage')
-		@include('alerts.successMessage')
-		@include('alerts.warningMessage')
-		@include('alerts.infoMessage')
-		<h4>Registro de usuarios </h4>
+
+		@include('alerts.allAlerts')
+
+		<!--<h4>Registro de usuarios </h4>-->
 		<div class='row'>
 			{!!Form::open([route('usuarios_create_path'), 'method'=>'POST', 'files' => true])!!}
 			@include('usuarios.forms.fieldsUser')

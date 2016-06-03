@@ -1,5 +1,4 @@
 <!-- Banner Random -->
-
 <div style="padding: 30px 30px 5px 30px;" class="list-group-item">
   <div class="row">
            <div id="EmpresaListThumbBanner">

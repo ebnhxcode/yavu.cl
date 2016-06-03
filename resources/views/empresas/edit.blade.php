@@ -1,17 +1,17 @@
+@section('favicon') {!!Html::favicon('favicons/config.png')!!} @stop
+@section('title') Edit {!! $empresa->nombre !!} @stop
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/SolicitudEliminacionEmpresa.js')!!}
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
+		<!--
 		<div class="" style="font-size: 2em;">
 			<img width="8%" style="padding-bottom: 20px;" src= "{!!URL::to('img/newGraphics/neo_icono_empresa.png')!!}"/><span>Empresas <span class="requerido">\</span> Informacion de : {!!$empresa->nombre!!}</span>
 		</div>
-		@include('alerts.alertFields')
-		@include('alerts.errorsMessage')
-		@include('alerts.successMessage')
-		@include('alerts.warningMessage')
-		@include('alerts.infoMessage')
+		-->
+		@include('alerts.allAlerts')
 		<div class="row">
 			{!!Form::model($empresa, ['method'=>'PUT', 'route' => ['empresas.update', $empresa->id], 'files' => true , 'id' => 'FormEmpresa'])!!}
 			@include('empresas.forms.fieldsEmpresa', array('empresa' => $empresa))

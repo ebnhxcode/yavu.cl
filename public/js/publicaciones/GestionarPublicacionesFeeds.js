@@ -5,6 +5,7 @@ $(document).ready(function(){
 	var Global_ContadorCargaPublicaciones;
 	var Global_Control = true;
 	var Refresh = 100;
+
 /*DECLARACION DE VARIABLES GLOBALES*/
 
 /*MÉTODOS CONSTRUCTORES*/
@@ -97,6 +98,8 @@ $(document).ready(function(){
 /*SELECTORES*/
 
 /*FUNCIONES Y PROCEDIMIENTOS*/
+
+	/*
 	function ActualizarEstados(){
 		var EstadosUsuario = $("#Estados").val(); 
 		$("#Estados").value = "";
@@ -133,6 +136,7 @@ $(document).ready(function(){
 			});
 		});
 	}
+	*/
 
 	function CargarEstados(){
 		var Estados = $("#Estados");
@@ -198,8 +202,16 @@ $(document).ready(function(){
 						+"</div><!-- /div list-group-item panel footer -->"
 					+"</div><!-- /div list-group -->").show();
 				document.getElementById("idUltima").value =  Global_idUltimaPublicacion;
-				Contador += 1;	
-				ContarInteracciones(value.id);
+				Contador += 1;
+				try {
+					ContarInteracciones(value.id);
+				}
+				catch(err) {
+					document.getElementById("demo").innerHTML = err.message;
+					console.log(err.message);
+				}
+
+
 			});
 			if(Contador < 5){	
 				if (Global_Control) { 

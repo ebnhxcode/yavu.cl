@@ -1,3 +1,5 @@
+@section('favicon') {!!Html::favicon('favicons/company.png')!!} @stop
+@section('title') {!! ($empresa[0]->nombre) !!} profile @stop
 {!!Html::script('js/jquery.js')!!}
 @if(Auth::user()->check())
   {!!Html::script('js/ajax/GestionarEstadosEmpresa.js')!!}
@@ -13,7 +15,7 @@
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		@include('alerts.alertFields')
+    @include('alerts.allAlerts')
 		@foreach($empresa as $e)
 			<div class="row" style="margin-top:-35px;">
         <div class="col-md-4 col-sm-12 col-xs-12"><!--style="position:fixed;z-index:1000;"-->
@@ -344,7 +346,6 @@
           //$('#estado_'+status_id).addClass("btn-coins-down").fadeIn();
           //$('#imgcoin'+status_id).attr('src', '/img/newGraphics/cobrar_coins02.png').fadeIn();
           $('#cobrarcoins'+status_id).addClass("text-info").fadeIn();
-          $('#cobrarcoinspig'+status_id).addClass("glyphicon glyphicon-piggy-bank").fadeIn();
           //+"<img id='imgcoin"+value.id+"' src='/img/newGraphics/yavucoin_neo01_small01.png' />"
         }
         //Contador += 1;

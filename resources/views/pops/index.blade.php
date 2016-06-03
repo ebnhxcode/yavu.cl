@@ -1,23 +1,22 @@
+@section('favicon') {!!Html::favicon('favicons/pop.gif')!!} @stop
+@section('title') Pops @stop
 {!!Html::script('js/jquery.js')!!}
-
 {!!Html::script('js/notificaciones/GestionarNotificaciones.js')!!}
 <!--{!!Html::script('js/ajax/InteraccionPublicaciones.js')!!}-->
 @extends('layouts.front') 
 @section('content')
 <div class="jumbotron">
   <div id="contentMiddle">
+		<!--
 		<div class="" style="font-size: 3em;">
 			<img id="img" style="padding-bottom: 20px;" width="8%" src= "{!!URL::to('img/newGraphics/yavucoin_neo02a.png')!!}"/><span>Notificaciones</span>
 		</div>
+		-->
 
     <div class="row">
 
 			<div class="col-md-12">
-				@include('alerts.alertFields')
-				@include('alerts.errorsMessage')
-				@include('alerts.successMessage')
-				@include('alerts.warningMessage')
-				@include('alerts.infoMessage')
+				@include('alerts.allAlerts')
 			</div>
 
 			@include('pops.forms.panelLeft')

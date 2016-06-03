@@ -1,14 +1,12 @@
+@section('favicon') {!!Html::favicon('favicons/user.png')!!} @stop
+@section('title') Users @stop
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/BuscarUsuario.js')!!}
 @extends('layouts.front')
 @section('content')
 <div class='jumbotron'>
 	<div id='contentMiddle'>
-		@include('alerts.alertFields')
-		@include('alerts.errorsMessage')
-		@include('alerts.successMessage')
-		@include('alerts.warningMessage')
-		@include('alerts.infoMessage')
+		@include('alerts.allAlerts')
 		<h2>Panel de administración</h2>		
 		<div class='panel panel-default'>
 			<div class='panel-heading'><h4>Mantenedor de usuarios</h4></div>

@@ -1,12 +1,11 @@
+@section('favicon') {!!Html::favicon('favicons/config.png')!!} @stop
+@section('title') Edit interaction @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		<h4>Edición de interacciones</h4>
-		@include('alerts.alertFields')
-		@include('alerts.errorsMessage')
-		@include('alerts.successMessage')
-		@include('alerts.warningMessage')	
+		<!--<h4>Edición de interacciones</h4>-->
+		@include('alerts.allAlerts')
 		<div class="row">
 			{!!Form::model($interaccion, ['method'=>'PUT', 'route' => ['interacciones.update', $interaccion->id] ])!!}
 			@include('interacciones.forms.fieldsInteraccion')

@@ -1,16 +1,17 @@
+@section('favicon') {!!Html::favicon('favicons/ticket.png')!!} @stop
+@section('title') Tickets @stop
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/BuscarUsuario.js')!!}
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		@include('alerts.alertFields')
-		@include('alerts.errorsMessage')
-		@include('alerts.successMessage')
-		@include('alerts.warningMessage')
+		@include('alerts.allAlerts')
+		<!--
 		<div class="" style="font-size: 3em;">
 			<img id="img" style="padding-bottom: 20px;" width="8%" src= "{!!URL::to('img/newGraphics/neo_icono_tickets.png')!!}"/><span>Ticket's</span>
 		</div>
+		-->
 		<div class="row">
 
 			<div class="col-md-4 col-sm-12 col-xs-12"><!--style="position:fixed;z-index:1000;"-->

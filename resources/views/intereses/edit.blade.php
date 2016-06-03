@@ -1,12 +1,11 @@
+@section('favicon') {!!Html::favicon('favicons/config.png')!!} @stop
+@section('title') Edit interest @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		<h4>Edición de intereses</h4>
-		@include('alerts.alertFields')
-		@include('alerts.errorsMessage')
-		@include('alerts.successMessage')
-		@include('alerts.warningMessage')	
+		<!--<h4>Edición de intereses</h4>-->
+		@include('alerts.allAlerts')
 		<div class="row">
 			{!!Form::model($interes, ['method'=>'PUT', 'route' => ['intereses.update', $interes->id] ])!!}
 			@include('intereses.forms.fieldsInteres')

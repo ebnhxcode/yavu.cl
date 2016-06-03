@@ -1,8 +1,10 @@
+@section('favicon') {!!Html::favicon('favicons/config.png')!!} @stop
+@section('title') Edit {!! $banner->nombre !!} @stop
 @extends('layouts.frontadm')
 @section('content')
 <div class="jumbotron">
 	<div id="contentIn">
-		@include('alerts.alertFields')
+		@include('alerts.allAlerts')
 		
 		<div class="panel panel-default">
 			<div class="panel-heading"><h4>Mantenedor de banners</h4></div>

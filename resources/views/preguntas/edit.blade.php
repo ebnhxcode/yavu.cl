@@ -1,12 +1,11 @@
+@section('favicon') {!!Html::favicon('favicons/config.png')!!} @stop
+@section('title') Edit {!! $pregunta->nombre !!} @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		<h4>Edición de preguntas</h4>
-		@include('alerts.alertFields')
-		@include('alerts.errorsMessage')
-		@include('alerts.successMessage')
-		@include('alerts.warningMessage')	
+		<!--<h4>Edición de preguntas</h4>-->
+		@include('alerts.allAlerts')
 		<div class="row">
 			{!!Form::model($pregunta, ['method'=>'PUT', 'route' => ['preguntas.update', $pregunta->id] ])!!}
 			@include('preguntas.forms.fieldsPregunta')

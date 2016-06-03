@@ -1,9 +1,11 @@
+@section('favicon') {!!Html::favicon('favicons/changeFaviconNameHere.png')!!} @stop
+@section('title') New interaction @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		@include('alerts.alertFields')
-		<h4>Crear una nueva Interaccion</h4>
+		@include('alerts.allAlerts')
+		<!--<h4>Crear una nueva Interaccion</h4>-->
 		<div class="row">
 			{!!Form::open(['route'=>'interacciones.store', 'method'=>'POST'])!!}
 			@include('interacciones.forms.fieldsInteraccion')

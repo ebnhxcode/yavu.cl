@@ -1,12 +1,11 @@
+@section('favicon') {!!Html::favicon('favicons/config.png')!!} @stop
+@section('title') Edit {!! $servicio->nombre !!} @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		<h4>Edición de servicios</h4>
-		@include('alerts.alertFields')
-		@include('alerts.errorsMessage')
-		@include('alerts.successMessage')
-		@include('alerts.warningMessage')	
+		<!--<h4>Edición de servicios</h4>-->
+		@include('alerts.allAlerts')
 		<div class="row">
 			{!!Form::model($servicio, ['method'=>'PUT', 'route' => ['servicios.update', $servicio->id] ])!!}
 			@include('servicios.forms.fieldsServicio')

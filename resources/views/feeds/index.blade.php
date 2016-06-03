@@ -1,32 +1,32 @@
+{!! dd($feeds) !!}
+@section('favicon') {!!Html::favicon('favicons/feed.png')!!} @stop
+@section('title') Feeds @stop
 {!!Html::script('js/jquery.js')!!}
-{!!Html::script('js/publicaciones/GestionarPublicacionesFeeds.js')!!}
+{{-- {!!Html::script('js/publicaciones/GestionarPublicacionesFeeds.js')!!}--}}
 {!!Html::script('js/ajax/InteraccionPublicaciones.js')!!}
 @extends('layouts.front') 
 @section('content')
 <div class="jumbotron">
   <div id="contentMiddle">
+		<!--
 		<div style="font-size: 3em;">
 			<img width="64px" style="padding-bottom: 20px;" src= "{!!URL::to('img/newGraphics/neo_icono_publicaciones.png')!!}" /><span>Publicaciones</span>
 		</div>
+		-->
     <div class="row">
     	<div class="col-md-12 col-sm-12 col-xs-12">
-				@include('alerts.alertFields')
-				@include('alerts.errorsMessage')
-				@include('alerts.successMessage')
-				@include('alerts.warningMessage')
-				@include('alerts.infoMessage')
+				@include('alerts.allAlerts')
 			</div>
 
-				<!-- panel izquierdo -->
+			<!-- panel izquierdo -->
 			@include('feeds.forms.panelLeft')
-		
-			
 
 			<input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
 			{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
 
 			<!-- panel derecho -->
 			@include('feeds.forms.panelRight')
+
 
     </div><!-- /div row -->
 
@@ -118,7 +118,6 @@
 					//$('#estado_'+status_id).addClass("btn-coins-down").fadeIn();
 					//$('#imgcoin'+status_id).attr('src', '/img/newGraphics/cobrar_coins02.png').fadeIn();
 					$('#cobrarcoins'+status_id).addClass("text-info").fadeIn();
-					$('#cobrarcoinspig'+status_id).addClass("glyphicon glyphicon-piggy-bank").fadeIn();
 					//+"<img id='imgcoin"+value.id+"' src='/img/newGraphics/yavucoin_neo01_small01.png' />"
 				}
 				//Contador += 1;

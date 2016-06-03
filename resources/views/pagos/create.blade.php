@@ -1,9 +1,11 @@
+@section('favicon') {!!Html::favicon('favicons/changeFaviconNameHere.png')!!} @stop
+@section('title') New pay @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		@include('alerts.alertFields')
-		<h4>Crear un nuevo pago</h4>
+		@include('alerts.allAlerts')
+		<!--<h4>Crear un nuevo pago</h4>-->
 		<div class="row">
 			{!!Form::open(['route'=>'pagos.store', 'method'=>'POST'])!!}
 			@include('pagos.forms.fieldsPago')

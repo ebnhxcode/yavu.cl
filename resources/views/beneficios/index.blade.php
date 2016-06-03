@@ -1,11 +1,10 @@
-@extends('layouts.front') 
+@section('favicon') {!!Html::favicon('favicons/changeFaviconNameHere.png')!!} @stop
+@section('title') Benefits @stop
+@extends('layouts.front')
 @section('content')
 <div class="jumbotron">
   <div id="contentMiddle">
-    @include('alerts.alertFields')
-    @include('alerts.errorsMessage')
-    @include('alerts.successMessage')
-    @include('alerts.warningMessage') 
+    @include('alerts.allAlerts')
         <table class="table">
           <thead>
             <th>Nombre</th>

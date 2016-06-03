@@ -1,9 +1,11 @@
+@section('favicon') {!!Html::favicon('favicons/changeFaviconNameHere.png')!!} @stop
+@section('title') New interest @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		@include('alerts.alertFields')
-		<h4>Crear una nueva Interes</h4>
+		@include('alerts.allAlerts')
+		<!--<h4>Crear una nueva Interes</h4>-->
 		<div class="row">
 			{!!Form::open(['route'=>'intereses.store', 'method'=>'POST'])!!}
 			@include('intereses.forms.fieldsInteres')

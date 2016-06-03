@@ -2,6 +2,7 @@
 @section('content')
 <div class="jumbotron">
  	<div id="contentMiddle">
+		@include('alerts.allAlerts')
 		<h2>Terminos y condiciones</h2>
 
 	

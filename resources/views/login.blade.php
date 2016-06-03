@@ -6,11 +6,7 @@
   <div id="contentMini">
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
-        @include('alerts.successMessage')
-        @include('alerts.warningMessage')
-        @include('alerts.errorsMessage')
-        @include('alerts.alertFields')
-        @include('alerts.infoMessage')
+        @include('alerts.allAlerts')
       </div>
     </div>
 

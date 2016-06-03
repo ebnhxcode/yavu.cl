@@ -9,11 +9,7 @@
       <div>
         <h2>Contacto <img width="150" style="float: right;" src="{!! URL::to('img/yavu005.png') !!}" alt=""></h2>
 
-        @include('alerts.alertFields')
-        @include('alerts.errorsMessage')
-        @include('alerts.successMessage')
-        @include('alerts.warningMessage')
-        @include('alerts.infoMessage')
+        @include('alerts.allAlerts')
 
         <div class="row">
           <div class="col-md-12">
