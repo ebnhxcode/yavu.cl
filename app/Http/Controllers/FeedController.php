@@ -89,7 +89,7 @@ FeedController extends Controller{
 
     if(count($this->user->empresas)>0){
       $this->user_id = $this->user->empresas[0]->user_id; $this->id = $this->user->empresas[0]->id;
-      return view('feeds.index', ['user_id' => $this->user_id], ['empresa_id' => $this->id, 'mostrarbanner' => $this->MostrarBannerPublico(), 'feeds' => EstadoEmpresa::paginate(20)] );
+      return view('feeds.index', ['user_id' => $this->user_id], ['empresa_id' => $this->id, 'mostrarbanner' => $this->MostrarBannerPublico()] );
     }else{
       return view('feeds.index');
     }
