@@ -1,3 +1,5 @@
+@section('favicon') {!!Html::favicon('favicons/changeFaviconNameHere.png')!!} @stop
+@section('title') Us @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">

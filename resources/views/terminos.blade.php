@@ -1,11 +1,11 @@
+@section('favicon') {!!Html::favicon('favicons/changeFaviconNameHere.png')!!} @stop
+@section('title') Terms @stop
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
  	<div id="contentMiddle">
 		@include('alerts.allAlerts')
 		<h2>Terminos y condiciones</h2>
-
-	
 		<div class="panel panel-default">
 			<div class="panel-body">
 			    <p></p>
