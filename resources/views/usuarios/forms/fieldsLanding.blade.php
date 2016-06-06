@@ -1,29 +1,29 @@
 <div class='form-group has-feedback has-feedback-left'>
-	(<strong><small><span class='requerido'>Requerido</span></small></strong>) {!!Form::label('Nombre:')!!}
+	@include('alerts.showThatIsRequired') {!!Form::label('Nombre:')!!}
 	{!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre','required'=>'required'])!!}
 </div>		
 <div class='form-group has-feedback has-feedback-left'>
-	(<strong><small><span class='requerido'>Requerido</span></small></strong>) {!!Form::label('Apellido:')!!}
+	@include('alerts.showThatIsRequired') {!!Form::label('Apellido:')!!}
 	{!!Form::text('apellido',null,['class'=>'form-control','placeholder'=>'Ingrese su apellido','required'=>'required'])!!}
 </div>
 <div class='form-group has-feedback has-feedback-left'>
-	(<strong><small><span class='requerido'>Requerido</span></small></strong>) {!!Form::label('Email:')!!}
+	@include('alerts.showThatIsRequired') {!!Form::label('Email:')!!}
 	{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email','required'=>'required'])!!}			
 </div>
 <div class='form-group has-feedback has-feedback-left'>
-	(<strong><small><span class='requerido'>Requerido</span></small></strong>) {!!Form::label('Clave:')!!}
+	@include('alerts.showThatIsRequired') {!!Form::label('Clave:')!!}
 	{!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una clave', 'required' => 'required'])!!}
 </div>
 {{--
 <div class='form-group has-feedback has-feedback-left'>
-	(<strong><small><span class='requerido'>Requerido</span></small></strong>) {!!Form::label('Codigo Referido:')!!}
+	@include('alerts.showThatIsRequired') {!!Form::label('Codigo Referido:')!!}
 	{!!Form::text('referido',null,['class'=>'form-control','placeholder'=>''])!!}
 </div>
 --}}
 
 
 <div class='form-group has-feedback has-feedback-left'>
-	(<strong><small><span class='requerido'>Requerido</span></small></strong>) {!!Form::label('Ciudad:')!!}
+	@include('alerts.showThatIsRequired') {!!Form::label('Ciudad:')!!}
 	{!!Form::select('ciudad', 
 		['Tarapacá' => 'Tarapacá',
 		'Parinacota' => 'Parinacota',

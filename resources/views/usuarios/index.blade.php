@@ -37,10 +37,10 @@
 						</tbody>
 						@endforeach
 					</table>	
-				</div><!-- div wrap -->
-			</div><!-- /div panel body -->
-		</div><!-- /div panel defaul -->
+				</div><!-- div .wrap -->
+			</div><!-- /div .panel-body -->
+		</div><!-- /div .panel-default -->
 		{!!$users->render()!!}
-	</div><!-- /div contentMiddle -->
-</div><!-- /div jumbotron -->
+	</div><!-- /div .contentMiddle -->
+</div><!-- /div .jumbotron -->
 @stop
