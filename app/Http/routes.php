@@ -1,42 +1,23 @@
 <?php
+
+
+
+
+/*Gestión de cors*/
 Route::get('breweries', ['middleware' => 'cors', function(){return \Response::json(\yavu\Brewery::with('beers', 'geocode')->paginate(10), 200);}]);
+/*Gestión de cors*/
 
-Route::get('/clear-cache', function() {
-   view('index');
-});
+/*Gestión de limpieza de caché*/
+Route::get('/clear-cache', function() { view('index'); });
+/*Gestión de limpieza de cors*/
 
-Route::get('usuarios', 'UserController@index');
-
+/*Gestión de usuarios sin sesión activa*/
+Route::get('usuarios', function(){ return Redirect::to('login'); });
 Route::post('usuarios/create', ['uses' => 'UserController@store', 'as' => 'usuarios_store_path',]);
-
 Route::get('usuarios/create', ['uses' => 'UserController@create', 'as' => 'usuarios_create_path',]);
-
-Route::post('usuarios/reset', [
-  'uses' => 'UserController@reset',
-  'as' => 'usuarios_resetpassword_path',
-]);
-
-
-
+Route::post('usuarios/reset', ['uses' => 'UserController@reset', 'as' => 'usuarios_resetpassword_path',]);
 Route::get('verificarusuario/{codigo}', 'LogController@VerificarUsuario');
 Route::get('logout', 'LogController@logout');
-
-
-/*
-
-Route::get('', '');
-Route::get('', '');
-Route::get('', '');
-Route::get('', '');
-Route::get('', '');
-*/
-
-
-
-/*Gestión de ingreso login*/
-Route::resource('log', 'LogController');
-/*Gestión de ingreso login*/
-
 Route::get('login', function(){
   $exitCode = Artisan::call('cache:clear');
   if(Auth::user()->check()||Auth::admin()->check()){
@@ -46,7 +27,7 @@ Route::get('login', function(){
   }
   return view('login');
 });
-
+Route::resource('log', 'LogController');
 /*Gestión de correos*/
 Route::resource('mail', 'MailController');
 /*Gestión de correos*/
@@ -55,6 +36,7 @@ Route::resource('mail', 'MailController');
 Route::get('social/{provider?}', 'SocialController@getSocialAuth');
 Route::get('social/callback/{provider?}', 'SocialController@getSocialAuthCallback');
 /*Gestion socialite*/
+/*Gestión de usuarios sin sesión activa*/
 
 Route::group(['middleware' => 'user'], function(){
 
@@ -265,7 +247,7 @@ Route::get('/','FrontController@index');
 Route::get('index','FrontController@index');
 //Route::get('login','FrontController@login');
 
-Route::get('registro','FrontController@registro');
+//Route::get('registro','FrontController@registro');
 Route::get('yavucoins','FrontController@yavucoins');
 Route::get('contacto','FrontController@contacto');
 Route::get('listaempresas/{empresa}','EmpresaController@ListaEmpresas');
