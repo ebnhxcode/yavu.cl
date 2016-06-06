@@ -1,5 +1,4 @@
 <!-- Banner Random -->
-{!! dd($mostrarbanner) !!!!
 <div style="padding: 30px 30px 5px 30px;" class="list-group-item">
   <div class="row">
            <div id="EmpresaListThumbBanner">
@@ -14,7 +13,7 @@
                           <address>
                             <h4><a class="btn-link" href="/empresa/{!!$banner->nombre!!}">{!! $banner->nombre!!}</a></h4>
                             <strong></strong> {!!$banner->titulo_banner!!}<br>
-                            <strong></strong> {!!$banner->titulo_link!!}<br>
+                          
                           </address>
                         </div>
                       </div><!-- /div row -->
