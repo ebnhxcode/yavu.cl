@@ -201,6 +201,11 @@ Route::group(['middleware' => 'user'], function(){
   Route::resource('intereses', 'InteresController');
   /*Gestión de Interes */
 
+  /*Gestión de Mapas*/
+  Route::resource('gmaps', 'GmapsController');
+  /*Gestión de Mapas*/
+
+
 
 
 
@@ -231,11 +236,6 @@ Route::group(['middleware' => 'admin'], function(){
   Route::get('validarrutempresaadmin/{rut}', 'EmpresaController@ValidarRutEmpresa');
   
   /*Gestión de Admins*/
-
-  /*Gestión de Mapas*/
-  Route::resource('gmaps', 'GmapsController');
-  /*Gestión de Mapas*/
-
 
 
 
