@@ -4,13 +4,6 @@
 @section('content')
 <div class='jumbotron'>
 	<div id='contentMiddle'>
-		<!--Actualización de usuario : {!!$user->nombre .' '. $user->apellido!!}-->
-		<!--
-		<div class="" style="font-size: 2em;">
-			<img width="8%" style="padding-bottom: 20px;" src= "{!!URL::to('/img/users/usuario_nuevo.png')!!}"/><span><a href="{!! URL::to('/profile') !!}">Perfil</a> <span class="requerido">\</span> Informacion de : {!!$user->nombre!!}</span>
-		</div>
-		-->
-
 		<div class='row'>
 			<div class="col-md-12 col-sm-12 col-xs-12">
 
@@ -25,21 +18,10 @@
 							{!!Form::submit('Guardar', ['class'=>'btn btn-success', 'style'=>'width:100%;', 'id'=>'guardar'])!!}
 							<br>
 							{!!Form::close()!!}				
-						</div>
-					</div>
-					{{--
-					<div class='list-group-item'>
-						<div class='form-group has-feedback has-feedback-left'>
-							{!!Form::open(['action'=> ['UserController@destroy', $user->id], 'method'=>'DELETE'])!!}
-							{!!Form::submit('Eliminar', ['class'=>'btn btn-danger', 'style'=>'width:100%;', 'id'=>'eliminar'])!!}﻿
-							{!!Form::close()!!}
-						</div>
-
-					</div>
-					--}}
-				</div>
-			</div><!--Este fin del div cierra el div que se abre en fieldsUser-->	
-		</div>
-	</div>
-</div>
+						</div><!-- /div .form-group -->
+					</div><!-- /div .list-group-item  -->
+				</div><!-- /div .list-group -->
+			</div><!-- /div .row -->
+		</div><!-- /div #contentMiddle -->
+	</div><!-- /div .jumbotron -->
 @stop

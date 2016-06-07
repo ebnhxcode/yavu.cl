@@ -1,37 +1,37 @@
-<div class='col-sm-8'>
-	<div class='list-group' >
+<div class='col-md-8 col-sm-8 col-xs-12'>
+	<div class='list-group'>
 		<div class='list-group-item list-group-item-success'>
 			DATOS PRINCIPALES
-		</div>
+		</div><!-- /div .list-group-item .success -->
 		<div class='list-group-item'>
 			<div class='form-group has-feedback has-feedback-left'>
-				(<strong><small><span class='requerido'>Requerido</span></small></strong>) {!!Form::label('Nombre:')!!}
+				@include('alerts.showThatIsRequired')
+				{!!Form::label('Nombre:')!!}
 				{!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre', 'maxlength' => '100'])!!}
-			</div>
+			</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 			<div class='form-group has-feedback has-feedback-left'>
-				(<strong><small><span class='requerido'>Requerido</span></small></strong>) {!!Form::label('Apellido:')!!}
+				@include('alerts.showThatIsRequired')
+				{!!Form::label('Apellido:')!!}
 				{!!Form::text('apellido',null,['class'=>'form-control','placeholder'=>'Ingrese su apellido', 'maxlength' => '100'])!!}
-			</div>
-
+			</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 			<div class='form-group has-feedback has-feedback-left'>
-				(<strong><small><span class='requerido'>Requerido</span></small></strong>) {!!Form::label('Email login:')!!}
+				@include('alerts.showThatIsRequired')
+				{!!Form::label('Email login:')!!}
 				{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email', 'maxlength' => '200'])!!}			
-			</div>
-
-
-				<div class='form-group has-feedback has-feedback-left'>
-
+			</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
+			<div class='form-group has-feedback has-feedback-left'>
 					@if(Request::path() != 'usuarios/create')
 						(<strong><small><span class='requerido'>Ingrese <i>solo</i> si desea cambiarla</span></small></strong>)
 						{!!Form::label('Cambio de clave:')!!}
 					@else
-						(<strong><small><span class='requerido'>Requerido</span></small></strong>)
+						@include('alerts.showThatIsRequired')
 						{!!Form::label('Nueva password:')!!}
 					@endif
 				{!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una password', 'maxlength' => '100'])!!}
-			</div>
+			</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 			<div class='form-group has-feedback has-feedback-left'>
-				(<strong><small><span class='requerido'>Requerido</span></small></strong>) {!!Form::label('Ciudad:')!!}
+				@include('alerts.showThatIsRequired')
+				{!!Form::label('Ciudad:')!!}
 				{!!Form::select('ciudad', 
 					['Tarapacá' => 'Tarapacá',
 					'Parinacota' => 'Parinacota',
@@ -66,80 +66,54 @@
 					'otra' => 'otras...'], 
 					$selected = null, ['class' => 'form-control', 'maxlength' => '100']) 
 				!!}		
-			</div>	
+			</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 			@if (!Auth::user()->check())
 				<div class='form-group has-feedback has-feedback-left'>
 					{!!Form::hidden('tipo_usuario', 'Usuario')!!}
-				</div>
+				</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 				<div class='form-group has-feedback has-feedback-left'>
 					{!!Form::hidden('estado', 'Activo')!!}	
-				</div>			
+				</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 			@endif
-		</div>
+		</div><!-- /div .list-group-item -->
 		<!-- GESTION DE LAS FOTOS -->		
 		<div class='list-group-item'>
-
-
 			<div class='form-group has-feedback has-feedback-left'>
 				(<strong><small><span class='requerido'>Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar foto de perfil:')!!}<span id='Perfil'></span><br>
-				<div>
-					<span class='btn-file btn-md'>
-						Buscar imagen{!!Form::file('imagen_perfil', ['id' => 'imagen_perfil',  'maxlength' => '255',  'size' => '2048'])!!}
-					</span>
-					@if(Request::path() !== 'usuarios/create' && Auth::user()->check())
-						@if(Auth::user()->get()->imagen_perfil === '')
-							<img width='15%' id='ImagenPerfil' class='thumbnail img-responsive-centered' src='/img/users/usuario_nuevo.png' alt='...'>
-						@else
-							<img width='15%' id='ImagenPerfil' class='thumbnail img-responsive-centered' src='/img/users/{!!Auth::user()->get()->imagen_perfil!!}' alt='...'>
-						@endif
-					@else
-						<img width='15%' id='ImagenPerfil' class='thumbnail img-responsive-centered' src='/img/users/usuario_nuevo.png' alt='...'>
-					@endif
-				</div>
-					
-
-			</div>
-
+				<span class='btn-file btn-md'>
+					Buscar imagen{!!Form::file('imagen_perfil', ['id' => 'imagen_perfil',  'maxlength' => '255',  'size' => '2048'])!!}
+				</span><!-- /span .btn-file .btn-md -->
+				<img width='15%' id='ImagenPerfil' class='thumbnail img-responsive-centered' src='/img/users/{!! isset($user)?($user->imagen_perfil!='')?$user->imagen_perfil:'usuario_nuevo.png':'' !!}' class='center-block'>
+			</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 			<div class='form-group has-feedback has-feedback-left'>
 				(<strong><small><span class='requerido'>Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar portada:')!!}<span id='Portada'></span><br>
-				<div>
-					<span class='btn-file btn-md'>
-						Buscar imagen{!!Form::file('imagen_portada', ['id' => 'imagen_portada',  'maxlength' => '255', 'size' => '2048'])!!}
-					</span>
-					@if(Request::path() !== 'empresas/create' && Auth::user()->check())
-						@if(Auth::user()->get()->imagen_portada === '')
-							<img width='25%' id='ImagenPortada' class='thumbnail img-responsive-centered' src='/img/users/banner.png' alt='...'>
-						@else
-							<img width='35%' id='ImagenPortada' class='thumbnail img-responsive-centered' src='/img/users/{!!Auth::user()->get()->imagen_portada!!}' alt='...'>
-						@endif
-					@else
-						<img width='25%' id='ImagenPortada' class='thumbnail img-responsive-centered' src='/img/users/banner.png' alt='...'>
-					@endif
-				</div>
-			</div>						
-		</div>		
-
-	</div>
-</div>
-<div class='col-sm-4'>
+				<span class='btn-file btn-md'>
+					Buscar imagen{!!Form::file('imagen_portada', ['id' => 'imagen_portada',  'maxlength' => '255', 'size' => '2048'])!!}
+				</span>
+				<img width='35%' id='ImagenPortada' class='thumbnail img-responsive-centered' src='/img/users/{!! isset($user)?($user->imagen_portada!='')?$user->imagen_portada:'banner.png':'' !!}' width=100%>
+			</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
+		</div><!-- /div .list-group-item -->
+	</div><!-- /div .list-group -->
+</div><!-- /div .col-md8-sm8-xs12 -->
+<div class='col-md-4 col-sm-4 col-xs-12'>
 	@if(Auth::user()->check() or Auth::admin()->check())
 		<div class='list-group' >
 			<div class='list-group-item list-group-item-success'>
 				DATOS DE CONTACTO
-			</div>
+			</div><!-- /div .list-group-item .success -->
 			<div class='list-group-item'>
 				<div class='form-group has-feedback has-feedback-left'>
 					{!!Form::label('Rut:')!!}
 					{!!Form::text('rut',null,['class'=>'form-control','placeholder'=>'Ingrese su rut', 'id' => 'rut', 'maxlength' => '16'])!!}
-				</div>
+				</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 				<div class='form-group has-feedback has-feedback-left'>
 					{!!Form::label('Nickname:')!!}
 					{!!Form::text('login',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre de usuario', 'maxlength' => '100'])!!}			
-				</div>
+				</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 				<div class='form-group has-feedback has-feedback-left'>
 					{!!Form::label('Dirección:')!!}
 					{!!Form::text('direccion',null,['class'=>'form-control','placeholder'=>'Ingrese dirección', 'maxlength' => '100'])!!}
-				</div>
+				</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 				<div class='form-group has-feedback has-feedback-left'>
 					{!!Form::label('Región:')!!}
 					{!!Form::select('region', 
@@ -160,7 +134,7 @@
 						'XV Región' => 'XV Región'],
 						$selected = null, ['class' => 'form-control', 'maxlength' => '100']) 
 					!!}			
-				</div>
+				</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 				<div class='form-group has-feedback has-feedback-left'>
 					{!!Form::label('País:')!!}
 					{!!Form::select('pais',
@@ -178,15 +152,15 @@
 						'Otro' => 'Otro'], 
 						$selected = null, ['class' => 'form-control', 'maxlength' => '100']) 
 					!!}	
-				</div>
+				</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 				<div class='form-group has-feedback has-feedback-left'>
 					{!!Form::label('Teléfono Movil:')!!}
 					{!!Form::text('fono',null,['class'=>'form-control','placeholder'=>'', 'maxlength' => '16'])!!}
-				</div>
+				</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 				<div class='form-group has-feedback has-feedback-left'>
 					{!!Form::label('Teléfono Fijo:')!!}
 					{!!Form::text('fono_2',null,['class'=>'form-control','placeholder'=>'', 'maxlength' => '16'])!!}
-				</div>
+				</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 				<div class='form-group has-feedback has-feedback-left'>
 					{!!Form::label('Sexo:')!!}
 					{!!Form::select('sexo', 
@@ -195,16 +169,16 @@
 						'Otro' => 'Otro'], 
 						$selected = null, ['class' => 'form-control', 'maxlength' => '10']) 
 					!!}		
-				</div>
+				</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 				<div class='form-group has-feedback has-feedback-left'>
 					{!!Form::label('Cumpleaños:')!!}
 					{!!Form::date('fecha_nacimiento',null,['class'=>'form-control','placeholder'=>'', 'maxlength' => '100'])!!}
-				</div>
+				</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 
 				@if (Auth::admin()->check()||Auth::user()->check())
 					<div class='form-group has-feedback has-feedback-left'>
 						{!!Form::hidden('estado', 'Activo', ['maxlength' => '100'])!!}	
-					</div>	
+					</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 					@if (Auth::admin()->check())
 						<div class='form-group has-feedback has-feedback-left'>
 							{!!Form::label('Tipo usuario:')!!}
@@ -213,7 +187,7 @@
 								'Cliente' => 'Cliente'], 
 								$selected = null, ['class' => 'form-control',  'maxlength' => '20']) 
 							!!}	
-						</div>						
+						</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 					@endif
 				@endif
 			</div>

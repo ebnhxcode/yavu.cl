@@ -5,14 +5,15 @@
             <div class="row">
               @if(isset($mostrarbanner))
                 @foreach($mostrarbanner as $banner)
-                  <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="col-md-12 col-sm-12 col-xs-12 text-center">
               
                       <img id="ImagenPortada" src="{!! ($banner->banner!="")?'/img/users/'.$banner->banner:"/img/users/banner.png" !!}" alt="..." style="height: 170px;">
                       <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                           <address>
                             <h4><a class="btn-link" href="/empresa/{!!$banner->nombre!!}">{!! $banner->nombre!!}</a></h4>
-                            <strong>Titulo :</strong> {!!$banner->titulo_banner!!}<br>
+                            <strong></strong> {!!$banner->titulo_banner!!}<br>
+                          
                           </address>
                         </div>
                       </div><!-- /div row -->

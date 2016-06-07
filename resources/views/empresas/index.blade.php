@@ -113,12 +113,13 @@
                   </div>
                 @endforeach
               </div> <!-- /Empresa list thumb -->
-              {!!$empresas->render()!!}
+
             @endif
 
           </div><!-- /panel body -->
         </div><!-- /panel panel-default -->
       </div>
+      <div class="text-center">{!!$empresas->render()!!}</div>
     </div>
 
 

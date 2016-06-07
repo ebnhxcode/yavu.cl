@@ -1,3 +1,5 @@
+@section('favicon') {!!Html::favicon('favicons/changeFaviconNameHere.png')!!} @stop
+@section('title') Login @stop
 @extends('layouts.front')
 @section('content')
 {!!Form::open(['route' => 'log.store', 'method' => 'POST'])!!}
