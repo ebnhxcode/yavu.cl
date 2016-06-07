@@ -6,8 +6,10 @@
 @section('content')
 <div class="jumbotron">
 	<div id="contentMiddle">
-		@include('alerts.allAlerts')
 		<div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        @include('alerts.allAlerts')
+      </div><!-- /div col-md12-sm12-xs12 -->
 			<div class="col-md-4 col-sm-12 col-xs-12">
         <div class="list-group">
           @include('miniDashboard.miniDashboard')

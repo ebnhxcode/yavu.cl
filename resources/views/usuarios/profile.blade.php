@@ -23,7 +23,10 @@
 				<div class='col-md-4 col-sm-6 col-xs-12'>
 					<div class="list-group">
 						<div class="list-group-item">
-							<img id='ImagenPerfil' src='/img/users/{!! isset($user)?($user->imagen_perfil!='')?$user->imagen_perfil:'usuario_nuevo.png':'' !!}' class='center-block'>
+							<div class="thumbnail">
+								<img id='ImagenPerfil' src='/img/users/{!! isset($user)?($user->imagen_perfil!='')?$user->imagen_perfil:'usuario_nuevo.png':'' !!}' class='center-block'>
+							</div>
+
 							<h3>{!! $user->nombre.' '.$user->apellido !!}</h3>
 							<div class="dropdown">
 								<button class="btn btn-default btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
