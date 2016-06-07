@@ -19,3 +19,4 @@
     RewriteRule ^(.*)$ http://yavu.cl/$1 [L,R=301]
 
 </IfModule>
+
