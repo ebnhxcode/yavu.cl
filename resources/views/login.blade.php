@@ -3,15 +3,13 @@
 @extends('layouts.front')
 @section('content')
 {!!Form::open(['route' => 'log.store', 'method' => 'POST'])!!}
-
 <div class="">
   <div id="contentMini">
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
         @include('alerts.allAlerts')
-      </div>
-    </div>
-
+      </div><!-- /div #contentMini -->
+    </div><!-- /div .row -->
     <div>
       <div style="color: #fff">
         <div >
