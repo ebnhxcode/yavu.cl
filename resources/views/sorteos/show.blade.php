@@ -1,7 +1,7 @@
 @section('favicon') {!!Html::favicon('favicons/raffle.png')!!} @stop
-{!!Html::script('js/jquery.js')!!}
-{!!Html::script('js/ajax/ParticiparSorteo.js')!!}
 @if(isset($sorteo))
+  {!!Html::script('js/jquery.js')!!}
+  {!!Html::script('js/ajax/ParticiparSorteo.js')!!}
   @section('title') {!! $sorteo->nombre_sorteo !!} @stop
   @extends('layouts.front')
   @section('content')
@@ -42,31 +42,22 @@
               </button>
             </div><!-- /div #msjs+sorteo_id  .alert .alert-info .alert-dismissible -->
             <div class="list-group">
-
-
               <div class="list-group-item">
                 <div class="amplio">
                   <input id="token" type="hidden" name="_token" value="{!! csrf_token() !!}">
                   <button class="btn btn-success btn-md UsarTicket" value="{!! $sorteo->id !!}" type="button"   style="display: none; width: 100%;" data-dismiss="modal">Participar</button>
                 </div><!-- /div .amplio -->
-
                 <div class="thumbnail">
-
-                  <img src='{!! isset($sorteo)?($sorteo->imagen_sorteo!='')?'/img/users/'.$sorteo->imagen_sorteo:'https://tiendas-asi.com/wp-content/uploads/2015/04/sorteo-diariodebodas.jpg':'https://tiendas-asi.com/wp-content/uploads/2015/04/sorteo-diariodebodas.jpg' !!}' width=100%>
-
-
-                </div>
-
-
-              </div><!-- /div list-group-item-full-header -->
-
-            </div><!-- /div list-group -->
-          </div><!-- /div col-md-8 col-sm-12 col-xs-12 -->
+                  <img src='{!! isset($sorteo)?($sorteo->imagen_sorteo!='')?'/img/users/'.$sorteo->imagen_sorteo:'https://tiendas-asi.com/wp-content/uploads/2015/04/sorteo-diariodebodas.jpg':'' !!}' width=100%>
+                </div><!-- /div .thumbnail -->
+              </div><!-- /div .list-group-item-full-header -->
+            </div><!-- /div .list-group -->
+          </div><!-- /div .col-md8-sm12-xs12 -->
           <div class="col-md-4 col-sm-12 col-xs-12">
             <div class="list-group">
               <div class="list-group-item list-group-item-success">
                 INFORMACIÓN DEL SORTEO
-              </div>
+              </div><!-- /div .list-group-item .success -->
               <div class="list-group-item">
                 <div class="well">
                   <h5>
@@ -95,10 +86,9 @@
                     <a id="SortearGanador" data-toggle="modal"  class="btn btn-primary btn-sm" value="{!! $sorteo->id !!}">Sortear ganador</a>
                     @include('sorteos.forms.modalSortearParticipante')
                   @endif
-                </div><!-- /div well -->
-              </div><!-- /div list-group-item -->
-            </div><!-- /div list-group-item -->
-
+                </div><!-- /div .well -->
+              </div><!-- /div .list-group-item -->
+            </div><!-- /div .list-group -->
             {{--
             @if(Auth::user()->get()->id == $sorteo->user_id)
               <script language="JavaScript" type="text/javascript">
@@ -110,10 +100,10 @@
               </script>
             @endif
             --}}
-          </div><!-- /div col-md-4 -->
-        </div><!-- /div row -->
-      </div><!-- /div contentMiddle -->
-    </div><!-- /div jumbotron -->
+          </div><!-- /div .col-md4-sm12-xs12 -->
+        </div><!-- /div .row -->
+      </div><!-- /div #contentMiddle -->
+    </div><!-- /div .jumbotron -->
   @stop
 @else
   404
