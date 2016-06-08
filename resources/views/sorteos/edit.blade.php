@@ -9,7 +9,9 @@
 				@include('alerts.allAlerts')
 			</div><!-- /div col-md12-sm12-xs12 -->
 			{!!Form::model($sorteo, ['method'=>'PUT', 'route' => ['sorteos.update', $sorteo->id], 'files' => true ])!!}
-			@include('sorteos.forms.fieldsSorteo', array('sorteo' => $sorteo))
+			<div class="col-md-8 col-sm-12 col-xs-12">
+				@include('sorteos.forms.fieldsSorteo', array('sorteo' => $sorteo))
+			</div> <!-- /div .col-md8-sm12-xs12 -->
 			<div class="col-md-4 col-sm-12 col-xs-12">
 				<div class="list-group">
 					<div class="list-group-item">

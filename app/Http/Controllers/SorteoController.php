@@ -118,7 +118,6 @@ class SorteoController extends Controller{
   }
   public function find(Route $route){
       $this->sorteo = Sorteo::find($route->getParameter('sorteos'));
-      //return $this->user;
   }
 
   private function getMyCoins(){
@@ -130,16 +129,9 @@ class SorteoController extends Controller{
   }
 
   public function index(){
-
-    //dd($this->user->sorteos()->get());
-
-
     $sorteos = DB::table('sorteos')->orderBy('created_at', 'desc')->paginate(10);
-
     $this->registro_tickets = $this->user->registro_tickets()->orderBy('created_at', 'desc')->limit('20')->get();
-    //dd($this->registro_tickets);
     return view('sorteos.index', compact('sorteos'), ['rtickets' => $this->registro_tickets, 'mostrarbanner' => $this->MostrarBannerPublico()]);
-   
   }
 
   public function MostrarBannerPublico(){

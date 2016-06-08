@@ -82,9 +82,12 @@
                     <input class="form-control" type="text" disabled="disabled" value="21:00:00">
                   </h5>
                   @if($sorteo->user_id == Auth::user()->get()->id && !isset($winners))
-                    {!!link_to_route('sorteos.edit', $title = 'Editar', $parameters = $sorteo->id, $attributes = ['class'=>'btn btn-primary btn-sm'])!!}
+
                     <a id="SortearGanador" data-toggle="modal"  class="btn btn-primary btn-sm" value="{!! $sorteo->id !!}">Sortear ganador</a>
                     @include('sorteos.forms.modalSortearParticipante')
+                    @if($sorteo->estado_sorteo == 'Pendiente')
+                      {!!link_to_route('sorteos.edit', $title = 'Editar', $parameters = $sorteo->id, $attributes = ['class'=>'btn btn-primary btn-sm'])!!}
+                    @endif
                   @endif
                 </div><!-- /div .well -->
               </div><!-- /div .list-group-item -->
