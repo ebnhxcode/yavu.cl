@@ -38,22 +38,12 @@
 		<script>$.ajaxSetup({ cache:false });</script>
 		<script>$.ajaxSetup({ headers: { 'csrftoken' : '{!! csrf_token() !!}' } });</script>
 		<script>$.ajaxSetup({ headers: { 'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')}});</script>
-		@if(Request::path() != 'login' && Request::path() != 'contacto')
 		<style>
 			body {
 				padding-top:50px;
 				padding-bottom: 20px;
 			}
 		</style>
-		@else
-			<style type="text/css">
-				body {
-					background: url(/img/users/iniciar_sesion.jpg) no-repeat fixed top center;
-					padding-top:50px;
-					padding-bottom: 20px;
-				}
-			</style>
-		@endif
 	</head><!--/head -->
 	<body>
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
