@@ -55,7 +55,7 @@ class User extends Model implements AuthenticatableContract,
 		return $this->hasMany(ParticipanteSorteo::class);
 	}
 	public function pops(){
-		return $this->hasMany(Pop::class);
+		return $this->hasMany(Pop::class)->orderBy('created_at', 'desc');
 	}
 	public function tickets(){
 		return $this->hasMany(Ticket::class, 'user_id');
