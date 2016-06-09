@@ -157,6 +157,9 @@
 							</li>
 						@endif
 						@if(Auth::admin()->check())
+							<li>
+           						<a href="{!!URL::to('/admins')!!}">Inicio</a>
+         					</li>
 							<li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Registrar empresa<b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									<li><a href="{!!URL::to('/empresas/create')!!}">Registro de empresas</a></li>
