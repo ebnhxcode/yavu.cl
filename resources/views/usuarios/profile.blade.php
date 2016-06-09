@@ -7,15 +7,14 @@
 		<div class='row' style='margin-top:-35px;'>
 				<div class="col-md-12 col-sm-12 col-xs-12">
 					@include('alerts.allAlerts')
-				</div>
+				</div><!-- /div .col-md12-sm12-xs12 -->
 
 				<div class='col-md-8 col-sm-6 col-xs-12'>
 					<div class='list-group' >
-						<!-- SECCION DE LAS FOTO DE PERFIL Y PORTADA -->
 						<div id="IPortada">
 							<div class='thumbnail'>
 								<img id='ImagenPortada' src='/img/users/{!! isset($user)?($user->imagen_portada!='')?$user->imagen_portada:'banner.png':'' !!}' width=100%>
-							</div>
+							</div><!-- /div .thumbnail -->
 						</div><!-- div #IPortada -->
 					</div><!-- /div .list-group -->
 					{!!Form::hidden('user_id', $user->id, ['id'=>'user_id'])!!}
@@ -25,7 +24,7 @@
 						<div class="list-group-item">
 							<div class="thumbnail">
 								<img id='ImagenPerfil' src='/img/users/{!! isset($user)?($user->imagen_perfil!='')?$user->imagen_perfil:'usuario_nuevo.png':'' !!}' class='center-block'>
-							</div>
+							</div><!-- /div .thumbnail -->
 
 							<h3>{!! $user->nombre.' '.$user->apellido !!}</h3>
 							<div class="dropdown">
