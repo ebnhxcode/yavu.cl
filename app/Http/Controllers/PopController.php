@@ -23,7 +23,7 @@ class PopController extends Controller{
     //return $this->user;
   }
   public function index(){
-    return view('pops.index');
+    return view('pops.index', ['pops' => $this->user->pops()->paginate(10)]);
   }
   public function CargarPops($idUltima, $user_id, $tipo){
     if($tipo == 'todas'){

@@ -109,8 +109,6 @@ class EmpresaController extends Controller{
     }else{
       return redirect()->to('/empresas');
     }
-
-
   }
   public function edit($id){
 
