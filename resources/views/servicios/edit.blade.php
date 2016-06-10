@@ -9,24 +9,23 @@
 		<div class="row">
 			{!!Form::model($servicio, ['method'=>'PUT', 'route' => ['servicios.update', $servicio->id] ])!!}
 			@include('servicios.forms.fieldsServicio')
-				<div class="list-group">
-					<div class="list-group-item">
-						<div class="form-group has-feedback has-feedback-left">
-							{!!Form::submit('Guardar', ['class'=>'btn btn-primary btn-success', 'style'=>'width:100%;', 'id'=>'guardar'])!!}
-							<br>
-							{!!Form::close()!!}				
-						</div>
-					</div>
-					<div class="list-group-item">
-						<div class="form-group has-feedback has-feedback-left">
-							{!!Form::open(['action'=> ['ServicioController@destroy', $servicio->id], 'method'=>'DELETE'])!!}
-							{!!Form::submit('Eliminar', ['class'=>'btn btn-primary btn-danger', 'style'=>'width:100%;', 'id'=>'eliminar'])!!}﻿
-							{!!Form::close()!!}													
-						</div>	
-					</div>		
-				</div>
-			</div><!--Este fin del div cierra el div que se abre en fieldsUser-->	
-		</div>
-	</div>
-</div>
+			<div class="list-group">
+				<div class="list-group-item">
+					<div class="form-group has-feedback has-feedback-left">
+						{!!Form::submit('Guardar', ['class'=>'btn btn-primary btn-success', 'style'=>'width:100%;', 'id'=>'guardar'])!!}
+						<br>
+						{!!Form::close()!!}
+					</div><!-- /div .from-group .has-feedback .has-feedback-left -->
+				</div><!-- /div .list-group-item -->
+				<div class="list-group-item">
+					<div class="form-group has-feedback has-feedback-left">
+						{!!Form::open(['action'=> ['ServicioController@destroy', $servicio->id], 'method'=>'DELETE'])!!}
+						{!!Form::submit('Eliminar', ['class'=>'btn btn-primary btn-danger', 'style'=>'width:100%;', 'id'=>'eliminar'])!!}﻿
+						{!!Form::close()!!}
+					</div><!-- /div .from-group .has-feedback .has-feedback-left -->
+				</div><!-- /div .list-group-item -->
+			</div> <!-- /div .list-group -->
+		</div><!-- /div .row -->
+	</div> <!-- /div #contentMiddle -->
+</div><!-- /div .jumbotron -->
 @stop

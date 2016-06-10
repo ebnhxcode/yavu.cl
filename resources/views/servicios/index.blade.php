@@ -18,9 +18,9 @@
             <td>{!!link_to_route('servicios.edit', $title = 'Editar', $parameters = $servicio->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
           </tbody>
           @endforeach
-        </table>  
+        </table><!-- /table .table -->
       {!!$servicios->render()!!}
-  </div>
-</div>
+  </div><!-- /div #contentMiddle -->
+</div><!-- /div .jumbotron -->
 @stop
 
