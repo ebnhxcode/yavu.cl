@@ -4,22 +4,28 @@
 @section('content')
 <div class="jumbotron">
   <div id="contentMiddle">
-    @include('alerts.allAlerts')
-    <table class="table">
-      <thead>
-        <th>Nombre</th>
-        <th>Descripcion</th>
-        <th>Operaciones</th>
-      </thead>
-      @foreach($intereses as $interes)
-      <tbody>
-        <td>{!!$interes->nombre_interes!!}</td>
-        <td>{!!$interes->descripcion_interes!!}</td>
-        <td>{!!link_to_route('intereses.edit', $title = 'Editar', $parameters = $interes->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
-      </tbody>
-      @endforeach
-    </table><!-- /table .table -->
-    {!!$intereses->render()!!}
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        @include('alerts.allAlerts')
+      </div><!-- /div col-md12-sm12-xs12 -->
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <table class="table">
+          <thead>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Operaciones</th>
+          </thead>
+          @foreach($intereses as $interes)
+            <tbody>
+              <td>{!!$interes->nombre_interes!!}</td>
+              <td>{!!$interes->descripcion_interes!!}</td>
+              <td>{!!link_to_route('intereses.edit', $title = 'Editar', $parameters = $interes->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
+            </tbody>
+          @endforeach
+        </table><!-- /table .table -->
+        {!!$intereses->render()!!}
+      </div><!-- /div col-md12-sm12-xs12 -->
+    </div><!-- /div .row -->
   </div><!-- /div #contentMiddle -->
 </div><!-- /div .jumbotron -->
 @stop
