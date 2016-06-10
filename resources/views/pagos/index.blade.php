@@ -4,7 +4,11 @@
 @section('content')
 <div class="jumbotron">
   <div id="contentMiddle">
-    @include('alerts.allAlerts')
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        @include('alerts.allAlerts')
+      </div><!-- /div col-md12-sm12-xs12 -->
+      <div class="col-md-12 col-sm-12 col-xs-12">
         <table class="table">
           <thead>
             <th>Id Usuario</th>
@@ -18,9 +22,10 @@
             <td>{!!link_to_route('pagos.edit', $title = 'Editar', $parameters = $pago->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
           </tbody>
           @endforeach
-        </table>  
-      {!!$pagos->render()!!}
-  </div>
-</div>
+        </table><!-- /table .table -->
+        {!!$pagos->render()!!}
+      </div><!-- /div col-md12-sm12-xs12 -->
+    </div><!-- /div .row -->
+  </div><!-- /div #contentMiddle -->
+</div><!-- /div .jumbotron -->
 @stop
-
