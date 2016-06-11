@@ -11,6 +11,8 @@
 			<div class="col-md-8 col-sm-12 col-xs-12">
 				{!!Form::model($interes, ['method'=>'PUT', 'route' => ['intereses.update', $interes->id] ])!!}
 				@include('intereses.forms.fieldsInteres')
+			</div><!-- /div col-md8-sm12-xs12 -->
+			<div class="col-md-4 col-sm-12 col-xs-12">
 				<div class="list-group">
 					<div class="list-group-item">
 						<div class="form-group has-feedback has-feedback-left">
@@ -27,8 +29,6 @@
 						</div><!-- /div .form-group .has-feedback .has-feedback-left -->
 					</div><!-- /div .list-group-item -->
 				</div><!-- /div .list-group -->
-			</div><!-- /div col-md8-sm12-xs12 -->
-			<div class="col-md-4 col-sm-12 col-xs-12">
 			</div><!-- /div .col-md4-sm12-xs12 -->
 		</div><!-- /div .row -->
 	</div><!-- /div #contentMiddle -->

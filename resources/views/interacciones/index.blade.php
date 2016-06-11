@@ -23,7 +23,7 @@
           </tbody>
           @endforeach
         </table><!-- /table .table -->
-      {!!$interacciones->render()!!}
+        {!!$interacciones->render()!!}
       </div><!-- /div col-md12-sm12-xs12 -->
     </div><!-- /div .row -->
   </div><!-- /div #contentMiddle -->

@@ -1,5 +1,4 @@
 <div class="list-group">
-
   <div class="list-group-item list-group-item-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
     Men&uacute;
   </div><!-- /div .list-group-item .success -->
@@ -94,12 +93,10 @@
             </div><!-- /div .list-group -->
           </div><!-- /div .col-md4-sm-4-xs6 .hasoneempresa -->
         @endif
-
       </div><!-- /row -->
     </div><!-- /div #collapseExample .collapse -->
     <small>Haz click en Men&uacute;</small>
   </div><!-- /div .list-group-item -->
-
 </div><!-- /div .list-group -->
 
 <!-- Modal -->
@@ -109,11 +106,9 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Seleccione tipo de informe que desea ver</h4>
-      </div>
+      </div><!-- /div .modal-header -->
       <div class="modal-body">
-
         <div class="row">
-
           <div class="col-md-4 col-sm-4 col-xs-4">
             <div class='list-group' >
               <div align="center">
@@ -121,12 +116,13 @@
                 <span>
                   <img width="80%" src= "{!!URL::to('img/newGraphics/yavucoin_neo02a.png')!!}"/>
                 </span>
-                </a>
-              </div>
-              <div align="center"><small>Informe de Coins</small></div>
-            </div>
-          </div><!-- /div col -->
-
+                </a><!-- /a .list-group-item .success -->
+              </div><!-- /div aligned -->
+              <div align="center">
+                <small>Informe de Coins</small>
+              </div><!-- /div aligned -->
+            </div><!-- /div .list-group -->
+          </div><!-- /div .col-md4-sm4-xs4 -->
           <div class="col-md-4 col-sm-4 col-xs-4">
             <div class="list-group">
               <div align="center">
@@ -135,13 +131,13 @@
                     <img style="padding-bottom: 10px;" width="80%"src= "{!!URL::to('img/newGraphics/neo_icono_tickets.png')!!}"/>
                   </span>
                 </a>
-              </div>
-              <div align="center"><small>Informe de Tickets</small></div>
+              </div><!-- /div aligned -->
+              <div align="center">
+                <small>Informe de Tickets</small>
+              </div><!-- /div aligned -->
               <br>
-            </div>
-          </div><!-- /div col -->
-
-
+            </div><!-- /div .list-group -->
+          </div><!-- /div .col-md4-sm4-xs4 -->
           <div style="display: none;" class="col-md-4 col-sm-4 col-xs-4 hasoneempresa">
             <div class="list-group" >
               <div align="center">
@@ -150,18 +146,16 @@
                     <img width="80%" src= "{!!URL::to('img/dash/icono_informe01.png')!!}"/>
                   </span>
                 </a>
-              </div>
-              <div align="center"><small>Estad&iacute;sticas de mi empresa</small></div>
-            </div>
-          </div><!-- /div col -->
-
-        </div><!-- /div row -->
-
-
-      </div><!-- /div modal-body -->
+              </div><!-- /div aligned -->
+              <div align="center">
+                <small>Estad&iacute;sticas de mi empresa</small>
+              </div><!-- /div aligned -->
+            </div><!-- /div .list-group -->
+          </div><!-- /div .col-md4-sm4-xs4 -->
+        </div><!-- /div .row -->
+      </div><!-- /div .modal-body -->
       <div class="modal-footer">
-
-      </div><!-- /modal footer -->
-    </div><!-- /modal conten -->
-  </div><!-- /modal dialog -->
-</div><!-- /modal fade -->
+      </div><!-- /div .modal-footer -->
+    </div><!-- /div .modal-content -->
+  </div><!-- /div .modal-dialog -->
+</div><!-- /div .modal-fade -->
