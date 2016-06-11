@@ -16,7 +16,7 @@
 				<div class="list-group">
 					<div class="list-group-item">
 						<h4>Todos los campos son requeridos</h4>
-					</div>
+					</div><!-- /div .list-group-item -->
 					<div class="list-group-item">
 						<div class="form-group has-feedback has-feedback-left">
 							{!!Form::label('Registrar')!!}
