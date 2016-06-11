@@ -38,16 +38,16 @@
 
                 <div class="media">
                   <div style="padding-left: 8px;" class="media-left">
-                    <a href="#">
+                    <a href="/empresa/{!! $EmpresaEstado[0]->nombre !!}">
                       <img class='media-object' src='{!! $EmpresaEstado[0]->imagen_perfil !!}' data-holder-rendered='true' style='width: 32px; height: 32px;'/>
                     </a>
-                  </div>
+                  </div><!-- /div .media-left -->
                   <div class="media-body">
-                    <h4 class="media-heading"><a href="/empresa/'+value.nombreEmp+'" style="color:#3C5B28;">{!! $EmpresaEstado[0]->nombre !!}</a></h4>
+                    <h4 class="media-heading"><a href="/empresa/{!! $EmpresaEstado[0]->nombre !!}" style="color:#3C5B28;">{!! $EmpresaEstado[0]->nombre !!}</a></h4>
                     <small>Publicó <abbr class='timeago' id='timeago{!! $feed->id !!}' value='{!! $feed->created_at !!}' title='{!! $feed->created_at !!}\'>{!! $feed->created_at !!}</abbr></small>
-                  </div>
-                </div><!-- /div media -->
-              </div><!-- /div list-group-item-success -->
+                  </div><!-- /div .media-body -->
+                </div><!-- /div .media -->
+              </div><!-- /div .list-group-item .success -->
 
               <div class="list-group-item">
                 <p>{!! $feed->status !!}</p>
@@ -58,7 +58,7 @@
                 <span role='button' class='' href='#!' style='color:#3C5B28'>
                   <span name='megusta' class='' onclick='Interactuar({!! $feed->id !!})' id='estado_{!! $feed->id !!}' value='e{!! $feed->empresa_id !!}'>
                     <img id='imgcoin{!! $feed->id !!}' src='/img/newGraphics/cobrar_coins.png' />
-                  </span>
+                  </span><!-- /span #estado_+feed_id -->
 							  </span>
 
               </div><!-- /div list-group-item panel footer -->

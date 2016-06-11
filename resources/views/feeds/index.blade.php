@@ -20,11 +20,18 @@
 			<!-- panel izquierdo -->
 			@include('feeds.forms.panelLeft')
 
-			<input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
-			{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
+			<!-- panel central -->
+			<div class="col-md-5 col-sm-12 col-xs-12">
+				@include('feeds.forms.panelCenter')
+			</div>
 
 			<!-- panel derecho -->
-			@include('feeds.forms.panelRight')
+			<div class="col-md-3 col-sm-12 col-xs-12">
+				@include('feeds.forms.panelRight')
+			</div>
+
+			<input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
+			{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
 
 
     </div><!-- /div row -->
