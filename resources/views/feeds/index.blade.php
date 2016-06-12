@@ -7,37 +7,35 @@
 @section('content')
 <div class="jumbotron">
   <div id="contentMiddle">
-		<!--
-		<div style="font-size: 3em;">
-			<img width="64px" style="padding-bottom: 20px;" src= "{!!URL::to('img/newGraphics/neo_icono_publicaciones.png')!!}" /><span>Publicaciones</span>
-		</div>
-		-->
+
     <div class="row">
     	<div class="col-md-12 col-sm-12 col-xs-12">
 				@include('alerts.allAlerts')
-			</div>
+			</div><!-- /div .col-md12-sm12-xs12 -->
 
 			<!-- panel izquierdo -->
-			@include('feeds.forms.panelLeft')
+			<div class="col-md-4 col-sm-12 col-xs-12">
+				@include('feeds.indexPartial.sectionLeft')
+			</div><!-- /div .col-md4-sm12-xs12 -->
 
 			<!-- panel central -->
 			<div class="col-md-5 col-sm-12 col-xs-12">
-				@include('feeds.forms.panelCenter')
-			</div>
+				@include('feeds.indexPartial.sectionCenter')
+			</div><!-- /div .col-md5-sm12-xs12 -->
 
 			<!-- panel derecho -->
 			<div class="col-md-3 col-sm-12 col-xs-12">
-				@include('feeds.forms.panelRight')
-			</div>
+				@include('feeds.indexPartial.sectionRight')
+			</div><!-- /div .col-md3-sm12-xs12 -->
 
+			<!-- variables hidden para forms -->
 			<input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
 			{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
 
 
-    </div><!-- /div row -->
-
-  </div><!-- /div contentMiddle -->
-</div>
+    </div><!-- /div .row -->
+  </div><!-- /div #contentMiddle -->
+</div><!-- /div .jumbotron -->
 @stop
 <script>
 	var formatNumber = {
