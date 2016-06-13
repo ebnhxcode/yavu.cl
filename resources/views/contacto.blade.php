@@ -6,6 +6,7 @@
   <style type="text/css">
     body {
       background: url(/img/users/iniciar_sesion.jpg) no-repeat fixed top center;
+      background-size: 130% 100%;
       padding-top:50px;
       padding-bottom: 20px;
     }

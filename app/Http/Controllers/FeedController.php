@@ -58,7 +58,9 @@ FeedController extends Controller{
     return 'Cargar feeds empresa';
   }
   public function create(){
-    return Redirect::to('/');
+    return $this->index();
+    //falta terminar
+    //return view('feeds.create', ['mostrarbanner' => $this->MostrarBannerPublico()]);
   }
   public function destroy($id){
     return response()->json(["Mensaje: " => "Acceso denegado"]);
@@ -70,7 +72,7 @@ FeedController extends Controller{
     }
   }
   public function edit($id){
-    return view('feeds.edit', ['feed' => EstadoEmpresa::find($id)]);
+    return view('feeds.edit', ['feed' => EstadoEmpresa::find($id), 'mostrarbanner' => $this->MostrarBannerPublico()]);
   }
   public function EliminarFeed($id){
 
@@ -107,16 +109,15 @@ FeedController extends Controller{
   public function show($id){
 
     $this->EmpresaEstado = EstadoEmpresa::find($id)->estado_empresa()->get();
-    return view('feeds.show', ['feed' => EstadoEmpresa::find($id)], ['EmpresaEstado' => $this->EmpresaEstado]);
+    return view('feeds.show', ['feed' => EstadoEmpresa::find($id)], ['EmpresaEstado' => $this->EmpresaEstado,  'mostrarbanner' => $this->MostrarBannerPublico()]);
 
 
   }
   public function store(FeedCreateRequest $request){
-    if(isset($request) && $request->ajax()){
-      EstadoEmpresa::create($request->all());
-      return response()->json(["Mensaje: " => "Creado"]);
-    }
-    return response()->json(["Mensaje: " => "Acceso denegado"]);
+
+    $this->estado = EstadoEmpresa::create($request->all());
+    return Redirect::to('/feeds/'.$this->estado->id);
+      //return response()->json(["Mensaje: " => "Creado"]);
   }
   public function update(FeedUpdateRequest $request, $id){
     $this->feed = EstadoEmpresa::find($id);

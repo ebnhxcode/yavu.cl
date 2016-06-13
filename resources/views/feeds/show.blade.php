@@ -12,9 +12,22 @@
           @include('alerts.allAlerts')
         </div><!-- /div .col-md12-sm12-xs12 -->
 
-        <div class="col-md-8 col-sm-12 col-xs-12">
-          <div class="list-group">
-            <div id='publicacion"+value.id+"' class='list-group'>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+          @include('feeds.indexPartial.sectionLeft')
+        </div><!-- /div .col-md4-sm12-xs12 -->
+
+
+
+
+
+
+
+        <div class="col-md-5 col-sm-12 col-xs-12">
+
+
+
+
+            <div id='publicacion{!! $feed->id !!}' class='list-group'>
               <div style='padding: 0px 2px 2px 2px;' class='list-group-item list-group-item-success'>
                 <div class="dropdown">
                   <div style="float: right; padding-top: 8px; padding-right: 5px" class="dropdown">
@@ -38,36 +51,39 @@
                   </div><!-- /div .media-left -->
                   <div class="media-body">
                     <h4 class="media-heading"><a href="/empresa/{!! $EmpresaEstado[0]->nombre !!}" style="color:#3C5B28;">{!! $EmpresaEstado[0]->nombre !!}</a></h4>
-                    <small>Publicó <abbr class='timeago' id='timeago{!! $feed->id !!}' value='{!! $feed->created_at !!}' title='{!! $feed->created_at !!}\'>{!! $feed->created_at !!}</abbr></small>
+                    <small style="font-size: .7em;">Publicó <abbr class='timeago' id='timeago{!! $feed->id !!}' value='{!! $feed->created_at !!}' title='{!! $feed->created_at !!}'>{!! $feed->created_at !!}</abbr></small>
                   </div><!-- /div .media-body -->
                 </div><!-- /div .media -->
               </div><!-- /div .list-group-item .success -->
 
               <div class="list-group-item">
-                <p>{!! $feed->status !!}</p>
+                {!! $feed->status !!}
               </div><!-- /div .list-group-item -->
 
               <div class='list-group-item panel-footer'>
 
                 <span role='button' class='' href='#!' style='color:#3C5B28'>
                   <span name='megusta' class='' onclick='Interactuar({!! $feed->id !!})' id='estado_{!! $feed->id !!}' value='e{!! $feed->empresa_id !!}'>
-                    <img id='imgcoin{!! $feed->id !!}' src='/img/newGraphics/cobrar_coins.png' />
+                    <!--<img id='imgcoin{!! $feed->id !!}' src='/img/newGraphics/cobrar_coins.png' />-->
+                    Cobrar mis coins
                   </span><!-- /span #estado_+feed_id -->
 							  </span>
 
               </div><!-- /div .list-group-item .panel-footer -->
             </div><!-- /div .list-group -->
-          </div><!-- /div .list-group -->
 
-          <div class="list-group">
-          </div><!-- /div .list-group -->
+
+
+
 
         </div><!-- /div .col-md8-sm12-xs12 -->
 
-        <div class="col-md-4 col-sm-12 col-xs-12">
-          <div class="list-group">
-          </div><!-- /div .list-group -->
-        </div><!-- /div .col-md4-sm12-xs12 -->
+
+
+
+        <div class="col-md-3 col-sm-12 col-xs-12">
+          @include('feeds.indexPartial.sectionRight')
+        </div><!-- /div .col-md3-sm12-xs12 -->
 
       </div><!-- /div .row -->
     </div><!-- /div #contentMiddle -->
