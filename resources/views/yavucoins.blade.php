@@ -9,28 +9,25 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Creative - Start Bootstrap Theme</title>
+    @section('favicon') {!!Html::favicon('favicons/changeFaviconNameHere.png')!!} @stop
+    @section('title') YavuCoins @stop
+
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+       {!!Html::style('css/bootstrap.min.css')!!}
+
 
     <!-- Custom Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+    {!!Html::style('font-awesome/css/font-awesome.min.css')!!}
 
     <!-- Plugin CSS -->
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+     {!!Html::style('css/magnific-popup.css')!!}
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/creative.css" type="text/css">
+    {!!Html::style('css/creative.css')!!}
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
@@ -46,17 +43,21 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand page-scroll" href="/">Inicio</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+
                     <li>
-                        <a class="page-scroll" href="#about">YavuCoins</a>
+                        <a class="page-scroll" href="#page-top">Arriba</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Que son?</a>
+                        <a class="page-scroll" href="#about">Qué son?</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">Cómo funcionan?</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#portfolio">Empresas Asociadas</a>
@@ -79,10 +80,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">We've got what you need!</h2>
+                    <h2 class="section-heading">Qué son?</h2>
                     <hr class="light">
-                    <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-                    <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>
+                    <p class="text-faded">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                   
                 </div>
             </div>
         </div>
@@ -92,39 +104,25 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">At Your Service</h2>
+                    <h2 class="section-heading">Cómo funcionan?</h2>
                     <hr class="primary">
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 text-center">
+                <div class='col-md-6 col-sm-12 col-xs-12' align='middle'>
                     <div class="service-box">
-                        <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
-                        <h3>Sturdy Templates</h3>
-                        <p class="text-muted">Our templates are updated regularly so they don't break.</p>
+                        <img src="/img/newGraphics/neo_icono_comercio02.png" class="img-responsive">
+                        <h3>Acumula tus coins</h3>
+                        <p class="text-muted">Acumula nuestras Yavü Coins en las publicaciones de las empresas.</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 text-center">
+                <div class='col-md-6 col-sm-12 col-xs-12' align='middle'>
                     <div class="service-box">
-                        <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
-                        <h3>Ready to Ship</h3>
-                        <p class="text-muted">You can use this theme as is, or you can make changes!</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
-                        <h3>Up to Date</h3>
-                        <p class="text-muted">We update dependencies to keep things fresh.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
-                        <h3>Made with Love</h3>
-                        <p class="text-muted">You have to make your websites with love these days!</p>
+                        <img src="/img/newGraphics/neo_icono_conoce_empresa.png" class="img-responsive">
+                        <h3>Participa por sorteos</h3>
+                        <p class="text-muted">Compra Tickets con tus Coins y úsalos en los sorteos.</p>
                     </div>
                 </div>
             </div>
@@ -140,10 +138,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    Empresa 1
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Nombre Empresa 1
                                 </div>
                             </div>
                         </div>
@@ -155,10 +153,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    Empresa 2
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Nombre Empresa 2
                                 </div>
                             </div>
                         </div>
@@ -170,10 +168,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    Empresa 3
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Nombre Empresa 3
                                 </div>
                             </div>
                         </div>
@@ -185,10 +183,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    Empresa 4
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Nombre Empresa 4
                                 </div>
                             </div>
                         </div>
@@ -200,10 +198,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    Empresa 5
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Nombre empresa 5
                                 </div>
                             </div>
                         </div>
@@ -215,10 +213,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    Empresa 6
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Nombre Empresa 6
                                 </div>
                             </div>
                         </div>
@@ -228,26 +226,16 @@
         </div>
     </section>
 
-    <aside class="bg-dark">
+    <aside class="bg-primary">
         <div class="container text-center">
             <div class="call-to-action">
-                <h2>Registrate Hoy!</h2>
-                <a href="http://startbootstrap.com/template-overviews/creative/" class="btn btn-default btn-xl sr-button"></a>
+                <h2>Regístrate Hoy!</h2>
+                <a href="/login" class="btn btn-default btn-xl sr-button">Click Acá</a>
             </div>
         </div>
     </aside>
 
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Registrate Hoy!</h2>
-                    <hr class="primary">
-                   
-                </div>
-            </div>
-        </div>
-    </section>
+   
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
