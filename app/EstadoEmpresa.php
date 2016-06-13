@@ -7,6 +7,6 @@ class EstadoEmpresa extends Model
     protected $fillable = array('user_id','empresa_id','status');
 
     public function estado_empresa(){
-        return $this->belongsTo(Empresa::class, 'empresa_id');
+        return $this->belongsTo(Empresa::class, 'empresa_id')->select('nombre','imagen_perfil');
     }
 }
