@@ -14,12 +14,12 @@
 			</div><!-- /div .col-md12-sm12-xs12 -->
 
 			<!-- panel izquierdo -->
-			<div class="col-md-4 col-sm-12 col-xs-12">
+			<div class="col-md-3 col-sm-12 col-xs-12">
 				@include('feeds.indexPartial.sectionLeft')
 			</div><!-- /div .col-md4-sm12-xs12 -->
 
 			<!-- panel central -->
-			<div class="col-md-5 col-sm-12 col-xs-12">
+			<div class="col-md-6 col-sm-12 col-xs-12">
 				@include('feeds.indexPartial.sectionCenter')
 			</div><!-- /div .col-md5-sm12-xs12 -->
 
