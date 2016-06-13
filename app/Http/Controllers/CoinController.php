@@ -19,10 +19,10 @@ class CoinController extends Controller{
   public function __construct(){
 
     if(Auth::user()->check()){
-      $this->user = User::find(Auth::user()->get()->id);
+      $this->user = User::findOrFail(Auth::user()->get()->id);
     }
     if(Auth::admin()->check()){
-      $this->admin = Admin::find(Auth::admin()->get()->id);
+      $this->admin = Admin::findOrFail(Auth::admin()->get()->id);
     }
   }
   public function index(){

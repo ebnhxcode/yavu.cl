@@ -15,8 +15,8 @@ class EstadoController extends Controller
     public function __construct(){
         $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
     }
-    public function find(Route $route){
-        $this->user = User::find($route->getParameter('usuarios'));
+    public function findOrFail(Route $route){
+        $this->user = User::findOrFail($route->getParameter('usuarios'));
     }    
     public function index()
     {

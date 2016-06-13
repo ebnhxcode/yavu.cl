@@ -12,7 +12,7 @@
                 <img width="80%" src= "{!!URL::to('img/newGraphics/neo_icono_config.png')!!}"/>
               </a><!-- /a .list-group-item .info styled -->
             </div><!-- /div aligned -->
-            <div align="center"><small>Configuraciones</small></div>
+            <div align="center"><small>Opciones</small></div>
           </div><!-- /div .list-group -->
         </div><!-- /div .col-md4-sm-4-xs6 -->
 

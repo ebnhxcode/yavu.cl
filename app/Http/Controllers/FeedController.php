@@ -23,7 +23,7 @@ FeedController extends Controller{
 
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
     if(Auth::user()->check()){
-      $this->user = User::find(Auth::user()->get()->id);
+      $this->user = User::findOrFail(Auth::user()->get()->id);
     }
   }
 
@@ -72,44 +72,49 @@ FeedController extends Controller{
     }
   }
   public function edit($id){
-    return view('feeds.edit', ['feed' => EstadoEmpresa::find($id), 'mostrarbanner' => $this->MostrarBannerPublico()]);
+    return view('feeds.edit', ['feed' => EstadoEmpresa::findOrFail($id), 'mostrarbanner' => $this->MostrarBannerPublico()]);
   }
   public function EliminarFeed($id){
 
     if(isset($id) && $id !== ""){
       $id = addslashes($id);
-      $feed = EstadoEmpresa::find($id);
+      $feed = EstadoEmpresa::findOrFail($id);
       $feed->delete();
       return response()->json(["Mensaje: " => "Eliminado"]);
     }
   }
-  public function find(Route $route){
-    $this->feed = Feed::find($route->getParameter('feeds'));
+  public function findOrFail(Route $route){
+    $this->feed = Feed::findOrFail($route->getParameter('feeds'));
     //return $this->user;
   }
   public function index(){
 
+    dd(DB::select('estado_empresas')->select());
+
     if(count($this->user->empresas)>0){
       $this->user_id = $this->user->empresas[0]->user_id; $this->id = $this->user->empresas[0]->id;
-      return view('feeds.index', ['user_id' => $this->user_id], ['empresa_id' => $this->id, 'mostrarbanner' => $this->MostrarBannerPublico(), 'feeds' => EstadoEmpresa::paginate(5)] );
+      $this->companyState = "";//call();
+
+
+
+      return view('feeds.index', ['user_id' => $this->user_id], ['empresa_id' => $this->id, 'mostrarbanner' => $this->MostrarBannerPublico(), 'feeds' => EstadoEmpresa::paginate(20)] );
     }else{
       return view('feeds.index');
     }
   }
   public function MostrarBannerPublico(){
-
-        return DB::table('empresas')
-            ->select(['empresas.nombre', 'banner_data.id', 'banner_data.banner', 'banner_data.titulo_banner','banner_data.descripcion_banner', 'banner_data.estado_banner'])
-            ->where('estado_banner', '=', 'Creado')
-            ->join('banner_data', 'banner_data.id', '=', 'empresas.id')
-            ->orderByRaw("RAND()")
-            ->take(3)
-            ->get();
+    return DB::table('empresas')
+      ->select(['empresas.nombre', 'banner_data.id', 'banner_data.banner', 'banner_data.titulo_banner','banner_data.descripcion_banner', 'banner_data.estado_banner'])
+      ->where('estado_banner', '=', 'Creado')
+      ->join('banner_data', 'banner_data.id', '=', 'empresas.id')
+      ->orderByRaw("RAND()")
+      ->take(3)
+      ->get();
   }
   public function show($id){
 
-    $this->EmpresaEstado = EstadoEmpresa::find($id)->estado_empresa()->get();
-    return view('feeds.show', ['feed' => EstadoEmpresa::find($id)], ['EmpresaEstado' => $this->EmpresaEstado,  'mostrarbanner' => $this->MostrarBannerPublico()]);
+    $this->EmpresaEstado = EstadoEmpresa::findOrFail($id)->estado_empresa()->get();
+    return view('feeds.show', ['feed' => EstadoEmpresa::findOrFail($id)], ['EmpresaEstado' => $this->EmpresaEstado,  'mostrarbanner' => $this->MostrarBannerPublico()]);
 
 
   }
@@ -120,7 +125,7 @@ FeedController extends Controller{
       //return response()->json(["Mensaje: " => "Creado"]);
   }
   public function update(FeedUpdateRequest $request, $id){
-    $this->feed = EstadoEmpresa::find($id);
+    $this->feed = EstadoEmpresa::findOrFail($id);
     $this->feed->fill($request->all());
     $this->feed->save();
     Session::flash('message', 'Feed editado correctamente');

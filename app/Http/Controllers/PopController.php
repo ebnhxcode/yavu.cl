@@ -15,11 +15,11 @@ class PopController extends Controller{
   public function __construct(){
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
     if(Auth::user()->check()){
-      $this->user = User::find(Auth::user()->get()->id);
+      $this->user = User::findOrFail(Auth::user()->get()->id);
     }
   }
-  public function find(Route $route){
-    $this->pop = Pop::find($route->getParameter('pops'));
+  public function findOrFail(Route $route){
+    $this->pop = Pop::findOrFail($route->getParameter('pops'));
     //return $this->user;
   }
   public function index(){

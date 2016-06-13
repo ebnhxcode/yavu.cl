@@ -27,7 +27,7 @@ class SorteoController extends Controller{
 
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy', 'show']]);
     if(Auth::user()->check()){
-      $this->user = User::find(Auth::user()->get()->id);
+      $this->user = User::findOrFail(Auth::user()->get()->id);
     }
 
   }
@@ -86,7 +86,7 @@ class SorteoController extends Controller{
   }
 
   public function ContarTicketsEnSorteo($id){
-    return response()->json(Sorteo::find($id)->participante_sorteos);
+    return response()->json(Sorteo::findOrFail($id)->participante_sorteos);
   }
   public function create(){
     $empresa = Empresa::where('user_id', $this->user->id)->get();
@@ -116,8 +116,8 @@ class SorteoController extends Controller{
     Session::flash('message-warning', 'Creemos que te haz equivocado esta vez, para crear un sorteo debes tener una empresa creada, si es así haz click <a class="btn-success btn-xs" href="/sorteos/create">AQUI</a>, si no tienes una empresa puedes hacer click <a class="btn-success btn-xs" href="/empresas/create">AQUI</a> para crear una');
     return Redirect::to('/dashboard');
   }
-  public function find(Route $route){
-      $this->sorteo = Sorteo::find($route->getParameter('sorteos'));
+  public function findOrFail(Route $route){
+      $this->sorteo = Sorteo::findOrFail($route->getParameter('sorteos'));
   }
 
   private function getMyCoins(){
@@ -146,7 +146,7 @@ class SorteoController extends Controller{
     }
 
   public function MostrarGanador($ganador){
-    $ganador = ParticipanteSorteo::find($ganador)->users;
+    $ganador = ParticipanteSorteo::findOrFail($ganador)->users;
     return response()->json(['nombre'=>$ganador->nombre, 'apellido'=>$ganador->apellido]);
   }
   public function RegistrarGanadorSorteo($ganador){
@@ -166,7 +166,7 @@ class SorteoController extends Controller{
 
       $this->ganador = User::where('id', $this->sorteado->user_id)->get();
 
-      $this->sorteo = Sorteo::find($this->sorteado->sorteo_id);
+      $this->sorteo = Sorteo::findOrFail($this->sorteado->sorteo_id);
       $this->sorteo->estado_sorteo = 2;
       $this->sorteo->save();
 
@@ -224,14 +224,14 @@ class SorteoController extends Controller{
   }
   public function VisualizarEmpresaSorteoPendiente(Request $request){
     if($request->ajax()){
-      return response()->json(Empresa::find(addslashes($request->id)));
+      return response()->json(Empresa::findOrFail(addslashes($request->id)));
     }else{
       response()->json(['Mensaje: ', 'Acceso denegado']);
     }
   }
   public function AprobarSorteoPendiente(Request $request){
     if($request->ajax()){
-      $this->sorteo = Sorteo::find(addslashes($request->id));
+      $this->sorteo = Sorteo::findOrFail(addslashes($request->id));
 
       if($this->sorteo->estado_sorteo == 'Pendiente'){
         $this->sorteo->estado_sorteo = '1';
@@ -269,7 +269,7 @@ previa confirmación por parte del equipo <a href="/">Yavu.cl</a>. Miralo <a hre
       if($this->getMyTickets() > 0){
 
 
-        $this->sorteo = Sorteo::find(addslashes($sorteo_id));
+        $this->sorteo = Sorteo::findOrFail(addslashes($sorteo_id));
 
         if($this->sorteo->user_id != $this->user->id){
 
@@ -280,7 +280,7 @@ previa confirmación por parte del equipo <a href="/">Yavu.cl</a>. Miralo <a hre
 
             //Ahora rindo el ticket
 
-            $this->sorteo = Sorteo::find($sorteo_id);
+            $this->sorteo = Sorteo::findOrFail($sorteo_id);
 
             $this->participante_sorteos = new ParticipanteSorteo(['user_id' => $user_id,'sorteo_id' => $sorteo_id,'nombre_sorteo' => $this->sorteo->nombre_sorteo,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
             $this->user->participante_sorteos()->save($this->participante_sorteos);

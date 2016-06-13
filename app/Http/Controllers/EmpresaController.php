@@ -19,12 +19,12 @@ class EmpresaController extends Controller{
   public function __construct(){
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
     if(Auth::user()->check()){
-      $this->user = User::find(Auth::user()->get()->id);
+      $this->user = User::findOrFail(Auth::user()->get()->id);
       $this->empresa = Empresa::where('user_id', $this->user->id);
     }
   }
-  public function find(Route $route){
-    $this->empresa = Empresa::find($route->getParameter('empresas'));
+  public function findOrFail(Route $route){
+    $this->empresa = Empresa::findOrFail($route->getParameter('empresas'));
   }
   public function index(Request $request){
     return view('empresas.index', ['empresas' => Empresa::paginate(14)], ['mostrarbanner' => $this->MostrarBannerPublico()]);
@@ -103,7 +103,7 @@ class EmpresaController extends Controller{
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function show($id){
-    $this->empresa = Empresa::find($id);
+    $this->empresa = Empresa::findOrFail($id);
     if ($this->empresa) {
       return $this->MostrarEmpresaPublica($this->empresa->nombre);
     }else{
@@ -159,7 +159,7 @@ class EmpresaController extends Controller{
         $this->visita->save();
       }
 
-      $mapa = Empresa::find($empresa[0]->id)->gmaps;
+      $mapa = Empresa::findOrFail($empresa[0]->id)->gmaps;
 
       if($mapa){
         return view('empresas.publicProfile', compact('empresa'), compact('mapa'));
@@ -172,7 +172,7 @@ class EmpresaController extends Controller{
   public function RaffleList($empresa){
       $empresa = addslashes($empresa);
       $this->empresa = Empresa::where('nombre', $empresa)->get();
-      $this->user = User::find($this->empresa[0]->user_id);
+      $this->user = User::findOrFail($this->empresa[0]->user_id);
       return view('empresas.raffleList', ['sorteos' => $this->user->sorteos()->get()->where('estado_sorteo', 'Activo')], ['empresa' => $this->empresa]);
 
 

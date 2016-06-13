@@ -15,8 +15,8 @@ class PreguntaController extends Controller{
   public function __construct(){
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
   }
-  public function find(Route $route){
-    $this->pregunta = Pregunta::find($route->getParameter('preguntas'));
+  public function findOrFail(Route $route){
+    $this->pregunta = Pregunta::findOrFail($route->getParameter('preguntas'));
   }
   public function index(){
     $preguntas = Pregunta::paginate(5);

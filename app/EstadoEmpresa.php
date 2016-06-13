@@ -9,4 +9,6 @@ class EstadoEmpresa extends Model
     public function estado_empresa(){
         return $this->belongsTo(Empresa::class, 'empresa_id')->select('nombre','imagen_perfil');
     }
+
+
 }

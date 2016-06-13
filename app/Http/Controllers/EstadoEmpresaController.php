@@ -18,9 +18,9 @@ class EstadoEmpresaController extends Controller{
     }
     Redirect::to("/");
   }
-  public function find(Route $route){
+  public function findOrFail(Route $route){
     if(Auth::user()->check()){
-      $this->user = User::find($route->getParameter('usuarios'));
+      $this->user = User::findOrFail($route->getParameter('usuarios'));
     }
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }

@@ -16,7 +16,7 @@ use DB;
 class InteraccionEstadoController extends Controller{
   public function __construct(){
     if(Auth::user()->check()){
-      $this->user = User::find(Auth::user()->get()->id);
+      $this->user = User::findOrFail(Auth::user()->get()->id);
     }
   }
   public function index(){
@@ -67,7 +67,7 @@ class InteraccionEstadoController extends Controller{
           'updated_at' => strftime("%Y-%m-%d-%H-%M-%S", time())]
       );
 
-      $this->interaccion = EstadoEmpresa::find(addslashes($request->status_id));
+      $this->interaccion = EstadoEmpresa::findOrFail(addslashes($request->status_id));
 
       if($this->interaccion->user_id == $this->user->id){
 

@@ -35,8 +35,8 @@ class EventoController extends Controller{
     }
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
-  public function find(Route $route){
-    $this->evento = Evento::find($route->getParameter('eventos'));
+  public function findOrFail(Route $route){
+    $this->evento = Evento::findOrFail($route->getParameter('eventos'));
   }
   public function index(){
     if(Auth::admin()->check()){

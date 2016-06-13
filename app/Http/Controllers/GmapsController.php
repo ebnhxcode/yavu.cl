@@ -21,8 +21,8 @@ class GmapsController extends Controller{
   }
   public function edit($id){
   }
-  public function find(Route $route){
-    $this->gmap = Gmap::find($route->getParameter('gmaps'));
+  public function findOrFail(Route $route){
+    $this->gmap = Gmap::findOrFail($route->getParameter('gmaps'));
   }
   public function index(){
   }
@@ -41,12 +41,12 @@ class GmapsController extends Controller{
             'lng' => $request->lng,
             'updated_at' => Carbon::now(),
           ]);
-        $empresa = Empresa::find($request->empresa_id);
+        $empresa = Empresa::findOrFail($request->empresa_id);
         Session::flash('message', 'Mapa modificado correctamente');
         return Redirect::to('/empresa/'.$empresa->nombre);
       }else{
         Gmap::create($request->all());
-        $empresa = Empresa::find($request->empresa_id);
+        $empresa = Empresa::findOrFail($request->empresa_id);
         Session::flash('message', 'Mapa registrado correctamente');
         return Redirect::to('/empresa/'.$empresa->nombre);
       }
@@ -57,7 +57,7 @@ class GmapsController extends Controller{
     $this->gmap->fill($request->all());
     $this->gmap->save();
     Session::flash('message', 'Mapa modificado correctamente');
-    $empresa = Empresa::find($request->empresa_id);
+    $empresa = Empresa::findOrFail($request->empresa_id);
     return Redirect::to('/empresa/'.$empresa->nombre);
   }
 }
