@@ -38,8 +38,8 @@
                         <!--(user_id==value.user_id?"<li><a onclick='eliminarEstado("+value.id+",0)' href='#!'>Ocultar estado</a></li>":"")-->
                         <!--(user_id==value.user_id?"<li><a href='/feeds/"+value.id+"/edit'>Editar publicaci&oacute;n</a></li>":"")-->
                       </ul><!-- /ul .dropdown-menu -->
-                    </div><!-- /div dropdown -->
-                  </div><!-- /div dropdown -->
+                    </div><!-- /div .dropdown -->
+                  </div><!-- /div .dropdown -->
 
                   <div class="media-heading">
                     <strong><a href="/empresa/{!! $EmpresaEstado[0]->nombre !!}" style="color: #3C5B28;">{!! $EmpresaEstado[0]->nombre !!}</a></strong>
