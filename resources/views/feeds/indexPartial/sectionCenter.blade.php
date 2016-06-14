@@ -53,7 +53,13 @@
           <div style="padding-top: 15px;" name='megusta' class=''>
             <!--<img id='imgcoin{!! $companyStatus->id !!}' src='/img/newGraphics/cobrar_coins.png' />-->
 
-            <small><span onclick='Interactuar(this.id)' id='estado_{!! $companyStatus->id !!}' value='e{!! $companyStatus->companyPostAuthor->id !!}' class="btn btn-warning btn-xs">Cobrar mis coins</span></small>
+            <small>
+              <span onclick='Interactuar(this.id)' id='estado_{!! $companyStatus->id !!}' value='e{!! $companyStatus->companyPostAuthor->id !!}' class="btn btn-warning btn-xs">
+
+                Cobrar mis coins
+
+              </span>
+            </small>
 
           </div><!-- /div #estado_+feed_id -->
         </div><!-- /div .col-md11-sm12-xs12 -->

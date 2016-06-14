@@ -97,7 +97,7 @@ FeedController extends Controller{
 
       return view('feeds.index', ['companyStatuses' => EstadoEmpresa::orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas] ); //cambiar EstadoEmpresa por CompanyStatus
     }else{
-      return view('feeds.index', ['companyStatuses' => EstadoEmpresa::paginate(10)]);
+      return view('feeds.index', ['companyStatuses' => EstadoEmpresa::paginate(8)]);
     }
   }
   public function MostrarBannerPublico(){

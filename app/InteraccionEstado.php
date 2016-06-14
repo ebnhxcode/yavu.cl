@@ -9,6 +9,9 @@ class InteraccionEstado extends Model
   public function interactions(){
     return $this->belongsTo(Empresa::class);
   }
-  
+
+  public function interactionForPost(){
+    return $this->belongsTo(EstadoEmpresa::class);
+  }
 
 }

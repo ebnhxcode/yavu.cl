@@ -98,9 +98,11 @@
 				empresa_id: e_id
 			},
 			success:function(){
-				$('#'+valor).addClass("text-info").fadeIn();
-				console.log('exito');
-				ContarInteracciones(status_id);
+				$('#'+valor).removeClass("btn-warning");
+				$('#'+valor).addClass("btn-default");
+				console.log(valor);
+				//console.log('exito');
+				//ContarInteracciones(status_id);
 				ContarNotificaciones();
 				ContarCoins();
 			}
