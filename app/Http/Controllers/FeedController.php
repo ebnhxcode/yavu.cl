@@ -83,23 +83,22 @@ FeedController extends Controller{
       return response()->json(["Mensaje: " => "Eliminado"]);
     }
   }
-  public function findOrFail(Route $route){
+  public function find(Route $route){
     $this->feed = Feed::findOrFail($route->getParameter('feeds'));
     //return $this->user;
   }
   public function index(){
 
-    dd(DB::select('estado_empresas')->select());
+
+
 
     if(count($this->user->empresas)>0){
       $this->user_id = $this->user->empresas[0]->user_id; $this->id = $this->user->empresas[0]->id;
-      $this->companyState = "";//call();
 
 
-
-      return view('feeds.index', ['user_id' => $this->user_id], ['empresa_id' => $this->id, 'mostrarbanner' => $this->MostrarBannerPublico(), 'feeds' => EstadoEmpresa::paginate(20)] );
+      return view('feeds.index', ['companyStatuses' => EstadoEmpresa::paginate(10), 'myCompanies' => $this->user->empresas] ); //cambiar EstadoEmpresa por CompanyStatus
     }else{
-      return view('feeds.index');
+      return view('feeds.index', ['companyStatuses' => EstadoEmpresa::paginate(10)]);
     }
   }
   public function MostrarBannerPublico(){

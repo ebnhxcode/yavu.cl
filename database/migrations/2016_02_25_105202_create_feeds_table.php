@@ -7,8 +7,9 @@ class CreateFeedsTable extends Migration
     {
         Schema::create('feeds', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('titulo');
-            $table->string('descripcion', 500);
+            $table->string('user_id','20');
+            $table->string('empresa_id','20');
+            $table->string('status', 500);
             $table->timestamps();
         });
     }

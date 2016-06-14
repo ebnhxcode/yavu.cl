@@ -23,7 +23,7 @@ class EmpresaController extends Controller{
       $this->empresa = Empresa::where('user_id', $this->user->id);
     }
   }
-  public function findOrFail(Route $route){
+  public function find(Route $route){
     $this->empresa = Empresa::findOrFail($route->getParameter('empresas'));
   }
   public function index(Request $request){
