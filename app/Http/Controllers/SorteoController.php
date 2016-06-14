@@ -116,7 +116,7 @@ class SorteoController extends Controller{
     Session::flash('message-warning', 'Creemos que te haz equivocado esta vez, para crear un sorteo debes tener una empresa creada, si es así haz click <a class="btn-success btn-xs" href="/sorteos/create">AQUI</a>, si no tienes una empresa puedes hacer click <a class="btn-success btn-xs" href="/empresas/create">AQUI</a> para crear una');
     return Redirect::to('/dashboard');
   }
-  public function findOrFail(Route $route){
+  public function find(Route $route){
       $this->sorteo = Sorteo::findOrFail($route->getParameter('sorteos'));
   }
 

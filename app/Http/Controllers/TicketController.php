@@ -47,7 +47,7 @@ class TicketController extends Controller{
     }
     return response()->json(['Mensaje: ' => 'Acceso inconrrecto']);
   }
-  public function findOrFail(Route $route){
+  public function find(Route $route){
     $this->ticket = Ticket::findOrFail($route->getParameter('tickets'));
   }
   public function history(){

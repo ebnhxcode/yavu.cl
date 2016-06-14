@@ -30,7 +30,7 @@ class AdminController extends Controller
 
         $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
     }
-    public function findOrFail(Route $route){
+    public function find(Route $route){
     $this->admin = Admin::findOrFail($route->getParameter('admins'));
     //return $this->user;
     }    

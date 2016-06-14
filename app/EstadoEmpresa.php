@@ -13,5 +13,6 @@ class EstadoEmpresa extends Model
       return $this->belongsTo(Empresa::class, 'empresa_id')->select('id', 'nombre', 'imagen_perfil');
     }
 
+    
 
 }

@@ -33,7 +33,7 @@ class PagoController extends Controller{
     }
     return response()->json('Acceso denegado');
   }
-  public function findOrFail(Route $route){
+  public function find(Route $route){
     $this->pago = Pago::findOrFail($route->getParameter('pagos'));
   }
   public function index(){

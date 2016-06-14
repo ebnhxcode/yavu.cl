@@ -18,7 +18,7 @@ class PopController extends Controller{
       $this->user = User::findOrFail(Auth::user()->get()->id);
     }
   }
-  public function findOrFail(Route $route){
+  public function find(Route $route){
     $this->pop = Pop::findOrFail($route->getParameter('pops'));
     //return $this->user;
   }

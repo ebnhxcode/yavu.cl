@@ -32,7 +32,7 @@ class RoleController extends Controller{
     }
     return response()->json('Acceso denegado');
   }
-  public function findOrFail(Route $route){
+  public function find(Route $route){
     $this->role = Role::findOrFail($route->getParameter('roles'));
   }
   public function index(){

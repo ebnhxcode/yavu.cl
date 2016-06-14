@@ -18,7 +18,7 @@ class BannerController extends Controller{
   public function __construct(){
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
   }
-  public function findOrFail(Route $route){
+  public function find(Route $route){
     if(Auth::admin()->check()){
       $this->banner = Banner::findOrFail($route->getParameter('banners'));
     }

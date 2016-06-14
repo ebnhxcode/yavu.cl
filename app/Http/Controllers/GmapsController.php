@@ -21,7 +21,7 @@ class GmapsController extends Controller{
   }
   public function edit($id){
   }
-  public function findOrFail(Route $route){
+  public function find(Route $route){
     $this->gmap = Gmap::findOrFail($route->getParameter('gmaps'));
   }
   public function index(){

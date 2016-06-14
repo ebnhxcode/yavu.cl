@@ -16,7 +16,7 @@ class AlternativaController extends Controller
     public function __construct(){
         $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
     }
-    public function findOrFail(Route $route){
+    public function find(Route $route){
         $this->alternativa = Alternativa::findOrFail($route->getParameter('alternativas'));
     }        
     public function index()

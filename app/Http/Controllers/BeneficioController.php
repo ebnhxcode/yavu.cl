@@ -15,7 +15,7 @@ class BeneficioController extends Controller{
   public function __construct(){
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
   }
-  public function findOrFail(Route $route){
+  public function find(Route $route){
     if(Auth::admin()->check()){
       $this->beneficio = Beneficio::findOrFail($route->getParameter('beneficios'));
     }
