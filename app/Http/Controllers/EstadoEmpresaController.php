@@ -27,7 +27,6 @@ class EstadoEmpresaController extends Controller{
   public function store(Request $request){
     EstadoEmpresa::create($request->all());
     return redirect()->to('/feeds');
-
   }
   public function CargarEstadoEmpresa($idUltima, $empresa){
     if(isset($idUltima) && isset($empresa)){

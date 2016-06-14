@@ -50,10 +50,10 @@
           </div><!-- /div .media-heading -->
           {!! $companyStatus->status !!}
           <br>
-          <div style="padding-top: 15px;" name='megusta' class='' onclick='Interactuar({!! $companyStatus->id !!})' id='estado_{!! $companyStatus->id !!}' value='e{!! $companyStatus->companyPostAuthor->id !!}'>
+          <div style="padding-top: 15px;" name='megusta' class=''>
             <!--<img id='imgcoin{!! $companyStatus->id !!}' src='/img/newGraphics/cobrar_coins.png' />-->
 
-            <small class="btn btn-warning btn-xs">Cobrar mis coins</small>
+            <small><span onclick='Interactuar(this.id)' id='estado_{!! $companyStatus->id !!}' value='e{!! $companyStatus->companyPostAuthor->id !!}' class="btn btn-warning btn-xs">Cobrar mis coins</span></small>
 
           </div><!-- /div #estado_+feed_id -->
         </div><!-- /div .col-md11-sm12-xs12 -->
