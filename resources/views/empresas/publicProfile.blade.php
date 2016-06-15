@@ -35,7 +35,7 @@
                         <img id="ImagenPerfil" src="/img/users/{!!$e->imagen_perfil!!}" class="center-block" class="thumbnail" class="img-rounded" width="300px" height="100px" class="img-responsive" >
                       @endif
 
-                        {!! Form::hidden('company_id', $e->id) !!}
+                        {!! Form::hidden('company_id', $e->id, ['id' => 'company_id']) !!}
 
                       <div class="caption">
                         @if(Auth::user()->check())
