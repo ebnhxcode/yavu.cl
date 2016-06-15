@@ -92,13 +92,11 @@ FeedController extends Controller{
     $this->companyStatus = new EstadoEmpresa();
 
 
-
     if(count($this->user->empresas)>0){
       $this->user_id = $this->user->empresas[0]->user_id; $this->id = $this->user->empresas[0]->id;
-
-      return view('feeds.index', ['companyStatuses' => EstadoEmpresa::orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas] ); //cambiar EstadoEmpresa por CompanyStatus
+      return view('feeds.index', ['companyStatuses' => EstadoEmpresa::orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas, 'userSession' => $this->user] ); //cambiar EstadoEmpresa por CompanyStatus
     }else{
-      return view('feeds.index', ['companyStatuses' => EstadoEmpresa::paginate(8)]);
+      return view('feeds.index', ['companyStatuses' => EstadoEmpresa::orderBy('created_at', 'desc')->paginate(10), 'userSession' => $this->user]);
     }
   }
   public function MostrarBannerPublico(){

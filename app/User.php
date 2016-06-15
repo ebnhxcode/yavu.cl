@@ -71,5 +71,9 @@ class User extends Model implements AuthenticatableContract,
 		return $this->hasMany(Sorteo::class);
 	}
 
+	public function coinsRewarded(){
+		return $this->hasMany(InteraccionEstado::class, 'user_id');
+	}
+
 	
 }

@@ -11,7 +11,7 @@
 
         <div class="row">
           <div class="col-md-1 col-sm-12 col-xs-12" style="padding-bottom: 10px;">
-            <img class='media-object' src='/img/users/{!! $myCompanies[0]->imagen_perfil !!}' data-holder-rendered='true' style='width: 36px; height: 36px; border-radius: 10%; float:left;'/>
+            <img class='media-object' src='/img/users/{!! ($myCompanies[0]->imagen_perfil!='')?$myCompanies[0]->imagen_perfil:'usuario_nuevo.png' !!}' data-holder-rendered='true' style='width: 36px; height: 36px; border-radius: 10%; float:left;'/>
           </div>
           <div class="col-md-11 col-sm-12 col-xs-12">
             {!!Form::open(['route'=>'estadoempresa.store', 'method'=>'POST'])!!}
@@ -37,7 +37,7 @@
       <div class="row">
         <div class="col-md-1 col-sm-offset-0 col-xs-offset-0">
           <a href="/empresa/{!! $companyStatus->companyPostAuthor->nombre !!}">
-            <img class='media-object' src='/img/users/{!! $companyStatus->companyPostAuthor->imagen_perfil !!}' data-holder-rendered='true' style='width: 36px; height: 36px; border-radius: 10%;'/>
+            <img class='media-object' src='/img/users/{!! ($companyStatus->companyPostAuthor->imagen_perfil!='')?$companyStatus->companyPostAuthor->imagen_perfil:'usuario_nuevo.png' !!}' data-holder-rendered='true' style='width: 36px; height: 36px; border-radius: 10%;'/>
           </a>
         </div><!-- /div .col-md1-sm-offset-12-xs-offset-12 -->
         <div class="col-md-11 col-sm-12 col-xs-12">
@@ -50,17 +50,21 @@
           </div><!-- /div .media-heading -->
           {!! $companyStatus->status !!}
           <br>
-          <div style="padding-top: 15px;" name='megusta' class=''>
-            <!--<img id='imgcoin{!! $companyStatus->id !!}' src='/img/newGraphics/cobrar_coins.png' />-->
-            <small>
-              <span onclick='Interactuar(this.id)' id='estado_{!! $companyStatus->id !!}' value='e{!! $companyStatus->companyPostAuthor->id !!}' class="btn {!! !isset($companyStatus->statusRewarded->user_id)?'btn-warning':'btn-default' !!} btn-xs">
-                {!! !isset($companyStatus->statusRewarded->user_id)?'Cobrar mis coins':'Cobrado' !!}
+            <div style="padding-top: 15px;" name='megusta' class=''>
+                <!--<img id='imgcoin{!! $companyStatus->id !!}' src='/img/newGraphics/cobrar_coins.png' />-->
+              <small>
+                @if($companyStatus->statusRewarded->id!=Auth::user()->get()->id)
+                  @if($cs = $companyStatus->interaction($userSession->id)->get())
+                    <span onclick='Interactuar(this.id)' id='estado_{!! $companyStatus->id !!}' value='e{!! $companyStatus->companyPostAuthor->id !!}' class="btn {!! count($cs)<1?'btn-warning':'btn-default' !!} btn-xs">
+                    {!! count($cs)<1?'Cobrar Coins':'Cobrados' !!}
+                  </span>
+                  @endif
+                @else
+                  <span class="text-info"><small>{!! $companyStatus->companyPostAuthor->nombre !!}</small></span>
+                @endif
+              </small>
 
-
-              </span>
-            </small>
-
-          </div><!-- /div #estado_+feed_id -->
+            </div><!-- /div #estado_+feed_id -->
         </div><!-- /div .col-md11-sm12-xs12 -->
       </div><!-- /div .row -->
     </div><!-- /div .list-group-item #publicacion+$companyStatus->id -->
