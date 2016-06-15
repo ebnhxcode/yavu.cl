@@ -2,7 +2,7 @@
 @section('title') {!! ($empresa[0]->nombre) !!} profile @stop
 {!!Html::script('js/jquery.js')!!}
 @if(Auth::user()->check())
-  {!!Html::script('js/ajax/GestionarEstadosEmpresa.js')!!}
+  {{-- {!!Html::script('js/ajax/GestionarEstadosEmpresa.js')!!} --}}
   {!!Html::script('js/ajax/SeguirEmpresa.js')!!}
 @endif
 <!-- AIzaSyCrcjogGTQUWUOD3Bvp-B1mVzUq0q6WMgU -->
