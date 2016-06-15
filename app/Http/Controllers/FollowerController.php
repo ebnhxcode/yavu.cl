@@ -12,7 +12,7 @@ use yavu\User;
 class FollowerController extends Controller{
   public function __construct(){
     if(Auth::user()->check()){
-      $this->user = User::find(Auth::user()->get()->id);
+      $this->user = User::findOrFail(Auth::user()->get()->id);
     }
   }
 

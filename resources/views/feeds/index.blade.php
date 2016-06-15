@@ -1,36 +1,40 @@
 @section('favicon') {!!Html::favicon('favicons/feed.png')!!} @stop
 @section('title') Feeds @stop
 {!!Html::script('js/jquery.js')!!}
-{!!Html::script('js/publicaciones/GestionarPublicacionesFeeds.js')!!}
-{!!Html::script('js/ajax/InteraccionPublicaciones.js')!!}
-@extends('layouts.front') 
+{{--{!!Html::script('js/publicaciones/GestionarPublicacionesFeeds.js')!!}--}}
+@extends('layouts.front')
 @section('content')
 <div class="jumbotron">
   <div id="contentMiddle">
-		<!--
-		<div style="font-size: 3em;">
-			<img width="64px" style="padding-bottom: 20px;" src= "{!!URL::to('img/newGraphics/neo_icono_publicaciones.png')!!}" /><span>Publicaciones</span>
-		</div>
-		-->
+
     <div class="row">
     	<div class="col-md-12 col-sm-12 col-xs-12">
 				@include('alerts.allAlerts')
-			</div>
+			</div><!-- /div .col-md12-sm12-xs12 -->
 
 			<!-- panel izquierdo -->
-			@include('feeds.forms.panelLeft')
+			<div class="col-md-4 col-sm-12 col-xs-12">
+				@include('feeds.indexPartial.sectionLeft')
+			</div><!-- /div .col-md4-sm12-xs12 -->
 
+			<!-- panel central -->
+			<div class="col-md-8 col-sm-12 col-xs-12">
+				@include('feeds.indexPartial.sectionCenter')
+			</div><!-- /div .col-md5-sm12-xs12 -->
+
+			<!-- panel derecho -->
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				{{-- @include('feeds.indexPartial.sectionRight') --}}
+			</div><!-- /div .col-md3-sm12-xs12 -->
+
+			<!-- variables hidden para forms -->
 			<input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
 			{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
 
-			<!-- panel derecho -->
-			@include('feeds.forms.panelRight')
 
-
-    </div><!-- /div row -->
-
-  </div><!-- /div contentMiddle -->
-</div>
+    </div><!-- /div .row -->
+  </div><!-- /div #contentMiddle -->
+</div><!-- /div .jumbotron -->
 @stop
 <script>
 	var formatNumber = {
@@ -94,9 +98,9 @@
 				empresa_id: e_id
 			},
 			success:function(){
-				$('#'+valor).addClass("text-info").fadeIn();
-				console.log('exito');
-				ContarInteracciones(status_id);
+				$('#'+valor).removeClass("btn-warning");
+				$('#'+valor).addClass("btn-default");
+				$('#'+valor).text('Cobrados');
 				ContarNotificaciones();
 				ContarCoins();
 			}

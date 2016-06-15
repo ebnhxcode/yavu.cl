@@ -10,4 +10,8 @@ class InteraccionEstado extends Model
     return $this->belongsTo(Empresa::class);
   }
 
+  public function interactionForPost(){
+    return $this->belongsTo(EstadoEmpresa::class);
+  }
+
 }

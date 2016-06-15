@@ -10,8 +10,7 @@ class FeedCreateRequest extends Request
     public function rules()
     {
         return [
-            'titulo' => 'required',
-            'descripcion' => 'required'
+            'status' => 'required'
         ];
     }
 }

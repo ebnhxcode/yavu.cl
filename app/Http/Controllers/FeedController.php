@@ -23,7 +23,7 @@ FeedController extends Controller{
 
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
     if(Auth::user()->check()){
-      $this->user = User::find(Auth::user()->get()->id);
+      $this->user = User::findOrFail(Auth::user()->get()->id);
     }
   }
 
@@ -58,7 +58,9 @@ FeedController extends Controller{
     return 'Cargar feeds empresa';
   }
   public function create(){
-    return Redirect::to('/');
+    return $this->index();
+    //falta terminar
+    //return view('feeds.create', ['mostrarbanner' => $this->MostrarBannerPublico()]);
   }
   public function destroy($id){
     return response()->json(["Mensaje: " => "Acceso denegado"]);
@@ -70,56 +72,53 @@ FeedController extends Controller{
     }
   }
   public function edit($id){
-    return view('feeds.edit', ['feed' => EstadoEmpresa::find($id)]);
+    return view('feeds.edit', ['feed' => EstadoEmpresa::findOrFail($id), 'mostrarbanner' => $this->MostrarBannerPublico()]);
   }
   public function EliminarFeed($id){
 
     if(isset($id) && $id !== ""){
       $id = addslashes($id);
-      $feed = EstadoEmpresa::find($id);
+      $feed = EstadoEmpresa::findOrFail($id);
       $feed->delete();
       return response()->json(["Mensaje: " => "Eliminado"]);
     }
   }
   public function find(Route $route){
-    $this->feed = Feed::find($route->getParameter('feeds'));
+    //$this->feed = Feed::findOrFail($route->getParameter('feeds'));
     //return $this->user;
   }
   public function index(){
-
     if(count($this->user->empresas)>0){
       $this->user_id = $this->user->empresas[0]->user_id; $this->id = $this->user->empresas[0]->id;
-      return view('feeds.index', ['user_id' => $this->user_id], ['empresa_id' => $this->id, 'mostrarbanner' => $this->MostrarBannerPublico()] );
+      return view('feeds.index', ['companyStatuses' => EstadoEmpresa::orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas, 'userSession' => $this->user] ); //cambiar EstadoEmpresa por CompanyStatus
     }else{
-      return view('feeds.index');
+      return view('feeds.index', ['companyStatuses' => EstadoEmpresa::orderBy('created_at', 'desc')->paginate(10), 'userSession' => $this->user]);
     }
   }
   public function MostrarBannerPublico(){
-
-        return DB::table('empresas')
-            ->select(['empresas.nombre', 'banner_data.id', 'banner_data.banner', 'banner_data.titulo_banner','banner_data.descripcion_banner', 'banner_data.estado_banner'])
-            ->where('estado_banner', '=', 'Creado')
-            ->join('banner_data', 'banner_data.id', '=', 'empresas.id')
-            ->orderByRaw("RAND()")
-            ->take(3)
-            ->get();
+    return DB::table('empresas')
+      ->select(['empresas.nombre', 'banner_data.id', 'banner_data.banner', 'banner_data.titulo_banner','banner_data.descripcion_banner', 'banner_data.estado_banner'])
+      ->where('estado_banner', '=', 'Creado')
+      ->join('banner_data', 'banner_data.id', '=', 'empresas.id')
+      ->orderByRaw("RAND()")
+      ->take(3)
+      ->get();
   }
   public function show($id){
 
-    $this->EmpresaEstado = EstadoEmpresa::find($id)->estado_empresa()->get();
-    return view('feeds.show', ['feed' => EstadoEmpresa::find($id)], ['EmpresaEstado' => $this->EmpresaEstado]);
+    $this->EmpresaEstado = EstadoEmpresa::findOrFail($id)->estado_empresa()->get();
+    return view('feeds.show', ['feed' => EstadoEmpresa::findOrFail($id)], ['EmpresaEstado' => $this->EmpresaEstado,  'mostrarbanner' => $this->MostrarBannerPublico()]);
 
 
   }
   public function store(FeedCreateRequest $request){
-    if(isset($request) && $request->ajax()){
-      EstadoEmpresa::create($request->all());
-      return response()->json(["Mensaje: " => "Creado"]);
-    }
-    return response()->json(["Mensaje: " => "Acceso denegado"]);
+
+    $this->estado = EstadoEmpresa::create($request->all());
+    return Redirect::to('/feeds/'.$this->estado->id);
+      //return response()->json(["Mensaje: " => "Creado"]);
   }
   public function update(FeedUpdateRequest $request, $id){
-    $this->feed = EstadoEmpresa::find($id);
+    $this->feed = EstadoEmpresa::findOrFail($id);
     $this->feed->fill($request->all());
     $this->feed->save();
     Session::flash('message', 'Feed editado correctamente');

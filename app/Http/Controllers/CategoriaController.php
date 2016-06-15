@@ -19,7 +19,7 @@ class CategoriaController extends Controller{
   }
   public function find(Route $route){
     if(Auth::user()->check()){
-      $this->categoria = Categoria::find($route->getParameter('categorias'));
+      $this->categoria = Categoria::findOrFail($route->getParameter('categorias'));
     }
     return Redirect::to("/");
     //return response()->json(["Mensaje: " => "Acceso denegado"]);

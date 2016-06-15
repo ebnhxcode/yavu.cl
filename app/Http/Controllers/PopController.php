@@ -15,15 +15,15 @@ class PopController extends Controller{
   public function __construct(){
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
     if(Auth::user()->check()){
-      $this->user = User::find(Auth::user()->get()->id);
+      $this->user = User::findOrFail(Auth::user()->get()->id);
     }
   }
   public function find(Route $route){
-    $this->pop = Pop::find($route->getParameter('pops'));
+    $this->pop = Pop::findOrFail($route->getParameter('pops'));
     //return $this->user;
   }
   public function index(){
-    return view('pops.index');
+    return view('pops.index', ['pops' => $this->user->pops()->paginate(10)]);
   }
   public function CargarPops($idUltima, $user_id, $tipo){
     if($tipo == 'todas'){

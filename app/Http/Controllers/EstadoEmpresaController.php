@@ -20,16 +20,13 @@ class EstadoEmpresaController extends Controller{
   }
   public function find(Route $route){
     if(Auth::user()->check()){
-      $this->user = User::find($route->getParameter('usuarios'));
+      $this->user = User::findOrFail($route->getParameter('usuarios'));
     }
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function store(Request $request){
-    if($request->ajax()){
-      EstadoEmpresa::create($request->all());
-      return response()->json(["Mensaje: " => "Creado"]);
-    }
-    return response()->json(["Mensaje: " => "Acceso denegado"]);
+    EstadoEmpresa::create($request->all());
+    return redirect()->to('/feeds');
   }
   public function CargarEstadoEmpresa($idUltima, $empresa){
     if(isset($idUltima) && isset($empresa)){

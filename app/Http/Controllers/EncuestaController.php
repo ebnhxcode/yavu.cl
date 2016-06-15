@@ -16,7 +16,7 @@ class EncuestaController extends Controller{
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
   }
   public function find(Route $route){
-    $this->encuesta = Encuesta::find($route->getParameter('encuestas'));
+    $this->encuesta = Encuesta::findOrFail($route->getParameter('encuestas'));
   }
   public function index(){
     $encuestas = Encuesta::paginate(5);

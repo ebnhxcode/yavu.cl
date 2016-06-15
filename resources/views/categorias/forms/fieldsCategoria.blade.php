@@ -10,6 +10,7 @@
                     ['Gastronomia' => 'Gastronomia',
                     'Tiempo libre' => 'Tiempo libre',
                     'Belleza' => 'Belleza',
+                    'Farmacias' => 'Farmacias',
                     'Bienestar' => 'Bienestar',
                     'Servicios' => 'Servicios',
                     'Tecnología' => 'Tecnología', 

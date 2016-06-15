@@ -31,7 +31,7 @@ class InteraccionController extends Controller{
     return view('interacciones.edit', ['interaccion' => $this->interaccion]);
   }
   public function find(Route $route){
-    $this->interaccion = Interaccion::find($route->getParameter('interacciones'));
+    $this->interaccion = Interaccion::findOrFail($route->getParameter('interacciones'));
   }
   public function index(){
     $interacciones = Interaccion::paginate(5);

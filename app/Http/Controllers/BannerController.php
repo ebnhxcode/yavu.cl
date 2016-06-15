@@ -20,7 +20,7 @@ class BannerController extends Controller{
   }
   public function find(Route $route){
     if(Auth::admin()->check()){
-      $this->banner = Banner::find($route->getParameter('banners'));
+      $this->banner = Banner::findOrFail($route->getParameter('banners'));
     }
     return Redirect::to("/");
     //return response()->json(["Mensaje: " => "Acceso denegado"]);

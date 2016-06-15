@@ -17,7 +17,7 @@ class BeneficioController extends Controller{
   }
   public function find(Route $route){
     if(Auth::admin()->check()){
-      $this->beneficio = Beneficio::find($route->getParameter('beneficios'));
+      $this->beneficio = Beneficio::findOrFail($route->getParameter('beneficios'));
     }
     return Redirect::to("/");
     //return response()->json(["Mensaje: " => "Acceso denegado"]);

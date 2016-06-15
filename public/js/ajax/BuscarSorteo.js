@@ -16,7 +16,7 @@ $(document).ready(function(){
   setInterval(function () {
     Limitador += 10;
     if(Limitador >= 500){
-      if(Limitador === 1000){
+      if(Limitador === 1050){
         ContarTicketsEnSorteos();
         ContarMisTicketsUsados();
         Limitador = 0;

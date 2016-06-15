@@ -109,7 +109,7 @@ class LogController extends Controller{
       }else{
         $sesion = Auth::user()->attempt(['email' => Input::get('email'), 'password' => Input::get('password'), 'estado' => 'activo']);
         if($sesion){
-          $this->user = User::find(Auth::user()->get()->id);
+          $this->user = User::findOrFail(Auth::user()->get()->id);
           $this->CargarCoinSesion();
           /*
           $this->coins = $this->user->registro_coins;

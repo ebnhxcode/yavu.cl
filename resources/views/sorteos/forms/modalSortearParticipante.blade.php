@@ -4,35 +4,26 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel"> Sortear al ganador </h4>
-      </div>
-
+      </div><!-- /div .modal-header -->
       <div class="modal-body" id="body-sorteo">
-
         <div class="row">
-
-          <div style="text-align: center;" class="col-md-8">
-            <h2><span id="Tiempo">¡Empezó el sorteo!</span></h2>
-            <div id="Detalles"></div>
-
-
-          </div>
-
-          <div style="text-align: center;" class="col-md-4">
+          <div style="text-align: center;" class="col-md-4 col-sm-12 col-xs-12">
             Premio:
-            @if($sorteo->imagen_sorteo === "")
-              <img class="img-responsive-centered" width="40%" src="https://tiendas-asi.com/wp-content/uploads/2015/04/sorteo-diariodebodas.jpg" alt="" />
-            @else
-              <img class="img-responsive-centered" src="/img/users/{!! $sorteo->imagen_sorteo !!}" alt="" />
-            @endif
-          </div>
-
-        </div>
-
-      </div>
-
+            <div class="thumbnail">
+              <img src='{!! isset($sorteo)?($sorteo->imagen_sorteo!='')?'/img/users/'.$sorteo->imagen_sorteo:'https://tiendas-asi.com/wp-content/uploads/2015/04/sorteo-diariodebodas.jpg':'' !!}' width=100%>
+            </div><!-- /div .thumbnail -->
+          </div><!-- /div .col-md4-sm12-xs12 -->
+          <div style="text-align: center;" class="col-md-8 col-sm-12 col-xs-12">
+            <h2>
+              <span id="Tiempo">¡Empezó el sorteo!</span><!-- /span #Tiempo -->
+            </h2>
+            <div id="Detalles"></div><!-- /div #Detalles -->
+          </div><!-- /div .col-md8-sm12-xs12 -->
+        </div><!-- /div .row -->
+      </div><!-- /div .modal-body -->
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
+      </div><!-- /div .modal-footer -->
+    </div><!-- /div .modal-content -->
+  </div><!-- /div .modal-dialog -->
+</div><!-- /div #ModalGanadorSorteo .modal .fade -->

@@ -31,7 +31,7 @@ class AdminController extends Controller
         $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
     }
     public function find(Route $route){
-    $this->admin = Admin::find($route->getParameter('admins'));
+    $this->admin = Admin::findOrFail($route->getParameter('admins'));
     //return $this->user;
     }    
     public function index()
@@ -57,13 +57,13 @@ class AdminController extends Controller
       
     public function bannercreate($empresa_id)
     {
-        $this->existeEmpresa = Empresa::find(addslashes($empresa_id));
+        $this->existeEmpresa = Empresa::findOrFail(addslashes($empresa_id));
         if($this->existeEmpresa){
 
             $this->bannerdata = BannerData::where('empresa_id', $empresa_id)->where('estado_banner', 'Creando')->get();
 
             if(count($this->bannerdata)>0){
-                return view('admins.banneradmin.bannercreate', ['bannerdata' => BannerData::find($this->bannerdata[0]->id)]);
+                return view('admins.banneradmin.bannercreate', ['bannerdata' => BannerData::findOrFail($this->bannerdata[0]->id)]);
             }else{
                 $this->bannerdata = new BannerData();
                 $this->bannerdata->empresa_id = addslashes($empresa_id);
@@ -79,7 +79,7 @@ class AdminController extends Controller
 
     public function bannerstore(Request $request){
 
-        $this->bannerdata = BannerData::find($request->banner_data_id);
+        $this->bannerdata = BannerData::findOrFail($request->banner_data_id);
         $this->bannerdata->titulo_banner = $request->titulo;
         $this->bannerdata->descripcion_banner = $request->descripcion;
         $this->bannerdata->banner = $request->banner;
@@ -107,18 +107,18 @@ class AdminController extends Controller
         return view('admins.empresasadmin.create');
     }
     public function empresasedit($id){
-        $this->empresa = Empresa::find($id);
-        $this->user = User::find($this->empresa->user_id);
+        $this->empresa = Empresa::findOrFail($id);
+        $this->user = User::findOrFail($this->empresa->user_id);
         return view('admins.empresasadmin.edit', ['empresa' => $this->empresa], ['user_email' => $this->user->email]);
     }
     public function banneredit($id){
-        $this->bannerdata = BannerData::find($id);
+        $this->bannerdata = BannerData::findOrFail($id);
         return view('admins.banneradmin.banneredit', ['bannerdata' => $this->bannerdata]);
           
     }
     public function bannerupdate(Request $request, $id)
     {
-        $this->bannerdata = BannerData::find($request->banner_data_id);
+        $this->bannerdata = BannerData::findOrFail($request->banner_data_id);
         $this->bannerdata->titulo_banner = $request->titulo;
         $this->bannerdata->descripcion_banner = $request->descripcion;
         $this->bannerdata->banner = $request->banner;

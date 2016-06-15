@@ -1,33 +1,28 @@
 @section('favicon') {!!Html::favicon('favicons/user.png')!!} @stop
 @section('title') Create new @stop
 @extends('layouts.front')
-@if(isset($var))
-	{!! $var !!}
-@endif
 @section('content')
 <div class='jumbotron'>
 	<div id='contentMiddle'>
-
-		@include('alerts.allAlerts')
-
-		<!--<h4>Registro de usuarios </h4>-->
 		<div class='row'>
-			{!!Form::open([route('usuarios_create_path'), 'method'=>'POST', 'files' => true])!!}
-			@include('usuarios.forms.fieldsUser')
-				<div class='list-group'>
-					<div class='list-group-item'>
-						<h4>Todos los campos son requeridos</h4>
-					</div>
-					<div class='list-group-item'>
-						<div class='form-group has-feedback has-feedback-left'>
-							{!!Form::label('Registrar')!!}						
-							{!!Form::submit('Registrar', ['class'=>'btn btn-success', 'style'=>'width:100%;'])!!}
-							{!!Form::close()!!}
-						</div>	
-					</div>
-				</div>
-			</div><!--Este fin del div cierra el div que se abre en fieldsUser-->	
-		</div>
-	</div>
-</div>
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        @include('alerts.allAlerts')
+      </div><!-- /div col-md12-sm12-xs12 -->
+      {!!Form::open([route('usuarios_create_path'), 'method'=>'POST', 'files' => true])!!}
+      @include('usuarios.forms.fieldsUser')
+      <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class='list-group'>
+          <div class='list-group-item'>
+            <div class='form-group has-feedback has-feedback-left'>
+              {!!Form::label('Registrar')!!}
+              {!!Form::submit('Registrar', ['class'=>'btn btn-success', 'style'=>'width:100%;'])!!}
+              <br>
+              {!!Form::close()!!}
+            </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
+          </div><!-- /div .list-group-item -->
+        </div><!-- /div .list-group -->
+      </div><!-- /div .col-md4-sm4-xs12 -->
+		</div><!-- /div .row -->
+  </div><!-- /div #contentMiddle -->
+</div><!-- /div .jumbotron -->
 @stop

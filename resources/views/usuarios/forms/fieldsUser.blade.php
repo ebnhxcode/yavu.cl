@@ -83,14 +83,14 @@
 				<span class='btn-file btn-md'>
 					Buscar imagen{!!Form::file('imagen_perfil', ['id' => 'imagen_perfil',  'maxlength' => '255',  'size' => '2048'])!!}
 				</span><!-- /span .btn-file .btn-md -->
-				<img width='15%' id='ImagenPerfil' class='thumbnail img-responsive-centered' src='/img/users/{!! isset($user)?($user->imagen_perfil!='')?$user->imagen_perfil:'usuario_nuevo.png':'' !!}' class='center-block'>
+				<img width='15%' id='ImagenPerfil' class='thumbnail img-responsive-centered' src='/img/users/{!! isset($user)?($user->imagen_perfil!='')?$user->imagen_perfil:'usuario_nuevo.png':'usuario_nuevo.png' !!}' class='center-block'>
 			</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 			<div class='form-group has-feedback has-feedback-left'>
 				(<strong><small><span class='requerido'>Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar portada:')!!}<span id='Portada'></span><br>
 				<span class='btn-file btn-md'>
 					Buscar imagen{!!Form::file('imagen_portada', ['id' => 'imagen_portada',  'maxlength' => '255', 'size' => '2048'])!!}
 				</span>
-				<img width='35%' id='ImagenPortada' class='thumbnail img-responsive-centered' src='/img/users/{!! isset($user)?($user->imagen_portada!='')?$user->imagen_portada:'banner.png':'' !!}' width=100%>
+				<img width='35%' id='ImagenPortada' class='thumbnail img-responsive-centered' src='/img/users/{!! isset($user)?($user->imagen_portada!='')?$user->imagen_portada:'banner.png':'banner.png' !!}' width=100%>
 			</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 		</div><!-- /div .list-group-item -->
 	</div><!-- /div .list-group -->
@@ -190,10 +190,10 @@
 						</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 					@endif
 				@endif
-			</div>
-		</div>
+			</div><!-- /div .list-group-item -->
+		</div><!-- /div .list-group -->
 	@endif
-<!--</div>-->
+</div><!-- /div .col-md4-sm4-xs12 -->
 <script>
 
 	$('#rut').change(function(){

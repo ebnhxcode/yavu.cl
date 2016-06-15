@@ -33,7 +33,7 @@ class ServicioController extends Controller{
     return response()->json('Acceso denegado');
   }
   public function find(Route $route){
-    $this->servicio = Servicio::find($route->getParameter('servicios'));
+    $this->servicio = Servicio::findOrFail($route->getParameter('servicios'));
   }
   public function index(){
     $servicios = Servicio::paginate(5);
