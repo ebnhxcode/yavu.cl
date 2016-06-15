@@ -16,7 +16,7 @@ $(document).ready(function(){
 /*FUNCIONES Y PROCEDIMIENTOS*/
 	function SolicitarEliminacion(){
 		var empresa_id = $("#SolicitudEliminacion").val();
-		var route = "http://186.64.123.143/solicitareliminacionempresa/"+empresa_id;
+		var route = "http://yavu.cl/solicitareliminacionempresa/"+empresa_id;
 		$.get(route, function(res){
 			$(res).each(function(key,value){
 			  $('#msj-info').append();
