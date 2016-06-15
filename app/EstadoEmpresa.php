@@ -17,7 +17,7 @@ class EstadoEmpresa extends Model
         return $this->belongsTo(User::class, 'user_id')->select('id');//valida si el usuario es el mismo que publicó
     }
 
-    public function interaction($user_id){
+    public function getUserInteraction($user_id){
         return $this->hasOne(InteraccionEstado::class, 'status_id')->select('user_id')->where('user_id', $user_id);
     }
 

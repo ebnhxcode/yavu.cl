@@ -54,7 +54,7 @@
                 <!--<img id='imgcoin{!! $companyStatus->id !!}' src='/img/newGraphics/cobrar_coins.png' />-->
               <small>
                 @if($companyStatus->statusRewarded->id!=Auth::user()->get()->id)
-                  @if($cs = $companyStatus->interaction($userSession->id)->get())
+                  @if($cs = $companyStatus->getUserInteraction($userSession->id)->get())
                     <span onclick='Interactuar(this.id)' id='estado_{!! $companyStatus->id !!}' value='e{!! $companyStatus->companyPostAuthor->id !!}' class="btn {!! count($cs)<1?'btn-warning':'btn-default' !!} btn-sm">
                     {!! count($cs)<1?'Cobrar Coins':'Cobrados' !!}
                   </span>

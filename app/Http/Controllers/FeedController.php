@@ -84,7 +84,7 @@ FeedController extends Controller{
     }
   }
   public function find(Route $route){
-    $this->feed = Feed::findOrFail($route->getParameter('feeds'));
+    //$this->feed = Feed::findOrFail($route->getParameter('feeds'));
     //return $this->user;
   }
   public function index(){
