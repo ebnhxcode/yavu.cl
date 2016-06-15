@@ -89,6 +89,7 @@ FeedController extends Controller{
   }
   public function index(){
 
+    $this->companyStatus = new EstadoEmpresa();
 
 
 

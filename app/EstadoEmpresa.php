@@ -14,7 +14,7 @@ class EstadoEmpresa extends Model
     }
 
     public function statusRewarded(){
-        return $this->hasOne(InteraccionEstado::class, 'status_id')->select('id');
+        return $this->hasOne(InteraccionEstado::class, 'status_id')->select('user_id');
     }
 
 }

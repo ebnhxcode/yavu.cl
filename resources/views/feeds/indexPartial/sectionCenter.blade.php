@@ -52,11 +52,10 @@
           <br>
           <div style="padding-top: 15px;" name='megusta' class=''>
             <!--<img id='imgcoin{!! $companyStatus->id !!}' src='/img/newGraphics/cobrar_coins.png' />-->
-
             <small>
-              <span onclick='Interactuar(this.id)' id='estado_{!! $companyStatus->id !!}' value='e{!! $companyStatus->companyPostAuthor->id !!}' class="btn btn-warning btn-xs">
+              <span onclick='Interactuar(this.id)' id='estado_{!! $companyStatus->id !!}' value='e{!! $companyStatus->companyPostAuthor->id !!}' class="btn {!! !isset($companyStatus->statusRewarded->user_id)?'btn-warning':'btn-default' !!} btn-xs">
+                {!! !isset($companyStatus->statusRewarded->user_id)?'Cobrar mis coins':'Cobrado' !!}
 
-                Cobrar mis coins
 
               </span>
             </small>
