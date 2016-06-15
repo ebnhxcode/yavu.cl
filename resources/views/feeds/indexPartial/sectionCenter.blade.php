@@ -6,7 +6,7 @@
 
   <div class="list-group">
 
-    @if(isset($myCompanies))
+    @if(isset($myCompanies) && count($myCompanies)>0)
       <div class="list-group-item" align="right">
 
         <div class="row">

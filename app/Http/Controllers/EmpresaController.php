@@ -8,6 +8,7 @@ use yavu\Http\Requests\EmpresaUpdateRequest;
 use Session;
 use Redirect;
 use yavu\Empresa;
+use yavu\EstadoEmpresa;
 use yavu\User;
 use Illuminate\Routing\Route;
 use Auth;
@@ -162,9 +163,9 @@ class EmpresaController extends Controller{
       $mapa = Empresa::findOrFail($empresa[0]->id)->gmaps;
 
       if($mapa){
-        return view('empresas.publicProfile', compact('empresa'), compact('mapa'));
+        return view('empresas.publicProfile', [ 'empresa' => $empresa , 'mapa' => $mapa, 'companyStatuses' => EstadoEmpresa::where('empresa_id', $empresa[0]->id)->orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas, 'userSession' => $this->user]);
       }else{
-        return view('empresas.publicProfile', compact('empresa'));
+        return view('empresas.publicProfile', [ 'empresa' => $empresa , 'companyStatuses' => EstadoEmpresa::where('empresa_id', $empresa[0]->id)->orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas, 'userSession' => $this->user]);
       }
     }
     return response()->json(["Mensaje: " => "Acceso denegado"]);

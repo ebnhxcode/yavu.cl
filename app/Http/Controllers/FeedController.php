@@ -88,10 +88,6 @@ FeedController extends Controller{
     //return $this->user;
   }
   public function index(){
-
-    $this->companyStatus = new EstadoEmpresa();
-
-
     if(count($this->user->empresas)>0){
       $this->user_id = $this->user->empresas[0]->user_id; $this->id = $this->user->empresas[0]->id;
       return view('feeds.index', ['companyStatuses' => EstadoEmpresa::orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas, 'userSession' => $this->user] ); //cambiar EstadoEmpresa por CompanyStatus
