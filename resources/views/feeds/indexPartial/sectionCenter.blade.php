@@ -55,12 +55,12 @@
               <small>
                 @if($companyStatus->statusRewarded->id!=Auth::user()->get()->id)
                   @if($cs = $companyStatus->interaction($userSession->id)->get())
-                    <span onclick='Interactuar(this.id)' id='estado_{!! $companyStatus->id !!}' value='e{!! $companyStatus->companyPostAuthor->id !!}' class="btn {!! count($cs)<1?'btn-warning':'btn-default' !!} btn-xs">
+                    <span onclick='Interactuar(this.id)' id='estado_{!! $companyStatus->id !!}' value='e{!! $companyStatus->companyPostAuthor->id !!}' class="btn {!! count($cs)<1?'btn-warning':'btn-default' !!} btn-sm">
                     {!! count($cs)<1?'Cobrar Coins':'Cobrados' !!}
                   </span>
                   @endif
                 @else
-                  <span class="text-info"><small>{!! $companyStatus->companyPostAuthor->nombre !!}</small></span>
+                  <!--<span class="text-info"><small>{!! $companyStatus->companyPostAuthor->nombre !!}</small></span>-->
                 @endif
               </small>
 
