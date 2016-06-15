@@ -4,8 +4,8 @@ $(document).ready(function(){
 
 /*MÉTODOS CONSTRUCTORES*/
 	$(function () {
-		VerificarSeguidores($("#empresa_id").val());
-		ContarSeguidores($("#empresa_id").val());
+		VerificarSeguidores($("#company_id").val());
+		ContarSeguidores($("#company_id").val());
 		return true;
 	})
 /*MÉTODOS CONSTRUCTORES*/
@@ -17,10 +17,10 @@ $(document).ready(function(){
 		$( seguir ).click(function(){
 			if($(seguir).text()==='Seguir'){
 				$( seguir ).text('Siguiendo');
-				return Seguir( empresa_id.value );
+				return Seguir( company_id.value );
 			}else{
 				$( seguir ).text('Seguir');
-				return NoSeguir( empresa_id.value );
+				return NoSeguir( company_id.value );
 			}
 		});
 		return true;
@@ -29,11 +29,11 @@ $(document).ready(function(){
 /*SELECTORES*/
 
 /*FUNCIONES Y PROCEDIMIENTOS*/
-	function Seguir(empresa_id){
+	function Seguir(company_id){
 		var user_id = $("#user_id").val();
-		var empresa_id = $("#empresa_id").val();
+		var company_id = $("#company_id").val();
 		var token = $("#token").val();
-		var route = "http://yavu.cl/seguirempresa/"+empresa_id+"/"+user_id;
+		var route = "http://yavu.cl/seguirempresa/"+company_id+"/"+user_id;
 		$.ajax({
 			url: route,
 			headers: {'X-CSRF-TOKEN': token},
@@ -41,22 +41,22 @@ $(document).ready(function(){
 			dataType: 'json',
 			data: {
 				user_id: user_id,
-				empresa_id: empresa_id,
+				empresa_id: company_id,
 			},
 			success:function(){
 				$(seguir).text('Siguiendo');
-				ContarSeguidores($("#empresa_id").val());
+				ContarSeguidores($("#company_id").val());
 			}
 		});	
-		ContarSeguidores(empresa_id);
+		ContarSeguidores(company_id);
 		return true;
 	}
 
-	function NoSeguir(empresa_id){
+	function NoSeguir(company_id){
 		var user_id = $("#user_id").val();
-		var empresa_id = $("#empresa_id").val();
+		var company_id = $("#company_id").val();
 		var token = $("#token").val();
-		var route = "http://yavu.cl/noseguirempresa/"+empresa_id+"/"+user_id;
+		var route = "http://yavu.cl/noseguirempresa/"+company_id+"/"+user_id;
 		$.ajax({
 			url: route,
 			headers: {'X-CSRF-TOKEN': token},
@@ -64,21 +64,21 @@ $(document).ready(function(){
 			dataType: 'json',
 			data: {
 				user_id: user_id,
-				empresa_id: empresa_id,
+				empresa_id: company_id,
 			},
 			success:function(){
 				$( seguir ).text('Seguir');
-				ContarSeguidores($("#empresa_id").val());
+				ContarSeguidores($("#company_id").val());
 			}
 		});	
-		ContarSeguidores(empresa_id);
+		ContarSeguidores(company_id);
 		return true;
 	}
-	function ContarSeguidores(empresa_id){
+	function ContarSeguidores(company_id){
 		var user_id = $("#user_id").val();
-		var empresa_id = $("#empresa_id").val();
+		var company_id = $("#company_id").val();
 		$.ajax({
-			url: "http://yavu.cl/contarseguidores/"+empresa_id+"/"+user_id,
+			url: "http://yavu.cl/contarseguidores/"+company_id+"/"+user_id,
 			type: 'GET',
 			dataType: 'json',
 			cache: false,
@@ -98,11 +98,11 @@ $(document).ready(function(){
 		});		
 		return true;	
 	}
-	function VerificarSeguidores(empresa_id){
+	function VerificarSeguidores(company_id){
 		var user_id = $("#user_id").val();
-		var empresa_id = $("#empresa_id").val();
+		var company_id = $("#company_id").val();
 		$.ajax({
-			url: "http://yavu.cl/verificarseguidores/"+empresa_id+"/"+user_id,
+			url: "http://yavu.cl/verificarseguidores/"+company_id+"/"+user_id,
 			type: 'GET',
 			dataType: 'json',
 			cache: false,
