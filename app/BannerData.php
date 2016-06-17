@@ -14,6 +14,11 @@ class BannerData extends Model
     \Storage::disk('local')->put($name, \File::get($banner));
   }	
 
+  public function linksBannerData (){
+
+  	return $this->hasMany(LinkBannerData::class, 'banner_data_id'); 
+
+  }
 
  
 }
