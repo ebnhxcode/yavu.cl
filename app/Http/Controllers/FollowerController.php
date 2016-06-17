@@ -55,10 +55,12 @@ class FollowerController extends Controller{
       $empresa_id = addslashes($empresa_id);
       $user_id = addslashes($user_id);
       if(Auth::user()->get()->id == $user_id){
+
         DB::table('followers')
           ->where('user_id', $user_id)
           ->where('empresa_id', $empresa_id)
-          ->update(['estado' => 'inactivo']);
+          ->delete();
+
         return response()->json(
           'Estado: Se dejo de seguir'
         );

@@ -1,10 +1,13 @@
 <div class="list-group">
 
-  <div class="list-group-item">
-    Sugerencias
-  </div><!-- /div .list-group-item -->
-  @foreach($companies as $company)
-    @if(count($userSession->follow($company->id)->get())>0)
+
+  @foreach($companies as $key => $company)
+    @if(count($userSession->follow($company->id)->get())==0)
+      @if($key < 1)
+        <div class="list-group-item">
+          <small>Empresas del momento que a&uacute;n no sigues</small>
+        </div><!-- /div .list-group-item -->
+      @endif
       <div class="list-group-item">
         <div class="row">
           <div class="col-md-2 col-sm-4 col-xs-4">
@@ -22,6 +25,5 @@
       </div><!-- /div .list-group-item -->
     @endif
   @endforeach
-
 
 </div><!-- /div .list-group -->

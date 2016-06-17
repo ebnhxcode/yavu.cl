@@ -54,8 +54,11 @@
       </div><!-- /div .row -->
     </div><!-- /div .list-group-item #publicacion+$companyStatus->id -->
   @endforeach
+
     <div class="list-group-item" style="text-align: center;">
-      {!! $companyStatuses->render() !!}
+      <div>
+        {!! $companyStatuses->render() !!}
+      </div>
       <small class="text-info">
         Navega entre p&aacute;ginas para encontrar m&aacute;s coins
       </small><!-- /small .text-info -->
