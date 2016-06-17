@@ -1,37 +1,26 @@
-
-
-
-
-
-
-  <div class="list-group">
-
-    @if(isset($myCompanies) && count($myCompanies)>0)
-      <div class="list-group-item" align="right">
-
-        <div class="row">
-          <div class="col-md-1 col-sm-12 col-xs-12" style="padding-bottom: 10px;">
-            <img class='media-object' src='/img/users/{!! ($myCompanies[0]->imagen_perfil!='')?$myCompanies[0]->imagen_perfil:'usuario_nuevo.png' !!}' data-holder-rendered='true' style='width: 36px; height: 36px; border-radius: 10%; float:left;'/>
+<div class="list-group">
+  @if(isset($myCompanies) && count($myCompanies)>0)
+    <div class="list-group-item" align="right">
+      <div class="row">
+        <div class="col-md-1 col-sm-12 col-xs-12" style="padding-bottom: 10px;">
+          <img class='media-object' src='/img/users/{!! ($myCompanies[0]->imagen_perfil!='')?$myCompanies[0]->imagen_perfil:'usuario_nuevo.png' !!}' data-holder-rendered='true' style='width: 36px; height: 36px; border-radius: 10%; float:left;'/>
+        </div><!-- /div .col-md1-sm12-xs12 -->
+        <div class="col-md-11 col-sm-12 col-xs-12">
+          {!!Form::open(['route'=>'estadoempresa.store', 'method'=>'POST'])!!}
+          {!!Form::textarea('status',null,['class'=>'form-control newCompanyPost','placeholder'=>'¡Comparte una publicaci&oacute;n!', 'maxlength'=>'500', 'required'=>'required','style'=>'resize:none; padding: 15px;font-size: 1em;', 'rows'=>'2', 'id'=>'status'])!!}
+          {!! Form::hidden('user_id',$myCompanies[0]->user_id) !!}
+          {!! Form::hidden('empresa_id',$myCompanies[0]->id) !!}
+          <hr>
+          <div style="padding-top:10px">
+            <span id="characters" value="500">500</span>
+            {{-- {!!link_to('#!', $title="Publicar estado", $attributes = ['id'=>'publicar', 'class'=>'btn btn-success btn-sm'], $secure = null)!!} --}}
+            {!!Form::submit('Publicar', ['class'=>'btn btn-sm btn-success'])!!}
           </div>
-          <div class="col-md-11 col-sm-12 col-xs-12">
-            {!!Form::open(['route'=>'estadoempresa.store', 'method'=>'POST'])!!}
-            {!!Form::textarea('status',null,['class'=>'form-control newCompanyPost','placeholder'=>'¡Comparte una publicaci&oacute;n!', 'maxlength'=>'500', 'required'=>'required','style'=>'resize:none; padding: 15px;font-size: 1em;', 'rows'=>'2', 'id'=>'status'])!!}
-            {!! Form::hidden('user_id',$myCompanies[0]->user_id) !!}
-            {!! Form::hidden('empresa_id',$myCompanies[0]->id) !!}
-            <hr>
-            <div style="padding-top:10px">
-              <span id="characters" value="500">500</span>
-              {{-- {!!link_to('#!', $title="Publicar estado", $attributes = ['id'=>'publicar', 'class'=>'btn btn-success btn-sm'], $secure = null)!!} --}}
-              {!!Form::submit('Publicar', ['class'=>'btn btn-sm btn-success'])!!}
-            </div>
-            {!!Form::close()!!}
-          </div>
-        </div>
-
-      </div>
-    @endif
-
-
+          {!!Form::close()!!}
+        </div><!-- /div .col-md11-sm12-xs12 -->
+      </div><!-- /div .row -->
+    </div><!-- /div .list-group-item -->
+  @endif
   @foreach($companyStatuses as $companyStatus)
     <div id='publicacion{!! $companyStatus->id !!}' class="list-group-item">
       <div class="row">
@@ -50,33 +39,29 @@
           </div><!-- /div .media-heading -->
           {!! $companyStatus->status !!}
           <br>
-            <div style="padding-top: 15px;" name='megusta' class=''>
-                <!--<img id='imgcoin{!! $companyStatus->id !!}' src='/img/newGraphics/cobrar_coins.png' />-->
-              <small>
-                @if($companyStatus->statusRewarded->id!=Auth::user()->get()->id)
-                  @if($cs = $companyStatus->getUserInteraction($userSession->id)->get())
-                    <span onclick='Interactuar(this.id)' id='estado_{!! $companyStatus->id !!}' value='e{!! $companyStatus->companyPostAuthor->id !!}' class="btn {!! count($cs)<1?'btn-warning':'btn-default' !!} btn-sm">
-                    {!! count($cs)<1?'Cobrar Coins':'Cobrados' !!}
-                  </span>
-                  @endif
-                @else
-                  <!--<span class="text-info"><small>{!! $companyStatus->companyPostAuthor->nombre !!}</small></span>-->
-                @endif
-              </small>
-
-            </div><!-- /div #estado_+feed_id -->
+          <div style="padding-top: 15px;" name='megusta' class=''>
+            @if($companyStatus->statusRewarded->id!=Auth::user()->get()->id)
+              @if($cs = $companyStatus->getUserInteraction($userSession->id)->get())
+                <span onclick='Interactuar(this.id)' id='estado_{!! $companyStatus->id !!}' value='e{!! $companyStatus->companyPostAuthor->id !!}' class="btn {!! count($cs)<1?'btn-warning':'btn-default' !!} btn-sm">
+                  {!! count($cs)<1?'Cobrar Coins':'Cobrados' !!}
+                </span><!-- /span $estado_+$companyStatus->id .btn .btn-sm .btn-default-warning -->
+              @endif
+            @else
+              <!--<span class="text-info"><small>{!! $companyStatus->companyPostAuthor->nombre !!}</small></span>-->
+            @endif
+          </div><!-- /div -->
         </div><!-- /div .col-md11-sm12-xs12 -->
       </div><!-- /div .row -->
     </div><!-- /div .list-group-item #publicacion+$companyStatus->id -->
   @endforeach
-  </div><!-- /div .list-group -->
+</div><!-- /div .list-group -->
 {!! $companyStatuses->render() !!}
+
 
 <script>
   $('.newCompanyPost').keyup(function(){
     refreshCharacters(this);
   });
-
   function refreshCharacters(textarea) {
     var post = textarea.value;
     $('#characters').text(500 - post.length);
@@ -84,5 +69,4 @@
     ((post.length > 200)?$('#characters').addClass('text-warning'):$('#characters').removeClass('text-warning'));
     ((post.length > 400)?$('#characters').addClass('text-danger'):$('#characters').removeClass('text-danger'));
   }
-
 </script>
