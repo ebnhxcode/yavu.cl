@@ -47,15 +47,22 @@
                 </span><!-- /span $estado_+$companyStatus->id .btn .btn-sm .btn-default-warning -->
               @endif
             @else
-              <!--<span class="text-info"><small>{!! $companyStatus->companyPostAuthor->nombre !!}</small></span>-->
+              <span class="text-info" style="float: right;"><small>(Personal company)</small></span>
             @endif
           </div><!-- /div -->
         </div><!-- /div .col-md11-sm12-xs12 -->
       </div><!-- /div .row -->
     </div><!-- /div .list-group-item #publicacion+$companyStatus->id -->
   @endforeach
+    <div class="list-group-item" style="text-align: center;">
+      {!! $companyStatuses->render() !!}
+      <small class="text-info">
+        Navega entre p&aacute;ginas para encontrar m&aacute;s coins
+      </small><!-- /small .text-info -->
+    </div><!-- /div .list-group-item styled -->
+
 </div><!-- /div .list-group -->
-{!! $companyStatuses->render() !!}
+
 
 
 <script>

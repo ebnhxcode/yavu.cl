@@ -13,18 +13,18 @@
 			</div><!-- /div .col-md12-sm12-xs12 -->
 
 			<!-- panel izquierdo -->
-			<div class="col-md-4 col-sm-12 col-xs-12">
+			<div class="col-md-3 col-sm-12 col-xs-12">
 				@include('feeds.indexPartial.sectionLeft')
 			</div><!-- /div .col-md4-sm12-xs12 -->
 
 			<!-- panel central -->
-			<div class="col-md-8 col-sm-12 col-xs-12">
+			<div class="col-md-6 col-sm-12 col-xs-12">
 				@include('feeds.indexPartial.sectionCenter')
 			</div><!-- /div .col-md5-sm12-xs12 -->
 
 			<!-- panel derecho -->
-			<div class="col-md-12 col-sm-12 col-xs-12">
-				{{-- @include('feeds.indexPartial.sectionRight') --}}
+			<div class="col-md-3 col-sm-12 col-xs-12">
+				@include('feeds.indexPartial.sectionRight')
 			</div><!-- /div .col-md3-sm12-xs12 -->
 
 			<!-- variables hidden para forms -->
@@ -168,4 +168,17 @@
 	}
 
 </script>
+
+<style>
+	#menu{
+		position: fixed;
+		bottom:0px;
+		height: 30px;
+		width:100%;
+		z-index: 1000;
+		background-color: transparent;
+	}
+</style>
+
+<div id="menu">.</div>
 

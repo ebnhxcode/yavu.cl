@@ -75,5 +75,7 @@ class User extends Model implements AuthenticatableContract,
 		return $this->hasMany(InteraccionEstado::class, 'user_id');
 	}
 
-	
+	public function follow($empresa_id){
+		return $this->hasOne(Follower::class, 'user_id')->where('empresa_id', $empresa_id);
+	}
 }
