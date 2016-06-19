@@ -15,4 +15,6 @@
   </div>
 --}}
 </div> <!-- /list group -->
-@include('listarBanner.listaBanner')
+@if(count($bannersRandom)>0)
+  @include('listarBanner.listaBanner')
+@endif

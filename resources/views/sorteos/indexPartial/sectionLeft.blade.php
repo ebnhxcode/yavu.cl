@@ -1,25 +1,30 @@
 <div class="list-group">
-  <div class="list-group-item list-group-item-success">
-    FILTRO DE BÚSQUEDA
+  <div class="list-group-item">
+    <small>Valor de los tickets <span class="label label-warning">$ 100</span> Yavücoins</small>
   </div><!-- /div .list-group-item .success -->
   <div class="list-group-item">
-    @if(Auth::admin()->check())
-      {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar sorteo','id'=>'nombre_sorteo', 'aria-describedby' => 'sizing-addon1'])!!}
-    @elseif(Auth::user()->check())
-      <input id="user_id" value="{!! Auth::user()->get()->id !!}" type="hidden" />
-      {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar sorteo','id'=>'sorteothumb', 'aria-describedby' => 'sizing-addon1'])!!}
-    @endif
+    {!!Form::select('size', [1=>1,5=>5,10=>10,15=>15], null, ['placeholder' => 'Seleciona la cantidad...','id' => 'cantidadtickets', 'class' => 'form-control input-sm'])!!}
+    <br>
+    <button type="button" style="width: 100%" id='comprar' class="btn btn-primary btn-sm comprar">Comprar ticket</button>
+    <input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
+    <input type="hidden" value="{!!Auth::user()->get()->id!!}" id="user_id" />
   </div><!-- /div .list-group-item -->
-  @include('miniDashboard.miniDashboard')
-  @include('listarBanner.listaBanner')
+
 </div><!-- /div .list-group -->
+@include('miniDashboard.miniDashboard')
+@if(count($bannersRandom)>0)
+  @include('listarBanner.listaBanner')
+@endif
+{{--
 <div class="list-group">
+
   <div class="list-group-item list-group-item-success">
     <h5>ÚLTIMOS 10 SORTEOS PENDIENTES / FINALIZADOS
-              <span id="resizeCourses" name="small" class="glyphicon glyphicon-resize-full" style="float: right;">
-              </span><!-- /div #resizeCourses -->
+      <span id="resizeCourses" name="small" class="glyphicon glyphicon-resize-full" style="float: right;">
+      </span><!-- /div #resizeCourses -->
     </h5>
   </div><!-- /div .list-group-item .success -->
+
   <script>
     $('#resizeCourses').click(function(){
       if($(this).attr('name') == 'small'){
@@ -70,3 +75,4 @@
     </table>
   </div> <!-- /div #insideCourses .list-group-item .wrap -->
 </div><!-- /div .list-group -->
+--}}
