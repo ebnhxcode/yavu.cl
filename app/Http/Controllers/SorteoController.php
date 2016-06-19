@@ -130,10 +130,8 @@ class SorteoController extends Controller{
   }
 
   public function index(){
-    $sorteos = DB::table('sorteos')->orderBy('created_at', 'desc')->paginate(10);
     $this->registro_tickets = $this->user->registro_tickets()->orderBy('created_at', 'desc')->limit('20')->get();
-    return view('sorteos.index', compact('sorteos'), ['rtickets' => $this->registro_tickets, 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(3)->get()]);
-
+    return view('sorteos.index', ['sorteos'=>Sorteo::orderByRaw('RAND()')->where('estado_sorteo','Activo')->paginate(6), 'rtickets' => $this->registro_tickets, 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(3)->get()]);
   }
 
   public function MostrarGanador($ganador){

@@ -49,4 +49,8 @@ class Sorteo extends Model{
   public function empresa(){
     return $this->belongsTo(Empresa::class);
   }
+
+  public function companyAuthorRaffle(){
+    return $this->belongsTo(Empresa::class, 'empresa_id')->select('imagen_perfil');
+  }
 }
