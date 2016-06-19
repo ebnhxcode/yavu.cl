@@ -9,6 +9,7 @@ use Session;
 use Redirect;
 use yavu\Empresa;
 use yavu\EstadoEmpresa;
+use yavu\BannerData;
 use yavu\User;
 use Illuminate\Routing\Route;
 use Auth;
@@ -28,7 +29,7 @@ class EmpresaController extends Controller{
     $this->empresa = Empresa::findOrFail($route->getParameter('empresas'));
   }
   public function index(Request $request){
-    return view('empresas.index', ['empresas' => Empresa::paginate(14)], ['mostrarbanner' => $this->MostrarBannerPublico()]);
+    return view('empresas.index', ['empresas' => Empresa::paginate(14)], ['bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get()]);
   }
   
   public function create(){
@@ -133,17 +134,6 @@ class EmpresaController extends Controller{
       }
     }
     return response()->json(["Mensaje: " => "Acceso denegado"]);
-  }
-  public function MostrarBannerPublico(){
-        
-        return DB::table('empresas')
-            ->select(['empresas.nombre', 'banner_data.id', 'banner_data.banner', 'banner_data.titulo_banner','banner_data.descripcion_banner', 'banner_data.estado_banner', 'link_banner_data.link', 'link_banner_data.titulo_link'])
-            ->where('estado_banner', '=', 'Creado')
-            ->join('banner_data', 'banner_data.id', '=', 'empresas.id')
-            ->join('link_banner_data', 'banner_data.id', '=', 'banner_data_id')
-            ->orderByRaw("RAND()")
-            ->take(3)
-            ->get();
   }
   public function MostrarEmpresaPublica($empresa){
 
