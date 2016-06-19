@@ -13,15 +13,14 @@
           <span class="glyphicon glyphicon-search">
           </span><!-- /span .glyphicon .glyphicon-search -->
         </span><!-- /span .input-group-addon #sizing-addon1 -->
-        {!!Form::text('nombre',null,['class' => 'form-control buscar input-lg', 'placeholder' => 'Buscar sorteo','id'=>'sorteothumb', 'aria-describedby' => 'sizing-addon1'])!!}
+        {!!Form::text('nombre',null,['class' => 'form-control buscar input-md', 'placeholder' => 'Buscar sorteo','id'=>'sorteothumb', 'aria-describedby' => 'sizing-addon1'])!!}
       </div><!-- /div .input-group .input-group-lg -->
-
-
     @endif
   </div><!-- /div .list-group-item -->
 </div> <!-- /list group -->
-@if(Auth::admin()->check())
-  @include('sorteos.forms.vistaListaAdmin')
-@else
-  @include('sorteos.forms.vistaListaUsuario', array('sorteos' => $sorteos))
-@endif
+<div class="list-group">
+
+    @include('sorteos.forms.vistaListaUsuario', array('sorteos' => $sorteos))
+
+</div>
+

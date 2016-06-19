@@ -2,14 +2,13 @@
 namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
 use yavu\Empresa;
-use yavu\Estado;
 use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
 use yavu\Http\Requests\FeedCreateRequest;
 use yavu\Http\Requests\FeedUpdateRequest;
 use Session;
 use Redirect;
-use yavu\Feed;
+use yavu\BannerData;
 use yavu\EstadoEmpresa;
 use Auth;
 use Illuminate\Routing\Route;
@@ -59,9 +58,9 @@ FeedController extends Controller{
   public function index(){
     if(count($this->user->empresas)>0){
       $this->user_id = $this->user->empresas[0]->user_id; $this->id = $this->user->empresas[0]->id;
-      return view('feeds.index', ['companyStatuses' => EstadoEmpresa::orderBy('created_at', 'desc')->paginate(6), 'myCompanies' => $this->user->empresas, 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(3)->get()] ); //cambiar EstadoEmpresa por CompanyStatus
+      return view('feeds.index', ['companyStatuses' => EstadoEmpresa::orderBy('created_at', 'desc')->paginate(6), 'myCompanies' => $this->user->empresas, 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(3)->get()] ); //cambiar EstadoEmpresa por CompanyStatus
     }else{
-      return view('feeds.index', ['companyStatuses' => EstadoEmpresa::orderBy('created_at', 'desc')->paginate(6), 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
+      return view('feeds.index', ['companyStatuses' => EstadoEmpresa::orderBy('created_at', 'desc')->paginate(6), 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
     }
   }
   public function MostrarBannerPublico(){
