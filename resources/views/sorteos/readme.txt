@@ -1,0 +1,1 @@
+indexPartial es para la vista index del módulo sorteos
