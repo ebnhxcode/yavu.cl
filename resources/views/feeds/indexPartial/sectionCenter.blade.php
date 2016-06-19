@@ -15,23 +15,23 @@
             <span id="characters" value="500">500</span>
             {{-- {!!link_to('#!', $title="Publicar estado", $attributes = ['id'=>'publicar', 'class'=>'btn btn-success btn-sm'], $secure = null)!!} --}}
             {!!Form::submit('Publicar', ['class'=>'btn btn-sm btn-success'])!!}
-          </div>
+          </div><!-- /div styled -->
           {!!Form::close()!!}
         </div><!-- /div .col-md11-sm12-xs12 -->
       </div><!-- /div .row -->
     </div><!-- /div .list-group-item -->
   @endif
   @foreach($companyStatuses as $companyStatus)
-    <div id='publicacion{!! $companyStatus->id !!}' class="list-group-item">
+    <div id='publicacion{!! $companyStatus->id !!}' class="list-group-item div-hover">
       <div class="row">
         <div class="col-md-1 col-sm-offset-0 col-xs-offset-0">
-          <a href="/empresa/{!! $companyStatus->companyPostAuthor->nombre !!}">
+          <a href="/empresas/{!! $companyStatus->empresa_id !!}">
             <img class='media-object' src='/img/users/{!! ($companyStatus->companyPostAuthor->imagen_perfil!='')?$companyStatus->companyPostAuthor->imagen_perfil:'usuario_nuevo.png' !!}' data-holder-rendered='true' style='width: 36px; height: 36px; border-radius: 10%;'/>
           </a>
         </div><!-- /div .col-md1-sm-offset-12-xs-offset-12 -->
         <div class="col-md-11 col-sm-12 col-xs-12">
           <div class="media-heading">
-            <strong><a href="/empresa/{!! $companyStatus->companyPostAuthor->nombre !!}" style="color: #3C5B28;">{!! $companyStatus->companyPostAuthor->nombre !!}</a></strong>
+            <strong><a href="/empresas/{!! $companyStatus->empresa_id !!}" style="color: #3C5B28;">{!! $companyPostName = $companyStatus->companyPostAuthor->nombre !!}</a></strong>
             <strong>·</strong>
             <a href="/feeds/{!! $companyStatus->id !!}">
               <small style="font-size: .7em; color: grey;"><abbr class='timeago' id='timeago{!! $companyStatus->id !!}' value='{!! $companyStatus->created_at !!}' title='{!! $companyStatus->created_at !!}'>{!! $companyStatus->created_at !!}</abbr></small>
@@ -46,27 +46,26 @@
                   {!! count($cs)<1?'Cobrar Coins':'Cobrados' !!}
                 </span><!-- /span $estado_+$companyStatus->id .btn .btn-sm .btn-default-warning -->
               @endif
-            @else
-              <span class="text-info" style="float: right;"><small>(Personal company)</small></span>
             @endif
+              <span class="text-info" style="float: right;font-size: 0.7em;">
+                <small>(Author : <a href="/empresas/{!! $companyStatus->empresa_id !!}">{!! $companyPostName !!}</a>)</small>
+              </span>
           </div><!-- /div -->
         </div><!-- /div .col-md11-sm12-xs12 -->
       </div><!-- /div .row -->
     </div><!-- /div .list-group-item #publicacion+$companyStatus->id -->
   @endforeach
 
-    <div class="list-group-item" style="text-align: center;">
-      <div>
-        {!! $companyStatuses->render() !!}
-      </div>
-      <small class="text-info">
-        Navega entre p&aacute;ginas para encontrar m&aacute;s coins
-      </small><!-- /small .text-info -->
-    </div><!-- /div .list-group-item styled -->
+  <div class="list-group-item" style="text-align: center;">
+    <div>
+      {!! $companyStatuses->render() !!}
+    </div><!-- /div -->
+    <small class="text-info">
+      Navega entre p&aacute;ginas para encontrar m&aacute;s coins
+    </small><!-- /small .text-info -->
+  </div><!-- /div .list-group-item styled -->
 
 </div><!-- /div .list-group -->
-
-
 
 <script>
   $('.newCompanyPost').keyup(function(){

@@ -15,10 +15,10 @@
         @include('sorteos.indexPartial.sectionLeft')
       </div><!-- /div .col-md4-sm12-xs12 -->
       <div class="col-md-6 col-sm-12 col-xs-12">
-
+        @include('sorteos.indexPartial.sectionCenter')
       </div><!-- /div .col-md8-sm12-xs12 -->
       <div class="col-md-3 col-sm-12 col-xs-12">
-
+        @include('sorteos.indexPartial.sectionRight')
       </div><!-- /div .col-md3-sm12-xs12 -->
     </div><!-- /div .row -->
   </div><!-- /div #contentMiddle -->
