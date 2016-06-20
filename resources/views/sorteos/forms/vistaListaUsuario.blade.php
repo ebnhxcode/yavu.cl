@@ -14,12 +14,12 @@
 		@if($sorteo->estado_sorteo == 'Activo')
 			<div class="list-group-item">
 				<div class="row">
-					<div class="col-md-1 col-sm-12 col-xs-12">
+					<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
             <img class='media-object' src='/img/users/{!! ($companyProfileImage = $sorteo->companyAuthorRaffle->imagen_perfil)?$companyProfileImage:'usuario_nuevo.png' !!}' data-holder-rendered='true' style='width: 36px; height: 36px; border-radius: 10%; float:left;'/>
 					</div>
-					<div class="col-md-10 col-sm-12 col-xs-12">
+					<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
 						<div class="row">
-              <div class="col-md-5 col-sm-12 col-xs-12">
+              <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
 
                 <div style="padding: 4px;">
                   <strong>Empresa</strong><br>
@@ -68,18 +68,18 @@
                   <a href="{!! URL::to('usuarios/create') !!}" class="btn btn-primary btn-sm" role="button">Participar!</a>
                 @endif
               </div> <!-- /div .col-md4-sm12-xs12 -->
-							<div class="col-md-7 col-sm-12 col-xs-12">
+							<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
 								<div class="thumbnail">
 									<img src='{!! isset($sorteo)?($sorteo->imagen_sorteo!='')?'/img/users/'.$sorteo->imagen_sorteo:'https://tiendas-asi.com/wp-content/uploads/2015/04/sorteo-diariodebodas.jpg':'' !!}' >
 								</div> <!-- /div .thumbnail -->
                 <div class="amplio">
                   <div style="" class="row">
-                    <div align="center" class="col-md-3 col-sm-3 col-xs-3">
+                    <div align="center" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                       <span class="glyphicon glyphicon-user"></span><br>
                       <span class="TicketsEnSorteo" id="{!! $sorteo->id !!}"></span>
                       <input type="hidden" name="_token" value="{!! csrf_token() !!}">
                     </div><!-- /div .col-md3-sm3-xs3 -->
-                    <div align="center" class="col-md-3 col-sm-3 col-xs-3">
+                    <div align="center" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                       <span class="glyphicon glyphicon-tag"></span><br>
                       <span class="MisTicketsUsados" id="{!! $sorteo->id !!}"></span>
                     </div><!-- /div .col-md3-sm3-xs3 -->
@@ -95,7 +95,7 @@
                   <button class="btn btn-success btn-md UsarTicket" value="{!! $sorteo->id !!}" type="button"   style="display: none; width: 100%;" data-dismiss="modal">Participar</button>
                 </div><!-- /div .semi-amplio -->
                 <div class="row">
-                  <div align="" class="col-md-12 col-sm-12 col-xs-12">
+                  <div align="" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <span class="glyphicon glyphicon-user"></span>
                     <small>Total de tickets en juego</small>
                     <br>
@@ -114,7 +114,7 @@
 							</div> <!-- /div .col-md8-sm12-xs12 -->
 						</div><!-- /div .row -->
 					</div>
-          <div class="col-md-1 col-sm-12 col-xs-12">
+          <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
             <div class="dropup">
               <button class="btn btn-default btn-xs dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="glyphicon glyphicon-chevron-down"></span>

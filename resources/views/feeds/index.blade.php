@@ -8,22 +8,22 @@
   <div id="contentMiddle">
 
     <div class="row">
-    	<div class="col-md-12 col-sm-12 col-xs-12">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				@include('alerts.allAlerts')
 			</div><!-- /div .col-md12-sm12-xs12 -->
 
 			<!-- panel izquierdo -->
-			<div class="col-md-3 col-sm-12 col-xs-12">
+			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
 				@include('feeds.indexPartial.sectionLeft')
 			</div><!-- /div .col-md4-sm12-xs12 -->
 
 			<!-- panel central -->
-			<div class="col-md-6 col-sm-12 col-xs-12">
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 				@include('feeds.indexPartial.sectionCenter')
 			</div><!-- /div .col-md5-sm12-xs12 -->
 
 			<!-- panel derecho -->
-			<div class="col-md-3 col-sm-12 col-xs-12">
+			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
 				@include('feeds.indexPartial.sectionRight')
 			</div><!-- /div .col-md3-sm12-xs12 -->
 

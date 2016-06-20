@@ -11,7 +11,7 @@
     -->
     @include('alerts.allAlerts')
     <div class="row">
-      <div class="col-md-4 col-sm-12 col-xs-12">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
         <div>
           <div>
             <div class="list-group">
@@ -23,13 +23,13 @@
           </div>
         </div> <!-- /panel -->
       </div>
-      <div class="col-md-8 col-sm-12 col-xs-12">
+      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
         <div>
           <div>
             @foreach($sorteos as $sorteo)
               <div class="row">
 
-                <div class="col-md-8 col-sm-12 col-xs-12">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                   <div class="thumbnail">
                     @if($sorteo->imagen_sorteo == "")
                       <img class="img-responsive-centered" width="40%" src="https://tiendas-asi.com/wp-content/uploads/2015/04/sorteo-diariodebodas.jpg" alt="" />
@@ -39,13 +39,13 @@
 
                     <div class="amplio">
                       <div style="padding-left: 8px;padding-right: 8px;" class="row">
-                        <div align="center" class="col-md-3 col-sm-3 col-xs-3">
+                        <div align="center" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                           <span class="glyphicon glyphicon-user"></span>
                           <span class="TicketsEnSorteo" id="{!! $sorteo->id !!}"></span>
                           <input type="hidden" name="_token" value="{!! csrf_token() !!}">
                         </div>
 
-                        <div align="center" class="col-md-3 col-sm-3 col-xs-3">
+                        <div align="center" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                           <span class="glyphicon glyphicon-tag"></span>
                           <span class="MisTicketsUsados" id="{!! $sorteo->id !!}"></span>
                         </div>
@@ -59,11 +59,11 @@
                     </div><!-- /div amplio -->
 
                     <div class="row">
-                      <div align="center" class="col-md-3 col-sm-3 col-xs-3">
+                      <div align="center" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                         <small>Tickets en juego</small>
                       </div>
 
-                      <div align="center" class="col-md-3 col-sm-3 col-xs-3">
+                      <div align="center" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                         <small>Tickets apostados</small>
                       </div>
 
@@ -79,9 +79,9 @@
                     </div>
 
                   </div> <!-- /thumbnail -->
-                </div> <!-- /col-md-8 col-sm-12 col-xs-12 -->
+                </div> <!-- /col-xs-12 col-sm-12 col-md-8 col-lg-8 -->
 
-                <div class="col-md-4 col-sm-12 col-xs-12">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 
                   <div>
                     <h5>
@@ -132,7 +132,7 @@
                     @endif
                   </div>
 
-                </div> <!-- /div col-md-4 col-sm-12 col-xs-12 -->
+                </div> <!-- /div col-xs-12 col-sm-12 col-md-4 col-lg-4 -->
               </div><!-- /div row -->
               <hr>
             @endforeach

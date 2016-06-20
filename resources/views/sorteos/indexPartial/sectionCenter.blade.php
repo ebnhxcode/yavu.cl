@@ -19,8 +19,6 @@
   </div><!-- /div .list-group-item -->
 </div> <!-- /list group -->
 <div class="list-group">
-
-    @include('sorteos.forms.vistaListaUsuario', array('sorteos' => $sorteos))
-
+  @include('sorteos.forms.vistaListaUsuario', array('sorteos' => $sorteos))
 </div>
 

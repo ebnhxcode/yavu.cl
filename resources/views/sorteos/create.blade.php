@@ -6,14 +6,14 @@
 	<div id="contentMiddle">
     @include('sorteos.forms.modalTerminosCondicionesSorteo')
 		<div class="row">
-			<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				@include('alerts.allAlerts')
 			</div><!-- /div col-md12-sm12-xs12 -->
 			{!!Form::open(['route'=>'sorteos.store', 'method'=>'POST', 'files' => true, 'id' => 'FormSorteo'  ])!!}
-			<div class="col-md-4 col-sm-12 col-xs-12">
+			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 				@include('miniDashboard.miniDashboard')
 			</div><!-- /div .col-md4-sm12-xs12 -->
-			<div class="col-md-8 col-sm-12 col-xs-12">
+			<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
 				@include('sorteos.forms.fieldsSorteo')
 				<div class="list-group">
 					<div class="list-group-item">
@@ -28,7 +28,7 @@
 					</div><!-- /div .list-group-item -->
 				</div><!-- /div .list-group -->
 			</div><!-- div .col-md8-sm12-xs12 -->
-			<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			</div><!-- /div .col-md4-sm12-xs12 -->
 		</div><!-- /div .row -->
 	</div><!-- /div #contentmiddle -->

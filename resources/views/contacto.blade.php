@@ -16,10 +16,10 @@
       <div style="color: #fff">
         <h2>Contacto <img width="150" style="float: right;" src="{!! URL::to('img/yavu005.png') !!}" alt=""></h2>
         <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             @include('alerts.allAlerts')
           </div><!-- /div col-md12-sm12-xs12 -->
-          <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             {!!Form::open(['route' =>'mail.store','method'=>'POST'])!!}
             {!!Form::label('Nombre:')!!}
             {!!Form::text('name',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre', 'required'=>'required'])!!}

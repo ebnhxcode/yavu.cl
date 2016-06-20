@@ -8,15 +8,15 @@
   <div class="jumbotron">
     <div id="contentMiddle">
       <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           @include('alerts.allAlerts')
         </div><!-- /div .col-md12-sm12-xs12 -->
 
-        <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
           @include('feeds.indexPartial.sectionLeft')
         </div><!-- /div .col-md4-sm12-xs12 -->
 
-        <div class="col-md-8 col-sm-12 col-xs-12">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
           <div class="list-group">
             <div class="list-group-item">
               <div class="row">
@@ -26,7 +26,7 @@
                   </a>
                 </div><!-- /div .col-md1-sm-offset-12-xs-offset-12 -->
 
-                <div class="col-md-11 col-sm-12 col-xs-12">
+                <div class="col-xs-12 col-sm-12 col-md-11 col-lg-11">
                   <div class="dropdown">
                     <div style="float: right;" class="dropdown">
                       <button class="btn btn-default btn-xs dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -67,7 +67,7 @@
           </div><!-- /div .list-group -->
         </div><!-- /div .col-md6-sm12-xs12 -->
 
-        <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           {{-- @include('feeds.indexPartial.sectionRight') --}}
         </div><!-- /div .col-md3-sm12-xs12 -->
 

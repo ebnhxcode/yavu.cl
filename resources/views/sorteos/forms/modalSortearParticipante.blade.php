@@ -7,13 +7,13 @@
       </div><!-- /div .modal-header -->
       <div class="modal-body" id="body-sorteo">
         <div class="row">
-          <div style="text-align: center;" class="col-md-4 col-sm-12 col-xs-12">
+          <div style="text-align: center;" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             Premio:
             <div class="thumbnail">
               <img src='{!! isset($sorteo)?($sorteo->imagen_sorteo!='')?'/img/users/'.$sorteo->imagen_sorteo:'https://tiendas-asi.com/wp-content/uploads/2015/04/sorteo-diariodebodas.jpg':'' !!}' width=100%>
             </div><!-- /div .thumbnail -->
           </div><!-- /div .col-md4-sm12-xs12 -->
-          <div style="text-align: center;" class="col-md-8 col-sm-12 col-xs-12">
+          <div style="text-align: center;" class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
             <h2>
               <span id="Tiempo">¡Empezó el sorteo!</span><!-- /span #Tiempo -->
             </h2>

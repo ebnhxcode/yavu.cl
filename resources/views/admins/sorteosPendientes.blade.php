@@ -14,7 +14,7 @@
 
 
       <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
             <div class="list-group">
 
@@ -115,7 +115,7 @@
 
           <div class="row">
 
-            <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
               N&uacute;mero de empresa : <span id="empresa_id"></span><br>
               Rut : <span id="rut"></span><br>
               Email : <span id="empresa_email"></span><br>

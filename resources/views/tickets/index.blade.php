@@ -7,15 +7,15 @@
 <div class="jumbotron">
 	<div id="contentMiddle">
 		<div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         @include('alerts.allAlerts')
       </div><!-- /div col-md12-sm12-xs12 -->
-			<div class="col-md-4 col-sm-12 col-xs-12">
+			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
         <div class="list-group">
           @include('miniDashboard.miniDashboard')
         </div><!-- /div .list-group -->
 			</div><!-- /div .col-md4-sm12-xs12 -->
-      <div class="col-md-8 col-sm-12 col-xs-12">
+      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
         <div class="list-group">
           <div class="list-group-item list-group-item-success">
             COMPRA TUS TICKET'S A <span class="label label-warning">$ 100</span>

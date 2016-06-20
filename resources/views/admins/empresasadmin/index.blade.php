@@ -5,7 +5,7 @@
   <div class="jumbotron">
     <div id="contentMiddle">
       <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           @include('alerts.allAlerts')
           <!--
           <div class="" style="font-size: 3em;">
@@ -14,7 +14,7 @@
           -->
         </div>
 
-        <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           {{-- ESTÁ PENDIENTE EL BUSCADOR DE LA EMPRESA EN ADMIN --}}
           {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar...','id'=>'empresa', 'aria-describedby' => 'sizing-addon1'])!!}
           <br>
@@ -26,7 +26,7 @@
                   <div class="thumbnail card">
                     <img id="ImagenPortada" src="{!! ($empresa->imagen_portada!="")?'/img/users/'.$empresa->imagen_portada:"/img/users/banner.png" !!}" alt="..." style="height: 170px;">
                     <div class="row">
-                      <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <address>
                           <h4><a class="btn-link" href="/empresa/{!!$empresa->nombre!!}">{!! $empresa->nombre!!}</a></h4>
                           <strong>Ciudad :</strong> {!!$empresa->ciudad!!}<br>

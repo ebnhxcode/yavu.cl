@@ -18,10 +18,10 @@
     @include('alerts.allAlerts')
 		@foreach($empresa as $e)
 			<div class="row" style="margin-top:-35px;">
-        <div class="col-md-4 col-sm-12 col-xs-12"><!--style="position:fixed;z-index:1000;"-->
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"><!--style="position:fixed;z-index:1000;"-->
 
           <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
               <div class="list-group">
                 <div class="list-group-item-full-header">
@@ -139,14 +139,14 @@
               </div>
             </div><!-- /div col-md-7 col-sm-7 col-xs-7 -->
 
-            <div class="col-md-5 col-sm-5 col-xs-5">
+            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
 
-            </div><!-- /div col-md-5 col-sm-5 col-xs-5 -->
+            </div><!-- /div col-xs-5 col-sm-5 col-md-5 col-lg-5 -->
           </div>
 
 
         </div>
-				<div class="col-md-8 col-sm-12 col-xs-12">
+				<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
 
           <div id="IPortada" class="list-group">
             <div class="thumbnail">
@@ -165,7 +165,7 @@
 
 		  		<br>
 				</div><!-- /div col-md-8 12 12 -->
-        <div class="col-md-12 col-sm-12 col-xs-12 ">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
         </div>
   			<br />
       </div>

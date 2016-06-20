@@ -14,7 +14,7 @@
     {!!Form::open(['route' => 'log.store', 'method' => 'POST'])!!}
     <div id="contentMini">
       <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           @include('alerts.allAlerts')
         </div><!-- /div .col-md12-sm12-xs12 -->
       </div><!-- /div .row -->
@@ -67,7 +67,7 @@
             <input name="emailRenovarClave" id="emailRenovarClave" class="form-control" type="email" required="required">
             {!! csrf_field() !!}
           </div><!-- /div .col-md9-sm9-xs9 -->
-          <div class="col-md-3 col-sm-3 col-xs-3">
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             {!!Form::submit('Renovar clave', ['class'=>'btn btn-primary btn-success', 'id' => 'RenovarClave'])!!}
             {!!Form::close()!!}
           </div><!-- /div .col-md3-sm3-xs3 -->

@@ -5,14 +5,14 @@
 <div class="jumbotron">
 	<div id="contentMiddle">
 		<div class="row">
-			<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				@include('alerts.allAlerts')
 			</div><!-- /div col-md12-sm12-xs12 -->
-			<div class="col-md-8 col-sm-12 col-xs-12">
+			<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
 				{!!Form::open(['route'=>'pagos.store', 'method'=>'POST'])!!}
 				@include('pagos.forms.fieldsPago')
 			</div><!-- /div .col-md8-sm12-xs12 -->
-			<div class="col-md-4 col-sm-12 col-xs-12">
+			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 				<div class="list-group">
 					<div class="list-group-item">
 						<h4>Todos los campos son requeridos</h4>

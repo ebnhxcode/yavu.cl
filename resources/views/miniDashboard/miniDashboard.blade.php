@@ -109,7 +109,7 @@
       </div><!-- /div .modal-header -->
       <div class="modal-body">
         <div class="row">
-          <div class="col-md-4 col-sm-4 col-xs-4">
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class='list-group' >
               <div align="center">
                 <a style="padding: 2px 2px 2px 2px;" href='{!!URL::to('/coins/history')!!}' style="text-align:center;" class="list-group-item list-group-item-info">
@@ -123,7 +123,7 @@
               </div><!-- /div aligned -->
             </div><!-- /div .list-group -->
           </div><!-- /div .col-md4-sm4-xs4 -->
-          <div class="col-md-4 col-sm-4 col-xs-4">
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="list-group">
               <div align="center">
                 <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/tickets/history')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
@@ -138,7 +138,7 @@
               <br>
             </div><!-- /div .list-group -->
           </div><!-- /div .col-md4-sm4-xs4 -->
-          <div style="display: none;" class="col-md-4 col-sm-4 col-xs-4 hasoneempresa">
+          <div style="display: none;" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 hasoneempresa">
             <div class="list-group" >
               <div align="center">
                 <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/estadisticasdemiempresa')!!}" style="text-align:center;" class="list-group-item list-group-item-info">

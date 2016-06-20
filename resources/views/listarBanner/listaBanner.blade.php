@@ -5,10 +5,10 @@
       <div id="EmpresaListThumbBanner">
         <div class="row">
           @foreach($bannersRandom as $banner)
-            <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
               <img id="ImagenPortada" src="{!! ($banner->banner!="")?'/img/users/'.$banner->banner:"/img/users/banner.png" !!}" alt="..." style="height: 170px;">
               <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
                   @foreach($banner->linksBannerData as $lbd)
                     <address>

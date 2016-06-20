@@ -96,20 +96,20 @@
         </div> <!-- /div container -->
         <div class="container">
             <div class="row">
-                <div class='col-md-6 col-sm-12 col-xs-12' align='middle'>
+                <div class='col-xs-12 col-sm-12 col-md-6 col-lg-6' align='middle'>
                     <div class="service-box">
                         <img src="/img/newGraphics/neo_icono_comercio02.png" class="img-responsive">
                         <h3>Acumula tus coins</h3>
                         <p class="text-muted">Acumula nuestras Yavü Coins en las publicaciones de las empresas.</p>
                     </div> <!-- /div service-box -->
-                </div> <!-- /div col-md-6 col-sm-12 col-xs-12 -->
-                <div class='col-md-6 col-sm-12 col-xs-12' align='middle'>
+                </div> <!-- /div col-xs-12 col-sm-12 col-md-6 col-lg-6 -->
+                <div class='col-xs-12 col-sm-12 col-md-6 col-lg-6' align='middle'>
                     <div class="service-box">
                         <img src="/img/newGraphics/neo_icono_conoce_empresa.png" class="img-responsive">
                         <h3>Participa por sorteos</h3>
                         <p class="text-muted">Compra Tickets con tus Coins y úsalos en los sorteos.</p>
                     </div> <!-- /div service-box -->
-                </div> <!-- /div col-md-6 col-sm-12 col-xs-12 -->
+                </div> <!-- /div col-xs-12 col-sm-12 col-md-6 col-lg-6 -->
             </div> <!-- /div row -->
         </div> <!-- /div container -->
     </section> <!-- /section #howto -->

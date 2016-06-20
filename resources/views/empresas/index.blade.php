@@ -12,7 +12,7 @@
     </div>
     -->
     <div class="row">
-      <div class="col-md-4 col-sm-12 col-xs-12">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 
         <div>
           <div>
@@ -37,7 +37,7 @@
           </div>
         </div> <!-- /panel -->
       </div>
-      <div class="col-md-8 col-sm-12 col-xs-12">
+      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
         <div>
           <div>
             @if(Auth::admin()->check())
@@ -67,7 +67,7 @@
               <div id="EmpresaListThumb">
            
                 @foreach($empresas as $empresa)
-                  <div class="col-md-6 col-sm-12 col-xs-12">
+                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="thumbnail card">
 
                       @if($empresa->imagen_portada === "" )
@@ -77,7 +77,7 @@
                       @endif
 
                         <div class="row">
-                          <div class="col-md-12 col-sm-12 col-xs-12">
+                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <address>
                               <h4><a class="btn-link" href="/empresa/{!!$empresa->nombre!!}">{!! $empresa->nombre!!}</a></h4>
                               <strong>Ciudad :</strong> {!!$empresa->ciudad!!}<br>

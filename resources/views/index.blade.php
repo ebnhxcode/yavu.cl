@@ -6,12 +6,12 @@
 <div class="jumbotron">
   <div id="contentMiddle">
     <div class="row">
-      <div class="col-md-4 col-sm-12 col-xs-12">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
         @include('alerts.allAlerts')
         <img src="/img/newGraphics/icono_mac01.png" class="img-responsive-centered" />
         <br /><br />
       </div><!-- /div .col-md4-sm12-xs12 -->
-      <div class='col-md-8 col-sm-12 col-xs-12'>
+      <div class='col-xs-12 col-sm-12 col-md-8 col-lg-8'>
         <div class="panel-body">
           <h3> ¿Qué es Yavu?</h3>
           <h4>
@@ -19,25 +19,25 @@
           </h4>
         </div><!-- /div .panel-body -->
       </div><!-- /div .col-md8-sm12-xs12 -->
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <img src="img/cards/barra_separadora.png" class="img-responsive">
         <br>
       </div><!-- /div .col-md12-sm12-xs12 -->
     </div><!-- /div .row -->
     <div class="row">
-      <div class='col-md-4 col-sm-12 col-xs-12' align='middle'>
+      <div class='col-xs-12 col-sm-12 col-md-4 col-lg-4' align='middle'>
         <img src="/img/newGraphics/neo_icono_premios.png" class="img-responsive">
         <div class="panel-body">
           <p class='lead'>Descubre comercios en tu ciudad y participa por premios.</p>
         </div><!-- /div .panel-body -->
       </div><!-- /div .col-md4-sm12-xs12 aligned -->
-      <div class='col-md-4 col-sm-12 col-xs-12' align='middle'>
+      <div class='col-xs-12 col-sm-12 col-md-4 col-lg-4' align='middle'>
         <img src="/img/newGraphics/neo_icono_comercio02.png" class="img-responsive">
         <div class="panel-body">
           <p class='lead'>Acumula nuestras Yavü Coins en las publicaciones de las empresas.</p>
         </div><!-- /div .panel-body -->
       </div><!-- /div .col-md4-sm12-xs12 aligned -->
-      <div class='col-md-4 col-sm-12 col-xs-12' align='middle'>
+      <div class='col-xs-12 col-sm-12 col-md-4 col-lg-4' align='middle'>
         <img src="/img/newGraphics/neo_icono_conoce_empresa.png" class="img-responsive">
         <div class="panel-body">
           <p class='lead'>Compra Tickets con tus Coins y úsalos en los sorteos.</p>
@@ -47,7 +47,7 @@
     <br>
     @if(!Auth::user()->check())
       <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12" align="middle">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" align="middle">
           <a data-toggle="modal" data-target="#gridSystemModal" role="button" href="#!">
             <img src="img/newGraphics/registrate_02a.png" class="img-responsive" />
           </a>
