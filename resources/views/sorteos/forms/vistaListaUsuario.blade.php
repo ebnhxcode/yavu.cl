@@ -1,22 +1,12 @@
 <div id="SorteoListThumb">
-	{{--
-	{!! $ImagenSorteo = "" !!}
-	<div class="progress">
-		<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-			<span class="sr-only"></span>
-			<span>cargando sorteos</span>
-		</div><!-- /div .progress-bar .progress-bar-success .progress-bar-striped .active -->
-	</div><!-- /div .progress -->
-	--}}
-
 
 	@foreach($sorteos as $sorteo)
 		@if($sorteo->estado_sorteo == 'Activo')
-			<div class="list-group-item">
+			<div class="list-group-item div-hover">
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
             <img class='media-object' src='/img/users/{!! ($companyProfileImage = $sorteo->companyAuthorRaffle->imagen_perfil)?$companyProfileImage:'usuario_nuevo.png' !!}' data-holder-rendered='true' style='width: 36px; height: 36px; border-radius: 10%; float:left;'/>
-					</div>
+					</div><!-- /div .col-xs12-sm12-md1-lg1 -->
 					<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
 						<div class="row">
               <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
@@ -53,25 +43,18 @@
                   <span class="text-success">{!!$sorteo->estado_sorteo!!}</span><br>
                 </div>
 
-                @if(Auth::user()->check())
-
-                  <input id="sorteo_id" value="{!! $sorteo->id !!}" type="hidden" />
-                  <input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
-
-                  <div id="msjs{!! $sorteo->id !!}" class="alert alert-info alert-dismissible" style="display: none;" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div><!-- /div #msjs+sorteo_id .alert .alert-info .alert-dismissible -->
-
-                @else
-                  <a href="{!! URL::to('usuarios/create') !!}" class="btn btn-primary btn-sm" role="button">Participar!</a>
-                @endif
+                <input id="sorteo_id" value="{!! $sorteo->id !!}" type="hidden" />
+                <input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
+                <div id="msjs{!! $sorteo->id !!}" class="alert alert-info alert-dismissible" style="display: none;" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div><!-- /div #msjs+sorteo_id .alert .alert-info .alert-dismissible -->
               </div> <!-- /div .col-md4-sm12-xs12 -->
 							<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
-								<div class="thumbnail">
-									<img src='{!! isset($sorteo)?($sorteo->imagen_sorteo!='')?'/img/users/'.$sorteo->imagen_sorteo:'https://tiendas-asi.com/wp-content/uploads/2015/04/sorteo-diariodebodas.jpg':'' !!}' >
-								</div> <!-- /div .thumbnail -->
+								<a class="thumbnail">
+									<img class="img-responsive" src='{!! isset($sorteo)?($sorteo->imagen_sorteo!='')?'/img/users/'.$sorteo->imagen_sorteo:'https://tiendas-asi.com/wp-content/uploads/2015/04/sorteo-diariodebodas.jpg':'' !!}' >
+								</a> <!-- /div .thumbnail -->
                 <div class="amplio">
                   <div style="" class="row">
                     <div align="center" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
@@ -92,7 +75,7 @@
                   </div> <!-- /div .row -->
                 </div><!-- /div .amplio -->
                 <div class="">
-                  <button class="btn btn-success btn-md UsarTicket" value="{!! $sorteo->id !!}" type="button"   style="display: none; width: 100%;" data-dismiss="modal">Participar</button>
+                  <button class="btn btn-success btn-lg UsarTicket" value="{!! $sorteo->id !!}" type="button"   style="display: none; width: 100%;" data-dismiss="modal">¡¡ Participar !!</button>
                 </div><!-- /div .semi-amplio -->
                 <div class="row">
                   <div align="" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -118,7 +101,7 @@
             <div class="dropup">
               <button class="btn btn-default btn-xs dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="glyphicon glyphicon-chevron-down"></span>
-              </button>
+              </button><!-- /div .btn .btn-default .btn-xs .dropdown-toggle -->
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                 <li><a href="{!! URL::to('empresa/'.$sorteo->nombre_empresa.'/sorteos') !!}">Ver m&aacute;s sorteos de {!! $sorteo->nombre_empresa !!}</a></li>
                 <li>{!!link_to_route('sorteos.show', $title = 'Ver mas detalles', $parameters = $sorteo->id, $attributes = [])!!}</li>

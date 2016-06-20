@@ -168,17 +168,40 @@
 	}
 
 </script>
+{{--
+ <div>
+  <a href="/feeds">
+    <div class="border-yavu-sub-menu" id="section-right">
+      <span class="yavu-sub-menu-text">PUBLICACIONES</span>
+    </div><!-- /div .border-yavu-sub-menu #section-right -->
+  </a>
 
-<style>
-	#menu{
-		position: fixed;
-		bottom:0px;
-		height: 30px;
-		width:100%;
-		z-index: 1000;
-		background-color: transparent;
-	}
-</style>
 
-<div id="menu">.</div>
+
+  <a href="/empresas">
+    <div class="border-yavu-sub-menu" id="section-left">
+      <span class="yavu-sub-menu-text">EMPRESAS</span>
+    </div><!-- /div .border-yavu-sub-menu #section-left -->
+  </a>
+
+
+
+  <a href="/sorteos">
+    <div class="border-yavu-sub-menu" id="section-center">
+      <span class="yavu-sub-menu-text">SORTEOS</span>
+    </div><!-- /div .border-yavu-sub-menu #section-center -->
+  </a>
+</div>
+
+ --}}
+
+
+
+
+
+
+
+
+
+
 
