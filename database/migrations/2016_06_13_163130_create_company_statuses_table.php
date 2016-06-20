@@ -10,9 +10,11 @@ class CreateCompanyStatusesTable extends Migration
         Schema::dropIfExists('company_statuses');
         Schema::create('company_statuses', function (Blueprint $table) {
             $table->increments('id');
+            /*
             $table->integer('user_id',20);
             $table->integer('empresa_id',20);//después cambiará a company_id
             $table->string('status', 500);
+            */
             $table->timestamps();
         });
     }
