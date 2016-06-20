@@ -50,12 +50,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="vistaListaUsuario.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="vistaListaUsuario.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/sorteos/forms/vistaListaUsuario.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="88" column="16" selection-start-line="88" selection-start-column="16" selection-end-line="88" selection-end-column="16" />
+            <state relative-caret-position="378">
+              <caret line="66" column="50" selection-start-line="66" selection-start-column="50" selection-end-line="66" selection-end-column="50" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fieldsEmpresa.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/admins/forms/fieldsEmpresa.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="318">
+              <caret line="195" column="19" selection-start-line="195" selection-start-column="19" selection-end-line="195" selection-end-column="19" />
+              <folding>
+                <marker date="1466416035366" expanded="true" signature="1080:2304" placeholder="..." />
+                <marker date="1466416035366" expanded="true" signature="1093:2294" placeholder="..." />
+                <marker date="1466416035366" expanded="true" signature="1114:2214" placeholder="..." />
+                <marker date="1466416035366" expanded="true" signature="5627:6319" placeholder="..." />
+                <marker date="1466416035366" expanded="true" signature="5640:6309" placeholder="..." />
+                <marker date="1466416035366" expanded="true" signature="5661:6229" placeholder="..." />
+                <marker date="1466416035366" expanded="true" signature="6520:7034" placeholder="..." />
+                <marker date="1466416035366" expanded="true" signature="6533:7024" placeholder="..." />
+                <marker date="1466416035366" expanded="true" signature="6552:6944" placeholder="..." />
+                <marker date="1466416035366" expanded="true" signature="8415:8596" placeholder="..." />
+                <marker date="1466416035366" expanded="true" signature="8428:8586" placeholder="..." />
+                <marker date="1466416035366" expanded="true" signature="8449:8507" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -264,7 +287,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Other File Types" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="config/data&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;style.css&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;tyle.css&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;SorteoCo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;Sorteo.ph&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Sorteo.php&#10;vistaLista&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/sorteos/forms/vistaListaUsuario.blade.php&#10;SorteoController&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;Sorteo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Sorteo.php&#10;timeago&#9;FILE&#9;file:///var/www/html/yavu.cl/public/js/vendor/jquery.timeago.js&#10;SorteoContr&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;FeedContro&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="CONFIG/DATABAS&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;config/datav&#9;null&#9;null&#10;config/data&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;style.css&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;tyle.css&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;SorteoCo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;Sorteo.ph&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Sorteo.php&#10;vistaLista&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/sorteos/forms/vistaListaUsuario.blade.php&#10;SorteoController&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;Sorteo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Sorteo.php&#10;timeago&#9;FILE&#9;file:///var/www/html/yavu.cl/public/js/vendor/jquery.timeago.js&#10;SorteoContr&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;FeedContro&#9;null&#9;null" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
   </component>
   <component name="RunManager">
@@ -315,12 +338,12 @@
       <workItem from="1466364707393" duration="7809000" />
       <workItem from="1466377229963" duration="367000" />
       <workItem from="1466382396767" duration="19881000" />
-      <workItem from="1466415092572" duration="711000" />
+      <workItem from="1466415092572" duration="938000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28768000" />
+    <option name="totallyTimeSpent" value="28995000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="21" width="1920" height="1059" extended-state="6" />
@@ -648,10 +671,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/miniDashboard/miniDashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -659,29 +690,16 @@
     <entry file="file://$PROJECT_DIR$/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="60" column="61" selection-start-line="60" selection-start-column="61" selection-end-line="60" selection-end-column="61" />
+          <caret line="60" column="47" selection-start-line="60" selection-start-column="47" selection-end-line="60" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admins/forms/fieldsEmpresa.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/sorteos/forms/vistaListaUsuario.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="195" column="19" selection-start-line="195" selection-start-column="19" selection-end-line="195" selection-end-column="19" />
-          <folding>
-            <marker date="1466415811003" expanded="true" signature="1080:2304" placeholder="..." />
-            <marker date="1466415811003" expanded="true" signature="1093:2294" placeholder="..." />
-            <marker date="1466415811003" expanded="true" signature="1114:2214" placeholder="..." />
-            <marker date="1466415811003" expanded="true" signature="5627:6319" placeholder="..." />
-            <marker date="1466415811003" expanded="true" signature="5640:6309" placeholder="..." />
-            <marker date="1466415811003" expanded="true" signature="5661:6229" placeholder="..." />
-            <marker date="1466415811003" expanded="true" signature="6520:7034" placeholder="..." />
-            <marker date="1466415811003" expanded="true" signature="6533:7024" placeholder="..." />
-            <marker date="1466415811003" expanded="true" signature="6552:6944" placeholder="..." />
-            <marker date="1466415811003" expanded="true" signature="8415:8596" placeholder="..." />
-            <marker date="1466415811003" expanded="true" signature="8428:8586" placeholder="..." />
-            <marker date="1466415811003" expanded="true" signature="8449:8507" placeholder="..." />
-          </folding>
+        <state relative-caret-position="378">
+          <caret line="66" column="50" selection-start-line="66" selection-start-column="50" selection-end-line="66" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -693,19 +711,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/miniDashboard/miniDashboard.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/admins/forms/fieldsEmpresa.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/sorteos/forms/vistaListaUsuario.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="88" column="16" selection-start-line="88" selection-start-column="16" selection-end-line="88" selection-end-column="16" />
-          <folding />
+        <state relative-caret-position="318">
+          <caret line="195" column="19" selection-start-line="195" selection-start-column="19" selection-end-line="195" selection-end-column="19" />
+          <folding>
+            <marker date="1466416035366" expanded="true" signature="1080:2304" placeholder="..." />
+            <marker date="1466416035366" expanded="true" signature="1093:2294" placeholder="..." />
+            <marker date="1466416035366" expanded="true" signature="1114:2214" placeholder="..." />
+            <marker date="1466416035366" expanded="true" signature="5627:6319" placeholder="..." />
+            <marker date="1466416035366" expanded="true" signature="5640:6309" placeholder="..." />
+            <marker date="1466416035366" expanded="true" signature="5661:6229" placeholder="..." />
+            <marker date="1466416035366" expanded="true" signature="6520:7034" placeholder="..." />
+            <marker date="1466416035366" expanded="true" signature="6533:7024" placeholder="..." />
+            <marker date="1466416035366" expanded="true" signature="6552:6944" placeholder="..." />
+            <marker date="1466416035366" expanded="true" signature="8415:8596" placeholder="..." />
+            <marker date="1466416035366" expanded="true" signature="8428:8586" placeholder="..." />
+            <marker date="1466416035366" expanded="true" signature="8449:8507" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
