@@ -74,11 +74,8 @@ FeedController extends Controller{
             ->get();
   }
   public function show($id){
-
     $this->EmpresaEstado = EstadoEmpresa::findOrFail($id)->estado_empresa()->get();
-    return view('feeds.show', ['feed' => EstadoEmpresa::findOrFail($id)], ['EmpresaEstado' => $this->EmpresaEstado,  'mostrarbanner' => $this->MostrarBannerPublico()]);
-
-
+    return view('feeds.show', ['feed' => EstadoEmpresa::findOrFail($id), 'EmpresaEstado' => $this->EmpresaEstado, 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user]);
   }
   public function store(FeedCreateRequest $request){
 

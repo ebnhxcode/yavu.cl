@@ -14,7 +14,7 @@
     {!! Form::checkbox('name', 'value') !!}
   </div>
 --}}
-</div> <!-- /list group -->
+</div> <!-- /div .list group -->
 @if(count($bannersRandom)>0)
   @include('listarBanner.listaBanner')
 @endif

@@ -12,11 +12,11 @@
           @include('alerts.allAlerts')
         </div><!-- /div .col-md12-sm12-xs12 -->
 
-        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
           @include('feeds.indexPartial.sectionLeft')
         </div><!-- /div .col-md4-sm12-xs12 -->
 
-        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
           <div class="list-group">
             <div class="list-group-item">
               <div class="row">
@@ -66,6 +66,10 @@
             </a><!-- /div .list-group-item -->
           </div><!-- /div .list-group -->
         </div><!-- /div .col-md6-sm12-xs12 -->
+
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+              @include('feeds.indexPartial.sectionRight')
+          </div><!-- /div .col-md4-sm12-xs12 -->
 
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           {{-- @include('feeds.indexPartial.sectionRight') --}}
