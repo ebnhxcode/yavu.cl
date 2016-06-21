@@ -10,32 +10,32 @@
       <div id="EmpresaListThumbBanner">
         <div class="row">
           @foreach($bannersRandom as $banner)
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+            <div class="col-xs-12 col-sm-4 col-md-12 col-lg-12 text-center">
 
-              <div class="thumbnail">
-                <img id="ImagenPortada" src="{!! ($banner->banner!="")?'/img/users/'.$banner->banner:"/img/users/banner.png" !!}" alt="..." style="height: 170px;">
+              <a class="thumbnail">
+                <img class="img-responsive" id="ImagenPortada" src="{!! ($banner->banner!="")?'/img/users/'.$banner->banner:"/img/users/banner.png" !!}" alt="..." style="height: 170px;">
+              </a>
+              <div class="caption">
 
-                <div class="caption">
+                <p>
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
-                  <p>
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    @foreach($banner->linksBannerData as $lbd)
+                      <a class="btn-link" href="/empresa/{!!$lbd->link!!}">
+                        {!! $lbd->titulo_link!!}
+                      </a><!-- /div .btn-link -->
+                    @endforeach
+                    <h6>{!! $banner->descripcion_banner !!}</h6>
 
-                      @foreach($banner->linksBannerData as $lbd)
-                        <a class="btn-link" href="/empresa/{!!$lbd->link!!}">
-                          {!! $lbd->titulo_link!!}
-                        </a><!-- /div .btn-link -->
-                      @endforeach
-                      <h6>{!! $banner->descripcion_banner !!}</h6>
+                  </div><!-- /div .col-md12-sm12-xs12 -->
+                </div><!-- /div .row -->
+                </p>
 
-                    </div><!-- /div .col-md12-sm12-xs12 -->
-                  </div><!-- /div .row -->    
-                  </p>
-
-                </div>
               </div>
+
             </div><!-- /div .col-md12-sm12-xs12 -->
-            <hr>
+
           @endforeach
         </div><!-- /div .row -->
       </div> <!-- /div  -->

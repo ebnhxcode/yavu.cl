@@ -1,11 +1,14 @@
 <div class="list-group">
   <div class="list-group-item list-group-item-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    <div class="btn btn-default btn-lg ">
+      <span class="glyphicon glyphicon-th-large"></span>
+    </div>
     Men&uacute;
   </div><!-- /div .list-group-item .success -->
   <div class="list-group-item">
     <div class="collapse" id="collapseExample">
       <div class="row">
-        <div class="col-md-4 col-sm-4 col-xs-6">
+        <div class="col-md-4 col-sm-4 col-xs-4">
           <div class='list-group' >
             <div align="center">
               <a style="padding: 2px 2px 2px 2px;" href='{!!URL::to('/usuarios/'.Auth::user()->get()->id.'/edit')!!}' style="text-align:center;" class="list-group-item list-group-item-info">
@@ -17,7 +20,7 @@
         </div><!-- /div .col-md4-sm-4-xs6 -->
 
         @if(Request::path() != 'feeds')
-          <div class="col-md-4 col-sm-4 col-xs-6">
+          <div class="col-md-4 col-sm-4 col-xs-4">
             <div class="list-group" >
               <div align="center">
                 <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/feeds')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
@@ -30,7 +33,7 @@
         @endif
 
         @if(Request::path() != 'empresas')
-          <div class="col-md-4 col-sm-4 col-xs-6">
+          <div class="col-md-4 col-sm-4 col-xs-4">
             <div class="list-group" >
               <div align="center">
                 <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/empresas')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
@@ -43,7 +46,7 @@
         @endif
 
         @if(Request::path() != 'sorteos')
-          <div class="col-md-4 col-sm-4 col-xs-6">
+          <div class="col-md-4 col-sm-4 col-xs-4">
             <div class="list-group" >
               <div align="center">
                 <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/sorteos')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
@@ -56,7 +59,7 @@
         @endif
 
         @if(Request::path() != 'tickets')
-          <div class="col-md-4 col-sm-4 col-xs-6">
+          <div class="col-md-4 col-sm-4 col-xs-4">
             <div class="list-group" >
               <div align="center">
                 <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/tickets')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
@@ -69,7 +72,7 @@
         @endif
 
         @if((Request::path() != 'tickets/history') && (Request::path() != 'coins' && Request::path() != 'coins/history'))
-          <div class="col-md-4 col-sm-4 col-xs-6">
+          <div class="col-md-4 col-sm-4 col-xs-4">
             <div class='list-group' >
               <div align="center">
                 <a style="padding: 2px 2px 2px 2px;"  style="text-align:center;" data-toggle="modal" data-target="#myModal" class="list-group-item list-group-item-info">
@@ -82,7 +85,7 @@
         @endif
 
         @if(Request::path() != 'sorteos/create')
-          <div style="display: none;" class="col-md-4 col-sm-4 col-xs-6 hasoneempresa">
+          <div style="display: none;" class="col-md-4 col-sm-4 col-xs-4 hasoneempresa">
             <div class="list-group" >
               <div align="center">
                 <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/sorteos/create')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
@@ -95,7 +98,7 @@
         @endif
       </div><!-- /row -->
     </div><!-- /div #collapseExample .collapse -->
-    <small>Haz click en Men&uacute;</small>
+    <span data-toggle="collapse" data-target="#collapseExample"  class="glyphicon glyphicon-chevron-up btn"></span>
   </div><!-- /div .list-group-item -->
 </div><!-- /div .list-group -->
 

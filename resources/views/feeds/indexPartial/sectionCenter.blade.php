@@ -55,7 +55,7 @@
         <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
           <div class="dropup">
             <a href="/feeds/{!!$companyStatus->id!!}">
-              <span class="glyphicon glyphicon-chevron-down"></span>
+              <span class="glyphicon glyphicon-chevron-down btn"></span>
             </a>
           </div><!-- /div .dropup -->
 
