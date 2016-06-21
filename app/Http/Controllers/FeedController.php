@@ -1,6 +1,7 @@
 <?php
 namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
+use PhpSpec\Exception\Example\ExampleException;
 use yavu\Empresa;
 use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
@@ -37,7 +38,13 @@ FeedController extends Controller{
     return Redirect::to('/feeds');
   }
   public function edit($id){
-    return view('feeds.edit', ['feed' => EstadoEmpresa::findOrFail($id), 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user]);
+    $this->feed = EstadoEmpresa::findOrFail($id);
+    if( $this->feed->user_id == $this->user->id ){
+      return view('feeds.edit', ['feed' => EstadoEmpresa::findOrFail($id), 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
+    }else{
+      return $this->index();
+    }
+
   }
   public function EliminarFeed($id){
 

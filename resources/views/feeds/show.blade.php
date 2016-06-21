@@ -27,6 +27,7 @@
                 </div><!-- /div .col-md1-sm-offset-12-xs-offset-12 -->
 
                 <div class="col-xs-12 col-sm-12 col-md-11 col-lg-11">
+                  @if($userSession->id==$feed->user_id)
                   <div class="dropdown">
                     <div style="float: right;" class="dropdown">
                       <button class="btn btn-default btn-xs dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -36,9 +37,9 @@
 
 
                       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        @if($userSession->id==$feed->user_id)
+
                           <li><a href='/feeds/{!!$feed->id!!}/edit'>Editar publicaci&oacute;n</a></li>
-                        @endif
+
 
                         <!--(user_id==value.user_id?"<li><a onclick='eliminarEstado("+value.id+",0)' href='#!'>Ocultar estado</a></li>":"")-->
 
@@ -47,7 +48,7 @@
 
                     </div><!-- /div .dropdown -->
                   </div><!-- /div .dropdown -->
-
+                  @endif
                   <div class="media-heading">
                     <strong><a href="/empresas/{!! $postAuthor->id !!}" style="color: #3C5B28;">{!! $postAuthor->nombre !!}</a></strong>
                     <strong>·</strong>

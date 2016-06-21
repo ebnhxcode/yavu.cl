@@ -25,6 +25,7 @@
               </div><!-- /div .col-md1-sm-offset-12-xs-offset-12 -->
 
               <div class="col-xs-12 col-sm-12 col-md-11 col-lg-11">
+                @if($userSession->id==$feed->user_id)
                 <div class="dropdown">
                   <div style="float: right;" class="dropdown">
                     <button class="btn btn-default btn-xs dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -32,7 +33,7 @@
                       <span class="caret"></span>
                     </button><!-- /button .btn .btn-default .dropdown-toggle -->
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                      @if($userSession->id==$feed->user_id)
+
                         <li><a href='/feeds/{!!$feed->id!!}'>Volver a la publicaci&oacute;n</a></li>
                         {!!Form::open(['action'=> ['FeedController@destroy', $feed->id], 'method'=>'DELETE'])!!}
                         <li>
@@ -42,12 +43,12 @@
                           </a>
                         </li>
                         {!!Form::close()!!}
-                        @endif
+
                     </ul><!-- /ul .dropdown-menu -->
 
                   </div><!-- /div .dropdown -->
                 </div><!-- /div .dropdown -->
-
+                @endif
                 <div class="media-heading">
                   <strong><a href="/empresas/{!! $postAuthor->id !!}" style="color: #3C5B28;">{!! $postAuthor->nombre !!}</a></strong>
                   <strong>·</strong>
@@ -90,18 +91,7 @@
 
 
       <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-        <div class="list-group">
-          <div class="list-group-item">
-            <div class="form-group has-feedback has-feedback-left">
-
-            </div><!-- /div .form-group .has-feedback .has-feedback-left -->
-          </div><!-- /div .list-group-item -->
-          <div class="list-group-item">
-            <div class="form-group has-feedback has-feedback-left">
-
-            </div><!-- /div .form-group .has-feedback .has-feedback-left -->
-          </div><!-- /div .list-group-item -->
-        </div><!-- /div .list-group -->
+        @include('feeds.indexPartial.sectionRight')
       </div><!-- /div .col-md4-sm12-xs12 -->
     </div><!-- /div .row -->
   </div><!-- /div #contentMiddle -->

@@ -29,7 +29,7 @@
             <img class='media-object' src='/img/users/{!! ($companyStatus->companyPostAuthor->imagen_perfil!='')?$companyStatus->companyPostAuthor->imagen_perfil:'usuario_nuevo.png' !!}' data-holder-rendered='true' style='width: 36px; height: 36px; border-radius: 10%;'/>
           </a>
         </div><!-- /div .col-md1-sm-offset-12-xs-offset-12 -->
-        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-11">
+        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
           <div class="media-heading">
             <strong><a href="/empresas/{!! $companyStatus->empresa_id !!}" style="color: #3C5B28;">{!! $companyPostName = $companyStatus->companyPostAuthor->nombre !!}</a></strong>
             <strong>·</strong>
@@ -47,11 +47,19 @@
                 </span><!-- /span $estado_+$companyStatus->id .btn .btn-sm .btn-default-warning -->
               @endif
             @endif
-              <span class="text-info" style="float: right;font-size: 0.7em;">
-                <small>(Author : <a href="/empresas/{!! $companyStatus->empresa_id !!}">{!! $companyPostName !!}</a>)</small>
-              </span>
+            <span class="text-info" style="float: right;font-size: 0.7em;">
+              <small>(Author : <a href="/empresas/{!! $companyStatus->empresa_id !!}">{!! $companyPostName !!}</a>)</small>
+            </span>
           </div><!-- /div -->
         </div><!-- /div .col-md11-sm12-xs12 -->
+        <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+          <div class="dropup">
+            <a href="/feeds/{!!$companyStatus->id!!}">
+              <span class="glyphicon glyphicon-chevron-down"></span>
+            </a>
+          </div><!-- /div .dropup -->
+
+        </div><!-- /div .col-lg1-md1-sm12-xs12 -->
       </div><!-- /div .row -->
     </div><!-- /div .list-group-item #publicacion+$companyStatus->id -->
   @endforeach
