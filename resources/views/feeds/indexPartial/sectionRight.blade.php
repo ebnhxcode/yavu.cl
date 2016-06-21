@@ -27,3 +27,45 @@
   @endforeach
 
 </div><!-- /div .list-group -->
+<!-- Banner Random -->
+<div class="list-group">
+  <div class="list-group-item">
+    <span class="glyphicon glyphicon-certificate"></span>
+    <span style="font-size: 1.8em; color: #65C400; z-index: 1003;" class="glyphicon glyphicon-bookmark"></span>
+    <span style="font-size: 1.8em; color: #449d44; right: 20px; z-index: 1002;" class="glyphicon glyphicon-bookmark"></span>
+    <span style="font-size: 1.8em; color: #ffcc00; right: 40px; z-index: 1001;" class="glyphicon glyphicon-bookmark"></span>
+  </div>
+  <div style="padding: 30px 30px 5px 30px;" class="list-group-item">
+    <div class="row">
+      <div id="EmpresaListThumbBanner">
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-12 col-lg-12 text-center">
+
+              <a class="thumbnail">
+                <img class="img-responsive" id="ImagenPortada" src="/img/users/Cocacola/coca-cola-421.jpg" alt="..." style="height: 170px;">
+              </a>
+              <div class="caption">
+
+                <p>
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                      <a class="btn-link" href="/empresa/">
+                      </a><!-- /div .btn-link -->
+                    <h6></h6>
+
+                  </div><!-- /div .col-md12-sm12-xs12 -->
+                </div><!-- /div .row -->
+                </p>
+
+              </div>
+
+            </div><!-- /div .col-md12-sm12-xs12 -->
+
+        </div><!-- /div .row -->
+      </div> <!-- /div  -->
+    </div><!-- /div .row -->
+  </div> <!-- /div .list-group-item styled -->
+  <small>Ads via <a class="btn-link" href="http://yavu.cl/">Yavü</a></small>
+</div><!-- /div .list-group -->
+

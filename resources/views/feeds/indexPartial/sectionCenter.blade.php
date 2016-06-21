@@ -21,7 +21,7 @@
       </div><!-- /div .row -->
     </div><!-- /div .list-group-item -->
   @endif
-  @foreach($companyStatuses as $companyStatus)
+  @foreach($companyStatuses as $key => $companyStatus)
     <div id='publicacion{!! $companyStatus->id !!}' class="list-group-item div-hover">
       <div class="row">
         <div class="col-md-1 col-sm-offset-0 col-xs-offset-0">
@@ -62,6 +62,17 @@
         </div><!-- /div .col-lg1-md1-sm12-xs12 -->
       </div><!-- /div .row -->
     </div><!-- /div .list-group-item #publicacion+$companyStatus->id -->
+    @if($key == 5)
+      <div class="list-group-item">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <a class="thumbnail">
+              <img class="img-responsive" id="ImagenPortada" src="/img/users/Cocacola/productos2-head-img2211.jpg" alt="..." style="height: 170px;">
+            </a>
+          </div><!-- /div .col-md12-sm12-xs12 -->
+        </div>
+      </div>
+    @endif
   @endforeach
 
   <div class="list-group-item" style="text-align: center;">
