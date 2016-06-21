@@ -15,13 +15,6 @@
         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
           @include('feeds.indexPartial.sectionLeft')
         </div><!-- /div .col-md4-sm12-xs12 -->
-        {{--
-        ['feed' => EstadoEmpresa::findOrFail($id),
-        'EmpresaEstado' => $this->EmpresaEstado,
-        'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(),
-        'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(),
-        'userSession' => $this->user]
-        --}}
 
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
           <div class="list-group">
@@ -43,9 +36,13 @@
 
 
                       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a onclick="eliminarEstado({!!  $feed->id.','.$feed->user_id!!})" href="#!">{!! ($userSession->id==$feed->user_id?"Eliminar":"Ocultar") !!} publicación</a></li>
+                        @if($userSession->id==$feed->user_id)
+                          <li><a onclick="eliminarEstado({!!  $feed->id.','.$feed->user_id!!})" href="#!">Eliminar publicaci&oacute;n</a></li>
+                          <li><a href='/feeds/{!!$feed->id!!}/edit'>Editar publicaci&oacute;n</a></li>
+                        @endif
+
                         <!--(user_id==value.user_id?"<li><a onclick='eliminarEstado("+value.id+",0)' href='#!'>Ocultar estado</a></li>":"")-->
-                        <!--(user_id==value.user_id?"<li><a href='/feeds/"+value.id+"/edit'>Editar publicaci&oacute;n</a></li>":"")-->
+
                       </ul><!-- /ul .dropdown-menu -->
 
 
