@@ -25,7 +25,9 @@
       </div><!-- /div .list-group-item -->
     @endif
   @endforeach
-
+  <div class="list-group-item list-group-item-info">
+    <small>¡Por tiempo limitado, sigue a todas las empresas que puedas para permanecer recibiendo sus coins a futuro!</small>
+  </div>
 </div><!-- /div .list-group -->
 <!-- Banner Random -->
 <div class="list-group">

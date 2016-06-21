@@ -421,3 +421,64 @@
   -webkit-transition: .089s;
 }
 
+.circle-green-first {
+  color: #fff;
+  z-index: 1010;
+  background-color: #466a07;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: solid 2px #FFF;
+  -webkit-transition: 0.3s;
+  /* width and height can be anything, as long as they're equal */
+}
+.circle-green-first:hover {
+  color: #000;
+  background-color: #466a07;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: solid 2px #FFF;
+  -webkit-transition: 0.3s;
+  /* width and height can be anything, as long as they're equal */
+}
+
+.circle-green-second {
+  z-index: 1010;
+  background-color: #2ca02c;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: solid 2px #FFF;
+  -webkit-transition: 0.3s;
+  /* width and height can be anything, as long as they're equal */
+}
+.circle-green-second:hover {
+  background-color: #2ca02c;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: solid 2px #FFF;
+  -webkit-transition: 0.3s;
+  /* width and height can be anything, as long as they're equal */
+}
+
+.circle-yellow-first {
+  z-index: 1010;
+  background-color: #ffcc00;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: solid 2px #FFF;
+  -webkit-transition: 0.3s;
+  /* width and height can be anything, as long as they're equal */
+}
+.circle-yellow-first:hover {
+  background-color: #ffcc00;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: solid 2px #FFF;
+  -webkit-transition: 0.3s;
+  /* width and height can be anything, as long as they're equal */
+}

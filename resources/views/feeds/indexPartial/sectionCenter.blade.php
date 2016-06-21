@@ -1,4 +1,25 @@
 <div class="list-group">
+  <div class="list-group-item">
+    <!-- Descuble coins secretos -->
+    <div class="row">
+      <div align="center" class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <div class="circle-green-second">
+          
+        </div>
+      </div>
+      <div align="center" class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <div class="circle-green-first">
+
+        </div>
+      </div>
+      <div align="center" class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <div class="circle-yellow-first">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
   @if(isset($myCompanies) && count($myCompanies)>0)
     <div class="list-group-item" align="right">
       <div class="row">
