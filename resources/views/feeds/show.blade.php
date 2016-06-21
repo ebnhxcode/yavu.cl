@@ -37,7 +37,6 @@
 
                       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                         @if($userSession->id==$feed->user_id)
-                          <li><a onclick="eliminarEstado({!!  $feed->id.','.$feed->user_id!!})" href="#!">Eliminar publicaci&oacute;n</a></li>
                           <li><a href='/feeds/{!!$feed->id!!}/edit'>Editar publicaci&oacute;n</a></li>
                         @endif
 

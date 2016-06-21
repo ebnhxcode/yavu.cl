@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2a319e70-fb31-4458-aa3e-4006149cb7e9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FeedController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FeedController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/feeds/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/feeds/edit.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/feeds/forms/fieldsFeed.blade.php" afterPath="$PROJECT_DIR$/resources/views/feeds/forms/fieldsFeed.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/feeds/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/feeds/show.blade.php" />
     </list>
     <ignored path="yavu.cl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,9 +43,11 @@
       <file leaf-file-name="sectionCenter.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/feeds/indexPartial/sectionCenter.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-31.88889" vertical-offset="0" max-vertical-offset="1806">
-              <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+            <state vertical-scroll-proportion="-10.111111" vertical-offset="0" max-vertical-offset="1806">
+              <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="40" />
               <folding>
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <marker date="1466453801386" expanded="true" signature="686:934" placeholder="..." />
                 <marker date="1466453801386" expanded="true" signature="701:933" placeholder="..." />
                 <marker date="1466453801386" expanded="true" signature="716:932" placeholder="..." />
@@ -51,50 +56,39 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/feeds/show.blade.php">
+      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/feeds/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.0" vertical-offset="525" max-vertical-offset="4494">
-              <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+            <state vertical-scroll-proportion="-5.625" vertical-offset="504" max-vertical-offset="2394">
+              <caret line="39" column="110" selection-start-line="39" selection-start-column="110" selection-end-line="39" selection-end-column="110" />
               <folding>
-                <element signature="e#1168#1222#0#HTML" expanded="true" />
-                <element signature="e#1456#1477#0#HTML" expanded="true" />
-                <element signature="e#2737#2760#0#HTML" expanded="true" />
-                <element signature="e#2868#2905#0#HTML" expanded="true" />
-                <element signature="e#3336#3362#0#HTML" expanded="true" />
-                <element signature="e#4025#4063#0#HTML" expanded="true" />
-                <marker date="1466472310556" expanded="true" signature="5490:5868" placeholder="..." />
-                <marker date="1466472310556" expanded="true" signature="5729:5811" placeholder="..." />
-                <marker date="1466472310556" expanded="true" signature="5901:5973" placeholder="..." />
-                <marker date="1466472310556" expanded="true" signature="6010:6706" placeholder="..." />
-                <marker date="1466472310556" expanded="true" signature="6504:6700" placeholder="..." />
-                <marker date="1466472310556" expanded="true" signature="6859:7587" placeholder="..." />
-                <marker date="1466472310556" expanded="true" signature="7030:7565" placeholder="..." />
-                <marker date="1466472310556" expanded="true" signature="7051:7564" placeholder="..." />
-                <marker date="1466472310556" expanded="true" signature="7070:7510" placeholder="..." />
-                <marker date="1466472310556" expanded="true" signature="7090:7509" placeholder="..." />
-                <marker date="1466472310556" expanded="true" signature="7129:7476" placeholder="..." />
-                <marker date="1466472310556" expanded="true" signature="7624:8338" placeholder="..." />
-                <marker date="1466472310556" expanded="true" signature="7911:8200" placeholder="..." />
-                <marker date="1466472310556" expanded="true" signature="7935:8065" placeholder="..." />
-                <marker date="1466472310556" expanded="true" signature="8071:8192" placeholder="..." />
-                <marker date="1466472310556" expanded="true" signature="8262:8332" placeholder="..." />
-                <marker date="1466472310556" expanded="true" signature="8388:8729" placeholder="..." />
-                <marker date="1466472310556" expanded="true" signature="8485:8707" placeholder="..." />
-                <marker date="1466472310556" expanded="true" signature="8506:8706" placeholder="..." />
-                <marker date="1466472310556" expanded="true" signature="8561:8699" placeholder="..." />
-                <marker date="1466472310556" expanded="true" signature="8581:8698" placeholder="..." />
-                <marker date="1466472310556" expanded="true" signature="8612:8690" placeholder="..." />
+                <element signature="e#1033#1087#0#HTML" expanded="true" />
+                <element signature="e#1311#1332#0#HTML" expanded="true" />
+                <element signature="e#2792#2815#0#HTML" expanded="true" />
+                <element signature="e#2919#2956#0#HTML" expanded="true" />
+                <element signature="e#3545#3569#0#HTML" expanded="true" />
+                <element signature="e#3788#3814#0#HTML" expanded="true" />
+                <element signature="e#3884#3922#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/feeds/edit.blade.php">
+      <file leaf-file-name="fieldsFeed.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/feeds/forms/fieldsFeed.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.666667" vertical-offset="0" max-vertical-offset="966">
-              <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+            <state vertical-scroll-proportion="-2.3333333" vertical-offset="0" max-vertical-offset="273">
+              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/feeds/show.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.296296" vertical-offset="601" max-vertical-offset="4473">
+              <caret line="38" column="61" selection-start-line="38" selection-start-column="61" selection-end-line="38" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -113,11 +107,21 @@
       <file leaf-file-name="FeedController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FeedController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3689655" vertical-offset="668" max-vertical-offset="1869">
-              <caret line="42" column="140" selection-start-line="42" selection-start-column="140" selection-end-line="42" selection-end-column="140" />
+            <state vertical-scroll-proportion="0.20689656" vertical-offset="588" max-vertical-offset="1785">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="36" selection-end-column="34" />
               <folding>
                 <element signature="e#39#67#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FeedUpdateRequest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Requests/FeedUpdateRequest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.3333333" vertical-offset="0" max-vertical-offset="483">
+              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -135,18 +139,8 @@
       <file leaf-file-name="sectionLeft.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/feeds/indexPartial/sectionLeft.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.777778" vertical-offset="0" max-vertical-offset="525">
-              <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Sorteo.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Sorteo.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.37037036" vertical-offset="389" max-vertical-offset="1140">
-              <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+            <state vertical-scroll-proportion="-12.444445" vertical-offset="0" max-vertical-offset="525">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -163,7 +157,6 @@
         <option value="$PROJECT_DIR$/public/js/vendor/jquery.timeago.js" />
         <option value="$PROJECT_DIR$/resources/views/sorteos/indexPartial/sectionCenter.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admins/banneradmin/bannerassign.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/feeds/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/empresas/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/empresas/companyStatistics.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/feeds/indexPartial/sectionCenter.blade.php" />
@@ -186,7 +179,9 @@
         <option value="$PROJECT_DIR$/config/database.php" />
         <option value="$PROJECT_DIR$/public/.htaccess" />
         <option value="$PROJECT_DIR$/resources/views/admins/forms/fieldsEmpresa.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/feeds/forms/fieldsFeed.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/feeds/show.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/feeds/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FeedController.php" />
       </list>
     </option>
@@ -385,6 +380,58 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="feeds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="indexPartial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="feeds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -409,7 +456,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Other File Types" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="config/data&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;FeedCo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;CONFIG/DATABAS&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;config/datav&#9;null&#9;null&#10;style.css&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;tyle.css&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;SorteoCo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;Sorteo.ph&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Sorteo.php&#10;vistaLista&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/sorteos/forms/vistaListaUsuario.blade.php&#10;SorteoController&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;Sorteo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Sorteo.php&#10;timeago&#9;FILE&#9;file:///var/www/html/yavu.cl/public/js/vendor/jquery.timeago.js&#10;SorteoContr&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;FeedContro&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="feeds&#9;null&#9;null&#10;routes.php&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;route.php&#9;FILE&#9;file:///var/www/html/yavu.cl/vendor/symfony/routing/Route.php&#10;config/data&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;FeedCo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;CONFIG/DATABAS&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;config/datav&#9;null&#9;null&#10;style.css&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;tyle.css&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;SorteoCo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;Sorteo.ph&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Sorteo.php&#10;vistaLista&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/sorteos/forms/vistaListaUsuario.blade.php&#10;SorteoController&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;Sorteo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Sorteo.php&#10;timeago&#9;FILE&#9;file:///var/www/html/yavu.cl/public/js/vendor/jquery.timeago.js&#10;SorteoContr&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;FeedContro&#9;null&#9;null" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
     <property name="FullScreen" value="false" />
     <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
@@ -514,65 +561,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/admins/forms/fieldsEmpresa.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1466472017579" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1466472017579" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1466472017579" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1466472017579" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1466472017579" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1466472017579" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1466472017579" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1466472017579" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1466472017579" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1466472017579" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1466472017579" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1466472017579" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/sorteos/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Sorteo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SorteoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="134" column="3" selection-start-line="134" selection-start-column="3" selection-end-line="134" selection-end-column="3" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-            <marker date="1466463053768" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..id..." />
-            <marker date="1466463053768" expanded="true" signature="-1:-1" placeholder="SELECT id, e..sorteos..." />
-            <marker date="1466463053768" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..id..." />
-            <marker date="1466463053768" expanded="true" signature="-1:-1" placeholder="SELECT id, e..sorteos..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/sorteos/forms/vistaListaUsuario.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="88" column="16" selection-start-line="88" selection-start-column="16" selection-end-line="88" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/miniDashboard/miniDashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
@@ -816,31 +804,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/feeds/indexPartial/sectionLeft.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.777778" vertical-offset="0" max-vertical-offset="525">
-          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/sorteos/indexPartial/sectionCenter.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21724138" vertical-offset="0" max-vertical-offset="630">
           <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/feeds/indexPartial/sectionCenter.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-31.88889" vertical-offset="0" max-vertical-offset="1806">
-          <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
-          <folding>
-            <marker date="1466453801386" expanded="true" signature="686:934" placeholder="..." />
-            <marker date="1466453801386" expanded="true" signature="701:933" placeholder="..." />
-            <marker date="1466453801386" expanded="true" signature="716:932" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -905,14 +873,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/EstadoEmpresa.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.88889" vertical-offset="0" max-vertical-offset="672">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/sorteos/forms/fieldsSorteo.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.06896552" vertical-offset="0" max-vertical-offset="1470">
@@ -929,55 +889,104 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/feeds/indexPartial/sectionLeft.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.444445" vertical-offset="0" max-vertical-offset="525">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/feeds/indexPartial/sectionCenter.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.111111" vertical-offset="0" max-vertical-offset="1806">
+          <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="40" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <marker date="1466453801386" expanded="true" signature="686:934" placeholder="..." />
+            <marker date="1466453801386" expanded="true" signature="701:933" placeholder="..." />
+            <marker date="1466453801386" expanded="true" signature="716:932" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/routing/Route.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="13818">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_25_105202_create_feeds_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06752411" vertical-offset="0" max-vertical-offset="622">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33275864" vertical-offset="3818" max-vertical-offset="5670">
+          <caret line="191" column="24" selection-start-line="191" selection-start-column="19" selection-end-line="191" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/FeedUpdateRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.3333333" vertical-offset="0" max-vertical-offset="483">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/EstadoEmpresa.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.88889" vertical-offset="0" max-vertical-offset="672">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/feeds/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.0" vertical-offset="525" max-vertical-offset="4494">
-          <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
-          <folding>
-            <element signature="e#1168#1222#0#HTML" expanded="true" />
-            <element signature="e#1456#1477#0#HTML" expanded="true" />
-            <element signature="e#2737#2760#0#HTML" expanded="true" />
-            <element signature="e#2868#2905#0#HTML" expanded="true" />
-            <element signature="e#3336#3362#0#HTML" expanded="true" />
-            <element signature="e#4025#4063#0#HTML" expanded="true" />
-            <marker date="1466472310556" expanded="true" signature="5490:5868" placeholder="..." />
-            <marker date="1466472310556" expanded="true" signature="5729:5811" placeholder="..." />
-            <marker date="1466472310556" expanded="true" signature="5901:5973" placeholder="..." />
-            <marker date="1466472310556" expanded="true" signature="6010:6706" placeholder="..." />
-            <marker date="1466472310556" expanded="true" signature="6504:6700" placeholder="..." />
-            <marker date="1466472310556" expanded="true" signature="6859:7587" placeholder="..." />
-            <marker date="1466472310556" expanded="true" signature="7030:7565" placeholder="..." />
-            <marker date="1466472310556" expanded="true" signature="7051:7564" placeholder="..." />
-            <marker date="1466472310556" expanded="true" signature="7070:7510" placeholder="..." />
-            <marker date="1466472310556" expanded="true" signature="7090:7509" placeholder="..." />
-            <marker date="1466472310556" expanded="true" signature="7129:7476" placeholder="..." />
-            <marker date="1466472310556" expanded="true" signature="7624:8338" placeholder="..." />
-            <marker date="1466472310556" expanded="true" signature="7911:8200" placeholder="..." />
-            <marker date="1466472310556" expanded="true" signature="7935:8065" placeholder="..." />
-            <marker date="1466472310556" expanded="true" signature="8071:8192" placeholder="..." />
-            <marker date="1466472310556" expanded="true" signature="8262:8332" placeholder="..." />
-            <marker date="1466472310556" expanded="true" signature="8388:8729" placeholder="..." />
-            <marker date="1466472310556" expanded="true" signature="8485:8707" placeholder="..." />
-            <marker date="1466472310556" expanded="true" signature="8506:8706" placeholder="..." />
-            <marker date="1466472310556" expanded="true" signature="8561:8699" placeholder="..." />
-            <marker date="1466472310556" expanded="true" signature="8581:8698" placeholder="..." />
-            <marker date="1466472310556" expanded="true" signature="8612:8690" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="-7.296296" vertical-offset="601" max-vertical-offset="4473">
+          <caret line="38" column="61" selection-start-line="38" selection-start-column="61" selection-end-line="38" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/feeds/forms/fieldsFeed.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.3333333" vertical-offset="0" max-vertical-offset="273">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/feeds/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.666667" vertical-offset="0" max-vertical-offset="966">
-          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-          <folding />
+        <state vertical-scroll-proportion="-5.625" vertical-offset="504" max-vertical-offset="2394">
+          <caret line="39" column="110" selection-start-line="39" selection-start-column="110" selection-end-line="39" selection-end-column="110" />
+          <folding>
+            <element signature="e#1033#1087#0#HTML" expanded="true" />
+            <element signature="e#1311#1332#0#HTML" expanded="true" />
+            <element signature="e#2792#2815#0#HTML" expanded="true" />
+            <element signature="e#2919#2956#0#HTML" expanded="true" />
+            <element signature="e#3545#3569#0#HTML" expanded="true" />
+            <element signature="e#3788#3814#0#HTML" expanded="true" />
+            <element signature="e#3884#3922#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FeedController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3689655" vertical-offset="668" max-vertical-offset="1869">
-          <caret line="42" column="140" selection-start-line="42" selection-start-column="140" selection-end-line="42" selection-end-column="140" />
+        <state vertical-scroll-proportion="0.20689656" vertical-offset="588" max-vertical-offset="1785">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="36" selection-end-column="34" />
           <folding>
             <element signature="e#39#67#0#PHP" expanded="true" />
           </folding>

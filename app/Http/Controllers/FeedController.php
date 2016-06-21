@@ -31,16 +31,13 @@ FeedController extends Controller{
     //return view('feeds.create', ['mostrarbanner' => $this->MostrarBannerPublico()]);
   }
   public function destroy($id){
-    return response()->json(["Mensaje: " => "Acceso denegado"]);
-    //dd($this->feed);
-    if(isset($this->feed)){
-      $this->feed->delete();
-      Session::flash('message', 'Feed eliminado correctamente');
-      return Redirect::to('/feeds');
-    }
+    $this->feed = EstadoEmpresa::findOrFail($id);
+    $this->feed->delete();
+    Session::flash('message', 'Feed eliminado correctamente');
+    return Redirect::to('/feeds');
   }
   public function edit($id){
-    return view('feeds.edit', ['feed' => EstadoEmpresa::findOrFail($id), 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get()]);
+    return view('feeds.edit', ['feed' => EstadoEmpresa::findOrFail($id), 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user]);
   }
   public function EliminarFeed($id){
 
@@ -64,7 +61,6 @@ FeedController extends Controller{
     }
   }
   public function show($id){
-    $this->EmpresaEstado = EstadoEmpresa::findOrFail($id)->estado_empresa()->get();
     return view('feeds.show', ['feed' => EstadoEmpresa::findOrFail($id), 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user]);
   }
   public function store(FeedCreateRequest $request){
