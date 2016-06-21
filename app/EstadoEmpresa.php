@@ -21,4 +21,6 @@ class EstadoEmpresa extends Model
         return $this->hasOne(InteraccionEstado::class, 'status_id')->select('user_id')->where('user_id', $user_id);
     }
 
+
+
 }
