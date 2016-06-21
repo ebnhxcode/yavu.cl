@@ -40,7 +40,7 @@ FeedController extends Controller{
     }
   }
   public function edit($id){
-    return view('feeds.edit', ['feed' => EstadoEmpresa::findOrFail($id), 'mostrarbanner' => $this->MostrarBannerPublico()]);
+    return view('feeds.edit', ['feed' => EstadoEmpresa::findOrFail($id), 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get()]);
   }
   public function EliminarFeed($id){
 
@@ -62,16 +62,6 @@ FeedController extends Controller{
     }else{
       return view('feeds.index', ['companyStatuses' => EstadoEmpresa::orderBy('created_at', 'desc')->paginate(6), 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
     }
-  }
-  public function MostrarBannerPublico(){
-        return DB::table('empresas')
-            ->select(['empresas.nombre', 'banner_data.id', 'banner_data.banner', 'banner_data.titulo_banner','banner_data.descripcion_banner', 'banner_data.estado_banner', 'link_banner_data.link', 'link_banner_data.titulo_link'])
-            ->where('estado_banner', '=', 'Creado')
-            ->join('banner_data', 'banner_data.id', '=', 'empresas.id')
-            ->join('link_banner_data', 'banner_data.id', '=', 'banner_data_id')
-            ->orderByRaw("RAND()")
-            ->take(3)
-            ->get();
   }
   public function show($id){
     $this->EmpresaEstado = EstadoEmpresa::findOrFail($id)->estado_empresa()->get();
