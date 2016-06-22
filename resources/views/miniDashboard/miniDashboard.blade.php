@@ -1,9 +1,7 @@
 <div class="list-group">
   <div class="list-group-item list-group-item-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    <div class="btn btn-default btn-lg ">
       <span class="glyphicon glyphicon-th-large"></span>
-    </div>
-    Men&uacute;
+      Men&uacute;
   </div><!-- /div .list-group-item .success -->
   <div class="list-group-item">
     <div class="collapse" id="collapseExample">

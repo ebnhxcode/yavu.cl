@@ -84,7 +84,7 @@
       </div><!-- /div .row -->
     </div><!-- /div .list-group-item #publicacion+$companyStatus->id -->
     @if($key == 5)
-      <div class="list-group-item">
+      <div class="list-group-item div-hover">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <a class="thumbnail">

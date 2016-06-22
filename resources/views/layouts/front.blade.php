@@ -11,6 +11,19 @@
 		<meta name="description" content="Yavu es una empresa de publicidad que ofrece a sus usuarios activos la oportunidad de obtener coins a partir de las publicaciones para que puedan participar por los sorteos que las empresas publican.">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <style>
+      @font-face {
+
+        font-family: yavu_font;
+        src: url(fonts/yavu_font.ttf) ;
+
+      }
+
+
+    </style>
+
+
 		@section('favicon') {!!Html::favicon('favicons/changeFaviconNameHere.png')!!} @stop
 		@yield('favicon')
 		{!!Html::script('js/jquery.js')!!}
@@ -62,7 +75,10 @@
 						<div class="navbar-brand" align="center" >
 							<small>
                 <!-- <img src="{!! asset('/img/newGraphics/neo_notificacion04_16x16.png') !!}" width="" id="Notificaciones" title="Notificaciones <a href='/pops' style='float: right;'>ver todas</a>" data-toggle="popover" title="Popover title" data-placement="bottom" aria-hidden="true" alt=""> -->
-								<span id="Notificaciones" title="<span style='color: #000;'>Notificaciones</span> <a href='/pops' style='float: right;'>ver todas</a>" class="glyphicon glyphicon-bell" data-toggle="popover" title="Popover title" data-placement="bottom" aria-hidden="true" alt=""></span>
+
+								<span id="Notificaciones" title="<span style='color: #000;'>Notificaciones</span> <a href='/pops' style='float: right;'>ver todas</a>" class="" data-toggle="popover" title="Popover title" data-placement="bottom" aria-hidden="true" alt="">
+                  <span style="font-family: yavu_font; font-size: 2.5em;">A</span>
+                </span>
 
 								<span id="CantidadNotificaciones" style="float:right;" class="label label-danger"></span>
 							</small>
@@ -71,7 +87,7 @@
 						<div class="navbar-brand" align="center">
 							<small>
 								<!-- <img width="" src="/img/newGraphics/neo_tickets02_16x16.png" alt=""> -->
-								<span class="glyphicon glyphicon-piggy-bank"></span>
+								<span style="font-family: yavu_font;font-size: 2.5em;">J</span>
 								<span id="" style="float:right;" class="label label-warning CantidadCoins"></span>
 							</small>
 						</div>
@@ -81,7 +97,7 @@
 
 							<small>
 								<!-- <img width="22px" src="/img/newGraphics/neo_tickets01_32x32.gif" alt=""> -->
-								<span class="glyphicon glyphicon-tag"></span>
+                <span style="font-family: yavu_font;font-size: 2.5em;">E</span>
 								<span id="CantidadTickets" style="float:right;" class="label label-info"></span>
 							</small>
 						</div>
