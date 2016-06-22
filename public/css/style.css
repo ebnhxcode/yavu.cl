@@ -483,9 +483,9 @@
   /* width and height can be anything, as long as they're equal */
 }
 .out-yavucoin {
+  padding: 0px 18px 0px 18px;
+  border: dashed 3px #FFF;
   font-size: 3em;
-  padding: 1px 1px 1px 1px;
-  border: solid 3px #FFF;
   -webkit-transition: 0.5s;
 
   border-radius: 50px 50px 50px 50px;
@@ -496,7 +496,7 @@
 .circle-yavucoin {
   font-family: yavu_font;
   font-size: 3em;
-  padding:1px 1px 1px 1px;
+  padding: 21px 20px 21px 21px;
   border: solid 3px #FFF;
   -webkit-transition: 0.5s;
   /*
