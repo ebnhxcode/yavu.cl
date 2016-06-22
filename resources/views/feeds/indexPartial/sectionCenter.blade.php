@@ -4,7 +4,7 @@
     <div class="row">
       <div align="center" class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
         <div class="circle-green-second">
-          
+
         </div>
       </div>
       <div align="center" class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -12,7 +12,7 @@
 
         </div>
       </div>
-      <div align="center" class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+      <div align="center" class="col-lg-4 col-md-4 col-sm-4 col-xs-4">  
         <div class="circle-yellow-first">
 
         </div>
