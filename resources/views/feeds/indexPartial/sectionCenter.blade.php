@@ -63,9 +63,15 @@
           <div style="padding-top: 15px;" name='megusta' class=''>
             @if($companyStatus->statusRewarded->id!=Auth::user()->get()->id)
               @if($cs = $companyStatus->getUserInteraction($userSession->id)->get())
-                <span onclick='Interactuar(this.id)' id='estado_{!! $companyStatus->id !!}' value='e{!! $companyStatus->companyPostAuthor->id !!}' class="btn {!! count($cs)<1?'btn-warning':'btn-default' !!} btn-sm">
-                  {!! count($cs)<1?'Cobrar Coins':'Cobrados' !!}
+
+
+                <span onclick='Interactuar(this.id)' id='estado_{!! $companyStatus->id !!}' value='e{!! $companyStatus->companyPostAuthor->id !!}' class="btn {!! count($cs)<1?'btn-warning out-yavucoin':'btn-default out-yavucoin' !!} btn-xs" style=" " >
+
+                  {!! count($cs)<1?'<span style=" font-family: yavu_font;color: #ffcc00;">J</span>':'<span style=" font-family: yavu_font;color: #000;">I</span>' !!}
+
                 </span><!-- /span $estado_+$companyStatus->id .btn .btn-sm .btn-default-warning -->
+                <span id="status_{!! $companyStatus->id !!}"></span>
+
               @endif
             @endif
             <span class="text-info" style="float: right;font-size: 0.7em;">

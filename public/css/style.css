@@ -482,3 +482,27 @@
   -webkit-transition: 0.3s;
   /* width and height can be anything, as long as they're equal */
 }
+.out-yavucoin {
+  font-size: 3em;
+  padding: 1px 1px 1px 1px;
+  border: solid 3px #FFF;
+  -webkit-transition: 0.5s;
+
+  border-radius: 50px 50px 50px 50px;
+
+
+  /* width and height can be anything, as long as they're equal */
+}
+.circle-yavucoin {
+  font-family: yavu_font;
+  font-size: 3em;
+  padding:1px 1px 1px 1px;
+  border: solid 3px #FFF;
+  -webkit-transition: 0.5s;
+  /*
+  border-radius: 50px 50px 50px 50px;
+
+
+  */
+  /* width and height can be anything, as long as they're equal */
+}
