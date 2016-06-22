@@ -16,7 +16,7 @@
       @font-face {
 
         font-family: yavu_font;
-        src: url(fonts/yavu_font.ttf) ;
+        src: url("/fonts/yavu_font.ttf");
 
       }
 
