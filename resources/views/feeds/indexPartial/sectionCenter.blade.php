@@ -12,7 +12,7 @@
 
         </div>
       </div>
-      <div align="center" class="col-lg-4 col-md-4 col-sm-4 col-xs-4">  
+      <div align="center" class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
         <div class="circle-yellow-first">
 
         </div>
@@ -75,8 +75,8 @@
         </div><!-- /div .col-md11-sm12-xs12 -->
         <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
           <div class="dropup">
-            <a href="/feeds/{!!$companyStatus->id!!}">
-              <span class="glyphicon glyphicon-chevron-down btn"></span>
+            <a href="/feeds/{!!$companyStatus->id!!}" class="btn btn-default btn-xs">
+              <span class="glyphicon glyphicon-chevron-down"></span>
             </a>
           </div><!-- /div .dropup -->
 
