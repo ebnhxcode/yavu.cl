@@ -2,10 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a319e70-fb31-4458-aa3e-4006149cb7e9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/usuarios/profilePartial/sectionCenter.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/usuarios/profilePartial/sectionLeft.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/usuarios/profilePartial/sectionRight.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/usuarios/profile.blade.php" afterPath="$PROJECT_DIR$/resources/views/usuarios/profile.blade.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/build/css/app-6f0b775f84.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/fonts/bootstrap/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/public/fonts/bootstrap/glyphicons-halflings-regular.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/fonts/bootstrap/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/public/fonts/bootstrap/glyphicons-halflings-regular.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/fonts/bootstrap/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/public/fonts/bootstrap/glyphicons-halflings-regular.woff2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/fonts/bootstrap/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/public/fonts/bootstrap/glyphicons-halflings-regular.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/js/all-c8385f9479.js" afterPath="$PROJECT_DIR$/public/build/js/all-c8385f9479.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/all.js" afterPath="$PROJECT_DIR$/public/js/all.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/css/app.css.map" afterPath="$PROJECT_DIR$/public/build/css/app.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css.map" afterPath="$PROJECT_DIR$/public/css/app.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css" afterPath="$PROJECT_DIR$/public/css/app.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/public/js/bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/fonts/bootstrap/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/public/fonts/bootstrap/glyphicons-halflings-regular.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/rev-manifest.json" afterPath="$PROJECT_DIR$/public/build/rev-manifest.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="yavu.cl.iws" />
@@ -34,8 +43,8 @@
       <file leaf-file-name="front.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/front.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.964286" vertical-offset="2571" max-vertical-offset="6237">
-              <caret line="141" column="23" selection-start-line="141" selection-start-column="23" selection-end-line="141" selection-end-column="23" />
+            <state vertical-scroll-proportion="-2.0892856" vertical-offset="2571" max-vertical-offset="6237">
+              <caret line="128" column="35" selection-start-line="128" selection-start-column="35" selection-end-line="128" selection-end-column="35" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -52,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="profile.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/usuarios/profile.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7192118" vertical-offset="108" max-vertical-offset="945">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state vertical-scroll-proportion="-11.666667" vertical-offset="0" max-vertical-offset="945">
+              <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -64,25 +73,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fieldsEmpresa.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admins/forms/fieldsEmpresa.blade.php">
+      <file leaf-file-name="_navbar.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_navbar.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.7777777" vertical-offset="3966" max-vertical-offset="6426">
-              <caret line="195" column="19" selection-start-line="195" selection-start-column="19" selection-end-line="195" selection-end-column="19" />
-              <folding>
-                <marker date="1466706602562" expanded="true" signature="1080:2304" placeholder="..." />
-                <marker date="1466706602562" expanded="true" signature="1093:2294" placeholder="..." />
-                <marker date="1466706602562" expanded="true" signature="1114:2214" placeholder="..." />
-                <marker date="1466706602562" expanded="true" signature="5627:6319" placeholder="..." />
-                <marker date="1466706602562" expanded="true" signature="5640:6309" placeholder="..." />
-                <marker date="1466706602562" expanded="true" signature="5661:6229" placeholder="..." />
-                <marker date="1466706602562" expanded="true" signature="6520:7034" placeholder="..." />
-                <marker date="1466706602562" expanded="true" signature="6533:7024" placeholder="..." />
-                <marker date="1466706602562" expanded="true" signature="6552:6944" placeholder="..." />
-                <marker date="1466706602562" expanded="true" signature="8415:8596" placeholder="..." />
-                <marker date="1466706602562" expanded="true" signature="8428:8586" placeholder="..." />
-                <marker date="1466706602562" expanded="true" signature="8449:8507" placeholder="..." />
-              </folding>
+            <state vertical-scroll-proportion="-4.196429" vertical-offset="9299" max-vertical-offset="14028">
+              <caret line="454" column="34" selection-start-line="454" selection-start-column="34" selection-end-line="454" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_variables.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7009646" vertical-offset="7943" max-vertical-offset="18480">
+              <caret line="399" column="65" selection-start-line="399" selection-start-column="65" selection-end-line="399" selection-end-column="65" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -115,16 +121,6 @@
                 <marker date="1466708333378" expanded="true" signature="1247:1479" placeholder="..." />
                 <marker date="1466708333378" expanded="true" signature="1262:1478" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".htaccess" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/.htaccess">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
-              <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -177,7 +173,6 @@
         <option value="$PROJECT_DIR$/app/Empresa.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/front.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/feeds/indexPartial/sectionRight.blade.php" />
         <option value="$PROJECT_DIR$/config/database.php" />
         <option value="$PROJECT_DIR$/.env" />
@@ -188,6 +183,8 @@
         <option value="$PROJECT_DIR$/resources/views/usuarios/profilePartial/sectionCenter.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/usuarios/profilePartial/sectionRIght.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/usuarios/profile.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/front.blade.php" />
+        <option value="$PROJECT_DIR$/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss" />
       </list>
     </option>
   </component>
@@ -385,6 +382,116 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap-sass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap-sass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap-sass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap-sass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -453,11 +560,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="21" width="1366" height="747" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18228404" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18228404" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -500,34 +607,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/frontadm.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="159" column="18" selection-start-line="159" selection-start-column="18" selection-end-line="159" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="4" column="82781" selection-start-line="4" selection-start-column="82781" selection-end-line="4" selection-end-column="82781" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="4288" column="1" selection-start-line="4288" selection-start-column="1" selection-end-line="4288" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitattributes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2016_06_13_163130_create_company_statuses_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3215434" vertical-offset="0" max-vertical-offset="622">
@@ -809,25 +888,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/front.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.964286" vertical-offset="2571" max-vertical-offset="6237">
-          <caret line="141" column="23" selection-start-line="141" selection-start-column="23" selection-end-line="141" selection-end-column="23" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#span#0;n#small#0;n#div#1;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#small#0;n#div#1;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#small#0;n#div#2;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#small#0;n#div#2;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#small#0;n#div#3;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#small#0;n#div#3;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#li#4;n#ul#0;n#li#4;n#ul#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/feeds/indexPartial/sectionCenter.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.6666665" vertical-offset="840" max-vertical-offset="2877">
@@ -853,27 +913,6 @@
         <state vertical-scroll-proportion="-14.777778" vertical-offset="966" max-vertical-offset="1911">
           <caret line="73" column="30" selection-start-line="73" selection-start-column="30" selection-end-line="73" selection-end-column="30" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admins/forms/fieldsEmpresa.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.7777777" vertical-offset="3966" max-vertical-offset="6426">
-          <caret line="195" column="19" selection-start-line="195" selection-start-column="19" selection-end-line="195" selection-end-column="19" />
-          <folding>
-            <marker date="1466706602562" expanded="true" signature="1080:2304" placeholder="..." />
-            <marker date="1466706602562" expanded="true" signature="1093:2294" placeholder="..." />
-            <marker date="1466706602562" expanded="true" signature="1114:2214" placeholder="..." />
-            <marker date="1466706602562" expanded="true" signature="5627:6319" placeholder="..." />
-            <marker date="1466706602562" expanded="true" signature="5640:6309" placeholder="..." />
-            <marker date="1466706602562" expanded="true" signature="5661:6229" placeholder="..." />
-            <marker date="1466706602562" expanded="true" signature="6520:7034" placeholder="..." />
-            <marker date="1466706602562" expanded="true" signature="6533:7024" placeholder="..." />
-            <marker date="1466706602562" expanded="true" signature="6552:6944" placeholder="..." />
-            <marker date="1466706602562" expanded="true" signature="8415:8596" placeholder="..." />
-            <marker date="1466706602562" expanded="true" signature="8428:8586" placeholder="..." />
-            <marker date="1466706602562" expanded="true" signature="8449:8507" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -903,13 +942,85 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admins/forms/fieldsEmpresa.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.72906405" vertical-offset="3651" max-vertical-offset="6426">
+          <caret line="195" column="19" selection-start-line="195" selection-start-column="19" selection-end-line="195" selection-end-column="19" />
+          <folding>
+            <marker date="1466706602562" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1466706602562" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1466706602562" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1466706602562" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1466706602562" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1466706602562" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1466706602562" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1466706602562" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1466706602562" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1466706602562" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1466706602562" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1466706602562" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1302">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/usuarios/profile.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7192118" vertical-offset="108" max-vertical-offset="945">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state vertical-scroll-proportion="-11.666667" vertical-offset="0" max-vertical-offset="945">
+          <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/front.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0892856" vertical-offset="2571" max-vertical-offset="6237">
+          <caret line="128" column="35" selection-start-line="128" selection-start-column="35" selection-end-line="128" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#span#0;n#small#0;n#div#1;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#small#0;n#div#1;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#small#0;n#div#2;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#small#0;n#div#2;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#small#0;n#div#3;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#small#0;n#div#3;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#li#4;n#ul#0;n#li#4;n#ul#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_navs.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36334404" vertical-offset="1538" max-vertical-offset="5208">
+          <caret line="84" column="21" selection-start-line="84" selection-start-column="20" selection-end-line="84" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_navbar.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.196429" vertical-offset="9299" max-vertical-offset="14028">
+          <caret line="454" column="34" selection-start-line="454" selection-start-column="34" selection-end-line="454" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7009646" vertical-offset="7943" max-vertical-offset="18480">
+          <caret line="399" column="65" selection-start-line="399" selection-start-column="65" selection-end-line="399" selection-end-column="65" />
+          <folding />
         </state>
       </provider>
     </entry>
