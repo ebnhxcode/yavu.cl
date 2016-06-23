@@ -1,4 +1,5 @@
 <div class="list-group">
+{{--
   <div class="list-group-item">
     <!-- Descuble coins secretos -->
     <div class="row">
@@ -19,7 +20,7 @@
       </div>
     </div>
   </div>
-
+--}}
   @if(isset($myCompanies) && count($myCompanies)>0)
     <div class="list-group-item" align="right">
       <div class="row">

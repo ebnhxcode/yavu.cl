@@ -61,9 +61,12 @@
                     <div style="padding-top: 15px;" name='megusta' class=''>
                       @if($feed->statusRewarded->id!=$userSession->id)
                         @if($cs = $feed->getUserInteraction($userSession->id)->get())
-                          <span onclick='Interactuar(this.id)' id='estado_{!! $feed->id !!}' value='e{!! $feed->id !!}' class="btn {!! count($cs)<1?'btn-warning':'btn-default' !!} btn-sm">
-                            {!! count($cs)<1?'Cobrar Coins':'Cobrados' !!}
+                          <span onclick='Interactuar(this.id)' id='estado_{!! $feed->id !!}' value='e{!! $feed->companyPostAuthor->id !!}' class="btn {!! count($cs)<1?'btn-warning out-yavucoin':'btn-default out-yavucoin' !!} btn-xs" >
+
+                            {!! count($cs)<1?'<span style=" font-family: yavu_font;color: #ffcc00;">J</span>':'<span style=" font-family: yavu_font;color: #000;">I</span>' !!}
+
                           </span><!-- /span $estado_+$companyStatus->id .btn .btn-sm .btn-default-warning -->
+                          <span id="status_{!! $feed->id !!}"></span>
                         @endif
                       @endif
                       <span class="text-info" style="float: right;font-size: 0.7em;">
@@ -135,7 +138,9 @@
       success:function(){
         $('#'+valor).removeClass("btn-warning");
         $('#'+valor).addClass("btn-default");
-        $('#'+valor).text('Cobrados');
+        $('#'+valor).text('');
+        $('#'+valor).append('<span style="font-family: yavu_font;color: #000;">I</span>').fadeIn();
+        $('#status_'+status_id).append('<span class="text-success"><small>¡Coins obtenidos!</small></span>').hide().fadeIn();
         ContarNotificaciones();
         ContarCoins();
       }
