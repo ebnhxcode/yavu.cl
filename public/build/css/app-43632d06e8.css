@@ -3734,7 +3734,7 @@ tbody.collapse.in {
 
 .navbar-brand {
   float: left;
-  padding: 15px 15px;
+  padding: 10px 10px 10px 5px;
   font-size: 18px;
   line-height: 20px;
   height: 50px; }
@@ -3909,6 +3909,7 @@ tbody.collapse.in {
   background-color: #f8f8f8;
   border-color: #e7e7e7; }
   .navbar-default .navbar-brand {
+    padding: 8px 8px 8px 5px;
     color: #777; }
     .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
       color: #5e5e5e;
@@ -4165,7 +4166,7 @@ tbody.collapse.in {
 
 .label {
   display: inline;
-  padding: .2em .6em .3em;
+  padding: 2px 2px 2px 3px;
   font-size: 75%;
   font-weight: bold;
   line-height: 1;
@@ -4173,7 +4174,7 @@ tbody.collapse.in {
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  border-radius: .25em; }
+  border-radius: 50px 50px 50px 10px; }
   .label:empty {
     display: none; }
   .btn .label {
