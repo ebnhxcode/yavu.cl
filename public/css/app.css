@@ -3734,7 +3734,7 @@ tbody.collapse.in {
 
 .navbar-brand {
   float: left;
-  padding: 10px 10px 10px 5px;
+  padding: 8px 8px 8px 5px;
   font-size: 18px;
   line-height: 20px;
   height: 50px; }
@@ -4483,7 +4483,7 @@ a.thumbnail.active {
 .list-group-item {
   position: relative;
   display: block;
-  padding: 10px 15px;
+  padding: 4px 10px 6px 4px;
   margin-bottom: -1px;
   background-color: #fff;
   border: 1px solid #ddd; }
