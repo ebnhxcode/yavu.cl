@@ -10,15 +10,12 @@
         @include('alerts.allAlerts')
       </div><!-- /div .col-md12-sm12-xs12 -->
 
-      <div class='col-md-12 col-sm-12 col-xs-12'>
-
+      <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
         {!!Form::hidden('user_id', $user->id, ['id'=>'user_id'])!!}
-      </div><!-- /div .col-md8-sm6-xs12 -->
+      </div><!-- /div .col-lg12-md12-sm6-xs12 -->
       <div class='col-lg-3 col-md-3 col-sm-12 col-xs-12'>
         <div class="list-group">
           <div class="list-group-item">
-
-
 
             <div class="thumbnail">
               <img id='ImagenPerfil' src='/img/users/{!! isset($user)?($user->imagen_perfil!='')?$user->imagen_perfil:'usuario_nuevo.png':'' !!}' class='center-block'>
@@ -42,21 +39,19 @@
 
         @include('miniDashboard.miniDashboard')
 
-
-
       </div><!-- .div-col-md4-sm6-xs12 -->
-      <div class='col-md-6 col-sm-6 col-xs-12'>
+      <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12'>
         <div class="list-group">
           <div class="list-group-item">
-            <div class=''>
+            <div>
               <div id="IPortada">
                 <a class='thumbnail'>
                   <img id='ImagenPortada' src='/img/users/{!! isset($user)?($user->imagen_portada!='')?$user->imagen_portada:'banner.png':'' !!}'>
                 </a><!-- /div .thumbnail -->
               </div><!-- div #IPortada -->
-            </div><!-- /div .list-group -->
-          </div>
-          <div class=" softText-descriptions">
+            </div>
+          </div><!-- /div .list-group-item -->
+          <div class="softText-descriptions">
             <div>
             <!-- Nav tabs -->
             <ul id="TabUserProfile" class="nav nav-tabs" role="tablist">
@@ -72,29 +67,29 @@
                 <div class="list-group-item">
                   Actividad : {!! ($movement->motivo) !!} hace 
                   <abbr class='timeago' id='timeago' value='{!! $movement->created_at !!}' title='{!! $movement->created_at !!}'>{!! $movement->created_at !!}</abbr>
-                </div>
+                </div><!-- /div .list-group-item -->
               @endforeach
 
-              </div>
+              </div><!-- /div .tab-pane .fade .active .list-group .wrap -->
 
               <div role="tabpanel" class="tab-pane fade list-group wrap" id="profile">
                 @foreach($userSession->history_moves_of_tickets as $movement)
                   <div class="list-group-item">
                     Actividad : Compra de ticket ${!! ($movement->monto) !!} hace
                     <abbr class='timeago' id='timeago' value='{!! $movement->created_at !!}' title='{!! $movement->created_at !!}'>{!! $movement->created_at !!}</abbr>
-                  </div>
+                  </div><!-- /div .list-group-item -->
                 @endforeach
-              </div>
-              <div role="tabpanel" class="tab-pane fade" id="messages">qwe</div>
-              <div role="tabpanel" class="tab-pane fade" id="settings">ewq</div>
-            </div>
+              </div><!-- /div .tab-pane .fade .active .list-group .wrap -->
+              <div role="tabpanel" class="tab-pane fade" id="messages">qwe
+              </div><!-- /div .tab-pane .fade .active .list-group .wrap -->
+              <div role="tabpanel" class="tab-pane fade" id="settings">ewq
+              </div><!-- /div .tab-pane .fade .active .list-group .wrap -->
+            </div><!-- /div .tab-content -->
 
           </div>
             {{--{!! ($userSession->registro_coins()->sum('cantidad')) !!}--}}
 
-
-
-          </div>
+          </div><!-- /div .softText-descriptions -->
         </div><!-- /div .list-group -->
       </div>
       <div class='col-lg-3 col-md-3 col-sm-6 col-xs-12'>
