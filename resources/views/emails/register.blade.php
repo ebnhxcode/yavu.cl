@@ -12,7 +12,7 @@
 <font style="font-family: Verdana, Geneva, sans-serif; color:#666766; font-size:13px; line-height:21px">
 En Yavu.cl podrás encontrar promociones, descuentos, concursos y eventos de los comercios de tu ciudad. Junta nuestras Yavü Coins en las publicaciones de las empresas, úsalas comprando tickets y utilízalos para participar de los sorteos!
 <br>
-<p><strong>Para validar tu cuenta haz click en el enlace de validación: </strong><a href="http://localhost:8000/verificarusuario/{!! $codigo !!}"> Abrir </a>  </p><br>
+<p><strong>Para validar tu cuenta haz click en el enlace de validación: </strong><a href="http://186.64.123.143/verificarusuario/{!! $codigo !!}"> Abrir </a>  </p><br>
 ¡Mucha suerte! y nos vemos en Yavü.
 </div>
 <hr size="4" color="#5c8c09">
