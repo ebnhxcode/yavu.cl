@@ -26,12 +26,20 @@
                       </a><!-- /a .thumbnail -->
                     </div><!-- /div col-lg6-md6-sm12-xs12 -->
                     <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                      <a class="btn-link" href="/empresas/{!!$empresa->id!!}">{!! $empresa->nombre!!}</a><br/>
+                      <strong><a class="" href="/empresas/{!!$empresa->id!!}" style="color: #3C5B28;">{!! $empresa->nombre!!}</a></strong><br/>
+                      <div class="softText-descriptions">
 
-                      <strong>Ciudad :</strong> {!!$empresa->ciudad!!}<br>
-                      <strong>Contacto :<strong><a href="mailto:#">{!!$empresa->email!!}</a></strong><br>
-                      <strong>Fono :</strong> <abbr title="Phone"></abbr> {!!$empresa->fono!!}</strong><br>
+                        <strong>Ciudad :</strong> {!!$empresa->ciudad!!}<br>
+                        <strong>Contacto :<strong><a href="mailto:#">{!!$empresa->email!!}</a></strong><br>
+                          <strong>Fono :</strong> <abbr title="Phone"></abbr> {!!$empresa->fono!!}</strong><br>
+                        {!!($fCounts=count($empresa->followers))!!} seguidor{!!($fCounts>1||$fCounts==0?'es':'')!!}.
 
+
+                        <span class="btn btn-default btn-xs">{!! count($userSession->follow($empresa->id)->get())>0?'Seguida':'seguir' !!}</span>
+
+
+                      </div>
+                      <br/>
                       <div class="btn-group" role="group" aria-label="...">
                         <a href="{!! URL::to('/empresa/'.$empresa->nombre.'/') !!}" class="btn btn-default btn-xs">Ver perfil</a>
                         <a href="{!! URL::to('/empresa/'.$empresa->nombre.'/sorteos') !!}" class="btn btn-default btn-xs">Ver sorteos</a>
@@ -53,7 +61,7 @@
                       <div class="dropup">
                         <a href="/empresas/{!! $empresa->id !!}" class="btn btn-default btn-xs">
                           <span class="glyphicon glyphicon-chevron-down"></span>
-                        </a>
+                        </a><!-- /a .btn .btn-default .btn-xs -->
                       </div><!-- /div .dropup -->
 
                     </div><!-- /div .col-lg1-md1-sm1-xs1 -->

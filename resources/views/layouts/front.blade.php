@@ -141,7 +141,7 @@
                     <li>
                       <a href="{!!URL::to('/empresas/'.$company->id)!!}">
                         <small class="softText">Ver perfil de</small>
-                        <img id="ImagenPortada" src="/img/users/{!!($company->imagen_perfil!='')?$company->imagen_perfil:'banner.png'!!}" alt="..." style="width: 30px; height: 30px; border-radius: 10%;">
+                        <img id="ImagenPortada" src="/img/users/{!!($company->imagen_perfil!='')?$company->imagen_perfil:'banner.png'!!}" alt="..." style="width: 30px; height: 30  px; border-radius: 10%;">
                         <strong>{!! $company->nombre !!}</strong>
                       </a>
                     </li>

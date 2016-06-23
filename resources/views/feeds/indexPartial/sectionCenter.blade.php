@@ -81,11 +81,15 @@
           </div><!-- /div -->
         </div><!-- /div .col-md11-sm12-xs12 -->
         <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
-          <div class="dropup">
-            <a href="/feeds/{!!$companyStatus->id!!}" class="btn btn-default btn-xs">
-              <span class="glyphicon glyphicon-chevron-down"></span>
-            </a>
-          </div><!-- /div .dropup -->
+          <div class="btn-group-vertical" role="group">
+              <a href="/feeds/{!!$companyStatus->id!!}" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-chevron-down"></span>
+              </a>
+              <a href="/feeds/{!!$companyStatus->id!!}" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-plus"></span>
+              </a>
+          </div>
+
 
         </div><!-- /div .col-lg1-md1-sm12-xs12 -->
       </div><!-- /div .row -->
