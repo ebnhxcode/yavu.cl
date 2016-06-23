@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a319e70-fb31-4458-aa3e-4006149cb7e9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/empresas/raffleList.blade.php" afterPath="$PROJECT_DIR$/resources/views/empresas/raffleList.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/feeds/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/feeds/show.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
     </list>
     <ignored path="yavu.cl.iws" />
@@ -60,8 +58,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1587057" vertical-offset="10565" max-vertical-offset="11571">
-              <caret line="508" column="25" selection-start-line="508" selection-start-column="25" selection-end-line="508" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.5469954" vertical-offset="10565" max-vertical-offset="11571">
+              <caret line="520" column="30" selection-start-line="520" selection-start-column="30" selection-end-line="520" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -953,8 +951,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1587057" vertical-offset="10565" max-vertical-offset="11571">
-          <caret line="508" column="25" selection-start-line="508" selection-start-column="25" selection-end-line="508" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.5469954" vertical-offset="10565" max-vertical-offset="11571">
+          <caret line="520" column="30" selection-start-line="520" selection-start-column="30" selection-end-line="520" selection-end-column="30" />
           <folding />
         </state>
       </provider>

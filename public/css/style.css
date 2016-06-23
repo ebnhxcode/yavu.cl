@@ -518,9 +518,9 @@
   /* width and height can be anything, as long as they're equal */
 }
 .out-yavucoin:hover {
-  -webkit-transform: rotate(30deg);
+  -webkit-transform: rotate(360deg);
 
-  -moz-transform: rotate(30deg);
+  -moz-transform: rotate(360deg);
   padding: 0px 18px 0px 18px;
   border: dashed 3px #FFF;
   font-size: 3em;
