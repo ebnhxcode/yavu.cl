@@ -75,7 +75,7 @@ class UserController extends Controller{
 
   public function edit($id){
     if($id == $this->user->id){
-      return view('usuarios.edit', ['user' => $this->getFullSessionData()]);
+      return view('usuarios.edit', ['user' => $this->getFullSessionData(), 'userSession' => $this->user]);
     }else{
       return Redirect::to('/usuarios/'.$this->user->id.'/edit');
     }
@@ -130,7 +130,7 @@ class UserController extends Controller{
   }
 
   public function profile(){
-    return view('usuarios.profile', ['user' => $this->user]);
+    return view('usuarios.profile', ['user' => $this->user, 'userSession' => $this->user]);
   }
 
   public function reset(Request $request){

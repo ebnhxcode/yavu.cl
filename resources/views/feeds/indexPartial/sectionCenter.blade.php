@@ -81,13 +81,14 @@
           </div><!-- /div -->
         </div><!-- /div .col-md11-sm12-xs12 -->
         <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
-          <div class="btn-group-vertical" role="group">
-              <a href="/feeds/{!!$companyStatus->id!!}" class="btn btn-default btn-sm">
-                <span class="glyphicon glyphicon-chevron-down"></span>
-              </a>
-              <a href="/feeds/{!!$companyStatus->id!!}" class="btn btn-default btn-sm">
-                <span class="glyphicon glyphicon-plus"></span>
-              </a>
+          <div class="btn-group-vertical btn-group" role="group">
+            <a href="/feeds/{!!$companyStatus->id!!}" class="btn btn-default btn-xs">
+              <span class="glyphicon glyphicon-chevron-down"></span>
+            </a>
+            <a href="/feeds/{!!$companyStatus->id!!}" class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="right" title="¡Seguir!">
+
+              <span class="{!! ($followStatus = $userSession->follow($companyStatus->empresa_id)->get())?'glyphicon glyphicon-':'' !!}{!! (count($followStatus)>0?'ok text-success':'plus') !!}"></span>
+            </a>
           </div>
 
 

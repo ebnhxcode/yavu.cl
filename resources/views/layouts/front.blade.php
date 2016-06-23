@@ -51,6 +51,16 @@
 		<script>$.ajaxSetup({ cache:false });</script>
 		<script>$.ajaxSetup({ headers: { 'csrftoken' : '{!! csrf_token() !!}' } });</script>
 		<script>$.ajaxSetup({ headers: { 'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')}});</script>
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      });
+      $('#TabUserProfile a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+      });
+
+    </script>
 		<style>
 			body {
 				padding-top:50px;
@@ -141,8 +151,9 @@
                     <li>
                       <a href="{!!URL::to('/empresas/'.$company->id)!!}">
                         <small class="softText">Ver perfil de</small>
-                        <img id="ImagenPortada" src="/img/users/{!!($company->imagen_perfil!='')?$company->imagen_perfil:'banner.png'!!}" alt="..." style="width: 30px; height: 30  px; border-radius: 10%;">
-                        <strong>{!! $company->nombre !!}</strong>
+                        <img id="ImagenPerfil" src="/img/users/{!!($company->imagen_perfil!='')?$company->imagen_perfil:'banner.png'!!}" alt="..." style="width: 30px; height: 30px; border-radius: 10%;">
+                        <strong>{!! $company->nombre !!}</strong><br/>
+
                       </a>
                     </li>
                   @endforeach
