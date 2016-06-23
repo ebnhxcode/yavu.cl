@@ -71,7 +71,7 @@
                       @endif
                       <span class="text-info" style="float: right;font-size: 0.7em;">
                         <small>(Author : <a href="/empresas/{!! $postAuthor->id !!}">{!! $postAuthor->nombre !!}</a>)</small>
-                      </span>
+                      </span><!-- /span .test-info -->
                     </div><!-- /div -->
                   </div><!-- /div #publicacion -->
                 </div><!-- /div .col-md11-sm12-xs12 -->
@@ -89,11 +89,11 @@
 
         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             @include('feeds.indexPartial.sectionRight')
-        </div><!-- /div .col-md4-sm12-xs12 -->
+        </div><!-- /div .col-lg3-md3-sm12-xs12 -->
 
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           {{-- @include('feeds.indexPartial.sectionRight') --}}
-        </div><!-- /div .col-md3-sm12-xs12 -->
+        </div><!-- /div .col-lg12-md12-sm12-xs12 -->
 
       </div><!-- /div .row -->
     </div><!-- /div #contentMiddle -->

@@ -466,15 +466,15 @@
 .circle-yellow-first {
   z-index: 1010;
   background-color: #ffcc00;
-  height: 30px;
-  width: 30px;
+  height: 98px;
+  width: 98px;
   border-radius: 50%;
   border: solid 2px #FFF;
   -webkit-transition: 0.3s;
   /* width and height can be anything, as long as they're equal */
 }
 .circle-yellow-first:hover {
-  background-color: #ffcc00;
+  background-color: #ffab40;
   height: 100px;
   width: 100px;
   border-radius: 50%;
@@ -482,7 +482,42 @@
   -webkit-transition: 0.3s;
   /* width and height can be anything, as long as they're equal */
 }
+
+.circle-orange {
+  z-index: 1010;
+  background-color: #ffcc00;
+  height: 98px;
+  width: 98px;
+  border-radius: 50%;
+  border: solid 2px #FFF;
+  -webkit-transition: 0.3s;
+  /* width and height can be anything, as long as they're equal */
+}
+.circle-orange:hover {
+  background-color: #ffab40;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: solid 2px #FFF;
+  -webkit-transition: 0.3s;
+  /* width and height can be anything, as long as they're equal */
+}
+
 .out-yavucoin {
+  -webkit-transform: rotate(0deg);
+
+  -moz-transform: rotate(0deg);
+  padding: 0px 18px 0px 18px;
+  border: dashed 3px #FFF;
+  font-size: 3em;
+  -webkit-transition: 0.5s;
+
+  border-radius: 50px 50px 50px 50px;
+
+
+  /* width and height can be anything, as long as they're equal */
+}
+.out-yavucoin:hover {
   -webkit-transform: rotate(30deg);
 
   -moz-transform: rotate(30deg);
