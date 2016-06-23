@@ -37,7 +37,7 @@
     <span style="font-size: 1.8em; color: #449d44; right: 20px; z-index: 1002;" class="glyphicon glyphicon-bookmark"></span>
     <span style="font-size: 1.8em; color: #ffcc00; right: 40px; z-index: 1001;" class="glyphicon glyphicon-bookmark"></span>
   </div>
-  <div style="padding: 30px 30px 5px 30px;" class="list-group-item">
+  <div style="padding: 9px 9px 9px 9px;" class="list-group-item">
     <div class="row">
       <div id="EmpresaListThumbBanner">
         <div class="row">

@@ -5,7 +5,7 @@
     <span style="font-size: 1.8em;" class="glyphicon glyphicon-star"></span>
     Empresas m&aacute;s seguidas
   </div>
-  <div style="padding: 30px 30px 5px 30px;" class="list-group-item">
+  <div style="padding: 9px 9px 9px 9px;" class="list-group-item">
     <div class="row">
       <div id="EmpresaListThumbBanner">
         <div class="row">
