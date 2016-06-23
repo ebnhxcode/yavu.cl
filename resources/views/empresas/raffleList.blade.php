@@ -43,35 +43,35 @@
                           <span class="glyphicon glyphicon-user"></span>
                           <span class="TicketsEnSorteo" id="{!! $sorteo->id !!}"></span>
                           <input type="hidden" name="_token" value="{!! csrf_token() !!}">
-                        </div>
+                        </div><!-- /div .col-xs3-sm3-md3-lg3 aligned -->
 
                         <div align="center" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                           <span class="glyphicon glyphicon-tag"></span>
                           <span class="MisTicketsUsados" id="{!! $sorteo->id !!}"></span>
-                        </div>
+                        </div><!-- /div .col-xs3-sm3-md3-lg3 aligned -->
 
-                        <div align="center" class="col-md-6 col-sm-6 col-xs-6">
+                        <div align="center" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                           <span class="glyphicon glyphicon-time"></span>
                           <abbr title="{!! $sorteo->fecha_inicio_sorteo !!}">21:00:00 hrs</abbr>
-                        </div>
+                        </div><!-- /div .col-xs6-sm6-md6-lg6 aligned -->
 
-                      </div> <!-- /div row -->
-                    </div><!-- /div amplio -->
+                      </div> <!-- /div .row -->
+                    </div><!-- /div .amplio -->
 
                     <div class="row">
                       <div align="center" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                         <small>Tickets en juego</small>
-                      </div>
+                      </div><!-- /div .col-xs3-sm3-md3-lg3 aligned -->
 
                       <div align="center" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                         <small>Tickets apostados</small>
-                      </div>
+                      </div><!-- /div .col-xs3-sm3-md3-lg3 aligned -->
 
-                      <div align="center" class="col-md-6 col-sm-6 col-xs-6">
+                      <div align="center" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                         <small>Recuerda</small>
                         <br>
                         <small><span id="estado"></span></small>
-                      </div>
+                      </div><!-- /div .col-xs6-sm6-md6-lg6 aligned -->
                     </div><!-- /div row -->
 
                     <div class="semi-amplio">

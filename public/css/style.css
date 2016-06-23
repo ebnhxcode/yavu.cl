@@ -483,6 +483,9 @@
   /* width and height can be anything, as long as they're equal */
 }
 .out-yavucoin {
+  -webkit-transform: rotate(30deg);
+
+  -moz-transform: rotate(30deg);
   padding: 0px 18px 0px 18px;
   border: dashed 3px #FFF;
   font-size: 3em;
