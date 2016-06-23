@@ -100,7 +100,7 @@
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <a class="thumbnail">
-              <img class="img-responsive" id="ImagenPortada" src="/img/users/Cocacola/productos2-head-img2211.jpg" alt="..." style="height: 170px;">
+              <img class="img-responsive" id="ImagenPortada" src="/img/users/28yavu008.png" alt="..." style="height: 170px;">
             </a>
           </div><!-- /div .col-md12-sm12-xs12 -->
         </div>
