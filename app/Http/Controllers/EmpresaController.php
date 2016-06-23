@@ -165,7 +165,7 @@ class EmpresaController extends Controller{
       $empresa = addslashes($empresa);
       $this->empresa = Empresa::where('nombre', $empresa)->get();
       $this->user = User::findOrFail($this->empresa[0]->user_id);
-      return view('empresas.raffleList', ['sorteos' => $this->user->sorteos()->get()->where('estado_sorteo', 'Activo')], ['empresa' => $this->empresa]);
+      return view('empresas.raffleList', ['sorteos' => $this->user->sorteos()->get()->where('estado_sorteo', 'Activo'), 'empresa' => $this->empresa,  'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(8)->get(), 'userSession' => $this->user, 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(3)->get()]);
 
 
   }
