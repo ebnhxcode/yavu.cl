@@ -85,8 +85,7 @@
             <a href="/feeds/{!!$companyStatus->id!!}" class="btn btn-default btn-xs">
               <span class="glyphicon glyphicon-chevron-down"></span>
             </a>
-            <a href="/feeds/{!!$companyStatus->id!!}" class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="right" title="¡Seguir!">
-
+            <a href="/feeds/{!!$companyStatus->id!!}" class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="right" title="{!! count($userSession->follow($companyStatus->empresa_id)->get())>0?'¡Seguida!':'¡Seguir!' !!}">
               <span class="{!! ($followStatus = $userSession->follow($companyStatus->empresa_id)->get())?'glyphicon glyphicon-':'' !!}{!! (count($followStatus)>0?'ok text-success':'plus') !!}"></span>
             </a>
           </div>
@@ -95,12 +94,12 @@
         </div><!-- /div .col-lg1-md1-sm12-xs12 -->
       </div><!-- /div .row -->
     </div><!-- /div .list-group-item #publicacion+$companyStatus->id -->
-    @if($key == 5)
+    @if($key == 4)
       <div class="list-group-item div-hover">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <a class="thumbnail">
-              <img class="img-responsive" id="ImagenPortada" src="/img/users/28yavu008.png" alt="..." style="height: 170px;">
+              <img class="img-responsive" id="ImagenPortada" src="/img/users/icofinal_publicaciones.png" alt="..." style="height: 170px;">
             </a>
           </div><!-- /div .col-md12-sm12-xs12 -->
         </div>

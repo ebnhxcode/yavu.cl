@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a319e70-fb31-4458-aa3e-4006149cb7e9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/feeds/indexPartial/sectionCenter.blade.php" afterPath="$PROJECT_DIR$/resources/views/feeds/indexPartial/sectionCenter.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/feeds/indexPartial/sectionRight.blade.php" afterPath="$PROJECT_DIR$/resources/views/feeds/indexPartial/sectionRight.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="yavu.cl.iws" />
@@ -33,8 +31,8 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/empresas/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="415" max-vertical-offset="1840">
-              <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="116" />
+            <state vertical-scroll-proportion="-11.074074" vertical-offset="520" max-vertical-offset="1932">
+              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -44,8 +42,10 @@
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/front.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-6.964286" vertical-offset="2571" max-vertical-offset="6237">
-              <caret line="141" column="42" selection-start-line="141" selection-start-column="42" selection-end-line="141" selection-end-column="42" />
-              <folding />
+              <caret line="141" column="23" selection-start-line="141" selection-start-column="23" selection-end-line="141" selection-end-column="23" />
+              <folding>
+                <marker date="1466705796766" expanded="true" signature="1552:1584" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -53,40 +53,11 @@
       <file leaf-file-name="profile.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/usuarios/profile.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1930" max-vertical-offset="2560">
-              <caret line="111" column="19" selection-start-line="111" selection-start-column="19" selection-end-line="111" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.env">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="140" max-vertical-offset="580">
-              <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/database.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1046" max-vertical-offset="2680">
-              <caret line="60" column="51" selection-start-line="60" selection-start-column="51" selection-end-line="60" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".htaccess" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/.htaccess">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="560">
-              <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+            <state vertical-scroll-proportion="-26.518518" vertical-offset="1657" max-vertical-offset="2688">
+              <caret line="113" column="18" selection-start-line="113" selection-start-column="18" selection-end-line="113" selection-end-column="18" />
               <folding>
-                <marker date="1466699601205" expanded="true" signature="0:579" placeholder="&lt;IfModule mod_rewrite.c&gt;" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -118,8 +89,8 @@
       <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="966" max-vertical-offset="1820">
-              <caret line="73" column="31" selection-start-line="73" selection-start-column="18" selection-end-line="73" selection-end-column="31" />
+            <state vertical-scroll-proportion="-14.777778" vertical-offset="966" max-vertical-offset="1911">
+              <caret line="73" column="30" selection-start-line="73" selection-start-column="30" selection-end-line="73" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -128,12 +99,20 @@
       <file leaf-file-name="sectionCenter.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/feeds/indexPartial/sectionCenter.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.03448276" vertical-offset="2100" max-vertical-offset="2898">
-              <caret line="101" column="33" selection-start-line="101" selection-start-column="33" selection-end-line="101" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.6896552" vertical-offset="1407" max-vertical-offset="2877">
+              <caret line="87" column="12" selection-start-line="87" selection-start-column="12" selection-end-line="87" selection-end-column="12" />
               <folding>
-                <marker date="1466705299490" expanded="true" signature="1232:1480" placeholder="..." />
-                <marker date="1466705299490" expanded="true" signature="1247:1479" placeholder="..." />
-                <marker date="1466705299490" expanded="true" signature="1262:1478" placeholder="..." />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#strong#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#small#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <marker date="1466706352374" expanded="true" signature="1232:1480" placeholder="..." />
+                <marker date="1466706352374" expanded="true" signature="1247:1479" placeholder="..." />
+                <marker date="1466706352374" expanded="true" signature="1262:1478" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -193,8 +172,8 @@
         <option value="$PROJECT_DIR$/resources/views/admins/forms/fieldsEmpresa.blade.php" />
         <option value="$PROJECT_DIR$/public/.htaccess" />
         <option value="$PROJECT_DIR$/resources/views/layouts/front.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/feeds/indexPartial/sectionCenter.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/feeds/indexPartial/sectionRight.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/feeds/indexPartial/sectionCenter.blade.php" />
       </list>
     </option>
   </component>
@@ -352,6 +331,54 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="sorteos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sorteos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="indexPartial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="feeds" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -395,6 +422,28 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="empresas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yavu.cl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -420,7 +469,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Other File Types" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="config/da&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;.en&#9;FILE&#9;file:///var/www/html/yavu.cl/.env&#10;config/data&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;.ENV&#9;FILE&#9;file:///var/www/html/yavu.cl/.env&#10;styl&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;EmpresaCon&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/EmpresaController.php&#10;Empresa.php&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Empresa.php&#10;Sorteo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;usercontr&#9;null&#9;null&#10;sorteocontro&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;.env&#9;FILE&#9;file:///var/www/html/yavu.cl/.env&#10;config/app&#9;FILE&#9;file:///var/www/html/yavu.cl/config/app.php&#10;config/datab&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;config/a&#9;FILE&#9;file:///var/www/html/yavu.cl/config/app.php&#10;config/database&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;Empre&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/EmpresaController.php&#10;FeedCo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;routes&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;style.css&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;config/dat&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;feeds&#9;null&#9;null&#10;routes.php&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;route.php&#9;FILE&#9;file:///var/www/html/yavu.cl/vendor/symfony/routing/Route.php&#10;CONFIG/DATABAS&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;config/datav&#9;null&#9;null&#10;tyle.css&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;SorteoCo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;Sorteo.ph&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Sorteo.php&#10;vistaLista&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/sorteos/forms/vistaListaUsuario.blade.php&#10;SorteoController&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;timeago&#9;FILE&#9;file:///var/www/html/yavu.cl/public/js/vendor/jquery.timeago.js&#10;SorteoContr&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;FeedContro&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="config/data&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;config/datab&#9;null&#9;null&#10;config/da&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;.en&#9;FILE&#9;file:///var/www/html/yavu.cl/.env&#10;.ENV&#9;FILE&#9;file:///var/www/html/yavu.cl/.env&#10;styl&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;EmpresaCon&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/EmpresaController.php&#10;Empresa.php&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Empresa.php&#10;Sorteo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;usercontr&#9;null&#9;null&#10;sorteocontro&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;.env&#9;FILE&#9;file:///var/www/html/yavu.cl/.env&#10;config/app&#9;FILE&#9;file:///var/www/html/yavu.cl/config/app.php&#10;config/a&#9;FILE&#9;file:///var/www/html/yavu.cl/config/app.php&#10;config/database&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;Empre&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/EmpresaController.php&#10;FeedCo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;routes&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;style.css&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;config/dat&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;feeds&#9;null&#9;null&#10;routes.php&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;route.php&#9;FILE&#9;file:///var/www/html/yavu.cl/vendor/symfony/routing/Route.php&#10;CONFIG/DATABAS&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;config/datav&#9;null&#9;null&#10;tyle.css&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;SorteoCo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;Sorteo.ph&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Sorteo.php&#10;vistaLista&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/sorteos/forms/vistaListaUsuario.blade.php&#10;SorteoController&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;timeago&#9;FILE&#9;file:///var/www/html/yavu.cl/public/js/vendor/jquery.timeago.js&#10;SorteoContr&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;FeedContro&#9;null&#9;null" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
     <property name="FullScreen" value="false" />
     <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
@@ -487,6 +536,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32791728" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -497,7 +547,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32791728" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -813,42 +862,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="966" max-vertical-offset="1911">
-          <caret line="73" column="31" selection-start-line="73" selection-start-column="18" selection-end-line="73" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/empresas/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="415" max-vertical-offset="1932">
-          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="116" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/usuarios/profile.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1930" max-vertical-offset="2560">
-          <caret line="111" column="19" selection-start-line="111" selection-start-column="19" selection-end-line="111" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="580">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1046" max-vertical-offset="2680">
-          <caret line="60" column="51" selection-start-line="60" selection-start-column="51" selection-end-line="60" selection-end-column="51" />
+        <state vertical-scroll-proportion="-11.074074" vertical-offset="520" max-vertical-offset="1932">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -874,21 +891,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="560">
-          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-          <folding>
-            <marker date="1466699601205" expanded="true" signature="0:579" placeholder="&lt;IfModule mod_rewrite.c&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/front.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.964286" vertical-offset="2571" max-vertical-offset="6237">
-          <caret line="141" column="42" selection-start-line="141" selection-start-column="42" selection-end-line="141" selection-end-column="42" />
-          <folding />
+          <caret line="141" column="23" selection-start-line="141" selection-start-column="23" selection-end-line="141" selection-end-column="23" />
+          <folding>
+            <marker date="1466705796766" expanded="true" signature="1552:1584" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -900,14 +909,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22650231" vertical-offset="0" max-vertical-offset="649">
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58243454" vertical-offset="0" max-vertical-offset="649">
+          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27652735" vertical-offset="1025" max-vertical-offset="2814">
+          <caret line="57" column="14" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.777778" vertical-offset="966" max-vertical-offset="1911">
+          <caret line="73" column="30" selection-start-line="73" selection-start-column="30" selection-end-line="73" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/usuarios/profile.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.518518" vertical-offset="1657" max-vertical-offset="2688">
+          <caret line="113" column="18" selection-start-line="113" selection-start-column="18" selection-end-line="113" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/feeds/indexPartial/sectionCenter.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03448276" vertical-offset="2100" max-vertical-offset="2898">
-          <caret line="101" column="33" selection-start-line="101" selection-start-column="33" selection-end-line="101" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.6896552" vertical-offset="1407" max-vertical-offset="2877">
+          <caret line="87" column="12" selection-start-line="87" selection-start-column="12" selection-end-line="87" selection-end-column="12" />
           <folding>
-            <marker date="1466705299490" expanded="true" signature="1232:1480" placeholder="..." />
-            <marker date="1466705299490" expanded="true" signature="1247:1479" placeholder="..." />
-            <marker date="1466705299490" expanded="true" signature="1262:1478" placeholder="..." />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#strong#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#small#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <marker date="1466706352374" expanded="true" signature="1232:1480" placeholder="..." />
+            <marker date="1466706352374" expanded="true" signature="1247:1479" placeholder="..." />
+            <marker date="1466706352374" expanded="true" signature="1262:1478" placeholder="..." />
           </folding>
         </state>
       </provider>
