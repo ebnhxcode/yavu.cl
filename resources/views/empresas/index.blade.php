@@ -5,125 +5,72 @@
 {!!Html::script('js/ajax/BuscarEmpresa.js')!!}
 <div class="jumbotron">
 	<div id="contentMiddle">
-    @include('alerts.allAlerts')
-    <!--
-    <div class="" style="font-size: 3em;">
-      <img id="img" style="padding-bottom: 20px;" width="8%" src= "{!!URL::to('img/newGraphics/neo_icono_empresa.png')!!}"/><span>Empresas</span>
-    </div>
-    -->
     <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        @include('alerts.allAlerts')
+      </div><!-- /div col-lg12-md12-sm12-xs12 -->
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        @include('sorteos.indexPartial.sectionLeft')
+      </div><!-- /div col-lg3-md3-sm12-xs12 -->
 
-        <div>
-          <div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        @if(Auth::user()->check() || !Auth::user()->check())
+          <div id="EmpresaListThumb">
             <div class="list-group">
-              <div class="list-group-item list-group-item-success">
-                FILTRO DE BÚSQUEDA
-              </div>
-              <div class="list-group-item">
-                @if(Auth::admin()->check())
-                    {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar...','id'=>'empresa', 'aria-describedby' => 'sizing-addon1'])!!}
-                @elseif(Auth::user()->check() || !Auth::user()->check())
-                    {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'buscar...','id'=>'empresathumb', 'role' => 'combobox', 'aria-describedby' => 'sizing-addon1'])!!}
-                @endif
-              </div>
-             
-              @include('miniDashboard.miniDashboard')
-      
-              @include('listarBanner.listaBanner')
+              @foreach($empresas as $empresa)
+                <div class="list-group-item">
+                  <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                      <a href="/empresas/{!!$empresa->id!!}" class="thumbnail">
+                        <img id="ImagenPortada" src="/img/users/{!!($empresa->imagen_portada!='')?$empresa->imagen_portada:'banner.png'!!}" alt="..." style="height: 150px;">
+                      </a><!-- /a .thumbnail -->
+                    </div><!-- /div col-lg6-md6-sm12-xs12 -->
+                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                      <a class="btn-link" href="/empresas/{!!$empresa->id!!}">{!! $empresa->nombre!!}</a><br/>
 
-            </div> <!-- /list group -->
+                      <strong>Ciudad :</strong> {!!$empresa->ciudad!!}<br>
+                      <strong>Contacto :<strong><a href="mailto:#">{!!$empresa->email!!}</a></strong><br>
+                      <strong>Fono :</strong> <abbr title="Phone"></abbr> {!!$empresa->fono!!}</strong><br>
 
-          </div>
-        </div> <!-- /panel -->
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-        <div>
-          <div>
-            @if(Auth::admin()->check())
-              <table class="table table-hover" id="EmpresaList">
-                <thead>
-                <th>Nombre</th>
-                <th>Correo</th>
-                <th>ciudad</th>
-                <th>Fono</th>
-                <th>Aniversario Empresa</th>
-                <th>Encargado</th>
-                <th>Operaciones</th>
-                </thead>
-                @foreach($empresas as $empresa)
-                  <tbody>
-                  <td>{!!$empresa->nombre!!}</td>
-                  <td>{!!$empresa->email!!}</td>
-                  <td>{!!$empresa->ciudad!!}</td>
-                  <td>{!!$empresa->fono!!}</td>
-                  <td>{!!$empresa->fecha_creacion!!}</td>
-                  <td>{!!$empresa->nombre_encargado!!}</td>
-                  <td>{!!link_to_route('empresas.edit', $title = 'Editar', $parameters = $empresa->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
-                  </tbody>
-                @endforeach
-              </table>
-            @elseif(Auth::user()->check() || !Auth::user()->check())
-              <div id="EmpresaListThumb">
-           
-                @foreach($empresas as $empresa)
-                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                    <div class="thumbnail card">
+                      <div class="btn-group" role="group" aria-label="...">
+                        <a href="{!! URL::to('/empresa/'.$empresa->nombre.'/') !!}" class="btn btn-default btn-xs">Ver perfil</a>
+                        <a href="{!! URL::to('/empresa/'.$empresa->nombre.'/sorteos') !!}" class="btn btn-default btn-xs">Ver sorteos</a>
+                      </div><!-- /div .btn-group -->
 
-                      @if($empresa->imagen_portada === "" )
-                        <img id="ImagenPortada" src="/img/users/banner.png" alt="..." style="height: 200px;">
-                      @else
-                        <img id="ImagenPortada" src="/img/users/{!!$empresa->imagen_portada!!}" alt="..." style="height: 200px;">
+                      @if(Auth::user()->get()->id == $empresa->user_id)
+                        <ul class="dropdown-menu">
+                          <li><a href="{!! URL::to('/empresas/'.$empresa->id.'/edit') !!}">Editar empresa</a></li>
+                          <li><a href="{!! URL::to('/sorteos/create') !!}">Crear sorteo</a></li>
+                        </ul><!-- /ul .dropdown-menu -->
+                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Mi empresa
+                          <span class="glyphicon glyphicon-cog"></span>
+                          <span class="caret"></span>
+                        </button><!-- /button .btn .btn-default .btn-xs .dropdown-toggle -->
                       @endif
+                    </div><!-- /div .col-lg6-md6-sm12-xs12 -->
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                      <div class="dropup">
+                        <a href="/empresas/{!! $empresa->id !!}" class="btn btn-default btn-xs">
+                          <span class="glyphicon glyphicon-chevron-down"></span>
+                        </a>
+                      </div><!-- /div .dropup -->
 
-                        <div class="row">
-                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <address>
-                              <h4><a class="btn-link" href="/empresa/{!!$empresa->nombre!!}">{!! $empresa->nombre!!}</a></h4>
-                              <strong>Ciudad :</strong> {!!$empresa->ciudad!!}<br>
-                              <strong>Contacto :<strong><a href="mailto:#">{!!$empresa->email!!}</a></strong><br>
-                              <strong>Fono :</strong> <abbr title="Phone"></abbr> {!!$empresa->fono!!}<br>
+                    </div><!-- /div .col-lg1-md1-sm1-xs1 -->
+                  </div><!-- /div .row -->
+                </div><!-- /div .list-group-item -->
+              @endforeach
+            </div><!-- /div .list-group -->
+          </div> <!-- /div #EmpresaListThumb -->
+        @endif
+      </div><!-- /div col-lg6-md6-sm12-xs12 -->
 
-                            </address>
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        @include('sorteos.indexPartial.sectionRight')
+      </div></div><!-- /div col-lg3-md3-sm12-xs12 -->
 
-                            <div align="center">
-
-                              <div class="btn-group" role="group" aria-label="...">
-                                <a href="{!! URL::to('/empresa/'.$empresa->nombre.'/') !!}" class="btn btn-default btn-xs">Ver perfil</a>
-                                <a href="{!! URL::to('/empresa/'.$empresa->nombre.'/sorteos') !!}" class="btn btn-default btn-xs">Ver sorteos</a>
-                              </div>
-
-                              @if(Auth::user()->get()->id == $empresa->user_id)
-                                <ul class="dropdown-menu">
-                                  <li><a href="{!! URL::to('/empresas/'.$empresa->id.'/edit') !!}">Editar empresa</a></li>
-                                  <li><a href="{!! URL::to('/sorteos/create') !!}">Crear sorteo</a></li>
-                                </ul>
-                                <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Mi empresa
-                                  <span class="glyphicon glyphicon-cog"></span>
-                                  <span class="caret"></span>
-                                </button>
-                              @endif
-                            </div>
-
-
-                          </div>
-                        </div><!-- /div row -->
-                    </div><!-- /div thumbnail card -->
-                  </div>
-                @endforeach
-              </div> <!-- /Empresa list thumb -->
-
-            @endif
-
-          </div><!-- /panel body -->
-        </div><!-- /panel panel-default -->
-      </div>
       <div class="text-center">{!!$empresas->render()!!}</div>
-    </div>
-
-
-
+    </div><!-- /div .row -->
 
 	</div><!-- /contentMiddle -->
 </div><!-- /jumbotron -->
