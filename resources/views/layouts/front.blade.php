@@ -141,13 +141,20 @@
                   <div id="navbar" class="navbar-collapse collapse">
                     {!!Form::open(['route' => 'log.store', 'method' => 'POST', 'class' => 'navbar-form navbar-right', 'role' => 'form'])!!}
                     <div class="form-group">
+                      <div class="input-group">
+                        {!!Form::email('email',null,['class'=>'form-control input-sm','placeholder'=>'Usuario', 'autocomplete' => 'off', 'aria-describedby'=>'addon-user'])!!}
+                        <i class="form-control-feedback glyphicon glyphicon-user"></i>
+                      </div>
 
-                      {!!Form::email('email',null,['class'=>'form-control input-sm','placeholder'=>'Usuario', 'autocomplete' => 'off'])!!}
+
+
                     </div><!-- /div .form-group -->
                     <img src="{!! asset('img/yavu019.png') !!}" width="30" alt=""/>
                     <div class="form-group">
-
-                      {!!Form::password('password',['class'=>'form-control input-sm','placeholder'=>'Clave', 'autocomplete' => 'off'])!!}
+                      <div class="input-group">
+                        {!!Form::password('password',['class'=>'form-control input-sm','placeholder'=>'Clave', 'autocomplete' => 'off'])!!}
+                        <i class="form-control-feedback glyphicon glyphicon-lock"></i>
+                      </div>
                     </div><!-- /div .form-group -->
                     <input type="hidden" name="_token" value="{!! csrf_token() !!}"><!-- /input token -->
 

@@ -19,7 +19,7 @@
 		<i class="form-control-feedback glyphicon glyphicon-user"></i>			
 	</td>
 	<td>*</td>
-</tr
+</tr>
 <tr>
 	<td>Nueva clave</td>
 	<td>

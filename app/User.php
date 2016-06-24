@@ -90,4 +90,13 @@ class User extends Model implements AuthenticatableContract,
 	public function follow($empresa_id){
 		return $this->hasOne(Follower::class, 'user_id')->where('empresa_id', $empresa_id);
 	}
+
+  public function followedCompanies(){
+    return $this->hasMany(Follower::class, 'user_id')->orderByRaw('RAND()')->take(30);
+  }
+
+  public function countTotalFollowedCompanies(){
+    return $this->hasMany(Follower::class, 'user_id');
+  }
+
 }

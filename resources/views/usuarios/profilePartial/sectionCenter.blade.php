@@ -1,7 +1,4 @@
 <div class="list-group">
-  <div class="list-group-item">
-    <h4>{!! strtoupper( $user->nombre.' '.$user->apellido ) !!}</h4>
-  </div><!-- /div .list-group-item -->
 
   <div class="list-group-item">
     <div id="IPortada">
@@ -17,8 +14,10 @@
 
         <li role="presentation" class="active"><a href="#coinsHistory" aria-controls="coinsHistory" role="tab" data-toggle="tab">Historial coins</a></li>
         <li role="presentation"><a href="#ticketsHistory" aria-controls="ticketsHistory" role="tab" data-toggle="tab">Hitorial tickets</a></li>
+        {{--
         <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Información</a></li>
         <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Imagenes</a></li>
+        --}}
 
       </ul>
       <!-- End Nav tabs -->
@@ -45,13 +44,15 @@
           @endforeach
         </div><!-- /div .tab-pane .fade .active .list-group .wrap -->
 
+        {{--
         <div role="tabpanel" class="tab-pane fade" id="messages">
-          Some data
+
         </div><!-- /div .tab-pane .fade .active .list-group .wrap -->
 
         <div role="tabpanel" class="tab-pane fade" id="settings">
           Some data
         </div><!-- /div .tab-pane .fade .active .list-group .wrap -->
+        --}}
 
       </div><!-- /div .tab-content -->
       <!-- End Tab panes -->
@@ -59,5 +60,6 @@
       {{--{!! ($userSession->registro_coins()->sum('cantidad')) !!}--}}
 
     </div><!-- /div .softText-descriptions -->
+
   </div><!-- /div .list-group-item -->
 </div><!-- /div .list-group -->
