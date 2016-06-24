@@ -81,14 +81,24 @@
 			<div class='form-group has-feedback has-feedback-left'>
 				(<strong><small><span class='requerido'>Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar foto de perfil:')!!}<span id='Perfil'></span><br>
 				<span class='btn-file btn-md'>
-					Buscar imagen{!!Form::file('imagen_perfil', ['id' => 'imagen_perfil',  'maxlength' => '255',  'size' => '2048'])!!}
+
+          <label class="btn btn-default btn-sm btn-file">
+            <span class="glyphicon glyphicon-camera "></span>
+            Buscar imagen ... <input type="file" name="imagen_perfil" style="display: none;" id="imagen_perfil" maxlength="255" size="2048">
+          </label>
+
 				</span><!-- /span .btn-file .btn-md -->
 				<img width='15%' id='ImagenPerfil' class='thumbnail img-responsive-centered' src='/img/users/{!! isset($user)?($user->imagen_perfil!='')?$user->imagen_perfil:'usuario_nuevo.png':'usuario_nuevo.png' !!}' class='center-block'>
 			</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 			<div class='form-group has-feedback has-feedback-left'>
 				(<strong><small><span class='requerido'>Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar portada:')!!}<span id='Portada'></span><br>
 				<span class='btn-file btn-md'>
-					Buscar imagen{!!Form::file('imagen_portada', ['id' => 'imagen_portada',  'maxlength' => '255', 'size' => '2048'])!!}
+
+          <label class="btn btn-default btn-sm btn-file">
+            <span class="glyphicon glyphicon-camera "></span>
+            Buscar imagen ... <input type="file" name="imagen_portada" style="display: none;" id="imagen_portada" maxlength="255" size="2048">
+          </label>
+
 				</span>
 				<img width='35%' id='ImagenPortada' class='thumbnail img-responsive-centered' src='/img/users/{!! isset($user)?($user->imagen_portada!='')?$user->imagen_portada:'banner.png':'banner.png' !!}' width=100%>
 			</div><!-- /div .form-group .has-feedback .has-feedback-left  -->

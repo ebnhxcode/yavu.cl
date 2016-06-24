@@ -10,17 +10,17 @@
         @include('alerts.allAlerts')
       </div><!-- /div col-md12-sm12-xs12 -->
 
-      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+      <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
 
       </div>
 
       {!!Form::open([route('usuarios_create_path'), 'method'=>'POST', 'files' => true])!!}
-      <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12'>
+      <div class='col-lg-4 col-md-4 col-sm-12 col-xs-12'>
         @include('usuarios.forms.fieldsUser')
-      </div><!-- /div .col-md4-sm4-xs12 -->
+      </div><!-- /div .col-lg4-md4-sm12-xs12 -->
 
 
-      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
         <div class='list-group'>
           <div class='list-group-item'>
             <div class='form-group has-feedback has-feedback-left'>
