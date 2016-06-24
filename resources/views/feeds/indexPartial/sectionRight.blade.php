@@ -67,6 +67,6 @@
       </div> <!-- /div  -->
     </div><!-- /div .row -->
   </div> <!-- /div .list-group-item styled -->
-  <small>Ads via <a class="btn-link" href="http://localhost:8000/">Yavü</a></small>
+  <small>Ads via <a class="btn-link" href="http://186.64.123.143/">Yavü</a></small>
 </div><!-- /div .list-group -->
 
