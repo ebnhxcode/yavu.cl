@@ -21,6 +21,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/ajax/SeguirEmpresaDesdeEmpresas.js" afterPath="$PROJECT_DIR$/public/js/ajax/SeguirEmpresaDesdeEmpresas.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/ajax/SolicitudEliminacionEmpresa.js" afterPath="$PROJECT_DIR$/public/js/ajax/SolicitudEliminacionEmpresa.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/admins/admins.js" afterPath="$PROJECT_DIR$/public/js/admins/admins.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.php" afterPath="$PROJECT_DIR$/config/database.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admins/forms/fieldsEmpresa.blade.php" afterPath="$PROJECT_DIR$/resources/views/admins/forms/fieldsEmpresa.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/empresas/forms/fieldsEmpresa.blade.php" afterPath="$PROJECT_DIR$/resources/views/empresas/forms/fieldsEmpresa.blade.php" />
@@ -73,22 +74,22 @@
               <folding>
                 <element signature="n#style#0;n#input#0;n#label#0;n#span#1;n#div#0;n#div#3;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#label#0;n#span#1;n#div#1;n#div#3;n#div#0;n#!!top" expanded="true" />
-                <marker date="1466812094037" expanded="true" signature="1693:2623" placeholder="..." />
-                <marker date="1466812094037" expanded="true" signature="1693:2760" placeholder="..." />
-                <marker date="1466812094037" expanded="true" signature="1706:2623" placeholder="..." />
-                <marker date="1466812094037" expanded="true" signature="1723:2623" placeholder="..." />
-                <marker date="1466812094037" expanded="true" signature="6365:6994" placeholder="..." />
-                <marker date="1466812094037" expanded="true" signature="6378:6986" placeholder="..." />
-                <marker date="1466812094037" expanded="true" signature="6396:6910" placeholder="..." />
-                <marker date="1466812094037" expanded="true" signature="7171:7643" placeholder="..." />
-                <marker date="1466812094037" expanded="true" signature="7184:7635" placeholder="..." />
-                <marker date="1466812094037" expanded="true" signature="7199:7558" placeholder="..." />
-                <marker date="1466812094037" expanded="true" signature="8363:8559" placeholder="..." />
-                <marker date="1466812094037" expanded="true" signature="8376:8551" placeholder="..." />
-                <marker date="1466812094037" expanded="true" signature="8392:8475" placeholder="..." />
-                <marker date="1466812094037" expanded="true" signature="9323:9505" placeholder="..." />
-                <marker date="1466812094037" expanded="true" signature="9336:9495" placeholder="..." />
-                <marker date="1466812094037" expanded="true" signature="9362:9416" placeholder="..." />
+                <marker date="1466812175925" expanded="true" signature="1693:2623" placeholder="..." />
+                <marker date="1466812175925" expanded="true" signature="1693:2760" placeholder="..." />
+                <marker date="1466812175925" expanded="true" signature="1706:2623" placeholder="..." />
+                <marker date="1466812175925" expanded="true" signature="1723:2623" placeholder="..." />
+                <marker date="1466812175925" expanded="true" signature="6365:6994" placeholder="..." />
+                <marker date="1466812175925" expanded="true" signature="6378:6986" placeholder="..." />
+                <marker date="1466812175925" expanded="true" signature="6396:6910" placeholder="..." />
+                <marker date="1466812175925" expanded="true" signature="7171:7643" placeholder="..." />
+                <marker date="1466812175925" expanded="true" signature="7184:7635" placeholder="..." />
+                <marker date="1466812175925" expanded="true" signature="7199:7558" placeholder="..." />
+                <marker date="1466812175925" expanded="true" signature="8363:8559" placeholder="..." />
+                <marker date="1466812175925" expanded="true" signature="8376:8551" placeholder="..." />
+                <marker date="1466812175925" expanded="true" signature="8392:8475" placeholder="..." />
+                <marker date="1466812175925" expanded="true" signature="9323:9505" placeholder="..." />
+                <marker date="1466812175925" expanded="true" signature="9336:9495" placeholder="..." />
+                <marker date="1466812175925" expanded="true" signature="9362:9416" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -118,7 +119,50 @@
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="609">
-              <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+              <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/app.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.0" vertical-offset="0" max-vertical-offset="4431">
+              <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fieldsEmpresa.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admins/forms/fieldsEmpresa.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.0" vertical-offset="3960" max-vertical-offset="6426">
+              <caret line="195" column="19" selection-start-line="195" selection-start-column="19" selection-end-line="195" selection-end-column="19" />
+              <folding>
+                <marker date="1466812175929" expanded="true" signature="1080:2304" placeholder="..." />
+                <marker date="1466812175929" expanded="true" signature="1093:2294" placeholder="..." />
+                <marker date="1466812175929" expanded="true" signature="1114:2214" placeholder="..." />
+                <marker date="1466812175929" expanded="true" signature="5627:6319" placeholder="..." />
+                <marker date="1466812175929" expanded="true" signature="5640:6309" placeholder="..." />
+                <marker date="1466812175929" expanded="true" signature="5661:6229" placeholder="..." />
+                <marker date="1466812175929" expanded="true" signature="6520:7034" placeholder="..." />
+                <marker date="1466812175929" expanded="true" signature="6533:7024" placeholder="..." />
+                <marker date="1466812175929" expanded="true" signature="6552:6944" placeholder="..." />
+                <marker date="1466812175929" expanded="true" signature="8415:8596" placeholder="..." />
+                <marker date="1466812175929" expanded="true" signature="8428:8586" placeholder="..." />
+                <marker date="1466812175929" expanded="true" signature="8449:8507" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".htaccess" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/.htaccess">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.58243454" vertical-offset="0" max-vertical-offset="649">
+              <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -128,27 +172,7 @@
         <entry file="file://$PROJECT_DIR$/config/database.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-8.703704" vertical-offset="1025" max-vertical-offset="2814">
-              <caret line="60" column="61" selection-start-line="60" selection-start-column="61" selection-end-line="60" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".htaccess" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/.htaccess">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
-              <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fieldsEmpresa.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/admins/forms/fieldsEmpresa.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20689656" vertical-offset="3969" max-vertical-offset="6426">
-              <caret line="195" column="19" selection-start-line="195" selection-start-column="19" selection-end-line="195" selection-end-column="19" />
+              <caret line="60" column="49" selection-start-line="60" selection-start-column="49" selection-end-line="60" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -181,7 +205,6 @@
         <option value="$PROJECT_DIR$/resources/views/listarBanner/listaBanner.blade.php" />
         <option value="$PROJECT_DIR$/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_navbar.scss" />
         <option value="$PROJECT_DIR$/resources/views/usuarios/profile.blade.php" />
-        <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/resources/views/login.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FeedController.php" />
         <option value="$PROJECT_DIR$/resources/views/sorteos/forms/vistaListaUsuario.blade.php" />
@@ -211,8 +234,9 @@
         <option value="$PROJECT_DIR$/resources/views/feeds/indexPartial/sectionRight.blade.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/config/database.php" />
-        <option value="$PROJECT_DIR$/public/.htaccess" />
+        <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/resources/views/admins/forms/fieldsEmpresa.blade.php" />
+        <option value="$PROJECT_DIR$/public/.htaccess" />
       </list>
     </option>
   </component>
@@ -344,7 +368,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Other File Types" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="config/da&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;EmpresaC&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/EmpresaController.php&#10;FeedContro&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;SorteoContr&#9;null&#9;null&#10;front&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/front.blade.php&#10;front-&#9;null&#9;null&#10;style.&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;front.&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/front.blade.php&#10;front.blaf&#9;null&#9;null&#10;style&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;SeguirEm&#9;FILE&#9;file:///var/www/html/yavu.cl/public/js/ajax/SeguirEmpresa.js&#10;front.blade&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/front.blade.php&#10;fron&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/front.blade.php&#10;feedcontr&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;config/app&#9;FILE&#9;file:///var/www/html/yavu.cl/config/app.php&#10;config/dat&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;config/data&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;config/datab&#9;null&#9;null&#10;.en&#9;FILE&#9;file:///var/www/html/yavu.cl/.env&#10;.ENV&#9;FILE&#9;file:///var/www/html/yavu.cl/.env&#10;styl&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;EmpresaCon&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/EmpresaController.php&#10;Empresa.php&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Empresa.php&#10;Sorteo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;usercontr&#9;null&#9;null&#10;sorteocontro&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;.env&#9;FILE&#9;file:///var/www/html/yavu.cl/.env&#10;config/a&#9;FILE&#9;file:///var/www/html/yavu.cl/config/app.php&#10;config/database&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;Empre&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/EmpresaController.php&#10;FeedCo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;routes&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;style.css&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;feeds&#9;null&#9;null&#10;routes.php&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;route.php&#9;FILE&#9;file:///var/www/html/yavu.cl/vendor/symfony/routing/Route.php&#10;CONFIG/DATABAS&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;config/datav&#9;null&#9;null&#10;tyle.css&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;SorteoCo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;Sorteo.ph&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Sorteo.php&#10;vistaLista&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/sorteos/forms/vistaListaUsuario.blade.php&#10;SorteoController&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;timeago&#9;FILE&#9;file:///var/www/html/yavu.cl/public/js/vendor/jquery.timeago.js" />
+    <property name="SearchEverywhereHistoryKey" value="config/app&#9;FILE&#9;file:///var/www/html/yavu.cl/config/app.php&#10;config/data&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;config/da&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;EmpresaC&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/EmpresaController.php&#10;FeedContro&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;SorteoContr&#9;null&#9;null&#10;front&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/front.blade.php&#10;front-&#9;null&#9;null&#10;style.&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;front.&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/front.blade.php&#10;front.blaf&#9;null&#9;null&#10;style&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;SeguirEm&#9;FILE&#9;file:///var/www/html/yavu.cl/public/js/ajax/SeguirEmpresa.js&#10;front.blade&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/front.blade.php&#10;fron&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/front.blade.php&#10;feedcontr&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;config/dat&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;config/datab&#9;null&#9;null&#10;.en&#9;FILE&#9;file:///var/www/html/yavu.cl/.env&#10;.ENV&#9;FILE&#9;file:///var/www/html/yavu.cl/.env&#10;styl&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;EmpresaCon&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/EmpresaController.php&#10;Empresa.php&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Empresa.php&#10;Sorteo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;usercontr&#9;null&#9;null&#10;sorteocontro&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;.env&#9;FILE&#9;file:///var/www/html/yavu.cl/.env&#10;config/a&#9;FILE&#9;file:///var/www/html/yavu.cl/config/app.php&#10;config/database&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;Empre&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/EmpresaController.php&#10;FeedCo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;routes&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;style.css&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;feeds&#9;null&#9;null&#10;routes.php&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;route.php&#9;FILE&#9;file:///var/www/html/yavu.cl/vendor/symfony/routing/Route.php&#10;CONFIG/DATABAS&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;config/datav&#9;null&#9;null&#10;tyle.css&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;SorteoCo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;Sorteo.ph&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Sorteo.php&#10;vistaLista&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/sorteos/forms/vistaListaUsuario.blade.php&#10;SorteoController&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;timeago&#9;FILE&#9;file:///var/www/html/yavu.cl/public/js/vendor/jquery.timeago.js" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
     <property name="FullScreen" value="false" />
     <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
@@ -474,13 +498,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2413793" vertical-offset="0" max-vertical-offset="1092">
           <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50643086" vertical-offset="0" max-vertical-offset="4431">
-          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -813,22 +830,22 @@
           <folding>
             <element signature="n#style#0;n#input#0;n#label#0;n#span#1;n#div#0;n#div#3;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#label#0;n#span#1;n#div#1;n#div#3;n#div#0;n#!!top" expanded="true" />
-            <marker date="1466812094037" expanded="true" signature="1693:2623" placeholder="..." />
-            <marker date="1466812094037" expanded="true" signature="1693:2760" placeholder="..." />
-            <marker date="1466812094037" expanded="true" signature="1706:2623" placeholder="..." />
-            <marker date="1466812094037" expanded="true" signature="1723:2623" placeholder="..." />
-            <marker date="1466812094037" expanded="true" signature="6365:6994" placeholder="..." />
-            <marker date="1466812094037" expanded="true" signature="6378:6986" placeholder="..." />
-            <marker date="1466812094037" expanded="true" signature="6396:6910" placeholder="..." />
-            <marker date="1466812094037" expanded="true" signature="7171:7643" placeholder="..." />
-            <marker date="1466812094037" expanded="true" signature="7184:7635" placeholder="..." />
-            <marker date="1466812094037" expanded="true" signature="7199:7558" placeholder="..." />
-            <marker date="1466812094037" expanded="true" signature="8363:8559" placeholder="..." />
-            <marker date="1466812094037" expanded="true" signature="8376:8551" placeholder="..." />
-            <marker date="1466812094037" expanded="true" signature="8392:8475" placeholder="..." />
-            <marker date="1466812094037" expanded="true" signature="9323:9505" placeholder="..." />
-            <marker date="1466812094037" expanded="true" signature="9336:9495" placeholder="..." />
-            <marker date="1466812094037" expanded="true" signature="9362:9416" placeholder="..." />
+            <marker date="1466812175925" expanded="true" signature="1693:2623" placeholder="..." />
+            <marker date="1466812175925" expanded="true" signature="1693:2760" placeholder="..." />
+            <marker date="1466812175925" expanded="true" signature="1706:2623" placeholder="..." />
+            <marker date="1466812175925" expanded="true" signature="1723:2623" placeholder="..." />
+            <marker date="1466812175925" expanded="true" signature="6365:6994" placeholder="..." />
+            <marker date="1466812175925" expanded="true" signature="6378:6986" placeholder="..." />
+            <marker date="1466812175925" expanded="true" signature="6396:6910" placeholder="..." />
+            <marker date="1466812175925" expanded="true" signature="7171:7643" placeholder="..." />
+            <marker date="1466812175925" expanded="true" signature="7184:7635" placeholder="..." />
+            <marker date="1466812175925" expanded="true" signature="7199:7558" placeholder="..." />
+            <marker date="1466812175925" expanded="true" signature="8363:8559" placeholder="..." />
+            <marker date="1466812175925" expanded="true" signature="8376:8551" placeholder="..." />
+            <marker date="1466812175925" expanded="true" signature="8392:8475" placeholder="..." />
+            <marker date="1466812175925" expanded="true" signature="9323:9505" placeholder="..." />
+            <marker date="1466812175925" expanded="true" signature="9336:9495" placeholder="..." />
+            <marker date="1466812175925" expanded="true" signature="9362:9416" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -857,34 +874,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="609">
-          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.703704" vertical-offset="1025" max-vertical-offset="2814">
-          <caret line="60" column="61" selection-start-line="60" selection-start-column="61" selection-end-line="60" selection-end-column="61" />
+          <caret line="60" column="49" selection-start-line="60" selection-start-column="49" selection-end-line="60" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/.htaccess">
+    <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
-          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="609">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.0" vertical-offset="0" max-vertical-offset="4431">
+          <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admins/forms/fieldsEmpresa.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20689656" vertical-offset="3969" max-vertical-offset="6426">
+        <state vertical-scroll-proportion="-5.0" vertical-offset="3960" max-vertical-offset="6426">
           <caret line="195" column="19" selection-start-line="195" selection-start-column="19" selection-end-line="195" selection-end-column="19" />
+          <folding>
+            <marker date="1466812175929" expanded="true" signature="1080:2304" placeholder="..." />
+            <marker date="1466812175929" expanded="true" signature="1093:2294" placeholder="..." />
+            <marker date="1466812175929" expanded="true" signature="1114:2214" placeholder="..." />
+            <marker date="1466812175929" expanded="true" signature="5627:6319" placeholder="..." />
+            <marker date="1466812175929" expanded="true" signature="5640:6309" placeholder="..." />
+            <marker date="1466812175929" expanded="true" signature="5661:6229" placeholder="..." />
+            <marker date="1466812175929" expanded="true" signature="6520:7034" placeholder="..." />
+            <marker date="1466812175929" expanded="true" signature="6533:7024" placeholder="..." />
+            <marker date="1466812175929" expanded="true" signature="6552:6944" placeholder="..." />
+            <marker date="1466812175929" expanded="true" signature="8415:8596" placeholder="..." />
+            <marker date="1466812175929" expanded="true" signature="8428:8586" placeholder="..." />
+            <marker date="1466812175929" expanded="true" signature="8449:8507" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58243454" vertical-offset="0" max-vertical-offset="649">
+          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
           <folding />
         </state>
       </provider>
