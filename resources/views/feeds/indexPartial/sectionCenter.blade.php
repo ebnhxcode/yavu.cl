@@ -29,12 +29,12 @@
         </div><!-- /div .col-md1-sm12-xs12 -->
         <div class="col-xs-12 col-sm-12 col-md-11 col-lg-11">
           {!!Form::open(['route'=>'estadoempresa.store', 'method'=>'POST'])!!}
-          {!!Form::textarea('status',null,['class'=>'form-control newCompanyPost','placeholder'=>'¡Comparte una publicaci&oacute;n!', 'maxlength'=>'500', 'required'=>'required','style'=>'resize:none; padding: 15px;font-size: 1em;', 'rows'=>'2', 'id'=>'status'])!!}
+          {!!Form::textarea('status',null,['class'=>'form-control newCompanyPost','placeholder'=>'¡Comparte una publicaci&oacute;n!', 'maxlength'=>'100', 'required'=>'required','style'=>'resize:none; padding: 15px;font-size: 1em;', 'rows'=>'2', 'id'=>'status'])!!}
           {!! Form::hidden('user_id',$myCompanies[0]->user_id) !!}
           {!! Form::hidden('empresa_id',$myCompanies[0]->id) !!}
           <hr>
           <div style="padding-top:10px">
-            <span id="characters" value="500">500</span>
+            <span id="characters" value="100">100</span>
             {{-- {!!link_to('#!', $title="Publicar estado", $attributes = ['id'=>'publicar', 'class'=>'btn btn-success btn-sm'], $secure = null)!!} --}}
             {!!Form::submit('Publicar', ['class'=>'btn btn-sm btn-success'])!!}
           </div><!-- /div styled -->
@@ -105,6 +105,17 @@
         </div>
       </div>
     @endif
+    @if($key == 9)
+      <div class="list-group-item div-hover">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <a class="thumbnail">
+              <img class="img-responsive" id="ImagenPortada" src="/img/users/icofinal_publicaciones.png" alt="..." style="height: 170px;">
+            </a>
+          </div><!-- /div .col-md12-sm12-xs12 -->
+        </div>
+      </div>
+    @endif
   @endforeach
 
   <div class="list-group-item" style="text-align: center;">
@@ -124,9 +135,9 @@
   });
   function refreshCharacters(textarea) {
     var post = textarea.value;
-    $('#characters').text(500 - post.length);
+    $('#characters').text(100 - post.length);
     (post.length > 0)?$('#characters').addClass('text-success'):$('#characters').removeClass('text-success');
-    ((post.length > 200)?$('#characters').addClass('text-warning'):$('#characters').removeClass('text-warning'));
-    ((post.length > 400)?$('#characters').addClass('text-danger'):$('#characters').removeClass('text-danger'));
+    ((post.length > 40)?$('#characters').addClass('text-warning'):$('#characters').removeClass('text-warning'));
+    ((post.length > 80)?$('#characters').addClass('text-danger'):$('#characters').removeClass('text-danger'));
   }
 </script>

@@ -1,4 +1,4 @@
-<div class='col-md-8 col-sm-8 col-xs-12'>
+
 	<div class='list-group'>
 		<div class='list-group-item list-group-item-success'>
 			DATOS PRINCIPALES
@@ -193,7 +193,7 @@
 			</div><!-- /div .list-group-item -->
 		</div><!-- /div .list-group -->
 	@endif
-</div><!-- /div .col-md4-sm4-xs12 -->
+
 <script>
 
 	$('#rut').change(function(){

@@ -5,7 +5,7 @@
     @if(count($userSession->follow($company->id)->get())==0)
       @if($key == 0)
         <div class="list-group-item">
-          <small>Empresas del momento que a&uacute;n no sigues</small>
+          <small>Empresas recomendadas</small>
         </div><!-- /div .list-group-item -->
       @endif
       <div class="list-group-item">
@@ -25,14 +25,10 @@
       </div><!-- /div .list-group-item -->
     @endif
   @endforeach
-  <div class="list-group-item list-group-item-info">
-    <small>¡Por tiempo limitado, sigue a todas las empresas que puedas para permanecer recibiendo sus coins a futuro!</small>
-  </div>
 </div><!-- /div .list-group -->
 <!-- Banner Random -->
 <div class="list-group">
   <div class="list-group-item">
-    <span class="glyphicon glyphicon-certificate"></span>
     <span style="font-size: 1.8em; color: #65C400; z-index: 1003;" class="glyphicon glyphicon-bookmark"></span>
     <span style="font-size: 1.8em; color: #449d44; right: 20px; z-index: 1002;" class="glyphicon glyphicon-bookmark"></span>
     <span style="font-size: 1.8em; color: #ffcc00; right: 40px; z-index: 1001;" class="glyphicon glyphicon-bookmark"></span>

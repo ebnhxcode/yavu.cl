@@ -5,7 +5,6 @@
       <img id='ImagenPerfil' src='/img/users/{!! isset($user)?($user->imagen_perfil!='')?$user->imagen_perfil:'usuario_nuevo.png':'' !!}' class='center-block'>
     </div><!-- /div .thumbnail -->
 
-    <h3>{!! $user->nombre.' '.$user->apellido !!}</h3>
     <div class="dropdown">
       <button class="btn btn-default btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
         <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>

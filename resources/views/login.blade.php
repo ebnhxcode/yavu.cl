@@ -11,28 +11,35 @@
     }
   </style>
   <div>
-    {!!Form::open(['route' => 'log.store', 'method' => 'POST'])!!}
+
     <div id="contentMini">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           @include('alerts.allAlerts')
         </div><!-- /div .col-md12-sm12-xs12 -->
       </div><!-- /div .row -->
+
       <div style="color: #fff">
         <h2>Inicio de sesión <img width="35%" style="float: right;" src="{!! URL::to('img/yavu005.png') !!}" alt=""></h2>
         <hr>
-        <div class="form-group has-feedback has-feedback-left ">
-          {!!Form::label('Correo electrónico:')!!}
-          {!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingresa tu email de usuario'])!!}
-        </div><!-- /div .form-group .has-feedback .has-feedback-left -->
-        <div class="form-group has-feedback has-feedback-left ">
-          {!!Form::label('Clave:')!!}
-          {!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingresa tu clave'])!!}
-        </div><!-- /div .form-group .has-feedback .has-feedback-left -->
-        <input type="hidden" name="_token" value="{!! csrf_token() !!}"><!-- /input token -->
-        <div class="form-group has-feedback has-feedback-left ">
-          {!!Form::submit('Iniciar sesión',['class'=>'btn btn-success ', 'style'=>'width:100%;'])!!}
-        </div><!-- /div .form-group .has-feedback .has-feedback-left -->
+
+        <!-- Formulario inicio sesión -->
+        {!!Form::open(['route' => 'log.store', 'method' => 'POST'])!!}
+          <div class="form-group has-feedback has-feedback-left ">
+            {!!Form::label('Correo electrónico:')!!}
+            {!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingresa tu email de usuario'])!!}
+          </div><!-- /div .form-group .has-feedback .has-feedback-left -->
+          <div class="form-group has-feedback has-feedback-left ">
+            {!!Form::label('Clave:')!!}
+            {!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingresa tu clave'])!!}
+          </div><!-- /div .form-group .has-feedback .has-feedback-left -->
+          <input type="hidden" name="_token" value="{!! csrf_token() !!}"><!-- /input token -->
+          <div class="form-group has-feedback has-feedback-left ">
+            {!!Form::submit('Iniciar sesión',['class'=>'btn btn-success ', 'style'=>'width:100%;'])!!}
+          </div><!-- /div .form-group .has-feedback .has-feedback-left -->
+        {!!Form::close()!!}
+        <!-- End Formulario inicio sesión -->
+
         <div class="form-group has-feedback has-feedback-left ">
           <a class="btn btn-primary" style='width:100%;' href='{!! url("social/facebook") !!}'>
             <img src="{!! URL::to('/img/users/facebook.png') !!}" width="7%" alt="">
@@ -47,10 +54,19 @@
         <div>
           ¿Problemas para iniciar sesi&oacute;n? Haz click <a data-toggle="modal" data-target="#myModal" href="#!">Aqu&iacute;</a>
         </div><!-- /div -->
-      </div><!-- /div with style -->
+        <hr/>
+
+        <h2>Regístrate <img width="35%" style="float: right;" src="{!! URL::to('img/yavu005.png') !!}" alt=""></h2>
+
+
+      </div><!-- /div with styled text color: #fff; -->
+
     </div><!-- /div #contentMini -->
-    {!!Form::close()!!}
+
   </div><!-- /div .jumbotron -->
+
+
+
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">

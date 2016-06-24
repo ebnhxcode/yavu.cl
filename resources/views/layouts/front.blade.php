@@ -131,12 +131,31 @@
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
 						@if(!Auth::user()->check() && !Auth::empresa()->check() && !Auth::admin()->check())
+              @if(Request::path() != 'login')
+                <!-- Formulario inicio sesión -->
+                <div id="navbar" class="navbar-collapse collapse">
+                  {!!Form::open(['route' => 'log.store', 'method' => 'POST', 'class' => 'navbar-form navbar-right', 'role' => 'form'])!!}
+                    <div class="form-group">
+                      {!!Form::email('email',null,['class'=>'form-control input-sm','placeholder'=>'Ingresa tu email de usuario'])!!}
+                    </div><!-- /div .form-group -->
+                    <div class="form-group">
+                      {!!Form::password('password',['class'=>'form-control input-sm','placeholder'=>'Ingresa tu clave'])!!}
+                    </div><!-- /div .form-group -->
+                  <input type="hidden" name="_token" value="{!! csrf_token() !!}"><!-- /input token -->
+                  {!!Form::submit('Iniciar sesión',['class'=>'btn btn-default input-sm', 'style'=>''])!!}
+                  {!!Form::close()!!}
+                </div><!--/.navbar-collapse -->
+                <!-- End Formulario inicio sesión -->
+              @endif
+
+              {{--
 							<li class="dropdown"><a href="{!!URL::to('/nosotros')!!}"><span role="button" class="navbar-button-hover">NUESTRA EMPRESA</span></a></li>
 							<li class="dropdown"><a href="{!!URL::to('/yavucoins')!!}"><span role="button" class="navbar-button-hover">YAVU COINS</span></a></li>
 							<li class="dropdown"><a href="{!!URL::to('/contacto')!!}"><span role="button" class="navbar-button-hover">CONTACTO</span></a></li>
-							@if(Request::path() != 'login')
-							<li class="dropdown"><a href="{!!URL::to('/login')!!}"><span role="button" style="background: transparent;" class="navbar-button-border">INICIAR SESIÓN</span></a></li>
-							@endif
+              --}}
+
+							{{-- <li class="dropdown"><a href="{!!URL::to('/login')!!}"><span role="button" style="background: transparent;" class="navbar-button-border">INICIAR SESIÓN</span></a></li> --}}
+
 						@endif
 						@if(Auth::user()->check())
 							{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
