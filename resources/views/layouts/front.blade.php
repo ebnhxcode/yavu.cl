@@ -90,7 +90,7 @@
                 <!-- <img src="{!! asset('/img/newGraphics/neo_notificacion04_16x16.png') !!}" width="" id="Notificaciones" title="Notificaciones <a href='/pops' style='float: right;'>ver todas</a>" data-toggle="popover" title="Popover title" data-placement="bottom" aria-hidden="true" alt=""> -->
 
 								<span id="Notificaciones" title="<span style='color: #000;'>Notificaciones</span> <a href='/pops' style='float: right;'>ver todas</a>" class="" data-toggle="popover" title="Popover title" data-placement="bottom" aria-hidden="true" alt="">
-                  <span style="font-family: yavu_font; font-size: 2em;color: #E68F8F;">A</span>
+                  <span data-toggle="tooltip" data-placement="left" title="Notificaciones!" style="font-family: yavu_font; font-size: 2em;color: #E68F8F;">A</span>
                 </span>
 
 								<span id="CantidadNotificaciones" style="float:right;" class="label label-danger"></span>
@@ -100,7 +100,7 @@
 						<div class="navbar-brand" align="center">
 							<small>
 								<!-- <img width="" src="/img/newGraphics/neo_tickets02_16x16.png" alt=""> -->
-								<span style="font-family: yavu_font;font-size: 2em;color: #FFE955;">J</span>
+								<span data-toggle="tooltip" data-placement="left" title="Yavucoins!" style="font-family: yavu_font;font-size: 2em;color: #FFE955;">J</span>
 								<span id="" style="float:right;" class="label label-warning CantidadCoins"></span>
 							</small>
 						</div>
@@ -110,11 +110,10 @@
 
 							<small>
 								<!-- <img width="22px" src="/img/newGraphics/neo_tickets01_32x32.gif" alt=""> -->
-                <span style="font-family: yavu_font;font-size: 2em;color:#57E5DB;">E</span>
+                <span data-toggle="tooltip" data-placement="left" title="Tickets!" style="font-family: yavu_font;font-size: 2em;color:#57E5DB;">E</span>
 								<span id="CantidadTickets" style="float:right;" class="label label-info"></span>
 							</small>
 						</div>
-
 
 						<!--
 						<div class="navbar-brand">
@@ -126,26 +125,39 @@
 						</div>
 						-->
 					@endif
+
 				</div><!-- /navbar-header -->
 
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
 						@if(!Auth::user()->check() && !Auth::empresa()->check() && !Auth::admin()->check())
               @if(Request::path() != 'login')
-                <!-- Formulario inicio sesión -->
-                <div id="navbar" class="navbar-collapse collapse">
-                  {!!Form::open(['route' => 'log.store', 'method' => 'POST', 'class' => 'navbar-form navbar-right', 'role' => 'form'])!!}
+
+                <div class="" align="">
+
+                  <!-- Formulario inicio sesión -->
+                  <div id="navbar" class="navbar-collapse collapse">
+                    {!!Form::open(['route' => 'log.store', 'method' => 'POST', 'class' => 'navbar-form navbar-right', 'role' => 'form'])!!}
                     <div class="form-group">
-                      {!!Form::email('email',null,['class'=>'form-control input-sm','placeholder'=>'Ingresa tu email de usuario'])!!}
+
+                      {!!Form::email('email',null,['class'=>'form-control input-sm','placeholder'=>'Usuario', 'autocomplete' => 'off'])!!}
                     </div><!-- /div .form-group -->
+                    <img src="{!! asset('img/yavu019.png') !!}" width="30" alt=""/>
                     <div class="form-group">
-                      {!!Form::password('password',['class'=>'form-control input-sm','placeholder'=>'Ingresa tu clave'])!!}
+
+                      {!!Form::password('password',['class'=>'form-control input-sm','placeholder'=>'Clave', 'autocomplete' => 'off'])!!}
                     </div><!-- /div .form-group -->
-                  <input type="hidden" name="_token" value="{!! csrf_token() !!}"><!-- /input token -->
-                  {!!Form::submit('Iniciar sesión',['class'=>'btn btn-default input-sm', 'style'=>''])!!}
-                  {!!Form::close()!!}
-                </div><!--/.navbar-collapse -->
-                <!-- End Formulario inicio sesión -->
+                    <input type="hidden" name="_token" value="{!! csrf_token() !!}"><!-- /input token -->
+
+                    <button type="submit" class="btn btn-default input-sm">Iniciar sesi&oacute;n </button>
+                    {{-- {!!Form::submit('Iniciar sesi&oacute;n',['class'=>'btn btn-default input-sm', 'style'=>''])!!} --}}
+
+
+                    {!!Form::close()!!}
+                  </div><!--/.navbar-collapse -->
+                  <!-- End Formulario inicio sesión -->
+
+                </div><!-- /div -->
               @endif
 
               {{--
@@ -166,7 +178,6 @@
 									<li><a href="{!!URL::to('/tickets/history')!!}">Historial de ticket's</a></li>
 									<li><a href="{!!URL::to('/coins/history')!!}">Historial de coins</a></li>
 
-
                     <li><a href="{!!URL::to('/empresas/create')!!}">Crear empresa</a></li>
 
                   @if(isset($userSession))
@@ -180,7 +191,6 @@
                         </a>
                       </li>
                     @endforeach
-                      <li><a href="{!!URL::to('/empresas/'.(count($ce = $userSession->empresas)>0?'':''))!!}">Crear empresa</a></li>
                   @endif
 
 
