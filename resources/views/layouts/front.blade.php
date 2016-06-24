@@ -82,7 +82,9 @@
 						<a href="{{URL::to('/')}}"><img id="LogoYavu" src="{!! asset('img/yavu004.png') !!}" width="70%" style="transition: width 0.8s;" width="50%"></a>
 					</div>
           <div class="navbar-brand" align="center" >
+
             &nbsp;
+
           </div>
 					@if(Auth::user()->check())
 						<div class="navbar-brand" align="center" >
@@ -158,6 +160,8 @@
                   <!-- End Formulario inicio sesión -->
 
                 </div><!-- /div -->
+
+
               @endif
 
               {{--
@@ -192,11 +196,6 @@
                       </li>
                     @endforeach
                   @endif
-
-
-
-
-
 
 								</ul>
 							</li>

@@ -9,7 +9,7 @@
 					</div><!-- /div .col-xs12-sm12-md1-lg1 -->
 					<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
 						<div class="row">
-              <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+              <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 softText-descriptions">
 
                 <div style="padding: 4px;">
                   <strong>Empresa</strong><br>
@@ -77,7 +77,7 @@
                 <div class="">
                   <button class="btn btn-success btn-lg UsarTicket" value="{!! $sorteo->id !!}" type="button"   style="display: none; width: 100%;" data-dismiss="modal">¡¡ Participar !!</button>
                 </div><!-- /div .semi-amplio -->
-                <div class="row">
+                <div class="row softText-descriptions">
                   <div align="" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <span class="glyphicon glyphicon-user"></span>
                     <small>Total de tickets en juego</small>

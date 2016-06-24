@@ -5,7 +5,7 @@
     @if(count($userSession->follow($company->id)->get())==0)
       @if($key == 0)
         <div class="list-group-item">
-          <small>Empresas del momento que a&uacute;n no sigues</small>
+          <small>Empresas sugeridas</small>
         </div><!-- /div .list-group-item -->
       @endif
       <div class="list-group-item">

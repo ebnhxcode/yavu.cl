@@ -30,6 +30,58 @@
         <div class="col-xs-12 col-sm-12 col-md-11 col-lg-11">
           {!!Form::open(['route'=>'estadoempresa.store', 'method'=>'POST'])!!}
           {!!Form::textarea('status',null,['class'=>'form-control newCompanyPost','placeholder'=>'¡Comparte una publicaci&oacute;n!', 'maxlength'=>'100', 'required'=>'required','style'=>'resize:none; padding: 15px;font-size: 1em;', 'rows'=>'2', 'id'=>'status'])!!}
+
+          <div class="softText-descriptions">
+
+            <!-- Nav tabs -->
+            <ul id="TabUserProfile" class="nav nav-tabs" role="tablist">
+
+              <li role="presentation" class="">
+                <a href="#image" class="btn" aria-controls="image" role="tab" data-toggle="tab">
+                  <span class="glyphicon glyphicon-camera status-image-load"></span>
+                </a>
+              </li>
+              {{--
+              <li role="presentation"><a href="#ticketsHistory" aria-controls="ticketsHistory" role="tab" data-toggle="tab">Hitorial tickets</a></li>
+              <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Información</a></li>
+              <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Imagenes</a></li>
+              --}}
+            </ul>
+            <!-- End Nav tabs -->
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+              <div align="center" role="tabpanel" class="tab-pane fade active list-group" id="image">
+                <br/>
+                <label class="btn btn-default btn-file">
+                  <span class="glyphicon glyphicon-camera "></span>
+                  Buscar imagen ... <input type="file" style="display: none;">
+                </label>
+              </div><!-- /div .tab-pane .fade .active .list-group .wrap -->
+
+              {{--
+              <div role="tabpanel" class="tab-pane fade list-group" id="ticketsHistory">
+                Some data
+              </div><!-- /div .tab-pane .fade .active .list-group .wrap -->
+
+              <div role="tabpanel" class="tab-pane fade" id="messages">
+                Some data
+              </div><!-- /div .tab-pane .fade .active .list-group .wrap -->
+
+              <div role="tabpanel" class="tab-pane fade" id="settings">
+                Some data
+              </div><!-- /div .tab-pane .fade .active .list-group .wrap -->
+              --}}
+
+
+            </div><!-- /div .tab-content -->
+            <!-- End Tab panes -->
+
+            {{--{!! ($userSession->registro_coins()->sum('cantidad')) !!}--}}
+
+          </div><!-- /div .softText-descriptions -->
+
           {!! Form::hidden('user_id',$myCompanies[0]->user_id) !!}
           {!! Form::hidden('empresa_id',$myCompanies[0]->id) !!}
           <hr>
