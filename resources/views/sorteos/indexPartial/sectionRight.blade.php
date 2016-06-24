@@ -2,12 +2,12 @@
 
 
   @foreach($companies as $key => $company)
+    @if($key < 1)
+      <div class="list-group-item">
+        <small>Empresas sugeridas</small>
+      </div><!-- /div .list-group-item -->
+    @endif
     @if(count($userSession->follow($company->id)->get())==0)
-      @if($key == 0)
-        <div class="list-group-item">
-          <small>Empresas sugeridas</small>
-        </div><!-- /div .list-group-item -->
-      @endif
       <div class="list-group-item">
         <div class="row">
           <div class="col-md-2 col-sm-4 col-xs-4">

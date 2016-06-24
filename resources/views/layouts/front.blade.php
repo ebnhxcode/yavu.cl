@@ -133,7 +133,7 @@
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
 						@if(!Auth::user()->check() && !Auth::empresa()->check() && !Auth::admin()->check())
-              @if(Request::path() != 'login')
+              @if(Request::path() != 'login' && Request::path() == '/')
 
                 <div class="" align="">
 

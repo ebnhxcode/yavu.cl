@@ -1,22 +1,27 @@
 
-	<div class='list-group'>
-		<div class='list-group-item list-group-item-success'>
-			DATOS PRINCIPALES
+	<div  class='amplio'>
+    <div class="amplio">
+      <h2>¡Registrate, es facil!</h2>
+    </div>
+    <hr/>
+
+		<div class=''>
+			Datos necesarios
 		</div><!-- /div .list-group-item .success -->
-		<div class='list-group-item'>
+    <hr/>
+
+		<div class=''>
+
 			<div class='form-group has-feedback has-feedback-left'>
-				@include('alerts.showThatIsRequired')
-				{!!Form::label('Nombre:')!!}
+				{!!Form::label('Su nombre:')!!}
 				{!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre', 'maxlength' => '100'])!!}
 			</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 			<div class='form-group has-feedback has-feedback-left'>
-				@include('alerts.showThatIsRequired')
-				{!!Form::label('Apellido:')!!}
+				{!!Form::label('Su Apellido:')!!}
 				{!!Form::text('apellido',null,['class'=>'form-control','placeholder'=>'Ingrese su apellido', 'maxlength' => '100'])!!}
 			</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 			<div class='form-group has-feedback has-feedback-left'>
-				@include('alerts.showThatIsRequired')
-				{!!Form::label('Email login:')!!}
+				{!!Form::label('Su Email:')!!}
 				{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email', 'maxlength' => '200'])!!}			
 			</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 			<div class='form-group has-feedback has-feedback-left'>
@@ -24,14 +29,12 @@
 						(<strong><small><span class='requerido'>Ingrese <i>solo</i> si desea cambiarla</span></small></strong>)
 						{!!Form::label('Cambio de clave:')!!}
 					@else
-						@include('alerts.showThatIsRequired')
-						{!!Form::label('Nueva password:')!!}
+						{!!Form::label('Su Clave:')!!}
 					@endif
 				{!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una password', 'maxlength' => '100'])!!}
 			</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 			<div class='form-group has-feedback has-feedback-left'>
-				@include('alerts.showThatIsRequired')
-				{!!Form::label('Ciudad:')!!}
+				{!!Form::label('Su Ciudad:')!!}
 				{!!Form::select('ciudad', 
 					['Tarapacá' => 'Tarapacá',
 					'Parinacota' => 'Parinacota',
@@ -62,50 +65,57 @@
 					'Llanquihue' => 'Llanquihue',	
 					'Chiloé' => 'Chiloé',	
 					'Aysen' => 'Aysen',	
-					'Magallanes' => 'Magallanes',	
-					'otra' => 'otras...'], 
-					$selected = null, ['class' => 'form-control', 'maxlength' => '100']) 
-				!!}		
+					'Magallanes' => 'Magallanes',
+					'otra' => 'otras...'],
+					$selected = null, ['class' => 'form-control', 'maxlength' => '100'])
+				!!}
 			</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 			@if (!Auth::user()->check())
 				<div class='form-group has-feedback has-feedback-left'>
 					{!!Form::hidden('tipo_usuario', 'Usuario')!!}
 				</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 				<div class='form-group has-feedback has-feedback-left'>
-					{!!Form::hidden('estado', 'Activo')!!}	
+					{!!Form::hidden('estado', 'Activo')!!}
 				</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 			@endif
 		</div><!-- /div .list-group-item -->
-		<!-- GESTION DE LAS FOTOS -->		
-		<div class='list-group-item'>
+		<!-- GESTION DE LAS FOTOS -->
+		<div class=''>
 			<div class='form-group has-feedback has-feedback-left'>
-				(<strong><small><span class='requerido'>Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar foto de perfil:')!!}<span id='Perfil'></span><br>
-				<span class='btn-file btn-md'>
+				(Solo jpg, png) {!!Form::label('Imagen de perfil:')!!}<span id='Perfil'></span><br>
+				<span class=''>
 
           <label class="btn btn-default btn-sm btn-file">
             <span class="glyphicon glyphicon-camera "></span>
             Buscar imagen ... <input type="file" name="imagen_perfil" style="display: none;" id="imagen_perfil" maxlength="255" size="2048">
-          </label>
+          </label><!-- /label .btn .btn-default .btn-sm .btn-file -->
 
 				</span><!-- /span .btn-file .btn-md -->
-				<img width='15%' id='ImagenPerfil' class='thumbnail img-responsive-centered' src='/img/users/{!! isset($user)?($user->imagen_perfil!='')?$user->imagen_perfil:'usuario_nuevo.png':'usuario_nuevo.png' !!}' class='center-block'>
+        <a class="thumbnail" href="">
+          <img width='' id='ImagenPerfil' class='img-responsive-centered' src='/img/users/{!! isset($user)?($user->imagen_perfil!='')?$user->imagen_perfil:'usuario_nuevo.png':'usuario_nuevo.png' !!}'>
+        </a>
+
+
 			</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 			<div class='form-group has-feedback has-feedback-left'>
-				(<strong><small><span class='requerido'>Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar portada:')!!}<span id='Portada'></span><br>
-				<span class='btn-file btn-md'>
+        <small>(Solo jpg, png)</small> {!!Form::label('Imagen de portada:')!!}<span id='Portada'></span><br>
+				<span class=''>
 
           <label class="btn btn-default btn-sm btn-file">
             <span class="glyphicon glyphicon-camera "></span>
             Buscar imagen ... <input type="file" name="imagen_portada" style="display: none;" id="imagen_portada" maxlength="255" size="2048">
-          </label>
+          </label><!-- /label .btn .btn-default .btn-sm .btn-file -->
 
 				</span>
-				<img width='35%' id='ImagenPortada' class='thumbnail img-responsive-centered' src='/img/users/{!! isset($user)?($user->imagen_portada!='')?$user->imagen_portada:'banner.png':'banner.png' !!}' width=100%>
+        <a class="thumbnail" href="">
+          <img width='' id='ImagenPortada' class='img-responsive-centered' src='/img/users/{!! isset($user)?($user->imagen_portada!='')?$user->imagen_portada:'banner.png':'banner.png' !!}'>
+        </a>
 			</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 		</div><!-- /div .list-group-item -->
 	</div><!-- /div .list-group -->
 </div><!-- /div .col-md8-sm8-xs12 -->
-<div class='col-md-4 col-sm-4 col-xs-12'>
+
+
 	@if(Auth::user()->check() or Auth::admin()->check())
 		<div class='list-group' >
 			<div class='list-group-item list-group-item-success'>
