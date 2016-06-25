@@ -11,7 +11,7 @@
 			<h2>Nuestra Empresa</h2>
 			<div class="panel panel-default">
 				<div class="panel-body">
-					Somos una agencia de publicidad enfocada al publico de internet, siendo un canal de comunicación entre sus productos y nuestra comunidad que crece día a día. Hacia nuestros ususarios nos perfilamos como un sitio de beneficios, en el cual trabajamos diariamente para ofrecer la mayor variedad en descuentos y premios.
+					Somos una agencia de publicidad enfocada al público de internet, siendo un canal de comunicación entre sus productos y nuestra comunidad que crece día a día. Hacia nuestros usuarios nos perfilamos como un sitio de beneficios, en el cual trabajamos diariamente para ofrecer la mayor variedad en descuentos y premios.
 				</div><!-- /div .panel-body -->
 			</div><!-- /div .panel .panel-default -->
 			<h2>Misión</h2>
