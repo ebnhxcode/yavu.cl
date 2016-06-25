@@ -1,6 +1,5 @@
 <div class="list-group">
 
-
   @foreach($companies as $key => $company)
     @if($key < 1)
       <div class="list-group-item">
