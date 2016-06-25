@@ -291,7 +291,7 @@
 						<span class="required">\</span>
 						<span><a class="btn-link" href="{!!URL::to('/contacto/')!!}">Contacto</a></span>
 						<span class="required">\</span>
-						<span><a class="btn-link" href="{!!URL::to('/terminos/')!!}">Terminos</a></span>
+						<span><a class="btn-link" href="{!!URL::to('/terminos/')!!}">Términos</a></span>
 						<span class="required">\</span>
 						<span><a class="btn-link" href="{!!URL::to('/yavucoins/')!!}"><strong>YavuCoins</strong></a></span>
 						<spam> - Copyright© ~ Yavu.cl 2016.</spam>

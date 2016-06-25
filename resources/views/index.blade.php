@@ -3,7 +3,7 @@
 @extends('layouts.front')
 @section('content')
 @include('layouts.bannerFront')
-<div class="jumbotron">
+<div class="jumbotron hidden-xs">
   <div id="contentMiddle">
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -92,6 +92,9 @@
     @endif
   </div><!-- /div #contentMiddle -->
 </div><!-- /div .jumbotron -->
+<div class="jumbotron visible-xs" id="firstbg">
+  @include('layouts.loginForm')
+</div>
 <div id="fb-root"></div><!-- /div #fb-root -->
 @stop
 <script>(function(d, s, id) {
