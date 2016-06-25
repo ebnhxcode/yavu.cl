@@ -115,9 +115,23 @@
                                 <strong>Contacto: <a href="mailto:#">{!!$e->email!!}</a></strong><br>                             
                               </address>
 
-                              <!--<h3>{!! $e->descripcion !!}</h3>-->
-                              <button id='Info' type='button' class='btn btn-info btn-sm' data-container='body' data-toggle='popover' data-placement='top' data-content='{!! $e->descripcion !!}' data-original-title=''> Descripcion
-                              </button>
+                              <!-- descripcion en acordeon -->
+                              <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                <div class="panel panel-default">
+                                  <div class="panel-heading" role="tab" id="headingOne">
+                                    <h4 class="panel-title">
+                                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        Ver Descripción
+                                      </a>
+                                    </h4>
+                                  </div>
+                                  <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                    <div class="panel-body">
+                                      {!! $e->descripcion !!}
+                                    </div>
+                                  </div>
+                                </div>
+                              </div> <!-- fin acordeon -->
 
                             </div>
 
