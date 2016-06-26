@@ -11,28 +11,21 @@ class FrontController extends Controller{
   public function __construct(){
   }
   public function index(){
-    return view('index');
+    return view('mainViews.index');
   }
   public function login(){
-
-    return view('login');
-  } 
-  public function acceso(){
-    return view('acceso');
-  }          
-  public function registro(){
-    return view('');        
+    return view('mainViews.login');
   }
   public function contacto(){
-    return view('contacto');        
+    return view('mainViews.contacto');
   }
   public function nosotros(){
-    return view('nosotros');        
+    return view('mainViews.nosotros');
   }
   public function terminos(){
-    return view('terminos');        
+    return view('mainViews.terminos');
   }
   public function yavucoins(){
-    return view('yavucoins');        
+    return view('mainViews.yavucoins');
   }
 }

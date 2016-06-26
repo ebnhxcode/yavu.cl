@@ -3,14 +3,17 @@
 @extends('layouts.front')
 @section('content')
 @include('layouts.bannerFront')
-<div class="jumbotron hidden-xs">
+<div class="jumbotron">
   <div id="contentMiddle">
     <div class="row">
+
       <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
         @include('alerts.allAlerts')
         <img src="/img/newGraphics/icono_mac01.png" class="img-responsive-centered" />
         <br /><br />
       </div><!-- /div .col-md4-sm12-xs12 -->
+
+
       <div class='col-xs-12 col-sm-12 col-md-8 col-lg-8'>
         <div class="panel-body">
           <h3> ¿Qué es Yavu?</h3>
@@ -92,9 +95,6 @@
     @endif
   </div><!-- /div #contentMiddle -->
 </div><!-- /div .jumbotron -->
-<div class="jumbotron visible-xs" id="firstbg">
-  @include('layouts.loginForm')
-</div>
 <div id="fb-root"></div><!-- /div #fb-root -->
 @stop
 <script>(function(d, s, id) {

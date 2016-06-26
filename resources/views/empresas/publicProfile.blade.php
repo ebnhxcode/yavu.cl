@@ -115,7 +115,7 @@
                                 <strong>Contacto: <a href="mailto:#">{!!$e->email!!}</a></strong><br>                             
                               </address>
 
-                              <!-- descripcion en acordeon -->
+                                <!-- descripcion en acordeon -->
                               <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                                 <div class="panel panel-default">
                                   <div class="panel-heading" role="tab" id="headingOne">

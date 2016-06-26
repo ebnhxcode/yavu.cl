@@ -23,9 +23,9 @@ Route::get('login', function(){
   if(Auth::user()->check()||Auth::admin()->check()){
     $log = new \yavu\Http\Controllers\LogController();
     $log->logout();
-    return view('login');
+    return view('mainViews.login');
   }
-  return view('login');
+  return view('mainViews.login');
 });
 Route::resource('log', 'LogController');
 /*Gestión de correos*/
