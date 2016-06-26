@@ -121,7 +121,7 @@
 }
 /*Login*/
 #contentMini {
-	width: 30%;
+	width: 300px;
 	margin: 0px auto 0 auto;
 	/*Arriba-Derecha-Abajo-Izquierda*/
 	padding: 15px 15px 15px 15px;
@@ -129,47 +129,7 @@
 	border: solid 0px #cbcbcb;
 	border-radius: 2px;
 }
-@media (min-width: 200px) {
-  #contentMini {
-    width: 99%;
-  }
-}
-@media (min-width: 400px) {
-  #contentMini {
-    width: 99%;
-  }
-}
-@media (min-width: 500px) {
-  #contentMini {
-    width: 73%;
-  }
-}
-@media (min-width: 768px) {
-  #contentMini {
-    width: 70%;
-  }
-}
-@media (min-width: 880px) {
-  #contentMini {
-    width: 65%;
-  }
-}
-@media (min-width: 992px) {
-  #contentMini {
-    width: 45%;
-  }
-}
-@media (min-width: 1096px) {
-  #contentMini {
-    width: 35%;
-  }
-}
-@media (min-width: 1200px) {
-  #contentMini {
-    width: 35%; /*a escala , old : 1200x1170*/
 
-  }
-}
 .card {
   color: #000;
 }
