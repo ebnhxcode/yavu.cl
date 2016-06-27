@@ -137,6 +137,7 @@
 
                 <div class="" align="">
 
+                  {{--
                   <!-- Formulario inicio sesión -->
                   <div id="navbar" class="navbar-collapse collapse">
                     {!!Form::open(['route' => 'log.store', 'method' => 'POST', 'class' => 'navbar-form navbar-right', 'role' => 'form'])!!}
@@ -159,13 +160,13 @@
                     <input type="hidden" name="_token" value="{!! csrf_token() !!}"><!-- /input token -->
 
                     <button type="submit" class="btn btn-default input-sm">Iniciar sesi&oacute;n </button>
-                    {{-- {!!Form::submit('Iniciar sesi&oacute;n',['class'=>'btn btn-default input-sm', 'style'=>''])!!} --}}
+                    <!-- {!!Form::submit('Iniciar sesi&oacute;n',['class'=>'btn btn-default input-sm', 'style'=>''])!!} -->
 
 
                     {!!Form::close()!!}
                   </div><!--/.navbar-collapse -->
                   <!-- End Formulario inicio sesión -->
-
+                  --}}
                 </div><!-- /div -->
 
 

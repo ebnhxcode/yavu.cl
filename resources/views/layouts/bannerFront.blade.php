@@ -1,8 +1,8 @@
 <header id = "myCarousel" class = "carousel slide " style="">
 <!-- Indicadores -->
   <ol class = "carousel-indicators">
-    <li data-target = "#myCarousel" data-slide-to = "0" class="active"></li>
-    <li data-target = "#myCarousel" data-slide-to = "1" ></li>
+    <li data-target = "#myCarousel" data-slide-to = "0" ></li>
+    <li data-target = "#myCarousel" data-slide-to = "1" class="active"></li>
     <li data-target = "#myCarousel" data-slide-to = "2" ></li>
 
 
@@ -27,7 +27,7 @@
     
     -->
 
-    <div class = "item active">
+    <div class = "item">
       <!-- Set the second background image using inline CSS below. -->    
       <div class="fill"><img style="background-size:cover;" src = "img/newGraphics/neobanner01.jpg" width=100%></div>
         <div class = "carousel-caption">
@@ -42,7 +42,7 @@
           -->
         </div>
     </div>
-    <div class = "item">
+    <div class = "item active">
       <!-- Set the third background image using inline CSS below. -->    
       <div class="fill"><img style="background-size:cover;" src = "img/newGraphics/neobanner02.jpg" width=100%></div>
         <!--

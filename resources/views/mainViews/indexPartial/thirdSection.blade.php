@@ -1,4 +1,4 @@
-<div class="row">
+<div align="center" class="row" style="padding-bottom: 80px; padding-top: 80px; background-color: #FFFFAA;">
 
   <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
     <h3>
@@ -7,7 +7,7 @@
   </div><!-- /div .col-lg4-md4-sm12-xs12 -->
 
   <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-    <img src="/img/newGraphics/icono_comercio02.png" alt=""/>
+    <img src="/img/newGraphics/icofinal_informes.png" alt=""/>
   </div><!-- /div .col-lg4-md4-sm12-xs12 -->
 
   <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">

@@ -1,4 +1,4 @@
-<div class="row">
+<div align="center" class="row" style="padding-bottom: 80px; padding-top: 80px;">
 
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div class="panel-body">

@@ -1,17 +1,12 @@
-<div class="row">
-
-  <div align="center" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 100px;">
-    <h1> ¿Qué es <img src="/img/yavu005.png" alt=""/></h1>
-  </div><!-- /div .col-lg12-md12-sm12-xs12 -->
-
+<div align="center" class="row" style="padding-bottom: 80px; padding-top: 80px; background-color: #6BA410;">
   <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-    <h3>
+    <h2>
       Yavü es una plataforma en donde empresas, concursos y premios coexisten para brindar un servicio único a nuestros usuarios.
-    </h3>
+    </h2>
   </div><!-- /div .col-lg4-md4-sm12-xs12 -->
 
   <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-    <img src="/img/newGraphics/icono_comercio02.png" alt=""/>
+    <img src="/img/icono_que_es.png" alt=""/>
   </div><!-- /div .col-lg4-md4-sm12-xs12 -->
 
   <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
