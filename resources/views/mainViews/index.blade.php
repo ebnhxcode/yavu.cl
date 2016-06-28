@@ -2,43 +2,29 @@
 @section('title') Home @stop
 @extends('layouts.front')
 @section('content')
-
+  @include('layouts.bannerFront')
 <div class="">
   <div id="contentMiddle">
-    <div class="row" style="padding-bottom: 22%;">
+    <div class="row" style="padding-bottom: 5%;">
       <style>
         body {
           padding-top:50px;
           padding-bottom: 20px;
-          background: url(/img/header.jpg) no-repeat fixed top left;
+          /*background: url(/img/header.jpg) no-repeat fixed top left;*/
         }
       </style>
 
-      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"></div>
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
         
         @if(!Auth::user()->check())
-          <div class="list-group">
-            <div class="list-group-item list-group-item-success">
-              @include('mainViews.loginPartial.sectionCenter')
-            </div>
-          </div>
+          @include('alerts.allAlerts')
+          @include('mainViews.loginPartial.sectionCenter')
         @endif
 
       </div><!-- /div .col-lg3-md3-sm12-xs12 -->
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"></div>
 
-      <!--
-      <div class='col-xs-12 col-sm-12 col-md-1 col-lg-1'>
-      </div>
-      -->
-
-      <div class='col-xs-12 col-sm-12 col-md-9 col-lg-9'>
-
-        @include('alerts.allAlerts')
-        <div class="thumbnail">
-          @include('layouts.bannerFront')
-        </div>
-
-      </div><!-- /div .col-lg9-md9-sm12-xs12 -->
     </div><!-- /div .row styled with padding-bottom -->
 
     <!-- Sección de las 3 imagenes -->
