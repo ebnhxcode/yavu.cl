@@ -29,7 +29,7 @@
         </div><!-- /div .col-md1-sm12-xs12 -->
         <div class="col-xs-12 col-sm-12 col-md-11 col-lg-11">
           {!!Form::open(['route'=>'estadoempresa.store', 'method'=>'POST'])!!}
-          {!!Form::textarea('status',null,['class'=>'form-control newCompanyPost','placeholder'=>'¡Comparte una publicaci&oacute;n!', 'maxlength'=>'200', 'required'=>'required','style'=>'resize:none; padding: 15px;font-size: 1em;', 'rows'=>'2', 'id'=>'status'])!!}
+          {!!Form::textarea('status',null,['class'=>'form-control newCompanyPost','placeholder'=>'¡Comparte una publicaci&oacute;n!', 'maxlength'=>'100', 'required'=>'required','style'=>'resize:none; padding: 15px;font-size: 1em;', 'rows'=>'2', 'id'=>'status'])!!}
 
           <div class="softText-descriptions">
 

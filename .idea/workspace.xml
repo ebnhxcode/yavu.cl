@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a319e70-fb31-4458-aa3e-4006149cb7e9" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/EmpresaController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmpresaController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/feeds/indexPartial/sectionCenter.blade.php" afterPath="$PROJECT_DIR$/resources/views/feeds/indexPartial/sectionCenter.blade.php" />
     </list>
     <ignored path="yavu.cl.iws" />
@@ -27,12 +28,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="sectionCenter.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sectionCenter.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/feeds/indexPartial/sectionCenter.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45424291" vertical-offset="378" max-vertical-offset="4179">
-              <caret line="31" column="149" selection-start-line="31" selection-start-column="149" selection-end-line="31" selection-end-column="149" />
+            <state vertical-scroll-proportion="-16.037037" vertical-offset="3578" max-vertical-offset="4179">
+              <caret line="191" column="22" selection-start-line="191" selection-start-column="22" selection-end-line="191" selection-end-column="22" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EmpresaController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EmpresaController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.36772045" vertical-offset="115" max-vertical-offset="4830">
+              <caret line="31" column="76" selection-start-line="31" selection-start-column="76" selection-end-line="31" selection-end-column="76" />
+              <folding>
+                <marker date="1467141011359" expanded="true" signature="7813:7992" placeholder="SELECT * FRO..id..." />
+                <marker date="1467141011359" expanded="true" signature="7828:7983" placeholder="SELECT id, u..empresas..." />
+                <marker date="1467141011359" expanded="true" signature="9502:9811" placeholder="SELECT * FRO..id..." />
+                <marker date="1467141011359" expanded="true" signature="9517:9672" placeholder="SELECT id, u..empresas..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -64,7 +80,6 @@
         <option value="$PROJECT_DIR$/resources/views/usuarios/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/usuarios/forms/fieldsUser.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SorteoController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/EmpresaController.php" />
         <option value="$PROJECT_DIR$/resources/views/sorteos/indexPartial/sectionRight.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/feeds/indexPartial/sectionRight.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/loginForm.blade.php" />
@@ -96,6 +111,7 @@
         <option value="$PROJECT_DIR$/resources/views/mainViews/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/LogController.php" />
         <option value="$PROJECT_DIR$/resources/views/feeds/indexPartial/sectionCenter.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/EmpresaController.php" />
       </list>
     </option>
   </component>
@@ -355,7 +371,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Other File Types" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="logcontr&#9;null&#9;null&#10;config/app&#9;FILE&#9;file:///var/www/html/yavu.cl/config/app.php&#10;config/data&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;styl&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;sty&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;style&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;front&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/front.blade.php&#10;front.&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/front.blade.php&#10;routes.php&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;frontCon&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FrontController.php&#10;config/da&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;EmpresaC&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/EmpresaController.php&#10;FeedContro&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;SorteoContr&#9;null&#9;null&#10;front-&#9;null&#9;null&#10;style.&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;front.blaf&#9;null&#9;null&#10;SeguirEm&#9;FILE&#9;file:///var/www/html/yavu.cl/public/js/ajax/SeguirEmpresa.js&#10;front.blade&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/front.blade.php&#10;fron&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/front.blade.php&#10;feedcontr&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;config/dat&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;config/datab&#9;null&#9;null&#10;.en&#9;FILE&#9;file:///var/www/html/yavu.cl/.env&#10;.ENV&#9;FILE&#9;file:///var/www/html/yavu.cl/.env&#10;EmpresaCon&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/EmpresaController.php&#10;Empresa.php&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Empresa.php&#10;Sorteo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;usercontr&#9;null&#9;null&#10;sorteocontro&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;.env&#9;FILE&#9;file:///var/www/html/yavu.cl/.env&#10;config/a&#9;FILE&#9;file:///var/www/html/yavu.cl/config/app.php&#10;config/database&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;Empre&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/EmpresaController.php&#10;FeedCo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;routes&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;style.css&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;feeds&#9;null&#9;null&#10;route.php&#9;FILE&#9;file:///var/www/html/yavu.cl/vendor/symfony/routing/Route.php&#10;CONFIG/DATABAS&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;config/datav&#9;null&#9;null&#10;tyle.css&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;SorteoCo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;Sorteo.ph&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Sorteo.php&#10;vistaLista&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/sorteos/forms/vistaListaUsuario.blade.php&#10;SorteoController&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;timeago&#9;FILE&#9;file:///var/www/html/yavu.cl/public/js/vendor/jquery.timeago.js" />
+    <property name="SearchEverywhereHistoryKey" value="empresacontro&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/EmpresaController.php&#10;logcontr&#9;null&#9;null&#10;config/app&#9;FILE&#9;file:///var/www/html/yavu.cl/config/app.php&#10;config/data&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;styl&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;sty&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;style&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;front&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/front.blade.php&#10;front.&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/front.blade.php&#10;routes.php&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;frontCon&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FrontController.php&#10;config/da&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;EmpresaC&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/EmpresaController.php&#10;FeedContro&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;SorteoContr&#9;null&#9;null&#10;front-&#9;null&#9;null&#10;style.&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;front.blaf&#9;null&#9;null&#10;SeguirEm&#9;FILE&#9;file:///var/www/html/yavu.cl/public/js/ajax/SeguirEmpresa.js&#10;front.blade&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/front.blade.php&#10;fron&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/layouts/front.blade.php&#10;feedcontr&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;config/dat&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;config/datab&#9;null&#9;null&#10;.en&#9;FILE&#9;file:///var/www/html/yavu.cl/.env&#10;.ENV&#9;FILE&#9;file:///var/www/html/yavu.cl/.env&#10;EmpresaCon&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/EmpresaController.php&#10;Empresa.php&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Empresa.php&#10;Sorteo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;usercontr&#9;null&#9;null&#10;sorteocontro&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;.env&#9;FILE&#9;file:///var/www/html/yavu.cl/.env&#10;config/a&#9;FILE&#9;file:///var/www/html/yavu.cl/config/app.php&#10;config/database&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;Empre&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/EmpresaController.php&#10;FeedCo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/FeedController.php&#10;routes&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/routes.php&#10;style.css&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;feeds&#9;null&#9;null&#10;route.php&#9;FILE&#9;file:///var/www/html/yavu.cl/vendor/symfony/routing/Route.php&#10;CONFIG/DATABAS&#9;FILE&#9;file:///var/www/html/yavu.cl/config/database.php&#10;config/datav&#9;null&#9;null&#10;tyle.css&#9;FILE&#9;file:///var/www/html/yavu.cl/public/css/style.css&#10;SorteoCo&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;Sorteo.ph&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Sorteo.php&#10;vistaLista&#9;FILE&#9;file:///var/www/html/yavu.cl/resources/views/sorteos/forms/vistaListaUsuario.blade.php&#10;SorteoController&#9;FILE&#9;file:///var/www/html/yavu.cl/app/Http/Controllers/SorteoController.php&#10;timeago&#9;FILE&#9;file:///var/www/html/yavu.cl/public/js/vendor/jquery.timeago.js" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
     <property name="FullScreen" value="false" />
     <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
@@ -530,13 +546,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EmpresaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/feeds/indexPartial/sectionRight.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
@@ -681,6 +690,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.148149" vertical-offset="5447" max-vertical-offset="7056">
           <caret line="275" column="69" selection-start-line="275" selection-start-column="69" selection-end-line="275" selection-end-column="69" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -846,9 +856,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/feeds/indexPartial/sectionCenter.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45424291" vertical-offset="378" max-vertical-offset="4179">
-          <caret line="31" column="149" selection-start-line="31" selection-start-column="149" selection-end-line="31" selection-end-column="149" />
+        <state vertical-scroll-proportion="-16.037037" vertical-offset="3578" max-vertical-offset="4179">
+          <caret line="191" column="22" selection-start-line="191" selection-start-column="22" selection-end-line="191" selection-end-column="22" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EmpresaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36772045" vertical-offset="115" max-vertical-offset="4830">
+          <caret line="31" column="76" selection-start-line="31" selection-start-column="76" selection-end-line="31" selection-end-column="76" />
+          <folding>
+            <marker date="1467141011359" expanded="true" signature="7813:7992" placeholder="SELECT * FRO..id..." />
+            <marker date="1467141011359" expanded="true" signature="7828:7983" placeholder="SELECT id, u..empresas..." />
+            <marker date="1467141011359" expanded="true" signature="9502:9811" placeholder="SELECT * FRO..id..." />
+            <marker date="1467141011359" expanded="true" signature="9517:9672" placeholder="SELECT id, u..empresas..." />
+          </folding>
         </state>
       </provider>
     </entry>
