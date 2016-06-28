@@ -1,12 +1,3 @@
-<div class="row">
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" align="middle">
-    <a data-toggle="modal" data-target="#gridSystemModal" role="button" href="#!">
-      <img src="img/newGraphics/registrate_02a.png" class="img-responsive" />
-    </a>
-    <br>
-    <img src="img/cards/barra_separadora.png" class="img-responsive" />
-  </div><!-- /div .col-md12-sm12-xs12 aligned -->
-</div><!-- /div .row -->
 <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

@@ -273,7 +273,7 @@
 		@yield('content')
 
 		@if(Request::path() != 'login' && Request::path() != 'contacto')
-		<div class="container">
+		<div class="container" style="background-color: #fff; width:100%;">
 			<footer class="site-footer">
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

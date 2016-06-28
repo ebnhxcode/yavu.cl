@@ -34,7 +34,7 @@
   </div><!-- /div .form-group .has-feedback .has-feedback-left -->
 
   <div style="font-size: 0.9em;">
-    ¿No tienes una cuenta? <a class="btn-link" data-toggle="modal" data-target="#gridSystemModal" role="button">Registrate</a> es gratis! <br/>
+    ¿No tienes una cuenta? <a class="btn btn-success" data-toggle="modal" data-target="#gridSystemModal" role="button">Registrate</a> es gratis! <br/>
     @if(Request::path() == 'login')
       ¿Problemas para iniciar sesi&oacute;n? Haz click <a data-toggle="modal" data-target="#myModal" href="#!">Aqu&iacute;</a>
     @endif
