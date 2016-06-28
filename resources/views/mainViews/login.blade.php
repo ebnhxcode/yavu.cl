@@ -39,3 +39,4 @@
 
   @include('mainViews.loginPartial.modalRegister')
 @stop
+

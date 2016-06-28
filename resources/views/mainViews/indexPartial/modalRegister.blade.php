@@ -18,9 +18,6 @@
         {!!Form::open(['action'=>'UserController@store', 'method'=>'POST', 'id' => 'FormRegistroLanding'])!!}
           @include('usuarios.forms.fieldsLanding')
           {!! csrf_field() !!}
-          <div class="form-group has-feedback has-feedback-left">
-            {!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success', 'style' => 'width:100%;'])!!}
-          </div>
         {!!Form::close()!!}
 
         {{--

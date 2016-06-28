@@ -15,11 +15,15 @@
       </style>
 
       <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-        <div class="list-group">
-          <div class="list-group-item list-group-item-success" style="padding: 20px 20px 20px 20px;">
-            @include('mainViews.loginPartial.sectionCenter')
+        
+        @if(!Auth::user()->check())
+          <div class="list-group">
+            <div class="list-group-item list-group-item-success">
+              @include('mainViews.loginPartial.sectionCenter')
+            </div>
           </div>
-        </div>
+        @endif
+
       </div><!-- /div .col-lg3-md3-sm12-xs12 -->
 
       <!--
