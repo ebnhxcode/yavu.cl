@@ -1,5 +1,5 @@
 @section('favicon') {!!Html::favicon('favicons/feed.png')!!} @stop
-@section('title') Feeds @stop
+@section('title') Publicaciones @stop
 {!!Html::script('js/jquery.js')!!}
 {{--{!!Html::script('js/publicaciones/GestionarPublicacionesFeeds.js')!!}--}}
 @extends('layouts.front')

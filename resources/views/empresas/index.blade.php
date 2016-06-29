@@ -1,5 +1,5 @@
 @section('favicon') {!!Html::favicon('favicons/company.png')!!} @stop
-@section('title') Companies @stop
+@section('title') Empresas @stop
 @extends('layouts.front')
 @section('content')
 {!!Html::script('js/ajax/BuscarEmpresa.js')!!}

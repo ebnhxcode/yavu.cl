@@ -1,5 +1,5 @@
 @section('favicon') {!!Html::favicon('favicons/company.png')!!} @stop
-@section('title') {!! ($empresa[0]->nombre) !!} profile @stop
+@section('title') {!! ($empresa[0]->nombre) !!} @stop
 {!!Html::script('js/jquery.js')!!}
 @if(Auth::user()->check())
   {{-- {!!Html::script('js/ajax/GestionarEstadosEmpresa.js')!!} --}}
