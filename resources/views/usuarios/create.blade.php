@@ -10,21 +10,24 @@
         @include('alerts.allAlerts')
       </div><!-- /div col-lg12-md12-sm12-xs12 -->
 
-      <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-
-      </div>
-      <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-
-      </div>
 
 
-      <div class='col-lg-4 col-md-4 col-sm-12 col-xs-12'>
-        {!!Form::open([route('usuarios_create_path'), 'method'=>'POST', 'files' => true])!!}
+
+      <div class='col-lg-3 col-md-3 col-sm-12 col-xs-12'>
+        {!!Form::open([route('usuarios_create_path'), 'method'=>'POST', 'files' => true, 'autocomplete' => 'off'])!!}
+
         @include('usuarios.forms.fieldsUser')
+
         {!!Form::submit('Registrar', ['class'=>'btn btn-success', 'style'=>'width:100%;'])!!}
         {!!Form::close()!!}
       </div><!-- /div .col-lg4-md4-sm12-xs12 -->
 
+      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+
+      </div>
 
       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
         <div class='list-group'>

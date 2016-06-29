@@ -19,7 +19,7 @@
         <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Imagenes</a></li>
         --}}
 
-      </ul>
+      </ul><!-- /ul #TabUserProfile .nav .nav-tabs -->
       <!-- End Nav tabs -->
 
       <!-- Tab panes -->
