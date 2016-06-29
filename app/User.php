@@ -50,10 +50,10 @@ class User extends Model implements AuthenticatableContract,
 	}
 
   public function history_moves_of_coins(){
-    return $this->hasMany(RegistroCoin::class, 'user_id');
+    return $this->hasMany(RegistroCoin::class, 'user_id')->orderBy('created_at', 'desc');
   }
   public function history_moves_of_tickets(){
-    return $this->hasMany(Ticket::class, 'user_id');
+    return $this->hasMany(Ticket::class, 'user_id')->orderBy('created_at', 'desc');
   }
 
 	public function registro_tickets(){

@@ -18,11 +18,12 @@
 			<div class='col-md-9 col-sm-9 col-xs-12 '>
 				<div class='row'>
 					<div class='col-md-4 col-sm-6 col-xs-12'>
+
 						<div class='list-group' >
               <a href='{!!URL::to('/feeds')!!}' style='text-align:center;' class='list-group-item list-group-item-info'>
                 <span>
                   <h4>PUBLICACIONES</h4>
-                  <img src= '{!!URL::to('img/newGraphics/neo_icono_publicaciones.png')!!}'/>
+                  <img src="{!!URL::to('img/newGraphics/neo_icono_publicaciones.png')!!}" />
                 </span>
               </a><!-- /a .list-group-item .success -->
             </div><!-- /div .list-group -->
@@ -77,11 +78,13 @@
               <a href='{!!URL::to('/sorteos/create')!!}' style='text-align:center;display: none;' class='list-group-item list-group-item-warning'>
                 <span>
                   <h4>CREAR SORTEO</h4>
-                  <img  src= '{!!URL::to('img/newGraphics/neo_icono_sorteo.png')!!}' class=''/>
+                  <img  src="{!!URL::to('img/newGraphics/neo_icono_sorteo.png')!!}" class=''/>
                 </span>
               </a><!-- /a .list-group-item .success -->
             </div><!-- /div .list-group -->
           </div><!-- /div .col-md4-sm6-xs12 -->
+
+
 
 				</div><!-- /div .row -->
 			</div><!-- /div col-md9-sm9-xs12 -->

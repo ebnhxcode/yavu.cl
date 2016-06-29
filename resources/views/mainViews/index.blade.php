@@ -2,7 +2,7 @@
 @section('title') Home @stop
 @extends('layouts.front')
 @section('content')
-  @include('layouts.bannerFront')
+@include('layouts.bannerFront')
 <div class="">
   <div id="contentMiddle">
     <div class="row" style="padding-bottom: 5%;">
@@ -16,7 +16,7 @@
 
       <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"></div>
       <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-        
+
         @if(!Auth::user()->check())
           @include('alerts.allAlerts')
           @include('mainViews.loginPartial.sectionCenter')
