@@ -1,5 +1,5 @@
 @section('favicon') {!!Html::favicon('favicons/raffle.png')!!} @stop
-@section('title') Raffles @stop
+@section('title') Sorteos @stop
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/BuscarSorteo.js')!!}
 {!!Html::script('js/ajax/ParticiparSorteo.js')!!}

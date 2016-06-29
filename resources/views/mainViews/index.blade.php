@@ -20,6 +20,8 @@
         @if(!Auth::user()->check())
           @include('alerts.allAlerts')
           @include('mainViews.loginPartial.sectionCenter')
+        @else
+          <script>window.location.href = "{{ url('/') }}/dashboard"</script>
         @endif
 
       </div><!-- /div .col-lg3-md3-sm12-xs12 -->

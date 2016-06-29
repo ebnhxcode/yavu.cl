@@ -20,6 +20,8 @@
     <!-- Custom CSS -->
     {!!Html::style('css/creative.css')!!}
 
+
+
 </head> <!-- /head -->
 
 <body id="page-top">
@@ -45,7 +47,7 @@
                         <a class="page-scroll" href="#thatare">Qué son?</a>
                     </li> <!-- /li -->
                     <li>
-                        <a class="page-scroll" href="#howto">Cómo funcionan?</a>
+                        <a class="page-scroll" href="#howto">Cómo participar?</a>
                     </li> <!-- /li -->
                     <li>
                         <a class="page-scroll" href="#empresas">Empresas Asociadas</a>
@@ -65,20 +67,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Qué son?</h2>
+                    <h2 class="section-heading">Qué Son?</h2>
                     <hr class="light">
-                    <p class="text-faded">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p class="text-faded">Yavu coins es la moneda virtual de yavu.cl que te permitirá canjear grandes premios y participar dentro de las actividades de nuestra comunidad online. </p>
                    
                 </div> <!-- /div col-lg-8 col-lg-offset-2  -->
             </div> <!-- /div .row-->
@@ -89,8 +80,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Cómo funcionan?</h2>
-                    <hr class="primary">
+                    <h2 class="section-heading">Cómo Participar?</h2>
+                    <hr class="light">
+                    <p class="text-muted">Ganar YavuCoins es simple, interactúa diariamente con los comercios asociados en nuestro sitio. Cada vez que  Inicies sesión o valorices las publicaciones, recibiras coins.</p>
                 </div> <!-- /div col-lg-12 -->
             </div> <!-- /div row -->
         </div> <!-- /div container -->
@@ -123,10 +115,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Empresa 1
+                                <!-- Some Text-->
                                 </div> <!-- /div project-category text-faded -->
                                 <div class="project-name">
-                                    Nombre Empresa 1
+                                    Delivery  Tigrito's 
                                 </div> <!-- /div .project-name-->
                             </div> <!-- /div .portfolio-box-caption-content -->
                         </div> <!-- /div .portfolio-box-caption -->
@@ -138,10 +130,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Empresa 2
+                                     <!-- Some Text-->
                                 </div> <!-- /div project-category text-faded -->
                                 <div class="project-name">
-                                    Nombre Empresa 2
+                                    Amaranto
                                 </div> <!-- /div .project-name-->
                             </div> <!-- /div .portfolio-box-caption-content -->
                         </div> <!-- /div .portfolio-box-caption -->
@@ -153,10 +145,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Empresa 3
+                                    <!-- Some Text-->
                                 </div> <!-- /div project-category text-faded -->
                                 <div class="project-name">
-                                    Nombre Empresa 3
+                                    BoulderSide
                                 </div> <!-- /div .project-name-->
                             </div> <!-- /div .portfolio-box-caption-content -->
                         </div> <!-- /div .portfolio-box-caption -->
@@ -168,10 +160,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Empresa 4
+                                    <!-- Some Text-->
                                 </div> <!-- /div project-category text-faded -->
                                 <div class="project-name">
-                                    Nombre Empresa 4
+                                    10CE Ingeniería y Asesoramiento en ERNC 
                                 </div> <!-- /div .project-name-->
                             </div> <!-- /div .portfolio-box-caption-content -->
                         </div> <!-- /div .portfolio-box-caption -->
@@ -183,10 +175,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Empresa 5
+                                    <!-- Some Text-->
                                 </div> <!-- /div project-category text-faded -->
                                 <div class="project-name">
-                                    Nombre empresa 5
+                                    Solo Brasas 
                                 </div> <!-- /div .project-name-->
                             </div> <!-- /div .portfolio-box-caption-content -->
                         </div> <!-- /div .portfolio-box-caption -->
@@ -198,10 +190,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Empresa 6
+                                    <!-- Some Text-->
                                 </div> <!-- /div project-category text-faded -->
                                 <div class="project-name">
-                                    Nombre Empresa 6
+                                    Aldora
                                 </div> <!-- /div .project-name-->
                             </div><!-- /div .portfolio-box-caption-content-->
                         </div> <!-- /div .portfolio-box-caption -->
@@ -216,9 +208,12 @@
         <div class="container text-center">
             <div class="call-to-action">
                 
-                <a href="/login" class="btn sr-button">
+                <a data-toggle="modal" data-target="#gridSystemModal" role="button" class="btn sr-button">
                 <img src="img/newGraphics/registrate_02a.png" class="img-responsive" alt="">
                 </a> <!-- /a btn sr-button -->
+                @if(!Auth::user()->check())
+                    @include('mainViews.indexPartial.modalRegister')
+                @endif
             </div> <!-- /div .call-to-acction -->
         </div> <!-- /aside .bg-primary -->
     </aside> <!-- /aside .bg-primary -->

@@ -269,6 +269,20 @@
 
 			</div><!-- /container -->
 		</nav><!-- /navbar-inverse -->
+		@if(Auth::user()->check())
+			<div class="panel panel-default" style="margin-bottom: 0px;">
+				<div class="panel-body visible-xs-block">
+					<div class="row">
+						<div class="col-xs-10">
+							<h4>@yield('title')</h4>
+						</div>
+						<div class="col-xs-2 text-right">
+							<a href="{{ URL::previous() }}" class="btn btn-success btn-sm" role="button">Volver</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		@endif
 
 		@yield('content')
 

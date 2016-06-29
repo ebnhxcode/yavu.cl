@@ -10,8 +10,15 @@ use yavu\User;
 class FrontController extends Controller{
   public function __construct(){
   }
-  public function index(){
-    return view('mainViews.index');
+  //necesito crear un redireccion desde el controller que cuando se solicite el @index y esté logeado un usuario mande al dashboard
+  //si no está logeado que mande al mainViews.index. similar a lo que traté de hacer aquí abajo pero no funciona, envía a main siempre
+  public function index() {
+    if (Auth::check()){
+      return redirect()->to('/dashboard');
+    }else{
+      return view('mainViews.index');
+    }
+
   }
   public function login(){
     return view('mainViews.login');
