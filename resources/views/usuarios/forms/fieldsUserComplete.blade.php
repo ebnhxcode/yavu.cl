@@ -1,96 +1,13 @@
 
 	<div class="container">
 
-    <div align="center">
-      <a href="/"><img width="32px" src="/img/yavu019.png" alt=""/></a>
-      <h3>¿Nuevo en Yavü?</h3>
-      <h3><span class="softText-descriptions">Reg&iacute;strate ahora, es f&aacute;cil y gratis!</span></h3>
-    </div>
-
     <!-- Información básica -->
-    <div class="list-group">
-      <div class="list-group-item panel-success">
-        <small>Informaci&oacute;n b&aacute;sica de contacto</small>
-      </div><!-- /div .list-group-item .panel-success -->
-
-      <div class='list-group-item panel-success'>
-        <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-            <div class='form-group has-feedback has-feedback-left'>
-              {!!Form::text('nombre',null,['class'=>'form-control input-sm','placeholder'=>'Nombre', 'maxlength' => '100'])!!}
-            </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
-          </div><!-- /div .col-lg6-md6-sm6-xs6 -->
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-            <div class='form-group has-feedback has-feedback-left'>
-              {!!Form::text('apellido',null,['class'=>'form-control input-sm','placeholder'=>'Apellido', 'maxlength' => '100'])!!}
-            </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
-          </div><!-- /div .col-lg6-md6-sm6-xs6 -->
-        </div><!-- /div .row -->
-
-        <div class='form-group has-feedback has-feedback-left'>
-          <div class="input-group input-group-sm">
-            {!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email', 'maxlength' => '200'])!!}
-            <div class="input-group-addon">
-              <i class="glyphicon glyphicon-user"></i>
-            </div><!-- /div .input-group-addon -->
-          </div><!-- /div .input-group .input-group-sm -->
-        </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
-
-        <div class='form-group has-feedback has-feedback-left'>
-          <div class="input-group input-group-sm">
-            {!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una password', 'maxlength' => '100'])!!}
-            <div class="input-group-addon">
-              <i class="glyphicon glyphicon-lock"></i>
-            </div><!-- /div .input-group-addon -->
-          </div><!-- /div .input-group .input-group-sm -->
-        </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
-      </div><!-- /div .list-group-item .panel-success -->
-
-      {{--
-      <div class="list-group-item list-group-item-info panel-success">
-        <small>Con esta informaci&oacute;n te podremos ubicar si resultas ganador dentro de los Yavüsorteos!</small>
-      </div><!-- /div .list-group-item .list-group-item-info .panel-success -->
-      --}}
-    </div><!-- /div .list-group -->
+			{{--@include('usuarios.forms.fieldsUserCompletePartial.basicFields')--}}
     <!-- End Información básica -->
 
-    <div class='form-group has-feedback has-feedback-left'>
-      {!!Form::label('Ciudad:')!!}
-      {!!Form::select('ciudad',
-      ['Tarapacá' => 'Tarapacá',
-      'Parinacota' => 'Parinacota',
-      'Arica' => 'Arica',
-      'Antofagasta' => 'Antofagasta',
-      'Atacama' => 'Atacama',
-      'La Serena' => 'La Serena',
-      'Coquimbo' => 'Coquimbo',
-      'Valparaiso' => 'Valparaiso',
-      'Aconcagua' => 'Aconcagua',
-      'Región Metropolitana' => 'Región Metropolitana',
-      'O Higgins' => 'O Higgins',
-      'Curicó' => 'Curicó',
-      'Talca' => 'Talca',
-      'Linares' => 'Linares',
-      'Maule' => 'Maule',
-      'Ñuble' => 'Ñuble',
-      'Concepción' => 'Concepción',
-      'Arauco' => 'Arauco',
-      'Biobío' => 'Biobío',
-      'Malleco' => 'Malleco',
-      'Cautín' => 'Cautín',
-      'Araucanía' => 'Araucanía',
-      'Los Ríos' => 'Los Ríos',
-      'Valdivia' => 'Valdivia',
-      'Osorno' => 'Osorno',
-      'Los Lagos' => 'Los Lagos',
-      'Llanquihue' => 'Llanquihue',
-      'Chiloé' => 'Chiloé',
-      'Aysen' => 'Aysen',
-      'Magallanes' => 'Magallanes',
-      'otra' => 'otras...'],
-      $selected = null, ['class' => 'form-control', 'maxlength' => '100'])
-      !!}
-    </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
+
+
+
     @if (!Auth::user()->check())
       <div class='form-group has-feedback has-feedback-left'>
         {!!Form::hidden('tipo_usuario', 'Usuario')!!}

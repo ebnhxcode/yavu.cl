@@ -9,7 +9,7 @@
 				@include('alerts.allAlerts')
 			</div><!-- /div col-md12-sm12-xs12 -->
 			{!!Form::model($user, ['method'=>'PUT', route('usuarios_put_path', $user->id), 'files' => true, 'id' => 'FormUsuario'])!!}
-			@include('usuarios.forms.fieldsUser')
+			@include('usuarios.forms.fieldsUserComplete')
 			<div class="col-md-4 col-sm-4 col-xs-12">
 				<div class='list-group'>
 					<div class='list-group-item'>
