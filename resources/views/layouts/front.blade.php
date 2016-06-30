@@ -1,4 +1,5 @@
 <!doctype html>
+<!doctype html>
 <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""><![endif]-->
 <!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang=""><![endif]-->
 <!--[if IE 8]><html class="no-js lt-ie9" lang=""> <![endif]-->
@@ -137,7 +138,6 @@
 
                 <div class="" align="">
 
-                  {{--
                   <!-- Formulario inicio sesión -->
                   <div id="navbar" class="navbar-collapse collapse">
                     {!!Form::open(['route' => 'log.store', 'method' => 'POST', 'class' => 'navbar-form navbar-right', 'role' => 'form'])!!}
@@ -166,7 +166,6 @@
                     {!!Form::close()!!}
                   </div><!--/.navbar-collapse -->
                   <!-- End Formulario inicio sesión -->
-                  --}}
                 </div><!-- /div -->
 
 

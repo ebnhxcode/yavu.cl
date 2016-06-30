@@ -3,9 +3,9 @@
 @extends('layouts.front')
 @section('content')
 @include('layouts.bannerFront')
-<div class="">
+<div class="jumbotron">
   <div id="contentMiddle">
-    <div class="row" style="padding-bottom: 5%;">
+    <div class="row">
       <style>
         body {
           padding-top:50px;
@@ -19,7 +19,6 @@
 
         @if(!Auth::user()->check())
           @include('alerts.allAlerts')
-          @include('mainViews.loginPartial.sectionCenter')
         @else
           <script>window.location.href = "{{ url('/') }}/dashboard"</script>
         @endif
@@ -33,7 +32,7 @@
 
   </div><!-- /div #contentMiddle -->
 
-  <div id="fullWidth-screen">
+  <div id="contentMiddle">
 
     {{--
     <div align="center" class="row">

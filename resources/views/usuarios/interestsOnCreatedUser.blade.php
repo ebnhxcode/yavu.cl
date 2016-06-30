@@ -4,8 +4,8 @@
   <div class="jumbotron">
     <div id="contentMini">
       <div class="row">
-        <h3>Solo un paso m&aacute;s</h3>
-        
+        <h3>¡Solo un paso m&aacute;s!</h3>
+
 
 
       </div><!-- /div .row -->
