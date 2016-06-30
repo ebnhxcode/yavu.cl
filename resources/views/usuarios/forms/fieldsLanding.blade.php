@@ -14,86 +14,111 @@
   <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="register">
-
       <div class="row">
         <br/>
+
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-
           <div class='form-group has-feedback has-feedback-left'>
-            {!!Form::label('Nombre')!!}
-            {!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre','required'=>'required'])!!}
+            <div class="input-group input-group-sm">
+              {!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email', 'maxlength' => '200'])!!}
+              <div class="input-group-addon">
+                <i class="glyphicon glyphicon-user"></i> Email
+              </div><!-- /div .input-group-addon -->
+            </div><!-- /div .input-group .input-group-sm -->
           </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
-
         </div><!-- /div .col-lg6-md6-sm6-xs12 -->
 
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-
           <div class='form-group has-feedback has-feedback-left'>
-            {!!Form::label('Apellido')!!}
-            {!!Form::text('apellido',null,['class'=>'form-control','placeholder'=>'Ingrese su apellido','required'=>'required'])!!}
+            <div class="input-group input-group-sm">
+              {!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una password', 'maxlength' => '100'])!!}
+              <div class="input-group-addon">
+                <i class="glyphicon glyphicon-lock"></i> Clave
+              </div><!-- /div .input-group-addon -->
+            </div><!-- /div .input-group .input-group-sm -->
           </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
-
         </div><!-- /div .col-lg6-md6-sm6-xs12 -->
 
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-
           <div class='form-group has-feedback has-feedback-left'>
-            {!!Form::label('Email')!!}
-            {!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email','required'=>'required'])!!}
+            <div class="input-group input-group-sm">
+              {!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre','required'=>'required'])!!}
+              <div class="input-group-addon">
+                Nombre
+              </div><!-- /div .input-group-addon -->
+            </div><!-- /div .input-group .input-group-sm -->
           </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
-
         </div><!-- /div .col-lg6-md6-sm6-xs12 -->
 
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-
           <div class='form-group has-feedback has-feedback-left'>
-            {!!Form::label('Clave')!!}
-            {!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una clave', 'required' => 'required'])!!}
+            <div class="input-group input-group-sm">
+              {!!Form::text('apellido',null,['class'=>'form-control','placeholder'=>'Ingrese su apellido','required'=>'required'])!!}
+              <div class="input-group-addon">
+                Apellido
+              </div><!-- /div .input-group-addon -->
+            </div><!-- /div .input-group .input-group-sm -->
           </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
+        </div><!-- /div .col-lg6-md6-sm6-xs12 -->
 
+
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div class='form-group has-feedback has-feedback-left'>
+            <div class="input-group input-group-sm">
+              {!!Form::select('ciudad',
+              ['Tarapacá' => 'Tarapacá',
+              'Parinacota' => 'Parinacota',
+              'Arica' => 'Arica',
+              'Antofagasta' => 'Antofagasta',
+              'Atacama' => 'Atacama',
+              'La Serena' => 'La Serena',
+              'Coquimbo' => 'Coquimbo',
+              'Valparaiso' => 'Valparaiso',
+              'Aconcagua' => 'Aconcagua',
+              'Región Metropolitana' => 'Región Metropolitana',
+              'O Higgins' => 'O Higgins',
+              'Curicó' => 'Curicó',
+              'Talca' => 'Talca',
+              'Linares' => 'Linares',
+              'Maule' => 'Maule',
+              'Ñuble' => 'Ñuble',
+              'Concepción' => 'Concepción',
+              'Arauco' => 'Arauco',
+              'Biobío' => 'Biobío',
+              'Malleco' => 'Malleco',
+              'Cautín' => 'Cautín',
+              'Araucanía' => 'Araucanía',
+              'Los Ríos' => 'Los Ríos',
+              'Valdivia' => 'Valdivia',
+              'Osorno' => 'Osorno',
+              'Los Lagos' => 'Los Lagos',
+              'Llanquihue' => 'Llanquihue',
+              'Chiloé' => 'Chiloé',
+              'Aysen' => 'Aysen',
+              'Magallanes' => 'Magallanes',
+              'otra' => 'otras...'],
+              $selected = null, ['class' => 'form-control', 'required' => 'required'])
+              !!}
+              <div class="input-group-addon">
+                Ciudad
+              </div><!-- /div .input-group-addon -->
+            </div><!-- /div .input-group .input-group-sm -->
+          </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
         </div><!-- /div .col-lg6-md6-sm6-xs12 -->
 
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-
           <div class='form-group has-feedback has-feedback-left'>
-            {!!Form::label('Ciudad')!!}
-            {!!Form::select('ciudad',
-            ['Tarapacá' => 'Tarapacá',
-            'Parinacota' => 'Parinacota',
-            'Arica' => 'Arica',
-            'Antofagasta' => 'Antofagasta',
-            'Atacama' => 'Atacama',
-            'La Serena' => 'La Serena',
-            'Coquimbo' => 'Coquimbo',
-            'Valparaiso' => 'Valparaiso',
-            'Aconcagua' => 'Aconcagua',
-            'Región Metropolitana' => 'Región Metropolitana',
-            'O Higgins' => 'O Higgins',
-            'Curicó' => 'Curicó',
-            'Talca' => 'Talca',
-            'Linares' => 'Linares',
-            'Maule' => 'Maule',
-            'Ñuble' => 'Ñuble',
-            'Concepción' => 'Concepción',
-            'Arauco' => 'Arauco',
-            'Biobío' => 'Biobío',
-            'Malleco' => 'Malleco',
-            'Cautín' => 'Cautín',
-            'Araucanía' => 'Araucanía',
-            'Los Ríos' => 'Los Ríos',
-            'Valdivia' => 'Valdivia',
-            'Osorno' => 'Osorno',
-            'Los Lagos' => 'Los Lagos',
-            'Llanquihue' => 'Llanquihue',
-            'Chiloé' => 'Chiloé',
-            'Aysen' => 'Aysen',
-            'Magallanes' => 'Magallanes',
-            'otra' => 'otras...'],
-            $selected = null, ['class' => 'form-control', 'required' => 'required'])
-            !!}
+            <div class="input-group input-group-sm">
+              {!!Form::text('login',null,['class'=>'form-control','placeholder'=>'Nombre de usuario', 'maxlength' => '100'])!!}
+              <div class="input-group-addon">
+                Nombre usuario
+              </div><!-- /div .input-group-addon -->
+            </div><!-- /div .input-group .input-group-sm -->
           </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
-
         </div><!-- /div .col-lg6-md6-sm6-xs12 -->
+
+
 
         {{-- NO DISPONIBLE TEMPORALMENTE PERO A FUTURO SE CONSIDERARÁ
         <div class='form-group has-feedback has-feedback-left'>
@@ -113,7 +138,9 @@
       </div><!-- /div .row -->
 
       <div class="form-group has-feedback has-feedback-left">
-        {!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success', 'style' => 'width:100%;'])!!}
+        <button type="submit" class="btn btn-success" style="width:100%;">
+          ¡ Reg&iacute;strate en <img width="64px" src="/img/yavu004.png" alt=""/> !
+        </button><!-- /button .btn .btn .success -->
       </div>
 
     </div><!-- /div .tab-pane .active #register -->

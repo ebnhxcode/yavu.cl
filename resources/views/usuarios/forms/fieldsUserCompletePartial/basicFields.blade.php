@@ -35,13 +35,13 @@
       </div><!-- /div .input-group .input-group-sm -->
     </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 
+    <div class='form-group has-feedback has-feedback-left'>
+      {!!Form::text('login',null,['class'=>'form-control input-sm','placeholder'=>'Nombre de usuario', 'maxlength' => '100'])!!}
+    </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
+
     @if($userActive = Auth::user()->check())
       <div class='form-group has-feedback has-feedback-left'>
         {!!Form::text('rut',null,['class'=>'form-control input-sm','placeholder'=>'Rut', 'id' => 'rut', 'maxlength' => '16'])!!}
-      </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
-
-      <div class='form-group has-feedback has-feedback-left'>
-        {!!Form::text('login',null,['class'=>'form-control input-sm','placeholder'=>'Nombre de usuario', 'maxlength' => '100'])!!}
       </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 
       <div class='form-group has-feedback has-feedback-left'>

@@ -9,11 +9,11 @@
 
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					@include('alerts.allAlerts')
-				</div><!-- /div col-md12-sm12-xs12 -->
+				</div><!-- /div .col-lg12-md12-sm12-xs12 -->
 
 				<div class='col-lg-4 col-md-4 col-sm-12 col-xs-12'>
 					<!-- para algún diseño -->
-				</div><!-- /div .col-lg3-md3-sm12-xs12 -->
+				</div><!-- /div .col-lg4-md4-sm12-xs12 -->
 
 				{!!Form::model($user, ['method'=>'PUT', route('usuarios_put_path', $user->id), 'files' => true, 'id' => 'FormUsuario'])!!}
 
@@ -21,13 +21,13 @@
 						@include('usuarios.forms.fieldsUserCompletePartial.basicFields')
 						@include('usuarios.forms.fieldsUserCompletePartial.advancedFields')
 						@include('usuarios.forms.fieldsUserCompletePartial.finallyFields')
-					</div><!-- /div .col-lg3-md3-sm12-xs12 -->
+					</div><!-- /div .col-lg4-md4-sm12-xs12 -->
 
 				{!!Form::close()!!}
 
 				<div class='col-lg-4 col-md-4 col-sm-12 col-xs-12'>
 					<!-- para algún diseño -->
-				</div><!-- /div .col-lg3-md3-sm12-xs12 -->
+				</div><!-- /div .col-lg4-md4-sm12-xs12 -->
 
 
 			</div><!-- /div .row -->
