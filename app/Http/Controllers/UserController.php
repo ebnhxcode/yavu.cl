@@ -155,7 +155,7 @@ class UserController extends Controller{
    */
   private function RecordUser($nombre, $apellido, $email, $password, $ciudad, $referido){
     $this->nombre = $nombre ; $this->apellido = $apellido; $this->email = $email; $this->password = $password; $this->ciudad = $ciudad; $this->referido = $referido;
-    $this->newuser = new User(["nombre"=>$this->nombre,"apellido"=>$this->apellido,"email"=>$this->email,"password"=>$this->password,"estado"=>"inactivo","referido"=>$this->referido,"referente"=>Carbon::now()->minute.Carbon::now()->hour.Carbon::now()->year.Carbon::now()->month.Carbon::now()->day."RY","validacion"=>$this->getCodigoVerificacion(),"ciudad"=>$this->ciudad]);
+    $this->newuser = new User(["nombre"=>$this->nombre,"apellido"=>$this->apellido,"email"=>$this->email,"password"=>$this->password,"estado"=>"Activo","referido"=>$this->referido,"referente"=>Carbon::now()->minute.Carbon::now()->hour.Carbon::now()->year.Carbon::now()->month.Carbon::now()->day."RY","validacion"=>$this->getCodigoVerificacion(),"ciudad"=>$this->ciudad]);
     $this->newuser->save();
     return ['id' => $this->newuser->id, 'nombre' => $this->newuser->nombre, 'email' => $this->newuser->email];
 
@@ -185,14 +185,25 @@ class UserController extends Controller{
   }
 
   public function store(UserCreateRequest $request){
+
     $this->arrayToSendEmailAndNotify = $this->RecordUser($request->nombre,$request->apellido,$request->email,$request->password,'',$request->ciudad);
+
     if ($this->GiveCoinsBy($this->arrayToSendEmailAndNotify['id'], 500, 'Carga por registro en el Yavü')){
       $this->notify($this->arrayToSendEmailAndNotify['id'],'carga_inicial','Se cargaron coins por registro en Yavü');
     }
     $this->SendEmailForRegisterSuccessfully($this->arrayToSendEmailAndNotify['email'], $this->arrayToSendEmailAndNotify['nombre'], 'emails.register', 'Correo de Contacto');
-    Session::flash('message', 'Usuario creado correctamente. Debes validar tu cuenta para entrar a yavu.');
-    Session::flash('message-warning', 'Para validar tu cuenta revisa el correo con el te acabas de registrar y encontrarás las instrucciones.');
-    return Redirect::to('/login');
+
+    $this->user = User::findOrFail($this->arrayToSendEmailAndNotify['id']);
+
+    if($this->user){
+      Auth::user()->login($this->user);
+      Session::flash('message', 'Usuario creado correctamente. Debes validar tu correo electr&oacute;nico en el enlace que ha sido enviado a tu correo con el que te acabas de registrar.');
+      return Redirect::to('/dashboard');
+    }else{
+      return Redirect::to('/login');
+    }
+    //Session::flash('message-warning', 'Para validar tu cuenta revisa el correo con el te acabas de registrar y encontrarás las instrucciones.');
+    //return Redirect::to('/login');
   }
 
   public function update($id, UserUpdateRequest $request){
