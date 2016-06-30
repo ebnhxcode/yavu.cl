@@ -37,6 +37,10 @@ class UserController extends Controller{
     }
   }
 
+  public function addInterestsForCreatedUser(){
+    return view('usuarios.interestsOnCreatedUser');
+  }
+
   public function BuscarUsuarios($nombre){
     /*
     if(isset($nombre)){
@@ -199,7 +203,8 @@ class UserController extends Controller{
     if($this->user){
       Auth::user()->login($this->user);
       Session::flash('message', 'Usuario creado correctamente. Debes validar tu correo electr&oacute;nico en el enlace que ha sido enviado a tu correo con el que te acabas de registrar.');
-      return Redirect::to('/dashboard');
+      return $this->addInterestsForCreatedUser();
+      //return Redirect::to('/dashboard');
     }else{
       return Redirect::to('/login');
     }
