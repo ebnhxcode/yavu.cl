@@ -18,6 +18,7 @@ class UserController extends Controller{
   private $id;
   private $user;
   private $email;
+  private $login;
   private $nombre;
   private $apellido;
   private $password;
@@ -153,9 +154,9 @@ class UserController extends Controller{
   /**
    * @private
    */
-  private function RecordUser($nombre, $apellido, $email, $password, $ciudad, $referido){
-    $this->nombre = $nombre ; $this->apellido = $apellido; $this->email = $email; $this->password = $password; $this->ciudad = $ciudad; $this->referido = $referido;
-    $this->newuser = new User(["nombre"=>$this->nombre,"apellido"=>$this->apellido,"email"=>$this->email,"password"=>$this->password,"estado"=>"Activo","referido"=>$this->referido,"referente"=>Carbon::now()->minute.Carbon::now()->hour.Carbon::now()->year.Carbon::now()->month.Carbon::now()->day."RY","validacion"=>$this->getCodigoVerificacion(),"ciudad"=>$this->ciudad]);
+  private function RecordUser($nombre, $apellido, $email, $password, $ciudad, $referido, $login){
+    $this->nombre = $nombre ; $this->apellido = $apellido; $this->email = $email; $this->password = $password; $this->ciudad = $ciudad; $this->login = $login; $this->referido = $referido;
+    $this->newuser = new User(["nombre"=>$this->nombre,"apellido"=>$this->apellido,"email"=>$this->email,"password"=>$this->password,"estado"=>"Activo","referido"=>$this->referido,"login"=>$this->login,"referente"=>Carbon::now()->minute.Carbon::now()->hour.Carbon::now()->year.Carbon::now()->month.Carbon::now()->day."RY","validacion"=>$this->getCodigoVerificacion(),"ciudad"=>$this->ciudad]);
     $this->newuser->save();
     return ['id' => $this->newuser->id, 'nombre' => $this->newuser->nombre, 'email' => $this->newuser->email];
 
@@ -186,7 +187,7 @@ class UserController extends Controller{
 
   public function store(UserCreateRequest $request){
 
-    $this->arrayToSendEmailAndNotify = $this->RecordUser($request->nombre,$request->apellido,$request->email,$request->password,'',$request->ciudad);
+    $this->arrayToSendEmailAndNotify = $this->RecordUser($request->nombre,$request->apellido,$request->email,$request->password,$request->ciudad,'',$request->login);
 
     if ($this->GiveCoinsBy($this->arrayToSendEmailAndNotify['id'], 500, 'Carga por registro en el Yavü')){
       $this->notify($this->arrayToSendEmailAndNotify['id'],'carga_inicial','Se cargaron coins por registro en Yavü');

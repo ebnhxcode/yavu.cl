@@ -28,7 +28,7 @@
 
     <div class='form-group has-feedback has-feedback-left'>
       <div class="input-group input-group-sm">
-        {!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una password', 'maxlength' => '100'])!!}
+        {!!Form::password('password',['class'=>'form-control','placeholder'=>(Auth::user()->check())?'Cambiar clave':'Ingrese una clave', 'maxlength' => '100'])!!}
         <div class="input-group-addon">
           <i class="glyphicon glyphicon-lock"></i>
         </div><!-- /div .input-group-addon -->
