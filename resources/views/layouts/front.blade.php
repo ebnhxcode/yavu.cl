@@ -139,7 +139,7 @@
                 <div class="" align="">
 
                   <!-- Formulario inicio sesión -->
-                  <div id="navbar" class="navbar-collapse collapse">
+                  <div id="navbar" align="center" class="navbar-collapse">
                     {!!Form::open(['route' => 'log.store', 'method' => 'POST', 'class' => 'navbar-form navbar-right', 'role' => 'form'])!!}
                     <div class="form-group">
                       <div class="input-group">
