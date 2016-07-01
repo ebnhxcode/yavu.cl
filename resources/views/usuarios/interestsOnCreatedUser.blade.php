@@ -45,7 +45,7 @@
       selectedCategory.addClass('list-group-item-success').fadeIn();
       //console.log(selectedCategory.attr('value'));
       var token = $("#token").val();
-      var route = "http://186.64.123.143/agregarinteres";
+      var route = "http://yavu.cl/agregarinteres";
       $.ajax({
         url: route,
         headers: {'X-CSRF-TOKEN': token},
