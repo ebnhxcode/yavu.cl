@@ -230,7 +230,7 @@ class UserController extends Controller{
     if($this->user){
       Auth::user()->login($this->user);
       Session::flash('message', 'Usuario creado correctamente. Debes validar tu correo electr&oacute;nico en el enlace que ha sido enviado a tu correo con el que te acabas de registrar.');
-      return $this->addInterestsForCreatedUser();
+      return $this->selectInterestsForCreatedUser();
       //return Redirect::to('/dashboard');
     }else{
       return Redirect::to('/login');

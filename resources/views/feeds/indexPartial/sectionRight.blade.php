@@ -40,7 +40,7 @@
           <div class="col-xs-12 col-sm-4 col-md-12 col-lg-12 text-center">
 
             <a class="thumbnail">
-              <img class="img-responsive" id="ImagenPortada" src="/img/users/28yavu008.png" alt="..." style="height: 170px;">
+              <img class="img-responsive" id="ImagenPortada" src="/img/users/Cocacola/lata-cocacola-fondo-1024x682.jpg" alt="..." style="height: 170px;">
             </a><!-- /div .thumbnail -->
 
             <div class="caption">
