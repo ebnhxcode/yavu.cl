@@ -195,11 +195,27 @@ class EmpresaController extends Controller{
     }
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
-  public function BuscarEmpresas($nombre = null){
-    if(isset($nombre)){
-      $nombre = addslashes($nombre);
+  public function BuscarEmpresas(Request $request){
+
+    $nombre = addslashes($request->nombre);
+    if($nombre!=''){
+      $empresas = Empresa::where('nombre', 'like', '%'.$nombre.'%')
+        ->where('ciudad', '=', $request->ciudad)
+        ->paginate(20);
+
+      if(count($empresas)<1)
+        Session::flash('message-warning', 'No se encontraron resultados.');
+      return view('empresas.index', ['empresas' => $empresas, 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(),'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(),'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user]);
+
+    }else{
+      return $this->index();
+    }
+
+    /*
+    if($request->nombre!=''){
+      $nombre = addslashes($request->nombre);
       $nombreCompleto="";
-      $nombre = explode('+', $nombre);
+      $nombre = explode(' ', $nombre);
       $sqlAdd = "SELECT * FROM (SELECT id, user_id, rut, email, fono, nombre, descripcion, direccion, ciudad, region, pais, estado, imagen_perfil, imagen_portada, created_at FROM empresas)newTable";
       foreach ($nombre as $key => $value) {
         $nombreCompleto .= $value.' ';
@@ -212,14 +228,14 @@ class EmpresaController extends Controller{
       $sqlAdd .= " OR newTable.rut like '%".$nombreCompleto."%' OR newTable.email like '%".$nombreCompleto."%' OR newTable.nombre like '%".$nombreCompleto."%' OR newTable.descripcion like '%".$value."%' OR newTable.direccion like '%".$nombreCompleto."%' OR newTable.ciudad like '%".$nombreCompleto."%' OR newTable.region like '%".$nombreCompleto."%' OR newTable.pais like '%".$nombreCompleto."%' OR newTable.estado like '%".$nombreCompleto."%'";
       $sqlAdd .= "ORDER BY newTable.created_at DESC";
       $empresas = DB::select($sqlAdd);
+      dd($empresas);
     }else{
       $sqlAdd = 'SELECT * FROM (SELECT id, user_id, rut, email, fono, nombre, descripcion, direccion, ciudad, region, pais, estado, imagen_perfil, imagen_portada, created_at FROM empresas)newTable WHERE newTable.rut like "%7%" OR newTable.email like "%@%" OR newTable.nombre like "%empresa%" OR newTable.estado like "%activo%" ';
       $empresas = DB::select($sqlAdd);
-      return response()->json(
-          $empresas
-      );
+      return view('empresas.index', ['empresas' => $empresas, 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(),'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(),'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user]);
     }
-    return response()->json($empresas);
+    return view('empresas.index', ['empresas' => $empresas, 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(),'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(),'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user]);
+    */
 
   }
 
