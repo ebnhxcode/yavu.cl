@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserInsterestsTable extends Migration
+class CreateUserInterestsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateUserInsterestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_insterests', function (Blueprint $table) {
+        Schema::create('user_interests', function (Blueprint $table) {
             $table->increments('id');
             $table->string('user_id');
             $table->string('categorylist_id');
@@ -27,6 +27,6 @@ class CreateUserInsterestsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('user_insterests');
+        Schema::dropIfExists('user_interests');
     }
 }

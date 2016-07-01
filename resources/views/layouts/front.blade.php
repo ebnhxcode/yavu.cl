@@ -140,28 +140,32 @@
 
                   <!-- Formulario inicio sesión -->
                   <div id="navbar" align="center" class="navbar-collapse">
+
                     {!!Form::open(['route' => 'log.store', 'method' => 'POST', 'class' => 'navbar-form navbar-right', 'role' => 'form'])!!}
-                    <div class="form-group">
-                      <div class="input-group">
-                        {!!Form::email('email',null,['class'=>'form-control input-sm','placeholder'=>'Usuario', 'autocomplete' => 'off', 'aria-describedby'=>'addon-user'])!!}
-                        <i class="form-control-feedback glyphicon glyphicon-user"></i>
-                      </div>
 
+										<img src="{!! asset('img/yavu019.png') !!}" width="30" alt=""/>
+										<div class='form-group has-feedback has-feedback-left'>
+											<div class="input-group input-group-sm">
+												{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email', 'autocomplete' => 'off'])!!}
+												<div class="input-group-addon">
+													<i class="glyphicon glyphicon-user"></i>
+												</div><!-- /div .input-group-addon -->
+											</div><!-- /div .input-group .input-group-sm -->
+										</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 
+										<div class='form-group has-feedback has-feedback-left'>
+											<div class="input-group input-group-sm">
+												{!!Form::password('password',['class'=>'form-control','placeholder'=>'Clave', 'autocomplete' => 'off'])!!}
+												<div class="input-group-addon">
+													<i class="glyphicon glyphicon-lock"></i>
+												</div><!-- /div .input-group-addon -->
+											</div><!-- /div .input-group .input-group-sm -->
+										</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 
-                    </div><!-- /div .form-group -->
-                    <img src="{!! asset('img/yavu019.png') !!}" width="30" alt=""/>
-                    <div class="form-group">
-                      <div class="input-group">
-                        {!!Form::password('password',['class'=>'form-control input-sm','placeholder'=>'Clave', 'autocomplete' => 'off'])!!}
-                        <i class="form-control-feedback glyphicon glyphicon-lock"></i>
-                      </div>
-                    </div><!-- /div .form-group -->
                     <input type="hidden" name="_token" value="{!! csrf_token() !!}"><!-- /input token -->
 
-                    <button type="submit" class="btn btn-default input-sm">Iniciar sesi&oacute;n </button>
-                    <!-- {!!Form::submit('Iniciar sesi&oacute;n',['class'=>'btn btn-default input-sm', 'style'=>''])!!} -->
-
+                    <button type="submit" class="btn btn-success btn-sm">Iniciar sesi&oacute;n </button>
+										<a class="btn btn-warning btn-sm" data-toggle="modal" data-target="#gridSystemModal" role="button">Registrate</a>
 
                     {!!Form::close()!!}
                   </div><!--/.navbar-collapse -->

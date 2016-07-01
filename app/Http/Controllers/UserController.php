@@ -5,12 +5,13 @@ use Illuminate\Http\Request;
 use yavu\Http\Requests;
 use yavu\Http\Requests\UserCreateRequest;
 use yavu\Http\Requests\UserUpdateRequest;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Session;
 use Redirect;
 use yavu\Pop;
 use yavu\RegistroCoin;
 use yavu\CategoryList;
-use yavu\UserInsterest;
+use yavu\UserInterest;
 use yavu\User;
 use DB;
 use RUT;
@@ -44,15 +45,27 @@ class UserController extends Controller{
       Valida si existe la categoría
       Valida si el usuario la tiene sinó la agrega, si la tiene la saca
     */
+    try {
+      $this->category = CategoryList::findOrFail((int)$request->category_id);
+      if($this->category){
 
-    $this->category = CategoryList::findOrFail($request->category_id);
-    
 
-    return response()->json($this->category);
+        if(count(UserInterest::where('user_id',$this->user->id)->where('categorylist_id',$this->category->id)->get())<1){
+          $this->userInterest = UserInterest::create(['user_id'=>$this->user->id, 'categorylist_id' => $request->category_id]);
+        }else{
+          $this->userInterest = UserInterest::where('user_id',$this->user->id)->where('categorylist_id',$this->category->id)->delete();
+        }
+
+        return response()->json($this->userInterest);
+      }
+    } catch (ModelNotFoundException $ex) {
+      return response()->json(['mensaje: ' => 'no existe la categoria: '.$request->category_id]);
+    }
+
   }
 
   public function selectInterestsForCreatedUser(){
-    return view('usuarios.interestsOnCreatedUser', ['n' => User::all()->take(20)]);
+    return view('usuarios.interestsOnCreatedUser', ['categoryList' => CategoryList::all()]);
   }
 
   public function BuscarUsuarios($nombre){

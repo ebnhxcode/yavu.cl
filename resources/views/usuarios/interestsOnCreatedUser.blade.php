@@ -15,11 +15,11 @@
 
       <div class="row">
 
-        @foreach($n as $key => $nn)
+        @foreach($categoryList as $key => $category)
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 
-            <span class="list-group-item category btn btn-default" id="category{!! $key !!}" value="{!! $key !!}" style="padding-bottom: 12px;padding-top: 6px;">
-              Categor&iacute;a {!! $key+1 !!}
+            <span class="list-group-item category btn btn-default" id="category{!! $category->id !!}" value="{!! $category->id !!}" style="padding-bottom: 12px;padding-top: 6px;">
+              {!! $category->category !!}
             </span>
 
           </div><!-- /div .col- -->
@@ -54,8 +54,9 @@
         data: {
           category_id: selectedCategory.attr('value'),
         },
-        success:function(){
-          console.log('pasó');
+        success:function(res){
+          if(res==1)
+            selectedCategory.removeClass('list-group-item-success').fadeIn();
         }
       });
 
