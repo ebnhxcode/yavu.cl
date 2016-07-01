@@ -119,7 +119,7 @@
 
                 <span onclick='Interactuar(this.id)' id='estado_{!! $companyStatus->id !!}' value='e{!! $companyStatus->companyPostAuthor->id !!}' class="btn {!! count($cs)<1?'btn-warning out-yavucoin':'btn-default out-yavucoin' !!} btn-xs" >
 
-                  {!! count($cs)<1?'<span style=" font-family: yavu_font;color: #ffcc00;">J</span>':'<span style=" font-family: yavu_font;color: #000;">I</span>' !!}
+                  {!! count($cs)<1?'<span style=" font-family: yavu_font;color: #ffcc00;">J</span>':'<span style=" font-family: yavu_font;color: #585858;">I</span>' !!}
 
                 </span><!-- /span $estado_+$companyStatus->id .btn .btn-sm .btn-default-warning -->
                 <span id="status_{!! $companyStatus->id !!}"></span>

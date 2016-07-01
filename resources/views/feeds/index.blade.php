@@ -101,7 +101,7 @@
 				$('#'+valor).removeClass("btn-warning");
 				$('#'+valor).addClass("btn-default");
 				$('#'+valor).text('');
-				$('#'+valor).append('<span style="font-family: yavu_font;color: #000;">I</span>').fadeIn();
+				$('#'+valor).append('<span style="font-family: yavu_font;color: #585858;">I</span>').fadeIn();
         $('#status_'+status_id).append('<span class="text-success"><small>¡Coins obtenidos!</small></span>').hide().fadeIn();
 
 
