@@ -13,7 +13,7 @@ class SorteoCreateRequest extends Request
       return [
          'nombre_sorteo' => 'required',
          'descripcion' => 'required',
-         'fecha_inicio_sorteo' => 'required|date|after:'.Carbon::now()->addDays(4),
+         'fecha_inicio_sorteo' => 'required|date|after:'.Carbon::now()->addDays(4).'|before:'.Carbon::now()->addDays(14),
          'imagen_sorteo' => 'required',
          //'password' => 'required'
       ];
