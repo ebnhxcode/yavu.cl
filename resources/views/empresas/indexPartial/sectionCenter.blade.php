@@ -3,17 +3,15 @@
 
 
     <div class="list-group-item">
+      {!!Form::open(['action'=>'EmpresaController@BuscarEmpresas', 'method'=>'GET'])!!}
       <div class="input-group input-group-sm">
+        {!!Form::text('nombre',null,['class' => 'form-control', 'placeholder' => 'Buscar empresas', 'aria-describedby' => 'sizing-addon1', 'required'])!!}
         <span class="input-group-addon" id="sizing-addon1">
           <span class="glyphicon glyphicon-search">
           </span><!-- /span .glyphicon .glyphicon-search -->
         </span><!-- /span .input-group-addon #sizing-addon1 -->
-        {!!Form::open(['action'=>'EmpresaController@BuscarEmpresas', 'method'=>'GET'])!!}
-        {!!Form::text('nombre',null,['class' => 'form-control input-md', 'placeholder' => 'Buscar empresas', 'aria-describedby' => 'sizing-addon1', 'required'])!!}
-        {!! csrf_field() !!}
-
       </div><!-- /div .input-group .input-group-lg -->
-
+      {!! csrf_field() !!}
       <div class="softText-descriptions">
         Filtros de b&uacute;squeda
       </div>

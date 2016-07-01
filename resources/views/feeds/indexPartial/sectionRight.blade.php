@@ -43,6 +43,7 @@
               <img class="img-responsive" id="ImagenPortada" src="/img/users/Cocacola/lata-cocacola-fondo-1024x682.jpg" alt="..." style="height: 170px;">
             </a><!-- /div .thumbnail -->
 
+            {{--
             <div class="caption">
 
               <p>
@@ -59,6 +60,7 @@
               </p>
 
             </div><!-- /div .caption -->
+            --}}
 
           </div><!-- /div .col-md12-sm12-xs12 -->
 
