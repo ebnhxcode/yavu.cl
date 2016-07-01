@@ -38,7 +38,7 @@ class UserController extends Controller{
   }
 
   public function addInterestsForCreatedUser(){
-    return view('usuarios.interestsOnCreatedUser');
+    return view('usuarios.interestsOnCreatedUser', ['n' => User::all()->take(20)]);
   }
 
   public function BuscarUsuarios($nombre){

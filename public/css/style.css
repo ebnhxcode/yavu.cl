@@ -130,6 +130,17 @@
 	border-radius: 2px;
 }
 
+/*SemiMini*/
+#contentSemiMini {
+  width: 450px;
+  margin: 0px auto 0 auto;
+  /*Arriba-Derecha-Abajo-Izquierda*/
+  padding: 30px 30px 30px 30px;
+  /*padding: 0 60px 30px 60px;*/
+  border: solid 0px #cbcbcb;
+  border-radius: 2px;
+}
+
 .card {
   color: #000;
 }
@@ -573,7 +584,7 @@
 }
 .status-image-load:hover {
   color: #111111;
-  font-size: 1.6em;
+  font-size: 1.5em;
   -webkit-transition: 0.1s;
   -moz-transition: 0.1s;
 }

@@ -1,7 +1,8 @@
 <?php
 
-
-
+/* Esto se borra */
+Route::get('i', 'UserController@addInterestsForCreatedUser');
+/* End Esto se borra */
 
 /*Gestión de cors*/
 Route::get('breweries', ['middleware' => 'cors', function(){return \Response::json(\yavu\Brewery::with('beers', 'geocode')->paginate(10), 200);}]);
