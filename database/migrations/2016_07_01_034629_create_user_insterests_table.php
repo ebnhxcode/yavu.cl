@@ -14,6 +14,8 @@ class CreateUserInsterestsTable extends Migration
     {
         Schema::create('user_insterests', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('user_id');
+            $table->string('categorylist_id');
             $table->timestamps();
         });
     }

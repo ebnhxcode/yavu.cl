@@ -9,6 +9,8 @@ use Session;
 use Redirect;
 use yavu\Pop;
 use yavu\RegistroCoin;
+use yavu\CategoryList;
+use yavu\UserInsterest;
 use yavu\User;
 use DB;
 use RUT;
@@ -41,12 +43,12 @@ class UserController extends Controller{
     /*
       Valida si existe la categoría
       Valida si el usuario la tiene sinó la agrega, si la tiene la saca
-
     */
 
+    $this->category = CategoryList::findOrFail($request->category_id);
     
 
-    return response()->json($request->category_id);
+    return response()->json($this->category);
   }
 
   public function selectInterestsForCreatedUser(){
