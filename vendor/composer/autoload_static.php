@@ -372,6 +372,7 @@ class ComposerStaticInited7924d490fe9e0cf1eacb6de9e69f50
         'CreateServiciosTable' => __DIR__ . '/../..' . '/database/migrations/2016_02_24_104920_create_servicios_table.php',
         'CreateSorteosTable' => __DIR__ . '/../..' . '/database/migrations/2016_02_11_164427_create_sorteos_table.php',
         'CreateTicketsTable' => __DIR__ . '/../..' . '/database/migrations/2016_02_29_161238_create_tickets_table.php',
+        'CreateUserInsterestsTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_01_034629_create_user_insterests_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'CreateVendorsTable' => __DIR__ . '/../..' . '/database/migrations/2016_04_04_120353_create_vendors_table.php',
         'CreateVisitsTable' => __DIR__ . '/../..' . '/database/migrations/2016_04_29_145918_create_visits_table.php',

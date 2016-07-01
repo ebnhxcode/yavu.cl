@@ -41,9 +41,10 @@ class UserController extends Controller{
     /*
       Valida si existe la categoría
       Valida si el usuario la tiene sinó la agrega, si la tiene la saca
-      
+
     */
 
+    
 
     return response()->json($request->category_id);
   }
