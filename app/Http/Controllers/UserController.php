@@ -37,7 +37,18 @@ class UserController extends Controller{
     }
   }
 
-  public function addInterestsForCreatedUser(){
+  public function addInterest(Request $request){
+    /*
+      Valida si existe la categoría
+      Valida si el usuario la tiene sinó la agrega, si la tiene la saca
+      
+    */
+
+
+    return response()->json($request->category_id);
+  }
+
+  public function selectInterestsForCreatedUser(){
     return view('usuarios.interestsOnCreatedUser', ['n' => User::all()->take(20)]);
   }
 

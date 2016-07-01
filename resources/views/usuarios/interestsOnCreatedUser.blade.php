@@ -16,16 +16,16 @@
       <div class="row">
 
         @foreach($n as $key => $nn)
-          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 
-            <span class="category btn list-group-item" id="category{!! $key !!}">
+            <span class="list-group-item category btn btn-default" id="category{!! $key !!}" value="{!! $key !!}" style="padding-bottom: 12px;padding-top: 6px;">
               Categor&iacute;a {!! $key+1 !!}
             </span>
 
           </div><!-- /div .col- -->
         @endforeach
 
-
+        <input id="token" type="hidden" name="_token" value="{!! csrf_token() !!}"><!-- /input token -->
 
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <h6>Te Queremos dar una mejor experiencia en Yavü</h6>
@@ -41,9 +41,27 @@
 
   $(document).ready(function(){
     $(".category").click(function(){
-      $('#'+this.id).addClass('list-group-item-success').fadeIn();
+      var selectedCategory = $('#'+this.id);
+      selectedCategory.addClass('list-group-item-success').fadeIn();
+      //console.log(selectedCategory.attr('value'));
+      var token = $("#token").val();
+      var route = "http://localhost:8000/agregarinteres";
+      $.ajax({
+        url: route,
+        headers: {'X-CSRF-TOKEN': token},
+        type: 'POST',
+        dataType: 'json',
+        data: {
+          category_id: selectedCategory.attr('value'),
+        },
+        success:function(){
+          console.log('pasó');
+        }
+      });
 
-      //console.log(this.addClass(this.id,'list-group-item-success'));
+      return true;
+
+
     });
   });
 

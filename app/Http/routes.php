@@ -1,7 +1,8 @@
 <?php
 
 /* Esto se borra */
-Route::get('i', 'UserController@addInterestsForCreatedUser');
+Route::get('i', 'UserController@selectInterestsForCreatedUser');
+Route::post('agregarinteres', 'UserController@addInterest');
 /* End Esto se borra */
 
 /*Gestión de cors*/
