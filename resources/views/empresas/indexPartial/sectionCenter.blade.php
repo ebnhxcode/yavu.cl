@@ -71,14 +71,14 @@
               {!!($fCounts=count($empresa->followers))!!} seguidor{!!($fCounts>1||$fCounts==0?'es':'')!!}.
 
 
-              <span class="btn btn-default btn-xs">{!! count($userSession->follow($empresa->id)->get())>0?'Seguida':'seguir' !!}</span>
+              <span class="btn btn-primary btn-xs">{!! count($userSession->follow($empresa->id)->get())>0?'Seguida':'seguir' !!}</span>
 
 
             </div>
             <br/>
             <div class="btn-group" role="group" aria-label="...">
               <a href="{!! URL::to('/empresa/'.$empresa->nombre.'/') !!}" class="btn btn-default btn-xs">Ver perfil</a>
-              <a href="{!! URL::to('/empresa/'.$empresa->nombre.'/sorteos') !!}" class="btn btn-default btn-xs">Ver sorteos</a>
+              <a href="{!! URL::to('/empresa/'.$empresa->nombre.'/sorteos') !!}" class="btn btn-success btn-xs">Ver sorteos</a>
             </div><!-- /div .btn-group -->
 
             @if(Auth::user()->get()->id == $empresa->user_id)

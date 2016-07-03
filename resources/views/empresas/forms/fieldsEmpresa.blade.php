@@ -71,10 +71,10 @@
 
 			<div class="list-group-item">
 				<div class="form-group has-feedback has-feedback-left">
-					(<strong><small><span class="requerido">Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar foto de perfil: ')!!}<span id="Perfil" ></span><br>
+					(<strong><small><span class="requerido">Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar logo: ')!!}<span id="Perfil" ></span><br>
 					<div>
 						<span class="btn-file btn-sm">
-							Buscar imagen{!!Form::file('imagen_perfil', ['id' => 'imagen_perfil',  'maxlength' => '255', 'size' => '2048'])!!}
+							Buscar logo{!!Form::file('imagen_perfil', ['id' => 'imagen_perfil',  'maxlength' => '255', 'size' => '2048'])!!}
 						</span>
 						@if(Request::path() !== 'empresas/create' && isset($empresa))
 							@if($empresa->imagen_perfil==="")
@@ -89,7 +89,7 @@
 				</div>
 
 				<div class="form-group has-feedback has-feedback-left">
-					(<strong><small><span class="requerido">Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar foto de portada: ')!!}<span id="Portada"></span><br>
+					(<strong><small><span class="requerido">Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar imagen de portada: ')!!}<span id="Portada"></span><br>
 					<div>
 						<span class="btn-file btn-sm">
 							Buscar imagen{!!Form::file('imagen_portada', ['id' => 'imagen_portada', 'maxlength' => '255', 'size' => '2048'])!!}
