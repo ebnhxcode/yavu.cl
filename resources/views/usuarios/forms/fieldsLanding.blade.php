@@ -20,7 +20,7 @@
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
           <div class='form-group has-feedback has-feedback-left'>
             <div class="input-group input-group-sm">
-              {!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email', 'maxlength' => '200'])!!}
+              {!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email', 'maxlength' => '200', 'required'])!!}
               <div class="input-group-addon">
                 <i class="glyphicon glyphicon-user"></i> Email
               </div><!-- /div .input-group-addon -->
@@ -31,7 +31,7 @@
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
           <div class='form-group has-feedback has-feedback-left'>
             <div class="input-group input-group-sm">
-              {!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una password', 'maxlength' => '100'])!!}
+              {!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una password', 'maxlength' => '100', 'required'])!!}
               <div class="input-group-addon">
                 <i class="glyphicon glyphicon-lock"></i> Clave
               </div><!-- /div .input-group-addon -->
@@ -110,7 +110,7 @@
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
           <div class='form-group has-feedback has-feedback-left'>
             <div class="input-group input-group-sm">
-              {!!Form::text('login',null,['class'=>'form-control','placeholder'=>'Nombre de usuario', 'maxlength' => '100'])!!}
+              {!!Form::text('login',null,['class'=>'form-control','placeholder'=>'Nombre de usuario', 'maxlength' => '100', 'required'])!!}
               <div class="input-group-addon">
                 Nombre usuario
               </div><!-- /div .input-group-addon -->
@@ -118,7 +118,28 @@
           </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
         </div><!-- /div .col-lg6-md6-sm6-xs12 -->
 
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div class='form-group has-feedback has-feedback-left'>
+            <div class="input-group input-group-sm">
+              {!!Form::date('fecha_nacimiento',null,['class'=>'form-control', 'maxlength' => '50', 'required'])!!}
+              <div class="input-group-addon">
+                Nacimiento
+              </div><!-- /div .input-group-addon -->
+            </div><!-- /div .input-group .input-group-sm -->
+            <span class="softText-descriptions">(D&iacute;a/Mes/A&ntilde;o)</span>
+          </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
+        </div><!-- /div .col-lg6-md6-sm6-xs12 -->
 
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div class='form-group has-feedback has-feedback-left'>
+            <div class="input-group input-group-sm">
+              {!!Form::number('fono',null,['class'=>'form-control','placeholder'=>'Tel&eacute;fono', 'maxlength' => '16', 'required'])!!}
+              <div class="input-group-addon">
+                Tel&eacute;fono
+              </div><!-- /div .input-group-addon -->
+            </div><!-- /div .input-group .input-group-sm -->
+          </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
+        </div><!-- /div .col-lg6-md6-sm6-xs12 -->
 
         {{-- NO DISPONIBLE TEMPORALMENTE PERO A FUTURO SE CONSIDERARÁ
         <div class='form-group has-feedback has-feedback-left'>

@@ -10,12 +10,15 @@ class UserCreateRequest extends Request
    public function rules()
    {
       return [
-         'email' => 'required|unique:users',
-         'login' => 'required|unique:users',
-         'nombre' => 'required',
-         'apellido' => 'required',
-         'password' => 'required',
-         'ciudad' => 'required'
+        'email' => 'required|unique:users',
+        'login' => 'required|unique:users',
+        'nombre' => 'required',
+        'apellido' => 'required',
+        'password' => 'required',
+        'ciudad' => 'required',
+        'fono' => 'required',
+        'fecha_nacimiento' => 'required',
+
       ];
    }
 }
