@@ -26,9 +26,9 @@
         @endforeach
 
         <input id="token" type="hidden" name="_token" value="{!! csrf_token() !!}"><!-- /input token -->
-
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <h6>Te Queremos dar una mejor experiencia en Yavü</h6>
+          <a class="btn btn-success" style="width:100%;" href="/dashboard">Finalizar</a>
         </div><!-- /div .col- -->
 
       </div><!-- /div .row -->
@@ -42,7 +42,7 @@
   $(document).ready(function(){
     $(".category").click(function(){
       var selectedCategory = $('#'+this.id);
-      selectedCategory.addClass('list-group-item-success').fadeIn();
+      selectedCategory.addClass('list-group-item-success').fadeIn().append('<span class="glyphicon glyphicon-ok"></span>').fadeIn();
       //console.log(selectedCategory.attr('value'));
       var token = $("#token").val();
       var route = "http://localhost:8000/agregarinteres";

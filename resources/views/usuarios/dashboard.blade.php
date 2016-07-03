@@ -6,16 +6,20 @@
 @extends('layouts.front')
 @section('content')
 <div class='jumbotron'>
-	<div id='fullWidth'>
+	<div id='contentMiddle'>
 		<h4 style='margin-top:-40px;'></h4>
 		<div class='row'>
 			<div class='col-xs-12 col-sm-3 col-md-3 col-lg-3'>
         @include('alerts.allAlerts')
         <div id='EstadoEmpresa'>
         </div><!-- /div #EstadoEmpresa -->
+
+
+
+
       </div><!-- /div .col-md3-sm3-xs12 -->
 
-			<div class='col-md-9 col-sm-9 col-xs-12 '>
+			<div class='col-md-6 col-sm-6 col-xs-12 '>
 				<div class='row'>
 					<div class='col-md-4 col-sm-6 col-xs-12'>
 
@@ -99,6 +103,12 @@
 
 				</div><!-- /div .row -->
 			</div><!-- /div col-md9-sm9-xs12 -->
+
+
+      <div class='col-xs-12 col-sm-3 col-md-3 col-lg-3'>
+        @include('sorteos.indexPartial.sectionRight')
+      </div><!-- /div .col-md3-sm3-xs12 -->
+
 		</div><!-- /div .row -->
 	</div><!-- /div #fullwidth -->
 </div><!-- /div .jumbotron -->

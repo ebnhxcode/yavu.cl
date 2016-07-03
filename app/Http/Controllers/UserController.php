@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Session;
 use Redirect;
 use yavu\Pop;
+use yavu\Empresa;
 use yavu\RegistroCoin;
 use yavu\CategoryList;
 use yavu\UserInterest;
@@ -93,7 +94,8 @@ class UserController extends Controller{
   }
 
   public function dashboard(){
-    return view('usuarios.dashboard');
+    //['sorteos'=>Sorteo::orderByRaw('RAND()')->where('estado_sorteo','Activo')->paginate(6), 'rtickets' => $this->registro_tickets, 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), ,]
+    return view('usuarios.dashboard', ['companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user]);
   }
 
   public function destroy($id){
