@@ -339,6 +339,7 @@
 .div-hover {
   -webkit-transition: 0.1s;
   -moz-transition: 0.3s;
+  z-index: 1100;
 }
 
 .div-hover:hover {
@@ -346,6 +347,7 @@
   opacity: 0.9;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
+  z-index: 1100;
 }
 
 .raffle-image {

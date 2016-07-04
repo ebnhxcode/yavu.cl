@@ -2,7 +2,7 @@
 
 	@foreach($sorteos as $sorteo)
 		@if($sorteo->estado_sorteo == 'Activo')
-			<div class="list-group-item div-hover">
+			<div class="list-group-item">
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
             <img class='media-object' src='/img/users/{!! ($companyProfileImage = $sorteo->companyAuthorRaffle->imagen_perfil)?$companyProfileImage:'usuario_nuevo.png' !!}' data-holder-rendered='true' style='width: 36px; height: 36px; border-radius: 10%; float:left;'/>
@@ -98,7 +98,8 @@
 						</div><!-- /div .row -->
 					</div>
           <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
-            <div class="dropup">
+
+            <div style="z-index: auto;" class="dropup">
               <button class="btn btn-default btn-xs dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="glyphicon glyphicon-chevron-down"></span>
               </button><!-- /div .btn .btn-default .btn-xs .dropdown-toggle -->
