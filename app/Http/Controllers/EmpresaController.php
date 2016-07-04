@@ -203,8 +203,11 @@ class EmpresaController extends Controller{
         ->where('ciudad', '=', $request->ciudad)
         ->paginate(20);
 
-      if(count($empresas)<1)
-        Session::flash('message-warning', 'No se encontraron resultados.');
+      if(count($empresas)<1){
+        Session::flash('message-warning', 'No se encontraron resultados para <b>'.$request->nombre.'</b>. en <b>'.$request->ciudad.'</b>');
+        return Redirect::to('/empresas');
+      }
+
       return view('empresas.index', ['empresas' => $empresas, 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(),'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(),'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user]);
 
     }else{

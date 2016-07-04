@@ -1,60 +1,155 @@
-<div class="list-group">
-  <div class="list-group-item">
-    {!!Form::open(['action'=>'EmpresaController@BuscarEmpresas', 'method'=>'GET'])!!}
-    <div class="input-group input-group-sm">
-      {!!Form::text('nombre',null,['class' => 'form-control', 'placeholder' => 'Buscar empresas', 'aria-describedby' => 'sizing-addon1', 'required'])!!}
-      <span class="input-group-addon" id="sizing-addon1">
-          <span class="glyphicon glyphicon-search">
-          </span><!-- /span .glyphicon .glyphicon-search -->
-        </span><!-- /span .input-group-addon #sizing-addon1 -->
-    </div><!-- /div .input-group .input-group-lg -->
-    {!! csrf_field() !!}
-    <div class="softText-descriptions">
-      Filtros de b&uacute;squeda
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-success">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          B&uacute;squeda por ciudad y nombre
+        </a>
+      </h4>
     </div>
-    {!!Form::select('ciudad',
-      ['Tarapacá' => 'Tarapacá',
-      'Parinacota' => 'Parinacota',
-      'Arica' => 'Arica',
-      'Antofagasta' => 'Antofagasta',
-      'Atacama' => 'Atacama',
-      'La Serena' => 'La Serena',
-      'Coquimbo' => 'Coquimbo',
-      'Valparaiso' => 'Valparaiso',
-      'Aconcagua' => 'Aconcagua',
-      'Región Metropolitana' => 'Región Metropolitana',
-      'O Higgins' => 'O Higgins',
-      'Curicó' => 'Curicó',
-      'Talca' => 'Talca',
-      'Linares' => 'Linares',
-      'Maule' => 'Maule',
-      'Ñuble' => 'Ñuble',
-      'Concepción' => 'Concepción',
-      'Arauco' => 'Arauco',
-      'Biobío' => 'Biobío',
-      'Malleco' => 'Malleco',
-      'Cautín' => 'Cautín',
-      'Araucanía' => 'Araucanía',
-      'Los Ríos' => 'Los Ríos',
-      'Valdivia' => 'Valdivia',
-      'Osorno' => 'Osorno',
-      'Los Lagos' => 'Los Lagos',
-      'Llanquihue' => 'Llanquihue',
-      'Chiloé' => 'Chiloé',
-      'Aysen' => 'Aysen',
-      'Magallanes' => 'Magallanes',
-      'otra' => 'otras...'],
-      $selected = null, ['class' => 'form-control input-sm', 'maxlength' => '100'])
-      !!}
-    {!!Form::close()!!}
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+
+        {!!Form::open(['action'=>'EmpresaController@BuscarEmpresas', 'method'=>'POST'])!!}
+
+        <span class="softText-descriptions">
+          Seleccione la ciudad
+        </span>
+
+        {!!Form::select('ciudad',
+          ['Tarapacá' => 'Tarapacá',
+          'Parinacota' => 'Parinacota',
+          'Arica' => 'Arica',
+          'Antofagasta' => 'Antofagasta',
+          'Atacama' => 'Atacama',
+          'La Serena' => 'La Serena',
+          'Coquimbo' => 'Coquimbo',
+          'Valparaiso' => 'Valparaiso',
+          'Aconcagua' => 'Aconcagua',
+          'Región Metropolitana' => 'Región Metropolitana',
+          'O Higgins' => 'O Higgins',
+          'Curicó' => 'Curicó',
+          'Talca' => 'Talca',
+          'Linares' => 'Linares',
+          'Maule' => 'Maule',
+          'Ñuble' => 'Ñuble',
+          'Concepción' => 'Concepción',
+          'Arauco' => 'Arauco',
+          'Biobío' => 'Biobío',
+          'Malleco' => 'Malleco',
+          'Cautín' => 'Cautín',
+          'Araucanía' => 'Araucanía',
+          'Los Ríos' => 'Los Ríos',
+          'Valdivia' => 'Valdivia',
+          'Osorno' => 'Osorno',
+          'Los Lagos' => 'Los Lagos',
+          'Llanquihue' => 'Llanquihue',
+          'Chiloé' => 'Chiloé',
+          'Aysen' => 'Aysen',
+          'Magallanes' => 'Magallanes',
+          'otra' => 'otras...'],
+          $selected = null, ['class' => 'form-control input-sm', 'maxlength' => '100'])!!}
+
+        <span class="softText-descriptions">
+          Agregue texto de referencia
+        </span>
+
+        <div class="input-group input-group-sm">
+          {!!Form::text('nombre',null,['class' => 'form-control', 'placeholder' => 'Buscar empresas', 'aria-describedby' => 'sizing-addon1', 'required'])!!}
+          <span class="input-group-addon" id="sizing-addon1">
+            <span role="button" class="glyphicon glyphicon-search"></span><!-- /span .glyphicon .glyphicon-search -->
+          </span><!-- /span .input-group-addon #sizing-addon1 -->
+        </div><!-- /div .input-group .input-group-lg -->
+
+        {!! csrf_field() !!}
+
+
+        {!!Form::close()!!}
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="panel panel-success">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Resultados por ciudad
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+
+        here
+
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Collapsible Group Item #3
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
   </div>
 </div>
 
 
+{{--
+<div class="list-group">
+  <div class="list-group-item list-group-item-success">
+    Filtros de b&uacute;squeda
+  </div>
+
+  <div class="list-group-item">
+
+
+
+
+
+  </div>
+  <div class="list-group-item">
+
+  </div>
+</div>
+--}}
+
+
+
+
+
+
+
+
 @include('miniDashboard.miniDashboard')
+
 @if(count($bannersRandom)>0)
   @include('listarBanner.listaBanner')
 @endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {{--
 <div class="list-group">
 
