@@ -1,3 +1,56 @@
+<div class="list-group">
+  <div class="list-group-item">
+    {!!Form::open(['action'=>'EmpresaController@BuscarEmpresas', 'method'=>'GET'])!!}
+    <div class="input-group input-group-sm">
+      {!!Form::text('nombre',null,['class' => 'form-control', 'placeholder' => 'Buscar empresas', 'aria-describedby' => 'sizing-addon1', 'required'])!!}
+      <span class="input-group-addon" id="sizing-addon1">
+          <span class="glyphicon glyphicon-search">
+          </span><!-- /span .glyphicon .glyphicon-search -->
+        </span><!-- /span .input-group-addon #sizing-addon1 -->
+    </div><!-- /div .input-group .input-group-lg -->
+    {!! csrf_field() !!}
+    <div class="softText-descriptions">
+      Filtros de b&uacute;squeda
+    </div>
+    {!!Form::select('ciudad',
+      ['Tarapacá' => 'Tarapacá',
+      'Parinacota' => 'Parinacota',
+      'Arica' => 'Arica',
+      'Antofagasta' => 'Antofagasta',
+      'Atacama' => 'Atacama',
+      'La Serena' => 'La Serena',
+      'Coquimbo' => 'Coquimbo',
+      'Valparaiso' => 'Valparaiso',
+      'Aconcagua' => 'Aconcagua',
+      'Región Metropolitana' => 'Región Metropolitana',
+      'O Higgins' => 'O Higgins',
+      'Curicó' => 'Curicó',
+      'Talca' => 'Talca',
+      'Linares' => 'Linares',
+      'Maule' => 'Maule',
+      'Ñuble' => 'Ñuble',
+      'Concepción' => 'Concepción',
+      'Arauco' => 'Arauco',
+      'Biobío' => 'Biobío',
+      'Malleco' => 'Malleco',
+      'Cautín' => 'Cautín',
+      'Araucanía' => 'Araucanía',
+      'Los Ríos' => 'Los Ríos',
+      'Valdivia' => 'Valdivia',
+      'Osorno' => 'Osorno',
+      'Los Lagos' => 'Los Lagos',
+      'Llanquihue' => 'Llanquihue',
+      'Chiloé' => 'Chiloé',
+      'Aysen' => 'Aysen',
+      'Magallanes' => 'Magallanes',
+      'otra' => 'otras...'],
+      $selected = null, ['class' => 'form-control input-sm', 'maxlength' => '100'])
+      !!}
+    {!!Form::close()!!}
+  </div>
+</div>
+
+
 @include('miniDashboard.miniDashboard')
 @if(count($bannersRandom)>0)
   @include('listarBanner.listaBanner')
