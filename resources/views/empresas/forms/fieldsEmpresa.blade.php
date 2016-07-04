@@ -251,7 +251,7 @@
 	});
 
 	function ValidarRut(rut){
-		var route = "http://localhost:8000/validarrutempresa/"+rut+"";
+		var route = "http://186.64.123.143/validarrutempresa/"+rut+"";
 		document.getElementById('FormEmpresa').onsubmit = function() {
 		    return false;
 		}
