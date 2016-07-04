@@ -34,6 +34,7 @@
           <div class="softText-descriptions">
 
             <!-- Nav tabs -->
+            {{--
             <ul id="TabUserProfile" class="nav nav-tabs" role="tablist">
 
               <li role="presentation" class="">
@@ -41,12 +42,13 @@
                   <span class="glyphicon glyphicon-camera status-image-load"></span>
                 </a>
               </li>
-              {{--
+              <!--
               <li role="presentation"><a href="#ticketsHistory" aria-controls="ticketsHistory" role="tab" data-toggle="tab">Hitorial tickets</a></li>
               <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Información</a></li>
               <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Imagenes</a></li>
-              --}}
+              -->
             </ul>
+            --}}
             <!-- End Nav tabs -->
 
             <!-- Tab panes -->
@@ -84,7 +86,6 @@
 
           {!! Form::hidden('user_id',$myCompanies[0]->user_id) !!}
           {!! Form::hidden('empresa_id',$myCompanies[0]->id) !!}
-          <hr>
           <div style="padding-top:10px">
             <span id="characters" value="200">200</span>
             {{-- {!!link_to('#!', $title="Publicar estado", $attributes = ['id'=>'publicar', 'class'=>'btn btn-success btn-sm'], $secure = null)!!} --}}
