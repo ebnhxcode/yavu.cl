@@ -19,64 +19,40 @@ class CategoriaController extends Controller{
   }
   public function find(Route $route){
     if(Auth::user()->check()){
-      $this->categoria = Categoria::findOrFail($route->getParameter('categorias'));
+      $this->categoria = Categoria::find($route->getParameter('categorias'));
     }
-    return Redirect::to("/");
     //return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function index(){
-    if(Auth::user()->check()){
-      $categorias = Categoria::all();
-      return view('categorias.index', compact('categorias'));
-    }
-    return Redirect::to("/");
-    //return response()->json(["Mensaje: " => "Acceso denegado"]);
+    $categorias = Categoria::all();
+    return view('categorias.index', compact('categorias'));
   }
   public function create(){
-    if(Auth::user()->check()){
-      return view('categorias.create');
-    }
-    return Redirect::to("/");
-    //return response()->json(["Mensaje: " => "Acceso denegado"]);
+    return view('categorias.create');
   }
 
   public function store(Request $request){
-    if(Auth::user()->check()){
-      Categoria::create($request->all());
-      Session::flash('message', 'Empresa y categorizacion de esta ha sido creado correctamente');
-      return Redirect::to('/empresas/');
-    }
-    return Redirect::to("/");
-    //return response()->json(["Mensaje: " => "Acceso denegado"]);
+    Categoria::create($request->all());
+    Session::flash('message', 'Empresa y categorizacion de esta ha sido creado correctamente');
+    return Redirect::to('/empresas/');
   }
   public function show($id){
 
   }
   public function edit($id){
-    if(Auth::user()->check()){
-      return view('categorias.edit', ['categoria' => $this->categoria]);
-    }
-    return Redirect::to("/");
-    //return response()->json(["Mensaje: " => "Acceso denegado"]);
+    $this->categoria = Categoria::findOrFail($id);
+    return view('categorias.edit', ['categoria' => $this->categoria]);
   }
 
   public function update(CategoriaUpdateRequest $request, $id){
-    if(Auth::user()->check()){
-      $this->categoria->fill($request->all());
-      $this->categoria->save();
-      Session::flash('message', 'Categoria editada correctamente');
-      return Redirect::to('/categorias');
-    }
-    return Redirect::to("/");
-    //return response()->json(["Mensaje: " => "Acceso denegado"]);
+    $this->categoria->fill($request->all());
+    $this->categoria->save();
+    Session::flash('message', 'Categoria editada correctamente');
+    return Redirect::to('/categorias');
   }
   public function destroy($id){
-    if(Auth::user()->check()){
-      $this->categoria->delete();
-      Session::flash('message', 'categoria eliminado correctamente');
-      return Redirect::to('/categorias');
-    }
-    return Redirect::to("/");
-    //return response()->josn(["Mensaje: " => "Acceso denegado"]);
+    $this->categoria->delete();
+    Session::flash('message', 'categoria eliminado correctamente');
+    return Redirect::to('/categorias');
   }
 }

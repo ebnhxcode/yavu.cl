@@ -172,10 +172,6 @@ Route::group(['middleware' => 'user'], function(){
   Route::resource('banners', 'BannerController');
   /*Gestión de Banners */
 
-  /*Gestión de Categorías */
-  Route::resource('categorias', 'CategoriaController');
-  /*Gestión de Categorías */
-
   /*Gestión de Pago*/
   Route::resource('pagos', 'PagoController');
   /*Gestión de Pago*/
@@ -240,6 +236,11 @@ Route::group(['middleware' => 'admin'], function(){
   Route::get('validarrutempresaadmin/{rut}', 'EmpresaController@ValidarRutEmpresa');
   
   /*Gestión de Admins*/
+
+
+  /*Gestión de Categorías */
+  Route::resource('categorias', 'CategoriaController');
+  /*Gestión de Categorías */
 
 
 

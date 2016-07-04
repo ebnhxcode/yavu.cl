@@ -95,7 +95,7 @@ class EmpresaController extends Controller{
           'empresa_id' => $this->empresa->id,
           'tipo' => 'activacion',
           'estado'   => 'pendiente',
-          'contenido' => 'Se ha registrado tu pyme! '.$request->nombre,
+          'contenido' => '¡Se ha registrado tu empresa! '.$request->nombre,
           'created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),
           'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]
       );

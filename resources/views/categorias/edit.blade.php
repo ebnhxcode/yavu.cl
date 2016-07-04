@@ -21,12 +21,12 @@
 						<div class="form-group has-feedback has-feedback-left">
 							{!!Form::open(['action'=> ['CategoriaController@destroy', $categoria->id], 'method'=>'DELETE'])!!}
 							{!!Form::submit('Eliminar', ['class'=>'btn btn-primary btn-danger', 'style'=>'width:100%;', 'id'=>'eliminar'])!!}﻿
-							{!!Form::close()!!}													
-						</div>	
-					</div>		
-				</div>
-			</div><!--Este fin del div cierra el div que se abre en fieldsUser-->	
-		</div>
+							{!!Form::close()!!}
+						</div><!-- /div .form-group .has-feedback .has-feedback-left -->
+					</div><!-- /div .list-group-item -->
+				</div><!-- /div .list-group -->
+			</div><!-- /div .row -->
+		</div><!-- /div #contentMiddle -->
 	</div>
 </div>
 @stop
