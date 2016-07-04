@@ -1,6 +1,7 @@
 <?php
 namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
+use yavu\CategoryList;
 use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
 use yavu\Http\Requests\CategoriaCreateRequest;
@@ -24,7 +25,7 @@ class CategoriaController extends Controller{
     //return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function index(){
-    $categorias = Categoria::all();
+    $categorias = CategoryList::all();
     return view('categorias.index', compact('categorias'));
   }
   public function create(){
@@ -32,25 +33,26 @@ class CategoriaController extends Controller{
   }
 
   public function store(Request $request){
-    Categoria::create($request->all());
-    Session::flash('message', 'Empresa y categorizacion de esta ha sido creado correctamente');
-    return Redirect::to('/empresas/');
+    CategoryList::create($request->all());
+    Session::flash('message', 'Categoria creada correctamente');
+    return Redirect::to('/categorias/create');
   }
   public function show($id){
 
   }
   public function edit($id){
-    $this->categoria = Categoria::findOrFail($id);
+    $this->categoria = CategoryList::findOrFail($id);
     return view('categorias.edit', ['categoria' => $this->categoria]);
   }
 
   public function update(CategoriaUpdateRequest $request, $id){
-    $this->categoria->fill($request->all());
+    $this->categoria = CategoryList::create($request->all());
     $this->categoria->save();
     Session::flash('message', 'Categoria editada correctamente');
     return Redirect::to('/categorias');
   }
   public function destroy($id){
+    $this->categoria = CategoryList::findOrFail($id);
     $this->categoria->delete();
     Session::flash('message', 'categoria eliminado correctamente');
     return Redirect::to('/categorias');

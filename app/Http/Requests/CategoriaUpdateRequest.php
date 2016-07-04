@@ -10,8 +10,8 @@ class CategoriaUpdateRequest extends Request
     public function rules()
     {
         return [
-            'nombre_categoria' => 'required',
-            'tipo_categoria' => 'required'
+            'category' => 'required',
+            'description' => 'required'
            
         ];
     }
