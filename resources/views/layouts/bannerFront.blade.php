@@ -1,3 +1,11 @@
+<script>
+  $(document).ready(function(){
+    $('.carousel').carousel({
+      interval: 2000
+    });
+  });
+
+</script>
 <header id = "myCarousel" class = "carousel slide " style="">
 <!-- Indicadores -->
   <ol class = "carousel-indicators">
