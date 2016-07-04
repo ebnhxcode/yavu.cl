@@ -195,6 +195,25 @@ class EmpresaController extends Controller{
     }
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
+
+  public function searchCompanyByCity(Request $request){
+
+    if($request->ciudad!=''){
+      $empresas = Empresa::where('ciudad', '=', $request->ciudad)->paginate(20);
+
+      if(count($empresas)<1){
+        Session::flash('message-warning', 'No se encontraron resultados en <b>'.$request->ciudad.'</b>');
+        return Redirect::to('/empresas');
+      }
+
+      return view('empresas.index', ['empresas' => $empresas, 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(),'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(),'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user]);
+
+    }else{
+      return $this->index();
+    }
+
+  }
+
   public function BuscarEmpresas(Request $request){
 
     $nombre = addslashes($request->nombre);
@@ -204,7 +223,7 @@ class EmpresaController extends Controller{
         ->paginate(20);
 
       if(count($empresas)<1){
-        Session::flash('message-warning', 'No se encontraron resultados para <b>'.$request->nombre.'</b>. en <b>'.$request->ciudad.'</b>');
+        Session::flash('message-warning', 'No se encontraron resultados de <b>'.$request->nombre.'</b> en <b>'.$request->ciudad.'</b>');
         return Redirect::to('/empresas');
       }
 
