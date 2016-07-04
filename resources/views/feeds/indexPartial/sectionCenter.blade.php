@@ -96,14 +96,29 @@
     </div><!-- /div .list-group-item -->
   @endif
   @foreach($companyStatuses as $key => $companyStatus)
-    <div id='publicacion{!! $companyStatus->id !!}' class="list-group-item div-hover">
+    <div id='publicacion{!! $companyStatus->id !!}' class="list-group-item">
+
       <div class="row">
         <div class="col-md-1 col-sm-offset-0 col-xs-offset-0">
           <a href="/empresas/{!! $companyStatus->empresa_id !!}">
             <img class='media-object' src='/img/users/{!! ($companyStatus->companyPostAuthor->imagen_perfil!='')?$companyStatus->companyPostAuthor->imagen_perfil:'usuario_nuevo.png' !!}' data-holder-rendered='true' style='width: 36px; height: 36px; border-radius: 10%;'/>
           </a>
         </div><!-- /div .col-md1-sm-offset-12-xs-offset-12 -->
-        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+
+        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-11">
+
+          <div style="float: right;" class="dropup">
+
+            <button class="btn btn-default btn-xs dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="glyphicon glyphicon-chevron-down"></span>
+            </button><!-- /div .btn .btn-default .btn-xs .dropdown-toggle -->
+
+            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+              <li><a href="{!! URL::to('/empresas/'.$companyStatus->empresa_id.'/') !!}">Ver perfil</a></li>
+            </ul><!-- /ul .dropdown-menu -->
+
+          </div><!-- /div .dropup -->
+
           <div class="media-heading">
             <strong><a href="/empresas/{!! $companyStatus->empresa_id !!}" style="color: #3C5B28;">{!! $companyPostName = $companyStatus->companyPostAuthor->nombre !!}</a></strong>
             <strong>·</strong>
@@ -131,18 +146,27 @@
             </span>
           </div><!-- /div -->
         </div><!-- /div .col-md11-sm12-xs12 -->
+
+
+        {{--
         <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+
           <div class="btn-group-vertical btn-group" role="group">
             <a href="/feeds/{!!$companyStatus->id!!}" class="btn btn-default btn-xs">
               <span class="glyphicon glyphicon-chevron-down"></span>
             </a>
+            <!--
             <a href="/feeds/{!!$companyStatus->id!!}" class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="right" title="{!! count($userSession->follow($companyStatus->empresa_id)->get())>0?'¡Seguida!':'¡Seguir!' !!}">
               <span class="{!! ($followStatus = $userSession->follow($companyStatus->empresa_id)->get())?'glyphicon glyphicon-':'' !!}{!! (count($followStatus)>0?'ok text-success':'plus') !!}"></span>
             </a>
+            -->
           </div>
 
 
         </div><!-- /div .col-lg1-md1-sm12-xs12 -->
+        --}}
+
+
       </div><!-- /div .row -->
     </div><!-- /div .list-group-item #publicacion+$companyStatus->id -->
     @if($key == 4)

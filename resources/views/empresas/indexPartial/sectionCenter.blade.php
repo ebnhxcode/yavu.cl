@@ -85,9 +85,9 @@
                 <strong>Fono :</strong> <abbr title="Phone"></abbr> {!!$empresa->fono!!}</strong><br>
               {!!($fCounts=count($empresa->followers))!!} seguidor{!!($fCounts>1||$fCounts==0?'es':'')!!}.
 
-
+              {{--
               <span class="btn btn-primary btn-xs">{!! count($userSession->follow($empresa->id)->get())>0?'Seguida':'seguir' !!}</span>
-
+              --}}
 
             </div>
             <br/>
