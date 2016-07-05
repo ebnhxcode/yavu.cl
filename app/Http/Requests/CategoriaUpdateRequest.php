@@ -12,7 +12,6 @@ class CategoriaUpdateRequest extends Request
         return [
             'category' => 'required',
             'description' => 'required'
-           
         ];
     }
 }

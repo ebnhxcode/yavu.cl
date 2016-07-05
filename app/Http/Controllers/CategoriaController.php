@@ -6,7 +6,6 @@ use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
 use yavu\Http\Requests\CategoriaCreateRequest;
 use yavu\Http\Requests\CategoriaUpdateRequest;
-use yavu\Categoria;
 use yavu\Empresa;
 use Session;
 use Auth;
@@ -20,7 +19,7 @@ class CategoriaController extends Controller{
   }
   public function find(Route $route){
     if(Auth::user()->check()){
-      $this->categoria = Categoria::find($route->getParameter('categorias'));
+      $this->categoria = CategoryList::find($route->getParameter('categorias'));
     }
     //return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
