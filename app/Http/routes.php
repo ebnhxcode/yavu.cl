@@ -91,7 +91,7 @@ Route::group(['middleware' => 'user'], function(){
   Route::get('listaempresas', 'EmpresaController@ListaEmpresas');
   Route::get('solicitareliminacionempresa/{id}', 'EmpresaController@SolicitarEliminacion')->where('id', '[0-9]+');
   Route::post('buscarempresa', 'EmpresaController@BuscarEmpresas');
-  //Route::post('searchCompanyByCity', 'EmpresaController@searchCompanyByCity');
+  Route::post('searchCompanyByCity', 'EmpresaController@searchCompanyByCity');
 
   /*Gestión de Empresas*/
   /*Gestión de Servicios*/

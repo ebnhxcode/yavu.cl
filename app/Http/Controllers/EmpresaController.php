@@ -199,7 +199,8 @@ class EmpresaController extends Controller{
   public function searchCompanyByCity(Request $request){
 
     if($request->ciudad!=''){
-      $empresas = Empresa::where('ciudad', '=', $request->ciudad)->paginate(20);
+      //Ojo con esta linea de abajo, si los resultados superan los mil el paginador no funciona
+      $empresas = Empresa::where('ciudad', '=', $request->ciudad)->paginate(1000);
 
       if(count($empresas)<1){
         Session::flash('message-warning', 'No se encontraron resultados en <b>'.$request->ciudad.'</b>');
