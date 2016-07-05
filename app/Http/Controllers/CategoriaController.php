@@ -18,9 +18,7 @@ class CategoriaController extends Controller{
     $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
   }
   public function find(Route $route){
-    if(Auth::user()->check()){
-      $this->categoria = CategoryList::find($route->getParameter('categorias'));
-    }
+    $this->categoria = CategoryList::find($route->getParameter('categorias'));
     //return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function index(){

@@ -6,13 +6,15 @@
       <th>Nombre categoria</th>
       <th>Tipo Categoria</th>
       </thead>
-      @foreach($categorias as $categoria)
-        <tbody>
-        <td>{!!$categoria->category!!}</td>
-        <td>{!!$categoria->description!!}</td>
-        <td>{!!link_to_route('categorias.edit', $title = 'Editar', $parameters = $categoria->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
-        </tbody>
-      @endforeach
+      @if(isset($categorias))
+        @foreach($categorias as $categoria)
+          <tbody>
+          <td>{!!$categoria->category!!}</td>
+          <td>{!!$categoria->description!!}</td>
+          <td>{!!link_to_route('categorias.edit', $title = 'Editar', $parameters = $categoria->id, $attributes = ['class'=>'btn btn-primary'])!!}</td>
+          </tbody>
+        @endforeach
+      @endif
 
     </table><!-- /table .table -->
   </div><!-- /div .panel-body -->
