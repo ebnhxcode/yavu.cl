@@ -19,6 +19,7 @@ return array(
     'CreateCategoryBannerDataTable' => $baseDir . '/database/migrations/2016_05_24_124736_create_category_banner_data_table.php',
     'CreateCategoryListsTable' => $baseDir . '/database/migrations/2016_07_01_034306_create_category_lists_table.php',
     'CreateCoinsTable' => $baseDir . '/database/migrations/2016_04_12_232920_create_coins_table.php',
+    'CreateCompanyCategoriesTable' => $baseDir . '/database/migrations/2016_07_04_225901_create_company_categories_table.php',
     'CreateCompanyStatusesTable' => $baseDir . '/database/migrations/2016_06_13_163130_create_company_statuses_table.php',
     'CreateEmpresasTable' => $baseDir . '/database/migrations/2015_12_08_142111_create_empresas_table.php',
     'CreateEncuestasTable' => $baseDir . '/database/migrations/2016_02_24_104857_create_encuestas_table.php',

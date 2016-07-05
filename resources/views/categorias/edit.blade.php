@@ -33,7 +33,7 @@
 			</div><!-- /div .col-lg6-md6-sm6-xs12 -->
 
 			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-				@include('categorias.indexPartial.sectionRights')
+				@include('categorias.indexPartial.sectionRight')
 			</div><!-- /div .col-lg3-md3-sm3-xs12 -->
 
 		</div><!-- /div .row -->
