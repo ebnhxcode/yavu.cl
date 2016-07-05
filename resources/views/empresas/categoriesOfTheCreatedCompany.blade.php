@@ -42,7 +42,7 @@
       selectedCategory.addClass('list-group-item-success').fadeIn().append('<span class="glyphicon glyphicon-ok"></span>').fadeIn();
       //console.log(selectedCategory.attr('value'));
       var token = $("#token").val();
-      var route = "http://yavu.cl/agregarcategoria";
+      var route = "http://localhost:8000/agregarcategoria";
       $.ajax({
         url: route,
         headers: {'X-CSRF-TOKEN': token},
