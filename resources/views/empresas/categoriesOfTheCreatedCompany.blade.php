@@ -38,6 +38,7 @@
   $(document).ready(function(){
     $(".category").click(function(){
       var selectedCategory = $('#'+this.id);
+      console.log(selectedCategory.attr('value'));
       selectedCategory.addClass('list-group-item-success').fadeIn().append('<span class="glyphicon glyphicon-ok"></span>').fadeIn();
       //console.log(selectedCategory.attr('value'));
       var token = $("#token").val();

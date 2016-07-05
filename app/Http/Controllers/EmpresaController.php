@@ -28,19 +28,18 @@ class EmpresaController extends Controller{
     }
   }
 
-  public function addCategory(){
+  public function addCategory(Request $request){
     try {
       $this->category = CategoryList::findOrFail((int)$request->category_id);
       if($this->category){
 
-
-        if(count(UserInterest::where('user_id',$this->user->id)->where('categorylist_id',$this->category->id)->get())<1){
-          $this->userInterest = UserInterest::create(['user_id'=>$this->user->id, 'categorylist_id' => $request->category_id]);
+        if(count(CompanyCategory::where('empresa_id',$request->empresa_id)->where('categorylist_id',$request->category_id)->get())<1){
+          $this->companyCategory = CompanyCategory::create(['empresa_id'=>$request->empresa_id, 'categorylist_id' => $request->category_id]);
         }else{
-          $this->userInterest = UserInterest::where('user_id',$this->user->id)->where('categorylist_id',$this->category->id)->delete();
+          $this->companyCategory = CompanyCategory::where('empresa_id',$request->empresa_id)->where('categorylist_id',$request->category_id)->delete();
         }
 
-        return response()->json($this->userInterest);
+        return response()->json($this->companyCategory);
       }
     } catch (ModelNotFoundException $ex) {
       return response()->json(['mensaje: ' => 'no existe la categoria: '.$request->category_id]);

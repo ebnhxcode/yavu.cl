@@ -73,7 +73,7 @@ class Empresa extends Model implements AuthenticatableContract,
     }
 
     public function categorias(){
-        return $this->hasMany(Categoria::class, 'empresa_id');
+        return $this->hasMany(CompanyCategory::class, 'empresa_id');
     }
 }
 
