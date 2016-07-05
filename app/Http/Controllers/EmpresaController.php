@@ -9,6 +9,7 @@ use Session;
 use Redirect;
 use yavu\Empresa;
 use yavu\EstadoEmpresa;
+use yavu\CategoryList;
 use yavu\BannerData;
 use yavu\User;
 use Illuminate\Routing\Route;
@@ -39,6 +40,7 @@ class EmpresaController extends Controller{
       if(count($empresa) < 1){
         return view('empresas.create');
       }else{
+        //Refactorizar[!]
         $this->categorias = $empresa[0]->categorias()->get()->count('empresa_id'); 
         if($this->categorias == 3) {
             Session::flash('message-info', 'Usted ya tiene registrada una empresa');
@@ -49,7 +51,7 @@ class EmpresaController extends Controller{
         else{
           Session::flash('message-info', 'Usted ya tiene registrada una empresa');
           Session::flash('message-warning', 'Si desea registrar una nueva empresa comuniquese con el administrador');
-          return view('empresas.categoriesOfTheCreatedCompany', ['empresa' => $empresa[0]]);
+          return view('empresas.categoriesOfTheCreatedCompany', ['empresa' => $empresa[0], 'categoryList' => CategoryList::all()]);
         }
       }
     }

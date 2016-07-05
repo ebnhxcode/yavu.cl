@@ -7,11 +7,7 @@
 
 
       <h2>¡Solo un paso m&aacute;s!</h2>
-      <h3>¿Que intereses tienes?</h3>
-
-      <div class="softText-descriptions">
-        Selecciona <strong>todo</strong> lo que te pueda atraer
-      </div>
+      <h4>Asigna como m&aacute;ximo 3 categor&iacute;as tu empresa</h4>
 
       <div class="row">
 
@@ -27,7 +23,7 @@
 
         <input id="token" type="hidden" name="_token" value="{!! csrf_token() !!}"><!-- /input token -->
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <h6>Te Queremos dar una mejor experiencia en Yavü</h6>
+          <h6>Permite que todos los usuarios en Yavü puedan encontrarte facilmente</h6>
           <a class="btn btn-success" style="width:100%;" href="/dashboard">Finalizar</a>
         </div><!-- /div .col- -->
 
