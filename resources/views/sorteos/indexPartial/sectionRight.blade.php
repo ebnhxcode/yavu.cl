@@ -42,7 +42,7 @@
           <div class="col-xs-12 col-sm-4 col-md-12 col-lg-12 text-center">
 
             <a class="thumbnail">
-              <img class="img-responsive" id="ImagenPortada" src="/img/users/Cocacola/lg_felicidad.jpg" alt="..." style="height: 170px;">
+              <img class="img-responsive" id="ImagenPortada" src="/img/yavu015.png" alt="..." style="height: 170px;">
             </a><!-- /div .thumbnail -->
 
             {{--
