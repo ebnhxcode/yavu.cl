@@ -14,6 +14,8 @@ class CreateCompanyCategoriesTable extends Migration
     {
         Schema::create('company_categories', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('empresa_id');
+            $table->string('categorylist_id');
             $table->timestamps();
         });
     }
@@ -25,6 +27,6 @@ class CreateCompanyCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('company_categories');
+        Schema::dropIfExists('company_categories');
     }
 }

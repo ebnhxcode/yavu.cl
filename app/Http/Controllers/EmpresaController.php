@@ -10,6 +10,7 @@ use Redirect;
 use yavu\Empresa;
 use yavu\EstadoEmpresa;
 use yavu\CategoryList;
+use yavu\CompanyCategory;
 use yavu\BannerData;
 use yavu\User;
 use Illuminate\Routing\Route;
@@ -26,6 +27,26 @@ class EmpresaController extends Controller{
       $this->empresa = Empresa::where('user_id', $this->user->id);
     }
   }
+
+  public function addCategory(){
+    try {
+      $this->category = CategoryList::findOrFail((int)$request->category_id);
+      if($this->category){
+
+
+        if(count(UserInterest::where('user_id',$this->user->id)->where('categorylist_id',$this->category->id)->get())<1){
+          $this->userInterest = UserInterest::create(['user_id'=>$this->user->id, 'categorylist_id' => $request->category_id]);
+        }else{
+          $this->userInterest = UserInterest::where('user_id',$this->user->id)->where('categorylist_id',$this->category->id)->delete();
+        }
+
+        return response()->json($this->userInterest);
+      }
+    } catch (ModelNotFoundException $ex) {
+      return response()->json(['mensaje: ' => 'no existe la categoria: '.$request->category_id]);
+    }
+  }
+
   public function find(Route $route){
     $this->empresa = Empresa::findOrFail($route->getParameter('empresas'));
   }

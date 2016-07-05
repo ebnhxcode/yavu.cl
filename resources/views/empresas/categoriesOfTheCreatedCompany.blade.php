@@ -41,7 +41,7 @@
       selectedCategory.addClass('list-group-item-success').fadeIn().append('<span class="glyphicon glyphicon-ok"></span>').fadeIn();
       //console.log(selectedCategory.attr('value'));
       var token = $("#token").val();
-      var route = "http://localhost:8000/agregarinteres";
+      var route = "http://localhost:8000/agregarcategoria";
       $.ajax({
         url: route,
         headers: {'X-CSRF-TOKEN': token},
@@ -49,6 +49,7 @@
         dataType: 'json',
         data: {
           category_id: selectedCategory.attr('value'),
+          empresa_id: '{!! $empresa->id !!}'
         },
         success:function(res){
           if(res==1)
