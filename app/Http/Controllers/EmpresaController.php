@@ -49,7 +49,7 @@ class EmpresaController extends Controller{
         else{
           Session::flash('message-info', 'Usted ya tiene registrada una empresa');
           Session::flash('message-warning', 'Si desea registrar una nueva empresa comuniquese con el administrador');
-          return view('categorias.create', ['empresa' => $empresa[0]]);
+          return view('empresas.categoriesOfTheCreatedCompany', ['empresa' => $empresa[0]]);
         }
       }
     }
