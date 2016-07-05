@@ -142,6 +142,7 @@
       </div>
     </div>
   </div>
+  {{--
   <div class="panel panel-success">
     <div class="panel-heading" role="tab" id="headingThree">
       <h4 class="panel-title">
@@ -160,6 +161,7 @@
   </div>
 </div>
 
+--}}
 
 {{--
 <div class="list-group">
