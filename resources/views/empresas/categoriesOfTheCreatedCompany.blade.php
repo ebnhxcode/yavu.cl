@@ -15,7 +15,9 @@
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 
             <span class="list-group-item category btn btn-default" id="category{!! $category->id !!}" value="{!! $category->id !!}" style="padding-bottom: 12px;padding-top: 6px;">
+
               {!! $category->category !!}
+
             </span>
 
           </div><!-- /div .col- -->
@@ -38,9 +40,6 @@
   $(document).ready(function(){
     $(".category").click(function(){
       var selectedCategory = $('#'+this.id);
-      console.log(selectedCategory.attr('value'));
-      selectedCategory.addClass('list-group-item-success').fadeIn().append('<span class="glyphicon glyphicon-ok"></span>').fadeIn();
-      //console.log(selectedCategory.attr('value'));
       var token = $("#token").val();
       var route = "http://localhost:8000/agregarcategoria";
       $.ajax({
@@ -52,9 +51,24 @@
           category_id: selectedCategory.attr('value'),
           empresa_id: '{!! $empresa->id !!}'
         },
-        success:function(res){
-          if(res==1)
-            selectedCategory.removeClass('list-group-item-success').fadeIn();
+        success:function(result){
+
+          if(result[0]>2){
+            window.location.href = "http://localhost:8000/dashboard";
+          }
+          if(result[0]==0){
+            $(".category").removeClass('list-group-item-success').fadeIn();
+            $(".category").children("span#ok").remove();
+          }else{
+            var selectedCategoryClassName = selectedCategory.attr('class');
+            if(selectedCategoryClassName.indexOf("list-group-item-success")<0){
+              selectedCategory.addClass('list-group-item-success').fadeIn().append('<span id="ok" class="glyphicon glyphicon-ok"></span>').fadeIn();
+            }else{
+              selectedCategory.removeClass('list-group-item-success').fadeIn();
+              selectedCategory.children("span#ok").remove();
+            }
+          }
+
         }
       });
 

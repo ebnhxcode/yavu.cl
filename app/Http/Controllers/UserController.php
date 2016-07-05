@@ -57,7 +57,7 @@ class UserController extends Controller{
           $this->userInterest = UserInterest::where('user_id',$this->user->id)->where('categorylist_id',$this->category->id)->delete();
         }
 
-        return response()->json($this->userInterest);
+        return response()->json([count(UserInterest::where('user_id',$this->user->id)->get()), $request->category_id]);
       }
     } catch (ModelNotFoundException $ex) {
       return response()->json(['mensaje: ' => 'no existe la categoria: '.$request->category_id]);

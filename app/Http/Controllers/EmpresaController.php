@@ -39,7 +39,7 @@ class EmpresaController extends Controller{
           $this->companyCategory = CompanyCategory::where('empresa_id',$request->empresa_id)->where('categorylist_id',$request->category_id)->delete();
         }
 
-        return response()->json($this->companyCategory);
+        return response()->json([count(CompanyCategory::where('empresa_id',$request->empresa_id)->get()), $request->category_id]);
       }
     } catch (ModelNotFoundException $ex) {
       return response()->json(['mensaje: ' => 'no existe la categoria: '.$request->category_id]);

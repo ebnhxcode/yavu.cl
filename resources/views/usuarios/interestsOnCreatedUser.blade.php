@@ -42,8 +42,6 @@
   $(document).ready(function(){
     $(".category").click(function(){
       var selectedCategory = $('#'+this.id);
-      selectedCategory.addClass('list-group-item-success').fadeIn().append('<span class="glyphicon glyphicon-ok"></span>').fadeIn();
-      //console.log(selectedCategory.attr('value'));
       var token = $("#token").val();
       var route = "http://localhost:8000/agregarinteres";
       $.ajax({
@@ -54,9 +52,22 @@
         data: {
           category_id: selectedCategory.attr('value'),
         },
-        success:function(res){
-          if(res==1)
-            selectedCategory.removeClass('list-group-item-success').fadeIn();
+        success:function(result){
+
+          if(result[0]==0){
+            $(".category").removeClass('list-group-item-success').fadeIn();
+            $(".category").children("span#ok").remove();
+          }else{
+            var selectedCategoryClassName = selectedCategory.attr('class');
+            if(selectedCategoryClassName.indexOf("list-group-item-success")<0){
+              selectedCategory.addClass('list-group-item-success').fadeIn().append('<span id="ok" class="glyphicon glyphicon-ok"></span>').fadeIn();
+            }else{
+              selectedCategory.removeClass('list-group-item-success').fadeIn();
+              selectedCategory.children("span#ok").remove();
+            }
+          }
+
+
         }
       });
 
