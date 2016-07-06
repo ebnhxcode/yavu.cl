@@ -12,12 +12,21 @@
     <li data-target = "#myCarousel" data-slide-to = "0" class="active"></li>
     <li data-target = "#myCarousel" data-slide-to = "1"></li>
     <li data-target = "#myCarousel" data-slide-to = "2" ></li>
-
-
+    <li data-target = "#myCarousel" data-slide-to = "3" ></li>
+    <li data-target = "#myCarousel" data-slide-to = "4" ></li>
   </ol>
   <!-- Páginas de Slides -->
   <div class = "carousel-inner">
-    
+
+    <div class = "carousel-caption">
+
+      {{--
+       aun no pero ta weno
+      @include('mainViews.loginPartial.sectionCenter')
+       --}}
+
+    </div>
+
   <!-- 
     <div class = "item active">
    
@@ -77,24 +86,31 @@
 
     </div>
 
-    <!--
     <div class = "item">
      
-      <div class="fill"><img style="background-size:cover;" src = "img/BannerFront/banner4.jpg" width=100%></div>
+      <div class="fill"><img style="background-size:cover;" src = "img/newGraphics/neobanner04.jpg" width=100%></div>
 
-      
-        <div class = "carousel-caption">
-          <div class="title-slide"><br>
+      <!--
+      <div class = "carousel-caption">
+        <div class="title-slide"><br>
             <h1 class="txt-responsive">YaVu</h1>
-            <p>Entre a 'Nosotros' y conozca nuestra gesti&oacute;n.</p>
-          </div>
+            <p>Priorice sus compras</p>
         </div>
+      </div>
+      -->
 
     </div>
 
-    -->
+    <div class = "item">
 
-  </div> 
+      <div class="fill"><img style="background-size:cover;" src = "img/newGraphics/neobanner05.jpg" width=100%></div>
+
+
+
+
+    </div>
+
+  </div>
   <!-- Controles -->         
   <a class = "carousel-control left" href = "#myCarousel" data-slide = "prev">
     <span class = "icon-prev"></span>
