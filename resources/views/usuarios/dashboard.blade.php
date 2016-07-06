@@ -21,7 +21,7 @@
 					<div class='col-md-4 col-sm-6 col-xs-12'>
 
 						<div class='list-group' >
-              <a href='{!!URL::to('/feeds')!!}' style='text-align:center;' class='list-group-item list-group-item-info'>
+              <a href='{!!URL::to('/feeds')!!}' style='text-align:center;' class='list-group-item'>
                 <span>
                   <h4>PUBLICACIONES</h4>
                   <img class="img-responsive-centered" src="{!!URL::to('img/newGraphics/icofinal_publicaciones.png')!!}" />
@@ -32,7 +32,7 @@
 
           <div class='col-md-4 col-sm-6 col-xs-12'>
             <div class='list-group' >
-              <a href='{!!URL::to('/empresas')!!}' style='text-align:center;' class='list-group-item list-group-item-warning'>
+              <a href='{!!URL::to('/empresas')!!}' style='text-align:center;' class='list-group-item'>
                 <span>
                   <h4>EMPRESAS</h4>
                   <img class='img-responsive-centered' src= '{!!URL::to('img/newGraphics/icono_empresa.png')!!}'/>
@@ -43,7 +43,7 @@
 
 					<div class='col-md-4 col-sm-6 col-xs-12'>
 						<div class='list-group' >
-							<a href='{!!URL::to('/empresas/create')!!}' style='text-align:center;' class='list-group-item list-group-item-warning'>
+							<a href='{!!URL::to('/empresas/create')!!}' style='text-align:center;' class='list-group-item'>
                 <span>
                   <h4>CREAR EMPRESA</h4>
                   <img class='img-responsive-centered' src= '{!!URL::to('img/newGraphics/icono_crea_empresa.png')!!}'/>
@@ -54,7 +54,7 @@
 
           <div id="sorteo" class='col-md-4 col-sm-6 col-xs-12' {{--style="display: none;"--}}>
             <div class='list-group' >
-              <a href='{!!URL::to('/sorteos')!!}' style='text-align:center;' class='list-group-item list-group-item-warning'>
+              <a href='{!!URL::to('/sorteos')!!}' style='text-align:center;' class='list-group-item'>
                 <span>
                   <h4>SORTEOS</h4>
                   <img class='img-responsive-centered' src= '{!!URL::to('img/newGraphics/icofinal_sorteos_premios.png')!!}'/>
@@ -65,7 +65,7 @@
 
           <div class="col-md-4 col-sm-6 col-xs-12">
             <div class='list-group' >
-              <a style="text-align:center;" data-toggle="modal" data-target="#myModal" class="list-group-item list-group-item-info btn">
+              <a style="text-align:center;" data-toggle="modal" data-target="#myModal" class="list-group-item btn">
                 <span>
                   <h4>INFORMES</h4>
                   <img class='img-responsive-centered' src="{!!URL::to('img/newGraphics/icofinal_informes.png')!!}"/>
@@ -92,7 +92,7 @@
 
           <div class='col-md-4 col-sm-6 col-xs-12'>
             <div class='list-group' >
-              <a href='{!!URL::to('/sorteos/create')!!}' style='text-align:center;display: none;' class='list-group-item list-group-item-warning hasoneempresa'>
+              <a href='{!!URL::to('/sorteos/create')!!}' style='text-align:center;display: none;' class='list-group-item hasoneempresa'>
                 <span>
                   <h4>CREAR SORTEO</h4>
                   <img class='img-responsive-centered' src= '{!!URL::to('img/newGraphics/icofinal_sorteos_premios.png')!!}'/>
@@ -126,7 +126,7 @@
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class='list-group' >
               <div align="center">
-                <a style="padding: 2px 2px 2px 2px;" href='{!!URL::to('/coins/history')!!}' style="text-align:center;" class="list-group-item list-group-item-info">
+                <a style="padding: 2px 2px 2px 2px;" href='{!!URL::to('/coins/history')!!}' style="text-align:center;" class="list-group-item">
                 <span>
                   <img width="80%" src= "{!!URL::to('img/newGraphics/yavucoin_neo02a.png')!!}"/>
                 </span>
@@ -140,7 +140,7 @@
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="list-group">
               <div align="center">
-                <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/tickets/history')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
+                <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/tickets/history')!!}" style="text-align:center;" class="list-group-item">
                   <span>
                     <img style="padding-bottom: 10px;" width="80%"src= "{!!URL::to('img/newGraphics/neo_icono_tickets.png')!!}"/>
                   </span>
@@ -155,7 +155,7 @@
           <div style="display: none;" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 hasoneempresa">
             <div class="list-group" >
               <div align="center">
-                <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/estadisticasdemiempresa')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
+                <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/estadisticasdemiempresa')!!}" style="text-align:center;" class="list-group-item">
                   <span>
                     <img width="80%" src= "{!!URL::to('img/dash/icono_informe01.png')!!}"/>
                   </span>
