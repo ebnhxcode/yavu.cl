@@ -7,6 +7,7 @@
   <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
     <div class="panel-body">
       <h3>¿Que es Yavü?</h3>
+      <hr class="light">
       <h4>
         Yavü es la plataforma en donde empresas, concursos y premios coexisten para brindar un servicio único a nuestros usuarios. Sigue a comercios de tu interés, conoce promociones y descuentos en tu ciudad, participa en concursos todas las semanas y entérate de los eventos más importantes totalmente gratis en Yavu.cl.
       </h4>

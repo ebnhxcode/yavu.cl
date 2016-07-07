@@ -305,14 +305,16 @@
 						--}}
 						<br>
 						<br>
+						<span><a class="btn-link" href="{!!URL::to('/faq/')!!}">Preguntas Frecuentes</a></span>
+						<span class="required">\</span>
 						<span><a class="btn-link" href="{!!URL::to('/nosotros/')!!}">Nuestra empresa</a></span>
 						<span class="required">\</span>
 						<span><a class="btn-link" href="{!!URL::to('/contacto/')!!}">Contacto</a></span>
 						<span class="required">\</span>
-						<span><a class="btn-link" href="{!!URL::to('/terminos/')!!}">Términos</a></span>
+						<span><a class="btn-link" href="{!!URL::to('/terminos/')!!}">Términos y Condiciones</a></span>
 						<span class="required">\</span>
 						<span><a class="btn-link" href="{!!URL::to('/yavucoins/')!!}"><strong>YavuCoins</strong></a></span>
-						<spam> - Copyright© ~ Yavu.cl 2016.</spam>
+						<br><span> - Copyright© ~ Yavu.cl 2016 - </span>
 					</div>
 				</div><!-- /div row -->
 			</footer><!-- /footer -->
