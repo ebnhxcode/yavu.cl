@@ -567,7 +567,7 @@
   /* width and height can be anything, as long as they're equal */
 }
 .softText {
-  font-size: 0.8em;
+  font-size: 0.89em;
   color: #3D7700;
 
 }
@@ -576,6 +576,12 @@
   color: #8c8c8c;
 
 }
+.softText-descriptions-middle {
+  font-size: .92em;
+  color: #8c8c8c;
+
+}
+
 
 .status-image-load {
   color: #444444;

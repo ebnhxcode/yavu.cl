@@ -204,9 +204,9 @@ class SorteoController extends Controller{
         dd(Carbon::now().$sorteo->created_at);
         */
 
-      return view('sorteos.show', ['sorteo' => $this->sorteo, 'winners' => $this->sorteo->winners()->get(), 'userSession' => $this->user]);
+      return view('sorteos.show', ['sorteo' => $this->sorteo, 'winners' => $this->sorteo->winners()->get(), 'userSession' => $this->user, 'sorteos'=>Sorteo::orderByRaw('RAND()')->where('estado_sorteo','Activo')->get()]);
     }else{
-      return view('sorteos.show', ['sorteo' => $this->sorteo, 'userSession' => $this->user]);
+      return view('sorteos.show', ['sorteo' => $this->sorteo, 'userSession' => $this->user,'sorteos'=>Sorteo::orderByRaw('RAND()')->where('estado_sorteo','Activo')->get()]);
     }
 
   }
