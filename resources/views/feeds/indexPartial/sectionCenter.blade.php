@@ -132,7 +132,7 @@
             @if($companyStatus->statusRewarded->id!=Auth::user()->get()->id)
               @if($cs = $companyStatus->getUserInteraction($userSession->id)->get())
 
-                <span onclick='Interactuar(this.id)' id='estado_{!! $companyStatus->id !!}' value='e{!! $companyStatus->companyPostAuthor->id !!}' class="btn {!! count($cs)<1?'btn-warning out-yavucoin':'btn-default out-yavucoin' !!} btn-xs" >
+                <span onclick='Interactuar(this.id)' id='estado_{!! $companyStatus->id !!}' value='e{!! $companyStatus->companyPostAuthor->id !!}' class="btn {!! count($cs)<1?' out-yavucoin':' out-yavucoin' !!} btn-xs" >
 
                   {!! count($cs)<1?'<span style=" font-family: yavu_font;color: #ffcc00;">J</span>':'<span style=" font-family: yavu_font;color: #585858;">I</span>' !!}
 

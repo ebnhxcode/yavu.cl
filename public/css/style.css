@@ -531,7 +531,7 @@
   -moz-transform: rotate(0deg);
   padding: 0px 18px 0px 18px;
   border: solid 3px #FFF;
-  font-size: 3em;
+  font-size: 2em;
   -webkit-transition: 0.5s;
 
   border-radius: 50px 50px 50px 50px;
@@ -546,7 +546,7 @@
   padding: 0px 18px 0px 18px;
   border: solid 2px #FFF;
   font-size: 3em;
-  -webkit-transition: 0.5s;
+  -webkit-transition: 0.8s;
 
   border-radius: 50px 50px 50px 50px;
 
@@ -555,10 +555,10 @@
 }
 .circle-yavucoin {
   font-family: yavu_font;
-  font-size: 3em;
-  padding: 21px 20px 21px 21px;
+  font-size: 2.8em;
+  padding: 2px 2px 2px 2px;
   border: solid 3px #FFF;
-  -webkit-transition: 0.5s;
+  -webkit-transition: 0.8s;
   /*
   border-radius: 50px 50px 50px 50px;
 
