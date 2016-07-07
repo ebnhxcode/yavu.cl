@@ -9,16 +9,19 @@
 
       <div id="" class="list-group-item ">
         <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <b>{!! $sorteo->nombre_sorteo !!}</b>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+
+          </div><!-- /div .col-lg4-md4-sm4-xs4 -->
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <td>{!! $sorteo->nombre_empresa !!}</td>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-            <a class="btn btn-success btn-sm" href="{!!URL::to('/sorteos/'.$sorteo->id)!!}">Ver sorteo</a>
-          </div>
-        </div>
+
+          </div><!-- /div .col-lg4-md4-sm4-xs4 -->
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <a class="btn btn-success btn-sm" style="" href="{!!URL::to('/sorteos/'.$sorteo->id)!!}">Ver sorteo</a>
+
+          </div><!-- /div .col-lg4-md4-sm4-xs4 -->
+        </div><!-- /div .row -->
 
 
 
