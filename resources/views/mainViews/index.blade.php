@@ -3,8 +3,8 @@
 @extends('layouts.front')
 @section('content')
 @include('layouts.bannerFront')
-<div class="jumbotron">
-  <div id="contentMiddle">
+<div class="jumbotron section-a">
+  <div class="contentMiddle">
     <div class="row">
       <style>
         body {
@@ -32,58 +32,26 @@
 
   </div><!-- /div #contentMiddle -->
 
-  <div id="contentMiddle">
-
-    {{--
-    <div align="center" class="row">
-      <img src="/img/contacto01.png" width="100%" alt="" style="border-radius: 5px 5px 0px 0px;" />
-      <div align="center" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 div-hover-front" style="padding-bottom: 20px; padding-top: 20px; border-radius: 0px 0px 5px 5px;">
-        <h1>Y... ¿Qué es <img src="/img/yavu005.png" alt=""/> ?</h1>
-      </div><!-- /div .col-lg12-md12-sm12-xs12 -->
-    </div><!-- /div .row -->
-    --}}
-
-    {{--
+  <div class="contentMiddle">
     <!-- Primera sección -->
-      @include('mainViews.indexPartial.firstSection')
+    @include('mainViews.indexPartial.firstSection')
     <!-- End Primera sección -->
-
-
-    <!-- Segunda sección -->
-      @include('mainViews.indexPartial.secondSection')
-    <!-- End Segunda sección -->
-
-    <!-- Tercera sección -->
-      @include('mainViews.indexPartial.thirdSection')
-    <!-- End Tercera sección -->
-
-    --}}
-
-    <!-- Registro entre medio -->
-      {{--
-      <div align="center" class="row" style="padding-bottom: 80px;">
-
-        <a align="center" data-toggle="modal" data-target="#gridSystemModal" role="button" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 btn btn-success">
-          <h1>¡Registrate!</h1>
-        </a><!-- /div .col-lg12-md12-sm12-xs12 -->
-
-      </div><!-- /div .row -->
-      --}}
-
-    <!-- End Registro entre medio -->
-
-    <!-- Cuarta sección -->
-
-      @include('mainViews.indexPartial.fourthSection')
-
-
-    <!-- End Cuarta sección -->
-
-    <!-- Fin Sección de las 3 imagenes -->
-
   </div><!-- /div #fullWidth -->
 </div><!-- /div .jumbotron -->
-
+<div class="jumbotron section-b">
+  <div class="contentMiddle">
+    <!-- Segunda sección -->
+    @include('mainViews.indexPartial.secondSection')
+    <!-- End Segunda sección -->
+  </div>
+</div>
+<div class="jumbotron section-a">
+  <div class="contentMiddle">
+    <!-- Tercera sección -->
+    @include('mainViews.indexPartial.thirdSection')
+    <!-- End Tercera sección -->
+  </div>
+</div>
 @if(!Auth::user()->check())
   @include('mainViews.indexPartial.modalRegister')
 @endif
