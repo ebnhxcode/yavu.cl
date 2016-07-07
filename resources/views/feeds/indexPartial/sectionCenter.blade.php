@@ -170,26 +170,26 @@
       </div><!-- /div .row -->
     </div><!-- /div .list-group-item #publicacion+$companyStatus->id -->
     @if($key == 4)
-      <div class="list-group-item div-hover">
+      <div class="list-group-item">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <a class="thumbnail">
               <img class="img-responsive" id="ImagenPortada" src="/img/yavu015.png" alt="..." style="height: 170px;">
-            </a>
+            </a><!-- /a .thumbnail -->
           </div><!-- /div .col-md12-sm12-xs12 -->
-        </div>
-      </div>
+        </div><!-- /div .row -->
+      </div><!-- /div .list-group-item -->
     @endif
     @if($key == 9)
-      <div class="list-group-item div-hover">
+      <div class="list-group-item">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <a class="thumbnail">
               <img class="img-responsive" id="ImagenPortada" src="/img/yavu015.png" alt="..." style="height: 170px;">
-            </a>
+            </a><!-- /a .thumbnail -->
           </div><!-- /div .col-md12-sm12-xs12 -->
-        </div>
-      </div>
+        </div><!-- /div .row -->
+      </div><!-- /div .list-group-item -->
     @endif
   @endforeach
 
