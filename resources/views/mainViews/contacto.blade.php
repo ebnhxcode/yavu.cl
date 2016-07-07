@@ -1,5 +1,5 @@
 @section('favicon') {!!Html::favicon('favicons/changeFaviconNameHere.png')!!} @stop
-@section('title') Contact @stop
+@section('title') Contacto @stop
 {!!Html::script('js/jquery.js')!!}
 @extends('layouts.front')
 @section('content')
