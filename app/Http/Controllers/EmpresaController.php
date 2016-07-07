@@ -240,21 +240,41 @@ class EmpresaController extends Controller{
   public function BuscarEmpresas(Request $request){
 
     $nombre = addslashes($request->nombre);
+    $opciones = explode(" ",$request->nombre);
+
+    $results = Empresa::all();
+    foreach($opciones as $key => $name){
+      if($key == 0){
+        $results->where('nombre', 'like', '%'.$name.'%');
+      }
+      $results->where('ciudad', 'like', '%'.$name.'%');
+      $results->where('descripcion', 'like', '%'.$name.'%');
+      $results->where('direccion', 'like', '%'.$name.'%');
+    }
+    return view('empresas.index', ['empresas' => $results->paginate(1), 'paginator' => false ,'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(),'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(),'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user]);
+
+
+    /*
     if($nombre!=''){
-      $empresas = Empresa::where('nombre', 'like', '%'.$nombre.'%')
-        ->where('ciudad', '=', $request->ciudad)
+      $empresas = Empresa::where('ciudad', '=', $request->ciudad)
+        ->whereIn('descripcion', 'like', '%'.$nombre.'%')
+        //->orwhere('direccion', 'like', '%'.$nombre.'%')
+        //->orwhere('nombre', 'like', '%'.$nombre.'%')
         ->paginate(20);
 
       if(count($empresas)<1){
         Session::flash('message-warning', 'No se encontraron resultados de <b>'.$request->nombre.'</b> en <b>'.$request->ciudad.'</b>');
         return Redirect::to('/empresas');
+      }else{
+        Session::flash('message-warning', 'se encontraron '.count($empresas).' resultados');
+        return view('empresas.index', ['empresas' => $empresas, 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(),'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(),'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user]);
       }
 
-      return view('empresas.index', ['empresas' => $empresas, 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(),'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(),'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user]);
-
     }else{
+      Session::flash('message-warning', 'No se encontraron resultados');
       return $this->index();
     }
+    */
 
     /*
     if($request->nombre!=''){

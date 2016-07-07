@@ -21,7 +21,9 @@
         @include('empresas.indexPartial.sectionRight')
       </div></div><!-- /div col-lg3-md3-sm12-xs12 -->
 
-      <div class="text-center">{!!$empresas->render()!!}</div>
+      @if(!isset($paginator))
+        <div class="text-center">{!!$empresas->render()!!}</div>
+      @endif
     </div><!-- /div .row -->
 
 	</div><!-- /contentMiddle -->
