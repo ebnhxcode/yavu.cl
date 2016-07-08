@@ -251,7 +251,7 @@
 	});
 
 	function ValidarRut(rut){
-		var route = "http://186.64.123.143/validarrutempresa/"+rut+"";
+		var route = "http://yavu.cl/validarrutempresa/"+rut+"";
 		document.getElementById('FormEmpresa').onsubmit = function() {
 		    return false;
 		}
