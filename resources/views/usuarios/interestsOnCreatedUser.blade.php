@@ -43,7 +43,7 @@
     $(".category").click(function(){
       var selectedCategory = $('#'+this.id);
       var token = $("#token").val();
-      var route = "http://localhost:8000/agregarinteres";
+      var route = "http://yavu.cl/agregarinteres";
       $.ajax({
         url: route,
         headers: {'X-CSRF-TOKEN': token},
