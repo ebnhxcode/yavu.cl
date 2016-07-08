@@ -5,7 +5,7 @@
 			<div class="list-group-item">
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
-            <img class='media-object' src='/img/users/{!! ($companyProfileImage = $sorteo->companyAuthorRaffle->imagen_perfil)?$companyProfileImage:'usuario_nuevo.png' !!}' data-holder-rendered='true' style='width: 36px; height: 36px; border-radius: 10%; float:left;'/>
+            <img class='media-object' src='/img/users/{!! ($companyProfileImage = $sorteo->companyAuthorRaffle->imagen_perfil)?$companyProfileImage:'usuario_nuevo.png' !!}' data-holder-rendered='true' style='width: 48px; height: 48px; border-radius: 10%; float:left;'/>
 					</div><!-- /div .col-xs12-sm12-md1-lg1 -->
 					<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
 						<div class="row">
