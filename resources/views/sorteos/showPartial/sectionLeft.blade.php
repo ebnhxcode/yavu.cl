@@ -12,19 +12,28 @@
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <b>{!! $sorteo->nombre_sorteo !!}</b>
 
-          </div><!-- /div .col-lg4-md4-sm4-xs4 -->
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <td>{!! $sorteo->nombre_empresa !!}</td>
 
-          </div><!-- /div .col-lg4-md4-sm4-xs4 -->
+            <span class="text-info" style="float: right;font-size: 0.8em;">
+              <small><a href="/empresas/{!! $sorteo->empresa_id !!}">{!! $sorteo->nombre_empresa !!}</a></small>
+            </span>
+
+          </div><!-- /div .col-lg12-md12-sm12-xs12 -->
+
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="softText-descriptions">
+              {!! (($participants = $sorteo->participants()->count())>0)?$participants:'Sin' !!} participantes <br>
+              Premiaci&oacute;n dentro de <abbr class='timeago text-danger' id='timeago{!! $sorteo->id !!}' value='{!! $sorteo->fecha_inicio_sorteo !!}' title='{!! $sorteo->fecha_inicio_sorteo !!}'>{!! $sorteo->fecha_inicio_sorteo !!}</abbr>
+            </div>
+          </div><!-- /div .col-lg12-md12-sm12-xs12 -->
+          <hr>
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <a style="float:right;" class="btn btn-success btn-xs" style="" href="{!!URL::to('/sorteos/'.$sorteo->id)!!}">
               <img src="{!! asset('img/yavu019.png') !!}" width="20" alt=""/>
               Ver sorteo
             </a>
-          </div><!-- /div .col-lg4-md4-sm4-xs4 -->
+          </div><!-- /div .col-lg12-md12-sm12-xs12 -->
         </div><!-- /div .row -->
-        
+
       {{--<table id="UserList" class="table table-hover" style="font-size: 0.8em;">
         <thead>
         <th>Nombre</th>

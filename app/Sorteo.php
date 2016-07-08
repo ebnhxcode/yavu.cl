@@ -37,6 +37,9 @@ class Sorteo extends Model{
     $this->attributes['fecha_inicio_sorteo'] = ;
   }
 */
+  public function participants(){
+    return $this->hasMany(ParticipanteSorteo::class, 'sorteo_id')->select('sorteo_id');
+  }
   public function participante_sorteos(){
     return $this->hasMany('yavu\ParticipanteSorteo', 'sorteo_id');
   }
