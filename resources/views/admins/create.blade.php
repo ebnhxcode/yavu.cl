@@ -3,7 +3,7 @@
 @extends('layouts.frontadm')
 @section('content')
 <div class="jumbotron">
-	<div id="contentMiddle">
+	<div class="contentMiddle">
 	<!--<h1>Registro de Admins</h1>-->
 	</div>
 	<div id="contentIn">

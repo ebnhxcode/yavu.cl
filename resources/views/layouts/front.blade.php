@@ -98,8 +98,10 @@
 						<div class="navbar-brand" align="center">
 							<small>
 								<!-- <img width="" src="/img/newGraphics/neo_tickets02_16x16.png" alt=""> -->
+
 								<span data-toggle="tooltip" data-placement="left" title="Yavucoins!" style="font-family: yavu_font;font-size: 1.6em;color: #FFE955;">J</span>
 								<span id="" style="float:right;" class="label label-warning CantidadCoins"></span>
+
 							</small>
 						</div>
 						<div class="navbar-brand" align="center">
@@ -108,8 +110,10 @@
 
 							<small>
 								<!-- <img width="22px" src="/img/newGraphics/neo_tickets01_32x32.gif" alt=""> -->
-                <span data-toggle="tooltip" data-placement="left" title="Tickets!" style="font-family: yavu_font;font-size: 1.6em;color:#57E5DB;">E</span>
-								<span id="CantidadTickets" style="float:right;" class="label label-info"></span>
+								<a href="/tickets">
+									<span data-toggle="tooltip" data-placement="left" title="Tickets!" style="font-family: yavu_font;font-size: 1.6em;color:#57E5DB;">E</span>
+									<span id="CantidadTickets" style="float:right;" class="label label-info"></span>
+								</a>
 							</small>
 						</div>
 
@@ -268,8 +272,8 @@
 			</div><!-- /container -->
 		</nav><!-- /navbar-inverse -->
 		@if(Auth::user()->check())
-			<div class="panel panel-default" style="margin-bottom: 0px;">
-				<div class="panel-body visible-xs-block">
+			<div class="panel panel-default fijar" style="margin-bottom: 0px;  z-index: 1100; width: 100%;">
+				<div class="panel-body visible-xs-block" style=" padding: 8px 15px 0px 10px;">
 					<div class="row">
 						<div class="col-xs-10">
 							<h4>@yield('title')</h4>

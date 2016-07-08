@@ -18,17 +18,13 @@
 
           </div><!-- /div .col-lg4-md4-sm4-xs4 -->
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <a class="btn btn-success btn-sm" style="" href="{!!URL::to('/sorteos/'.$sorteo->id)!!}">Ver sorteo</a>
-
+            <a style="float:right;" class="btn btn-success btn-xs" style="" href="{!!URL::to('/sorteos/'.$sorteo->id)!!}">
+              <img src="{!! asset('img/yavu019.png') !!}" width="20" alt=""/>
+              Ver sorteo
+            </a>
           </div><!-- /div .col-lg4-md4-sm4-xs4 -->
         </div><!-- /div .row -->
-
-
-
-
-
-
-
+        
       {{--<table id="UserList" class="table table-hover" style="font-size: 0.8em;">
         <thead>
         <th>Nombre</th>

@@ -6,7 +6,7 @@
 @extends('layouts.front')
 @section('content')
 <div class='jumbotron'>
-	<div id='contentMiddle'>
+	<div class='contentMiddle'>
 		<h4 style='margin-top:-40px;'></h4>
 		<div class='row'>
 			<div class='col-xs-12 col-sm-3 col-md-3 col-lg-3'>

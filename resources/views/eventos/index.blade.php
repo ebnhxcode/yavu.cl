@@ -3,7 +3,7 @@
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
-  <div id="contentMiddle">
+  <div class="contentMiddle">
     @include('alerts.allAlerts')
       <table class="table">
         <thead>

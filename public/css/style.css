@@ -209,6 +209,13 @@
   }
 }
 
+@media (max-width: 767px) {
+  .fijar {
+    position:fixed;
+  }
+}
+
+
 
 .menu-fixed {
   position:fixed;

@@ -5,7 +5,7 @@
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
-	<div id="contentMiddle">
+	<div class="contentMiddle">
 		@include('alerts.allAlerts')
 		<!--
 		<div class="" style="font-size: 3em;">

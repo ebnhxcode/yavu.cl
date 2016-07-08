@@ -14,7 +14,7 @@
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
-	<div id="contentMiddle">
+	<div class="contentMiddle">
     @include('alerts.allAlerts')
 		@foreach($empresa as $e)
 			<div class="row" style="margin-top:-35px;">

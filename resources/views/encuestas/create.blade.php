@@ -3,7 +3,7 @@
 @extends('layouts.front')
 @section('content')
 <div class="jumbotron">
-	<div id="contentMiddle">
+	<div class="contentMiddle">
 		@include('alerts.allAlerts')
 		<!--<h4>Crear una nueva encuesta</h4>-->
 		<div class="row">
