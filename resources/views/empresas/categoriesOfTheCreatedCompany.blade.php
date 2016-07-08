@@ -41,7 +41,7 @@
     $(".category").click(function(){
       var selectedCategory = $('#'+this.id);
       var token = $("#token").val();
-      var route = "http://localhost:8000/agregarcategoria";
+      var route = "http://186.64.123.143/agregarcategoria";
       $.ajax({
         url: route,
         headers: {'X-CSRF-TOKEN': token},
@@ -54,7 +54,7 @@
         success:function(result){
 
           if(result[0]>2){
-            window.location.href = "http://localhost:8000/dashboard";
+            window.location.href = "http://186.64.123.143/dashboard";
           }
           if(result[0]==0){
             $(".category").removeClass('list-group-item-success').fadeIn();
