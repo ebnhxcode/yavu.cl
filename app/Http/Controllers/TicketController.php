@@ -6,8 +6,10 @@ use yavu\Http\Controllers\Controller;
 use yavu\Http\Requests\TicketCreateRequest;
 use yavu\RegistroCoin;
 use yavu\Ticket;
+use yavu\BannerData;
 use yavu\User;
-use yavu\Pop;
+use yavu\Sorteo;
+use yavu\Empresa;
 use Session;
 use Carbon\Carbon;
 use Auth;
@@ -63,7 +65,7 @@ class TicketController extends Controller{
     for($n=1;$n<10;$n+=1){
       $cantidadtickets += [$n*5=>$n*5];
     }
-    return view('tickets.index', compact('tickets'), compact('cantidadtickets'));
+    return view('tickets.index', ['tickets' => $tickets, 'cantidadtickets' => $cantidadtickets, 'sorteos'=>Sorteo::orderByRaw('RAND()')->where('estado_sorteo','Activo')->get(), 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user, 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get()]);
   }
   public function show($id){
   }

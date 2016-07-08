@@ -15,6 +15,8 @@
   </div>
 --}}
 </div> <!-- /div .list group -->
-@if(count($bannersRandom)>0)
-  @include('listarBanner.listaBanner')
-@endif
+<div class="visible-lg visible-md">
+  @if(count($bannersRandom)>0)
+    @include('listarBanner.listaBanner')
+  @endif
+</div>
