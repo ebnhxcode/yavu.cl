@@ -272,7 +272,7 @@
 			</div><!-- /container -->
 		</nav><!-- /navbar-inverse -->
 		@if(Auth::user()->check())
-			<div class="panel panel-default fijar" style="margin-bottom: 0px;  z-index: 1100; width: 100%;">
+			<div class="panel panel-default fijar" style="margin-bottom: 0px;  z-index: 1000; width: 100%;">
 				<div class="panel-body visible-xs-block" style=" padding: 8px 15px 0px 10px;">
 					<div class="row">
 						<div class="col-xs-10">
