@@ -114,7 +114,11 @@
             </button><!-- /div .btn .btn-default .btn-xs .dropdown-toggle -->
 
             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+              @if($userSession->id==$companyStatus->user_id)
+                <li><a href='/feeds/{!!$companyStatus->id!!}/edit'>Editar publicaci&oacute;n</a></li>
+              @endif
               <li><a href="{!! URL::to('/empresas/'.$companyStatus->empresa_id.'/') !!}">Ver perfil</a></li>
+
             </ul><!-- /ul .dropdown-menu -->
 
           </div><!-- /div .dropup -->
