@@ -69,7 +69,7 @@
 			}
 		</style>
 	</head><!--/head -->
-	<body>
+	<body id="body">
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
