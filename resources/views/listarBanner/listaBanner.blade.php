@@ -1,46 +1,44 @@
 <!-- Banner Random -->
 <div class="list-group">
   <div class="list-group-item">
-    <span class="glyphicon glyphicon-star"></span>
-    <span style="font-size: 1.8em;" class="glyphicon glyphicon-star"></span>
-    Empresas m&aacute;s seguidas
-  </div>
+    <small>PUBLICIDAD</small>
+  </div><!-- /div .list-group-item -->
+
   <div style="padding: 9px 9px 9px 9px;" class="list-group-item">
-    <div class="row">
-      <div id="EmpresaListThumbBanner">
-        <div class="row">
-          @foreach($bannersRandom as $banner)
-            <div class="col-xs-12 col-sm-4 col-md-12 col-lg-12 text-center">
+    <div id="EmpresaListThumbBanner">
+      <div class="row">
+        @foreach($bannersRandom as $key => $banner)
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><!-- text-center -->
 
-              <a class="thumbnail">
-                <img class="img-responsive" id="ImagenPortada" src="{!! ($banner->banner!="")?'/img/users/'.$banner->banner:"/img/users/banner.png" !!}" alt="..." style="height: 170px;">
-              </a>
-              <div class="caption">
+            <div class="thumbnail">
+              <img class="img-responsive" id="ImagenPortada" src="{!! ($banner->banner!="")?'/img/users/'.$banner->banner:"/img/users/banner.png" !!}" alt="..." style="height: 170px;">
 
-                <p>
-                <div class="row">
-                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="caption softText-descriptions-middle">
+                <a href="/empresas/{!! $banner->empresa_id !!}">
+                  <b>{!! $banner->companyName->nombre !!}</b><br>
+                </a>
 
-                    @foreach($banner->linksBannerData as $lbd)
-                      <a class="btn-link" href="/empresa/{!!$lbd->link!!}">
-                        {!! $lbd->titulo_link!!}
-                      </a><!-- /div .btn-link -->
-                    @endforeach
-                    <h6>{!! $banner->descripcion_banner !!}</h6>
+                <div class="softText-descriptions">
+                  <small>Enlaces publicitarios</small>
+                </div>
+                @foreach($banner->linksBannerData as $lbd)
+                  <a class="btn-link" href="{!!$lbd->link!!}">
+                    {!! $lbd->titulo_link!!}
+                  </a><!-- /div .btn-link -->
+                  <br>
+                @endforeach
+                <br>
+                <div class="softText-descriptions">
+                  <small>Descripci&oacute;n</small>
+                </div>
+                <h6>{!! $banner->descripcion_banner !!}</h6>
+              </div><!-- /div .caption -->
+            </div><!-- /div .thumbnail -->
 
-                  </div><!-- /div .col-md12-sm12-xs12 -->
-                </div><!-- /div .row -->
-                </p>
-
-              </div>
-
-            </div><!-- /div .col-md12-sm12-xs12 -->
-
-          @endforeach
-        </div><!-- /div .row -->
-      </div> <!-- /div  -->
-    </div><!-- /div .row -->
+          </div><!-- /div .col-md12-sm12-xs12 -->
+        @endforeach
+      </div><!-- /div .row -->
+    </div> <!-- /div #EmpresaListThumbBanner -->
   </div> <!-- /div .list-group-item styled -->
-  <small>Ads via <a class="btn-link" href="http://localhost:8000/">Yavü</a></small>
 </div><!-- /div .list-group -->
 

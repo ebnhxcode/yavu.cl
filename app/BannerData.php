@@ -20,5 +20,9 @@ class BannerData extends Model
 
   }
 
+  public function companyName(){
+    return $this->belongsTo(Empresa::class, 'empresa_id')->select('nombre');
+  }
+
  
 }
