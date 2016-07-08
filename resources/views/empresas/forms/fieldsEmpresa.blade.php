@@ -71,7 +71,7 @@
 
 			<div class="list-group-item">
 				<div class="form-group has-feedback has-feedback-left">
-					(<strong><small><span class="requerido">Solo jpg, png</span></small></strong>) {!!Form::label('Cambiar logo: ')!!}<span id="Perfil" ></span><br>
+					(<strong><small><span class="requerido">Solo jpg, png</span></small></strong>) {!!Form::label('Logo: ')!!}<span id="Perfil" ></span><br>
 					<div>
 						<span class="btn-file btn-sm">
 							Buscar logo{!!Form::file('imagen_perfil', ['id' => 'imagen_perfil',  'maxlength' => '255', 'size' => '2048'])!!}
