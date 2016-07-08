@@ -515,11 +515,11 @@ class UrlGeneratorTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('../twig-is-great/', $generator->generate('article',
             array('author' => 'fabien', 'article' => 'twig-is-great'), UrlGeneratorInterface::RELATIVE_PATH)
         );
-        $this->assertSame('../../bernhard/forms-are-great/', $generator->generate('article',
-            array('author' => 'bernhard', 'article' => 'forms-are-great'), UrlGeneratorInterface::RELATIVE_PATH)
+        $this->assertSame('../../bernhard/indexPartial-are-great/', $generator->generate('article',
+            array('author' => 'bernhard', 'article' => 'indexPartial-are-great'), UrlGeneratorInterface::RELATIVE_PATH)
         );
-        $this->assertSame('//bernhard.example.com/app.php/forms-are-great', $generator->generate('host',
-            array('author' => 'bernhard', 'article' => 'forms-are-great'), UrlGeneratorInterface::RELATIVE_PATH)
+        $this->assertSame('//bernhard.example.com/app.php/indexPartial-are-great', $generator->generate('host',
+            array('author' => 'bernhard', 'article' => 'indexPartial-are-great'), UrlGeneratorInterface::RELATIVE_PATH)
         );
         $this->assertSame('https://example.com/app.php/bernhard/blog', $generator->generate('scheme',
                 array('author' => 'bernhard'), UrlGeneratorInterface::RELATIVE_PATH)

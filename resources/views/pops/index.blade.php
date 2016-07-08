@@ -13,16 +13,16 @@
 				@include('alerts.allAlerts')
 			</div><!-- /div .col-md12-sm12-xs12 -->
 
-			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-				@include('pops.forms.panelLeft')
-			</div><!-- /div .col-md4-sm12-xs12 -->
+			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+				@include('pops.indexPartial.panelLeft')
+			</div><!-- /div .col-md3-sm12-xs12 -->
 
-			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
-				@include('pops.forms.panelCenter')
-			</div><!-- /div .col-md5-sm12-xs12 -->
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+				@include('pops.indexPartial.panelCenter')
+			</div><!-- /div .col-md6-sm12-xs12 -->
 
 			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-				@include('pops.forms.panelRight')
+				@include('sorteos.indexPartial.sectionRight')
 			</div><!-- /div .col-md3-sm12-xs12 -->
 
 		</div><!-- /div .row -->

@@ -54,7 +54,7 @@ interface RequestInterface extends MessageInterface
      * changed request target.
      *
      * @link http://tools.ietf.org/html/rfc7230#section-2.7 (for the various
-     *     request-target forms allowed in request messages)
+     *     request-target indexPartial allowed in request messages)
      * @param mixed $requestTarget
      * @return self
      */

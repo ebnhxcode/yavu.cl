@@ -10,7 +10,7 @@
 			</div><!-- /div col-md12-sm12-xs12 -->
 			<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
 				{!!Form::model($interes, ['method'=>'PUT', 'route' => ['intereses.update', $interes->id] ])!!}
-				@include('intereses.forms.fieldsInteres')
+				@include('indexPartial')
 			</div><!-- /div col-md8-sm12-xs12 -->
 			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 				<div class="list-group">

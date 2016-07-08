@@ -430,7 +430,7 @@ if (! function_exists('logger')) {
 
 if (! function_exists('method_field')) {
     /**
-     * Generate a form field to spoof the HTTP verb used by forms.
+     * Generate a form field to spoof the HTTP verb used by indexPartial.
      *
      * @param  string  $method
      * @return string

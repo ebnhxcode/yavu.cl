@@ -32,7 +32,7 @@ use Symfony\Component\CssSelector\XPath\Translator;
  *
  * All rights reserved.
  *
- * Redistribution and use in source and binary forms, with or without
+ * Redistribution and use in source and binary indexPartial, with or without
  * modification, are permitted provided that the following conditions are
  * met:
  *

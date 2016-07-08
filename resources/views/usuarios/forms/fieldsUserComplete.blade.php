@@ -2,7 +2,7 @@
 	<div class="container">
 
     <!-- Información básica -->
-			{{--@include('usuarios.forms.fieldsUserCompletePartial.basicFields')--}}
+			{{--@include('usuarios.indexPartial.fieldsUserCompletePartial.basicFields')--}}
     <!-- End Información básica -->
 
 

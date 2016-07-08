@@ -27,7 +27,7 @@
 				@include('feeds.indexPartial.sectionRight')
 			</div><!-- /div .col-md3-sm12-xs12 -->
 
-			<!-- variables hidden para forms -->
+			<!-- variables hidden para indexPartial -->
 			<input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
 			{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
 

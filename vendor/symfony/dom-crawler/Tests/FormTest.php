@@ -107,7 +107,7 @@ class FormTest extends \PHPUnit_Framework_TestCase
         $inputElements = $dom->getElementsByTagName('input');
         $buttonElements = $dom->getElementsByTagName('button');
 
-        // Tests if submit buttons are correctly assigned to forms
+        // Tests if submit buttons are correctly assigned to indexPartial
         $form1 = new Form($buttonElements->item(1), 'http://example.com');
         $this->assertSame($dom->getElementsByTagName('form')->item(0), $form1->getFormNode(), 'HTML5-compliant form attribute handled incorrectly');
 
@@ -128,7 +128,7 @@ class FormTest extends \PHPUnit_Framework_TestCase
         $form1 = new Form($inputElements->item(3), 'http://example.com');
         $form2 = new Form($buttonElements->item(0), 'http://example.com');
 
-        // Tests if form values are correctly assigned to forms
+        // Tests if form values are correctly assigned to indexPartial
         $values1 = array(
             'apples' => array('1', '2'),
             'form_name' => 'form-1',

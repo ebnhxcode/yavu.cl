@@ -293,7 +293,7 @@
 
     if (data.resetText == null) $el.data('resetText', $el[val]())
 
-    // push to event loop to allow forms to submit
+    // push to event loop to allow indexPartial to submit
     setTimeout($.proxy(function () {
       $el[val](data[state] == null ? this.options[state] : data[state])
 

@@ -104,7 +104,7 @@ class FormBuilder
 
     // We need to extract the proper method from the attributes. If the method is
     // something other than GET or POST we'll use POST since we will spoof the
-    // actual method since forms don't support the reserved methods in HTML.
+    // actual method since indexPartial don't support the reserved methods in HTML.
     $attributes['method'] = $this->getMethod($method);
 
       $attributes['action'] = $this->getAction($options);
@@ -113,7 +113,7 @@ class FormBuilder
 
     // If the method is PUT, PATCH or DELETE we will need to add a spoofer hidden
     // field that will instruct the Symfony request to pretend the method is a
-    // different method than it actually is, for convenience from the forms.
+    // different method than it actually is, for convenience from the indexPartial.
     $append = $this->getAppendage($method);
 
       if (isset($options['files']) && $options['files']) {
@@ -122,7 +122,7 @@ class FormBuilder
 
     // Finally we're ready to create the final form HTML field. We will attribute
     // format the array of attributes. We will also add on the appendage which
-    // is used to spoof requests for this PUT, PATCH, etc. methods on forms.
+    // is used to spoof requests for this PUT, PATCH, etc. methods on indexPartial.
     $attributes = array_merge(
 
       $attributes, array_except($options, $this->reserved)
@@ -521,7 +521,7 @@ class FormBuilder
   {
       // When building a select box the "value" attribute is really the selected one
     // so we will use that when checking the model or session for a value which
-    // should provide a convenient method of re-populating the forms on post.
+    // should provide a convenient method of re-populating the indexPartial on post.
     $selected = $this->getValueAttribute($name, $selected);
 
       $options['id'] = $this->getIdAttribute($name, $options);

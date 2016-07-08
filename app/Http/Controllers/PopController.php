@@ -7,6 +7,9 @@ use Session;
 use Redirect;
 use yavu\Pop;
 use yavu\RegistroCoin;
+use yavu\BannerData;
+use yavu\Sorteo;
+use yavu\Empresa;
 use Auth;
 use yavu\User;
 use Illuminate\Routing\Route;
@@ -23,7 +26,7 @@ class PopController extends Controller{
     //return $this->user;
   }
   public function index(){
-    return view('pops.index', ['pops' => $this->user->pops()->paginate(10)]);
+    return view('pops.index', ['pops' => $this->user->pops()->paginate(10), 'sorteos'=>Sorteo::orderByRaw('RAND()')->where('estado_sorteo','Activo')->get(), 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user, 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get()]);
   }
   public function CargarPops($idUltima, $user_id, $tipo){
     if($tipo == 'todas'){
