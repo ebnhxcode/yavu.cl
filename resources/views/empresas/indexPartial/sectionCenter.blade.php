@@ -43,9 +43,14 @@
 
             </div>
             <br/>
+            @if($empresa->sorteos()->count()>0)
             <div class="btn-group" role="group" aria-label="...">
-              <a href="{!! URL::to('/empresa/'.$empresa->nombre.'/sorteos') !!}" class="btn btn-success btn-xs">Ver sorteos</a>
+              <a href="{!! URL::to('/empresa/'.$empresa->nombre.'/sorteos') !!}" class="btn btn-success btn-xs">
+                <img src="{!! asset('img/yavu019.png') !!}" width="20" alt=""/>
+                Ver sorteos
+              </a>
             </div><!-- /div .btn-group -->
+            @endif
 
             @if(Auth::user()->get()->id == $empresa->user_id)
               <ul class="dropdown-menu">
