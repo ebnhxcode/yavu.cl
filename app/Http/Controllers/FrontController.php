@@ -35,4 +35,7 @@ class FrontController extends Controller{
   public function yavucoins(){
     return view('mainViews.yavucoins');
   }
+  public function faq(){
+    return view('mainViews.faq');
+  }
 }
