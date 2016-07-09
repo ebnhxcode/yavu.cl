@@ -5,6 +5,10 @@ Route::get('i', 'UserController@selectInterestsForCreatedUser');
 Route::post('agregarinteres', 'UserController@addInterest');
 /* End Esto se borra */
 
+/*Gestión rutas públicas*/
+Route::get('sorteos/ended', 'SorteoController@ended');
+/*Gestión rutas públicas*/
+
 /*Gestión de cors*/
 Route::get('breweries', ['middleware' => 'cors', function(){return \Response::json(\yavu\Brewery::with('beers', 'geocode')->paginate(10), 200);}]);
 /*Gestión de cors*/
@@ -106,6 +110,7 @@ Route::group(['middleware' => 'user'], function(){
 
   Route::resource('sorteos', 'SorteoController');
   Route::get('listasorteos', 'SorteoController@ListaSorteos');
+
   Route::get('buscarsorteo/{nombre?}', 'SorteoController@BuscarSorteos');
   Route::get('canjearticket/{user_id}', 'SorteoController@CanjearTicket')->where('user_id', '[0-9]+');
   Route::get('contarticketsensorteo/{id}', 'SorteoController@ContarTicketsEnSorteo')->where('user_id', '[0-9]+');

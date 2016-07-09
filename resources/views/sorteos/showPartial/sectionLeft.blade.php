@@ -10,7 +10,7 @@
       <div id="" class="list-group-item ">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <b>{!! $sorteo->nombre_sorteo !!}</b>
+            <a href="/sorteos/{!! $sorteo->id !!}"><b>{!! $sorteo->nombre_sorteo !!}</b></a>
 
 
             <span class="text-info" style="float: right;font-size: 0.8em;">
@@ -21,7 +21,7 @@
 
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="softText-descriptions">
-              {!! (($participants = $sorteo->participants()->count())>0)?$participants:'Sin' !!} participantes <br>
+              {!! (($participants = $sorteo->participants()->count())>0)?$participants:'Sin' !!} opciones en tickets <br>
               Premiaci&oacute;n dentro de <abbr class='timeago text-danger' id='timeago{!! $sorteo->id !!}' value='{!! $sorteo->fecha_inicio_sorteo !!}' title='{!! $sorteo->fecha_inicio_sorteo !!}'>{!! $sorteo->fecha_inicio_sorteo !!}</abbr>
             </div>
           </div><!-- /div .col-lg12-md12-sm12-xs12 -->
@@ -29,7 +29,7 @@
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <a style="float:right;" class="btn btn-success btn-xs" style="" href="{!!URL::to('/sorteos/'.$sorteo->id)!!}">
               <img src="{!! asset('img/yavu019.png') !!}" width="20" alt=""/>
-              Ver sorteo
+              ¡<small>Ir a ver el sorteo</small>!
             </a>
           </div><!-- /div .col-lg12-md12-sm12-xs12 -->
         </div><!-- /div .row -->

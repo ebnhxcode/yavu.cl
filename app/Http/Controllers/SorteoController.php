@@ -31,6 +31,7 @@ class SorteoController extends Controller{
       $this->user = User::findOrFail(Auth::user()->get()->id);
     }
 
+
   }
 
   public function BuscarSorteos($nombre){
@@ -117,6 +118,12 @@ class SorteoController extends Controller{
     Session::flash('message-warning', 'Creemos que te haz equivocado esta vez, para crear un sorteo debes tener una empresa creada, si es así haz click <a class="btn-success btn-xs" href="/sorteos/create">AQUI</a>, si no tienes una empresa puedes hacer click <a class="btn-success btn-xs" href="/empresas/create">AQUI</a> para crear una');
     return Redirect::to('/dashboard');
   }
+
+  public function ended(){
+    $this->registro_tickets = $this->user->registro_tickets()->orderBy('created_at', 'desc')->limit('20')->get();
+    return view('sorteos.ended', ['sorteos'=>Sorteo::orderByRaw('RAND()')->where('estado_sorteo','Finalizado')->paginate(6),'rtickets' => $this->registro_tickets, 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
+  }
+
   public function find(Route $route){
       $this->sorteo = Sorteo::findOrFail($route->getParameter('sorteos'));
   }
