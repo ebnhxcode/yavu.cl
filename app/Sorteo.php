@@ -44,7 +44,7 @@ class Sorteo extends Model{
     return $this->hasMany('yavu\ParticipanteSorteo', 'sorteo_id');
   }
   public function winners(){
-    return $this->hasMany(Winner::class);
+    return $this->hasMany(Winner::class, 'sorteo_id');
   }
   public function user(){
     return $this->belongsTo(User::class);

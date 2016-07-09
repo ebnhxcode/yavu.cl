@@ -45,10 +45,14 @@
                     <a style="padding-left: 5px;" href="/sorteos/{!! $sorteo->id !!}"><span>{!!$sorteo->descripcion!!}</span><br></a>
                   </div>
 
-                  <div class="">
-                    <button class="btn btn-success btn-sm UsarTicket" value="{!! $sorteo->id !!}" type="button"   style="display: none;" data-dismiss="modal">PARTICIPAR</button>
-                    <br>
-                  </div><!-- /div .semi-amplio -->
+
+
+                  @foreach($sorteo->winners as $key => $winner)
+                    @if($key == 0)
+                      <img src="{!! asset('img/yavu019.png') !!}" width="20" alt=""/>
+                      <span class="btn btn-xs btn-default">GANADOR : {!! $winner->nombre !!}</span>
+                    @endif
+                  @endforeach
 
                   <!--
                 <div class="amplio">
@@ -85,7 +89,7 @@
 
 
                   <div class="softText-descriptions-middle">
-                    Sorteo finalizado <a style="float:right;" class="text-warning" href="/sorteos/{!! $sorteo->id !!}">Ver quien fué el ganador</a>
+                    Sorteo finalizado <a style="float:right;" class="text-warning" href="/sorteos/{!! $sorteo->id !!}">Ver m&aacute;s detalles</a>
                   </div><!-- /div .amplio -->
 
 
