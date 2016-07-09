@@ -3,7 +3,7 @@
 @extends('layouts.front')
 @section('content')
 <div class='jumbotron'>
-	<div id='contentMiddle'>
+	<div class='contentMiddle'>
 		<div class='row' style='margin-top:-35px;'>
       <!-- Sección de alertas -->
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
