@@ -42,14 +42,15 @@
     </div>
     <br><small class="softText-descriptions">Contactar con el ganador</small></div>
   <div class="list-group-item">
-    @if($userSession->userCompanies[0]->id==$sorteo->empresa_id)
-      @if($winnerInfo = $winners[0]->winnerInfo)
-        {!! $winnerInfo->email !!}<br>
-        {!! $winnerInfo->fono !!}<br>
-        {!! $winnerInfo->fono_2 !!}<br>
+    @if(count($userSession->userCompanies)>0)
+      @if($userSession->userCompanies[0]->id==$sorteo->empresa_id)
+        @if($winnerInfo = $winner->winnerInfo)
+          {!! $winnerInfo->email !!}<br>
+          {!! $winnerInfo->fono !!}<br>
+          {!! $winnerInfo->fono_2 !!}<br>
+        @endif
       @endif
     @endif
-
   </div>
 </div>
 
