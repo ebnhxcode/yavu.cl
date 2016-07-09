@@ -35,24 +35,26 @@
   @endif
 </div><!-- /div .list-group -->
 
-<div class="list-group">
-  <div class="list-group-item"><small class="text-success">ADMINISTRADOR: </small>
-    <div style="font-size:0.75em;float:right;" class="text-info">
-      info
-    </div>
-    <br><small class="softText-descriptions">Contactar con el ganador</small></div>
-  <div class="list-group-item">
-    @if(count($userSession->userCompanies)>0)
-      @if($userSession->userCompanies[0]->id==$sorteo->empresa_id)
+
+@if(count($userSession->userCompanies)>0)
+  @if($userSession->userCompanies[0]->id==$sorteo->empresa_id)
+    <div class="list-group">
+      <div class="list-group-item"><small class="text-success">ADMINISTRADOR: </small>
+        <div style="font-size:0.75em;float:right;" class="text-info">
+          info
+        </div>
+        <br><small class="softText-descriptions">Contactar con el ganador</small></div>
+      <div class="list-group-item">
         @if($winnerInfo = $winner->winnerInfo)
           {!! $winnerInfo->email !!}<br>
           {!! $winnerInfo->fono !!}<br>
           {!! $winnerInfo->fono_2 !!}<br>
         @endif
-      @endif
-    @endif
-  </div>
-</div>
+      </div>
+    </div>
+  @endif
+@endif
+
 
 <div id="msjs{!! $sorteo->id !!}" class="alert alert-info alert-dismissible" style="display: none;" role="alert">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
