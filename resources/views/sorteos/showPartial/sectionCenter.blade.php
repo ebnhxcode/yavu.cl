@@ -6,7 +6,7 @@
     </div><!-- /div .list-group-item .success -->
     <div class="list-group-item">
       <div>
-        ¡Ganador! : {!! $winners[0]->nombre.' '.$winners[0]->apellido !!} -> {!! $winners[0]->id !!}
+        ¡Ganador! : {!! $winners[0]->nombre.' '.$winners[0]->apellido !!}
       </div><!-- /div .well .well-xs -->
     </div><!-- /div .list-group-item .success -->
   @else

@@ -50,7 +50,11 @@
                   @foreach($sorteo->winners as $key => $winner)
                     @if($key == 0)
                       <img src="{!! asset('img/yavu019.png') !!}" width="20" alt=""/>
-                      <span class="btn btn-xs btn-default">GANADOR : {!! $winner->nombre !!}</span>
+                      <span class="btn btn-xs btn-default">GANADOR : {!! $winner->nombre.' '.$winner->apellido !!}</span>
+
+
+
+
                     @endif
                   @endforeach
 
