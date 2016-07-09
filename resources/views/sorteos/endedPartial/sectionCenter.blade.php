@@ -51,7 +51,24 @@
                     @if($key == 0)
                       <img src="{!! asset('img/yavu019.png') !!}" width="20" alt=""/>
                       <span class="btn btn-xs btn-default">GANADOR : {!! $winner->nombre.' '.$winner->apellido !!}</span>
+                      <br /><br />
+                      <div class="list-group">
+                        <div class="list-group-item"><small class="text-success">ADMINISTRADOR: </small>
+                          <div style="font-size:0.75em;float:right;" class="text-info">
+                            info
+                          </div>
+                          <br><small class="softText-descriptions">Contactar con el ganador</small></div>
+                        <div class="list-group-item">
+                          @if($userSession->userCompanies[0]->id==$sorteo->empresa_id)
+                            @if($winnerInfo = $winner->winnerInfo)
+                              {!! $winnerInfo->email !!}<br>
+                              {!! $winnerInfo->fono !!}<br>
+                              {!! $winnerInfo->fono_2 !!}<br>
+                            @endif
+                          @endif
 
+                        </div>
+                      </div>
 
 
 

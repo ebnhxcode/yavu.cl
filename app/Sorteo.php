@@ -46,6 +46,7 @@ class Sorteo extends Model{
   public function winners(){
     return $this->hasMany(Winner::class, 'sorteo_id');
   }
+
   public function user(){
     return $this->belongsTo(User::class);
   }

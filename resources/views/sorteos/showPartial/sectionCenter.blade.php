@@ -9,6 +9,7 @@
         ¡Ganador! : {!! $winners[0]->nombre.' '.$winners[0]->apellido !!}
       </div><!-- /div .well .well-xs -->
     </div><!-- /div .list-group-item .success -->
+
   @else
     <div class="list-group-item">
       <small>SORTEO PENDIENTE</small>
@@ -33,6 +34,24 @@
     </div><!-- /div .list-group-item .success -->
   @endif
 </div><!-- /div .list-group -->
+
+<div class="list-group">
+  <div class="list-group-item"><small class="text-success">ADMINISTRADOR: </small>
+    <div style="font-size:0.75em;float:right;" class="text-info">
+      info
+    </div>
+    <br><small class="softText-descriptions">Contactar con el ganador</small></div>
+  <div class="list-group-item">
+    @if($userSession->userCompanies[0]->id==$sorteo->empresa_id)
+      @if($winnerInfo = $winners[0]->winnerInfo)
+        {!! $winnerInfo->email !!}<br>
+        {!! $winnerInfo->fono !!}<br>
+        {!! $winnerInfo->fono_2 !!}<br>
+      @endif
+    @endif
+
+  </div>
+</div>
 
 <div id="msjs{!! $sorteo->id !!}" class="alert alert-info alert-dismissible" style="display: none;" role="alert">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
