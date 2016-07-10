@@ -50,7 +50,7 @@ class EmpresaController extends Controller{
     $this->empresa = Empresa::findOrFail($route->getParameter('empresas'));
   }
   public function index(Request $request){
-    return view('empresas.index', ['empresas' => Empresa::paginate(14), 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(),'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(),'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user]);
+    return view('empresas.index', ['empresas' => Empresa::paginate(14), 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(),'companies' => Empresa::select('id','nombre','descripcion','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(),'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user]);
   }
   
   public function create(){
