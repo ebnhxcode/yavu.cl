@@ -11,30 +11,30 @@
           @include('alerts.allAlerts')
         </div><!-- /div .col-lg12-md12-sm12-xs12 -->
 
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-          <!-- section left --> section left
-        </div><!-- /div .col-lg3-md3-sm3-xs12 -->
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="list-group" >
+            {!!Form::model($bannerdata, ['method'=>'PUT', 'route' => ['admins_banner_put_path', $bannerdata->id], 'files' => true , 'id' => 'FormBanner'])!!}
 
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <input type="hidden" name="banner_data_id" value="{!! $bannerdata->id !!}">
 
+              @include('admins.banneradmin.forms.fieldsBannerPartial.bannerdataFields')
 
-          {!!Form::model($bannerdata, ['method'=>'PUT', 'route' => ['admins_banner_put_path', $bannerdata->id], 'files' => true , 'id' => 'FormBanner'])!!}
+              {!!Form::submit('Guardar', ['class'=>'btn btn-primary btn-success'])!!}
 
-            <input type="hidden" name="banner_data_id" value="{!! $bannerdata->id !!}">
+            {!!Form::close()!!}
+          </div><!-- /div .list-group -->
+        </div><!-- /div .col-lg4-md4-sm4-xs12 -->
 
-            @include('admins.banneradmin.forms.fieldsBanner')
-
-            {!!Form::submit('Guardar', ['class'=>'btn btn-primary btn-success'])!!}
-
-          {!!Form::close()!!}
-
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 
 
-        </div><!-- /div .col-lg6-md6-sm6-xs12 -->
 
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+
+        </div><!-- /div .col-lg4-md4-sm4-xs12 -->
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <!-- section right --> section right
-        </div><!-- /div .col-lg3-md3-sm3-xs12 -->
+        </div><!-- /div .col-lg4-md4-sm4-xs12 -->
 
       </div>
   </div>
