@@ -4,10 +4,10 @@ $(document).ready(function(){
 
 /*MÉTODOS CONSTRUCTORES*/
 	$(function () {
-		VerificarSeguidores($("#company_id").val());
-		ContarSeguidores($("#company_id").val());
+		//VerificarSeguidores($("#company_id").val());
+		//ContarSeguidores($("#company_id").val());
 		return true;
-	})
+	});
 /*MÉTODOS CONSTRUCTORES*/
 
 	
@@ -15,13 +15,20 @@ $(document).ready(function(){
 
 	$(function () {
 		$( seguir ).click(function(){
+			$( this ).text('Siguiendo');
+			Seguir( $(this).attr('value') );
+
+
+
+			/*
 			if($(seguir).text()==='Seguir'){
 				$( seguir ).text('Siguiendo');
-				return Seguir( company_id.value );
+				return Seguir( $(this).attr('value') );
 			}else{
 				$( seguir ).text('Seguir');
-				return NoSeguir( company_id.value );
+				return NoSeguir( $(this).attr('value') );
 			}
+			*/
 		});
 		return true;
 	});
@@ -30,25 +37,22 @@ $(document).ready(function(){
 
 /*FUNCIONES Y PROCEDIMIENTOS*/
 	function Seguir(company_id){
-		var user_id = $("#user_id").val();
-		var company_id = $("#company_id").val();
+		company_id = company_id || 0;
 		var token = $("#token").val();
-		var route = "http://localhost:8000/seguirempresa/"+company_id+"/"+user_id;
+
+		var route = "http://localhost:8000/seguirempresa";
 		$.ajax({
 			url: route,
 			headers: {'X-CSRF-TOKEN': token},
-			type: 'GET',
+			type: 'POST',
 			dataType: 'json',
 			data: {
-				user_id: user_id,
-				empresa_id: company_id,
+				empresa_id: company_id
 			},
 			success:function(){
-				$(seguir).text('Siguiendo');
-				ContarSeguidores($("#company_id").val());
+				return $("#company-item-"+company_id).fadeOut('slow');
 			}
 		});	
-		ContarSeguidores(company_id);
 		return true;
 	}
 
@@ -56,11 +60,11 @@ $(document).ready(function(){
 		var user_id = $("#user_id").val();
 		var company_id = $("#company_id").val();
 		var token = $("#token").val();
-		var route = "http://localhost:8000/noseguirempresa/"+company_id+"/"+user_id;
+		var route = "http://localhost:8000/noseguirempresa/";
 		$.ajax({
 			url: route,
 			headers: {'X-CSRF-TOKEN': token},
-			type: 'GET',
+			type: 'POST',
 			dataType: 'json',
 			data: {
 				user_id: user_id,

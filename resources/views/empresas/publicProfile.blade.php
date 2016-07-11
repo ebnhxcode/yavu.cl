@@ -3,7 +3,6 @@
 {!!Html::script('js/jquery.js')!!}
 @if(Auth::user()->check())
   {{-- {!!Html::script('js/ajax/GestionarEstadosEmpresa.js')!!} --}}
-  {!!Html::script('js/ajax/SeguirEmpresa.js')!!}
 @endif
 <!-- AIzaSyCrcjogGTQUWUOD3Bvp-B1mVzUq0q6WMgU -->
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrcjogGTQUWUOD3Bvp-B1mVzUq0q6WMgU&libraries=places"></script>

@@ -8,7 +8,7 @@
       </div><!-- /div .list-group-item -->
     @endif
     @if(count($userSession->follow($company->id)->get())==0)
-      <div class="list-group-item">
+      <div id="company-item-{!! $company->id !!}" class="list-group-item">
         <div class="row">
           <div class="col-xs-4 col-sm-4 col-md-2 col-lg-">
             <a href="/empresas/{!! $company->id !!}">
@@ -29,16 +29,14 @@
               <a href="/empresas/{!! $company->id !!}" class="btn btn-success btn-xs">
                 Ver perfil
               </a>
-              <a href="/empresas/{!! $company->id !!}" class="btn btn-primary btn-xs">
-                Seguir
-              </a>
+              <span class="btn btn-primary btn-xs" id="seguir" value="{!! $company->id !!}" role="button">Seguir</span>
             </div>
           </div>
         </div>
       </div><!-- /div .list-group-item -->
     @endif
   @endforeach
-
+    <input type="hidden" name="_token" id="token" value="{!! csrf_token() !!}" >
 </div><!-- /div .list-group -->
 
 <!-- Banner Random -->

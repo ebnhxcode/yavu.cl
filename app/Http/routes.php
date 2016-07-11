@@ -126,8 +126,8 @@ Route::group(['middleware' => 'user'], function(){
   /*Gestión de Participantes*/
 
   /*Gestión de  Followers */
-  Route::get('seguirempresa/{empresa_id}/{user_id}', 'FollowerController@SeguirEmpresa')->where(['empresa_id', 'user_id'], '[0-9]+');
-  Route::get('noseguirempresa/{empresa_id}/{user_id}', 'FollowerController@NoSeguirEmpresa')->where(['empresa_id', 'user_id'], '[0-9]+');
+  Route::post('seguirempresa', 'FollowerController@SeguirEmpresa');
+  Route::post('noseguirempresa', 'FollowerController@NoSeguirEmpresa');
   Route::get('contarseguidores/{empresa_id}/{user_id}','FollowerController@ContarSeguidores')->where(['empresa_id', 'user_id'], '[0-9]+');
   Route::get('verificarseguidores/{empresa_id}/{user_id}','FollowerController@VerificarSeguidores')->where(['empresa_id', 'user_id'], '[0-9]+');
   /*Gestión de Followers */
