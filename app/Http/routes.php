@@ -142,7 +142,7 @@ Route::group(['middleware' => 'user'], function(){
   Route::get('tickets','TicketController@history');
   Route::get('tickets/history','TicketController@history');
   Route::resource('tickets','TicketController');
-  Route::get('efectuarcompraticket/{user_id}/{cantidadtickets}', 'TicketController@EfectuarCompra')->where(['user_id', 'cantidadtickets'], '[0-9]+');
+  Route::post('efectuarcompraticket', 'TicketController@EfectuarCompra');
   Route::get('verificartickets/{user_id}', 'TicketController@VerificarTickets')->where('user_id', '[0-9]+');
   Route::get('contartickets', 'TicketController@ContarTickets');
   Route::get('usarticket/{user_id}/{sorteo_id}', 'SorteoController@UsarTicket')->where(['user_id', 'sorteo_id'], '[0-9]+');

@@ -60,12 +60,16 @@ $(document).ready(function(){
     if (cantidadtickets > 0){
 			var user_id = $("#user_id").val();
 			var token = $("#token").val();
-			var route = "http://localhost:8000/efectuarcompraticket/"+user_id+"/"+cantidadtickets;
+			var route = "http://localhost:8000/efectuarcompraticket";
 			$.ajax({
 				url: route,
 				headers: {'X-CSRF-TOKEN': token},
-				type: 'GET',
+				type: 'POST',
 				dataType: 'json',
+				data: {
+					user_id: user_id,
+					cantidadtickets: cantidadtickets
+				},
 				success:function(data){
           if (data === 'Sin saldo para el servicio'){
             $('#CantidadTickets').fadeIn(100).html(data);
