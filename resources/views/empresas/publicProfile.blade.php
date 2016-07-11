@@ -23,7 +23,7 @@
 				</div><!-- /div .col-xs12-sm12-md6-lg6-->
 
         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-          <!-- sectionRight -->
+          @include('empresas.indexPartial.sectionRight')
         </div><!-- /div .col-xs12-sm12-md3-lg3-->
 
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">

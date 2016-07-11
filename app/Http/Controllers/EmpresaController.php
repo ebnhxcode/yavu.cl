@@ -139,10 +139,10 @@ class EmpresaController extends Controller{
         $mapa = $this->empresa->gmaps;
 
         if($mapa){
-          return view('empresas.publicProfile', [ 'e' => $this->empresa , 'mapa' => $mapa, 'companyStatuses' => EstadoEmpresa::where('empresa_id', $this->empresa->id)->orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas, 'userSession' => $this->user]);
+          return view('empresas.publicProfile', [ 'e' => $this->empresa , 'mapa' => $mapa, 'companyStatuses' => EstadoEmpresa::where('empresa_id', $this->empresa->id)->orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas, 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
         }else{
 
-          return view('empresas.publicProfile', [ 'e' => $this->empresa , 'companyStatuses' => EstadoEmpresa::where('empresa_id', $this->empresa->id)->orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas, 'userSession' => $this->user]);
+          return view('empresas.publicProfile', [ 'e' => $this->empresa , 'companyStatuses' => EstadoEmpresa::where('empresa_id', $this->empresa->id)->orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas, 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
         }
 
 
@@ -175,9 +175,9 @@ class EmpresaController extends Controller{
       $mapa = Empresa::find($empresa[0]->id)->gmaps;
 
       if($mapa){
-        return view('empresas.publicProfile', [ 'empresa' => $empresa , 'mapa' => $mapa, 'companyStatuses' => EstadoEmpresa::where('empresa_id', $empresa[0]->id)->orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas, 'userSession' => $this->user]);
+        return view('empresas.publicProfile', [ 'empresa' => $empresa , 'mapa' => $mapa, 'companyStatuses' => EstadoEmpresa::where('empresa_id', $empresa[0]->id)->orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas, 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(8)->get()]);
       }else{
-        return view('empresas.publicProfile', [ 'empresa' => $empresa , 'companyStatuses' => EstadoEmpresa::where('empresa_id', $empresa[0]->id)->orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas, 'userSession' => $this->user]);
+        return view('empresas.publicProfile', [ 'empresa' => $empresa , 'companyStatuses' => EstadoEmpresa::where('empresa_id', $empresa[0]->id)->orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas, 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(8)->get()]);
       }
     }
     return response()->json(["Mensaje: " => "Acceso denegado"]);

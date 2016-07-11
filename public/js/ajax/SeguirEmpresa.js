@@ -17,18 +17,6 @@ $(document).ready(function(){
 		$( seguir ).click(function(){
 			$( this ).text('Siguiendo');
 			Seguir( $(this).attr('value') );
-
-
-
-			/*
-			if($(seguir).text()==='Seguir'){
-				$( seguir ).text('Siguiendo');
-				return Seguir( $(this).attr('value') );
-			}else{
-				$( seguir ).text('Seguir');
-				return NoSeguir( $(this).attr('value') );
-			}
-			*/
 		});
 		return true;
 	});
