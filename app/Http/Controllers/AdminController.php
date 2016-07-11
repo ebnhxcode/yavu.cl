@@ -112,7 +112,7 @@ class AdminController extends Controller
         return view('admins.empresasadmin.edit', ['empresa' => $this->empresa], ['user_email' => $this->user->email]);
     }
     public function banneredit($id){
-        $this->bannerdata = BannerData::findOrFail($id);
+        $this->bannerdata = BannerData::find($id);
         return view('admins.banneradmin.banneredit', ['bannerdata' => $this->bannerdata]);
           
     }

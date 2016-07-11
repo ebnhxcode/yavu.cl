@@ -227,7 +227,7 @@ Route::group(['middleware' => 'admin'], function(){
   Route::get('/admins/bannercreate/{empresa_id}', 'AdminController@bannercreate');
   Route::post('/admins/bannercreate/', ['uses' => 'AdminController@bannerstore' , 'as' => 'admins_banner_create_path']);
   Route::get('admins/banneradmin/{id}/edit/', ['uses' => 'AdminController@banneredit','as' => 'admins_banner_edit_path']);
-   Route::put('admins/banneradmin/{id}/edit/', ['uses' => 'AdminController@bannerupdate','as' => 'admins_banner_put_path']);
+  Route::put('admins/banneradmin/{id}/edit/', ['uses' => 'AdminController@bannerupdate','as' => 'admins_banner_put_path']);
   Route::get('admins/empresas/index', 'AdminController@empresasindex');
 
   Route::get('admins/empresas/{id}/edit', ['uses' => 'AdminController@empresasedit', 'as' => 'admins_empresas_edit_path',]);
