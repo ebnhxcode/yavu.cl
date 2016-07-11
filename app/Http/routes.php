@@ -91,7 +91,7 @@ Route::group(['middleware' => 'user'], function(){
   Route::resource('empresas','EmpresaController');
   Route::get('empresa/{empresa}/', 'EmpresaController@MostrarEmpresaPublica');
   Route::get('listarbanner/listabanner', 'EmpresaController@MostrarBannerPublico');
-  Route::get('empresa/{empresa}/sorteos', 'EmpresaController@RaffleList');
+  Route::get('empresas/{id}/sorteos', 'EmpresaController@RaffleList');
   Route::get('listaempresas', 'EmpresaController@ListaEmpresas');
   Route::get('solicitareliminacionempresa/{id}', 'EmpresaController@SolicitarEliminacion')->where('id', '[0-9]+');
   Route::post('buscarempresa', 'EmpresaController@BuscarEmpresas');

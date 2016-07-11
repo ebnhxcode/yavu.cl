@@ -24,7 +24,7 @@
 
 			<!-- panel derecho -->
 			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-				@include('feeds.indexPartial.sectionRight')
+				@include('empresas.indexPartial.sectionRight')
 			</div><!-- /div .col-md3-sm12-xs12 -->
 
 			<!-- variables hidden para indexPartial -->

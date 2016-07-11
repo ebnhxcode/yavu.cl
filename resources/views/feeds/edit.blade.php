@@ -86,7 +86,7 @@
       </div><!-- /div .col-md8-sm12-xs12 -->
 
       <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-        @include('feeds.indexPartial.sectionRight')
+        @include('empresas.indexPartial.sectionRight')
       </div><!-- /div .col-md4-sm12-xs12 -->
     </div><!-- /div .row -->
   </div><!-- /div #contentMiddle -->

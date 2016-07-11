@@ -4,7 +4,7 @@
   @foreach($companies as $key => $company)
     @if($key < 1)
       <div class="list-group-item">
-        <small>Empresas sugeridas</small>
+        <small>EMPRESAS SUGERIDAS</small>
       </div><!-- /div .list-group-item -->
     @endif
     @if(count($userSession->follow($company->id)->get())==0)
@@ -65,7 +65,7 @@
                 <div class="row">
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
-                    <a class="btn-link" href="/empresa/">
+                    <a class="btn-link" href="/empresas/">
                     </a><!-- /div .btn-link -->
                     <h6>
                     </h6>

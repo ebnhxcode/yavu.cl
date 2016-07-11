@@ -24,7 +24,7 @@
               </button><!-- /div .btn .btn-default .btn-xs .dropdown-toggle -->
 
               <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-                <li><a href="{!! URL::to('/empresa/'.$empresa->nombre.'/') !!}">Ver perfil</a></li>
+                <li><a href="{!! URL::to('/empresas/'.$empresa->id.'/') !!}">Ver perfil</a></li>
               </ul><!-- /ul .dropdown-menu -->
 
             </div><!-- /div .dropup -->
@@ -45,7 +45,7 @@
             <br/>
             @if($empresa->sorteos()->count()>0)
             <div class="btn-group" role="group" aria-label="...">
-              <a href="{!! URL::to('/empresa/'.$empresa->nombre.'/sorteos') !!}" class="btn btn-success btn-xs">
+              <a href="{!! URL::to('/empresas/'.$empresa->id.'/sorteos') !!}" class="btn btn-success btn-xs">
                 <img src="{!! asset('img/yavu019.png') !!}" width="20" alt=""/>
                 Ver sorteos
               </a>
