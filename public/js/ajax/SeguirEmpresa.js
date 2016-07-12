@@ -14,7 +14,7 @@ $(document).ready(function(){
 /*SELECTORES*/
 
 	$(function () {
-		$( seguir ).click(function(){
+		$( "#seguir" ).click(function(){
 			$( this ).text('Siguiendo');
 			Seguir( $(this).attr('value') );
 		});
@@ -37,8 +37,13 @@ $(document).ready(function(){
 			data: {
 				empresa_id: company_id
 			},
-			success:function(){
-				return $("#company-item-"+company_id).fadeOut('slow');
+			success:function(result){
+        if(result.estado==='not-followed'){
+          $( seguir ).text('Seguir');
+        }
+        $( seguidores ).val(result.followers);
+        $( seguidores ).text(result.followers);
+				return $("#company-item-"+company_id).fadeOut(5000);
 			}
 		});	
 		return true;

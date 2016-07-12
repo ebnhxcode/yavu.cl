@@ -69,10 +69,12 @@ class FollowerController extends Controller{
       $ExisteSeguimiento = Follower::where('user_id', Auth::user()->get()->id)->where('empresa_id', addslashes($request->empresa_id))->first();
       if (!$ExisteSeguimiento){
         DB::table('followers')->insert(['user_id' => Auth::user()->get()->id,'empresa_id' => addslashes($request->empresa_id),'estado' => 'activo','created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
+        return response()->json(['estado'=>'followed','followers'=>Empresa::find($request->empresa_id)->followers()->count('id')]);
+      }else{
+        Follower::where('empresa_id', $request->empresa_id)->where('user_id', Auth::user()->get()->id)->delete();
+        return response()->json(['estado'=>'not-followed','followers'=>Empresa::find($request->empresa_id)->followers()->count('id')]);
       }
-      return response()->json(
-        'Estado: Siguiendo'
-      );
+
   }
   public function show($id){
   }
