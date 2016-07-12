@@ -19,7 +19,7 @@
             <small><a href="/empresas/{!! $company->id !!}">{!! $company->nombre !!}</a></small><br>
             <div class="softText-descriptions">
               {!! $company->descripcion !!}<br>
-              <span id="seguidores">{!! count($company->followers) !!}</span> seguidores<br>
+              <span id="seguidores{!! $company->id !!}">{!! count($company->followers) !!}</span> seguidores<br>
               {!! count($company->visits) !!} visitas<br>
             </div><!-- /div .softText-descriptions -->
           </div><!-- /div col-xs4-sm4-md8-lg8 -->
@@ -29,7 +29,7 @@
               <a href="/empresas/{!! $company->id !!}" class="btn btn-success btn-xs">
                 Ver perfil
               </a><!-- /a .btn .btn-success .btn-xs -->
-              <span class="btn btn-primary btn-xs" id="seguir" value="{!! $company->id !!}" role="button">Seguir</span>
+              <span class="btn btn-primary btn-xs seguir" value="{!! $company->id !!}" role="button">Seguir</span>
             </div><!-- /div .btn-group-vertical -->
           </div><!-- /div col-xs4-sm4-md2-lg2 -->
 

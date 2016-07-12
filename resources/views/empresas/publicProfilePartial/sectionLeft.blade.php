@@ -22,8 +22,8 @@
                 <div>
                   {!!Form::hidden('empresa', $e->nombre, ['id'=>'empresa'])!!}
                   <div>
-                    <span class="btn btn-primary btn-sm" id="seguir" value="{!! $e->id !!}" role="button">{!! count($e->isFollowedBy($userSession->id))>0?'Siguiendo':'Seguir' !!}</span>
-                    <input type="text" class="btn btn-sm text-success" id="seguidores" size="10" disabled value="{!! $e->followers()->count('id') !!}" >
+                    <span class="btn btn-primary btn-sm seguir" value="{!! $e->id !!}" role="button">{!! count($e->isFollowedBy($userSession->id))>0?'Siguiendo':'Seguir' !!}</span>
+                    <input type="text" class="btn btn-sm text-success" id="seguidores{!! $e->id !!}" size="10" disabled value="{!! $e->followers()->count('id') !!}" >
 
 
                     <div style="float: right;" class="">
