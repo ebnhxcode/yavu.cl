@@ -44,7 +44,7 @@
       </div><!-- /div .col-md3-sm12-xs12 -->
 
       <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-        @include('sorteos.indexPartial.sectionRight')
+        @include('empresas.indexPartial.sectionRight')
       </div><!-- /div .col-md3-sm12-xs12 -->
 
 		</div><!-- /div .row -->

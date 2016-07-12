@@ -42,6 +42,8 @@
 
 			{!!Html::script('js/ajax/GestionarCompraTicket.js')!!}
 
+			{!!Html::script('js/ajax/SeguirEmpresa.js')!!}
+
 		@endif
 
 

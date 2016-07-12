@@ -91,7 +91,7 @@ Route::group(['middleware' => 'user'], function(){
   Route::resource('empresas','EmpresaController');
   Route::get('empresa/{empresa}/', 'EmpresaController@MostrarEmpresaPublica');
   Route::get('listarbanner/listabanner', 'EmpresaController@MostrarBannerPublico');
-  Route::get('empresa/{empresa}/sorteos', 'EmpresaController@RaffleList');
+  Route::get('empresas/{id}/sorteos', 'EmpresaController@RaffleList');
   Route::get('listaempresas', 'EmpresaController@ListaEmpresas');
   Route::get('solicitareliminacionempresa/{id}', 'EmpresaController@SolicitarEliminacion')->where('id', '[0-9]+');
   Route::post('buscarempresa', 'EmpresaController@BuscarEmpresas');
@@ -126,8 +126,8 @@ Route::group(['middleware' => 'user'], function(){
   /*Gestión de Participantes*/
 
   /*Gestión de  Followers */
-  Route::get('seguirempresa/{empresa_id}/{user_id}', 'FollowerController@SeguirEmpresa')->where(['empresa_id', 'user_id'], '[0-9]+');
-  Route::get('noseguirempresa/{empresa_id}/{user_id}', 'FollowerController@NoSeguirEmpresa')->where(['empresa_id', 'user_id'], '[0-9]+');
+  Route::post('seguirempresa', 'FollowerController@SeguirEmpresa');
+  Route::post('noseguirempresa', 'FollowerController@NoSeguirEmpresa');
   Route::get('contarseguidores/{empresa_id}/{user_id}','FollowerController@ContarSeguidores')->where(['empresa_id', 'user_id'], '[0-9]+');
   Route::get('verificarseguidores/{empresa_id}/{user_id}','FollowerController@VerificarSeguidores')->where(['empresa_id', 'user_id'], '[0-9]+');
   /*Gestión de Followers */
@@ -142,7 +142,7 @@ Route::group(['middleware' => 'user'], function(){
   Route::get('tickets','TicketController@history');
   Route::get('tickets/history','TicketController@history');
   Route::resource('tickets','TicketController');
-  Route::get('efectuarcompraticket/{user_id}/{cantidadtickets}', 'TicketController@EfectuarCompra')->where(['user_id', 'cantidadtickets'], '[0-9]+');
+  Route::post('efectuarcompraticket', 'TicketController@EfectuarCompra');
   Route::get('verificartickets/{user_id}', 'TicketController@VerificarTickets')->where('user_id', '[0-9]+');
   Route::get('contartickets', 'TicketController@ContarTickets');
   Route::get('usarticket/{user_id}/{sorteo_id}', 'SorteoController@UsarTicket')->where(['user_id', 'sorteo_id'], '[0-9]+');
@@ -227,7 +227,7 @@ Route::group(['middleware' => 'admin'], function(){
   Route::get('/admins/bannercreate/{empresa_id}', 'AdminController@bannercreate');
   Route::post('/admins/bannercreate/', ['uses' => 'AdminController@bannerstore' , 'as' => 'admins_banner_create_path']);
   Route::get('admins/banneradmin/{id}/edit/', ['uses' => 'AdminController@banneredit','as' => 'admins_banner_edit_path']);
-   Route::put('admins/banneradmin/{id}/edit/', ['uses' => 'AdminController@bannerupdate','as' => 'admins_banner_put_path']);
+  Route::put('admins/banneradmin/{id}/edit/', ['uses' => 'AdminController@bannerupdate','as' => 'admins_banner_put_path']);
   Route::get('admins/empresas/index', 'AdminController@empresasindex');
 
   Route::get('admins/empresas/{id}/edit', ['uses' => 'AdminController@empresasedit', 'as' => 'admins_empresas_edit_path',]);

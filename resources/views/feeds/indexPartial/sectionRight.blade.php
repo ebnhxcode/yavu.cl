@@ -50,7 +50,7 @@
                 <div class="row">
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
-                    <a class="btn-link" href="/empresa/">
+                    <a class="btn-link" href="/empresas/">
                     </a><!-- /div .btn-link -->
                     <h6>
                     </h6>

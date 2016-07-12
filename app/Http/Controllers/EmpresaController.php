@@ -50,7 +50,7 @@ class EmpresaController extends Controller{
     $this->empresa = Empresa::findOrFail($route->getParameter('empresas'));
   }
   public function index(Request $request){
-    return view('empresas.index', ['empresas' => Empresa::paginate(14), 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(),'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(),'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user]);
+    return view('empresas.index', ['empresas' => Empresa::paginate(14), 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(),'companies' => Empresa::select('id','nombre','descripcion','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(),'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user]);
   }
   
   public function create(){
@@ -127,13 +127,62 @@ class EmpresaController extends Controller{
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function show($id){
-    $this->empresa = Empresa::findOrFail($id);
-    if ($this->empresa) {
-      return $this->MostrarEmpresaPublica($this->empresa->nombre);
-    }else{
-      return redirect()->to('/empresas');
-    }
+
+      $this->empresa = Empresa::find($id);
+      if ($this->empresa) {
+        //return $this->MostrarEmpresaPublica($this->empresa->nombre);
+
+        if($this->empresa->user_id != $this->user->id){
+          $this->visita = new Visit(['user_id'=>$this->user->id, 'empresa_id' => $this->empresa->id, 'sexo' => $this->user->sexo, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now() ]);
+          $this->visita->save();
+        }
+        $mapa = $this->empresa->gmaps;
+
+        if($mapa){
+          return view('empresas.publicProfile', [ 'e' => $this->empresa , 'mapa' => $mapa, 'companyStatuses' => EstadoEmpresa::where('empresa_id', $this->empresa->id)->orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas, 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
+        }else{
+
+          return view('empresas.publicProfile', [ 'e' => $this->empresa , 'companyStatuses' => EstadoEmpresa::where('empresa_id', $this->empresa->id)->orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas, 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
+        }
+
+
+      }else{
+        Session::flash('message-warning','No se ha encontrado lo que busca');
+        return redirect()->to('/empresas');
+      }
+
   }
+
+
+
+  public function MostrarEmpresaPublica($empresa){
+
+    if(isset($empresa)){
+
+      $empresa = DB::table('empresas')
+        ->join('users', 'users.id', '=', 'empresas.user_id')
+        ->select('empresas.*', 'users.id as user_id')
+        ->where('empresas.nombre', '=', addslashes($empresa))
+        ->orderBy('empresas.created_at','desc')
+        ->get();
+
+      $this->visita = new Visit(['user_id'=>$this->user->id, 'empresa_id' => $empresa[0]->id, 'sexo' => $this->user->sexo, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now() ]);
+
+      if($empresa[0]->user_id != $this->user->id){
+        $this->visita->save();
+      }
+
+      $mapa = Empresa::find($empresa[0]->id)->gmaps;
+
+      if($mapa){
+        return view('empresas.publicProfile', [ 'empresa' => $empresa , 'mapa' => $mapa, 'companyStatuses' => EstadoEmpresa::where('empresa_id', $empresa[0]->id)->orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas, 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(8)->get()]);
+      }else{
+        return view('empresas.publicProfile', [ 'empresa' => $empresa , 'companyStatuses' => EstadoEmpresa::where('empresa_id', $empresa[0]->id)->orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas, 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(8)->get()]);
+      }
+    }
+    return response()->json(["Mensaje: " => "Acceso denegado"]);
+  }
+
   public function edit($id){
 
     if(isset($this->empresa) && isset($this->user)){
@@ -157,36 +206,16 @@ class EmpresaController extends Controller{
     }
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
-  public function MostrarEmpresaPublica($empresa){
 
-    if(isset($empresa)){
 
-      $empresa = DB::table('empresas')
-        ->join('users', 'users.id', '=', 'empresas.user_id')
-        ->select('empresas.*', 'users.id as user_id')
-        ->where('empresas.nombre', '=', addslashes($empresa))
-        ->orderBy('empresas.created_at','desc')
-        ->get();
+  public function RaffleList($id){
 
-      $this->visita = new Visit(['user_id'=>$this->user->id, 'empresa_id' => $empresa[0]->id, 'sexo' => $this->user->sexo, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now() ]);
-      if($empresa[0]->user_id != $this->user->id){
-        $this->visita->save();
-      }
+      $id = addslashes($id);
 
-      $mapa = Empresa::findOrFail($empresa[0]->id)->gmaps;
+      $this->empresa = Empresa::find($id);
 
-      if($mapa){
-        return view('empresas.publicProfile', [ 'empresa' => $empresa , 'mapa' => $mapa, 'companyStatuses' => EstadoEmpresa::where('empresa_id', $empresa[0]->id)->orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas, 'userSession' => $this->user]);
-      }else{
-        return view('empresas.publicProfile', [ 'empresa' => $empresa , 'companyStatuses' => EstadoEmpresa::where('empresa_id', $empresa[0]->id)->orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas, 'userSession' => $this->user]);
-      }
-    }
-    return response()->json(["Mensaje: " => "Acceso denegado"]);
-  }
-  public function RaffleList($empresa){
-      $empresa = addslashes($empresa);
-      $this->empresa = Empresa::where('nombre', $empresa)->get();
-      $this->user = User::findOrFail($this->empresa[0]->user_id);
+      $this->user = User::findOrFail($this->empresa->user_id);
+
       return view('empresas.raffleList', ['sorteos' => $this->user->sorteos()->get()->where('estado_sorteo', 'Activo'), 'empresa' => $this->empresa,  'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(8)->get(), 'userSession' => $this->user, 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(3)->get()]);
 
 

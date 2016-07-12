@@ -88,11 +88,11 @@
         </div><!-- /div .col-md6-sm12-xs12 -->
 
         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-            @include('feeds.indexPartial.sectionRight')
+            @include('empresas.indexPartial.sectionRight')
         </div><!-- /div .col-lg3-md3-sm12-xs12 -->
 
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          {{-- @include('feeds.indexPartial.sectionRight') --}}
+          @include('empresas.indexPartial.sectionRight')
         </div><!-- /div .col-lg12-md12-sm12-xs12 -->
 
       </div><!-- /div .row -->

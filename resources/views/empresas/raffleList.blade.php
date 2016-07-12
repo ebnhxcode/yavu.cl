@@ -123,7 +123,7 @@
                           <span class="glyphicon glyphicon-chevron-down"></span>
                         </button><!-- /div .btn .btn-default .btn-xs .dropdown-toggle -->
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                          <li><a href="{!! URL::to('empresa/'.$sorteo->nombre_empresa.'/sorteos') !!}">Ver m&aacute;s sorteos de {!! $sorteo->nombre_empresa !!}</a></li>
+                          <li><a href="{!! URL::to('empresas/'.$sorteo->empresa_id.'/sorteos') !!}">Ver m&aacute;s sorteos de {!! $sorteo->nombre_empresa !!}</a></li>
                           <li>{!!link_to_route('sorteos.show', $title = 'Ver mas detalles', $parameters = $sorteo->id, $attributes = [])!!}</li>
                           @if(Auth::user()->get()->id == $sorteo->user_id && $sorteo->estado_sorteo == 'Activo')
                             <li role="separator" class="divider"></li>
@@ -147,7 +147,7 @@
       </div>
 
       <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-        @include('sorteos.indexPartial.sectionRight')
+        @include('empresas.indexPartial.sectionRight')
       </div>
 
     </div>

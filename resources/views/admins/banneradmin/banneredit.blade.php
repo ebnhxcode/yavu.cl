@@ -5,21 +5,65 @@
   {!!Html::script('/js/admins/admins.js')!!}
   <div class="jumbotron">
     <div class="contentMiddle">
-      @include('alerts.allAlerts')
-        <!--
-        <div class="" style="font-size: 3em;">
-          <img id="img" style="padding-bottom: 20px;" width="8%" src= "{!!URL::to('img/newGraphics/neo_icono_config02.png')!!}"/><span> <a href="{!! URL::to('/admins') !!}">Administraci&oacute;n</a></span><span class="requerido"> \ </span><span>Editar Banner</span>
-        </div>
-        -->
+      <div class="row">
 
-         @include('alerts.alertFields')
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          @include('alerts.allAlerts')
+        </div><!-- /div .col-lg12-md12-sm12-xs12 -->
 
-          {!!Form::open(['route'=>'admins_banner_put_path', 'method'=>'PUT', 'files' => true])!!}
-            <input type="hidden" name="banner_data_id" value="{!! $bannerdata->id !!}">
-            @include('admins.banneradmin.forms.fieldsBanner')
-            {!!Form::submit('Crear', ['class'=>'btn btn-primary btn-success'])!!}
-          {!!Form::close()!!}
-    </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="list-group">
+            {!!Form::model($bannerdata, ['method'=>'PUT', 'route' => ['admins_banner_put_path', $bannerdata->id], 'files' => true , 'id' => 'FormBanner'])!!}
+
+              <input type="hidden" name="banner_data_id" value="{!! $bannerdata->id !!}">
+
+              @include('admins.banneradmin.forms.fieldsBannerPartial.bannerdataFields')
+
+              {!!Form::submit('Guardar', ['class'=>'btn btn-primary btn-success'])!!}
+
+            {!!Form::close()!!}
+          </div><!-- /div .list-group -->
+        </div><!-- /div .col-lg4-md4-sm4-xs12 -->
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+
+          <div class="list-group" >
+            {{--
+            {!!Form::model($bannerdata->linksBannerData, ['method'=>'PUT', 'route' => ['admins_banner_put_path', $bannerdata->id], 'files' => true , 'id' => 'FormLinkBanner'])!!}
+
+              <input type="hidden" name="banner_data_id" value="{!! $bannerdata->id !!}">
+
+              @include('admins.banneradmin.forms.fieldsBannerPartial.linkbannerdataFields')
+
+              {!!Form::submit('Guardar', ['class'=>'btn btn-primary btn-success'])!!}
+
+            {!!Form::close()!!}
+            --}}
+          </div><!-- /div .list-group -->
+
+        </div><!-- /div .col-lg4-md4-sm4-xs12 -->
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+
+          <div class="list-group" >
+            {{--
+            {!!Form::model($bannerdata->linksBannerData, ['method'=>'PUT', 'route' => ['admins_banner_put_path', $bannerdata->id], 'files' => true , 'id' => 'FormLinkBanner'])!!}
+
+              <input type="hidden" name="banner_data_id" value="{!! $bannerdata->id !!}">
+
+              @include('admins.banneradmin.forms.fieldsBannerPartial.categorybannerdataFields')
+
+              {!!Form::submit('Guardar', ['class'=>'btn btn-primary btn-success'])!!}
+
+            {!!Form::close()!!}
+            --}}
+          </div><!-- /div .list-group -->
+
+        </div><!-- /div .col-lg4-md4-sm4-xs12 -->
+
+      </div>
   </div>
-
+</div>
 @stop

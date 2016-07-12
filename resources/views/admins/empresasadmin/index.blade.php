@@ -28,7 +28,7 @@
                     <div class="row">
                       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <address>
-                          <h4><a class="btn-link" href="/empresa/{!!$empresa->nombre!!}">{!! $empresa->nombre!!}</a></h4>
+                          <h4><a class="btn-link" href="/empresas/{!!$empresa->id!!}">{!! $empresa->nombre!!}</a></h4>
                           <strong>Ciudad :</strong> {!!$empresa->ciudad!!}<br>
                           <strong>Contacto :<strong><a href="mailto:#">{!!$empresa->email!!}</a></strong><br>
                             <strong>Fono :</strong> <abbr title="Phone"></abbr> {!!$empresa->fono!!}<br></strong>

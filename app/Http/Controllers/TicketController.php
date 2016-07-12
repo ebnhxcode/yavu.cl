@@ -32,13 +32,14 @@ class TicketController extends Controller{
   public function ContarTickets(){
     return response()->json($this->user->tickets->sum('cantidad_tickets'));
   }
-  public function EfectuarCompra($user_id, $cantidadtickets){
-    if(isset($cantidadtickets)){
-      $valorCompra = (int) $cantidadtickets*100;
+  public function EfectuarCompra(Request $request){
+    if(isset($request->cantidadtickets)){
+      $valorCompra = (int)$request->cantidadtickets*100;
+
       if($this->user->registro_coins->sum('cantidad') >= (int) $valorCompra ){
-        $this->registro_coins = new RegistroCoin(['user_id' => $this->user->id,'motivo' => 'Compra de ticket'.(($cantidadtickets>1)?'s':''),'cantidad' => $valorCompra*-1,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
+        $this->registro_coins = new RegistroCoin(['user_id' => $this->user->id,'motivo' => 'Compra de ticket'.(($request->cantidadtickets>1)?'s':''),'cantidad' => $valorCompra*-1,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
         $this->user->registro_coins()->save($this->registro_coins);
-        $this->ticket = new Ticket(['user_id' => $this->user->id,'cantidad_tickets' => $cantidadtickets,'monto' => ((int) $cantidadtickets * 100),'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
+        $this->ticket = new Ticket(['user_id' => $this->user->id,'cantidad_tickets' => $request->cantidadtickets,'monto' => ((int) $request->cantidadtickets * 100),'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
         $this->user->tickets()->save($this->ticket);
         //$this->pop = new Pop(['user_id' => $this->user->id,'empresa_id' => 1,'tipo' => 'ticket','estado'   => 'pendiente','contenido' => 'Haz comprado '.$cantidadtickets.' ticket'.(($cantidadtickets>1)?'s!':'!'),'created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]);
         //$this->user->pops()->save($this->pop);

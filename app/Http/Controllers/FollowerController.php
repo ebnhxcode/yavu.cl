@@ -1,6 +1,7 @@
 <?php
 namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
 use DB;
@@ -12,7 +13,7 @@ use yavu\User;
 class FollowerController extends Controller{
   public function __construct(){
     if(Auth::user()->check()){
-      $this->user = User::findOrFail(Auth::user()->get()->id);
+      $this->user = User::find(Auth::user()->get()->id);
     }
   }
 
@@ -49,42 +50,29 @@ class FollowerController extends Controller{
   public function edit($id){
   }
   public function index(){
+
   }
-  public function NoSeguirEmpresa($empresa_id, $user_id){
-    if(isset($empresa_id) && isset($user_id) && Auth::user()->check()) {
-      $empresa_id = addslashes($empresa_id);
-      $user_id = addslashes($user_id);
-      if(Auth::user()->get()->id == $user_id){
-
-        DB::table('followers')
-          ->where('user_id', $user_id)
-          ->where('empresa_id', $empresa_id)
-          ->delete();
-
+  public function NoSeguirEmpresa(Request $request){
+    if(isset($request->empresa_id) && Auth::user()->check()) {
+      $empresa_id = addslashes($request->empresa_id);
+        Follower::where('empresa_id', $empresa_id)->where('user_id', Auth::user()->get()->id)->delete();
         return response()->json(
           'Estado: Se dejo de seguir'
         );
-      }
+    }else{
+      return Redirect::to('/empresas');
     }
     return response()->json('Acceso denegado');
   }
-  public function SeguirEmpresa($empresa_id, $user_id){
-    if(isset($empresa_id) && isset($user_id) && Auth::user()->check()){
-      $empresa_id = addslashes($empresa_id);
-      $user_id = addslashes($user_id);
-      if(Auth::user()->get()->id == $user_id){
-        $ExisteSeguimiento = Follower::where('user_id', $user_id)->where('empresa_id', $empresa_id)->first();
-        if ($ExisteSeguimiento){
-          DB::table('followers')->where('user_id', $user_id)->where('empresa_id', $empresa_id)->update(['estado' => 'activo']);
-        }else{
-          DB::table('followers')->insert(['user_id' => $user_id,'empresa_id' => $empresa_id,'estado' => 'activo','created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
-        }
-        return response()->json(
-          'Estado: Siguiendo'
-        );
+  public function SeguirEmpresa(Request $request){
+
+      $ExisteSeguimiento = Follower::where('user_id', Auth::user()->get()->id)->where('empresa_id', addslashes($request->empresa_id))->first();
+      if (!$ExisteSeguimiento){
+        DB::table('followers')->insert(['user_id' => Auth::user()->get()->id,'empresa_id' => addslashes($request->empresa_id),'estado' => 'activo','created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
       }
-    }
-    return response()->json('Acceso denegado');
+      return response()->json(
+        'Estado: Siguiendo'
+      );
   }
   public function show($id){
   }
