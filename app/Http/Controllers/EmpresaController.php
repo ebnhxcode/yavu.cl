@@ -209,16 +209,9 @@ class EmpresaController extends Controller{
 
 
   public function RaffleList($id){
-
-      $id = addslashes($id);
-
-      $this->empresa = Empresa::find($id);
-
-      $this->user = User::findOrFail($this->empresa->user_id);
-
-      return view('empresas.raffleList', ['sorteos' => $this->user->sorteos()->get()->where('estado_sorteo', 'Activo'), 'empresa' => $this->empresa,  'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(8)->get(), 'userSession' => $this->user, 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(3)->get()]);
-
-
+    $this->empresa = Empresa::find($id);
+    $this->user = User::find($this->empresa->user_id);
+    return view('empresas.raffleList', ['sorteos' => $this->user->sorteos()->get()->where('estado_sorteo', 'Activo'), 'empresa' => $this->empresa,  'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user, 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(3)->get()]);
   }
   public function SolicitarEliminacion($id){
     if(isset($id)){

@@ -27,7 +27,7 @@
 
         <div role="tabpanel" class="tab-pane wrap active list-group" id="coinsHistory">
           @foreach($movements = $userSession->history_moves_of_coins as $key => $movement)
-            <div class="list-group-item div-hover">
+            <div class="list-group-item ">
               Actividad : {!! ($movement->motivo) !!} hace
               <abbr class='timeago' id='timeago' value='{!! $movement->created_at !!}' title='{!! $movement->created_at !!}'>{!! $movement->created_at !!}</abbr>
               {!! (($cantidadYavuCoins = $movement -> cantidad) > 0?'<span class="text-success">La suma de : ':'<span class="text-danger">El uso por : ') . $cantidadYavuCoins !!} <span style=" font-family: yavu_font;color: #FFE955;font-size: 2em;">J</span>.
