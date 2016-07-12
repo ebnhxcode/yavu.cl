@@ -610,3 +610,16 @@
 .interests {
   background-color: #0000AA;
 }
+.section-a {
+  background-color: #FFFFff;
+  margin-bottom: 0px;
+}
+.section-b {
+  background-color: #eeeeee;
+  margin-bottom: 0px;
+}
+.section-c {
+  background-color: #486e14;
+  color: white;
+  margin-bottom: 0px;
+}
