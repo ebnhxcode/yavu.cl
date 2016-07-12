@@ -132,16 +132,17 @@ class AdminController extends Controller
       return view('admins.empresasadmin.edit', ['empresa' => $this->empresa], ['user_email' => $this->user->email]);
     }
 
-    public function empresasupdate(EmpresaUpdateRequest $request, $id){
+    public function empresasupdate(Request $request, $id){
       //AQUI VOY
       if(RUT::check($request->rut)){
+          $this->empresa = Empresa::find($request->id);
           $this->empresa->fill($request->all());
           $this->empresa->save();
           Session::flash('message', 'Empresa editada correctamente');
-          return Redirect::to('/admins/empresa');
+          return Redirect::to('/admins/');
       }else{
           Session::flash('message-error', 'El rut ingresado no es válido.');
-          return Redirect::to('/dashboard');
+          return Redirect::to('admins/empresas/'.$request->id.'/edit');
       }
     }
     public function empresasstore(EmpresaCreateRequest $request)

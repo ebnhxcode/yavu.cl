@@ -24,6 +24,7 @@
 
 
   @if(count($userSession->empresas)>0 )
+
     @if(isset($e))
       @if($e->id == $userSession->empresas[0]->id)
         @include('feeds.indexPartial.sectionCenterPartial.newStatusForm')
@@ -31,7 +32,9 @@
     @else
       @include('feeds.indexPartial.sectionCenterPartial.newStatusForm')
     @endif
+
   @endif
+
   @foreach($companyStatuses as $key => $companyStatus)
 
 

@@ -14,9 +14,9 @@ $(document).ready(function(){
 /*SELECTORES*/
 
 	$(function () {
-		$( "#seguir" ).click(function(){
+		$( ".seguir" ).click(function(){
 			$( this ).text('Siguiendo');
-			Seguir( $(this).attr('value') );
+			Seguir( $(this).attr('value'), $(this));
 		});
 		return true;
 	});
@@ -24,7 +24,7 @@ $(document).ready(function(){
 /*SELECTORES*/
 
 /*FUNCIONES Y PROCEDIMIENTOS*/
-	function Seguir(company_id){
+	function Seguir(company_id, btn){
 		company_id = company_id || 0;
 		var token = $("#token").val();
 
@@ -39,11 +39,11 @@ $(document).ready(function(){
 			},
 			success:function(result){
         if(result.estado==='not-followed'){
-          $( seguir ).text('Seguir');
+          btn.text('Seguir');
         }
-        $( seguidores ).val(result.followers);
-        $( seguidores ).text(result.followers);
-				return $("#company-item-"+company_id).fadeOut(5000);
+        $( '#seguidores'+company_id ).val(result.followers);
+        $( '#seguidores'+company_id ).text(result.followers);
+				return $("#company-item-"+company_id).fadeOut(2500);
 			}
 		});	
 		return true;

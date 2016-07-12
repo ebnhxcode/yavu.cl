@@ -1,6 +1,4 @@
 <div class="list-group">
-
-
   @foreach($companies as $key => $company)
     @if($key < 1)
       <div class="list-group-item">
@@ -10,33 +8,36 @@
     @if(count($userSession->follow($company->id)->get())==0)
       <div id="company-item-{!! $company->id !!}" class="list-group-item">
         <div class="row">
+
           <div class="col-xs-4 col-sm-4 col-md-2 col-lg-">
             <a href="/empresas/{!! $company->id !!}">
               <img class='media-object' style='width: 36px; height: 36px; border-radius: 10%; ' src='/img/users/{!! ($company->imagen_perfil!='')?$company->imagen_perfil:'usuario_nuevo.png' !!}' class='center-block'>
             </a>
-          </div>
+          </div><!-- /div col-xs4-sm4-md2-lg2 -->
+
           <div class="col-xs-4 col-sm-4 col-md-8 col-lg-8">
             <small><a href="/empresas/{!! $company->id !!}">{!! $company->nombre !!}</a></small><br>
             <div class="softText-descriptions">
               {!! $company->descripcion !!}<br>
-              <span id="seguidores">{!! count($company->followers) !!}</span> seguidores<br>
+              <span id="seguidores{!! $company->id !!}">{!! count($company->followers) !!}</span> seguidores<br>
               {!! count($company->visits) !!} visitas<br>
-            </div>
+            </div><!-- /div .softText-descriptions -->
+          </div><!-- /div col-xs4-sm4-md8-lg8 -->
 
-          </div>
           <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2">
             <div class="btn-group-vertical" role="group" style="float:right;">
               <a href="/empresas/{!! $company->id !!}" class="btn btn-success btn-xs">
                 Ver perfil
-              </a>
-              <span class="btn btn-primary btn-xs" id="seguir" value="{!! $company->id !!}" role="button">Seguir</span>
-            </div>
-          </div>
-        </div>
+              </a><!-- /a .btn .btn-success .btn-xs -->
+              <span class="btn btn-primary btn-xs seguir" value="{!! $company->id !!}" role="button">Seguir</span>
+            </div><!-- /div .btn-group-vertical -->
+          </div><!-- /div col-xs4-sm4-md2-lg2 -->
+
+        </div><!-- /div .row -->
       </div><!-- /div .list-group-item -->
     @endif
   @endforeach
-    <input type="hidden" name="_token" id="token" value="{!! csrf_token() !!}" >
+  <input type="hidden" name="_token" id="token" value="{!! csrf_token() !!}" >
 </div><!-- /div .list-group -->
 
 <!-- Banner Random -->
