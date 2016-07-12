@@ -64,7 +64,7 @@
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
           <div class='form-group has-feedback has-feedback-left'>
             <div class="input-group input-group-sm">
-              {!!Form::select('region',
+              {!!Form::select('ciudad',
               ['Región de Arica y Parinacota' =>
                 ['Arica' => 'Arica',
                 'Putre' => 'Putre'],
