@@ -9,7 +9,7 @@ class CreateBannerDataTable extends Migration
             $table->increments('id');
             $table->string('titulo_banner', 20);
             $table->string('banner');
-            $table->string('descripcion_banner', 80);
+            $table->string('descripcion_banner', 200);
             $table->string('estado_banner');  
             $table->string('empresa_id');
             $table->timestamps();
