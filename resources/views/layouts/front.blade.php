@@ -271,19 +271,48 @@
 
 			</div><!-- /container -->
 		</nav><!-- /navbar-inverse -->
+
 		@if(Auth::user()->check())
-			<div class="panel panel-default fijar" style="margin-bottom: 0px;  z-index: 1000; width: 100%;">
-				<div class="panel-body visible-xs-block" style=" padding: 8px 15px 0px 10px;">
-					<div class="row">
-						<div class="col-xs-10">
-							<h4>@yield('title')</h4>
-						</div>
-						<div class="col-xs-2 text-right">
-							<a href="{{ URL::previous() }}" class="btn btn-success btn-sm" role="button">Volver</a>
+			@if(Request::path() === 'empresas' || Request::path()  === 'sorteos' || Request::path()  === 'feeds')
+				<div class="panel panel-default fijar" style="margin-bottom: 0px;  z-index: 1000; width: 100%;">
+					<div class="panel-body visible-xs-block" style=" padding: 8px 15px 0px 10px;">
+						<div class="row">
+							<div class="col-xs-10">
+								<h4>@yield('title')</h4>
+							</div>
+							<div class="col-xs-2 text-right">
+								<a href="{{ URL::to('/dashboard/') }}" class="btn btn-success btn-sm" role="button">Volver</a>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			@else
+				@if(Request::path() === 'dashboard')
+					<div class="panel panel-default fijar" style="margin-bottom: 0px;  z-index: 1000; width: 100%;">
+						<div class="panel-body visible-xs-block" style=" padding: 8px 15px 0px 10px;">
+							<div class="row">
+								<div class="col-xs-10">
+									<h4>@yield('title')</h4>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				@else
+				<div class="panel panel-default fijar" style="margin-bottom: 0px;  z-index: 1000; width: 100%;">
+					<div class="panel-body visible-xs-block" style=" padding: 8px 15px 0px 10px;">
+						<div class="row">
+							<div class="col-xs-10">
+								<h4>@yield('title')</h4>
+							</div>
+							<div class="col-xs-2 text-right">
+								<a href="{{ URL::previous() }}" class="btn btn-success btn-sm" role="button">Atr&aacute;s</a>
+							</div>
+						</div>
+					</div>
+				</div>
+					@endif
+			@endif
 		@endif
 
 		@yield('content')

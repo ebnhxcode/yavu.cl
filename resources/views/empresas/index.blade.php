@@ -3,6 +3,7 @@
 @extends('layouts.front')
 @section('content')
 {{--{!!Html::script('js/ajax/BuscarEmpresa.js')!!}--}}
+
 <div class="jumbotron">
 	<div class="contentMiddle">
     <div class="row">

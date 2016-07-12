@@ -5,6 +5,7 @@
 {!!Html::script('js/ajax/ParticiparSorteo.js')!!}
 @extends('layouts.front')
 @section('content')
+  
 <div class="jumbotron">
   <div class="contentMiddle">
     <div class="row">

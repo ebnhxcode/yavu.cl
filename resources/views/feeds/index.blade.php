@@ -4,6 +4,7 @@
 {{--{!!Html::script('js/publicaciones/GestionarPublicacionesFeeds.js')!!}--}}
 @extends('layouts.front')
 @section('content')
+
 <div class="jumbotron">
   <div class="contentMiddle">
 

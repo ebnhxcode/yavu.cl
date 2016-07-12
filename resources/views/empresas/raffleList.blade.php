@@ -4,6 +4,7 @@
 {!!Html::script('js/jquery.js')!!}
 {!!Html::script('js/ajax/ParticiparSorteo.js')!!}
 @section('content')
+
 <div class="jumbotron">
   <div class="contentMiddle">
 

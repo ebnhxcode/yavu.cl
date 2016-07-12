@@ -5,6 +5,7 @@
 {{--{!!Html::script('js/ajax/EmpresasDashboardUsuario.js')!!}--}}
 @extends('layouts.front')
 @section('content')
+
 <div class='jumbotron'>
 	<div class='contentMiddle'>
 		<h4 style='margin-top:-40px;'></h4>
