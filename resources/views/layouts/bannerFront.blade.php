@@ -12,8 +12,10 @@
     <li data-target = "#myCarousel" data-slide-to = "0" class="active"></li>
     <li data-target = "#myCarousel" data-slide-to = "1"></li>
     <li data-target = "#myCarousel" data-slide-to = "2" ></li>
+    {{--
     <li data-target = "#myCarousel" data-slide-to = "3" ></li>
     <li data-target = "#myCarousel" data-slide-to = "4" ></li>
+    --}}
   </ol>
   <!-- Páginas de Slides -->
   <div class = "carousel-inner">
@@ -86,6 +88,7 @@
 
     </div>
 
+    {{--
     <div class = "item">
      
       <div class="fill"><img style="background-size:cover;" src = "img/newGraphics/neobanner04.jpg" width=100%></div>
@@ -111,6 +114,7 @@
     </div>
 
   </div>
+  --}}
   <!-- Controles -->         
   <a class = "carousel-control left" href = "#myCarousel" data-slide = "prev">
     <span class = "icon-prev"></span>
