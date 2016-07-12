@@ -133,7 +133,7 @@
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
           <div class='form-group has-feedback has-feedback-left'>
             <div class="input-group input-group-sm">
-              {!!Form::number('fono',null,['class'=>'form-control','placeholder'=>'Tel&eacute;fono', 'maxlength' => '16', 'required'])!!}
+              {!!Form::text('fono',null,['class'=>'form-control','placeholder'=>'Tel&eacute;fono', 'maxlength' => '18'])!!}
               <div class="input-group-addon">
                 Tel&eacute;fono
               </div><!-- /div .input-group-addon -->

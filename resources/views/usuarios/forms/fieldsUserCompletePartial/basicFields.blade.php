@@ -49,7 +49,7 @@
     </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 
     <div class='form-group has-feedback has-feedback-left'>
-      {!!Form::number('fono',null,['class'=>'form-control input-sm','placeholder'=>'Tel&eacute;fono', 'maxlength' => '16', 'required'])!!}
+      {!!Form::text('fono',null,['class'=>'form-control input-sm','placeholder'=>'Tel&eacute;fono', 'maxlength' => '16', 'required'])!!}
     </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 
     @if($userActive = Auth::user()->check())
