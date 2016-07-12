@@ -28,5 +28,9 @@
 			</div><!-- /div .row -->
 		</div><!-- /div #contentMiddle aligned -->
 	</div><!-- /div .jumbotron -->
+	@if(!Auth::user()->check())
+		@include('mainViews.indexPartial.modalRegister')
+	@endif
+
 @stop
 

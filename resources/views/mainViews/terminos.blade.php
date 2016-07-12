@@ -98,4 +98,7 @@
 			</div><!-- /div .panel .panel-default -->
 		</div><!-- /div #contentMiddle -->
 	</div><!-- /div .jumbotron -->
+	@if(!Auth::user()->check())
+		@include('mainViews.indexPartial.modalRegister')
+	@endif
 @stop

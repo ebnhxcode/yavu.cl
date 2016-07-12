@@ -100,5 +100,7 @@
             </div>
         </div>
     </div>
-
+    @if(!Auth::user()->check())
+        @include('mainViews.indexPartial.modalRegister')
+    @endif
 @stop

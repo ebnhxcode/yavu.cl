@@ -133,7 +133,7 @@
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
 						@if(!Auth::user()->check() && !Auth::empresa()->check() && !Auth::admin()->check())
-              @if(Request::path() != 'login' && Request::path() == '/')
+              @if(Request::path() != 'login' )
 
                 <div class="" align="">
 
@@ -164,7 +164,7 @@
                     <input type="hidden" name="_token" value="{!! csrf_token() !!}"><!-- /input token -->
 
                     <button type="submit" class="btn btn-success btn-sm">Iniciar sesi&oacute;n </button>
-										<a class="btn btn-warning btn-sm" data-toggle="modal" data-target="#gridSystemModal" role="button">Registrate</a>
+										<a class="btn btn-warning btn-sm" data-toggle="modal" data-target="#gridSystemModal" role="button">Reg&iacute;strate</a>
 
                     {!!Form::close()!!}
                   </div><!--/.navbar-collapse -->
