@@ -61,8 +61,148 @@
           </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
         </div><!-- /div .col-lg6-md6-sm6-xs12 -->
 
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div class='form-group has-feedback has-feedback-left'>
+            <div class="input-group input-group-sm">
+              {!!Form::select('region',
+              ['Región de Arica y Parinacota' =>
+                ['Arica' => 'Arica',
+                'Putre' => 'Putre'],
+              'Región de Tarapacá' =>
+                ['Iquique' => 'Iquique',
+                'Alto Hospicio' => 'Alto Hospicio',
+                'Pica' => 'Pica'],
+              'Región de Antofagasta' =>
+                ['Antofagasta' => 'Antofagasta',
+                'Mejillones' => 'Mejillones',
+                'Taltal' => 'Taltal',
+                'Calama' => 'Calama',
+                'Ollagüe' => 'Ollagüe',
+                'San Pedro de Atacama' => 'San Pedro de Atacama',
+                'Tocopilla' => 'Tocopilla'],
+              'Región de Atacama' =>
+                ['Copiapó' => 'Copiapó',
+                'Caldera' => 'Caldera',
+                'El Salvador' => 'El Salvador',
+                'Chañaral' => 'Chañaral',
+                'Diego de Almagro' => 'Diego de Almagro',
+                'Vallenar' => 'Vallenar',
+                'Huasco' => 'Huasco'],
+              'Región de Coquimbo' =>
+                ['La Serena' => 'La Serena',
+                'Coquimbo' => 'Coquimbo',
+                'Vicuña' => 'Vicuña',
+                'Illapel' => 'Illapel',
+                'Los Vilos' => 'Los Vilos',
+                'Ovalle' => 'Ovalle',
+                'Combarbalá' => 'Combarbalá'],
+              'Región de Valparaiso' =>
+                ['Valparaiso' => 'Valparaiso',
+                'Viña del Mar' => 'Viña del Mar',
+                'Casablanca' => 'Casablanca',
+                'Concón' => 'Concón',
+                'San Felipe' => 'San Felipe',
+                'Olmué' => 'Olmué',
+                'Villa Alemana' => 'Villa Alemana',
+                'Quilpué' => 'Quilpué',
+                'Los Andes' => 'Los Andes',
+                'La Ligua' => 'La Ligua',
+                'Papudo' => 'Papudo',
+                'Zapallar' => 'Zapallar',
+                'Quillota' => 'Quillota',
+                'Calera' => 'Calera',
+                'San Antonio' => 'San Antonio',
+                'Algarrobo' => 'Algarrobo',
+                'Cartagena' => 'Cartagena'],
+              'Región Metropolitana' =>
+                ['Colina' => 'Colina',
+                'Melipilla' => 'Melipilla',
+                'San José de Maipo' => 'San José de Maipo'],
+              'Región de O Higgins' =>
+                ['Rancagua' => 'Rancagua',
+                'Rengo' => 'Rengo',
+                'San Fernando' => 'San Fernando',
+                'Pichilemu' => 'Pichilemu',
+                'Santa Cruz' => 'Santa Cruz',
+                'San Vicente' => 'San Vicente',
+                'Chimbarongo' => 'Chimbarongo'],
+              'Región del Maule' =>
+                ['Curicó' => 'Curicó',
+                'Talca' => 'Talca',
+                'Constitución' => 'Constitución',
+                'Linares' => 'Linares',
+                'Cauquenes' => 'Cauquenes',
+                'Maule' => 'Maule',
+                'Parral' => 'Parral',
+                'Molina' => 'Molina',
+                'San Clemente' => 'San Clemente',
+                'San Rafael' => 'San Rafael'],
+              'Región del Biobío' =>
+                ['Chillán' => 'Chillán',
+                'Concepción' => 'Concepción',
+                'Los Ángeles' => 'Los Ángeles',
+                'Talcahuano' => 'Talcahuano',
+                'Coronel' => 'Coronel',
+                'Chiguayante' => 'Chiguayante',
+                'Curanilahue' => 'Curanilahue',
+                'Lebu' => 'Lebu',
+                'San Rosendo' => 'San Rosendo',
+                'Bulnes' => 'Bulnes',
+                'Cobquecura' => 'Cobquecura'],
+              'Región de la Araucanía' =>
+                ['Temuco' => 'Temuco',
+                'Angol' => 'Angol',
+                'Puerto Saavedra' => 'Puerto Saavedra',
+                'Villarrica' => 'Villarrica',
+                'Pucón' => 'Pucón',
+                'Lonquimay' => 'Lonquimay',
+                'Collipulli' => 'Collipulli'],
+              'Región de Los Ríos' =>
+                ['Valdivia' => 'Valdivia',
+                'Panguipulli' => 'Panguipulli',
+                'La Unión' => 'La Unión',
+                'Río Bueno' => 'Río Bueno',
+                'Lago Ranco' => 'Lago Ranco'],
+              'Región de Los Lagos' =>
+                ['Osorno' => 'Osorno',
+                'Puerto Montt' => 'Puerto Montt',
+                'Ancud' => 'Ancud',
+                'Castro' => 'Castro',
+                'Cochamó' => 'Cochamó',
+                'Quellón' => 'Quellón',
+                'Chaitén' => 'Chaitén',
+                'Frutillar' => 'Frutillar',
+                'LLanquihue' => 'Llanquihue',
+                'Futaleufú' => 'Futaleufú'],
+              'Región de Aysén' =>
+                ['Melinka' => 'Melinka',
+                'Lago Verde' => 'Lago Verde',
+                'Puerto Cisnes' => 'Puerto Cisnes',
+                'Puerto Aysén' => 'Puerto Aysén',
+                'Coyhaique' => 'Coyhaique',
+                'Balmaceda' => 'Balmaceda',
+                'Puerto Ibañez' => 'Puerto Ibañez',
+                'Chile Chico' => 'Chile Chico',
+                'Cochrane' => 'Cochrane',
+                'Caleta Tortel' => 'Caleta Tortel',
+                'Villa O Higgins' => 'Villa O Higgins'],
+              'Región de Magallanes y la Antártica' =>
+                ['Torres del Paine' => 'Torres del Paine',
+                'Puerto Natales' => 'Puerto Natales',
+                'Punta Arenas' => 'Punta Arenas',
+                'Porvenir' => 'Porvenir',
+                'Puerto Williams' => 'Puerto Williams']],
+              $selected = null, ['class' => 'form-control', 'required' => 'required'])
+              !!}
+              <div class="input-group-addon">
+                Ciudad
+              </div><!-- /div .input-group-addon -->
+            </div><!-- /div .input-group .input-group-sm -->
+          </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
+        </div><!-- /div .col-lg6-md6-sm6-xs12 -->
 
 
+        {{--
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
           <div class='form-group has-feedback has-feedback-left'>
             <div class="input-group input-group-sm">
@@ -106,6 +246,9 @@
             </div><!-- /div .input-group .input-group-sm -->
           </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
         </div><!-- /div .col-lg6-md6-sm6-xs12 -->
+
+        --}}
+
 
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
           <div class='form-group has-feedback has-feedback-left'>
