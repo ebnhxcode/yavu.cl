@@ -76,8 +76,11 @@ $(document).ready(function(){
 					}
 
 
-
+					/* muetra si tiene una empresa */
 					$(".hasoneempresa").css("display", "");
+					
+					/* esconde si tiene una empresa */
+					$(".hideifhasone").css("display", "none")
 					
 					$("#EstadoEmpresa").append(
 						'<div>'+

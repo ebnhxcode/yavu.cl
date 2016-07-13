@@ -46,9 +46,9 @@
             </div><!-- /div .list-group -->
           </div><!-- /div .col-md4-sm6-xs12 -->
 
-					<div class='col-md-4 col-sm-6 col-xs-12'>
-						<div class='list-group' >
-							<a href='{!!URL::to('/empresas/create')!!}' style='text-align:center;' class='list-group-item'>
+          <div class='col-md-4 col-sm-6 col-xs-12 hideifhasone'>
+              <div class='list-group' >
+                  <a href='{!!URL::to('/empresas/create')!!}' style='text-align:center;' class='list-group-item'>
                 <span>
                   <h4>CREAR EMPRESA</h4>
                   <img class='img-responsive-centered' src= '{!!URL::to('img/newGraphics/icono_crea_empresa.png')!!}'/>
