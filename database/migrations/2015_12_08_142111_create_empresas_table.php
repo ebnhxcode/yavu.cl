@@ -8,7 +8,7 @@ class CreateEmpresasTable extends Migration
         Schema::dropIfExists('empresas');
         Schema::create('empresas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('user_id', 20);
+            $table->string('user_id');
             $table->string('rut', 16)->unique();
             $table->string('email', 100)->unique();
             $table->string('login', 100);

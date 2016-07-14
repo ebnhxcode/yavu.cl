@@ -7,7 +7,7 @@ class CreateCategoryBannerDataTable extends Migration
     {
         Schema::create('category_banner_data', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('category', 20);  
+            $table->string('category', 50);//('category_list_id') -> largo plazo
             $table->string('banner_data_id');
             $table->timestamps();
         });
