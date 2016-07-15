@@ -351,6 +351,7 @@ class ComposerStaticInited7924d490fe9e0cf1eacb6de9e69f50
         'CreateCategoryListsTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_01_034306_create_category_lists_table.php',
         'CreateCoinsTable' => __DIR__ . '/../..' . '/database/migrations/2016_04_12_232920_create_coins_table.php',
         'CreateCompanyCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_04_225901_create_company_categories_table.php',
+        'CreateCompanyImageStatusesTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_15_182304_create_company_image_statuses_table.php',
         'CreateCompanyStatusesTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_13_163130_create_company_statuses_table.php',
         'CreateEmpresasTable' => __DIR__ . '/../..' . '/database/migrations/2015_12_08_142111_create_empresas_table.php',
         'CreateEncuestasTable' => __DIR__ . '/../..' . '/database/migrations/2016_02_24_104857_create_encuestas_table.php',

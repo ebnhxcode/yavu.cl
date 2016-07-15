@@ -21,6 +21,8 @@ class EstadoEmpresa extends Model
         return $this->hasOne(InteraccionEstado::class, 'status_id')->select('user_id')->where('user_id', $user_id);
     }
 
-
+    public function statusImage(){
+        return $this->hasOne(CompanyImageStatus::class, 'status_id')->select('company_image_status');
+    }
 
 }

@@ -10,7 +10,6 @@
       <div class="softText-descriptions">
 
         <!-- Nav tabs -->
-        {{--
         <ul id="TabUserProfile" class="nav nav-tabs" role="tablist">
 
           <li role="presentation" class="">
@@ -18,22 +17,22 @@
               <span class="glyphicon glyphicon-camera status-image-load"></span>
             </a>
           </li>
-          <!--
+          {{--
           <li role="presentation"><a href="#ticketsHistory" aria-controls="ticketsHistory" role="tab" data-toggle="tab">Hitorial tickets</a></li>
           <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Información</a></li>
-          <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Imagenes</a></li>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+          <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Imagenes</a></li>
+          --}}
         </ul>
-        --}}
           <!-- End Nav tabs -->
 
         <!-- Tab panes -->
         <div class="tab-content">
 
-          <div align="center" role="tabpanel" class="tab-pane fade active list-group" id="image">
+          <div align="center" role="tabpanel" class="tab-pane fade list-group" id="image">
             <br/>
             <label class="btn btn-default btn-file">
               <span class="glyphicon glyphicon-camera "></span>
-              Buscar imagen ... <input type="file" style="display: none;">
+              Buscar imagen ... <input type="file" style="display: none;" name="company_image_status" id="company_image_status" maxlength="1000" size="2048">
             </label>
           </div><!-- /div .tab-pane .fade .active .list-group .wrap -->
 
@@ -70,3 +69,17 @@
     </div><!-- /div .col-md11-sm12-xs12 -->
   </div><!-- /div .row -->
 </div><!-- /div .list-group-item -->
+<script>
+  $('#company_status_image').change(function(){
+    var formato = this.value;
+    var formatosPermitidos = ['jpg', 'jpeg', 'png', 'gif'];
+    formato = formato.split('.');
+    var sizeByte = this.files[0].size;
+    var siezekiloByte = parseInt(sizeByte / 1024);
+    if((formatosPermitidos.indexOf(formato[1]) < 0) || (siezekiloByte > $(this).attr('size')))
+    {
+      alert('Formato de imagen invalido o tamaño supera 2 Megas, seleccione otra imagen con tamaño menor');
+      this.value = '';
+    }
+  });
+</script>

@@ -19,6 +19,7 @@
   <div style="padding: 4px 4px 4px 4px;">
     <strong>Empresas que sigues</strong>
   </div>
+
   @foreach($userSession->followedCompanies as $key => $followedCompany)
     <a href="/empresas">
       <img data-toggle="tooltip" data-placement="top" title="{!! $followedCompany->getCompanyFollow->nombre !!}" src='/img/users/{!! ($followedCompany->getCompanyFollow->imagen_perfil!='')?$followedCompany->getCompanyFollow->imagen_perfil:'usuario_nuevo.png' !!}' data-holder-rendered='true' style='width: 36px; height: 36px; border-radius: 10%;'/>

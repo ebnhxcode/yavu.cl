@@ -20,7 +20,9 @@
 
 			<!-- panel central -->
 			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-				@include('feeds.indexPartial.sectionCenter')
+				<div class="list-group">
+					@include('feeds.indexPartial.sectionCenter')
+				</div>
 			</div><!-- /div .col-md5-sm12-xs12 -->
 
 			<!-- panel derecho -->

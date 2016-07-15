@@ -1,5 +1,6 @@
 <?php
 namespace yavu\Http\Controllers;
+use Carbon\Carbon;
 use Illuminate\Cache\RedisTaggedCache;
 use Illuminate\Http\Request;
 use yavu\Empresa;
@@ -7,7 +8,7 @@ use yavu\Http\Requests;
 use Session;
 use Redirect;
 use Auth;
-use yavu\Estado;
+use yavu\CompanyImageStatus;
 use yavu\EstadoEmpresa;
 use yavu\Http\Controllers\Controller;
 use DB;
@@ -25,7 +26,10 @@ class EstadoEmpresaController extends Controller{
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function store(Request $request){
-    EstadoEmpresa::create($request->all());
+    $companyStatus = EstadoEmpresa::create($request->all());
+    if($request->company_image_status){
+      CompanyImageStatus::create(['status_id'=>$companyStatus->id, 'company_image_status'=>$request->company_image_status]);
+    }
     return redirect()->to('/feeds');
   }
   public function CargarEstadoEmpresa($idUltima, $empresa){
