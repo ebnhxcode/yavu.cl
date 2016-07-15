@@ -1,9 +1,6 @@
 @section('favicon') {!!Html::favicon('favicons/company.png')!!} @stop
 @section('title') {!! ($e->nombre) !!} @stop
 {!!Html::script('js/jquery.js')!!}
-@if(Auth::user()->check())
-  {{-- {!!Html::script('js/ajax/GestionarEstadosEmpresa.js')!!} --}}
-@endif
 <!-- AIzaSyCrcjogGTQUWUOD3Bvp-B1mVzUq0q6WMgU -->
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrcjogGTQUWUOD3Bvp-B1mVzUq0q6WMgU&libraries=places"></script>
 {!!Html::script('js/googlemaps/MakerGoogleMaps.js')!!}
@@ -11,27 +8,27 @@
 @section('content')
 <div class="jumbotron">
 	<div class="contentMiddle">
-    @include('alerts.allAlerts')
-			<div class="row" style="margin-top:-35px;">
+    <div class="row" style="margin-top:-35px;">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+        @include('alerts.allAlerts')
+      </div><!-- /div .col-xs12-sm12-md12-lg12-->
 
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3"><!--style="position:fixed;z-index:1000;"-->
-          @include('empresas.publicProfilePartial.sectionLeft')
-        </div><!-- /div .col-xs12-sm12-md3-lg3-->
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3"><!--style="position:fixed;z-index:1000;"-->
+        @include('empresas.publicProfilePartial.sectionLeft')
+      </div><!-- /div .col-xs12-sm12-md3-lg3-->
 
-				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-          @include('empresas.publicProfilePartial.sectionCenter')
-				</div><!-- /div .col-xs12-sm12-md6-lg6-->
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        @include('empresas.publicProfilePartial.sectionCenter')
+      </div><!-- /div .col-xs12-sm12-md6-lg6-->
 
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <!-- agregar algo aquí -->
+      </div><!-- /div .col-xs12-sm12-md3-lg3-->
 
-        </div><!-- /div .col-xs12-sm12-md3-lg3-->
-
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-        </div>
-  			<br />
-      </div>
-  </div>
-</div>
+      <br />
+    </div><!-- /div .row styled -->
+  </div><!-- /div .contentMiddle -->
+</div><!-- /div .jumbotron -->
 @stop
 <script>
   var formatNumber = {
