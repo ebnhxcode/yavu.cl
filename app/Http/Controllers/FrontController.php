@@ -35,6 +35,9 @@ class FrontController extends Controller{
   public function yavucoins(){
     return view('mainViews.yavucoins');
   }
+  public function yavu(){
+    return view('mainViews.yavu', ['companies' => Empresa::select('id','nombre','imagen_perfil')->where('imagen_perfil','!=','')->orderByRaw('RAND()')->take(20)->get()]);
+  }
   public function faq(){
     return view('mainViews.faq');
   }

@@ -260,6 +260,7 @@ Route::get('index','FrontController@index');
 
 //Route::get('registro','FrontController@registro');
 Route::get('yavucoins','FrontController@yavucoins');
+Route::get('yavu','FrontController@yavu');
 Route::get('contacto','FrontController@contacto');
 Route::get('listaempresas/{empresa}','EmpresaController@ListaEmpresas');
 Route::get('nosotros','FrontController@nosotros');

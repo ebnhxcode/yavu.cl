@@ -22,7 +22,7 @@ class EstadoEmpresa extends Model
     }
 
     public function statusImage(){
-        return $this->hasOne(CompanyImageStatus::class, 'status_id')->select('company_image_status');
+        return $this->hasOne(CompanyImageStatus::class, 'status_id');
     }
 
 }

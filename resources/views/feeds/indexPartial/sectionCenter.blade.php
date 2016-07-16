@@ -47,8 +47,17 @@
           </a>
         </div><!-- /div .media-heading -->
 
-        {!! $companyStatus->status !!}
-        <br>
+        {!! $companyStatus->status !!}<br>
+
+
+        @if($cis = $companyStatus->statusImage()->select('company_image_status')->get())
+          @foreach( $cis as $key => $image )
+            <a href=#! class="thumbnail" style="margin: 0;">
+              <img src="/img/users/{!! $image->company_image_status !!}" alt="" class="img-responsive center-block">
+            </a>
+          @endforeach
+        @endif
+
         <div style="padding-top: 15px;" name='megusta' class=''>
           @if($companyStatus->statusRewarded->id!=Auth::user()->get()->id)
             @if($cs = $companyStatus->getUserInteraction($userSession->id)->get())
@@ -58,9 +67,7 @@
               <span id="status_{!! $companyStatus->id !!}"></span><!-- /span #status_id -->
             @endif
           @endif
-          <span class="text-info" style="float: right;font-size: 0.7em;">
-            <small>(Author : <a href="/empresas/{!! $companyStatus->empresa_id !!}">{!! $companyPostName !!}</a>)</small>
-          </span><!-- /span .text-info styled -->
+
         </div><!-- /div -->
       </div><!-- /div .col-lg11-md11-sm12-xs12 -->
 
