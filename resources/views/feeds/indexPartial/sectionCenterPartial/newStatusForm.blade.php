@@ -4,7 +4,7 @@
       <img class='media-object' src='/img/users/{!! ($myCompanies[0]->imagen_perfil!='')?$myCompanies[0]->imagen_perfil:'usuario_nuevo.png' !!}' data-holder-rendered='true' style='width: 36px; height: 36px; border-radius: 10%; float:left;'/>
     </div><!-- /div .col-md1-sm12-xs12 -->
     <div class="col-xs-12 col-sm-12 col-md-11 col-lg-11">
-      {!!Form::open(['route'=>'estadoempresa.store', 'method'=>'POST'])!!}
+      {!!Form::open(['route'=>'estadoempresa.store', 'method'=>'POST', 'files' => 'true'])!!}
       {!!Form::textarea('status',null,['class'=>'form-control newCompanyPost','placeholder'=>'¡Comparte una publicaci&oacute;n!', 'maxlength'=>'200', 'required'=>'required','style'=>'resize:none; padding: 15px;font-size: 1em;', 'rows'=>'2', 'id'=>'status'])!!}
 
       <div class="softText-descriptions">
@@ -70,7 +70,7 @@
   </div><!-- /div .row -->
 </div><!-- /div .list-group-item -->
 <script>
-  $('#company_status_image').change(function(){
+  $('#company_image_status').change(function(){
     var formato = this.value;
     var formatosPermitidos = ['jpg', 'jpeg', 'png', 'gif'];
     formato = formato.split('.');

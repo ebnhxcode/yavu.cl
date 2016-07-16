@@ -11,9 +11,12 @@ class CompanyImageStatus extends Model
 
     public function setCompanyImageStatusAttribute($company_image_status)
     {
-        $this->attributes['company_image_status'] = Carbon::now()->minute.$company_image_status->getClientOriginalName();
-        $name = Carbon::now()->minute.$company_image_status->getClientOriginalName();
+        $this->attributes['company_image_status'] = Carbon::now()->second.Carbon::now()->minute.Carbon::now()->hour.$company_image_status->getClientOriginalName();
+
+        $name = Carbon::now()->second.Carbon::now()->minute.Carbon::now()->hour.$company_image_status->getClientOriginalName();
+
         \Storage::disk('local')->put($name, \File::get($company_image_status));
     }
+
 
 }
