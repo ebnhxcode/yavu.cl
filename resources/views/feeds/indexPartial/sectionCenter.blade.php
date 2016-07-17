@@ -54,7 +54,7 @@
           @foreach( $cis as $key => $image )
             <a href=#! class="thumbnail" style="margin: 0;">
               <img src="/img/users/{!! $image->company_image_status !!}" alt="" class="img-responsive center-block">
-            </a>
+            </a><!-- /a .thumbnail -->
           @endforeach
         @endif
 

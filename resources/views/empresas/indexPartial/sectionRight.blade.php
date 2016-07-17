@@ -18,7 +18,7 @@
           <div class="col-xs-4 col-sm-4 col-md-8 col-lg-8">
             <small><a href="/empresas/{!! $company->id !!}">{!! $company->nombre !!}</a></small><br>
             <div class="softText-descriptions">
-              {!! $company->descripcion !!}<br>
+              {{-- {!! $company->descripcion !!}--}}
               <span id="seguidores{!! $company->id !!}">{!! count($company->followers) !!}</span> seguidores<br>
               {!! count($company->visits) !!} visitas<br>
             </div><!-- /div .softText-descriptions -->
