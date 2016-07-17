@@ -283,7 +283,7 @@
 								<h4>@yield('title')</h4>
 							</div>
 							<div class="col-xs-2 text-right">
-								<a href="{{ URL::to('/dashboard/') }}" class="btn btn-success btn-sm" role="button">Volver</a>
+								<a href="{{ URL::to('/dashboard/') }}" class="btn btn-success btn-sm" role="button">Atr&aacute;s</a>
 							</div>
 						</div>
 					</div>

@@ -1,7 +1,6 @@
-@if(count($userSession->empresas)>0 )
-
+@if(count($userSession->empresas)>0)
   @if(isset($e))
-    @if($e->id == $userSession->empresas[0]->id)
+    @if($e->user_id == $userSession->id)
       @include('feeds.indexPartial.sectionCenterPartial.newStatusForm')
     @endif
   @else
@@ -9,6 +8,7 @@
   @endif
 
 @endif
+
 <input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
 @foreach($companyStatuses as $key => $companyStatus)
   <div id='publicacion{!! $companyStatus->id !!}' class="list-group-item">
