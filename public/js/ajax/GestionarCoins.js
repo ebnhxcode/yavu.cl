@@ -38,7 +38,7 @@ $(document).ready(function(){
 /*FUNCIONES Y PROCEDIMIENTOS*/
 	function ContarCoins(){
 		var CargarEstados = $("#CargarEstados"); 
-		var route = "http://186.64.123.143/contarcoins";
+		var route = "http://yavu.cl/contarcoins";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
 			$(".CantidadCoins").value = "";
@@ -51,7 +51,7 @@ $(document).ready(function(){
 		return true;
 	}
 	function InfoEmpresas(){
-		var route = "http://186.64.123.143/infoempresas/";
+		var route = "http://yavu.cl/infoempresas/";
 		var Pendiente = false;
 		$.get(route, function(res){
 			$("#EstadoEmpresa").value = "";

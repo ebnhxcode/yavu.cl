@@ -28,7 +28,7 @@ $(document).ready(function(){
 		company_id = company_id || 0;
 		var token = $("#token").val();
 
-		var route = "http://186.64.123.143/seguirempresa";
+		var route = "http://yavu.cl/seguirempresa";
 		$.ajax({
 			url: route,
 			headers: {'X-CSRF-TOKEN': token},
@@ -53,7 +53,7 @@ $(document).ready(function(){
 		var user_id = $("#user_id").val();
 		var company_id = $("#company_id").val();
 		var token = $("#token").val();
-		var route = "http://186.64.123.143/noseguirempresa/";
+		var route = "http://yavu.cl/noseguirempresa/";
 		$.ajax({
 			url: route,
 			headers: {'X-CSRF-TOKEN': token},
@@ -75,7 +75,7 @@ $(document).ready(function(){
 		var user_id = $("#user_id").val();
 		var company_id = $("#company_id").val();
 		$.ajax({
-			url: "http://186.64.123.143/contarseguidores/"+company_id+"/"+user_id,
+			url: "http://yavu.cl/contarseguidores/"+company_id+"/"+user_id,
 			type: 'GET',
 			dataType: 'json',
 			cache: false,
@@ -99,7 +99,7 @@ $(document).ready(function(){
 		var user_id = $("#user_id").val();
 		var company_id = $("#company_id").val();
 		$.ajax({
-			url: "http://186.64.123.143/verificarseguidores/"+company_id+"/"+user_id,
+			url: "http://yavu.cl/verificarseguidores/"+company_id+"/"+user_id,
 			type: 'GET',
 			dataType: 'json',
 			cache: false,
