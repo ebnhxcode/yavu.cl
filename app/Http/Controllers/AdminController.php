@@ -2,6 +2,7 @@
 
 namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
+use yavu\EstadoEmpresa;
 use yavu\Http\Requests;
 use yavu\Http\Requests\EmpresaCreateRequest;
 use yavu\Http\Requests\EmpresaUpdateRequest;
@@ -11,6 +12,9 @@ use yavu\Http\Controllers\Controller;
 use Session;
 use Redirect;
 use yavu\Admin;
+use yavu\RegistroCoin;
+use yavu\Sorteo;
+use yavu\Ticket;
 use yavu\User;
 use RUT;
 use DB;
@@ -33,12 +37,12 @@ class AdminController extends Controller
     public function find(Route $route){
     $this->admin = Admin::findOrFail($route->getParameter('admins'));
     //return $this->user;
-    }    
-    public function index()
-    {
-        $admins = Admin::paginate(5);
-        return view('admins.index', compact('admins'));
     }
+
+    public function index(){
+      return view('admins.index', ['admins'=>Admin::select('id','nombre','apellido','email')->get(), 'users' => User::select('id')->get(), 'companies' => Empresa::select('id')->get(), 'raffles'=>Sorteo::select('id','estado_sorteo')->get(), 'feeds' => EstadoEmpresa::select('id')->get(), 'coins' => RegistroCoin::select('cantidad')->get(), 'tickets' => Ticket::select('cantidad_tickets')->get() ]);
+    }
+
     public function indexbanner(){
 
         // return view('admins.banneradmin.index', ['empresas' => BannerData::where('estado_banner', 'Creado')->get()]); 

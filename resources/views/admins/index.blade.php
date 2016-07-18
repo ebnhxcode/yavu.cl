@@ -7,42 +7,63 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				@include('alerts.allAlerts')
-				<!--
-				<div class="" style="font-size: 3em;">
-					<img id="img" style="padding-bottom: 20px;" width="8%" src= "{!!URL::to('img/newGraphics/neo_icono_config02.png')!!}"/><span> <a href="{!! URL::to('/admins') !!}">Administraci&oacute;n Yavü</a></span>
-				</div>
-				-->
-			</div>
+			</div><!-- /div .col-xs12-sm12-md12-lg12 -->
 
-			<div class="col-md-6 col-sm-6 col-xs-12">
+			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
 				<div class="list-group">
 					<div class="list-group-item">
-						<h3>Lista de administradores</h3>
-					</div>
-					<div class="list-group-item">
-						<div class="wrap">
-							<table class="table">
-								<thead>
-								<th>ID</th>
-								<th>Nombre</th>
-								<th>Correo</th>
-								<th>Operaciones</th>
-								</thead>
-								@foreach($admins as $admin)
-									<tbody>
-									<td>{!!$admin->id!!}</td>
-									<td>{!!$admin->nombre.' '.$admin->apellido!!}</td>
-									<td>{!!$admin->email!!}</td>
-									<td>{!!link_to_route('admins.edit', $title = 'Editar', $parameters = $admin->id, $attributes = ['class'=>'btn btn-primary btn-sm'])!!}</td>
-									</tbody>
-								@endforeach
-							</table>
-							{!!$admins->render()!!}
-						</div>
-					</div>
-				</div>
+						LISTA DE ADMINISTRADORES
+					</div><!-- /div .list-group-item -->
+					@foreach($admins as $admin)
+						<div class="list-group-item">
+							<span data-toggle="tooltip" data-placement="top" title="{!!$admin->email!!}">
+								{!!$admin->nombre.' '.$admin->apellido!!}
+							</span>
+							{!!link_to_route('admins.edit', $title = 'Editar', $parameters = $admin->id, $attributes = ['class'=>'btn btn-primary btn-xs', 'style' => 'float:right;'])!!}
+						</div><!-- /div .list-group-item -->
+					@endforeach
+				</div><!-- /div .list-group -->
 
-			</div>
+				<div class="list-group">
+					<div class="list-group-item">
+						ESTAD&Iacute;STICAS R&Aacute;PIDAS
+					</div><!-- /div .list-group-item -->
+					<div class="list-group-item">
+						Usuarios Registrados <b style="float:right;">{!! count($users) !!}</b>
+					</div><!-- /div .list-group-item -->
+					<div class="list-group-item">
+						Empresas Registradas <b style="float:right;">{!! count($companies) !!}</b>
+					</div><!-- /div .list-group-item -->
+					<div class="list-group-item">
+						Sorteos Activos <b style="float:right;">{!! count($raffles->where('estado_sorteo','Activo')) !!}</b>
+					</div><!-- /div .list-group-item -->
+					<div class="list-group-item">
+						Sorteos Finalizados <b style="float:right;">{!! count($raffles->where('estado_sorteo','Finalizado')) !!}</b>
+					</div><!-- /div .list-group-item -->
+					<div class="list-group-item">
+						Sorteos Pendientes de Aprovaci&oacute;n <b style="float:right;">{!! count($raffles->where('estado_sorteo','Pendiente')) !!}</b>
+					</div><!-- /div .list-group-item -->
+					<div class="list-group-item">
+						Publicaciones <b style="float:right;">{!! count($feeds) !!} <small>({!! count($feeds)*40 !!} coins)</small></b>
+					</div><!-- /div .list-group-item -->
+				</div><!-- /div .list-group -->
+
+
+				<div class="list-group">
+					<div class="list-group-item">
+						COINS Y TICKETS
+					</div><!-- /div .list-group-item -->
+					<div class="list-group-item">
+						Econom&iacute;a de coins <b style="float:right;">{!! $coins->sum('cantidad') !!}</b>
+					</div><!-- /div .list-group-item -->
+					<div class="list-group-item">
+						Econom&iacute;a de tickets <b style="float:right;">{!! $coins->sum('cantidad_tickets') !!}</b>
+					</div><!-- /div .list-group-item -->
+				</div><!-- /div .list-group -->
+			</div><!-- /div .col-xs12-sm12-md3-lg3 -->
+
+
+
 			<div class="col-md-6 col-sm-6 col-xs-12">
 				<div class="list-group">
 					<div class="list-group-item">
