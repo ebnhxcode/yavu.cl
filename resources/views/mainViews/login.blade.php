@@ -26,7 +26,7 @@
         <div class="col-xs-8 col-sm-6 col-md-4 col-lg-4">
           @include('alerts.allAlerts')
           @include('mainViews.loginPartial.sectionCenter')
-          @include('mainViews.indexPartial.modalRegister')
+          @include('mainViews.loginPartial.modalRegister')
         </div><!-- /div .col-lg4-md4-sm4-xs12 -->
 
         <div class="col-xs-2 col-sm-3 col-md-4 col-lg-4">

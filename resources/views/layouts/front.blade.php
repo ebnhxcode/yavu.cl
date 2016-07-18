@@ -167,7 +167,8 @@
 
                     <button type="submit" class="btn btn-success btn-sm">Iniciar sesi&oacute;n </button>
 										<a class="btn btn-warning btn-sm" data-toggle="modal" data-target="#gridSystemModal" role="button">Reg&iacute;strate</a>
-
+										<a href="#!" class="text-success" data-toggle="modal" data-target="#myModal"><small>¿Haz Olvidado tu Clave?</small></a>
+										@include('mainViews.loginPartial.modalRegister')
                     {!!Form::close()!!}
                   </div><!--/.navbar-collapse -->
                   <!-- End Formulario inicio sesión -->
