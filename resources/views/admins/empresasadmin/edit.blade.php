@@ -1,6 +1,6 @@
 @section('favicon') {!!Html::favicon('favicons/config.png')!!} @stop
 @section('title') Edit {!! $empresa->nombre !!} @stop
-@extends('layouts.front')
+@extends('layouts.frontadm')
 @section('content')
   <div class="jumbotron">
     <div class="contentMiddle">

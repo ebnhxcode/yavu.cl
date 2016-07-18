@@ -44,6 +44,7 @@ return array(
     'CreateSorteosTable' => $baseDir . '/database/migrations/2016_02_11_164427_create_sorteos_table.php',
     'CreateTicketsTable' => $baseDir . '/database/migrations/2016_02_29_161238_create_tickets_table.php',
     'CreateUserInterestsTable' => $baseDir . '/database/migrations/2016_07_01_044426_create_user_interests_table.php',
+    'CreateUserSessionsTable' => $baseDir . '/database/migrations/2016_07_18_174350_create_user_sessions_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'CreateVendorsTable' => $baseDir . '/database/migrations/2016_04_04_120353_create_vendors_table.php',
     'CreateVisitsTable' => $baseDir . '/database/migrations/2016_04_29_145918_create_visits_table.php',

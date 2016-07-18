@@ -1,6 +1,6 @@
 @section('favicon') {!!Html::favicon('favicons/newcompany.png')!!} @stop
 @section('title') New company @stop
-@extends('layouts.front')
+@extends('layouts.frontadm')
 @section('content')
   <div class="jumbotron">
     <div class="contentMiddle">
