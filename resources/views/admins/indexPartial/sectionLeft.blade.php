@@ -1,18 +1,18 @@
-<div class="list-group">
+<section id="adminList" class="list-group">
   <div class="list-group-item">
     LISTA DE ADMINISTRADORES
   </div><!-- /div .list-group-item -->
   @foreach($admins as $admin)
     <div class="list-group-item">
-							<span data-toggle="tooltip" data-placement="top" title="{!!$admin->email!!}">
-								{!!$admin->nombre.' '.$admin->apellido!!}
-							</span>
+      <span data-toggle="tooltip" data-placement="top" title="{!!$admin->email!!}">
+        {!!$admin->nombre.' '.$admin->apellido!!}
+      </span>
       {!!link_to_route('admins.edit', $title = 'Editar', $parameters = $admin->id, $attributes = ['class'=>'btn btn-primary btn-xs', 'style' => 'float:right;'])!!}
     </div><!-- /div .list-group-item -->
   @endforeach
-</div><!-- /div .list-group -->
+</section><!-- /div .list-group -->
 
-<div class="list-group">
+<section id="fastStatistics" class="list-group">
   <div class="list-group-item">
     ESTAD&Iacute;STICAS R&Aacute;PIDAS
   </div><!-- /div .list-group-item -->
@@ -34,9 +34,9 @@
   <div class="list-group-item">
     Publicaciones <b style="float:right;">{!! count($feeds) !!} <small>({!! count($feeds)*40 !!} en coins)</small></b>
   </div><!-- /div .list-group-item -->
-</div><!-- /div .list-group -->
+</section><!-- /div .list-group -->
 
-<div class="list-group">
+<section id="economy" class="list-group">
   <div class="list-group-item">
     COINS Y TICKETS
   </div><!-- /div .list-group-item -->
@@ -44,6 +44,6 @@
     Econom&iacute;a de coins <b style="float:right;">{!! $coins->sum('cantidad') !!}</b>
   </div><!-- /div .list-group-item -->
   <div class="list-group-item">
-    Econom&iacute;a de tickets <b style="float:right;">{!! $coins->sum('cantidad_tickets') !!}</b>
+    Econom&iacute;a de tickets <b style="float:right;">{!! $tickets->sum('cantidad_tickets') !!}</b>
   </div><!-- /div .list-group-item -->
-</div><!-- /div .list-group -->
+</section><!-- /div .list-group -->
