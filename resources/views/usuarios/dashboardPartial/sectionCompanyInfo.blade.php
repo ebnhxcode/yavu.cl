@@ -9,7 +9,12 @@
         <div class="softText-descriptions-middle">
           <a class="" href="/empresas/{!! $company->id !!}" style="margin: 0;">
             <img width='32' style="border-radius: 10%;" id='ImagenPerfil' src='/img/users/{!! isset($company)?($company->imagen_perfil!='')?$company->imagen_perfil:'banner.png':'banner.png' !!}'>
+          </a>
+          <a class="" href="/empresas/{!! $company->id !!}" style="margin: 0;">
             {!! $company->nombre !!}
+          </a>
+          <a href="/empresas/{!! $company->id !!}" class="softText" style="float:right;">
+            {!! $company->estado !!}
           </a>
         </div>
       </div>
@@ -35,7 +40,6 @@
           </div>
         </div>
       </div><!-- /div .list-group-item -->
-
     </section><!-- /div .list-group -->
   @endforeach
 @endif

@@ -23,7 +23,6 @@ $(document).ready(function(){
 
 /*MÉTODOS CONSTRUCTORES*/
 	ContarCoins();
-	//InfoEmpresas();
 /*MÉTODOS CONSTRUCTORES*/
 
 /*SELECTORES*/
@@ -50,86 +49,7 @@ $(document).ready(function(){
 		});
 		return true;
 	}
-	function InfoEmpresas(){
-		var route = "http://localhost:8000/infoempresas/";
-		var Pendiente = false;
-		$.get(route, function(res){
-			$("#EstadoEmpresa").value = "";
-			$(res).each(function(key,value){
-				if(value.estado === "Pendiente"){
-					Pendiente = true;
-					$("#EstadoEmpresa").append(
-						'<div>'+
-						'<div class="list-group-item">'
-							+"<strong>"+value.nombre+"</strong>"
-							+'<span style="float:right;" class="label label-warning">'								
-								+'<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>'
-								+value.estado
-							+"</span>"	
-						+'</div>'
-						+'</div>'
-					);
-				}else if(value.estado === "Activo"){
-					var ImagenPerfil = "/img/users/"+value.imagen_perfil;
-					if (value.imagen_perfil === ""){
-						ImagenPerfil = "https://image.freepik.com/iconos-gratis/silueta-usuario-masculino_318-35708.png";
-					}
 
-
-					/* muetra si tiene una empresa */
-					$(".hasoneempresa").css("display", "");
-					
-					/* esconde si tiene una empresa */
-					$(".hideifhasone").css("display", "none")
-					
-					$("#EstadoEmpresa").append(
-						'<div>'+
-							'<div class="list-group">'
-
-										+'<div class="list-group-item list-group-item-success">'
-											+'<a class="btn-link" href="/empresa/'+value.nombre+'">'+"<img class='media-object' src='"+ImagenPerfil+"' data-holder-rendered='true' style='width: 32px; height: 32px; border: 1px solid #73AD21;'/></a>"
-											+'&nbsp;<strong><a class="btn-link" href="/empresa/'+value.nombre+'">'+value.nombre+'</a></strong>'
-										+'</div>'
-
-										+'<div class="list-group-item ">'
-
-											+'<strong>Estado de la Empresa :</strong>'
-											+'<span style="float:right;" class="label label-success">'
-												+'<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>'
-												+value.estado
-											+"</span>"
-										+'</div>'
-
-										+'<div class="list-group-item">'
-											+'<strong>Modificar Datos Empresa :</strong>'
-											+'<a style="float:right;" class="btn-xs btn-primary btn-sm" href="empresas/'+value.id+'/edit">Editar</a>'
-										+'</div>'
-
-										+'<div class="list-group-item">'
-											+'<strong>Perfil de la Empresa :</strong>'
-											+"<a style='float:right;' class='btn-xs btn-primary btn-sm' href='empresa/"+value.nombre+"/'>Perfil</a>"
-										+'</div>'
-
-
-							+'</div>'
-						+'</div>'
-					);					
-				}
-				return true;
-			});
-			if(Pendiente){
-				$("#EstadoEmpresa").append(
-				'<div class="list-group-item">'
-					+'<small>El estado '
-					+'<span class="label label-warning">Pendiente</span> '
-					+'indica que ĺa empresa creada, está en espera de validación por parte del equipo de yavü, '
-					+'mantenga la espera y el equipo de yavü se pondrá en contacto con usted.</small>'
-				+'</div>');
-			}
-			return true;
-		});
-		return true;
-	}
 
 /*FUNCIONES Y PROCEDIMIENTOS*/
 	return true;
