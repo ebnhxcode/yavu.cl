@@ -3,6 +3,7 @@
 @extends('layouts.front')
 @section('content')
 @include('layouts.bannerFront')
+@include('mainViews.loginPartial.modalRegister')
 <div class="jumbotron section-a">
   <div class="contentMiddle">
     <div class="row">
