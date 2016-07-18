@@ -43,12 +43,12 @@ class GmapsController extends Controller{
           ]);
         $empresa = Empresa::findOrFail($request->empresa_id);
         Session::flash('message', 'Mapa modificado correctamente');
-        return Redirect::to('/empresa/'.$empresa->nombre);
+        return Redirect::to('/empresas/'.$empresa->id);
       }else{
         Gmap::create($request->all());
         $empresa = Empresa::findOrFail($request->empresa_id);
         Session::flash('message', 'Mapa registrado correctamente');
-        return Redirect::to('/empresa/'.$empresa->nombre);
+        return Redirect::to('/empresas/'.$empresa->id);
       }
     }
     return Redirect::to('/');
@@ -58,6 +58,6 @@ class GmapsController extends Controller{
     $this->gmap->save();
     Session::flash('message', 'Mapa modificado correctamente');
     $empresa = Empresa::findOrFail($request->empresa_id);
-    return Redirect::to('/empresa/'.$empresa->nombre);
+    return Redirect::to('/empresas/'.$empresa->id);
   }
 }

@@ -23,7 +23,7 @@ $(document).ready(function(){
 
 /*MÉTODOS CONSTRUCTORES*/
 	ContarCoins();
-	InfoEmpresas();
+	//InfoEmpresas();
 /*MÉTODOS CONSTRUCTORES*/
 
 /*SELECTORES*/

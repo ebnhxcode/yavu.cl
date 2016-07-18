@@ -1091,7 +1091,7 @@ img {
   border-radius: 6px; }
 
 .img-thumbnail {
-  padding: 4px;
+  padding: 1px;
   line-height: 1.428571429;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -4290,7 +4290,7 @@ a.badge:hover, a.badge:focus {
 
 .thumbnail {
   display: block;
-  padding: 4px;
+  padding: 1px;
   margin-bottom: 20px;
   line-height: 1.428571429;
   background-color: #fff;

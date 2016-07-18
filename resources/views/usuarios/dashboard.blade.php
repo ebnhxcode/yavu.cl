@@ -10,18 +10,17 @@
 	<div class='contentMiddle'>
 		<h4 style='margin-top:-40px;'></h4>
 		<div class='row'>
-			<div class='col-xs-12 col-sm-3 col-md-3 col-lg-3'>
 
+      <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
         @include('alerts.allAlerts')
+      </div><!-- /div .col-xs12-sm12-md12-lg12 -->
 
-        <div id='EstadoEmpresa'>
-        </div><!-- /div #EstadoEmpresa -->
-
+			<div class='col-xs-12 col-sm-3 col-md-3 col-lg-3'>
+        @include('usuarios.dashboardPartial.sectionCompanyInfo')
         @include('sorteos.showPartial.sectionLeft')
-
       </div><!-- /div .col-md3-sm3-xs12 -->
 
-			<div class='col-md-6 col-sm-6 col-xs-12 '>
+			<div class='col-xs-12 col-sm-6 col-md-6 col-lg-6'>
 				<div class='row'>
 					<div class='col-md-4 col-sm-6 col-xs-12'>
 
@@ -108,7 +107,6 @@
 
 				</div><!-- /div .row -->
 			</div><!-- /div col-md9-sm9-xs12 -->
-
 
       <div class='col-xs-12 col-sm-3 col-md-3 col-lg-3'>
         @include('empresas.indexPartial.sectionRight')

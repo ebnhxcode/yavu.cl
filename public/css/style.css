@@ -25,27 +25,28 @@
 	-moz-box-shadow: 1px 1px 1px 1px #cbcbcb;
 	-webkit-box-shadow: 0px 10px 20px 2px #cbcbcb;
 }
-
+/*
 #ImagenPerfil{
   opacity: 1;
-  -webkit-transition: opacity 0.2s;
-  -moz-transition: opacity 0.2s;
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
 }
 #ImagenPerfil:hover{
-  opacity: 0.95;
-  -webkit-transition: opacity 0.2s;
-  -moz-transition: opacity 0.2s;
+  opacity: 0.9;
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
 }
 #ImagenPortada{
   opacity: 1;
-  -webkit-transition: opacity 0.2s;
-  -moz-transition: opacity 0.2s;
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
 }
 #ImagenPortada:hover{
-  opacity: 0.95;
-  -webkit-transition: opacity 0.2s;
-  -moz-transition: opacity 0.2s;
+  opacity: 0.9;
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
 }
+*/
 #map-canvas{
    width: 100%;
    height: 50%;
