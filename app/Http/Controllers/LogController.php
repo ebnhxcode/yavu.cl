@@ -15,6 +15,8 @@ use Illuminate\Http\Request;
 use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
 use DB;
+use yavu\UserSession;
+
 class LogController extends Controller{
 
   public function index(){
@@ -111,6 +113,9 @@ class LogController extends Controller{
         if($sesion){
           $this->user = User::findOrFail(Auth::user()->get()->id);
           $this->CargarCoinSesion();
+          UserSession::create(['user_id'=>$this->user->id,
+            'created_at'  => strftime( "%Y-%m-%d-%H-%M-%S", time()),
+            'updated_at'  => strftime( "%Y-%m-%d-%H-%M-%S", time())])->save();
           /*
           $this->coins = $this->user->registro_coins;
           $bolsaCoins = [];

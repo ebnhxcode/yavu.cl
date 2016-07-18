@@ -32,7 +32,7 @@
             <br/>
             <label class="btn btn-default btn-file">
               <span class="glyphicon glyphicon-camera "></span>
-              Buscar imagen ... <input type="file" style="display: none;" name="company_image_status" id="company_image_status" maxlength="1000" size="2048">
+              Buscar imagen ... <input type="file" style="display: none;" name="company_image_status" id="company_image_status" maxlength="1000" size="2048" />
             </label>
           </div><!-- /div .tab-pane .fade .active .list-group .wrap -->
 
@@ -76,10 +76,11 @@
     formato = formato.split('.');
     var sizeByte = this.files[0].size;
     var siezekiloByte = parseInt(sizeByte / 1024);
-    if((formatosPermitidos.indexOf(formato[1]) < 0) || (siezekiloByte > $(this).attr('size')))
-    {
-      alert('Formato de imagen invalido o tamaño supera 2 Megas, seleccione otra imagen con tamaño menor');
+    if((formatosPermitidos.indexOf(formato[1]) < 0) || (siezekiloByte > $(this).attr('size'))) {
+      alert('Formato de imagen invalido o tamaño supera los 2 Megas, seleccione otra imagen con tamaño menor');
       this.value = '';
+    }else{
+
     }
   });
 </script>

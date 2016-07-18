@@ -14,6 +14,7 @@ class CreateUserSessionsTable extends Migration
     {
         Schema::create('user_sessions', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('user_id');
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ class CreateUserSessionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('user_sessions');
+        Schema::dropIfExists('user_sessions');
     }
 }
