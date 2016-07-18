@@ -28,7 +28,10 @@
         <div class="media-heading">
           <strong><a href="/empresas/{!! $postAuthor->id !!}" style="color: #3C5B28;">{!! $postAuthor->nombre !!}</a></strong>
           <strong>·</strong>
+          {{--
+          Se sacó temporalmente
           <small style="font-size: .7em; color: grey;"><abbr class='timeago' id='timeago{!! $feed->id !!}' value='{!! $feed->created_at !!}' title='{!! $feed->created_at !!}'>{!! $feed->created_at !!}</abbr></small>
+          --}}
         </div><!-- /div .media-heading -->
         <input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
         <div id='publicacion{!! $feed->id !!}'>

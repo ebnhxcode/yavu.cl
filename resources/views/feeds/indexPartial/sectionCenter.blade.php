@@ -42,9 +42,13 @@
         <div class="media-heading">
           <strong><a href="/empresas/{!! $companyStatus->empresa_id !!}" style="color: #3C5B28;">{!! $companyPostName = $companyStatus->companyPostAuthor->nombre !!}</a></strong>
           <strong>·</strong>
+          <a class="softText-descriptions" href='/feeds/{!!$companyStatus->id!!}'>ver m&aacute;s</a>
+          {{--
+          Temporalmente se sacó
           <a href="/feeds/{!! $companyStatus->id !!}">
             <small style="font-size: .7em; color: grey;"><abbr class='timeago' id='timeago{!! $companyStatus->id !!}' value='{!! $companyStatus->created_at !!}' title='{!! $companyStatus->created_at !!}'>{!! $companyStatus->created_at !!}</abbr></small>
           </a>
+          --}}
         </div><!-- /div .media-heading -->
 
         {!! $companyStatus->status !!}<br>
