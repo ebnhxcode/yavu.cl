@@ -45,7 +45,7 @@
 </div><!-- /div .list-group -->
 @include('miniDashboard.miniDashboard')
 <div class="visible-lg visible-md">
-  @if(count($bannersRandom)>0)
+  @if(count($bannersRandomLeft)>0)
     @include('listarBanner.listaBanner')
   @endif
 </div>

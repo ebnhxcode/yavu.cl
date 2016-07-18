@@ -5,9 +5,7 @@
   <div class="jumbotron">
     <div align="center" id="contentSemiMini">
 
-
-        <h2>¡Solo un paso m&aacute;s!</h2>
-        <h3>¿Que intereses tienes?</h3>
+        <h2>¿Que intereses tienes?</h2>
 
         <div class="softText-descriptions">
           Selecciona <strong>todo</strong> lo que te pueda atraer

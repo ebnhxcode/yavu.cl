@@ -121,7 +121,7 @@ class SorteoController extends Controller{
 
   public function ended(){
     $this->registro_tickets = $this->user->registro_tickets()->orderBy('created_at', 'desc')->limit('20')->get();
-    return view('sorteos.ended', ['sorteos'=>Sorteo::orderByRaw('RAND()')->where('estado_sorteo','Finalizado')->paginate(6),'rtickets' => $this->registro_tickets, 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
+    return view('sorteos.ended', ['sorteos'=>Sorteo::orderByRaw('RAND()')->where('estado_sorteo','Finalizado')->paginate(6),'rtickets' => $this->registro_tickets, 'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
   }
 
   public function find(Route $route){
@@ -138,7 +138,7 @@ class SorteoController extends Controller{
 
   public function index(){
     $this->registro_tickets = $this->user->registro_tickets()->orderBy('created_at', 'desc')->limit('20')->get();
-    return view('sorteos.index', ['sorteos'=>Sorteo::orderByRaw('RAND()')->where('estado_sorteo','Activo')->paginate(6), 'rtickets' => $this->registro_tickets, 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
+    return view('sorteos.index', ['sorteos'=>Sorteo::orderByRaw('RAND()')->where('estado_sorteo','Activo')->paginate(6), 'rtickets' => $this->registro_tickets, 'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
   }
   public function MostrarGanador($ganador){
     $ganador = ParticipanteSorteo::findOrFail($ganador)->users;

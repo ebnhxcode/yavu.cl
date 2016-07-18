@@ -436,6 +436,7 @@
 .border-yavu-sub-menu:hover {
   opacity: 0.99;
   -webkit-transition: .089s;
+  -moz-transition: 0.3s;
 }
 
 .circle-green-first {
@@ -447,6 +448,7 @@
   border-radius: 50%;
   border: solid 2px #FFF;
   -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
   /* width and height can be anything, as long as they're equal */
 }
 .circle-green-first:hover {
@@ -457,6 +459,7 @@
   border-radius: 50%;
   border: solid 2px #FFF;
   -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
   /* width and height can be anything, as long as they're equal */
 }
 
@@ -468,6 +471,7 @@
   border-radius: 50%;
   border: solid 2px #FFF;
   -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
   /* width and height can be anything, as long as they're equal */
 }
 .circle-green-second:hover {
@@ -477,6 +481,7 @@
   border-radius: 50%;
   border: solid 2px #FFF;
   -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
   /* width and height can be anything, as long as they're equal */
 }
 
@@ -488,6 +493,7 @@
   border-radius: 50%;
   border: solid 2px #FFF;
   -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
   /* width and height can be anything, as long as they're equal */
 }
 .circle-yellow-first:hover {
@@ -497,6 +503,7 @@
   border-radius: 50%;
   border: solid 2px #FFF;
   -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
   /* width and height can be anything, as long as they're equal */
 }
 
@@ -508,6 +515,7 @@
   border-radius: 50%;
   border: solid 2px #FFF;
   -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
   /* width and height can be anything, as long as they're equal */
 }
 .circle-orange:hover {
@@ -517,6 +525,7 @@
   border-radius: 50%;
   border: solid 2px #FFF;
   -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
   /* width and height can be anything, as long as they're equal */
 }
 
@@ -526,6 +535,7 @@
   height: 98px;
   width: 98px;
   -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
   /* width and height can be anything, as long as they're equal */
 }
 .circle-inside:hover {
@@ -534,6 +544,7 @@
   width: 100px;
   font-size: 2em;
   -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
   /* width and height can be anything, as long as they're equal */
 }
 
@@ -545,7 +556,7 @@
   border: solid 3px #FFF;
   font-size: 2em;
   -webkit-transition: 0.5s;
-
+  -moz-transition: 0.5s;
   border-radius: 50px 50px 50px 50px;
 
 
@@ -559,7 +570,7 @@
   border: solid 2px #FFF;
   font-size: 3em;
   -webkit-transition: 0.8s;
-
+  -moz-transition: 0.8s;
   border-radius: 50px 50px 50px 50px;
 
 
@@ -571,6 +582,7 @@
   padding: 2px 2px 2px 2px;
   border: solid 3px #FFF;
   -webkit-transition: 0.8s;
+  -moz-transition: 0.8s;
   /*
   border-radius: 50px 50px 50px 50px;
 

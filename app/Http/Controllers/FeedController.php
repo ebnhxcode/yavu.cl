@@ -40,7 +40,7 @@ FeedController extends Controller{
   public function edit($id){
     $this->feed = EstadoEmpresa::findOrFail($id);
     if( $this->feed->user_id == $this->user->id ){
-      return view('feeds.edit', ['feed' => EstadoEmpresa::findOrFail($id), 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
+      return view('feeds.edit', ['feed' => EstadoEmpresa::findOrFail($id), 'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
     }else{
       return $this->index();
     }
@@ -62,13 +62,13 @@ FeedController extends Controller{
   public function index(){
     if(count($this->user->empresas)>0){
       $this->user_id = $this->user->empresas[0]->user_id; $this->id = $this->user->empresas[0]->id;
-      return view('feeds.index', ['companyStatuses' => EstadoEmpresa::orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas, 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(3)->get(), 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()] ); //cambiar EstadoEmpresa por CompanyStatus
+      return view('feeds.index', ['companyStatuses' => EstadoEmpresa::orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas, 'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(3)->get(), 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()] ); //cambiar EstadoEmpresa por CompanyStatus
     }else{
-      return view('feeds.index', ['companyStatuses' => EstadoEmpresa::orderBy('created_at', 'desc')->paginate(10), 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(3)->get(), 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
+      return view('feeds.index', ['companyStatuses' => EstadoEmpresa::orderBy('created_at', 'desc')->paginate(10), 'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(3)->get(), 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
     }
   }
   public function show($id){
-    return view('feeds.show', ['feed' => EstadoEmpresa::findOrFail($id), 'bannersRandom' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user]);
+    return view('feeds.show', ['feed' => EstadoEmpresa::findOrFail($id), 'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user]);
   }
   public function store(FeedCreateRequest $request){
 

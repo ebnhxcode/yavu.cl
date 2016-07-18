@@ -31,8 +31,7 @@ class AdminController extends Controller
     private $categorybannerdata;
     private $existeEmpresa;
     public function __construct(){
-
-        $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+      $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
     }
     public function find(Route $route){
     $this->admin = Admin::findOrFail($route->getParameter('admins'));
@@ -40,7 +39,13 @@ class AdminController extends Controller
     }
 
     public function index(){
-      return view('admins.index', ['admins'=>Admin::select('id','nombre','apellido','email')->get(), 'users' => User::select('id')->get(), 'companies' => Empresa::select('id')->get(), 'raffles'=>Sorteo::select('id','estado_sorteo')->get(), 'feeds' => EstadoEmpresa::select('id')->get(), 'coins' => RegistroCoin::select('cantidad')->get(), 'tickets' => Ticket::select('cantidad_tickets')->get() ]);
+      return view('admins.index',[
+        'admins' => Admin::select('id','nombre','apellido','email')->get(),
+        'users' => User::select('id')->get(), 'companies' => Empresa::select('id')->get(),
+        'raffles' => Sorteo::select('id','estado_sorteo')->get(), 'feeds' => EstadoEmpresa::select('id')->get(),
+        'coins' => RegistroCoin::select('cantidad')->get(),
+        'tickets' => Ticket::select('cantidad_tickets')->get()
+      ]);
     }
 
     public function indexbanner(){

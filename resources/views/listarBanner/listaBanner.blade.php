@@ -7,7 +7,7 @@
   <div style="padding: 9px 9px 9px 9px;" class="list-group-item">
     <div id="EmpresaListThumbBanner">
       <div class="row">
-        @foreach($bannersRandom as $key => $banner)
+        @foreach($bannersRandomLeft as $key => $banner)
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><!-- text-center -->
 
             <div class="thumbnail">
