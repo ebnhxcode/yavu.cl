@@ -32,7 +32,7 @@
         </div><!-- /div .media-heading -->
         <input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
         <div id='publicacion{!! $feed->id !!}'>
-          {!! $feed->status !!}<br>
+          {{$feed->status}}<br>
           @if($cis = $feed->statusImage()->select('company_image_status')->get())
             @foreach( $cis as $key => $image )
               <a href=#! class="thumbnail" style="margin: 0;">
@@ -59,8 +59,8 @@
   </div><!-- /div .list-group-item -->
   <a href="/feeds" class="list-group-item panel-footer">
     <small>
-                <span class="glyphicon glyphicon-chevron-left">
-                </span><!-- /span .glyphicon .glyphicon-chevron-left -->
+      <span class="glyphicon glyphicon-chevron-left">
+      </span><!-- /span .glyphicon .glyphicon-chevron-left -->
       volver a publicaciones
     </small>
   </a><!-- /div .list-group-item -->
