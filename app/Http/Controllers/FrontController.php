@@ -1,6 +1,7 @@
 <?php
 namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
+use yavu\DBRegisters;
 use yavu\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use yavu\Http\Controllers\Controller;
@@ -28,6 +29,10 @@ class FrontController extends Controller{
   }
   public function nosotros(){
     return view('mainViews.nosotros');
+  }
+  public function registro(){
+    DBRegisters::create(['counter'=>1])->save();
+    return view('usuarios/create');
   }
   public function terminos(){
     return view('mainViews.terminos');

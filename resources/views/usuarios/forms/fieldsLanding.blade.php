@@ -313,6 +313,7 @@
                 Tel&eacute;fono
               </div><!-- /div .input-group-addon -->
             </div><!-- /div .input-group .input-group-sm -->
+            <span class="softText-descriptions"><small>Podr&iacute;as ser un ganador</small></span>
           </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
         </div><!-- /div .col-lg6-md6-sm6-xs12 -->
 

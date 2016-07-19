@@ -42,6 +42,7 @@
     <div class='form-group has-feedback has-feedback-left'>
       <div class="input-group input-group-sm">
         {!!Form::date('fecha_nacimiento',null,['class'=>'form-control input-sm','placeholder'=>'', 'maxlength' => '100', 'required'])!!}
+        <span class="softText-descriptions">(D&iacute;a/Mes/A&ntilde;o)</span>
         <div class="input-group-addon">
           Fecha de nacimiento
         </div><!-- /div .input-group-addon -->
@@ -50,6 +51,7 @@
 
     <div class='form-group has-feedback has-feedback-left'>
       {!!Form::text('fono',null,['class'=>'form-control input-sm','placeholder'=>'Tel&eacute;fono', 'maxlength' => '16', 'required'])!!}
+      <span class="softText-descriptions"><small>Podr&iacute;as ser un ganador</small></span>
     </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 
     @if($userActive = Auth::user()->check())

@@ -19,6 +19,9 @@ Route::get('/clear-cache', function() { view('index'); });
 
 /*Gestión de usuarios sin sesión activa*/
 Route::get('usuarios', function(){ return Redirect::to('login'); });
+
+Route::get('registro', 'FrontController@registro');
+
 Route::post('usuarios/create', ['uses' => 'UserController@store', 'as' => 'usuarios_store_path',]);
 Route::get('usuarios/create', ['uses' => 'UserController@create', 'as' => 'usuarios_create_path',]);
 Route::post('usuarios/reset', ['uses' => 'UserController@reset', 'as' => 'usuarios_resetpassword_path',]);
@@ -232,6 +235,15 @@ Route::group(['middleware' => 'admin'], function(){
   Route::get('admins/empresas/{id}/edit', ['uses' => 'AdminController@empresasedit', 'as' => 'admins_empresas_edit_path']);
   Route::put('admins/empresas/{id}/edit', ['uses' => 'AdminController@empresasupdate','as' => 'admins_empresas_put_path']);
 
+  Route::get('admins/mailing','AdminController@mailing');
+  Route::post('admins/mailing', 'MailController@massive');
+  Route::get('admins/template1', function(){
+    return view('emails.massiveListDataBase');
+  });
+  Route::get('admins/template2', function(){
+    return view('emails.register');
+  });
+
   Route::post('admins/empresas/create', [ 'uses' => 'AdminController@empresasstore', 'as' => 'admins_empresas_create_path' ]);
   Route::get('admins/empresas/create', 'AdminController@empresascreate');
   Route::resource('admins','AdminController');
@@ -239,6 +251,7 @@ Route::group(['middleware' => 'admin'], function(){
   Route::get('aprobarsorteopendiente', 'SorteoController@AprobarSorteoPendiente');
   Route::get('visualizarempresasorteopendiente', 'SorteoController@VisualizarSorteoPendiente');
   Route::get('validarrutempresaadmin/{rut}', 'EmpresaController@ValidarRutEmpresa');
+
   
   /*Gestión de Admins*/
 
