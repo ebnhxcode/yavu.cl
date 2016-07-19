@@ -50,7 +50,7 @@
 
         </div><!-- /div .media-heading -->
 
-        {!! $companyStatus->status !!}<br>
+        {{ $companyStatus->status }}<br>
 
 
         @if($cis = $companyStatus->statusImage()->select('company_image_status')->get())
