@@ -6,7 +6,7 @@
     <div style="background-color: #5cb85c;" align="center">
       <hr size="4" color="#5c8c09">
 
-      <img src="http://localhost:8000/img/yavu004.png" width="120" height="30" border="0" alt="" />
+      <img src="http://yavu.cl/img/yavu004.png" width="120" height="30" border="0" alt="" />
       <b style="padding-left: 30px;"></b>
       <a style="padding: 10px 10px 10px 10px; border: solid 1px #fee805; border-radius: 4px 4px 4px 4px; background-color: #f0d754; color:#b59821;" href="http://yavu.cl/registro">¡Registrate!</a>
       <b style="padding-left: 10px;"></b>
@@ -22,20 +22,20 @@
         <tr align="center">
           <td width="20%" style="background-color: whitesmoke; border-radius: 10px 10px 10px 10px; ">
             <h4>Captura coins de todas las publicaciones</h4>
-            <img width="100" src="http://localhost:8000/img/newGraphics/icofinal_publicaciones.png" alt="">
+            <img width="100" src="http://yavu.cl/img/newGraphics/icofinal_publicaciones.png" alt="">
           </td>
           <td width="1%"></td>
           <td width="56%" style="background-color: whitesmoke; border-radius: 10px 10px 10px 10px; ">
 
-            <img width="20" src="http://localhost:8000/img/yavu019.png" alt="">
+            <img width="20" src="http://yavu.cl/img/yavu019.png" alt="">
             <b style="font-size: 30px;">¡Hola!</b>
-            <img width="20" src="http://localhost:8000/img/yavu019.png" alt="">
+            <img width="20" src="http://yavu.cl/img/yavu019.png" alt="">
 
             <br><br>
 
-            <img width="20" src="http://localhost:8000/img/yavu019.png" alt="">
+            <img width="20" src="http://yavu.cl/img/yavu019.png" alt="">
             <b style="font-size: 30px;">¡Bienvenido a la comunidad Yavü!</b>
-            <img width="20" src="http://localhost:8000/img/yavu019.png" alt="">
+            <img width="20" src="http://yavu.cl/img/yavu019.png" alt="">
 
             <br><br>
 
@@ -43,14 +43,14 @@
             <div style="font-family: Verdana, Geneva, sans-serif; color:#666766; font-size:14px; line-height:36px">
               En Yavu.cl podrás encontrar promociones, descuentos, concursos y eventos de los comercios de tu ciudad. Junta nuestras Yavü Coins en las publicaciones de las empresas, úsalas comprando tickets y utilízalos para participar de los sorteos!
               <br>
-              <p><strong>Para registrarte solo entra a nuestro sitio: </strong><a href="http://localhost:8000/registro"> Abrir </a>  </p><br>
+              <p><strong>Para registrarte solo entra a nuestro sitio: </strong><a href="http://yavu.cl/registro"> Abrir </a>  </p><br>
               ¡Mucha suerte! y nos vemos en Yavü.
             </div><!-- /div styled -->
           </td>
           <td width="1%"></td>
           <td width="20%" style="background-color: whitesmoke; border-radius: 10px 10px 10px 10px; ">
             <h4>Encuentra sorteos y participa gratis</h4>
-            <img width="100" src="http://localhost:8000/img/newGraphics/icofinal_sorteos_premios.png" alt="">
+            <img width="100" src="http://yavu.cl/img/newGraphics/icofinal_sorteos_premios.png" alt="">
           </td>
         </tr>
       </table>
@@ -64,7 +64,7 @@
           <tr align="center">
             <td width="14%" align="center">
               <span style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#010203; font-size:9px; text-transform:uppercase">
-                <a href= "http://localhost:8000/contacto" style="color:#010203; text-decoration:none">
+                <a href= "http://yavu.cl/contacto" style="color:#010203; text-decoration:none">
                   <strong>UNSUBSCRIBE </strong>
                 </a>
               </span>
@@ -75,11 +75,11 @@
                 <strong>|</strong>
               </span>
             </td>
-            <td width="9%" align="center"><font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#010203; font-size:9px; text-transform:uppercase"><a href= "http://localhost:8000/nosotros" style="color:#010203; text-decoration:none"><strong>ABOUT </strong></a></font></td>
+            <td width="9%" align="center"><font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#010203; font-size:9px; text-transform:uppercase"><a href= "http://yavu.cl/nosotros" style="color:#010203; text-decoration:none"><strong>ABOUT </strong></a></font></td>
             <td width="2%" align="center"><font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#010203; font-size:9px; text-transform:uppercase"><strong>|</strong></font></td>
-            <td width="11%" align="center"><font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#010203; font-size:9px; text-transform:uppercase"><a href= "http://localhost:8000/contacto" style="color:#010203; text-decoration:none"><strong>CONTACTO </strong></a></font></td>
+            <td width="11%" align="center"><font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#010203; font-size:9px; text-transform:uppercase"><a href= "http://yavu.cl/contacto" style="color:#010203; text-decoration:none"><strong>CONTACTO </strong></a></font></td>
             <td width="2%" align="center"><font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#010203; font-size:9px; text-transform:uppercase"><strong>|</strong></font></td>
-            <td width="17%" align="center"><font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#010203; font-size:9px; text-transform:uppercase"><a href= "http://localhost:8000" style="color:#010203; text-decoration:none"><strong>SOCIAL</strong></a></font></td>
+            <td width="17%" align="center"><font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#010203; font-size:9px; text-transform:uppercase"><a href= "http://yavu.cl" style="color:#010203; text-decoration:none"><strong>SOCIAL</strong></a></font></td>
             <td width="4%" align="right"><a href="https://www.facebook.com/yavu.cl" target="_blank"><img src="https://www.facebookbrand.com/img/assets/asset.f.logo.lg.png" alt="facebook" width="23" height="19" border="0" /></a></td>
           </tr>
         </table>
