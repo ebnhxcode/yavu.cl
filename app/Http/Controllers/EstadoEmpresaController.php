@@ -26,6 +26,7 @@ class EstadoEmpresaController extends Controller{
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
   public function store(Request $request){
+    $request->status = addslashes($request->status);
     $companyStatus = EstadoEmpresa::create($request->all());
     if($request->company_image_status){
       CompanyImageStatus::create(['status_id'=>$companyStatus->id, 'company_image_status'=>$request->company_image_status]);

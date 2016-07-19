@@ -97,7 +97,7 @@
     });
     function ValidarRut(rut){
       console.log('click');
-      var route = 'http://yavu.cl/validarrutusuario/'+rut+'';
+      var route = 'http://localhost:8000/validarrutusuario/'+rut+'';
       document.getElementById('FormUsuario').onsubmit = function() {
         return false;
       }
