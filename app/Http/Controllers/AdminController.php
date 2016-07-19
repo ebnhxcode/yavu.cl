@@ -171,7 +171,14 @@ class AdminController extends Controller
     }
     public function create()
     {
-        return view('admins.create');
+        return view('admins.create', [
+          'admins' => Admin::select('id','nombre','apellido','email')->get(),
+          'users' => User::select('id')->get(), 'companies' => Empresa::select('id')->get(),
+          'raffles' => Sorteo::select('id','estado_sorteo')->get(), 'feeds' => EstadoEmpresa::select('id')->get(),
+          'coins' => RegistroCoin::select('cantidad')->get(),
+          'tickets' => Ticket::select('cantidad_tickets')->get(),
+          'sessions' => UserSession::select('id')->get()
+        ]);
     }
     public function store(AdminCreateRequest $request)
     {
@@ -185,7 +192,14 @@ class AdminController extends Controller
     }
     public function edit($id)
     {
-        return view('admins.edit', ['admin' => $this->admin]); 
+        return view('admins.edit', ['admin' => $this->admin], [
+          'admins' => Admin::select('id','nombre','apellido','email')->get(),
+          'users' => User::select('id')->get(), 'companies' => Empresa::select('id')->get(),
+          'raffles' => Sorteo::select('id','estado_sorteo')->get(), 'feeds' => EstadoEmpresa::select('id')->get(),
+          'coins' => RegistroCoin::select('cantidad')->get(),
+          'tickets' => Ticket::select('cantidad_tickets')->get(),
+          'sessions' => UserSession::select('id')->get()
+        ]);
     }
     public function update(AdminUpdateRequest $request, $id)
     {

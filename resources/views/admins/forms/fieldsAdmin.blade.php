@@ -1,30 +1,26 @@
-<tr>
-	<td colspan="2">Este acceso es solo para administradores</td>
-	<td>* <small>(Campos requeridos)</small></td>
-</tr>
-<tr>
-	<td>Nombre</td>
-	<td>{!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre','required'=>'required'])!!}</td>
-	<td>*</td>
-</tr>
-<tr>
-	<td>Apellido</td>
-	<td>{!!Form::text('apellido',null,['class'=>'form-control','placeholder'=>'Ingrese su apellido','required'=>'required'])!!}</td>
-	<td>*</td>
-</tr>
-<tr>
-	<td>Email</td>
-	<td>
-		{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email','required'=>'required'])!!}
-		<i class="form-control-feedback glyphicon glyphicon-user"></i>			
-	</td>
-	<td>*</td>
-</tr>
-<tr>
-	<td>Nueva clave</td>
-	<td>
-		{!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una clave'])!!}		
-		<i class="form-control-feedback glyphicon glyphicon-lock"></i>			
-	</td>
-	<td><!--*--></td>
-</tr>		
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    <div class='form-group has-feedback has-feedback-left'>
+      <b>Nombre</b>
+      {!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese su nombre','required'=>'required'])!!}
+    </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
+  </div><!-- /div .col-xs12-sm12-md6-lg6 -->
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    <div class='form-group has-feedback has-feedback-left'>
+      <b>Apellido</b>
+      {!!Form::text('apellido',null,['class'=>'form-control','placeholder'=>'Ingrese su apellido','required'=>'required'])!!}
+    </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
+  </div><!-- /div .col-xs12-sm12-md6-lg6 -->
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    <div class='form-group has-feedback has-feedback-left'>
+      <b>Email</b>
+      {!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email','required'=>'required'])!!}
+    </div><!-- /div .col-xs12-sm12-md6-lg6 -->
+  </div><!-- /div .col-xs12-sm12-md6-lg6 -->
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    <div class='form-group has-feedback has-feedback-left'>
+      <b>Clave</b>
+      {!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingrese una clave'])!!}
+    </div><!-- /div .col-xs12-sm12-md6-lg6 -->
+  </div><!-- /div .col-xs12-sm12-md6-lg6 -->
+</div><!-- /div .row -->
