@@ -34,6 +34,9 @@
   <div class="list-group-item">
     Publicaciones <b style="float:right;">{!! count($feeds) !!} <small>({!! count($feeds)*40 !!} en coins)</small></b>
   </div><!-- /div .list-group-item -->
+  <div class="list-group-item">
+    Alcance Emails Registro <b style="float:right;">{!! count($registers) !!}</b>
+  </div><!-- /div .list-group-item -->
 </section><!-- /section #fastStatistics .list-group -->
 
 {{--

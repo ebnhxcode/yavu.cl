@@ -2,6 +2,7 @@
 
 namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
+use yavu\DBRegisters;
 use yavu\EstadoEmpresa;
 use yavu\Http\Requests;
 use yavu\Http\Requests\EmpresaCreateRequest;
@@ -45,7 +46,8 @@ class AdminController extends Controller{
       'raffles' => Sorteo::select('id','estado_sorteo')->get(), 'feeds' => EstadoEmpresa::select('id')->get(),
       'coins' => RegistroCoin::select('cantidad')->get(),
       'tickets' => Ticket::select('cantidad_tickets')->get(),
-      'sessions' => UserSession::select('id')->get()
+      'sessions' => UserSession::select('id')->get(),
+      'registers' => DBRegisters::select('id')->get()
     ]);
   }
   public function index(){
@@ -55,7 +57,8 @@ class AdminController extends Controller{
       'raffles' => Sorteo::select('id','estado_sorteo')->get(), 'feeds' => EstadoEmpresa::select('id')->get(),
       'coins' => RegistroCoin::select('cantidad')->get(),
       'tickets' => Ticket::select('cantidad_tickets')->get(),
-      'sessions' => UserSession::select('id')->get()
+      'sessions' => UserSession::select('id')->get(),
+      'registers' => DBRegisters::select('id')->get()
     ]);
   }
 
@@ -186,7 +189,8 @@ class AdminController extends Controller{
         'raffles' => Sorteo::select('id','estado_sorteo')->get(), 'feeds' => EstadoEmpresa::select('id')->get(),
         'coins' => RegistroCoin::select('cantidad')->get(),
         'tickets' => Ticket::select('cantidad_tickets')->get(),
-        'sessions' => UserSession::select('id')->get()
+        'sessions' => UserSession::select('id')->get(),
+        'registers' => DBRegisters::select('id')->get()
       ]);
   }
   public function store(AdminCreateRequest $request)
@@ -207,7 +211,8 @@ class AdminController extends Controller{
         'raffles' => Sorteo::select('id','estado_sorteo')->get(), 'feeds' => EstadoEmpresa::select('id')->get(),
         'coins' => RegistroCoin::select('cantidad')->get(),
         'tickets' => Ticket::select('cantidad_tickets')->get(),
-        'sessions' => UserSession::select('id')->get()
+        'sessions' => UserSession::select('id')->get(),
+        'registers' => DBRegisters::select('id')->get()
       ]);
   }
   public function update(AdminUpdateRequest $request, $id)
