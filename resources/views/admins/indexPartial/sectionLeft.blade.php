@@ -10,7 +10,7 @@
       {!!link_to_route('admins.edit', $title = 'Editar', $parameters = $admin->id, $attributes = ['class'=>'btn btn-primary btn-xs', 'style' => 'float:right;'])!!}
     </div><!-- /div .list-group-item -->
   @endforeach
-</section><!-- /div .list-group -->
+</section><!-- /section #adminList .list-group -->
 
 <section id="fastStatistics" class="list-group">
   <div class="list-group-item">
@@ -34,8 +34,9 @@
   <div class="list-group-item">
     Publicaciones <b style="float:right;">{!! count($feeds) !!} <small>({!! count($feeds)*40 !!} en coins)</small></b>
   </div><!-- /div .list-group-item -->
-</section><!-- /div .list-group -->
+</section><!-- /section #fastStatistics .list-group -->
 
+{{--
 <section id="economy" class="list-group">
   <div class="list-group-item">
     COINS Y TICKETS
@@ -46,4 +47,14 @@
   <div class="list-group-item">
     Econom&iacute;a de tickets <b style="float:right;">{!! $tickets->sum('cantidad_tickets') !!}</b>
   </div><!-- /div .list-group-item -->
-</section><!-- /div .list-group -->
+</section><!-- /section #economy .list-group -->
+--}}
+
+<section id="userSessions" class="list-group">
+  <div class="list-group-item">
+    SESIONES
+  </div><!-- /div .list-group-item -->
+  <div class="list-group-item">
+    Sesiones totales <b style="float:right;">{!! count($sessions) !!}</b>
+  </div><!-- /div .list-group-item -->
+</section><!-- /section #userSessions -->

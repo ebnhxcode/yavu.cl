@@ -23,6 +23,7 @@ use yavu\BannerData;
 use yavu\LinkBannerData;
 use yavu\CategoryBannerData;
 use Illuminate\Routing\Route;
+use yavu\UserSession;
 
 class AdminController extends Controller
 {
@@ -44,7 +45,8 @@ class AdminController extends Controller
         'users' => User::select('id')->get(), 'companies' => Empresa::select('id')->get(),
         'raffles' => Sorteo::select('id','estado_sorteo')->get(), 'feeds' => EstadoEmpresa::select('id')->get(),
         'coins' => RegistroCoin::select('cantidad')->get(),
-        'tickets' => Ticket::select('cantidad_tickets')->get()
+        'tickets' => Ticket::select('cantidad_tickets')->get(),
+        'sessions' => UserSession::select('id')->get()
       ]);
     }
 
