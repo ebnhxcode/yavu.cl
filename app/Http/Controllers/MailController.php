@@ -23,10 +23,11 @@ class MailController extends Controller{
   }
   public function massive(Request $request){
     $this->mailList = explode(';',$request->emailList);
-    Mail::send('emails.massiveListDataBase', ['asd'],function($msj) {
+    Mail::send('emails.massiveListDataBase', [''],function($msj) {
       $msj->subject('Correo de Contacto');
       $msj->to($this->mailList);
     });
+
     Session::flash('message', 'Mensaje enviado correctamente, gracias :)');
     return Redirect::to('/admins/mailing');
   }

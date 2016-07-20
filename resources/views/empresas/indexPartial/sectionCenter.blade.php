@@ -52,6 +52,14 @@
             </div><!-- /div .btn-group -->
             @endif
 
+            {{$empresa->raffleRequests}}
+
+            {{--
+            @if($crr = )
+              {{$crr}}
+            @endif
+            --}}
+
             @if(Auth::user()->get()->id == $empresa->user_id)
               <ul class="dropdown-menu">
                 <li><a href="{!! URL::to('/empresas/'.$empresa->id.'/edit') !!}">Editar empresa</a></li>

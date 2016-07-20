@@ -39,6 +39,7 @@ return array(
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreatePopsTable' => $baseDir . '/database/migrations/2016_02_19_094944_create_pops_table.php',
     'CreatePreguntasTable' => $baseDir . '/database/migrations/2016_02_24_104905_create_preguntas_table.php',
+    'CreateRaffleRequestsTable' => $baseDir . '/database/migrations/2016_07_20_102012_create_raffle_requests_table.php',
     'CreateRegistroCoinsTable' => $baseDir . '/database/migrations/2016_02_08_110055_create_registro_coins_table.php',
     'CreateRolesTable' => $baseDir . '/database/migrations/2016_02_24_162043_create_roles_table.php',
     'CreateServiciosTable' => $baseDir . '/database/migrations/2016_02_24_104920_create_servicios_table.php',
