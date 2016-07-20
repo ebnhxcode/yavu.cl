@@ -9,14 +9,13 @@ class CreateRaffleRequestsTable extends Migration{
    *
    * @return void
    */
-  public function up()
-  {
-      Schema::create('raffle_requests', function (Blueprint $table) {
-          $table->increments('id');
-          $table->string('user_id');
-          $table->string('empresa_id');
-          $table->timestamps();
-      });
+  public function up(){
+    Schema::create('raffle_requests', function (Blueprint $table) {
+      $table->increments('id');
+      $table->string('user_id');
+      $table->string('empresa_id');
+      $table->timestamps();
+    });
   }
 
   /**
@@ -24,8 +23,7 @@ class CreateRaffleRequestsTable extends Migration{
    *
    * @return void
    */
-  public function down()
-  {
-      Schema::dropIfExists('raffle_requests');
+  public function down(){
+    Schema::dropIfExists('raffle_requests');
   }
 }

@@ -9,13 +9,13 @@
       <div class="list-group-item">
         <div class="row">
 
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <a href="/empresas/{!!$empresa->id!!}" class="thumbnail">
               <img id="ImagenPerfil" src="/img/users/{!!($empresa->imagen_perfil!='')?$empresa->imagen_perfil:'banner.png'!!}" alt="..." style="height: 150px;">
             </a><!-- /a .thumbnail -->
           </div><!-- /div col-lg6-md6-sm12-xs12 -->
 
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
 
             <div style="float: right;" class="dropup">
 
@@ -52,7 +52,12 @@
             </div><!-- /div .btn-group -->
             @endif
 
-            {{$empresa->raffleRequests}}
+            <input type="hidden" name="_token" id="token" value="{{csrf_token()}}">
+
+            <span class="btn btn-xs btn-warning">
+              <small>Pedir sorteos <b>| {{count($empresa->raffleRequests)}} peticiones</b></small>
+            </span>
+
 
             {{--
             @if($crr = )
