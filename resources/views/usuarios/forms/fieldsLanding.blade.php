@@ -318,9 +318,7 @@
         </div><!-- /div .col-lg6-md6-sm6-xs12 -->
 
         <div align="center" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <img width=20 style="padding-bottom: 5px;" src="http://localhost:8000/img/yavu019.png" alt="">
-          <b style="font-size: 1.4em;">¿ COMO TE ENTERASTE ?</b>
-          <img width=20 style="padding-bottom: 5px;" src="http://localhost:8000/img/yavu019.png" alt="">
+          <small><b style="font-size: 0.9em;">¿Como te enteraste de yavü?</b></small>
           <div class='form-group has-feedback has-feedback-left'>
             {!!Form::select('asUserHear',
             ['Registro en Línea' => 'Registro en Línea',

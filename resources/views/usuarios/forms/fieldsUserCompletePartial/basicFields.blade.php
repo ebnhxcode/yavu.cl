@@ -54,6 +54,22 @@
       <span class="softText-descriptions"><small>Podr&iacute;as ser un ganador</small></span>
     </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 
+
+      <small><b style="font-size: 0.9em;">¿Como te enteraste de yavü?</b></small>
+      <div class='form-group has-feedback has-feedback-left'>
+        {!!Form::select('asUserHear',
+        ['Registro en Línea' => 'Registro en Línea',
+        'Por la radio' => 'Por la radio',
+        'En en diario' => 'En en diario',
+        'Por una revista' => 'Por una revista',
+        'En otros sitios' => 'En otros sitios',
+        'Por un amigo' => 'Por un amigo',
+        'Por publicidad en Facebook' => 'Por publicidad en Facebook',
+        'otra' => 'otras...'],
+        $selected = null, ['class' => 'form-control input-sm', 'maxlength' => '100'])
+        !!}
+      </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
+
     @if($userActive = Auth::user()->check())
 
       <div class='form-group has-feedback has-feedback-left'>
