@@ -222,10 +222,11 @@ class UserController extends Controller{
   }
 
   public function store(UserCreateRequest $request){
-    dd($request->asUserHear);
-    $this->asUserHear = $request->asUserHear;
     $this->arrayToSendEmailAndNotify = $this->RecordUser($request->nombre,$request->apellido,$request->email,$request->password,$request->ciudad,'',$request->login);
-    AsTheUserRegistry::create(['user_id'=>$this->arrayToSendEmailAndNotify['id'], 'asUserHear'=>$this->asUserHear,'created_at'=>strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at'=>strftime( "%Y-%m-%d-%H-%M-%S", time())])->save();
+
+    if($request->asUserHear){
+      AsTheUserRegistry::create(['user_id'=>$this->arrayToSendEmailAndNotify['id'], 'asUserHear'=>$request->asUserHear,'created_at'=>strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at'=>strftime( "%Y-%m-%d-%H-%M-%S", time())])->save();
+    }
 
     if ($this->GiveCoinsBy($this->arrayToSendEmailAndNotify['id'], 500, 'Carga por registro en el Yavü')){
       $this->notify($this->arrayToSendEmailAndNotify['id'],'carga_inicial','Se cargaron coins por registro en Yavü');
