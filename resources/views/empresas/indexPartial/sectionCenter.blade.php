@@ -11,7 +11,7 @@
 
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <a href="/empresas/{!!$empresa->id!!}" class="thumbnail">
-              <img id="ImagenPortada" src="/img/users/{!!($empresa->imagen_portada!='')?$empresa->imagen_portada:'banner.png'!!}" alt="..." style="height: 150px;">
+              <img id="ImagenPerfil" src="/img/users/{!!($empresa->imagen_perfil!='')?$empresa->imagen_perfil:'banner.png'!!}" alt="..." style="height: 150px;">
             </a><!-- /a .thumbnail -->
           </div><!-- /div col-lg6-md6-sm12-xs12 -->
 
