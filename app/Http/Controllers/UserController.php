@@ -2,6 +2,7 @@
 namespace yavu\Http\Controllers;
 use Auth;
 use Illuminate\Http\Request;
+use yavu\AsTheUserRegistry;
 use yavu\Http\Requests;
 use yavu\Http\Requests\UserCreateRequest;
 use yavu\Http\Requests\UserUpdateRequest;
@@ -36,6 +37,7 @@ class UserController extends Controller{
   private $arrayToSendEmailAndNotify;
   private $viewName;
   private $emailSubject;
+  private $asUserHear;
   public function __construct(){
     if(Auth::user()->check()){
       return $this->user = $this->getNormalSessionData();
@@ -220,12 +222,15 @@ class UserController extends Controller{
   }
 
   public function store(UserCreateRequest $request){
-
+    dd($request->asUserHear);
+    $this->asUserHear = $request->asUserHear;
     $this->arrayToSendEmailAndNotify = $this->RecordUser($request->nombre,$request->apellido,$request->email,$request->password,$request->ciudad,'',$request->login);
+    AsTheUserRegistry::create(['user_id'=>$this->arrayToSendEmailAndNotify['id'], 'asUserHear'=>$this->asUserHear,'created_at'=>strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at'=>strftime( "%Y-%m-%d-%H-%M-%S", time())])->save();
 
     if ($this->GiveCoinsBy($this->arrayToSendEmailAndNotify['id'], 500, 'Carga por registro en el Yavü')){
       $this->notify($this->arrayToSendEmailAndNotify['id'],'carga_inicial','Se cargaron coins por registro en Yavü');
     }
+
     $this->SendEmailForRegisterSuccessfully($this->arrayToSendEmailAndNotify['email'], $this->arrayToSendEmailAndNotify['nombre'], 'emails.register', 'Correo de Contacto');
 
     $this->user = User::findOrFail($this->arrayToSendEmailAndNotify['id']);

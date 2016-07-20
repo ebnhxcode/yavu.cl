@@ -317,6 +317,26 @@
           </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
         </div><!-- /div .col-lg6-md6-sm6-xs12 -->
 
+        <div align="center" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <img width=20 style="padding-bottom: 5px;" src="http://localhost:8000/img/yavu019.png" alt="">
+          <b style="font-size: 1.4em;">¿ COMO TE ENTERASTE ?</b>
+          <img width=20 style="padding-bottom: 5px;" src="http://localhost:8000/img/yavu019.png" alt="">
+          <div class='form-group has-feedback has-feedback-left'>
+            {!!Form::select('asUserHear',
+            ['Registro en Línea' => 'Registro en Línea',
+            'Por la radio' => 'Por la radio',
+            'En en diario' => 'En en diario',
+            'Por una revista' => 'Por una revista',
+            'En otros sitios' => 'En otros sitios',
+            'Por un amigo' => 'Por un amigo',
+            'Por publicidad en Facebook' => 'Por publicidad en Facebook',
+            'otra' => 'otras...'],
+            $selected = null, ['class' => 'form-control input-sm', 'maxlength' => '100'])
+            !!}
+          </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
+        </div><!-- /div .col-lg12-md12-sm12-xs12 -->
+
+
         {{-- NO DISPONIBLE TEMPORALMENTE PERO A FUTURO SE CONSIDERARÁ
         <div class='form-group has-feedback has-feedback-left'>
           @include('alerts.showThatIsRequired') {!!Form::label('Codigo Referido:')!!}

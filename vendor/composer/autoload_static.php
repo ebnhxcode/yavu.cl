@@ -343,6 +343,7 @@ class ComposerStaticInited7924d490fe9e0cf1eacb6de9e69f50
         'AsignarServicioEmpresaTable' => __DIR__ . '/../..' . '/database/migrations/2016_02_03_151242_asignar_servicio_empresa_table.php',
         'CreateAdminsTable' => __DIR__ . '/../..' . '/database/migrations/2015_12_19_150355_create_admins_table.php',
         'CreateAlternativasTable' => __DIR__ . '/../..' . '/database/migrations/2016_02_24_104912_create_alternativas_table.php',
+        'CreateAsTheUserRegistriesTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_20_120227_create_as_the_user_registries_table.php',
         'CreateBannerDataTable' => __DIR__ . '/../..' . '/database/migrations/2016_05_24_124722_create_banner_data_table.php',
         'CreateBannersTable' => __DIR__ . '/../..' . '/database/migrations/2016_02_24_104212_create_banners_table.php',
         'CreateBeneficiosTable' => __DIR__ . '/../..' . '/database/migrations/2016_02_24_145949_create_beneficios_table.php',

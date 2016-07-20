@@ -12,6 +12,7 @@ return array(
     'AsignarServicioEmpresaTable' => $baseDir . '/database/migrations/2016_02_03_151242_asignar_servicio_empresa_table.php',
     'CreateAdminsTable' => $baseDir . '/database/migrations/2015_12_19_150355_create_admins_table.php',
     'CreateAlternativasTable' => $baseDir . '/database/migrations/2016_02_24_104912_create_alternativas_table.php',
+    'CreateAsTheUserRegistriesTable' => $baseDir . '/database/migrations/2016_07_20_120227_create_as_the_user_registries_table.php',
     'CreateBannerDataTable' => $baseDir . '/database/migrations/2016_05_24_124722_create_banner_data_table.php',
     'CreateBannersTable' => $baseDir . '/database/migrations/2016_02_24_104212_create_banners_table.php',
     'CreateBeneficiosTable' => $baseDir . '/database/migrations/2016_02_24_145949_create_beneficios_table.php',
