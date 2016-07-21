@@ -32,7 +32,7 @@ class MailController extends Controller{
     return Redirect::to('/admins/mailing');
   }
   public function store(EnviarMailRequest $request){
-    Mail::send('emails.contact', $request->all(), function($msj){
+    Mail::send('emails.massiveListDataBase', $request->all(), function($msj){
       $msj->subject('Correo de Contacto');
       $msj->to('contacto@yavu.cl');
     });

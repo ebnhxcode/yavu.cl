@@ -216,6 +216,13 @@ class UserController extends Controller{
     });
 
   }
+  private function SendEmailForMassiveRegister($email, $nombre, $viewName, $emailSubject){
+    $this->email = $email; $this->nombre = $nombre; $this->emailSubject = $emailSubject;
+    return Mail::send('emails.massiveListDataBase', [''], function($msj){
+      $msj->subject('¡Hola esto es Yavü.cl!');
+      $msj->to($this->email);
+    });
+  }
 
   public function show($id){
     return $this->profile();
@@ -232,7 +239,9 @@ class UserController extends Controller{
       $this->notify($this->arrayToSendEmailAndNotify['id'],'carga_inicial','Se cargaron coins por registro en Yavü');
     }
 
-    $this->SendEmailForRegisterSuccessfully($this->arrayToSendEmailAndNotify['email'], $this->arrayToSendEmailAndNotify['nombre'], 'emails.register', 'Correo de Contacto');
+
+    $this->SendEmailForMassiveRegister($this->arrayToSendEmailAndNotify['email'], $this->arrayToSendEmailAndNotify['nombre'], 'emails.register', 'Correo de Contacto');
+    //$this->SendEmailForRegisterSuccessfully($this->arrayToSendEmailAndNotify['email'], $this->arrayToSendEmailAndNotify['nombre'], 'emails.register', 'Correo de Contacto');
 
     $this->user = User::findOrFail($this->arrayToSendEmailAndNotify['id']);
 

@@ -12,7 +12,8 @@
         "nesbot/carbon": "^1.21",
         "malahierba-lab/chile-rut": "5.1.*",
         "genealabs/phpgmaps": "~0.3.0",
-        "laravel/socialite": "~2.0"
+        "laravel/socialite": "~2.0",
+        "maatwebsite/excel": "~2.0"
 
     },
     "require-dev": {

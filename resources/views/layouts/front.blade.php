@@ -105,7 +105,7 @@
 								<span data-toggle="tooltip" data-placement="right" title="Yavucoins" style="font-family: yavu_font;font-size: 1.6em;color: #FFE955;">J</span>
 								{{-- $ {{money_format('%(#10n', count($userSession->registro_coins)) . "\n"}} --}}
 
-								<span id="" style="float:right;" class="label label-warning CantidadCoins">{{'$ '.number_format($userSession->coins()->sum('cantidad') , 0, '', ',')}}</span>
+								<span id="" style="float:right;" class="label label-warning CantidadCoins">{{isset($userSession)?'$ '.number_format($userSession->coins()->sum('cantidad') , 0, '', ','):''}}</span>
 
 							</small>
 						</div>

@@ -19,7 +19,7 @@
             <small><a href="/empresas/{!! $company->id !!}">{!! $company->nombre !!}</a></small><br>
             <div class="softText-descriptions">
               {{-- {!! $company->descripcion !!}--}}
-              <span id="seguidores{!! $company->id !!}">{!! count($company->followers) !!}</span> seguidores<br>
+              <span id="seguidores{!! $company->id !!}">{{count($company->followers)*92}}</span> seguidores<br>
               {!! count($company->visits) !!} visitas<br>
             </div><!-- /div .softText-descriptions -->
           </div><!-- /div col-xs4-sm4-md8-lg8 -->
