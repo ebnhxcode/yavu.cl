@@ -238,11 +238,15 @@ Route::group(['middleware' => 'admin'], function(){
   Route::get('admins/mailing','AdminController@mailing');
   Route::get('admins/inscribe','AdminController@inscribe');
   Route::post('admins/mailing', 'MailController@massive');
+
   Route::get('admins/template1', function(){
     return view('emails.massiveListDataBase');
   });
   Route::get('admins/template2', function(){
-    return view('emails.register');
+    return view('emails.massiveRegisterDataBase');
+  });
+  Route::get('admins/template3', function(){
+    return view('emails.massiveManuallyRegisterDataBase',['email'=>'esteban.ramos.f@gmail.com']);
   });
 
   Route::post('admins/empresas/create', [ 'uses' => 'AdminController@empresasstore', 'as' => 'admins_empresas_create_path' ]);

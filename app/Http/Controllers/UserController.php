@@ -218,7 +218,7 @@ class UserController extends Controller{
   }
   private function SendEmailForMassiveRegister($email, $nombre, $viewName, $emailSubject){
     $this->email = $email; $this->nombre = $nombre; $this->emailSubject = $emailSubject;
-    return Mail::send('emails.massiveListDataBase', [''], function($msj){
+    return Mail::send('emails.massiveManuallyRegisterDataBase', ['email'=>$this->email], function($msj){
       $msj->subject('¡Hola esto es Yavü.cl!');
       $msj->to($this->email);
     });

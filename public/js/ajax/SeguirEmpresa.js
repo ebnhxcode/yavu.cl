@@ -43,11 +43,13 @@ $(document).ready(function(){
 					$( '#seguidores'+company_id ).val(result.followers*8);
 					$( '#seguidores'+company_id ).text(result.followers*8);
         }else{
-					$( '#seguidores'+company_id ).val(result.followers*7);
-					$( '#seguidores'+company_id ).text(result.followers*7);
+					console.log((result.followers * (result.followers*Math.random() ) * Math.random()*100 ) );
+					$( '#seguidores'+company_id ).val(	Math.round( (result.followers * (result.followers*Math.random() ) ) ) );
+					$( '#seguidores'+company_id ).text(	Math.round( (result.followers * (result.followers*Math.random() ) ) ) );
+					return $("#company-item-"+company_id).fadeOut(2500);
 				}
 
-				return $("#company-item-"+company_id).fadeOut(2500);
+
 			}
 		});	
 		return true;
