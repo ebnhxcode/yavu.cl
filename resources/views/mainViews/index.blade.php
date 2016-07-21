@@ -34,6 +34,7 @@
   </div><!-- /div #contentMiddle -->
 
   <div class="contentMiddle">
+
     <!-- Primera sección -->
     @include('mainViews.indexPartial.firstSection')
     <!-- End Primera sección -->
