@@ -102,7 +102,9 @@
 								<!-- <img width="" src="/img/newGraphics/neo_tickets02_16x16.png" alt=""> -->
 
 								<span data-toggle="tooltip" data-placement="left" title="Yavucoins!" style="font-family: yavu_font;font-size: 1.6em;color: #FFE955;">J</span>
-								<span id="" style="float:right;" class="label label-warning CantidadCoins"></span>
+								{{-- $ {{money_format('%(#10n', count($userSession->registro_coins)) . "\n"}} --}}
+
+								<span id="" style="float:right;" class="label label-warning CantidadCoins">{{'$ '.number_format($userSession->coins()->sum('cantidad') , 0, '', ',')}}</span>
 
 							</small>
 						</div>

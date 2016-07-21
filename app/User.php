@@ -45,6 +45,9 @@ class User extends Model implements AuthenticatableContract,
 	public function participante_sorteos(){
 		return $this->hasOne('yavu\ParticipanteSorteo');
 	}
+	public function coins(){
+		return $this->hasMany(RegistroCoin::class, 'user_id');
+	}
 	public function registro_coins(){
 		return $this->hasMany(RegistroCoin::class, 'user_id');
 	}

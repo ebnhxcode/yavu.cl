@@ -22,7 +22,7 @@ $(document).ready(function(){
 /*DECLARACIÓN DE VARIABLES GLOBALES*/
 
 /*MÉTODOS CONSTRUCTORES*/
-	ContarCoins();
+	//ContarCoins();
 /*MÉTODOS CONSTRUCTORES*/
 
 /*SELECTORES*/
@@ -30,8 +30,6 @@ $(document).ready(function(){
       $("#Info").popover('show');
       return true;
     });
-
-
 /*SELECTORES*/
 
 /*FUNCIONES Y PROCEDIMIENTOS*/

@@ -54,9 +54,12 @@
 
             <input type="hidden" name="_token" id="token" value="{{csrf_token()}}">
 
-            <span class="btn btn-xs btn-warning">
-              <small>Pedir sorteos <b>| {{count($empresa->raffleRequests)}} peticiones</b></small>
-            </span>
+
+            {{--
+              <span id="request" class="btn btn-xs btn-warning">
+                <small>Pedir sorteos <b>| {{count($empresa->raffleRequests)}} peticiones</b></small>
+              </span>
+            --}}
 
 
             {{--
