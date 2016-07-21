@@ -85,6 +85,7 @@
 						<a href="{{URL::to('/')}}"><img id="LogoYavu" src="{!! asset('img/yavu004.png') !!}" width="70%" style="transition: width 0.8s;" width="50%"></a>
 					</div>
 					@if(Auth::user()->check())
+						{{--
 						<div class="navbar-brand" align="center" >
 							<small>
                 <!-- <img src="{!! asset('/img/newGraphics/neo_notificacion04_16x16.png') !!}" width="" id="Notificaciones" title="Notificaciones <a href='/pops' style='float: right;'>ver todas</a>" data-toggle="popover" title="Popover title" data-placement="bottom" aria-hidden="true" alt=""> -->
@@ -96,12 +97,12 @@
 								<span id="CantidadNotificaciones" style="float:right;" class="label label-danger"></span>
 							</small>
 						</div>
-
+						--}}
 						<div class="navbar-brand" align="center">
 							<small>
 								<!-- <img width="" src="/img/newGraphics/neo_tickets02_16x16.png" alt=""> -->
 
-								<span data-toggle="tooltip" data-placement="left" title="Yavucoins!" style="font-family: yavu_font;font-size: 1.6em;color: #FFE955;">J</span>
+								<span data-toggle="tooltip" data-placement="right" title="Yavucoins" style="font-family: yavu_font;font-size: 1.6em;color: #FFE955;">J</span>
 								{{-- $ {{money_format('%(#10n', count($userSession->registro_coins)) . "\n"}} --}}
 
 								<span id="" style="float:right;" class="label label-warning CantidadCoins">{{'$ '.number_format($userSession->coins()->sum('cantidad') , 0, '', ',')}}</span>
@@ -115,7 +116,7 @@
 							<small>
 								<!-- <img width="22px" src="/img/newGraphics/neo_tickets01_32x32.gif" alt=""> -->
 								<a href="/tickets">
-									<span data-toggle="tooltip" data-placement="left" title="Tickets!" style="font-family: yavu_font;font-size: 1.6em;color:#57E5DB;">E</span>
+									<span data-toggle="tooltip" data-placement="right" title="Tickets" style="font-family: yavu_font;font-size: 1.6em;color:#57E5DB;">E</span>
 									<span id="CantidadTickets" style="float:right;" class="label label-info"></span>
 								</a>
 							</small>
@@ -194,8 +195,11 @@
 							<li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><strong>Mi cuenta</strong> <b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									<li><a href="{!!URL::to('/profile')!!}">Perfil</a></li>
+									<li><a href="{!!URL::to('/pops')!!}">Notificaciones</a></li>
+									{{--
 									<li><a href="{!!URL::to('/tickets/history')!!}">Historial de ticket's</a></li>
 									<li><a href="{!!URL::to('/coins/history')!!}">Historial de coins</a></li>
+									--}}
 
                     <li class="hideifhasone"><a href="{!!URL::to('/empresas/create')!!}">Crear empresa</a></li>
 

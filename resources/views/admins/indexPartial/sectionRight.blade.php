@@ -21,4 +21,7 @@
   <a class="list-group-item" href="{!! URL::to('/admins/mailing') !!}">
     Enviar emails
   </a><!-- /a list-group-item -->
+  <a class="list-group-item" href="{!! URL::to('/admins/inscribe') !!}">
+    Inscribir
+  </a><!-- /a list-group-item -->
 </div><!-- /div list-group -->

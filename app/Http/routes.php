@@ -236,6 +236,7 @@ Route::group(['middleware' => 'admin'], function(){
   Route::put('admins/empresas/{id}/edit', ['uses' => 'AdminController@empresasupdate','as' => 'admins_empresas_put_path']);
 
   Route::get('admins/mailing','AdminController@mailing');
+  Route::get('admins/inscribe','AdminController@inscribe');
   Route::post('admins/mailing', 'MailController@massive');
   Route::get('admins/template1', function(){
     return view('emails.massiveListDataBase');

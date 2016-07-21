@@ -39,6 +39,18 @@ class AdminController extends Controller{
   //return $this->user;
   }
 
+  public function inscribe(){
+    return view('admins.inscribe',[
+      'admins' => Admin::select('id','nombre','apellido','email')->get(),
+      'users' => User::select('id')->get(), 'companies' => Empresa::select('id')->get(),
+      'raffles' => Sorteo::select('id','estado_sorteo')->get(), 'feeds' => EstadoEmpresa::select('id')->get(),
+      'coins' => RegistroCoin::select('cantidad')->get(),
+      'tickets' => Ticket::select('cantidad_tickets')->get(),
+      'sessions' => UserSession::select('id')->get(),
+      'registers' => DBRegisters::select('id')->get()
+    ]);
+  }
+
   public function mailing(){
     return view('admins.mailing',[
       'admins' => Admin::select('id','nombre','apellido','email')->get(),
