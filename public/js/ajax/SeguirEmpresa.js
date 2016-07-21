@@ -40,11 +40,11 @@ $(document).ready(function(){
 			success:function(result){
         if(result.estado==='not-followed'){
           btn.text('Seguir');
-					$( '#seguidores'+company_id ).val(	Math.round(  (result.followers * (Math.random()*(9-8+1)+9) ) ) );
-					//$( '#seguidores'+company_id ).text(	Math.round(  (result.followers * (Math.random()*(9-8+1)+9) ) ) );
+					$( '#seguidores'+company_id ).val(	Math.round(  (result.followers * (Math.random()*(9-8+1)+9) ) ));
+					$( '#seguidores'+company_id ).text(	Math.round(  (result.followers * (Math.random()*(9-8+1)+9) ) )+' seguidores<br>' );
         }else{
-					//$( '#seguidores'+company_id ).val(	Math.round(  (result.followers * (Math.random()*(8-7+1)+8) ) ) );
-					//$( '#seguidores'+company_id ).text(	Math.round(  (result.followers * (Math.random()*(8-7+1)+8) ) ) );
+					$( '#seguidores'+company_id ).val(	Math.round(  (result.followers * (Math.random()*(8-7+1)+8) ) ) );
+					$( '#seguidores'+company_id ).text(	Math.round(  (result.followers * (Math.random()*(8-7+1)+8) ) )+' seguidores<br>' );
 					return $("#company-item-"+company_id).fadeOut(2500);
 				}
 
