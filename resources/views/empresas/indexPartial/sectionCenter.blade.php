@@ -35,7 +35,8 @@
               <strong>Ciudad :</strong> {!!$empresa->ciudad!!}<br>
               <strong>Contacto :<strong><a href="mailto:#">{!!$empresa->email!!}</a></strong><br>
                 <strong>Fono :</strong> <abbr title="Phone"></abbr> {!!$empresa->fono!!}</strong><br>
-              {!!($fCounts=count($empresa->followers)*92)!!} seguidor{!!($fCounts>1||$fCounts==0?'es':'')!!}.
+              {{($fCounts=round( count($empresa->followers)*(int)("7.".rand(1,9999)) ) )}} seguidor{{($fCounts>1||$fCounts==0?'es':'')}}.<br>
+              {!! round(count($empresa->visits)*3.6) !!} visitas<br>
 
               {{--
               <span class="btn btn-primary btn-xs">{!! count($userSession->follow($empresa->id)->get())>0?'Seguida':'seguir' !!}</span>

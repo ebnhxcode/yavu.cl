@@ -11,7 +11,7 @@
             <div class="list-group">
               {!!Form::hidden('empresa', $e->nombre, ['id'=>'empresa'])!!}
               <span class="btn btn-primary btn-sm seguir" value="{!! $e->id !!}" role="button">{!! count($e->isFollowedBy($userSession->id))>0?'Siguiendo':'Seguir' !!}</span>
-              <input type="text" class="btn btn-sm text-success" id="seguidores{!! $e->id !!}" size="10" disabled value="{!! $e->followers()->count('id') !!}" >
+              <input type="text" class="btn btn-sm text-success" id="seguidores{!! $e->id !!}" size="10" disabled value="{{($fCounts=round( count($e->followers)*(int)("7.".rand(1,9999)) ) )}}" >
               <div style="float: right;">
                 @if($e->user_id == Auth::user()->get()->id)
                   <div class="dropdown">
