@@ -41,9 +41,8 @@ $(document).ready(function(){
         if(result.estado==='not-followed'){
           btn.text('Seguir');
 					$( '#seguidores'+company_id ).val(	Math.round(  (result.followers * (Math.random()*(9-8+1)+9) ) ) );
-					$( '#seguidores'+company_id ).text(	Math.round(  (result.followers * (Math.random()*(9-8+1)+9) ) ) );
+					//$( '#seguidores'+company_id ).text(	Math.round(  (result.followers * (Math.random()*(9-8+1)+9) ) ) );
         }else{
-					console.log((result.followers * (result.followers*Math.random() ) * Math.random()*100 ) );
 					$( '#seguidores'+company_id ).val(	Math.round(  (result.followers * (Math.random()*(8-7+1)+8) ) ) );
 					$( '#seguidores'+company_id ).text(	Math.round(  (result.followers * (Math.random()*(8-7+1)+8) ) ) );
 					return $("#company-item-"+company_id).fadeOut(2500);
