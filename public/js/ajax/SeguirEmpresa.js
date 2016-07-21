@@ -43,8 +43,8 @@ $(document).ready(function(){
 					$( '#seguidores'+company_id ).val(	Math.round(  (result.followers * (Math.random()*(9-8+1)+9) ) ) );
 					//$( '#seguidores'+company_id ).text(	Math.round(  (result.followers * (Math.random()*(9-8+1)+9) ) ) );
         }else{
-					$( '#seguidores'+company_id ).val(	Math.round(  (result.followers * (Math.random()*(8-7+1)+8) ) ) );
-					$( '#seguidores'+company_id ).text(	Math.round(  (result.followers * (Math.random()*(8-7+1)+8) ) ) );
+					//$( '#seguidores'+company_id ).val(	Math.round(  (result.followers * (Math.random()*(8-7+1)+8) ) ) );
+					//$( '#seguidores'+company_id ).text(	Math.round(  (result.followers * (Math.random()*(8-7+1)+8) ) ) );
 					return $("#company-item-"+company_id).fadeOut(2500);
 				}
 
