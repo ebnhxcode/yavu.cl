@@ -20,7 +20,7 @@
             <div class="softText-descriptions">
               {{-- {!! $company->descripcion !!}--}}
 
-              <span id="seguidores{!! $company->id !!}">{{($fCounts=round( count($company->followers)*(int)("7.".rand(1,9999)) ) )}} seguidor{{($fCounts>1||$fCounts==0?'es':'')}}.<br></span>
+              <span id="seguidores{!! $company->id !!}">{{($fCounts=round( count($company->followers)*(int)("7.".rand(1,9999)) ) )}} seguidor{{($fCounts>1||$fCounts==0?'es':'')}}.</span><br>
               {!! round(count($company->visits)*3.6) !!} visitas<br>
             </div><!-- /div .softText-descriptions -->
           </div><!-- /div col-xs4-sm4-md8-lg8 -->
