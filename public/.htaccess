@@ -1,4 +1,4 @@
-<I..yavu2016#fModule mod_rewrite.c>
+<IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews
         Options -Indexes
@@ -16,7 +16,7 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
     RewriteCond %{HTTP_HOST} ^www.yavu.cl [NC]
-    RewriteRule ^(.*)$ http://yavu.cl/$1 [L,R=301]
+    RewriteRule ^(.*)$ http://localhost:8000/$1 [L,R=301]
 
 </IfModule>
 
