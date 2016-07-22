@@ -54,6 +54,14 @@
       <span class="softText-descriptions"><small>Podr&iacute;as ser un ganador</small></span>
     </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 
+    <div class='form-group has-feedback has-feedback-left'>
+      {!!Form::select('sexo',
+        ['Masculino' => 'Masculino',
+        'Femenino' => 'Femenino',
+        'Otro' => 'Otro'],
+        $selected = null, ['class' => 'form-control input-sm', 'maxlength' => '10'])
+      !!}
+    </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 
       <small><b style="font-size: 0.9em;">¿Como te enteraste de yavü?</b></small>
       <div class='form-group has-feedback has-feedback-left'>
@@ -113,7 +121,7 @@
     });
     function ValidarRut(rut){
       console.log('click');
-      var route = 'http://yavu.cl/validarrutusuario/'+rut+'';
+      var route = 'http://localhost:8000/validarrutusuario/'+rut+'';
       document.getElementById('FormUsuario').onsubmit = function() {
         return false;
       }

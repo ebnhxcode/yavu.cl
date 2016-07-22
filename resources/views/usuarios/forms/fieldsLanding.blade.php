@@ -317,6 +317,17 @@
           </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
         </div><!-- /div .col-lg6-md6-sm6-xs12 -->
 
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class='form-group has-feedback has-feedback-left'>
+            {!!Form::select('sexo',
+              ['Masculino' => 'Masculino',
+              'Femenino' => 'Femenino',
+              'Otro' => 'Otro'],
+              $selected = null, ['class' => 'form-control input-sm', 'maxlength' => '10'])
+            !!}
+          </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
+        </div><!-- /div .col-lg6-md6-sm6-xs12 -->
+
         <div align="center" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <small><b style="font-size: 0.9em;">¿Como te enteraste de yavü?</b></small>
           <div class='form-group has-feedback has-feedback-left'>
