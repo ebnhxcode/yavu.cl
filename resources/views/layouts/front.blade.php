@@ -81,9 +81,15 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<div class="navbar-brand" style="width: 135px;padding-right: 0px;padding-left: 20px;">
-						<a href="{{URL::to('/')}}"><img id="LogoYavu" src="{!! asset('img/yavu004.png') !!}" width="70%" style="transition: width 0.8s;" width="50%"></a>
-					</div>
+					@if(Auth::user()->check())
+						<div class="navbar-brand" style="width: 135px;padding-right: 0px;padding-left: 20px;">
+							<a href="{{URL::to('/dashboard')}}"><img id="LogoYavu" src="{!! asset('img/yavu004.png') !!}" width="70%" style="transition: width 0.8s;" width="50%"></a>
+						</div>
+					@else
+						<div class="navbar-brand" style="width: 135px;padding-right: 0px;padding-left: 20px;">
+							<a href="{{URL::to('/')}}"><img id="LogoYavu" src="{!! asset('img/yavu004.png') !!}" width="70%" style="transition: width 0.8s;" width="50%"></a>
+						</div>
+					@endif
 					@if(Auth::user()->check())
 						{{--
 						<div class="navbar-brand" align="center" >
@@ -131,6 +137,34 @@
 							</a>
 						</div>
 						-->
+
+						{{--
+						<!-- demo 1 / navbar direct links -->
+
+						<div class="navbar-brand visible-xs" align="center" style="padding-right: 0px;padding-left: 0px;">
+							<a href="{{URL::to('/feeds')}}">
+								<span class="glyphicon glyphicon-list-alt" id="logIcon" style="color: #FFFFff;"></span>
+							</a>
+						</div>
+						<div class="navbar-brand visible-xs" align="center" style="padding-right: 0px;padding-left: 30px;">
+							<a href="{{URL::to('/empresas')}}">
+								<span class="glyphicon glyphicon-briefcase" id="logIcon" style="color: #FFFFff;"></span>
+							</a>
+						</div>
+						<div class="navbar-brand visible-xs" align="center" style="padding-right: 0px;padding-left: 30px;">
+							<a href="{{URL::to('/sorteos')}}">
+								<span class="glyphicon glyphicon-gift" id="logIcon" style="color: #FFFFff;"></span>
+							</a>
+						</div>
+						--}}
+
+
+
+
+
+
+
+
 					@endif
 
 				</div><!-- /navbar-header -->
@@ -192,7 +226,8 @@
 						@if(Auth::user()->check())
 							{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
 							{!!Form::hidden('idUltimaNotificacion', "0", ['id'=>'idUltimaNotificacion'])!!}
-							<li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><strong>Mi cuenta</strong> <b class="caret"></b></a>
+
+								<li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><strong>Mi cuenta</strong> <b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									<li><a href="{!!URL::to('/profile')!!}">Perfil</a></li>
 									<li><a href="{!!URL::to('/pops')!!}">Notificaciones</a></li>
@@ -280,6 +315,33 @@
 
 			</div><!-- /container -->
 		</nav><!-- /navbar-inverse -->
+
+		{{--
+		<!-- demo 2 / testeo de navbar bottom -->
+		@if(Auth::user()->check())
+		<nav class="navbar navbar-default navbar-fixed-bottom visible-xs">
+			<div class="container">
+				<div class="navbar-header">
+					<div class="navbar-brand" align="center">
+						<small>
+							<span data-toggle="tooltip" data-placement="right" title="Yavucoins" style="font-family: yavu_font;font-size: 1.6em;color: #FFE955;">J</span>
+							<span id="" style="float:right;" class="label label-warning CantidadCoins">{{isset($userSession)?'$ '.number_format($userSession->coins()->sum('cantidad') , 0, '', ','):''}}</span>
+						</small>
+					</div>
+					<div class="navbar-brand" align="center">
+						<small>
+							<a href="/tickets">
+								<span data-toggle="tooltip" data-placement="right" title="Tickets" style="font-family: yavu_font;font-size: 1.6em;color:#57E5DB;">E</span>
+								<span id="CantidadTickets" style="float:right;" class="label label-info"></span>
+							</a>
+						</small>
+					</div>
+				</div>
+			</div>
+		</nav>
+		@endif
+		--}}
+
 
 		@if(Auth::user()->check())
 			@if(Request::path() === 'empresas' || Request::path()  === 'sorteos' || Request::path()  === 'feeds')
