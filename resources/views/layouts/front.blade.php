@@ -104,6 +104,30 @@
 							</small>
 						</div>
 						--}}
+
+					{{--
+
+					<!-- demo 1 / navbar direct links -->
+
+						<div class="navbar-brand visible-xs" align="center" style="padding-right: 0px;padding-left: 30px;">
+							<a href="{{URL::to('/feeds')}}">
+								<span class="glyphicon glyphicon-list-alt" id="logIcon" style="color: #FFFFff;"></span>
+							</a>
+						</div>
+						<div class="navbar-brand visible-xs" align="center" style="padding-right: 0px;padding-left: 30px;">
+							<a href="{{URL::to('/empresas')}}">
+								<span class="glyphicon glyphicon-briefcase" id="logIcon" style="color: #FFFFff;"></span>
+							</a>
+						</div>
+						<div class="navbar-brand visible-xs" align="center" style="padding-right: 20px;padding-left: 30px;">
+							<a href="{{URL::to('/sorteos')}}">
+								<span class="glyphicon glyphicon-gift" id="logIcon" style="color: #FFFFff;"></span>
+							</a>
+						</div>
+
+					<!-- fin demo 1 -->
+					--}}
+
 						<div class="navbar-brand" align="center">
 							<small>
 								<!-- <img width="" src="/img/newGraphics/neo_tickets02_16x16.png" alt=""> -->
@@ -138,25 +162,9 @@
 						</div>
 						-->
 
-						{{--
-						<!-- demo 1 / navbar direct links -->
 
-						<div class="navbar-brand visible-xs" align="center" style="padding-right: 0px;padding-left: 0px;">
-							<a href="{{URL::to('/feeds')}}">
-								<span class="glyphicon glyphicon-list-alt" id="logIcon" style="color: #FFFFff;"></span>
-							</a>
-						</div>
-						<div class="navbar-brand visible-xs" align="center" style="padding-right: 0px;padding-left: 30px;">
-							<a href="{{URL::to('/empresas')}}">
-								<span class="glyphicon glyphicon-briefcase" id="logIcon" style="color: #FFFFff;"></span>
-							</a>
-						</div>
-						<div class="navbar-brand visible-xs" align="center" style="padding-right: 0px;padding-left: 30px;">
-							<a href="{{URL::to('/sorteos')}}">
-								<span class="glyphicon glyphicon-gift" id="logIcon" style="color: #FFFFff;"></span>
-							</a>
-						</div>
-						--}}
+
+
 
 
 
