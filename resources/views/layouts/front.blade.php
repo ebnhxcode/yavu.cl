@@ -82,7 +82,7 @@
 						<span class="icon-bar"></span>
 					</button>
 					@if(Auth::user()->check())
-						<div class="navbar-brand" style="width: 135px;padding-right: 0px;padding-left: 20px;">
+						<div class="navbar-brand hidden-xs" style="width: 135px;padding-right: 0px;padding-left: 20px;">
 							<a href="{{URL::to('/dashboard')}}"><img id="LogoYavu" src="{!! asset('img/yavu004.png') !!}" width="70%" style="transition: width 0.8s;" width="50%"></a>
 						</div>
 					@else
@@ -105,28 +105,28 @@
 						</div>
 						--}}
 
-					{{--
+
 
 					<!-- demo 1 / navbar direct links -->
 
 						<div class="navbar-brand visible-xs" align="center" style="padding-right: 0px;padding-left: 30px;">
 							<a href="{{URL::to('/feeds')}}">
-								<span class="glyphicon glyphicon-list-alt" id="logIcon" style="color: #FFFFff;"></span>
+								<span class="glyphicon glyphicon-list-alt" id="logIcon" style="color: {{(Request::path()=='feeds')?'#2b542c;':'#FFFFff;'}}"></span>
 							</a>
 						</div>
 						<div class="navbar-brand visible-xs" align="center" style="padding-right: 0px;padding-left: 30px;">
 							<a href="{{URL::to('/empresas')}}">
-								<span class="glyphicon glyphicon-briefcase" id="logIcon" style="color: #FFFFff;"></span>
+								<span class="glyphicon glyphicon-briefcase" id="logIcon" style="color: {{(Request::path()=='empresas')?'#2b542c;':'#FFFFff;'}}"></span>
 							</a>
 						</div>
 						<div class="navbar-brand visible-xs" align="center" style="padding-right: 20px;padding-left: 30px;">
 							<a href="{{URL::to('/sorteos')}}">
-								<span class="glyphicon glyphicon-gift" id="logIcon" style="color: #FFFFff;"></span>
+								<span class="glyphicon glyphicon-gift" id="logIcon" style="color: {{(Request::path()=='sorteos')?'#2b542c;':'#FFFFff;'}}"></span>
 							</a>
 						</div>
 
 					<!-- fin demo 1 -->
-					--}}
+
 
 						<div class="navbar-brand" align="center">
 							<small>
@@ -262,7 +262,7 @@
 								</ul>
 							</li>
 
-							<li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><img width="40" src="{!! asset('img/yavu019.png') !!}" alt=""><b class="caret"></b></a>
+							<li class="dropdown hidden-xs"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><img width="40" src="{!! asset('img/yavu019.png') !!}" alt=""><b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									<li class="dropdown">
 										<a href="{!!URL::to('/dashboard')!!}">
