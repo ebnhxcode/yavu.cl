@@ -40,7 +40,7 @@
     <!-- End Primera sección -->
   </div><!-- /div #fullWidth -->
 </div><!-- /div .jumbotron -->
-<div class="jumbotron section-c">
+<div class="jumbotron section-a">
   <div class="contentMiddle">
     <!-- Segunda sección -->
     @include('mainViews.indexPartial.secondSection')

@@ -35,8 +35,11 @@
               <strong>Ciudad :</strong> {!!$empresa->ciudad!!}<br>
               <strong>Contacto :<strong><a href="mailto:#">{!!$empresa->email!!}</a></strong><br>
                 <strong>Fono :</strong> <abbr title="Phone"></abbr> {!!$empresa->fono!!}</strong><br>
-              {{($fCounts=round( count($empresa->followers)*(int)("1  .".rand(1,9999)) ) )}} seguidor{{($fCounts>1||$fCounts==0?'es':'')}}.<br>
-              {!! round(count($empresa->visits)*3.6) !!} visitas<br>
+              {{($fCounts=round( count($empresa->followers)*(int)("1.".rand(1,9999)) ) )}} seguidor{{($fCounts>1||$fCounts==0?'es':'')}}.<br>
+                {{--
+                <!-- Ocultaremos las visitas para no entregar datos que no necesiten los usuarios, este es un dato enfocado a las empresas -->
+                {!! round(count($empresa->visits)*3.6) !!} visitas<br>
+                --}}
 
               {{--
               <span class="btn btn-primary btn-xs">{!! count($userSession->follow($empresa->id)->get())>0?'Seguida':'seguir' !!}</span>
