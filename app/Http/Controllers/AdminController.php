@@ -1,6 +1,7 @@
 <?php
 
 namespace yavu\Http\Controllers;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use yavu\DBRegisters;
 use yavu\EstadoEmpresa;
@@ -40,6 +41,32 @@ class AdminController extends Controller{
   }
 
   public function inscribe(){
+    return view('admins.inscribe',[
+      'admins' => Admin::select('id','nombre','apellido','email')->get(),
+      'users' => User::select('id')->get(), 'companies' => Empresa::select('id')->get(),
+      'raffles' => Sorteo::select('id','estado_sorteo')->get(), 'feeds' => EstadoEmpresa::select('id')->get(),
+      'coins' => RegistroCoin::select('cantidad')->get(),
+      'tickets' => Ticket::select('cantidad_tickets')->get(),
+      'sessions' => UserSession::select('id')->get(),
+      'registers' => DBRegisters::select('id')->get()
+    ]);
+  }
+
+  public function saveUser(Request $request){
+    $this->newuser = new User(["nombre"=>$request->nombre,
+      "apellido"=>$request->apellido,
+      "login"=>$request->login,
+      "email"=>$request->email,
+      "password"=>$request->password,
+      "fecha_nacimiento"=>$request->fecha_nacimiento,
+      "estado"=>"Activo",
+      "fono"=>$request->fono,
+      "sexo"=>$request->sexo,
+      "referente"=>Carbon::now()->minute.Carbon::now()->hour.Carbon::now()->year.Carbon::now()->month.Carbon::now()->day."RY",
+      "validacion"=>"by_adm",
+      "ciudad"=>$request->ciudad]);
+    $this->newuser->save();
+    Session::flash('message','Inscripcion realizada con éxito.');
     return view('admins.inscribe',[
       'admins' => Admin::select('id','nombre','apellido','email')->get(),
       'users' => User::select('id')->get(), 'companies' => Empresa::select('id')->get(),

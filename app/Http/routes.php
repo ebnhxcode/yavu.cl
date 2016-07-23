@@ -237,6 +237,7 @@ Route::group(['middleware' => 'admin'], function(){
 
   Route::get('admins/mailing','AdminController@mailing');
   Route::get('admins/inscribe','AdminController@inscribe');
+  Route::post('admins/inscribe','AdminController@saveUser');
   Route::post('admins/mailing', 'MailController@massive');
 
   Route::get('admins/template1', function(){
