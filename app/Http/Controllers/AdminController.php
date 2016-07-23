@@ -18,6 +18,7 @@ use yavu\RegistroCoin;
 use yavu\Sorteo;
 use yavu\Ticket;
 use yavu\User;
+use Mail;
 use RUT;
 use DB;
 use yavu\Empresa;
@@ -53,6 +54,10 @@ class AdminController extends Controller{
   }
 
   public function saveUser(Request $request){
+    if($request->sendRegisterEmail == 'yes'){
+      $this->SendEmailForMassiveRegister($request->email);
+    }
+
     $this->newuser = new User(["nombre"=>$request->nombre,
       "apellido"=>$request->apellido,
       "login"=>$request->login,
@@ -66,6 +71,7 @@ class AdminController extends Controller{
       "validacion"=>"by_adm",
       "ciudad"=>$request->ciudad]);
     $this->newuser->save();
+
     Session::flash('message','Inscripcion realizada con éxito.');
     return view('admins.inscribe',[
       'admins' => Admin::select('id','nombre','apellido','email')->get(),
@@ -89,6 +95,15 @@ class AdminController extends Controller{
       'registers' => DBRegisters::select('id')->get()
     ]);
   }
+
+  //darle funcion cuando se pinche que si se desea enviar mail
+  private function SendEmailForMassiveRegister($email){
+    return Mail::send('emails.massiveManuallyRegisterDataBase', ['email'=>$email], function($msj) use ($email){
+      $msj->subject('¡Hola esto es Yavü.cl!');
+      $msj->to($email);
+    });
+  }
+
   public function index(){
     return view('admins.index',[
       'admins' => Admin::select('id','nombre','apellido','email')->get(),

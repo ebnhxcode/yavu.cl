@@ -10,6 +10,7 @@
 
     @include('usuarios.forms.fieldsUserCompletePartial.basicFields')
     @include('usuarios.forms.fieldsUserCompletePartial.advancedFields')
+      {!! Form::checkbox('sendRegisterEmail', 'yes', false) !!} <small>Enviar email de registro</small>
     </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 
     {!!Form::submit('Guardar', ['class'=>'btn btn-success'])!!}
