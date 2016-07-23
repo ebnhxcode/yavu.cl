@@ -4,7 +4,7 @@
   </div><!-- /div .list-group-item -->
   <div class="list-group-item">
 
-    {!!Form::open([route('usuarios_create_path'), 'method'=>'POST', 'files' => true, 'autocomplete' => 'off'])!!}
+    {!!Form::open(['action' => ['AdminController@saveUser'], 'method'=>'POST', 'files' => true, 'autocomplete' => 'off'])!!}
 
     <div class='form-group has-feedback has-feedback-left'>
 
