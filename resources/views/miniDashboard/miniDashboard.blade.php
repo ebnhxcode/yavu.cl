@@ -82,8 +82,8 @@
           </div><!-- /div .col-md4-sm-4-xs6 -->
         @endif
 
-        @if(Request::path() != 'sorteos/create')
-          <div style="display: none;" class="col-md-4 col-sm-4 col-xs-4 hasoneempresa">
+        @if(Request::path() != 'sorteos/create' && count($userSession->empresas)>0)
+          <div class="col-md-4 col-sm-4 col-xs-4">
             <div class="list-group" >
               <div align="center">
                 <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/sorteos/create')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
@@ -92,7 +92,7 @@
               </div><!-- /div aligned -->
               <div align="center"><small>Crear sorteo</small></div>
             </div><!-- /div .list-group -->
-          </div><!-- /div .col-md4-sm-4-xs6 .hasoneempresa -->
+          </div><!-- /div .col-md4-sm-4-xs6 -->
         @endif
       </div><!-- /row -->
     </div><!-- /div #collapseExample .collapse -->

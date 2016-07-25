@@ -94,16 +94,18 @@
 
 
 
-          <div class='col-md-4 col-sm-6 col-xs-12'>
-            <div class='list-group' >
-              <a href='{!!URL::to('/sorteos/create')!!}' style='text-align:center;display: none;' class='list-group-item hasoneempresa'>
-                <span>
-                  <h4>CREAR SORTEO</h4>
-                  <img class='img-responsive-centered' src= '{!!URL::to('img/newGraphics/icofinal_sorteos_premios.png')!!}'/>
-                </span>
-              </a><!-- /a .list-group-item .success -->
-            </div><!-- /div .list-group -->
-          </div><!-- /div .col-md4-sm6-xs12 -->
+          @if(count($userSession->empresas)>0)<!-- cuenta si es que tiene alguna empresa -->
+            <div class='col-md-4 col-sm-6 col-xs-12'>
+              <div class='list-group'>
+                <a href='{!!URL::to('/sorteos/create')!!}' style='text-align:center;' class='list-group-item'>
+                  <span>
+                    <h4>CREAR SORTEO</h4>
+                    <img class='img-responsive-centered' src= '{!!URL::to('img/newGraphics/icofinal_sorteos_premios.png')!!}'/>
+                  </span>
+                </a><!-- /a .list-group-item .success -->
+              </div><!-- /div .list-group -->
+            </div><!-- /div .col-md4-sm6-xs12 -->
+          @endif
 
 				</div><!-- /div .row -->
 			</div><!-- /div col-md9-sm9-xs12 -->
