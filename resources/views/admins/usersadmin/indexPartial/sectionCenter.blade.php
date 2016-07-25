@@ -31,7 +31,6 @@
             </td>
             <td>
             @foreach($user->empresas as $key => $company)
-                {{dd($company)}}
                 <b>{{$company->email}}</b>{{--<a href="#!" style="float:right;"><small>editar</small></a>--}}
                 <br>
 
