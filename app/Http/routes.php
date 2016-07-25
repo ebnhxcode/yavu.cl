@@ -233,7 +233,12 @@ Route::group(['middleware' => 'admin'], function(){
   Route::get('admins/empresas/index', 'AdminController@empresasindex');
 
   Route::get('admins/empresas/{id}/edit', ['uses' => 'AdminController@empresasedit', 'as' => 'admins_empresas_edit_path']);
+
   Route::put('admins/empresas/{id}/edit', ['uses' => 'AdminController@empresasupdate','as' => 'admins_empresas_put_path']);
+
+
+  Route::get('admins/usersadmin/index', 'AdminController@usersindex');
+
 
   Route::get('admins/mailing','AdminController@mailing');
 

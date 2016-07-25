@@ -256,6 +256,19 @@ class AdminController extends Controller{
       }
       return redirect()->to('/admins/empresas/create');
   }
+
+  public function usersindex(){
+    return view('admins.usersadmin.index',[
+      'admins' => Admin::select('id','nombre','apellido','email')->get(),
+      'users' => User::paginate(100), 'companies' => Empresa::select('id')->get(),
+      'raffles' => Sorteo::select('id','estado_sorteo')->get(), 'feeds' => EstadoEmpresa::select('id')->get(),
+      'coins' => RegistroCoin::select('cantidad')->get(),
+      'tickets' => Ticket::select('cantidad_tickets')->get(),
+      'sessions' => UserSession::select('id')->get(),
+      'registers' => DBRegisters::select('id')->get()
+    ]);
+  }
+
   public function create()
   {
       return view('admins.create', [

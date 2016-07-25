@@ -12,32 +12,8 @@
   @endforeach
 </section><!-- /section #adminList .list-group -->
 
-<section id="fastStatistics" class="list-group">
-  <div class="list-group-item">
-    ESTAD&Iacute;STICAS R&Aacute;PIDAS
-  </div><!-- /div .list-group-item -->
-  <div class="list-group-item">
-    Usuarios Registrados <b style="float:right;">{!! count($users) !!}</b>
-  </div><!-- /div .list-group-item -->
-  <div class="list-group-item">
-    Empresas Registradas <b style="float:right;">{!! count($companies) !!}</b>
-  </div><!-- /div .list-group-item -->
-  <div class="list-group-item">
-    Sorteos Activos <b style="float:right;">{!! count($raffles->where('estado_sorteo','Activo')) !!}</b>
-  </div><!-- /div .list-group-item -->
-  <div class="list-group-item">
-    Sorteos Finalizados <b style="float:right;">{!! count($raffles->where('estado_sorteo','Finalizado')) !!}</b>
-  </div><!-- /div .list-group-item -->
-  <div class="list-group-item">
-    Sorteos Pendientes de Aprovaci&oacute;n <b style="float:right;">{!! count($raffles->where('estado_sorteo','Pendiente')) !!}</b>
-  </div><!-- /div .list-group-item -->
-  <div class="list-group-item">
-    Publicaciones <b style="float:right;">{!! count($feeds) !!} <small>({!! count($feeds)*40 !!} en coins)</small></b>
-  </div><!-- /div .list-group-item -->
-  <div class="list-group-item">
-    Alcance Emails Registro <b style="float:right;">{!! count($registers) !!}</b>
-  </div><!-- /div .list-group-item -->
-</section><!-- /section #fastStatistics .list-group -->
+<!-- esto incluye de la sección izquierda las estadisticas rápidas y vistas asociadas -->
+@include('admins.indexPartial.sectionLeftPartial.fastStatistics')
 
 {{--
 <section id="economy" class="list-group">
