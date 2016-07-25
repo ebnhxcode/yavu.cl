@@ -30,9 +30,9 @@ class FrontController extends Controller{
   public function nosotros(){
     return view('mainViews.nosotros');
   }
-  public function registro(){
+  public function loginMassive(){
     DBRegisters::create(['counter'=>1])->save();
-    return view('usuarios/create');
+    return view('mainViews.login');
   }
   public function terminos(){
     return view('mainViews.terminos');

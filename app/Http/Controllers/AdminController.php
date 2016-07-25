@@ -41,6 +41,23 @@ class AdminController extends Controller{
   //return $this->user;
   }
 
+
+  /*TEMPLATES --borrar despues*/
+
+  public function template1(){
+    return view('emails.massiveListDataBase');
+  }
+
+  public function template2(){
+    return view('emails.massiveRegisterDataBase');
+  }
+
+  public function template3(){
+    return view('emails.massiveManuallyRegisterDataBase',['email'=>'esteban.ramos.f@gmail.com']);
+  }
+
+  /*TEMPLATES*/
+
   public function inscribe(){
     return view('admins.inscribe',[
       'admins' => Admin::select('id','nombre','apellido','email')->get(),
@@ -54,9 +71,6 @@ class AdminController extends Controller{
   }
 
   public function saveUser(Request $request){
-    if($request->sendRegisterEmail == 'yes'){
-      $this->SendEmailForMassiveRegister($request->email);
-    }
 
     $this->newuser = new User(["nombre"=>$request->nombre,
       "apellido"=>$request->apellido,
@@ -68,9 +82,13 @@ class AdminController extends Controller{
       "fono"=>$request->fono,
       "sexo"=>$request->sexo,
       "referente"=>Carbon::now()->minute.Carbon::now()->hour.Carbon::now()->year.Carbon::now()->month.Carbon::now()->day."RY",
-      "validacion"=>"by_adm",
+      "validacion"=>"ADM-".Carbon::now()->minute.Carbon::now()->hour.Carbon::now()->year.Carbon::now()->month.Carbon::now()->day,
       "ciudad"=>$request->ciudad]);
     $this->newuser->save();
+
+    if($request->sendRegisterEmail == 'yes'){
+      $this->SendEmailForMassiveRegister($this->newuser);
+    }
 
     Session::flash('message','Inscripcion realizada con éxito.');
     return view('admins.inscribe',[
@@ -82,6 +100,15 @@ class AdminController extends Controller{
       'sessions' => UserSession::select('id')->get(),
       'registers' => DBRegisters::select('id')->get()
     ]);
+  }
+
+  //darle funcion cuando se pinche que si se desea enviar mail
+  private function SendEmailForMassiveRegister(User $user){
+
+    return Mail::send('emails.massiveManuallyRegisterDataBase', ['user'=>$user], function($msj) use ($user){
+      $msj->subject('¡Hola esto es Yavü.cl!');
+      $msj->to($user->email);
+    });
   }
 
   public function mailing(){
@@ -96,13 +123,7 @@ class AdminController extends Controller{
     ]);
   }
 
-  //darle funcion cuando se pinche que si se desea enviar mail
-  private function SendEmailForMassiveRegister($email){
-    return Mail::send('emails.massiveManuallyRegisterDataBase', ['email'=>$email], function($msj) use ($email){
-      $msj->subject('¡Hola esto es Yavü.cl!');
-      $msj->to($email);
-    });
-  }
+
 
   public function index(){
     return view('admins.index',[

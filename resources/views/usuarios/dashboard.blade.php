@@ -157,20 +157,24 @@
               <br>
             </div><!-- /div .list-group -->
           </div><!-- /div .col-md4-sm4-xs4 -->
-          <div style="display: none;" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 hasoneempresa">
-            <div class="list-group" >
-              <div align="center">
-                <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/estadisticasdemiempresa')!!}" style="text-align:center;" class="list-group-item">
+
+          @if(count($userSession->empresas)>0)
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <div class="list-group" >
+                <div align="center">
+                  <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/estadisticasdemiempresa')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
                   <span>
                     <img width="80%" src= "{!!URL::to('img/dash/icono_informe01.png')!!}"/>
                   </span>
-                </a>
-              </div><!-- /div aligned -->
-              <div align="center">
-                <small>Estad&iacute;sticas de mi empresa</small>
-              </div><!-- /div aligned -->
-            </div><!-- /div .list-group -->
-          </div><!-- /div .col-md4-sm4-xs4 -->
+                  </a>
+                </div><!-- /div aligned -->
+                <div align="center">
+                  <small>Estad&iacute;sticas de mi empresa</small>
+                </div><!-- /div aligned -->
+              </div><!-- /div .list-group -->
+            </div><!-- /div .col-md4-sm4-xs4 -->
+          @endif
+
         </div><!-- /div .row -->
       </div><!-- /div .modal-body -->
       <div class="modal-footer">

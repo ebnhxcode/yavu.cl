@@ -104,7 +104,7 @@ class EmpresaController extends Controller{
     ];
 
     ///dd( $this->statistics );
-    return view('empresas.companyStatistics', ['statistics' => $this->statistics]);
+    return view('empresas.companyStatistics', ['statistics' => $this->statistics, 'userSession' => $this->user]);
 
   }
 

@@ -30,9 +30,9 @@
                 En Yavu.cl podrás encontrar promociones, descuentos, concursos y eventos de los comercios de tu ciudad. Junta nuestras Yavü Coins en las publicaciones de las empresas, úsalas comprando tickets y utilízalos para participar de los sorteos!
               </span>
               <br><br>
-              <a style="padding: 15px 15px 15px 15px; border: solid 1px #77e679; border-radius: 4px 4px 4px 4px; background-color: #4cae4c; color:#88ff8a; font-size: 3em;" href="http://localhost:8000/">De que se trata</a>
+              <a style="padding: 15px 15px 15px 15px; border: solid 1px #77e679; border-radius: 4px 4px 4px 4px; background-color: #4cae4c; color:#88ff8a; font-size: 3em;" href="http://localhost:8000/">¿¡De qu&eacute; se trata!?.. <small>m&aacute;s info..</small></a>
               <br><br>
-
+              {{$user->nombre}} {{$user->apellido}}
               <!--<p><strong>Para registrarte solo entra a nuestro sitio: </strong><a href="http://localhost:8000/registro"> Abrir </a>  </p><br>-->
               <b style="font-size: 2.5em;">¡Mucha suerte! y nos vemos en Yavü. </b><br><br>
             </div><!-- /div styled -->

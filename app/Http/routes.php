@@ -20,7 +20,7 @@ Route::get('/clear-cache', function() { view('index'); });
 /*Gestión de usuarios sin sesión activa*/
 Route::get('usuarios', function(){ return Redirect::to('login'); });
 
-Route::get('registro', 'FrontController@registro');
+Route::get('registro', 'FrontController@loginMassive');
 
 Route::post('usuarios/create', ['uses' => 'UserController@store', 'as' => 'usuarios_store_path',]);
 Route::get('usuarios/create', ['uses' => 'UserController@create', 'as' => 'usuarios_create_path',]);
@@ -241,15 +241,11 @@ Route::group(['middleware' => 'admin'], function(){
   Route::post('admins/inscribe','AdminController@saveUser');
   Route::post('admins/mailing', 'MailController@massive');
 
-  Route::get('admins/template1', function(){
-    return view('emails.massiveListDataBase');
-  });
-  Route::get('admins/template2', function(){
-    return view('emails.massiveRegisterDataBase');
-  });
-  Route::get('admins/template3', function(){
-    return view('emails.massiveManuallyRegisterDataBase',['email'=>'esteban.ramos.f@gmail.com']);
-  });
+  /* TEMPLATES --borrar despues cuando se dejen de usar*/
+  Route::get('admins/template1', 'AdminController@template1');
+  Route::get('admins/template2', 'AdminController@template2');
+  Route::get('admins/template3', 'AdminController@template3');
+  /* TEMPLATES */
 
   Route::post('admins/empresas/create', [ 'uses' => 'AdminController@empresasstore', 'as' => 'admins_empresas_create_path' ]);
   Route::get('admins/empresas/create', 'AdminController@empresascreate');
