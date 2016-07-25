@@ -31,7 +31,7 @@
             </td>
             <td>
             @foreach($user->empresas as $key => $company)
-
+                {{dd($company)}}
                 <b>{{$company->email}}</b>{{--<a href="#!" style="float:right;"><small>editar</small></a>--}}
                 <br>
 
@@ -41,11 +41,10 @@
         @endforeach
       </tbody>
     </table>
-    {!!$users->render()!!}
   </div><!-- /div .list-group-item -->
 
   <div class="list-group-item">
-
+    {!!$users->render()!!}
   </div><!-- /div .list-group-item -->
 
 </section><!-- /section #usersList .list-group -->
