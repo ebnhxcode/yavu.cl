@@ -93,7 +93,7 @@ class SorteoController extends Controller{
   public function create(){
     $empresa = Empresa::where('user_id', $this->user->id)->get();
     if(count($empresa) > 0){
-      return view('sorteos.create', ['empresa_id' => $empresa[0]->id, 'nombre_empresa' => $empresa[0]->nombre]);
+      return view('sorteos.create', ['empresa_id' => $empresa[0]->id, 'nombre_empresa' => $empresa[0]->nombre, 'userSession' => $this->user,]);
     }
     Session::flash('message', '¡Para crear un sorteo para tus clientes debes tener una empresa creada, creala <a class="btn-info btn-xs" href="/empresas/create">AQUI</a>!');
     return Redirect::to("/dashboard");
