@@ -198,6 +198,9 @@
   #IPortada {
     display: none;
   }
+  #sectionLeft {
+    position: fixed;
+  }
 }
 
 
@@ -646,3 +649,4 @@
 .list-heading-link {
   color: #3c763d;
 }
+

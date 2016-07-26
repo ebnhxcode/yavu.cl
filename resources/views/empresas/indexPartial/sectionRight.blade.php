@@ -47,15 +47,12 @@
 <!-- Banner Random -->
 <div class="list-group">
   <div class="list-group-item list-heading">
-    <span style="font-size: 1.8em; color: #65C400; z-index: 1003;" class="glyphicon glyphicon-bookmark"></span>
-    <span style="font-size: 1.8em; color: #449d44; right: 20px; z-index: 1002;" class="glyphicon glyphicon-bookmark"></span>
-    <span style="font-size: 1.8em; color: #ffcc00; right: 40px; z-index: 1001;" class="glyphicon glyphicon-bookmark"></span>
   </div><!-- /div .list-group-item -->
   <div style="padding: 9px 9px 9px 9px;" class="list-group-item">
     <div class="row">
       <div id="EmpresaListThumbBanner">
         <div class="row">
-          <div class="col-xs-12 col-sm-4 col-md-12 col-lg-12 text-center">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
 
             <a class="thumbnail">
               <img class="img-responsive" id="ImagenPortada" src="/img/yavu015.png" alt="..." style="height: 170px;">
