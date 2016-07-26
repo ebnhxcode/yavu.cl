@@ -196,6 +196,9 @@
 
 								<button type="submit" class="btn btn-success btn-sm">Iniciar sesi&oacute;n </button>
 								<a class="btn btn-warning btn-sm" data-toggle="modal" data-target="#gridSystemModal" role="button">Reg&iacute;strate</a>
+								<a href='{!! url("social/facebook") !!}'>
+									<img src= "{!!URL::to('img/footer/icono_facebook.png')!!}" width="3.78%"/>
+								</a>
 								<a href="#!" class="text-success" data-toggle="modal" data-target="#myModal"><small>¿Haz Olvidado tu Clave?</small></a>
 
 								{!!Form::close()!!}
@@ -400,7 +403,7 @@
 					</div>
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: center;">
 						{{--
-						<span><a href="#!"><img  src= "{!!URL::to('img/footer/icono_facebook.png')!!}" class=""/></a></span>
+						<span><a href="#!"></a></span>
 						<span><a href="#!"><img  src= "{!!URL::to('img/footer/icono_twitter.png')!!}" class=""/></a></span>
 						<span><a href="#!"><img  src= "{!!URL::to('img/footer/ico_instagram.png')!!}" class=""/></a></span>
 						<span><a href="#!"><img  src= "{!!URL::to('img/footer/icono_youtube.png')!!}" class=""/></a></span>
