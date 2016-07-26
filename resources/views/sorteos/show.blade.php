@@ -20,21 +20,9 @@
           <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             @include('sorteos.showPartial.sectionRight')
           </div><!-- /div .col-lg3-md3-sm12-xs12 -->
-          {{--
-          @if(Auth::user()->get()->id == $sorteo->user_id)
-            <script language="JavaScript" type="text/javascript">
-              var bPreguntar = true;
-              window.onbeforeunload = preguntarAntesDeSalir;
-              function preguntarAntesDeSalir()                  {
-                if (bPreguntar) return "¿Seguro que quieres salir?";
-              }
-            </script>
-          @endif
-          --}}
-          </div><!-- /div .col-md4-sm12-xs12 -->
-        </div><!-- /div .row -->
-      </div><!-- /div #contentMiddle -->
-    </div><!-- /div .jumbotron -->
+        </div><!-- /div .col-md4-sm12-xs12 -->
+      </div><!-- /div .row -->
+    </div><!-- /div #contentMiddle -->
   @stop
 @else
   404

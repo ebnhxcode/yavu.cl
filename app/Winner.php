@@ -9,7 +9,7 @@ class Winner extends Model
 
 
   public function winnerInfo(){
-    return $this->belongsTo(User::class, 'user_id')->select('email','fono', 'fono_2');
+    return $this->belongsTo(User::class, 'user_id')->select('email','fono', 'fono_2','nombre','apellido','imagen_perfil');
   }
 
 }

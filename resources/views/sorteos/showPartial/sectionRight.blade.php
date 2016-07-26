@@ -6,22 +6,31 @@
 
   <div class="list-group-item">
     <h3><b>{!!$sorteo->nombre_sorteo!!}</b><br></h3>
-    <h5><span class="softText">{!!$sorteo->estado_sorteo!!}</span></h5>
-    <div class="softText-descriptions-middle">
-      {!!$sorteo->descripcion!!}<br>
-      Dentro de
-      <abbr class='timeago text-danger' id='timeago{!! $sorteo->id !!}' value='{!! $sorteo->fecha_inicio_sorteo !!}' title='{!! $sorteo->fecha_inicio_sorteo !!}'>{!! $sorteo->fecha_inicio_sorteo !!}</abbr><br>
-      A las 21:00:00 horas.
-    </div><!-- /div .softText-descriptions-middle -->
-    <br>
-    <div class="">
-      <input id="token" type="hidden" name="_token" value="{!! csrf_token() !!}">
-      <button class="btn btn-success btn-md UsarTicket" value="{!! $sorteo->id !!}" type="button" data-dismiss="modal">Participar</button>
-    </div><!-- /div .amplio -->
+    <h5><span class="softText">{{$raffleStatus = $sorteo->estado_sorteo}}</span></h5>
+    @if($raffleStatus != 'Finalizado')
+      <div class="softText-descriptions-middle">
+        {!!$sorteo->descripcion!!}<br>
+        Dentro de
+        <abbr class='timeago text-danger' id='timeago{!! $sorteo->id !!}' value='{!! $sorteo->fecha_inicio_sorteo !!}' title='{!! $sorteo->fecha_inicio_sorteo !!}'>{!! $sorteo->fecha_inicio_sorteo !!}</abbr><br>
+        A las 21:00:00 horas.
+      </div><!-- /div .softText-descriptions-middle -->
+      <br>
+      <div>
+        <input id="token" type="hidden" name="_token" value="{!! csrf_token() !!}">
+        <button class="btn btn-success btn-md UsarTicket" value="{!! $sorteo->id !!}" type="button" data-dismiss="modal">Participar</button>
+      </div><!-- /div -->
 
-    <hr>
+      <hr>
+    @else
+      <div class="thumbnail">
+        <img id='ImagenPerfil' src='/img/users/{{ ($winnerInfo = $winners[0]->winnerInfo)?($wip = $winnerInfo->imagen_perfil!='')?$wip:'usuario_nuevo.png':''}}' class='center-block'>
+      </div><!-- /div .thumbnail -->
 
-    <!-- #refact plz -->
+      ¡Ganador! : {{ $winnerInfo->nombre . ' ' . $winnerInfo->apellido  }} <br>
+
+    @endif
+
+      <!-- #refact plz -->
     @if($sorteo->user_id == Auth::user()->get()->id && !isset($winners))
       <a id="SortearGanador" data-toggle="modal"  class="btn btn-primary btn-sm" value="{!! $sorteo->id !!}">Sortear ganador</a>
       @include('sorteos.forms.modalSortearParticipante')
@@ -32,4 +41,13 @@
     <!-- #end refact plz -->
 
   </div><!-- /div .list-group-item -->
+
+  {{-- EXTRA
+  <div class="list-group-item">
+    <small>
+      AYUDA A QUE <b  style="font-size: 1.2em;">{{ $winnerInfo->nombre}}</b> SEPA QUE GAN&Oacute;
+    </small>
+  </div><!-- /div .list-group-item -->
+  --}}
+
 </div><!-- /div .list-group -->
