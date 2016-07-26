@@ -1,7 +1,7 @@
 <div class="list-group">
   @foreach($companies as $key => $company)
     @if($key < 1)
-      <div class="list-group-item">
+      <div class="list-group-item list-heading">
         <small>EMPRESAS SUGERIDAS</small>
       </div><!-- /div .list-group-item -->
     @endif
@@ -46,7 +46,7 @@
 
 <!-- Banner Random -->
 <div class="list-group">
-  <div class="list-group-item">
+  <div class="list-group-item list-heading">
     <span style="font-size: 1.8em; color: #65C400; z-index: 1003;" class="glyphicon glyphicon-bookmark"></span>
     <span style="font-size: 1.8em; color: #449d44; right: 20px; z-index: 1002;" class="glyphicon glyphicon-bookmark"></span>
     <span style="font-size: 1.8em; color: #ffcc00; right: 40px; z-index: 1001;" class="glyphicon glyphicon-bookmark"></span>
