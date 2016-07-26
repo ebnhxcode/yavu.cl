@@ -27,7 +27,7 @@
 						<div class='list-group' >
               <a href='{!!URL::to('/feeds')!!}' style='text-align:center;' class='list-group-item'>
                 <span>
-                  <h4>YAVÜPOSTS!</h4>
+                  <h4>YAVÜPOSTS</h4>
                   <img width="80%" class="img-responsive-centered" src="{!!URL::to('img/newGraphics/neo_icono_tickets.png')!!}" />
                 </span>
               </a><!-- /a .list-group-item .success -->
