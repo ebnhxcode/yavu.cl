@@ -232,6 +232,9 @@
 
 						@endif
 						@if(Auth::user()->check())
+								<li><a href="{!!URL::to('/feeds')!!}"><strong>Publicaciones</strong></a></li>
+								<li><a href="{!!URL::to('/empresas')!!}"><strong>Empresas</strong></a></li>
+								<li><a href="{!!URL::to('/sorteos')!!}"><strong>Sorteos</strong></a></li>
 							{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
 							{!!Form::hidden('idUltimaNotificacion', "0", ['id'=>'idUltimaNotificacion'])!!}
 
@@ -258,9 +261,13 @@
                       </li>
                     @endforeach
                   @endif
+									<li role="separator" class="divider"></li>
+									<li><a href="{!!URL::to('/logout')!!}">Cerrar sesión <span class="glyphicon glyphicon-off text-danger"></span></a></li>
 
 								</ul>
 							</li>
+
+							{{--
 
 							<li class="dropdown hidden-xs"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><img width="40" src="{!! asset('img/yavu019.png') !!}" alt=""><b class="caret"></b></a>
 								<ul class="dropdown-menu">
@@ -287,11 +294,14 @@
 								</ul>
 							</li>
 
+
+
 							<li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-cog" style="font-size: 1.3em; color: #BEF781;"></span><b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									<li><a href="{!!URL::to('/logout')!!}">Cerrar sesión <span class="glyphicon glyphicon-off text-danger"></span></a></li>
 								</ul>
 							</li>
+							--}}
 
 							<li class="dropdown">
 								<a href="{!!URL::to('/sorteos')!!}"></a>
