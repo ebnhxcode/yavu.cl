@@ -1,4 +1,4 @@
-<div class="list-group">
+<div class="list-group hidden-xs">
   <div class="list-group-item list-group-item-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
       <span class="glyphicon glyphicon-th-large"></span>
       Men&uacute;

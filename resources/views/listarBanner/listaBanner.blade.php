@@ -1,6 +1,6 @@
 <!-- Banner Random -->
 <div class="list-group">
-  <div class="list-group-item">
+  <div class="list-group-item list-heading">
     <small>PUBLICIDAD</small>
   </div><!-- /div .list-group-item -->
 

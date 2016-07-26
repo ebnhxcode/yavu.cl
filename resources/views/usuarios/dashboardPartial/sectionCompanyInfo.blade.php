@@ -5,12 +5,12 @@
 @if(count($companies = $userSession->userCompanies)>0)
   @foreach($companies as $key => $company)
     <section id="userCompaniesInfo" class="list-group">
-      <div class="list-group-item">
+      <div class="list-group-item list-heading">
         <div class="softText-descriptions-middle">
-          <a href="/empresas/{!! $company->id !!}" style="margin: 0;">
+          <a href="/empresas/{!! $company->id !!}" style="margin: 0; color: #3c763d;">
             <img width='32' style="border-radius: 10%;" id='ImagenPerfil' src='/img/users/{!! isset($company)?($company->imagen_perfil!='')?$company->imagen_perfil:'banner.png':'banner.png' !!}'>
           </a><!-- /a styled -->
-          <a href="/empresas/{!! $company->id !!}" style="margin: 0;">
+          <a href="/empresas/{!! $company->id !!}" style="margin: 0; color: #3c763d;">
             {!! $company->nombre !!}
           </a><!-- /a styled -->
           <a href="/empresas/{!! $company->id !!}" class="softText" style="float:right;">
@@ -27,7 +27,7 @@
           </div><!-- /div .col-xs6 -->
           <div class="col-xs-6">
             <div class="list-group">
-              <div class="list-group-item">
+              <div class="list-group-item list-heading">
                 <small>Men&uacute; empresas</small>
               </div><!-- /div .list-group-item -->
               <a href="/empresas/{!! $company->id !!}" class="list-group-item">
