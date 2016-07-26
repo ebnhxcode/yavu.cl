@@ -232,9 +232,9 @@
 
 						@endif
 						@if(Auth::user()->check())
-								<li><a href="{!!URL::to('/feeds')!!}"><strong>Publicaciones</strong></a></li>
-								<li><a href="{!!URL::to('/empresas')!!}"><strong>Empresas</strong></a></li>
-								<li><a href="{!!URL::to('/sorteos')!!}"><strong>Sorteos</strong></a></li>
+								<li class="hidden-xs"><a href="{!!URL::to('/feeds')!!}"><strong>Publicaciones</strong></a></li>
+								<li class="hidden-xs"><a href="{!!URL::to('/empresas')!!}"><strong>Empresas</strong></a></li>
+								<li class="hidden-xs"><a href="{!!URL::to('/sorteos')!!}"><strong>Sorteos</strong></a></li>
 							{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
 							{!!Form::hidden('idUltimaNotificacion', "0", ['id'=>'idUltimaNotificacion'])!!}
 
