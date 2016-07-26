@@ -28,7 +28,7 @@
               <a href='{!!URL::to('/feeds')!!}' style='text-align:center;' class='list-group-item'>
                 <span>
                   <h4>YAVÜPOSTS!</h4>
-                  <img width="90%" class="img-responsive-centered" src="{!!URL::to('img/newGraphics/neo_icono_comercio02.png')!!}" />
+                  <img width="70%" class="img-responsive-centered" src="{!!URL::to('img/newGraphics/neo_icono_comercio02.png')!!}" />
                 </span>
               </a><!-- /a .list-group-item .success -->
             </div><!-- /div .list-group -->
