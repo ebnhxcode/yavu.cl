@@ -10,25 +10,33 @@
 				@include('alerts.allAlerts')
 			</div><!-- /div col-md12-sm12-xs12 -->
 			{!!Form::open(['route'=>'sorteos.store', 'method'=>'POST', 'files' => true, 'id' => 'FormSorteo'  ])!!}
-			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+			<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
 				@include('miniDashboard.miniDashboard')
 			</div><!-- /div .col-md4-sm12-xs12 -->
-			<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
 				@include('sorteos.forms.fieldsSorteo')
+
 				<div class="list-group">
 					<div class="list-group-item">
-						<h4>Todos los campos son requeridos</h4>
+						<small>TODOS LOS CAMPOS SON REQUERIDOS</small>
 					</div><!-- /div .list-group-item -->
 					<div class="list-group-item">
 						<div class="form-group has-feedback has-feedback-left">
 							{!! Form::checkbox('name', 'acepta', false, ['id' => 'AceptaTerminos']) !!} Aceptar <a href="#!" data-toggle="modal" data-target="#myModal" class="btn-link">términos y condiciones</a>
-							{!!Form::submit('Registrar', ['class'=>'btn btn-primary btn-success', 'style'=>'width:100%;', 'id' => 'Registrar' , 'disabled'])!!}
+							{!!Form::submit('¡Crear sorteo!', ['class'=>'btn btn-primary btn-success', 'style'=>'width:100%;', 'id' => 'Registrar' , 'disabled'])!!}
 							{!!Form::close()!!}<!-- /form #FormSorteo -->
 						</div><!-- /div .form-group .has-feedback ..has-feedback-left -->
 					</div><!-- /div .list-group-item -->
 				</div><!-- /div .list-group -->
 			</div><!-- div .col-md8-sm12-xs12 -->
+
+			<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+				<!-- do something here.. -->
+			</div><!-- /div .col-md4-sm12-xs12 -->
+
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<!-- do something here.. -->
 			</div><!-- /div .col-md4-sm12-xs12 -->
 		</div><!-- /div .row -->
 	</div><!-- /div #contentmiddle -->

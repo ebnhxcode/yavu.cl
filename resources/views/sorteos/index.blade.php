@@ -30,7 +30,6 @@
               $('#sectionLeft').addClass('col-xs-4');
             }
 
-
           </script>
 
           @include('sorteos.indexPartial.sectionLeft')
