@@ -174,7 +174,6 @@
 
 								{!!Form::open(['route' => 'log.store', 'method' => 'POST', 'class' => 'navbar-form navbar-right', 'role' => 'form'])!!}
 
-									<img src="{!! asset('img/yavu019.png') !!}" width="30" alt=""/>
 									<div class='form-group has-feedback has-feedback-left'>
 										<div class="input-group input-group-sm">
 											{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email', 'autocomplete' => 'off'])!!}
