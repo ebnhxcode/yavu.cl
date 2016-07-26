@@ -638,3 +638,11 @@
 }
 
 .navbar-brand-centered {float: none;}
+
+.list-heading {
+  background-color: #dff0d8;
+  color: #3c763d;
+}
+.list-heading-link {
+  color: #3c763d;
+}

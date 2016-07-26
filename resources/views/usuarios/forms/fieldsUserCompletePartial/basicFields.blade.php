@@ -57,8 +57,7 @@
     <div class='form-group has-feedback has-feedback-left'>
       {!!Form::select('sexo',
         ['Masculino' => 'Masculino',
-        'Femenino' => 'Femenino',
-        'Otro' => 'Otro'],
+        'Femenino' => 'Femenino'],
         $selected = null, ['class' => 'form-control input-sm', 'maxlength' => '10'])
       !!}
     </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
