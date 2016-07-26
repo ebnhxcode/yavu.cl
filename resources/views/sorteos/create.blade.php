@@ -10,10 +10,10 @@
 				@include('alerts.allAlerts')
 			</div><!-- /div col-md12-sm12-xs12 -->
 			{!!Form::open(['route'=>'sorteos.store', 'method'=>'POST', 'files' => true, 'id' => 'FormSorteo'  ])!!}
-			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
 				@include('miniDashboard.miniDashboard')
 			</div><!-- /div .col-md4-sm12-xs12 -->
-			<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+			<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 				@include('sorteos.forms.fieldsSorteo')
 				<div class="list-group">
 					<div class="list-group-item">
