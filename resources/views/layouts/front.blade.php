@@ -13,16 +13,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-    <style>
-      @font-face {
+		<style>
+		  @font-face {
 
-        font-family: yavu_font;
-        src: url("/fonts/yavu_font.ttf");
+			font-family: yavu_font;
+			src: url("/fonts/yavu_font.ttf");
 
-      }
-      /**/
+		  }
+		  /**/
 
-    </style>
+		</style>
 
 
 		@section('favicon') {!!Html::favicon('favicons/changeFaviconNameHere.png')!!} @stop
@@ -54,16 +54,16 @@
 		<script>$.ajaxSetup({ cache:false });</script>
 		<script>$.ajaxSetup({ headers: { 'csrftoken' : '{!! csrf_token() !!}' } });</script>
 		<script>$.ajaxSetup({ headers: { 'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')}});</script>
-    <script>
-      $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-      });
-      $('#TabUserProfile a').click(function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-      });
+		<script>
+		  $(function () {
+			$('[data-toggle="tooltip"]').tooltip()
+		  });
+		  $('#TabUserProfile a').click(function (e) {
+			e.preventDefault()
+			$(this).tab('show')
+		  });
 
-    </script>
+		</script>
 		<style>
 			body {
 				padding-top:50px;
@@ -94,20 +94,18 @@
 						{{--
 						<div class="navbar-brand" align="center" >
 							<small>
-                <!-- <img src="{!! asset('/img/newGraphics/neo_notificacion04_16x16.png') !!}" width="" id="Notificaciones" title="Notificaciones <a href='/pops' style='float: right;'>ver todas</a>" data-toggle="popover" title="Popover title" data-placement="bottom" aria-hidden="true" alt=""> -->
+						<!-- <img src="{!! asset('/img/newGraphics/neo_notificacion04_16x16.png') !!}" width="" id="Notificaciones" title="Notificaciones <a href='/pops' style='float: right;'>ver todas</a>" data-toggle="popover" title="Popover title" data-placement="bottom" aria-hidden="true" alt=""> -->
 
-								<span id="Notificaciones" title="<span style='color: #000;'>Notificaciones</span> <a href='/pops' style='float: right;'>ver todas</a>" class="" data-toggle="popover" title="Popover title" data-placement="bottom" aria-hidden="true" alt="">
-                  <span data-toggle="tooltip" data-placement="left" title="Notificaciones!" style="font-family: yavu_font; font-size: 1.6em;color: #E68F8F;">A</span>
-                </span>
+										<span id="Notificaciones" title="<span style='color: #000;'>Notificaciones</span> <a href='/pops' style='float: right;'>ver todas</a>" class="" data-toggle="popover" title="Popover title" data-placement="bottom" aria-hidden="true" alt="">
+						  <span data-toggle="tooltip" data-placement="left" title="Notificaciones!" style="font-family: yavu_font; font-size: 1.6em;color: #E68F8F;">A</span>
+						</span>
 
 								<span id="CantidadNotificaciones" style="float:right;" class="label label-danger"></span>
 							</small>
 						</div>
 						--}}
 
-
-
-					<!-- demo 1 / navbar direct links -->
+						<!-- demo 1 / navbar direct links -->
 
 						<div class="navbar-brand visible-xs" align="center" style="padding-right: 0px;padding-left: 30px;">
 							<a href="{{URL::to('/feeds')}}">
@@ -126,7 +124,6 @@
 						</div>
 
 					<!-- fin demo 1 -->
-
 
 						<div class="navbar-brand" align="center">
 							<small>
@@ -161,18 +158,6 @@
 							</a>
 						</div>
 						-->
-
-
-
-
-
-
-
-
-
-
-
-
 					@endif
 
 				</div><!-- /navbar-header -->
@@ -180,47 +165,47 @@
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
 						@if(!Auth::user()->check() && !Auth::empresa()->check() && !Auth::admin()->check())
-              @if(Request::path() != 'login' && Request::path() != 'usuarios/create')
+						  @if(Request::path() != 'login' && Request::path() != 'usuarios/create')
 
-                <div class="" align="">
+							<div class="" align="">
 
-                  <!-- Formulario inicio sesión -->
-                  <div id="navbar" align="center" class="navbar-collapse">
+							  <!-- Formulario inicio sesión -->
+							  <div id="navbar" align="center" class="navbar-collapse">
 
-                    {!!Form::open(['route' => 'log.store', 'method' => 'POST', 'class' => 'navbar-form navbar-right', 'role' => 'form'])!!}
+								{!!Form::open(['route' => 'log.store', 'method' => 'POST', 'class' => 'navbar-form navbar-right', 'role' => 'form'])!!}
 
-										<img src="{!! asset('img/yavu019.png') !!}" width="30" alt=""/>
-										<div class='form-group has-feedback has-feedback-left'>
-											<div class="input-group input-group-sm">
-												{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email', 'autocomplete' => 'off'])!!}
-												<div class="input-group-addon">
-													<i class="glyphicon glyphicon-user"></i>
-												</div><!-- /div .input-group-addon -->
-											</div><!-- /div .input-group .input-group-sm -->
-										</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
+									<img src="{!! asset('img/yavu019.png') !!}" width="30" alt=""/>
+									<div class='form-group has-feedback has-feedback-left'>
+										<div class="input-group input-group-sm">
+											{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingrese su email', 'autocomplete' => 'off'])!!}
+											<div class="input-group-addon">
+												<i class="glyphicon glyphicon-user"></i>
+											</div><!-- /div .input-group-addon -->
+										</div><!-- /div .input-group .input-group-sm -->
+									</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 
-										<div class='form-group has-feedback has-feedback-left'>
-											<div class="input-group input-group-sm">
-												{!!Form::password('password',['class'=>'form-control','placeholder'=>'Clave', 'autocomplete' => 'off'])!!}
-												<div class="input-group-addon">
-													<i class="glyphicon glyphicon-lock"></i>
-												</div><!-- /div .input-group-addon -->
-											</div><!-- /div .input-group .input-group-sm -->
-										</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
+									<div class='form-group has-feedback has-feedback-left'>
+										<div class="input-group input-group-sm">
+											{!!Form::password('password',['class'=>'form-control','placeholder'=>'Clave', 'autocomplete' => 'off'])!!}
+											<div class="input-group-addon">
+												<i class="glyphicon glyphicon-lock"></i>
+											</div><!-- /div .input-group-addon -->
+										</div><!-- /div .input-group .input-group-sm -->
+									</div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 
-                    <input type="hidden" name="_token" value="{!! csrf_token() !!}"><!-- /input token -->
+								<input type="hidden" name="_token" value="{!! csrf_token() !!}"><!-- /input token -->
 
-                    <button type="submit" class="btn btn-success btn-sm">Iniciar sesi&oacute;n </button>
-										<a class="btn btn-warning btn-sm" data-toggle="modal" data-target="#gridSystemModal" role="button">Reg&iacute;strate</a>
-										<a href="#!" class="text-success" data-toggle="modal" data-target="#myModal"><small>¿Haz Olvidado tu Clave?</small></a>
+								<button type="submit" class="btn btn-success btn-sm">Iniciar sesi&oacute;n </button>
+								<a class="btn btn-warning btn-sm" data-toggle="modal" data-target="#gridSystemModal" role="button">Reg&iacute;strate</a>
+								<a href="#!" class="text-success" data-toggle="modal" data-target="#myModal"><small>¿Haz Olvidado tu Clave?</small></a>
 
-                    {!!Form::close()!!}
-                  </div><!--/.navbar-collapse -->
-                  <!-- End Formulario inicio sesión -->
-                </div><!-- /div -->
+								{!!Form::close()!!}
+							  </div><!--/.navbar-collapse -->
+							  <!-- End Formulario inicio sesión -->
+							</div><!-- /div -->
 
 
-              @endif
+						  @endif
 
               {{--
 							<li class="dropdown"><a href="{!!URL::to('/nosotros')!!}"><span role="button" class="navbar-button-hover">NUESTRA EMPRESA</span></a></li>
@@ -247,20 +232,20 @@
 									<li><a href="{!!URL::to('/coins/history')!!}">Historial de coins</a></li>
 									--}}
 
-                    <li class="hideifhasone"><a href="{!!URL::to('/empresas/create')!!}">Crear empresa</a></li>
+                    			<li class="hideifhasone"><a href="{!!URL::to('/empresas/create')!!}">Crear empresa</a></li>
 
-                  @if(isset($userSession))
-                    @foreach($userSession->userCompanies as $company)
-                      <li>
-                        <a href="{!!URL::to('/empresas/'.$company->id)!!}">
-                          <small class="softText">Ver perfil de</small>
-                          <img id="ImagenPerfil" src="/img/users/{!!($company->imagen_perfil!='')?$company->imagen_perfil:'banner.png'!!}" alt="..." style="width: 30px; height: 30px; border-radius: 10%;">
-                          <strong>{!! $company->nombre !!}</strong><br/>
+								  @if(isset($userSession))
+									@foreach($userSession->userCompanies as $company)
+									  <li>
+										<a href="{!!URL::to('/empresas/'.$company->id)!!}">
+										  <small class="softText">Ver perfil de</small>
+										  <img id="ImagenPerfil" src="/img/users/{!!($company->imagen_perfil!='')?$company->imagen_perfil:'banner.png'!!}" alt="..." style="width: 30px; height: 30px; border-radius: 10%;">
+										  <strong>{!! $company->nombre !!}</strong><br/>
 
-                        </a>
-                      </li>
-                    @endforeach
-                  @endif
+										</a>
+									  </li>
+									@endforeach
+								  @endif
 									<li role="separator" class="divider"></li>
 									<li><a href="{!!URL::to('/logout')!!}">Cerrar sesión <span class="glyphicon glyphicon-off text-danger"></span></a></li>
 
@@ -309,8 +294,8 @@
 						@endif
 						@if(Auth::admin()->check())
 							<li>
-                <a href="{!!URL::to('/admins')!!}">Inicio</a>
-              </li>
+								<a href="{!!URL::to('/admins')!!}">Inicio</a>
+						  	</li>
 							<li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Registrar empresa<b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									<li><a href="{!!URL::to('/empresas/create')!!}">Registro de empresas</a></li>
