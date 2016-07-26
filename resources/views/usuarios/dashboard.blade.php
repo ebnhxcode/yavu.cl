@@ -28,7 +28,7 @@
               <a href='{!!URL::to('/feeds')!!}' style='text-align:center;' class='list-group-item'>
                 <span>
                   <h4>YAVÜ POSTS!</h4>
-                  <img class="img-responsive-centered" src="{!!URL::to('img/newGraphics/yavucoin_neo01b.png')!!}" />
+                  <img width="100" class="img-responsive-centered" src="{!!URL::to('img/newGraphics/yavucoin_neo01b.png')!!}" />
                 </span>
               </a><!-- /a .list-group-item .success -->
             </div><!-- /div .list-group -->
