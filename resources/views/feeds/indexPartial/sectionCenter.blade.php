@@ -64,12 +64,12 @@
         <div style="padding-top: 15px;" name='megusta' class=''>
           @if($companyStatus->statusRewarded->id!=$userSession->id)
             @if($cs = $companyStatus->getUserInteraction($userSession->id)->get())
-
+            <div id="border{{$companyStatus->id}}">
               <span onclick='Interactuar(this.id)' id='estado_{!! $companyStatus->id !!}' value='e{!! $companyStatus->companyPostAuthor->id !!}' class="btn {!! count($cs)<1?' out-yavucoin':' out-yavucoin' !!} btn-xs" >
-                {!! count($cs)<1?'<span style=" font-family: yavu_font;color: #ffcc00;">J</span>':'<span style=" font-family: yavu_font;color: #585858;">I</span>' !!}
+                {!! count($cs)<1?'<span style=" font-family: yavu_font;color: #ffcc00;">J</span>':'<span style=" font-family: yavu_font;color: #ffcb5f;">I</span>' !!}
               </span><!-- /span $estado_+$companyStatus->id .btn .btn-sm .btn-default-warning -->
               <span id="status_{!! $companyStatus->id !!}"></span><!-- /span #status_id -->
-
+            </div>
             @endif
           @endif
 

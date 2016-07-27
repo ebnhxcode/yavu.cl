@@ -104,8 +104,8 @@
 				$('#'+valor).removeClass("btn-warning");
 				$('#'+valor).addClass("btn-default");
 				$('#'+valor).text('');
-				$('#'+valor).append('<span style="font-family: yavu_font;color: #585858;">I</span>').fadeIn();
-        $('#status_'+status_id).append('<span class="text-success"><small>¡Coins obtenidos!</small></span>').hide().fadeIn();
+				$('#'+valor).append('<span style="font-family: yavu_font;color: #ffcb5f;">I</span>').fadeIn(1000);
+        $('#status_'+status_id).append('<span class="text-success"><small>¡Coins obtenidos!</small></span>').hide().fadeIn(1000);
 
 
 				ContarNotificaciones();
