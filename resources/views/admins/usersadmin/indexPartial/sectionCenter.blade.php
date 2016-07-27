@@ -12,29 +12,35 @@
         <th>ID</th>
         <th>Nombre</th>
         <th>Email</th>
+        <th>Fecha registro usuario</th>
         <th>Nombre empresa</th>
         <th>Email empresa</th>
+        <th>Fecha registro empresa</th>
       </thead>
       <tbody>
         @foreach($users as $key => $user)
           <tr>
             <td>{{$user->id}}</td>
-            <td>{{$user->nombre.' '.$user->nombre}}</td>
+            <td>{{$user->nombre.' '.$user->apellido}}</td>
             <td>{{$user->email}}</td>
             <td>
+              <small>{{$user->created_at}}</small>
+            </td>
+            <td>
               @foreach($user->empresas as $key => $company)
-
-                <b>{{$company->nombre}}</b>{{--<a href="#!" style="float:right;"><small>editar</small></a>--}}
-                <br>
+                <b>{{$company->nombre}}<br></b>{{--<a href="#!" style="float:right;"><small>editar</small></a>--}}
 
               @endforeach
             </td>
             <td>
-            @foreach($user->empresas as $key => $company)
-                <b>{{$company->email}}</b>{{--<a href="#!" style="float:right;"><small>editar</small></a>--}}
-                <br>
-
-            @endforeach
+              @foreach($user->empresas as $key => $company)
+                <b>{{$company->email}}<br></b>{{--<a href="#!" style="float:right;"><small>editar</small></a>--}}
+              @endforeach
+            </td>
+            <td>
+              @foreach($user->empresas as $key => $company)
+                <small>{{$company->created_at}}</small>
+              @endforeach
             </td>
           </tr>
         @endforeach

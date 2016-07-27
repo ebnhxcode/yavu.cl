@@ -10,16 +10,14 @@
         </div><!-- /div .col-xs12-sm12-md12-lg12 -->
 
         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-          @include('admins.indexPartial.sectionLeft')
+          @include('admins.indexPartial.sectionRight')
+          {{--@include('admins.indexPartial.sectionLeft')--}}
         </div><!-- /div .col-xs12-sm12-md3-lg3 -->
 
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
           @include('admins.usersadmin.indexPartial.sectionCenter')
         </div><!-- /div col-md-6-sm-6-xs-12 -->
 
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-          @include('admins.indexPartial.sectionRight')
-        </div><!-- /div .col-xs12-sm12-md3-lg3 -->
 
       </div><!-- /div .row -->
     </div><!-- /div .contentMiddle -->
