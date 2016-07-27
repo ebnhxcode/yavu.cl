@@ -213,6 +213,8 @@
     </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 
     @if($userActive)
+      
+      {{--
       <div class='form-group has-feedback has-feedback-left'>
         {!!Form::select('region',
           ['I Región' => 'I Región',
@@ -233,6 +235,7 @@
           $selected = null, ['class' => 'form-control input-sm', 'maxlength' => '100'])
         !!}
       </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
+      --}}
 
       <div class='form-group has-feedback has-feedback-left'>
         {!!Form::text('direccion',null,['class'=>'form-control input-sm','placeholder'=>'Direcci&oacute;n', 'maxlength' => '100'])!!}

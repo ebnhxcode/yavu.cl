@@ -18,7 +18,7 @@
     Sorteos Finalizados <b style="float:right;">{!! count($raffles->where('estado_sorteo','Finalizado')) !!}</b>
   </div><!-- /div .list-group-item -->
   <div class="list-group-item">
-    Sorteos Pendientes de Aprovaci&oacute;n <b style="float:right;">{!! count($raffles->where('estado_sorteo','Pendiente')) !!}</b>
+    Sorteos Pendientes de Aprobaci&oacute;n <b style="float:right;">{!! count($raffles->where('estado_sorteo','Pendiente')) !!}</b>
   </div><!-- /div .list-group-item -->
   <div class="list-group-item">
     Publicaciones <b style="float:right;">{!! count($feeds) !!} <small>({!! count($feeds)*40 !!} en coins)</small></b>
