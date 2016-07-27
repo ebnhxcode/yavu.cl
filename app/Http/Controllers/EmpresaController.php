@@ -12,6 +12,7 @@ use yavu\EstadoEmpresa;
 use yavu\CategoryList;
 use yavu\CompanyCategory;
 use yavu\BannerData;
+use yavu\RaffleRequest;
 use yavu\User;
 use Illuminate\Routing\Route;
 use Auth;
@@ -106,6 +107,32 @@ class EmpresaController extends Controller{
     ///dd( $this->statistics );
     return view('empresas.companyStatistics', ['statistics' => $this->statistics, 'userSession' => $this->user]);
 
+  }
+
+  public function RequestARaffle(Request $request){
+
+
+    if(count($this->user->hasRequested(addslashes($request->empresa_id)))>0){
+      $raffleRequest = RaffleRequest::where('user_id',$this->user->id)->where('empresa_id', addslashes($request->empresa_id))->get();
+      return $raffleRequest;
+    }else{
+      RaffleRequest::create([
+        'user_id'=>$this->user->id,
+        'empresa_id'=>addslashes($request->empresa_id),
+        'created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),
+        'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())
+      ]);
+    }
+
+    return response()->json(['requests'=>RaffleRequest::where('empresa_id', addslashes($request->empresa_id))->count('id')]);
+
+    /*
+    if(){
+
+    }
+    */
+    //
+    return $request->empresa_id;
   }
 
   public function store(EmpresaCreateRequest $request){

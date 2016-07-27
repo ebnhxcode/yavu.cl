@@ -22,7 +22,6 @@ $(document).ready(function(){
 /*DECLARACIÓN DE VARIABLES GLOBALES*/
 
 /*MÉTODOS CONSTRUCTORES*/
-	//ContarCoins();
 /*MÉTODOS CONSTRUCTORES*/
 
 /*SELECTORES*/

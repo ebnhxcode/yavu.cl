@@ -1,21 +1,17 @@
 <div id="EmpresaListThumb">
   <div class="list-group">
 
-
-
-
-
     @foreach($empresas as $empresa)
       <div class="list-group-item">
         <div class="row">
 
-          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <div class="col-xs-5 col-sm-5 col-md-4 col-lg-4">
             <a href="/empresas/{!!$empresa->id!!}" class="thumbnail">
               <img id="ImagenPerfil" src="/img/users/{!!($empresa->imagen_perfil!='')?$empresa->imagen_perfil:'banner.png'!!}" alt="..." style="height: 150px;">
             </a><!-- /a .thumbnail -->
           </div><!-- /div col-lg6-md6-sm12-xs12 -->
 
-        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+        <div class="col-xs-7 col-sm-7 col-md-8 col-lg-8">
 
             <div style="float: right;" class="dropup">
 
@@ -47,6 +43,17 @@
 
             </div>
             <br/>
+          
+            {{--
+            <span class="btn btn-xs btn-warning">
+              <small>
+                <span class="request" value="{{$empresa->id}}">
+                  Pedir sorteos |<b> {{count($empresa->raffleRequests)}}</b><b> peticiones</b>
+                </span>
+              </small>
+            </span>
+            --}}
+
             @if($empresa->sorteos()->count()>0)
             <div class="btn-group" role="group" aria-label="...">
               <a href="{!! URL::to('/empresas/'.$empresa->id.'/sorteos') !!}" class="btn btn-success btn-xs">
@@ -59,18 +66,6 @@
             <input type="hidden" name="_token" id="token" value="{{csrf_token()}}">
 
 
-            {{--
-              <span id="request" class="btn btn-xs btn-warning">
-                <small>Pedir sorteos <b>| {{count($empresa->raffleRequests)}} peticiones</b></small>
-              </span>
-            --}}
-
-
-            {{--
-            @if($crr = )
-              {{$crr}}
-            @endif
-            --}}
 
             @if(Auth::user()->get()->id == $empresa->user_id)
               <ul class="dropdown-menu">
@@ -95,3 +90,26 @@
     @endforeach
   </div><!-- /div .list-group -->
 </div> <!-- /div #EmpresaListThumb -->
+{{--
+<script>
+  $('.request').click(function(){
+    var token = $("#token").val();
+
+    var route = "http://localhost:8000/requestaraffle";
+    $.ajax({
+      url: route,
+      headers: {'X-CSRF-TOKEN': token},
+      type: 'POST',
+      dataType: 'json',
+      data: {
+        empresa_id: $(this).attr('value')
+      },
+      success:function(requestCount){
+        console.log($(this));
+      },
+    });
+    return true;
+
+  });
+</script>
+--}}

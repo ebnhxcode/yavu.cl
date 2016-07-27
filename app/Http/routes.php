@@ -127,6 +127,11 @@ Route::group(['middleware' => 'user'], function(){
 
   /*Gestión de Participantes*/
 
+  /*Gestión de Petición de Sorteos*/
+  Route::post('requestaraffle', 'EmpresaController@RequestARaffle');
+
+  /*Gestión de Petición de Sorteos*/
+
   /*Gestión de  Followers */
   Route::post('seguirempresa', 'FollowerController@SeguirEmpresa');
   Route::post('noseguirempresa', 'FollowerController@NoSeguirEmpresa');
