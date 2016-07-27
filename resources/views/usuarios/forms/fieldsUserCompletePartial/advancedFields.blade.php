@@ -213,7 +213,7 @@
     </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 
     @if($userActive)
-      
+
       {{--
       <div class='form-group has-feedback has-feedback-left'>
         {!!Form::select('region',

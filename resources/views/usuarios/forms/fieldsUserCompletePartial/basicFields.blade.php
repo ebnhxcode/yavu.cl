@@ -87,15 +87,6 @@
         {!!Form::text('rut',null,['class'=>'form-control input-sm','placeholder'=>'Rut', 'id' => 'rut', 'maxlength' => '16'])!!}
       </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
 
-      <div class='form-group has-feedback has-feedback-left'>
-        {!!Form::select('sexo',
-          ['Masculino' => 'Masculino',
-          'Femenino' => 'Femenino',
-          'Otro' => 'Otro'],
-          $selected = null, ['class' => 'form-control input-sm', 'maxlength' => '10'])
-        !!}
-      </div><!-- /div .form-group .has-feedback .has-feedback-left  -->
-
     @endif
   </div><!-- /div .list-group-item .panel-success -->
   {{--
