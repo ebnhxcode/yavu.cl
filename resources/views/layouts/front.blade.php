@@ -399,7 +399,7 @@
 			<footer class="site-footer">
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<img width="100" alt="Imagen corfo" src= "{!!URL::to('img/footer/corfo.png')!!}" class="img-responsive-centered"/></a>
+						<img style="padding: 0;" width="240" alt="Imagen corfo" src= "{!!URL::to('img/footer/corfo.png')!!}" class="img-responsive-centered"/></a>
 					</div>
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: center;">
 						{{--
