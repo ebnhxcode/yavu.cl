@@ -345,6 +345,7 @@ class ComposerStaticInited7924d490fe9e0cf1eacb6de9e69f50
         'CreateAlternativasTable' => __DIR__ . '/../..' . '/database/migrations/2016_02_24_104912_create_alternativas_table.php',
         'CreateAsTheUserRegistriesTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_20_120227_create_as_the_user_registries_table.php',
         'CreateBannerDataTable' => __DIR__ . '/../..' . '/database/migrations/2016_05_24_124722_create_banner_data_table.php',
+        'CreateBannerDisplaysTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_27_132040_create_banner_displays_table.php',
         'CreateBannersTable' => __DIR__ . '/../..' . '/database/migrations/2016_02_24_104212_create_banners_table.php',
         'CreateBeneficiosTable' => __DIR__ . '/../..' . '/database/migrations/2016_02_24_145949_create_beneficios_table.php',
         'CreateCategoriasTable' => __DIR__ . '/../..' . '/database/migrations/2016_02_24_151347_create_categorias_table.php',
