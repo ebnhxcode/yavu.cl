@@ -1,7 +1,7 @@
 <!-- Banner Random -->
 <div class="list-group">
   <div class="list-group-item list-heading">
-    <small>PUBLICIDAD</small>
+    <small style="font-size: 0.68em;">ANUNCIOS</small>
   </div><!-- /div .list-group-item -->
 
   <div style="padding: 9px 9px 9px 9px;" class="list-group-item">
