@@ -13,13 +13,13 @@
           </div><!-- /div .col-md12-sm12-xs12 -->
           <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
             @include('sorteos.showPartial.sectionLeft')
-          </div><!-- /div .col-lg3-md3-sm12-xs12 -->
+          </div><!-- /div .col-lg3-md3-sm3-xs4 -->
           <div class="col-xs-8 col-sm-6 col-md-6 col-lg-6">
             @include('sorteos.showPartial.sectionCenter')
-          </div><!-- /div .col-lg6-md6-sm12-xs12 -->
+          </div><!-- /div .col-lg6-md6-sm6-xs8 -->
           <div class="col-xs-8 col-sm-3 col-md-3 col-lg-3" style="float:right;">
             @include('sorteos.showPartial.sectionRight')
-          </div><!-- /div .col-lg3-md3-sm12-xs12 -->
+          </div><!-- /div .col-lg3-md3-sm3-xs8 -->
         </div><!-- /div .col-md4-sm12-xs12 -->
       </div><!-- /div .row -->
     </div><!-- /div #contentMiddle -->

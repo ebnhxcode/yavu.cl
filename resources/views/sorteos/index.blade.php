@@ -22,11 +22,11 @@
 
       <div id="sectionCenter" class="col-xs-8 col-sm-6 col-md-6 col-lg-6">
         @include('sorteos.indexPartial.sectionCenter')
-      </div><!-- /div .col-md8-sm12-xs12 -->
+      </div><!-- /div .col-lg6-md6-sm6-xs8 -->
 
       <div id="sectionRight" class="col-xs-8 col-sm-3 col-md-3 col-lg-3" style="float:right;">
         @include('empresas.indexPartial.sectionRight')
-      </div><!-- /div .col-md3-sm12-xs12 -->
+      </div><!-- /div .col-lg3-md3-sm3-xs8 -->
 
     </div><!-- /div .row -->
   </div><!-- /div #contentMiddle -->

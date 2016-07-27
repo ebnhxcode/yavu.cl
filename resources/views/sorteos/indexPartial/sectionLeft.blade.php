@@ -1,9 +1,11 @@
-<div class=" hasoneempresa" style="display: none; padding-bottom: 10px;">
-  <div class="btn btn-success btn-sm">
-    <span class="glyphicon glyphicon-plus-sign"></span>
-    Crear sorteo
+@if(count($userSession->empresas)>0)
+  <div style="padding-bottom: 10px;">
+    <div class="btn btn-success btn-sm">
+      <span class="glyphicon glyphicon-plus-sign"></span>
+      Crear sorteo
+    </div>
   </div>
-</div>
+@endif
 
 <div class="list-group">
   <div class="">
