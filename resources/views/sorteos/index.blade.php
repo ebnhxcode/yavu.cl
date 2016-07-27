@@ -14,26 +14,8 @@
       </div><!-- /div col-md12-sm12-xs12 -->
 
 
-      <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
-        <div id="sectionLeft">
-
-          <script>
-            var windowsize = $(window).width();
-            $(window).resize(function() {
-              var windowsize = $(window).width();
-              $('#sectionLeft').removeClass('col-xs-4');
-              if (windowsize < 768) {
-                $('#sectionLeft').addClass('col-xs-4');
-              }
-            });
-            if (windowsize < 768) {
-              $('#sectionLeft').addClass('col-xs-4');
-            }
-
-          </script>
-
-          @include('sorteos.indexPartial.sectionLeft')
-        </div>
+      <div id="sectionLeft" class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+        @include('sorteos.indexPartial.sectionLeft')
       </div><!-- /div .col-md4-sm12-xs12 -->
 
 
