@@ -116,10 +116,10 @@
     return true;
   }
 
-  function Interactuar(valor){
-    var status_id = valor.replace('estado_','');
-    var user_id = $("#user_id").val();
+  function Interactuar(valor) {
+    var status_id = valor.replace('estado_', '');
     var e_id = $('#estado_' + status_id).attr('value').replace('e','');
+    var user_id = $("#user_id").val();
     var token = $("#token").val();
     var route = "http://localhost:8000/interactuar";
     $.ajax({
@@ -135,15 +135,20 @@
       success:function(){
         $('#'+valor).removeClass("btn-warning");
         $('#'+valor).addClass("btn-default");
-        $('#'+valor).text('Cobrados');
+        $('#'+valor).text('');
+        $('#'+valor).append('<span style="font-family: yavu_font;color: #585858;">I</span>').fadeIn();
+        $('#status_'+status_id).append('<span class="text-success"><small>¡Coins obtenidos!</small></span>').hide().fadeIn();
+
+
         ContarNotificaciones();
         ContarCoins();
       }
     });
     ContarInteracciones(status_id);
-    $('#'+valor).removeClass("text-info").fadeIn();
+    $('#'+valor).addClass("text-info").fadeIn();
     return true;
   }
+
   function ContarInteracciones(status_id){
     status_id = status_id;
     var route = "http://localhost:8000/contarinteracciones/"+status_id;

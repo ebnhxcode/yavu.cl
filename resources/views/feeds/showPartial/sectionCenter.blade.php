@@ -48,8 +48,8 @@
                 <span onclick='Interactuar(this.id)' id='estado_{!! $feed->id !!}' value='e{!! $feed->companyPostAuthor->id !!}' class="btn {!! count($cs)<1?'out-yavucoin':'btn-default out-yavucoin' !!} btn-xs" >
                   {!! count($cs)<1?'<span style=" font-family: yavu_font;color: #ffcc00;">J</span>':'<span style=" font-family: yavu_font;color: #000;">I</span>' !!}
                 </span><!-- /span $estado_+$companyStatus->id .btn .btn-sm .btn-default-warning -->
-
                 <span id="status_{!! $feed->id !!}"></span>
+
               @endif
             @endif
           </div><!-- /div -->
