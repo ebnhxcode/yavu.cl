@@ -13,28 +13,38 @@
             <div class="thumbnail">
               <img class="img-responsive" id="ImagenPortada" src="{!! ($banner->banner!="")?'/img/users/'.$banner->banner:"/img/users/banner.png" !!}" alt="..." style="height: 170px;">
 
-              <div class="caption softText-descriptions-middle">
+              <div class="softText-descriptions-middle">
+
                 <a href="/empresas/{!! $banner->empresa_id !!}">
-                  <b>{!! $banner->companyName->nombre !!}</b><br>
+                  <b>{!! $banner->companyName->nombre !!}
+                    <span class="softText-descriptions" style="float:right;">
+                    <small>{{$bcf = count($banner->companyId->followers)}} seguidor{{($bcf>2)?'es':''}}.</small>
+                    </span>
+                  </b><br>
                 </a>
+                <div class="softText-descriptions" style="padding-bottom: 5px;">
+                  {{ $banner->descripcion_banner }}
+                </div>
 
                 <div class="softText-descriptions">
                   <small>Enlaces publicitarios</small>
                 </div>
+                <img src="/img/" alt="">
                 @foreach($banner->linksBannerData as $lbd)
                   <a class="btn-link" href="{!!$lbd->link!!}">
                     {!! $lbd->titulo_link!!}
                   </a><!-- /div .btn-link -->
                   <br>
                 @endforeach
-                <br>
-                <div class="softText-descriptions">
-                  <small>Descripci&oacute;n</small>
-                </div>
-                <h6>{!! $banner->descripcion_banner !!}</h6>
-              </div><!-- /div .caption -->
-            </div><!-- /div .thumbnail -->
 
+
+
+              </div><!-- /div .caption -->
+
+              <small class="softText-descriptions"><b>{{count($banner->displays)}}</b> despliegues</small>
+              {{--<small class="softText-descriptions"><b>{{count($banner->displays)}}</b> despliegues</small>--}}
+
+            </div><!-- /div .thumbnail -->
           </div><!-- /div .col-md12-sm12-xs12 -->
         @endforeach
       </div><!-- /div .row -->

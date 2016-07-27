@@ -20,9 +20,21 @@ class BannerData extends Model
 
   }
 
+  public function companyId(){
+    return $this->belongsTo(Empresa::class, 'empresa_id')->select('id');
+  }
+
   public function companyName(){
     return $this->belongsTo(Empresa::class, 'empresa_id')->select('nombre');
   }
+
+  public function displays(){
+    return $this->hasMany(BannerDisplay::class, 'banner_data_id');
+  }
+
+  /*public function companyFollowers($empresa_id){
+    return $this->hasMany(Follower::class, 'empresa_id')->select('id')->where('empresa_id', $empresa_id)->get();
+  }*/
 
  
 }

@@ -2,6 +2,7 @@
 namespace yavu\Http\Controllers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use yavu\BannerDisplay;
 use yavu\Http\Requests;
 use yavu\Http\Requests\EmpresaCreateRequest;
 use yavu\Http\Requests\EmpresaUpdateRequest;
@@ -51,7 +52,21 @@ class EmpresaController extends Controller{
     $this->empresa = Empresa::findOrFail($route->getParameter('empresas'));
   }
   public function index(Request $request){
-    return view('empresas.index', ['empresas' => Empresa::paginate(14), 'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get(),'companies' => Empresa::select('id','nombre','descripcion','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(),'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user]);
+
+    foreach( $this->user->empresas as $key => $empresa ){
+      foreach($bannersRandomLeft = BannerData::orderByRaw('RAND()')->take(2)->get() as $key => $banner ){
+        if( $empresa != $banner->empresa_id )
+          BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
+
+      }
+
+      foreach($bannersRandomCenter = BannerData::orderByRaw('RAND()')->take(3)->get() as $key => $banner ){
+        if( $empresa != $banner->empresa_id )
+          BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
+
+      }
+    }
+    return view('empresas.index', ['empresas' => Empresa::paginate(15), 'bannersRandomLeft' => $bannersRandomLeft, 'bannersRandomCenter' => $bannersRandomCenter, 'companies' => Empresa::select('id','nombre','descripcion','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user]);
   }
   
   public function create(){
