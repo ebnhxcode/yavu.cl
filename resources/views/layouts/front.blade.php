@@ -197,7 +197,7 @@
 								<button type="submit" class="btn btn-success btn-sm">Iniciar sesi&oacute;n </button>
 								<a class="btn btn-warning btn-sm" data-toggle="modal" data-target="#gridSystemModal" role="button">Reg&iacute;strate</a>
 								<a href='{!! url("social/facebook") !!}'>
-									<img src= "{!!URL::to('img/footer/icono_facebook.png')!!}" width="3.78%"/>
+									<img src= "{!!URL::to('img/footer/icono_facebook.png')!!}" style="width: 32px;" />
 								</a>
 								<a href="#!" class="text-success" data-toggle="modal" data-target="#myModal"><small>¿Haz Olvidado tu Clave?</small></a>
 
