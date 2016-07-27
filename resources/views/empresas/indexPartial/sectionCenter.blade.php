@@ -95,7 +95,7 @@
   $('.request').click(function(){
     var token = $("#token").val();
 
-    var route = "http://localhost:8000/requestaraffle";
+    var route = "http://yavu.cl/requestaraffle";
     $.ajax({
       url: route,
       headers: {'X-CSRF-TOKEN': token},
