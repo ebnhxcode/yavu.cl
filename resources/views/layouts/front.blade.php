@@ -15,16 +15,11 @@
 
 		<style>
 		  @font-face {
-
 			font-family: yavu_font;
 			src: url("/fonts/yavu_font.ttf");
-
 		  }
 		  /**/
-
 		</style>
-
-
 		@section('favicon') {!!Html::favicon('favicons/changeFaviconNameHere.png')!!} @stop
 		@yield('favicon')
 		{!!Html::script('js/jquery.js')!!}
@@ -45,8 +40,6 @@
 			{!!Html::script('js/ajax/SeguirEmpresa.js')!!}
 
 		@endif
-
-
 		{!!Html::script('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')!!}
 		{!!Html::style('css/app.css')!!}
 		{!!Html::style('css/style.css')!!}
@@ -82,7 +75,7 @@
 						<span class="icon-bar"></span>
 					</button>
 					@if(Auth::user()->check())
-						<div class="navbar-brand hidden-xs" style="width: 135px;padding-right: 0px;padding-left: 20px;">
+						<div class="navbar-brand navbar-brand-centered hidden-xs" style="width: 135px;padding-right: 0px;padding-left: 20px;">
 							<a href="{{URL::to('/dashboard')}}"><img id="LogoYavu" src="{!! asset('img/yavu004.png') !!}" width="70%" style="transition: width 0.8s;" width="50%"></a>
 						</div>
 					@else
@@ -91,19 +84,7 @@
 						</div>
 					@endif
 					@if(Auth::user()->check())
-						{{--
-						<div class="navbar-brand" align="center" >
-							<small>
-						<!-- <img src="{!! asset('/img/newGraphics/neo_notificacion04_16x16.png') !!}" width="" id="Notificaciones" title="Notificaciones <a href='/pops' style='float: right;'>ver todas</a>" data-toggle="popover" title="Popover title" data-placement="bottom" aria-hidden="true" alt=""> -->
-
-										<span id="Notificaciones" title="<span style='color: #000;'>Notificaciones</span> <a href='/pops' style='float: right;'>ver todas</a>" class="" data-toggle="popover" title="Popover title" data-placement="bottom" aria-hidden="true" alt="">
-						  <span data-toggle="tooltip" data-placement="left" title="Notificaciones!" style="font-family: yavu_font; font-size: 1.6em;color: #E68F8F;">A</span>
-						</span>
-
-								<span id="CantidadNotificaciones" style="float:right;" class="label label-danger"></span>
-							</small>
-						</div>
-						--}}
+						<!-- DEPRECATED #1 -->
 
 						<!-- demo 1 / navbar direct links -->
 
@@ -125,7 +106,7 @@
 
 					<!-- fin demo 1 -->
 
-						<div class="navbar-brand" align="center">
+						<div class="navbar-brand visible-xs" align="center">
 							<small>
 								<!-- <img width="" src="/img/newGraphics/neo_tickets02_16x16.png" alt=""> -->
 
@@ -136,33 +117,35 @@
 
 							</small>
 						</div>
-						<div class="navbar-brand" align="center">
-
-							<!-- <span class="glyphicon glyphicon-tag" style="font-size: 1.2em; color: #BEF781;"></span> -->
-
-							<small>
-								<!-- <img width="22px" src="/img/newGraphics/neo_tickets01_32x32.gif" alt=""> -->
-								<a href="/tickets">
-									<span data-toggle="tooltip" data-placement="right" title="Tickets" style="font-family: yavu_font;font-size: 1.6em;color:#57E5DB;">E</span>
-									<span id="CantidadTickets" style="float:right;" class="label label-info"></span>
-								</a>
-							</small>
-						</div>
-
-						<!--
-						<div class="navbar-brand">
-							<a href="#!">
-								<span id="Mensajes" title="Mensajes" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-envelope" style="font-size: 1em;" aria-hidden="true">
-									<small><span id="CantidadMensajes" class="label label-danger"></span></small>
-								</span>
-							</a>
-						</div>
-						-->
+						<!-- DEPRECATED #2 -->
 					@endif
 
 				</div><!-- /navbar-header -->
 
 				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-left">
+						@if(Auth::user()->check())
+							<div class="navbar-brand hidden-xs" align="center" style="padding-right: 0px;padding-left: 40px;">
+								<a href="{{URL::to('/feeds')}}">
+									<span class="glyphicon glyphicon-list-alt" id="logIcon" style="color: {{(Request::path()=='feeds')?'#2b542c;':'#FFFFff;'}}"></span>
+								</a>
+							</div>
+							<div class="navbar-brand hidden-xs" align="center" style="padding-right: 0px;padding-left: 40px;">
+								<a href="{{URL::to('/empresas')}}">
+									<span class="glyphicon glyphicon-briefcase" id="logIcon" style="color: {{(Request::path()=='empresas')?'#2b542c;':'#FFFFff;'}}"></span>
+								</a>
+							</div>
+							<div class="navbar-brand hidden-xs" align="center" style="padding-right: 20px;padding-left: 40px;">
+								<a href="{{URL::to('/sorteos')}}">
+									<span class="glyphicon glyphicon-gift" id="logIcon" style="color: {{(Request::path()=='sorteos')?'#2b542c;':'#FFFFff;'}}"></span>
+								</a>
+							</div>
+
+							{{-- <li class="hidden-xs"><a href="{!!URL::to('/feeds')!!}"><strong>Publicaciones</strong></a></li>
+							<li class="hidden-xs"><a href="{!!URL::to('/empresas')!!}"><strong>Empresas</strong></a></li>
+							<li class="hidden-xs"><a href="{!!URL::to('/sorteos')!!}"><strong>Sorteos</strong></a></li> --}}
+						@endif
+					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						@if(!Auth::user()->check() && !Auth::empresa()->check() && !Auth::admin()->check())
 						  @if(Request::path() != 'login' && Request::path() != 'usuarios/create')
@@ -208,20 +191,24 @@
 
 
 						  @endif
-
-              {{--
-							<li class="dropdown"><a href="{!!URL::to('/nosotros')!!}"><span role="button" class="navbar-button-hover">NUESTRA EMPRESA</span></a></li>
-							<li class="dropdown"><a href="{!!URL::to('/yavucoins')!!}"><span role="button" class="navbar-button-hover">YAVU COINS</span></a></li>
-							<li class="dropdown"><a href="{!!URL::to('/contacto')!!}"><span role="button" class="navbar-button-hover">CONTACTO</span></a></li>
-              --}}
-
-							{{-- <li class="dropdown"><a href="{!!URL::to('/login')!!}"><span role="button" style="background: transparent;" class="navbar-button-border">INICIAR SESIÓN</span></a></li> --}}
+						  <!-- DEPRECATED #3 -->
 
 						@endif
 						@if(Auth::user()->check())
-								<li class="hidden-xs"><a href="{!!URL::to('/feeds')!!}"><strong>Publicaciones</strong></a></li>
+								{{-- <li class="hidden-xs"><a href="{!!URL::to('/feeds')!!}"><strong>Publicaciones</strong></a></li>
 								<li class="hidden-xs"><a href="{!!URL::to('/empresas')!!}"><strong>Empresas</strong></a></li>
-								<li class="hidden-xs"><a href="{!!URL::to('/sorteos')!!}"><strong>Sorteos</strong></a></li>
+								<li class="hidden-xs"><a href="{!!URL::to('/sorteos')!!}"><strong>Sorteos</strong></a></li> --}}
+								<div class="navbar-brand hidden-xs" align="center">
+									<small>
+										<!-- <img width="" src="/img/newGraphics/neo_tickets02_16x16.png" alt=""> -->
+
+										<span data-toggle="tooltip" data-placement="right" title="Yavucoins" style="font-family: yavu_font;font-size: 1.6em;color: #FFE955;">J</span>
+										{{-- $ {{money_format('%(#10n', count($userSession->registro_coins)) . "\n"}} --}}
+
+										<span id="" style="float:right;" class="label label-warning CantidadCoins">{{isset($userSession)?'$ '.number_format($userSession->coins()->sum('cantidad') , 0, '', ','):''}}</span>
+
+									</small>
+								</div>
 							{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
 							{!!Form::hidden('idUltimaNotificacion', "0", ['id'=>'idUltimaNotificacion'])!!}
 
@@ -253,42 +240,9 @@
 
 								</ul>
 							</li>
-
-							{{--
-
-							<li class="dropdown hidden-xs"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><img width="40" src="{!! asset('img/yavu019.png') !!}" alt=""><b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li class="dropdown">
-										<a href="{!!URL::to('/dashboard')!!}">
-											Inicio
-										</a>
-									</li>
-									<li class="dropdown">
-										<a href="{!!URL::to('/feeds')!!}">
-											Publicaciones
-										</a>
-									</li>
-									<li class="dropdown">
-										<a href="{!!URL::to('/empresas')!!}">
-											Empresas
-										</a>
-									</li>
-									<li class="dropdown">
-										<a href="{!!URL::to('/sorteos')!!}">
-											Sorteos
-										</a>
-									</li>
-								</ul>
-							</li>
+							<!-- DEPRECATED #4 -->
 
 
-
-							<li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-cog" style="font-size: 1.3em; color: #BEF781;"></span><b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li><a href="{!!URL::to('/logout')!!}">Cerrar sesión <span class="glyphicon glyphicon-off text-danger"></span></a></li>
-								</ul>
-							</li>
-							--}}
 
 							<li class="dropdown">
 								<a href="{!!URL::to('/sorteos')!!}"></a>
@@ -320,33 +274,7 @@
 
 			</div><!-- /container -->
 		</nav><!-- /navbar-inverse -->
-
-		{{--
-		<!-- demo 2 / testeo de navbar bottom -->
-		@if(Auth::user()->check())
-		<nav class="navbar navbar-default navbar-fixed-bottom visible-xs">
-			<div class="container">
-				<div class="navbar-header">
-					<div class="navbar-brand" align="center">
-						<small>
-							<span data-toggle="tooltip" data-placement="right" title="Yavucoins" style="font-family: yavu_font;font-size: 1.6em;color: #FFE955;">J</span>
-							<span id="" style="float:right;" class="label label-warning CantidadCoins">{{isset($userSession)?'$ '.number_format($userSession->coins()->sum('cantidad') , 0, '', ','):''}}</span>
-						</small>
-					</div>
-					<div class="navbar-brand" align="center">
-						<small>
-							<a href="/tickets">
-								<span data-toggle="tooltip" data-placement="right" title="Tickets" style="font-family: yavu_font;font-size: 1.6em;color:#57E5DB;">E</span>
-								<span id="CantidadTickets" style="float:right;" class="label label-info"></span>
-							</a>
-						</small>
-					</div>
-				</div>
-			</div>
-		</nav>
-		@endif
-		--}}
-
+		<!-- DEPRECATED #5 -->
 
 		@if(Auth::user()->check())
 			@if(Request::path() === 'empresas' || Request::path()  === 'sorteos' || Request::path()  === 'feeds')
@@ -453,3 +381,121 @@
 		</script>
 	</body>
 </html>
+
+{{--
+<!-- deprecated code ahead -->
+
+<!-- DEPRECATED #1 -->
+<div class="navbar-brand" align="center" >
+	<small>
+<!-- <img src="{!! asset('/img/newGraphics/neo_notificacion04_16x16.png') !!}" width="" id="Notificaciones" title="Notificaciones <a href='/pops' style='float: right;'>ver todas</a>" data-toggle="popover" title="Popover title" data-placement="bottom" aria-hidden="true" alt=""> -->
+
+				<span id="Notificaciones" title="<span style='color: #000;'>Notificaciones</span> <a href='/pops' style='float: right;'>ver todas</a>" class="" data-toggle="popover" title="Popover title" data-placement="bottom" aria-hidden="true" alt="">
+  <span data-toggle="tooltip" data-placement="left" title="Notificaciones!" style="font-family: yavu_font; font-size: 1.6em;color: #E68F8F;">A</span>
+</span>
+
+		<span id="CantidadNotificaciones" style="float:right;" class="label label-danger"></span>
+	</small>
+</div>
+--}}
+
+{{--
+<!-- DEPRECATED #2 -->
+<div class="navbar-brand" align="center">
+
+	<!-- <span class="glyphicon glyphicon-tag" style="font-size: 1.2em; color: #BEF781;"></span> -->
+
+	<small>
+		<!-- <img width="22px" src="/img/newGraphics/neo_tickets01_32x32.gif" alt=""> -->
+		<a href="/tickets">
+			<span data-toggle="tooltip" data-placement="right" title="Tickets" style="font-family: yavu_font;font-size: 1.6em;color:#57E5DB;">E</span>
+			<span id="CantidadTickets" style="float:right;" class="label label-info"></span>
+		</a>
+	</small>
+</div>
+
+<!--
+<div class="navbar-brand">
+	<a href="#!">
+		<span id="Mensajes" title="Mensajes" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-envelope" style="font-size: 1em;" aria-hidden="true">
+			<small><span id="CantidadMensajes" class="label label-danger"></span></small>
+		</span>
+	</a>
+</div>
+-->
+--}}
+
+
+<!-- DEPRECATED #3 -->
+
+{{--
+			<li class="dropdown"><a href="{!!URL::to('/nosotros')!!}"><span role="button" class="navbar-button-hover">NUESTRA EMPRESA</span></a></li>
+			<li class="dropdown"><a href="{!!URL::to('/yavucoins')!!}"><span role="button" class="navbar-button-hover">YAVU COINS</span></a></li>
+			<li class="dropdown"><a href="{!!URL::to('/contacto')!!}"><span role="button" class="navbar-button-hover">CONTACTO</span></a></li>
+--}}
+
+{{-- <li class="dropdown"><a href="{!!URL::to('/login')!!}"><span role="button" style="background: transparent;" class="navbar-button-border">INICIAR SESIÓN</span></a></li> --}}
+
+{{--
+<!-- DEPRECATED #4 -->
+
+<li class="dropdown hidden-xs"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><img width="40" src="{!! asset('img/yavu019.png') !!}" alt=""><b class="caret"></b></a>
+	<ul class="dropdown-menu">
+		<li class="dropdown">
+			<a href="{!!URL::to('/dashboard')!!}">
+				Inicio
+			</a>
+		</li>
+		<li class="dropdown">
+			<a href="{!!URL::to('/feeds')!!}">
+				Publicaciones
+			</a>
+		</li>
+		<li class="dropdown">
+			<a href="{!!URL::to('/empresas')!!}">
+				Empresas
+			</a>
+		</li>
+		<li class="dropdown">
+			<a href="{!!URL::to('/sorteos')!!}">
+				Sorteos
+			</a>
+		</li>
+	</ul>
+</li>
+
+
+
+<li class="dropdown"><a href="#!" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-cog" style="font-size: 1.3em; color: #BEF781;"></span><b class="caret"></b></a>
+	<ul class="dropdown-menu">
+		<li><a href="{!!URL::to('/logout')!!}">Cerrar sesión <span class="glyphicon glyphicon-off text-danger"></span></a></li>
+	</ul>
+</li>
+--}}
+
+{{--
+<!-- DEPRECATED #5 -->
+<!-- demo 2 / testeo de navbar bottom -->
+@if(Auth::user()->check())
+<nav class="navbar navbar-default navbar-fixed-bottom visible-xs">
+	<div class="container">
+		<div class="navbar-header">
+			<div class="navbar-brand" align="center">
+				<small>
+					<span data-toggle="tooltip" data-placement="right" title="Yavucoins" style="font-family: yavu_font;font-size: 1.6em;color: #FFE955;">J</span>
+					<span id="" style="float:right;" class="label label-warning CantidadCoins">{{isset($userSession)?'$ '.number_format($userSession->coins()->sum('cantidad') , 0, '', ','):''}}</span>
+				</small>
+			</div>
+			<div class="navbar-brand" align="center">
+				<small>
+					<a href="/tickets">
+						<span data-toggle="tooltip" data-placement="right" title="Tickets" style="font-family: yavu_font;font-size: 1.6em;color:#57E5DB;">E</span>
+						<span id="CantidadTickets" style="float:right;" class="label label-info"></span>
+					</a>
+				</small>
+			</div>
+		</div>
+	</div>
+</nav>
+@endif
+--}}
