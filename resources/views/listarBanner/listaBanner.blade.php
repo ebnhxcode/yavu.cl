@@ -25,11 +25,11 @@
                 <div class="softText-descriptions" style="padding-bottom: 5px;">
                   {{ $banner->descripcion_banner }}
                 </div>
-
+                <!-- #siempre hay atajos -->
                 <div class="softText-descriptions">
                   <small>Enlaces publicitarios</small>
-                </div>
-                <img src="/img/" alt="">
+                </div><!-- /div .softText-descriptions -->
+                <img style="width: 16px;" src="/img/glyphicons/glyphicons-social/png/glyphicons-social-31-facebook.png" alt="Facebook">
                 @foreach($banner->linksBannerData as $lbd)
                   <a class="btn-link" href="{!!$lbd->link!!}">
                     {!! $lbd->titulo_link!!}
