@@ -42,7 +42,6 @@
               </div><!-- /div .caption -->
 
               {{--<small class="softText-descriptions"><b>{{count($banner->displays)}}</b> despliegues</small>--}}
-              <small class="softText-descriptions"><b>{{count($banner->displays)}}</b> despliegues</small>
             </div><!-- /div .thumbnail -->
           </div><!-- /div .col-md12-sm12-xs12 -->
         @endforeach
