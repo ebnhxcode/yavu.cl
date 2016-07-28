@@ -115,6 +115,11 @@
 
 								<span id="" style="float:right;" class="label label-warning CantidadCoins">{{isset($userSession)?'$ '.number_format($userSession->coins()->sum('cantidad') , 0, '', ','):''}}</span>
 
+								<a href="/tickets">
+									<span data-toggle="tooltip" data-placement="right" title="Tickets" style="font-family: yavu_font;font-size: 1.6em;color:#57E5DB;">E</span>
+									<span id="CantidadTickets" style="float:right;" class="label label-info"></span>
+								</a>
+
 							</small>
 						</div>
 						<!-- DEPRECATED #2 -->
@@ -402,8 +407,9 @@
 {{--
 <!-- DEPRECATED #2 -->
 <div class="navbar-brand" align="center">
---}}
-<span class="glyphicon glyphicon-tag" style="font-size: 1.2em; color: #BEF781;"></span> -->
+
+	<!-- <span class="glyphicon glyphicon-tag" style="font-size: 1.2em; color: #BEF781;"></span> -->
+
 	<small>
 		<!-- <img width="22px" src="/img/newGraphics/neo_tickets01_32x32.gif" alt=""> -->
 		<a href="/tickets">
@@ -412,7 +418,8 @@
 		</a>
 	</small>
 </div>
-{{--
+
+<!--
 <div class="navbar-brand">
 	<a href="#!">
 		<span id="Mensajes" title="Mensajes" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-envelope" style="font-size: 1em;" aria-hidden="true">
