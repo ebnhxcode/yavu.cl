@@ -55,8 +55,8 @@
 
         @if($cis = $companyStatus->statusImage()->select('company_image_status')->get())
           @foreach( $cis as $key => $image )
-            <a href=#! class="thumbnail" style="margin: 0;">
-              <img src="/img/users/{!! $image->company_image_status !!}" alt="" class="img-responsive center-block">
+            <a href=#! class="thumbnail" style="margin: 0;padding: 0; border-radius: 7px;">
+              <img style="border-radius: 5px;" src="/img/users/{!! $image->company_image_status !!}" alt="" class="img-responsive center-block">
             </a><!-- /a .thumbnail -->
           @endforeach
         @endif
@@ -81,24 +81,28 @@
   @if($key == 4)
     <div class="list-group-item">
       <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <a class="thumbnail">
-            <img class="img-responsive" id="ImagenPortada" src="/img/yavu015.png" alt="..." style="height: 170px;">
-          </a><!-- /a .thumbnail -->
-        </div><!-- /div .col-md12-sm12-xs12 -->
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <img id="firstBannerCenter" src="/img/users/{!!($bannersRandomCenter[0]->banner!='')?$bannersRandomCenter[0]->banner:'banner.png'!!}" alt="..." style="height: 100px;">
+        </div><!-- /col-xs12-sm12-md6-lg6 -->
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+
+        </div><!-- /col-xs12-sm12-md6-lg6 -->
       </div><!-- /div .row -->
+
+
     </div><!-- /div .list-group-item -->
   @endif
+
   @if($key == 9)
-    <div class="list-group-item">
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <a class="thumbnail">
-            <img class="img-responsive" id="ImagenPortada" src="/img/yavu015.png" alt="..." style="height: 170px;">
-          </a><!-- /a .thumbnail -->
-        </div><!-- /div .col-md12-sm12-xs12 -->
-      </div><!-- /div .row -->
-    </div><!-- /div .list-group-item -->
+
+    {{($bannersRandomCenter[1])}}
+
+  @endif
+
+  @if($key == 14)
+
+    {{($bannersRandomCenter[2])}}
+
   @endif
 @endforeach
 

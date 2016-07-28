@@ -2,6 +2,7 @@
 namespace yavu\Http\Controllers;
 use Illuminate\Http\Request;
 use PhpSpec\Exception\Example\ExampleException;
+use yavu\BannerDisplay;
 use yavu\Empresa;
 use yavu\Http\Requests;
 use yavu\Http\Controllers\Controller;
@@ -61,10 +62,27 @@ FeedController extends Controller{
   }
   public function index(){
     if(count($this->user->empresas)>0){
+
       $this->user_id = $this->user->empresas[0]->user_id; $this->id = $this->user->empresas[0]->id;
-      return view('feeds.index', ['companyStatuses' => EstadoEmpresa::orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas, 'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(3)->get(), 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()] ); //cambiar EstadoEmpresa por CompanyStatus
+
+      foreach( $this->user->empresas as $key => $empresa ){
+        foreach($bannersRandomLeft = BannerData::orderByRaw('RAND()')->take(2)->get() as $key => $banner ){
+          if( $empresa != $banner->empresa_id )
+            BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
+
+        }
+
+        foreach($bannersRandomCenter = BannerData::orderByRaw('RAND()')->take(3)->get() as $key => $banner ){
+          if( $empresa != $banner->empresa_id )
+            BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
+
+        }
+      }
+
+      return view('feeds.index', ['companyStatuses' => EstadoEmpresa::orderBy('created_at', 'desc')->paginate(15), 'myCompanies' => $this->user->empresas, 'bannersRandomLeft' => $bannersRandomLeft, 'bannersRandomCenter' => $bannersRandomCenter, 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()] ); //cambiar EstadoEmpresa por CompanyStatus
     }else{
-      return view('feeds.index', ['companyStatuses' => EstadoEmpresa::orderBy('created_at', 'desc')->paginate(10), 'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(3)->get(), 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
+
+      return view('feeds.index', ['companyStatuses' => EstadoEmpresa::orderBy('created_at', 'desc')->paginate(15), 'bannersRandomLeft' => $bannersRandomLeft, 'bannersRandomCenter' => $bannersRandomCenter, 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
     }
   }
   public function show($id){

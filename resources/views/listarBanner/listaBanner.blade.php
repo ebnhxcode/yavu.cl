@@ -10,10 +10,10 @@
         @foreach($bannersRandomLeft as $key => $banner)
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><!-- text-center -->
 
-            <div class="thumbnail">
+            <div class="thumbnail" style="padding: 0;">
               <img class="img-responsive" id="ImagenPortada" src="{!! ($banner->banner!="")?'/img/users/'.$banner->banner:"/img/users/banner.png" !!}" alt="..." style="height: 170px;">
 
-              <div class="softText-descriptions-middle">
+              <div class="softText-descriptions-middle" style="padding: 3px;">
 
                 <a href="/empresas/{!! $banner->empresa_id !!}">
                   <b>{!! $banner->companyName->nombre !!}
@@ -29,7 +29,7 @@
                 <div class="softText-descriptions">
                   <small>Enlaces publicitarios</small>
                 </div><!-- /div .softText-descriptions -->
-                <img style="width: 16px;" src="/img/glyphicons/glyphicons-social/png/glyphicons-social-31-facebook.png" alt="Facebook">
+                <!--<img style="width: 16px;" src="/img/glyphicons/glyphicons-social/png/glyphicons-social-31-facebook.png" alt="Facebook">-->
                 @foreach($banner->linksBannerData as $lbd)
                   <a class="btn-link" href="{!!$lbd->link!!}">
                     {!! $lbd->titulo_link!!}
@@ -41,7 +41,6 @@
 
               </div><!-- /div .caption -->
 
-              <small class="softText-descriptions"><b>{{count($banner->displays)}}</b> despliegues</small>
               {{--<small class="softText-descriptions"><b>{{count($banner->displays)}}</b> despliegues</small>--}}
 
             </div><!-- /div .thumbnail -->

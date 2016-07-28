@@ -87,19 +87,6 @@
 
         </div><!-- /div .row -->
       </div><!-- /div .list-group-item -->
-
-      @if($key == 4)
-        {{($bannersRandomCenter[0])}}
-      @endif
-
-      @if($key == 9)
-        {{($bannersRandomCenter[1])}}
-      @endif
-
-      @if($key == 14)
-        {{($bannersRandomCenter[2])}}
-      @endif
-
     @endforeach
   </div><!-- /div .list-group -->
 </div> <!-- /div #EmpresaListThumb -->

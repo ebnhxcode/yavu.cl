@@ -1,10 +1,12 @@
 @if(count($userSession->empresas)>0)
-  <div style="padding-bottom: 10px;">
-    <div class="btn btn-success btn-sm">
-      <span class="glyphicon glyphicon-plus-sign"></span>
-      Crear sorteo
+  <a href="{{url('/sorteos/create')}}">
+    <div style="padding-bottom: 10px;">
+      <div class="btn btn-success btn-sm">
+        <span class="glyphicon glyphicon-plus-sign"></span>
+        Crear sorteo
+      </div>
     </div>
-  </div>
+  </a>
 @endif
 
 <div class="list-group">
