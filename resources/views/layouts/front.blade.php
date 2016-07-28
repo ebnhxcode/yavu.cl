@@ -138,17 +138,17 @@
 						@if(Auth::user()->check())
 							<div class="navbar-brand hidden-xs" align="center" style="padding-right: 0px;padding-left: 40px;">
 								<a href="{{URL::to('/feeds')}}">
-									<span class="glyphicon glyphicon-list-alt" id="logIcon" style="color: {{(Request::path()=='feeds')?'#FFFFff;':'#2b542c;'}}"></span>
+									<span data-toggle="tooltip" data-placement="left" title="Yavüposts" class="glyphicon glyphicon-list-alt" id="logIcon" style="color: {{(Request::path()=='feeds')?'#FFFFff;':'#2b542c;'}}"></span>
 								</a>
 							</div>
 							<div class="navbar-brand hidden-xs" align="center" style="padding-right: 0px;padding-left: 40px;">
 								<a href="{{URL::to('/empresas')}}">
-									<span class="glyphicon glyphicon-briefcase" id="logIcon" style="color: {{(Request::path()=='empresas')?'#FFFFff;':'#2b542c;'}}"></span>
+									<span data-toggle="tooltip" data-placement="left" title="Empresas" class="glyphicon glyphicon-briefcase" id="logIcon" style="color: {{(Request::path()=='empresas')?'#FFFFff;':'#2b542c;'}}"></span>
 								</a>
 							</div>
 							<div class="navbar-brand hidden-xs" align="center" style="padding-right: 20px;padding-left: 40px;">
 								<a href="{{URL::to('/sorteos')}}">
-									<span class="glyphicon glyphicon-gift" id="logIcon" style="color: {{(Request::path()=='sorteos')?'#FFFFff;':'#2b542c;'}}"></span>
+									<span data-toggle="tooltip" data-placement="left" title="Sorteos" class="glyphicon glyphicon-gift" id="logIcon" style="color: {{(Request::path()=='sorteos')?'#FFFFff;':'#2b542c;'}}"></span>
 								</a>
 							</div>
 
