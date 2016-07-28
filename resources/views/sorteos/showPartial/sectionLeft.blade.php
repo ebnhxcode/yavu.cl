@@ -50,10 +50,12 @@
         </span><!-- #openclose .btn .btn-default .btn-xs -->
       </small>
       <script>
+
         $('#openclose').click(function(){
-          if($(this).text() == 'ABRIR') $(this).text('CERRAR');
-          else if ($(this).text() == 'CERRAR') $(this).text('ABRIR');
+          if($(this).text().trim() == 'ABRIR') $(this).text('CERRAR');
+          else if ($(this).text().trim() == 'CERRAR') $(this).text('ABRIR');
         });
+        
       </script><!-- /script open/close -->
     </div><!-- /div .list-group-item -->
   </div><!-- /div .list-group -->
