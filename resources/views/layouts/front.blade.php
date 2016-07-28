@@ -124,7 +124,7 @@
 								<!-- <img width="22px" src="/img/newGraphics/neo_tickets01_32x32.gif" alt=""> -->
 								<a href="/tickets">
 									<span data-toggle="tooltip" data-placement="right" title="Tickets" style="font-family: yavu_font;font-size: 1.6em;color:#57E5DB;">E</span>
-									<span id="CantidadTickets" class="label label-info">{{isset($userSession)?'$ '.number_format($userSession->tickets()->sum('cantidad_tickets') , 0, '', ','):'0'}}</span>
+									<span id="CantidadTickets" style="float:right;" class="label label-info CantidadTickets">{{isset($userSession)?'$ '.number_format($userSession->tickets()->sum('cantidad_tickets') , 0, '', ','):'0'}}</span>
 								</a>
 							</small>
 
