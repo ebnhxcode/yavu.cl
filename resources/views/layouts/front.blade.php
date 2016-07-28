@@ -403,8 +403,7 @@
 <!-- DEPRECATED #2 -->
 <div class="navbar-brand" align="center">
 --}}
-	 <span class="glyphicon glyphicon-tag" style="font-size: 1.2em; color: #BEF781;"></span> -->
-
+<span class="glyphicon glyphicon-tag" style="font-size: 1.2em; color: #BEF781;"></span> -->
 	<small>
 		<!-- <img width="22px" src="/img/newGraphics/neo_tickets01_32x32.gif" alt=""> -->
 		<a href="/tickets">
