@@ -31,27 +31,15 @@
         <div class="softText-descriptions-middle" style="padding: 3px;">
 
           <a href="/empresas/{!! $bannersRandomCenter[1]->empresa_id !!}">
-            <b>{!! $bannersRandomCenter[1]->companyName->nombre !!}
-              <span class="softText-descriptions" style="float:right;">
-                    <small>{{$bcf = count($bannersRandomCenter[1]->companyId->followers)}} seguidor{{($bcf>2)?'es':''}}.</small>
-                    </span>
-            </b><br>
+            <b>{!! $bannersRandomCenter[1]->companyName->nombre !!}</b>
+            <span class="softText-descriptions" style="float:right;">
+              <small>{{$bcf = count($bannersRandomCenter[1]->companyId->followers)}} seguidor{{($bcf>2)?'es':''}}.</small>
+            </span>
           </a>
+
           <div class="softText-descriptions" style="padding-bottom: 5px;">
             {{ $bannersRandomCenter[1]->descripcion_banner }}
           </div>
-          <!-- #siempre hay atajos -->
-          <div class="softText-descriptions">
-            <small>Enlaces publicitarios</small>
-          </div><!-- /div .softText-descriptions -->
-          <!--<img style="width: 16px;" src="/img/glyphicons/glyphicons-social/png/glyphicons-social-31-facebook.png" alt="Facebook">-->
-          @foreach($bannersRandomCenter[1]->linksBannerData as $lbd)
-            <a class="btn-link" href="{!!$lbd->link!!}">
-              {!! $lbd->titulo_link!!}
-            </a><!-- /div .btn-link -->
-            <br>
-          @endforeach
-
 
         </div><!-- /div .caption -->
 
