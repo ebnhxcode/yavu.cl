@@ -402,8 +402,8 @@
 {{--
 <!-- DEPRECATED #2 -->
 <div class="navbar-brand" align="center">
-
-	<!-- <span class="glyphicon glyphicon-tag" style="font-size: 1.2em; color: #BEF781;"></span> -->
+--}}
+	 <span class="glyphicon glyphicon-tag" style="font-size: 1.2em; color: #BEF781;"></span> -->
 
 	<small>
 		<!-- <img width="22px" src="/img/newGraphics/neo_tickets01_32x32.gif" alt=""> -->
@@ -413,8 +413,7 @@
 		</a>
 	</small>
 </div>
-
-<!--
+{{--
 <div class="navbar-brand">
 	<a href="#!">
 		<span id="Mensajes" title="Mensajes" data-toggle="popover" title="Popover title" data-placement="bottom" class="glyphicon glyphicon-envelope" style="font-size: 1em;" aria-hidden="true">
