@@ -153,37 +153,7 @@
 				</div><!-- /div .row -->
 			</div><!-- /div .list-group-item -->
 
-      @if($key == 4)
-        <div class="list-group-item">
-          <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-
-              <img id="firstBannerCenter" src="/img/users/{!!($bannersRandomCenter[0]->banner!='')?$bannersRandomCenter[0]->banner:'banner.png'!!}" alt="..." style="height: 100px;">
-
-            </div><!-- /col-xs12-sm12-md6-lg6 -->
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-
-            </div><!-- /col-xs12-sm12-md6-lg6 -->
-          </div><!-- /div .row -->
-
-
-        </div><!-- /div .list-group-item -->
-      @endif
-
-      @if($key == 9)
-
-        {{($bannersRandomCenter[1])}}
-
-      @endif
-
-      @if($key == 14)
-
-        {{($bannersRandomCenter[2])}}
-
-      @endif
-
-
-
+      @include('listarBanner.bannersRandomCenter')
 
 		@endif
 	@endforeach

@@ -4,8 +4,8 @@
       <div class="btn btn-success btn-sm">
         <span class="glyphicon glyphicon-plus-sign"></span>
         Crear sorteo
-      </div>
-    </div>
+      </div><!-- /div .btn .btn-success .btn-sm -->
+    </div><!-- /div styled -->
   </a>
 @endif
 

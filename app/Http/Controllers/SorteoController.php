@@ -138,19 +138,11 @@ class SorteoController extends Controller{
   }
 
   public function index(){
-    foreach( $this->user->empresas as $key => $empresa ){
-      foreach($bannersRandomLeft = BannerData::orderByRaw('RAND()')->take(2)->get() as $key => $banner ){
-        if( $empresa != $banner->empresa_id )
-          BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
+    foreach($bannersRandomLeft = BannerData::orderByRaw('RAND()')->take(2)->get() as $key => $banner )
+      BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
 
-      }
-
-      foreach($bannersRandomCenter = BannerData::orderByRaw('RAND()')->take(3)->get() as $key => $banner ){
-        if( $empresa != $banner->empresa_id )
-          BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
-
-      }
-    }
+    foreach($bannersRandomCenter = BannerData::orderByRaw('RAND()')->take(3)->get() as $key => $banner )
+      BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
 
     $this->registro_tickets = $this->user->registro_tickets()->orderBy('created_at', 'desc')->limit('20')->get();
     return view('sorteos.index', ['sorteos'=>Sorteo::orderByRaw('RAND()')->where('estado_sorteo','Activo')->paginate(15), 'rtickets' => $this->registro_tickets, 'bannersRandomLeft' => $bannersRandomLeft, 'bannersRandomCenter' => $bannersRandomCenter, 'userSession' => $this->user,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);

@@ -11,6 +11,9 @@
 
 <input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
 @foreach($companyStatuses as $key => $companyStatus)
+
+  @include('listarBanner.bannersRandomCenter')
+
   <div id='publicacion{!! $companyStatus->id !!}' class="list-group-item">
 
     <div class="row">
@@ -78,32 +81,7 @@
 
     </div><!-- /div .row -->
   </div><!-- /div .list-group-item #publicacion+$companyStatus->id -->
-  @if($key == 4)
-    <div class="list-group-item">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-          <img id="firstBannerCenter" src="/img/users/{!!($bannersRandomCenter[0]->banner!='')?$bannersRandomCenter[0]->banner:'banner.png'!!}" alt="..." style="height: 100px;">
-        </div><!-- /col-xs12-sm12-md6-lg6 -->
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 
-        </div><!-- /col-xs12-sm12-md6-lg6 -->
-      </div><!-- /div .row -->
-
-
-    </div><!-- /div .list-group-item -->
-  @endif
-
-  @if($key == 9)
-
-    {{($bannersRandomCenter[1])}}
-
-  @endif
-
-  @if($key == 14)
-
-    {{($bannersRandomCenter[2])}}
-
-  @endif
 @endforeach
 
 <div class="list-group-item" style="text-align: center;">
