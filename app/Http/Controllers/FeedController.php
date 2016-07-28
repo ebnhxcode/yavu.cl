@@ -41,7 +41,11 @@ FeedController extends Controller{
   public function edit($id){
     $this->feed = EstadoEmpresa::findOrFail($id);
     if( $this->feed->user_id == $this->user->id ){
-      return view('feeds.edit', ['feed' => EstadoEmpresa::findOrFail($id), 'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
+
+      foreach($bannersRandomLeft = BannerData::orderByRaw('RAND()')->take(2)->get() as $key => $banner )
+        BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
+
+      return view('feeds.edit', ['feed' => EstadoEmpresa::findOrFail($id), 'bannersRandomLeft' => $bannersRandomLeft, 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
     }else{
       return $this->index();
     }
@@ -76,7 +80,11 @@ FeedController extends Controller{
     }
   }
   public function show($id){
-    return view('feeds.show', ['feed' => EstadoEmpresa::findOrFail($id), 'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user]);
+
+    foreach($bannersRandomLeft = BannerData::orderByRaw('RAND()')->take(2)->get() as $key => $banner )
+      BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
+
+    return view('feeds.show', ['feed' => EstadoEmpresa::findOrFail($id), 'bannersRandomLeft' => $bannersRandomLeft, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user]);
   }
   public function store(FeedCreateRequest $request){
 

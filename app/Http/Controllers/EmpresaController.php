@@ -163,6 +163,12 @@ class EmpresaController extends Controller{
   }
   public function show($id){
 
+    foreach($bannersRandomLeft = BannerData::orderByRaw('RAND()')->take(2)->get() as $key => $banner )
+      BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
+
+    foreach($bannersRandomCenter = BannerData::orderByRaw('RAND()')->take(3)->get() as $key => $banner )
+      BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
+
       $this->empresa = Empresa::find($id);
       if ($this->empresa) {
         //return $this->MostrarEmpresaPublica($this->empresa->nombre);
@@ -174,10 +180,10 @@ class EmpresaController extends Controller{
         $mapa = $this->empresa->gmaps;
 
         if($mapa){
-          return view('empresas.publicProfile', [ 'e' => $this->empresa , 'mapa' => $mapa, 'companyStatuses' => EstadoEmpresa::where('empresa_id', $this->empresa->id)->orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas, 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
+          return view('empresas.publicProfile', [ 'e' => $this->empresa , 'mapa' => $mapa, 'companyStatuses' => EstadoEmpresa::where('empresa_id', $this->empresa->id)->orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas, 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(),'bannersRandomLeft' => $bannersRandomLeft, 'bannersRandomCenter' => $bannersRandomCenter]);
         }else{
 
-          return view('empresas.publicProfile', [ 'e' => $this->empresa , 'companyStatuses' => EstadoEmpresa::where('empresa_id', $this->empresa->id)->orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas, 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
+          return view('empresas.publicProfile', [ 'e' => $this->empresa , 'companyStatuses' => EstadoEmpresa::where('empresa_id', $this->empresa->id)->orderBy('created_at', 'desc')->paginate(10), 'myCompanies' => $this->user->empresas, 'userSession' => $this->user, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(),'bannersRandomLeft' => $bannersRandomLeft, 'bannersRandomCenter' => $bannersRandomCenter]);
         }
 
 
@@ -246,7 +252,14 @@ class EmpresaController extends Controller{
   public function RaffleList($id){
     $this->empresa = Empresa::find($id);
     $this->user = User::find($this->empresa->user_id);
-    return view('empresas.raffleList', ['sorteos' => $this->user->sorteos()->get()->where('estado_sorteo', 'Activo'), 'empresa' => $this->empresa,  'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user, 'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(3)->get()]);
+
+    foreach($bannersRandomLeft = BannerData::orderByRaw('RAND()')->take(2)->get() as $key => $banner )
+      BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
+
+    foreach($bannersRandomCenter = BannerData::orderByRaw('RAND()')->take(3)->get() as $key => $banner )
+      BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
+
+    return view('empresas.raffleList', ['sorteos' => $this->user->sorteos()->get()->where('estado_sorteo', 'Activo'), 'empresa' => $this->empresa,  'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user, 'bannersRandomLeft' => $bannersRandomLeft, 'bannersRandomCenter' => $bannersRandomCenter]);
   }
   public function SolicitarEliminacion($id){
     if(isset($id)){
@@ -277,6 +290,9 @@ class EmpresaController extends Controller{
 
   public function searchCompanyByCity(Request $request){
 
+    foreach($bannersRandomLeft = BannerData::orderByRaw('RAND()')->take(2)->get() as $key => $banner )
+      BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
+
     if($request->ciudad!=''){
       //Ojo con esta linea de abajo, si los resultados superan los mil el paginador no funciona
       $empresas = Empresa::where('ciudad', '=', $request->ciudad)->paginate(1000);
@@ -286,7 +302,7 @@ class EmpresaController extends Controller{
         return Redirect::to('/empresas');
       }
 
-      return view('empresas.index', ['empresas' => $empresas, 'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get(),'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(),'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user]);
+      return view('empresas.index', ['empresas' => $empresas, 'bannersRandomLeft' => $bannersRandomLeft,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(),'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user]);
 
     }else{
       return $this->index();
@@ -295,6 +311,9 @@ class EmpresaController extends Controller{
   }
 
   public function BuscarEmpresas(Request $request){
+
+    foreach($bannersRandomLeft = BannerData::orderByRaw('RAND()')->take(2)->get() as $key => $banner )
+      BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
 
     $nombre = addslashes($request->nombre);
 
@@ -310,7 +329,7 @@ class EmpresaController extends Controller{
         return Redirect::to('/empresas');
       }else{
         Session::flash('message-warning', 'se encontraron '.count($empresas).' resultados');
-        return view('empresas.index', ['empresas' => $empresas, 'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get(),'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(),'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user]);
+        return view('empresas.index', ['empresas' => $empresas, 'bannersRandomLeft' => $bannersRandomLeft, 'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user]);
       }
 
     }else{
