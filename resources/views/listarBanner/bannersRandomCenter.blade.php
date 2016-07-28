@@ -24,7 +24,7 @@
 @if($key == 9)
 
   <div class="list-group-item">
-    <div align="middle" class="row">
+    <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <img id="firstBannerCenter" src="/img/users/{!!($bannersRandomCenter[1]->banner!='')?$bannersRandomCenter[1]->banner:'banner.png'!!}" alt="..." style="height: 50px;">
 
