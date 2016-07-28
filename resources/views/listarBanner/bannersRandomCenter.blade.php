@@ -2,7 +2,9 @@
   <div class="list-group-item">
     <div align="middle" class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <img id="firstBannerCenter" src="/img/users/{!!($bannersRandomCenter[0]->banner!='')?$bannersRandomCenter[0]->banner:'banner.png'!!}" alt="..." style="height: 50px;">
+        <a href="/empresas/{{$bannersRandomCenter[0]->empresa_id}}">
+          <img id="firstBannerCenter" src="/img/users/{!!($bannersRandomCenter[0]->banner!='')?$bannersRandomCenter[0]->banner:'banner.png'!!}" alt="..." style="height: 50px;border-radius: 5px;" >
+        </a>
         <a href="/empresas/{{$bannersRandomCenter[0]->empresa_id}}" class="btn btn-default btn-xs">
           ver perfil
         </a>
