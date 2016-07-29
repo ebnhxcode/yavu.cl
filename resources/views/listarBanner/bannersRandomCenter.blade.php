@@ -15,11 +15,15 @@
             </span>
           </a>
 
+
+
+
+
           <div class="softText-descriptions" style="padding-bottom: 5px;">
             {{ $bannersRandomCenter[0]->descripcion_banner }}
           </div>
 
-        </div><!-- /div .caption -->
+        </div><!-- /div .softText-descriptions-middle -->
 
       </div><!-- /col-xs12-sm12-md6-lg6 -->
     </div><!-- /div .row -->
