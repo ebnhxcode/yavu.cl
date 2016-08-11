@@ -16,7 +16,7 @@ class CreateVisitsTable extends Migration
             $table->increments('id');
             $table->string('user_id');
             $table->string('empresa_id');
-            $table->string('sexo');
+            $table->string('sexo');//sacar proximamente
             $table->timestamps();
         });
     }

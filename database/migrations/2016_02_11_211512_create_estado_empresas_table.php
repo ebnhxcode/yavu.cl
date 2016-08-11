@@ -8,8 +8,8 @@ class CreateEstadoEmpresasTable extends Migration
         Schema::dropIfExists('estado_empresas');
         Schema::create('estado_empresas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('user_id','20');
-            $table->string('empresa_id','20');
+            $table->string('user_id');//Se tiene que sacar luego
+            $table->string('empresa_id');
             $table->string('status', 500);            
             $table->timestamps();
         });
