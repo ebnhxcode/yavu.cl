@@ -7,7 +7,7 @@ use Doctrine\Common\Inflector\Inflector;
 class Pluralizer
 {
     /**
-     * Uncountable word indexPartial.
+     * Uncountable word forms.
      *
      * @var array
      */

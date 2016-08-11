@@ -358,7 +358,7 @@ class Store implements SessionInterface
         $input = $this->get('_old_input', []);
 
         // Input that is flashed to the session can be easily retrieved by the
-        // developer, making repopulating old indexPartial and the like much more
+        // developer, making repopulating old forms and the like much more
         // convenient, since the request's previous input is available.
         return Arr::get($input, $key, $default);
     }

@@ -322,15 +322,12 @@ if (! function_exists('env')) {
             case 'true':
             case '(true)':
                 return true;
-
             case 'false':
             case '(false)':
                 return false;
-
             case 'empty':
             case '(empty)':
                 return '';
-
             case 'null':
             case '(null)':
                 return;
@@ -430,7 +427,7 @@ if (! function_exists('logger')) {
 
 if (! function_exists('method_field')) {
     /**
-     * Generate a form field to spoof the HTTP verb used by indexPartial.
+     * Generate a form field to spoof the HTTP verb used by forms.
      *
      * @param  string  $method
      * @return string

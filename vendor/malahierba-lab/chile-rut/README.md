@@ -26,12 +26,24 @@ Para Laravel 4.2
 
 Luego carga el Service Provider dentro del arreglo *'providers'* del archivo *app/config/app.php*
 
+Para Laravel 5.1
+
+    Malahierba\ChileRut\ChileRutServiceProvider::class
+    
+Para Laravel 4.2
+
     'Malahierba\ChileRut\ChileRutServiceProvider'
 
 Opcionalmente (pero altamente recomendado) puedes crear un alias dentro del archivo *app/config/app.php* en el arreglo 'aliases' para poder invocar las funcionalidades directamente.
 
-    'RUT' => 'Malahierba\ChileRut\Facades\ChileRut'
+Para Laravel 5.1
 
+    'RUT' => Malahierba\ChileRut\Facades\ChileRut::class
+
+Para Laravel 4.2
+
+    'RUT' => 'Malahierba\ChileRut\Facades\ChileRut'
+    
 Si no deseas usar un Facade, sino la clase misma, no olvides incorporarlo en la clase donde desees usarlo:
 
 	use Malahierba\ChileRut\ChileRut;
@@ -42,7 +54,7 @@ Si no deseas usar un Facade, sino la clase misma, no olvides incorporarlo en la 
 
 Para validar un rut chileno simplemente usas: RUT::check($rut_a_validar). Ej:
 
-    if (RUT::check('12.345.678-9.))
+    if (RUT::check('12.345.678-9'))
       echo 'es verdadero';
     else
       echo 'es falso';
@@ -51,7 +63,7 @@ Recuerda que en caso de no usar el Facade, debes usar la clase misma:
 
     $chilerut = new ChileRut; //o \Malahierba\ChileRut\ChileRut en caso de que no hayas importado la clase
 
-    if ($chilerut::check('12.345.678-9.))
+    if ($chilerut::check('12.345.678-9'))
         echo 'es verdadero';
       else
         echo 'es falso';
