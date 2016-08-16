@@ -1,5 +1,7 @@
 <?php
 
+Route::get('test', 'SorteoController@test');
+
 /* Esto se borra */
 Route::get('i', 'UserController@selectInterestsForCreatedUser');
 Route::post('agregarinteres', 'UserController@addInterest');

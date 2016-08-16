@@ -37,6 +37,10 @@ class Sorteo extends Model{
     $this->attributes['fecha_inicio_sorteo'] = ;
   }
 */
+  public function participant_to_win_id(){
+    return $this->hasMany(ParticipanteSorteo::class, 'sorteo_id')->orderByRaw('RAND()')->take(1)->select('id');
+  }
+
   public function participants(){
     return $this->hasMany(ParticipanteSorteo::class, 'sorteo_id')->select('sorteo_id');
   }
