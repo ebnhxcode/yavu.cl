@@ -18,7 +18,10 @@ class Kernel extends ConsoleKernel{
 		$this->day = strlen(Carbon::now()->day)<2?'0'.Carbon::now()->day:Carbon::now()->day;
 		$this->month = strlen(Carbon::now()->month)<2?'0'.Carbon::now()->month:Carbon::now()->month;
 		$this->year = Carbon::now()->year;
-		$raffles = Sorteo::where('fecha_inicio_sorteo', $this->month.'/'.$this->day.'/'.$this->year)->where('estado_sorteo','Activo')->get();
+		$raffles = Sorteo::where('fecha_inicio_sorteo', $this->month.'/'.$this->day.'/'.$this->year)->where('estado_sorteo','Activo')->get(
+			);
+
+		Pop::create(['contenido'=>'hola'])->save();
 		
 		foreach ($raffles as $raffle){
 			$this->registerWinner($raffle->participant_to_win_id[0]->id );
