@@ -34,17 +34,6 @@ class SorteoController extends Controller{
 
 
   }
-
-  public function test(){
-
-       $this->day = strlen(Carbon::now()->day)<2?'0'.Carbon::now()->day:Carbon::now()->day;
-        $this->month = strlen(Carbon::now()->month)<2?'0'.Carbon::now()->month:Carbon::now()->month;
-        $this->year = Carbon::now()->year;
-        $raffles = Sorteo::where('fecha_inicio_sorteo', $this->month.'/'.$this->day.'/'.$this->year)->where('estado_sorteo','Activo')->get();
-
-    return view('sorteos.test', ['raffles' => $raffles ]);
-  }
-
   public function BuscarSorteos($nombre){
     if(isset($nombre)){
       $nombre = addslashes($nombre);

@@ -47,6 +47,7 @@
 <!-- Banner Random -->
 <div class="list-group">
   <div class="list-group-item list-heading">
+    <small class="" style="font-size: 0.7em;">EVENTOS</small>
   </div><!-- /div .list-group-item -->
   <div style="padding: 9px 9px 9px 9px;" class="list-group-item">
     <div class="row">
@@ -54,9 +55,13 @@
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
 
-            <a class="thumbnail">
-              <img class="img-responsive" id="ImagenPortada" src="/img/yavu015.png" alt="..." style="height: 170px;">
+            <a href="https://www.facebook.com/Bigcacho-Toto-254597678029937/" target="_blank" class="thumbnail">
+              <img class="img-responsive" id="ImagenPortada" src="/img/Events/1.png" alt="..." style="height: 170px;">
             </a><!-- /div .thumbnail -->
+ 
+            <div class="softText-descriptions">
+              Si deseas ver m&aacute;s informacion haz click en el banner.
+            </div>
 
             {{--
             <div class="caption">
