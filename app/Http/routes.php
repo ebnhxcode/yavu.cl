@@ -295,6 +295,7 @@ Route::get('faq','FrontController@faq');
 
 Route::get('main/sorteos/activos', 'FrontController@sorteosActivos');
 Route::get('main/sorteos/finalizados', 'FrontController@sorteosFinalizados');
+Route::get('main/sorteo/{id}', 'FrontController@sorteo');
 
 /*
 Route::get('sitemap', function(){

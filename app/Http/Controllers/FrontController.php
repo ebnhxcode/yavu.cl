@@ -41,6 +41,17 @@ class FrontController extends Controller{
   public function sorteosFinalizados(){
     return view('mainViews.sorteosFinalizados', ['sorteos'=>Sorteo::orderByRaw('RAND()')->where('estado_sorteo','Finalizado')->paginate(15)]);
   }
+  public function sorteo($id){
+    $this->sorteo = Sorteo::find(addslashes($id));
+    $winners = $this->sorteo->winners()->get();
+
+    if(count($winners)>0){
+      return view('mainViews.sorteo', ['sorteo' => $this->sorteo, 'winners' => $winners]);
+    }else{
+      return view('mainViews.sorteo', ['sorteo' => $this->sorteo]);
+    }
+
+  }
   public function terminos(){
     return view('mainViews.terminos');
   }

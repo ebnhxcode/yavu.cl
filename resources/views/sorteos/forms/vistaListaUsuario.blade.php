@@ -1,6 +1,5 @@
 <div class="list-group-item">
   <a href="/sorteos/ended" class="btn btn-default btn-xs text-danger">VER LISTA DE SORTEOS FINALIZADOS</a>
-  <span class="btn btn-xs btn-default" style="float:right;">NUEVO</span>
 </div>
 
 <div id="SorteoListThumb">

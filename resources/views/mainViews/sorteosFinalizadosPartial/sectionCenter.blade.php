@@ -1,6 +1,5 @@
 <div class="list-group-item">
-  <a href="/sorteos/ended" class="btn btn-default btn-xs text-danger">VER LISTA DE SORTEOS FINALIZADOS</a>
-  <span class="btn btn-xs btn-default" style="float:right;">NUEVO</span>
+  <a href="/main/sorteos/activos" class="btn btn-default btn-xs text-danger">VER LISTA DE SORTEOS ACTIVOS</a>
 </div>
 
 <div id="SorteoListThumb">
@@ -10,7 +9,7 @@
       <div class="list-group-item">
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
-            <a href="/empresas/{!! $sorteo->empresa_id !!}">
+            <a href="#!">
               <img data-toggle="tooltip" data-placement="top" title="{!! $sorteo->nombre_empresa !!}" class='media-object' src='/img/users/{!! ($companyProfileImage = $sorteo->companyAuthorRaffle->imagen_perfil)?$companyProfileImage:'usuario_nuevo.png' !!}' data-holder-rendered='true' style='width: 48px; height: 48px; border-radius: 10%; float:left;'/>
             </a>
           </div><!-- /div .col-xs12-sm12-md1-lg1 -->
@@ -25,10 +24,9 @@
                       <span class="glyphicon glyphicon-chevron-down"></span>
                     </button><!-- /div .btn .btn-default .btn-xs .dropdown-toggle -->
                     <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-                      <li><a href="{!! URL::to('empresas/'.$sorteo->empresa_id.'/sorteos') !!}">Ver m&aacute;s sorteos de {!! $sorteo->nombre_empresa !!}</a></li>
+                      {{-- <li><a href="{!! URL::to('empresas/'.$sorteo->empresa_id.'/sorteos') !!}">Ver m&aacute;s sorteos de {!! $sorteo->nombre_empresa !!}</a></li> --}}
                       <li>{!!link_to_route('sorteos.show', $title = 'Ver mas detalles', $parameters = $sorteo->id, $attributes = [])!!}</li>
-
-
+                      <li><a href="/main/sorteo/{{$sorteo->id}}">Ver m&aacute;s detalles</a></li>
 
                     </ul><!-- /ul .dropdown-menu -->
                   </div><!-- /div .dropup -->
@@ -38,16 +36,16 @@
 
 
                 <div>
-                  <h3><b><a style="padding-left: 5px;" href="/sorteos/{!! $sorteo->id !!}"><span>{!!$sorteo->nombre_sorteo!!}</span><br></a></b></h3>
+                  <h3><b><a style="padding-left: 5px;" href="/main/sorteo/{!! $sorteo->id !!}"><span>{!!$sorteo->nombre_sorteo!!}</span><br></a></b></h3>
                 </div>
 
 
                 <div class="">
-                  <a style="padding-left: 5px;" href="/sorteos/{!! $sorteo->id !!}"><span>{!!$sorteo->descripcion!!}</span></a>
+                  <a style="padding-left: 5px;" href="/main/sorteo/{!! $sorteo->id !!}"><span>{!!$sorteo->descripcion!!}</span></a>
                 </div>
                 <br>
                 <div class=" softText-descriptions-middle">
-                  <a style="padding-left: 5px;" href="/sorteos/{!! $sorteo->id !!}">
+                  <a style="padding-left: 5px;" href="/main/sorteo/{!! $sorteo->id !!}">
                     <small> Este sorteo se realiz&oacute; el d&iacute;a
                       <abbr class='timeago text-danger' id='timeago{!! $sorteo->id !!}' value='{!! $sorteo->fecha_inicio_sorteo !!}' title='{!! $sorteo->fecha_inicio_sorteo !!}'>{!! $sorteo->fecha_inicio_sorteo !!}</abbr>
                     </small>
