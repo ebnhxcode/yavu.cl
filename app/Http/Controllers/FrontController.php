@@ -6,7 +6,8 @@ use yavu\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use yavu\Http\Controllers\Controller;
 use yavu\Empresa;
-use yavu\User;
+use yavu\Sorteo;
+use yavu\BannerData;
 
 class FrontController extends Controller{
   public function __construct(){
@@ -33,6 +34,12 @@ class FrontController extends Controller{
   public function loginMassive(){
     DBRegisters::create(['counter'=>1])->save();
     return view('mainViews.login');
+  }
+  public function sorteosActivos(){
+    return view('mainViews.sorteosActivos', ['sorteos'=>Sorteo::orderByRaw('RAND()')->where('estado_sorteo','Activo')->paginate(15)]);
+  }
+  public function sorteosFinalizados(){
+    return view('mainViews.sorteosFinalizados', ['sorteos'=>Sorteo::orderByRaw('RAND()')->where('estado_sorteo','Finalizado')->paginate(15)]);
   }
   public function terminos(){
     return view('mainViews.terminos');

@@ -19,8 +19,6 @@
         <input id="token" type="hidden" name="_token" value="{!! csrf_token() !!}">
         <button class="btn btn-success btn-md UsarTicket" value="{!! $sorteo->id !!}" type="button" data-dismiss="modal">Participar</button>
       </div><!-- /div -->
-
-      <hr>
     @else
       <div class="thumbnail">
         <img id='ImagenPerfil' src='/img/users/{{ ($winnerInfo = $winners[0]->winnerInfo)?($wip = $winnerInfo->imagen_perfil!='')?$wip:'usuario_nuevo.png':''}}' class='center-block'>
@@ -32,7 +30,7 @@
 
       <!-- #refact plz -->
     @if($sorteo->user_id == Auth::user()->get()->id && !isset($winners))
-      <a id="SortearGanador" data-toggle="modal"  class="btn btn-primary btn-sm" value="{!! $sorteo->id !!}">Sortear ganador</a>
+      {{-- <a id="SortearGanador" data-toggle="modal"  class="btn btn-primary btn-sm" value="{!! $sorteo->id !!}">Sortear ganador</a> --}}
       @include('sorteos.forms.modalSortearParticipante')
       @if($sorteo->estado_sorteo == 'Pendiente')
       {!!link_to_route('sorteos.edit', $title = 'Editar', $parameters = $sorteo->id, $attributes = ['class'=>'btn btn-primary btn-sm'])!!}

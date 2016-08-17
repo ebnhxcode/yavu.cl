@@ -292,6 +292,10 @@ Route::get('listaempresas/{empresa}','EmpresaController@ListaEmpresas');
 Route::get('nosotros','FrontController@nosotros');
 Route::get('terminos','FrontController@terminos');
 Route::get('faq','FrontController@faq');
+
+Route::get('main/sorteos/activos', 'FrontController@sorteosActivos');
+Route::get('main/sorteos/finalizados', 'FrontController@sorteosFinalizados');
+
 /*
 Route::get('sitemap', function(){
 	return view('sitemap');

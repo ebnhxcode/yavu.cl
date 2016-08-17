@@ -35,23 +35,29 @@
   @endif
 </div><!-- /div .list-group -->
 
-
-@if(count($userSession->userCompanies)>0)
-  @if($userSession->userCompanies[0]->id==$sorteo->empresa_id)
-    <div class="list-group">
-      <div class="list-group-item"><small class="text-success">ADMINISTRADOR: </small>
-        <div style="font-size:0.75em;float:right;" class="text-info">
-          info
+@if(isset($winners))
+  @if(count($userSession->userCompanies)>0)
+    @if($userSession->userCompanies[0]->id==$sorteo->empresa_id)
+      <div class="list-group">
+        <div class="list-group-item"><small class="text-success">ADMINISTRADOR: </small>
+          <div style="font-size:0.75em;float:right;" class="text-info">
+            {{-- info --}}
+          </div>
+          <br><small class="softText-descriptions">Contactar con el ganador</small>
         </div>
-        <br><small class="softText-descriptions">Contactar con el ganador</small></div>
-      <div class="list-group-item">
-        @if($winnerInfo = $winner->winnerInfo)
-          {!! $winnerInfo->email !!}<br>
-          {!! $winnerInfo->fono !!}<br>
-          {!! $winnerInfo->fono_2 !!}<br>
-        @endif
+        <div class="list-group-item">
+
+            @foreach($winners as $key => $winner)
+              @if($winnerInfo = $winner->winnerInfo)
+                {!! $winnerInfo->email !!}<br>
+                {!! $winnerInfo->fono !!}<br>
+                {!! $winnerInfo->fono_2 !!}<br>
+              @endif
+            @endforeach
+
+        </div>
       </div>
-    </div>
+    @endif
   @endif
 @endif
 

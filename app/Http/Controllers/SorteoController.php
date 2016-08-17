@@ -195,34 +195,16 @@ class SorteoController extends Controller{
   }
   public function show($id){
 
-
     $winners = $this->sorteo->winners()->get();
+
     if(count($winners)>0){
-
-        /*
-        $date = new Carbon($this->sorteo->fecha_inicio_sorteo.' 21:00:00');
-        */
-
-        //$date2 = new Carbon($sorteo->fecha_inicio_sorteo);
-        //dd(strtotime($sorteo->fecha_inicio_sorteo));
-        //dd(strtotime($date).'/'.strtotime($date2).'/'.strtotime($date)-strtotime($date2));
-
-        /*
-        $this->sorteo->created_at = round((strtotime($date)-strtotime(Carbon::now())));
-        */
-
-        /*
-        dd(strtotime(Carbon::now())-strtotime($sorteo->created_at));
-        dd(Carbon::createFromTimeStamp(strtotime($sorteo->created_at))->diffForHumans());
-        dd(Carbon::now().$sorteo->created_at);
-        */
-
-      return view('sorteos.show', ['sorteo' => $this->sorteo, 'winners' => $this->sorteo->winners()->get(), 'userSession' => $this->user, 'sorteos'=>Sorteo::orderByRaw('RAND()')->where('estado_sorteo','Activo')->get()]);
+      return view('sorteos.show', ['sorteo' => $this->sorteo, 'winners' => $winners, 'userSession' => $this->user, 'sorteos'=>Sorteo::orderByRaw('RAND()')->where('estado_sorteo','Activo')->get()]);
     }else{
       return view('sorteos.show', ['sorteo' => $this->sorteo, 'userSession' => $this->user,'sorteos'=>Sorteo::orderByRaw('RAND()')->where('estado_sorteo','Activo')->get()]);
     }
 
   }
+
   public function VisualizarEmpresaSorteoPendiente(Request $request){
     if($request->ajax()){
       return response()->json(Empresa::findOrFail(addslashes($request->id)));
