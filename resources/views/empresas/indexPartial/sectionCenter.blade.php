@@ -1,6 +1,5 @@
 <div id="EmpresaListThumb">
   <div class="list-group">
-
     @foreach($empresas as $key => $empresa)
       <div class="list-group-item">
         <div class="row">
@@ -11,7 +10,7 @@
             </a><!-- /a .thumbnail -->
           </div><!-- /div col-lg6-md6-sm12-xs12 -->
 
-        <div class="col-xs-7 col-sm-7 col-md-8 col-lg-8">
+          <div class="col-xs-7 col-sm-7 col-md-8 col-lg-8">
 
             <div style="float: right;" class="dropup">
 
@@ -25,34 +24,34 @@
 
             </div><!-- /div .dropup -->
 
-            <strong><a class="" href="/empresas/{!!$empresa->id!!}" style="color: #3C5B28;">{!! $empresa->nombre!!}</a></strong><br/>
+            <b><a class="" href="/empresas/{!!$empresa->id!!}" style="color: #3C5B28;">{!! $empresa->nombre!!}</a></b><br/>
             <div class="softText-descriptions">
 
-              <strong>Ciudad :</strong> {!!$empresa->ciudad!!}<br>
-              <strong>Contacto :<strong><a href="mailto:#">{!!$empresa->email!!}</a></strong><br>
-                <strong>Fono :</strong> <abbr title="Phone"></abbr> {!!$empresa->fono!!}</strong><br>
+              <b>Ciudad :</b> {!!$empresa->ciudad!!}<br>
+              <b>Contacto :</b> <b> <a href="mailto:#">{!!$empresa->email!!}</a></b><br>
+              {{--<b>Fono :</b> <abbr title="Phone"></abbr> {!!$empresa->fono!!}<br>--}}
               {{($fCounts=round( count($empresa->followers)*(int)("1.".rand(1,9999)) ) )}} seguidor{{($fCounts>1||$fCounts==0?'es':'')}}.<br>
-                {{--
-                <!-- Ocultaremos las visitas para no entregar datos que no necesiten los usuarios, este es un dato enfocado a las empresas -->
-                {!! round(count($empresa->visits)*3.6) !!} visitas<br>
-                --}}
 
               {{--
               <span class="btn btn-primary btn-xs">{!! count($userSession->follow($empresa->id)->get())>0?'Seguida':'seguir' !!}</span>
               --}}
 
-            </div>
+            </div><!-- /div .softText-descriptions -->
             <br/>
 
-            {{--
-            <span class="btn btn-xs btn-warning">
-              <small>
-                <span class="request" value="{{$empresa->id}}">
-                  Pedir sorteos |<b> {{count($empresa->raffleRequests)}}</b><b> peticiones</b>
-                </span>
-              </small>
+            <span class="btn btn-xs btn-warning request" value="{{$empresa->id}}">
+              {{(count( $userSession->hasRequested(addslashes($empresa->id)) )>0)?'Pedido':'Pedir sorteo'}}
+              · <span> {{ $rR = count($empresa->raffleRequests) }} </span>
             </span>
-            --}}
+
+
+
+
+
+
+
+
+
 
             @if($empresa->sorteos()->count()>0)
             <div class="btn-group" role="group" aria-label="...">
@@ -90,11 +89,12 @@
     @endforeach
   </div><!-- /div .list-group -->
 </div> <!-- /div #EmpresaListThumb -->
-{{--
+
+
 <script>
   $('.request').click(function(){
     var token = $("#token").val();
-
+    var companyRequested = this;
     var route = "http://localhost:8000/requestaraffle";
     $.ajax({
       url: route,
@@ -105,11 +105,16 @@
         empresa_id: $(this).attr('value')
       },
       success:function(requestCount){
-        console.log($(this));
+
+        if (parseInt(requestCount.requests) > 0) {
+          $(companyRequested).text("Pedido · " + requestCount.requests).fadeIn(2000);
+        }else {
+          $(companyRequested).text("Ya enviaste una petición");
+        }
+
       },
     });
     return true;
 
   });
 </script>
---}}

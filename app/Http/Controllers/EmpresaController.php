@@ -120,27 +120,21 @@ class EmpresaController extends Controller{
   public function RequestARaffle(Request $request){
 
 
-    if(count($this->user->hasRequested(addslashes($request->empresa_id)))>0){
-      $raffleRequest = RaffleRequest::where('user_id',$this->user->id)->where('empresa_id', addslashes($request->empresa_id))->get();
-      return $raffleRequest;
+    if(count( $this->user->hasRequested(addslashes($request->empresa_id)) )>0){
+      return response()->json(['requests'=>0]);
     }else{
+
       RaffleRequest::create([
         'user_id'=>$this->user->id,
         'empresa_id'=>addslashes($request->empresa_id),
         'created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),
         'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())
       ]);
+
     }
 
     return response()->json(['requests'=>RaffleRequest::where('empresa_id', addslashes($request->empresa_id))->count('id')]);
 
-    /*
-    if(){
-
-    }
-    */
-    //
-    return $request->empresa_id;
   }
 
   public function store(EmpresaCreateRequest $request){
