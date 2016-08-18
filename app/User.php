@@ -98,7 +98,7 @@ class User extends Model implements AuthenticatableContract,
 	}
 
   public function followedCompanies(){
-    return $this->hasMany(Follower::class, 'user_id')->orderByRaw('RAND()')->take(30);
+    return $this->hasMany(Follower::class, 'user_id');
   }
 
   public function countTotalFollowedCompanies(){
