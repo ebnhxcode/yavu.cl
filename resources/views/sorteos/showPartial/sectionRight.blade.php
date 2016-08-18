@@ -10,9 +10,11 @@
     @if($raffleStatus != 'Finalizado')
       <div class="softText-descriptions-middle">
         {!!$sorteo->descripcion!!}<br>
-        Dentro de
-        <abbr class='timeago text-danger' id='timeago{!! $sorteo->id !!}' value='{!! $sorteo->fecha_inicio_sorteo !!}' title='{!! $sorteo->fecha_inicio_sorteo !!}'>{!! $sorteo->fecha_inicio_sorteo !!}</abbr><br>
-        A las 21:00:00 horas.
+
+        @if(date('m/d/Y') == $sorteo->fecha_inicio_sorteo)
+          Quedan : {{9-date('h')}} horas aprox
+        @endif
+
       </div><!-- /div .softText-descriptions-middle -->
       <br>
       <div>

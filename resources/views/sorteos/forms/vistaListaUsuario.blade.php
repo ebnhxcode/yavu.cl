@@ -50,8 +50,14 @@
 
                 <div class=" softText-descriptions-middle">
                   <a style="padding-left: 5px;" href="/sorteos/{!! $sorteo->id !!}">
-                    <small> Este sorteo se realizara dentro de
-                      <abbr class='timeago text-danger' id='timeago{!! $sorteo->id !!}' value='{!! $sorteo->fecha_inicio_sorteo !!}' title='{!! $sorteo->fecha_inicio_sorteo !!}'>{!! $sorteo->fecha_inicio_sorteo !!}</abbr>
+                    <small>
+                      Este sorteo se realizar&aacute;
+                      @if(date('m/d/Y') != $sorteo->fecha_inicio_sorteo)
+                        en <abbr class='timeago text-danger' id='timeago{!! $sorteo->id !!}' value='{!! $sorteo->fecha_inicio_sorteo !!}' title='{!! $sorteo->fecha_inicio_sorteo !!}'>{!! $sorteo->fecha_inicio_sorteo !!}</abbr> m&aacute;s
+                      @else
+                        Hoy
+                      @endif
+                       a las 21:00 hrs
                     </small>
                   </a>
                 </div>

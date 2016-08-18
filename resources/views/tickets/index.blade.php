@@ -21,6 +21,8 @@
         </div><!-- /div .list-group -->
 			</div><!-- /div .col-md3-sm12-xs12 -->
       <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+
+        {{--
         <div class="list-group">
           <div class="list-group-item">
             <span data-toggle="tooltip" data-placement="left" title="Tickets!" style="font-family: yavu_font;font-size: 1.6em;color:#57E5DB;">E</span>&nbsp;
@@ -38,6 +40,8 @@
           </div><!-- /div .list-group-item -->
         </div><!-- /div .list-group -->
 			</div><!-- /div .col-md6-sm12-xs12 -->
+      --}}
+
 
       <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
         @include('sorteos.showPartial.sectionLeft')

@@ -117,6 +117,7 @@
 
 							</small>
 						</div>
+						{{--
 						<div class="navbar-brand visible-xs" align="center">
 
 							<small>
@@ -128,6 +129,7 @@
 							</small>
 
 						</div>
+						--}}
 						<!-- DEPRECATED #2 -->
 					@endif
 
@@ -220,6 +222,7 @@
 
 									</small>
 								</div>
+								{{--
 								<div class="navbar-brand" align="center">
 
 									<small>
@@ -231,6 +234,7 @@
 									</small>
 
 								</div>
+								 --}}
 							{!!Form::hidden('user_id', Auth::user()->get()->id, ['id'=>'user_id'])!!}
 							{!!Form::hidden('idUltimaNotificacion', "0", ['id'=>'idUltimaNotificacion'])!!}
 

@@ -121,7 +121,7 @@ class SorteoController extends Controller{
 
   public function ended(){
     $this->registro_tickets = $this->user->registro_tickets()->orderBy('created_at', 'desc')->limit('20')->get();
-    return view('sorteos.ended', ['sorteos'=>Sorteo::where('estado_sorteo','Finalizado')->orderBy('created_at', 'desc')->paginate(6),'rtickets' => $this->registro_tickets, 'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
+    return view('sorteos.ended', ['sorteos'=>Sorteo::where('estado_sorteo','Finalizado')->orderBy('id', 'desc')->paginate(6),'rtickets' => $this->registro_tickets, 'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
   }
 
   public function find(Route $route){
@@ -144,7 +144,7 @@ class SorteoController extends Controller{
       BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
 
     $this->registro_tickets = $this->user->registro_tickets()->orderBy('created_at', 'desc')->limit('20')->get();
-    return view('sorteos.index', ['sorteos'=>Sorteo::orderByRaw('RAND()')->where('estado_sorteo','Activo')->paginate(15), 'rtickets' => $this->registro_tickets, 'bannersRandomLeft' => $bannersRandomLeft, 'bannersRandomCenter' => $bannersRandomCenter, 'userSession' => $this->user,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
+    return view('sorteos.index', ['sorteos'=>Sorteo::where('estado_sorteo','Activo')->orderBy('id', 'desc')->paginate(15), 'rtickets' => $this->registro_tickets, 'bannersRandomLeft' => $bannersRandomLeft, 'bannersRandomCenter' => $bannersRandomCenter, 'userSession' => $this->user,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
   }
   public function MostrarGanador($ganador){
     $ganador = ParticipanteSorteo::findOrFail($ganador)->users;
