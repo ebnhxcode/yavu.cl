@@ -36,10 +36,10 @@ class FrontController extends Controller{
     return view('mainViews.login');
   }
   public function sorteosActivos(){
-    return view('mainViews.sorteosActivos', ['sorteos'=>Sorteo::orderByRaw('RAND()')->where('estado_sorteo','Activo')->paginate(15)]);
+    return view('mainViews.sorteosActivos', ['sorteos'=>Sorteo::orderBy('id', 'desc')->where('estado_sorteo','Activo')->paginate(15)]);
   }
   public function sorteosFinalizados(){
-    return view('mainViews.sorteosFinalizados', ['sorteos'=>Sorteo::orderByRaw('RAND()')->where('estado_sorteo','Finalizado')->paginate(15)]);
+    return view('mainViews.sorteosFinalizados', ['sorteos'=>Sorteo::orderBy('id', 'desc')->where('estado_sorteo','Finalizado')->paginate(15)]);
   }
   public function sorteo($id){
     $this->sorteo = Sorteo::find(addslashes($id));
