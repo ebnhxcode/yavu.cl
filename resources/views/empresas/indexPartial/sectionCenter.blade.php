@@ -44,7 +44,15 @@
               · <span> {{ $rR = count($empresa->raffleRequests) }} </span>
             </span>
 
-            
+
+
+
+
+
+
+
+
+
             @if($empresa->sorteos()->count()>0)
             <div class="btn-group" role="group" aria-label="...">
               <a href="{!! URL::to('/empresas/'.$empresa->id.'/sorteos') !!}" class="btn btn-success btn-xs">
