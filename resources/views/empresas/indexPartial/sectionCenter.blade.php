@@ -40,19 +40,11 @@
             <br/>
 
             <span class="btn btn-xs btn-warning request" value="{{$empresa->id}}">
-              {{(count( $userSession->hasRequested(addslashes($empresa->id)) )>0)?'Pedido':'Pedir sorteo'}}
+              {{(count( $userSession->hasRequested(addslashes($empresa->id)) )>0)?'Petición enviada':'Pedir sorteo'}}
               · <span> {{ $rR = count($empresa->raffleRequests) }} </span>
             </span>
 
-
-
-
-
-
-
-
-
-
+            
             @if($empresa->sorteos()->count()>0)
             <div class="btn-group" role="group" aria-label="...">
               <a href="{!! URL::to('/empresas/'.$empresa->id.'/sorteos') !!}" class="btn btn-success btn-xs">

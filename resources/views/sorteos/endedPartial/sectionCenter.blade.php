@@ -40,13 +40,13 @@
                     <h3><b><a style="padding-left: 5px;" href="/sorteos/{!! $sorteo->id !!}"><span>{!!$sorteo->nombre_sorteo!!}</span><br></a></b></h3>
                   </div>
 
-
-                  <div class="">
-                    <a style="padding-left: 5px;" href="/sorteos/{!! $sorteo->id !!}"><span>{!!$sorteo->descripcion!!}</span><br></a>
-                  </div>
-
-
-
+                  <small>
+                    Este sorteo se realiz&oacute;
+                    @if(date('m/d/Y') != $sorteo->fecha_inicio_sorteo)
+                      hace <abbr class='timeago text-danger' id='timeago{!! $sorteo->id !!}' value='{!! $sorteo->fecha_inicio_sorteo !!}' title='{!! $sorteo->fecha_inicio_sorteo !!}'>{!! $sorteo->fecha_inicio_sorteo !!}</abbr>
+                    @endif
+                  </small>
+                  <br><br>
                   @foreach($sorteo->winners as $key => $winner)
                     @if($key == 0)
                       <img src="{!! asset('img/yavu019.png') !!}" width="20" alt=""/>

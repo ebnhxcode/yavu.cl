@@ -43,10 +43,11 @@
                   <h3><b><a style="padding-left: 5px;" href="/sorteos/{!! $sorteo->id !!}"><span>{!!$sorteo->nombre_sorteo!!}</span><br></a></b></h3>
                 </div>
 
-
+                {{--
                 <div class="">
                   <a style="padding-left: 5px;" href="/sorteos/{!! $sorteo->id !!}"><span>{!!$sorteo->descripcion!!}</span><br></a>
                 </div>
+                --}}
 
                 <div class=" softText-descriptions-middle">
                   <a style="padding-left: 5px;" href="/sorteos/{!! $sorteo->id !!}">
