@@ -41,7 +41,6 @@ class AdminController extends Controller{
   //return $this->user;
   }
 
-
   /*TEMPLATES --borrar despues*/
 
   public function template1(){
@@ -138,18 +137,7 @@ class AdminController extends Controller{
   }
 
   public function indexbanner(){
-
-      // return view('admins.banneradmin.index', ['empresas' => BannerData::where('estado_banner', 'Creado')->get()]);
-
-      $empresas = DB::table('empresas')
-          ->select(['empresas.nombre', 'banner_data.id', 'banner_data.banner', 'banner_data.titulo_banner','banner_data.descripcion_banner', 'banner_data.estado_banner'])
-          ->where('estado_banner', '=', 'Creado')
-          ->join('banner_data', 'banner_data.id', '=', 'empresas.id')
-          ->get();
-
-
-
-          return view('admins.banneradmin.index', compact('empresas'));
+    return view('admins.banneradmin.index', ['banners' => BannerData::all()]);
   }
 
 
