@@ -29,7 +29,6 @@
     @endif
   </div><!-- /div .list-group-item -->
 </div> <!-- /list group -->
-
 <div class="list-group">
   <div class="list-group-item">
     <span data-toggle="tooltip" data-placement="left" title="Tickets!" style="font-family: yavu_font;font-size: 1.6em;color:#57E5DB;">E</span>&nbsp;
@@ -39,7 +38,7 @@
     <div class="softText-descriptions">
       Selecciona la cantidad de tickets y c&oacute;mpralos
     </div>
-    {!!Form::select('size', [1=>1,2=>2,3=>3,4=>4,5=>5,6=>6,7=>7,8=>8,9=>9,10=>10], null, ['id' => 'cantidadtickets', 'class' => 'form-control input-sm'])!!}
+    {!!Form::select('size', [1=>1,2=>2,3=>3,4=>4,5=>5,6=>6,7=>7,8=>8,9=>9,10=>10], null, ['id' => 'cantidadcompra', 'class' => 'form-control input-sm'])!!}
     <br>
     <button type="button" style="width: 100%" id='comprar' class="btn btn-primary btn-sm comprar">Comprar ticket</button>
     <input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />

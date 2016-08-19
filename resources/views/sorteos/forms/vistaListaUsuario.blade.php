@@ -42,7 +42,6 @@
                 <div>
                   <h3><b><a style="padding-left: 5px;" href="/sorteos/{!! $sorteo->id !!}"><span>{!!$sorteo->nombre_sorteo!!}</span><br></a></b></h3>
                 </div>
-
                 {{--
                 <div class="">
                   <a style="padding-left: 5px;" href="/sorteos/{!! $sorteo->id !!}"><span>{!!$sorteo->descripcion!!}</span><br></a>
@@ -63,10 +62,23 @@
                   </a>
                 </div>
 
-                <div class="">
-                  <button class="btn btn-success btn-sm UsarTicket" value="{!! $sorteo->id !!}" type="button"   style="display: none;" data-dismiss="modal">PARTICIPAR</button>
+                <div style="padding-top: 10px;">
+                  <button class="btn btn-info btn-sm UsarTicket" value="{!! $sorteo->id !!}" type="button"   style="display: none;" data-dismiss="modal">
+                    <span data-toggle="tooltip" data-placement="right" title="Tickets" style="font-family: yavu_font;font-size: 1em;color:#57E5DB;">E</span>&nbsp;
+                    <b>·</b>
+                    USAR TICKET
+                  </button><!-- /button .btn .btn-success .btn-sm .UsarTicket -->
                   <br>
-                </div><!-- /div .semi-amplio -->
+                </div><!-- /div -->
+
+                <div style="padding-top: 10px;">
+                  <button class="btn btn-warning btn-sm UsarYavuCoins" value="{!! $sorteo->id !!}" type="button"   style="display: none;" data-dismiss="modal">
+                    <span data-toggle="tooltip" data-placement="right" title="Yavucoins" style="font-family: yavu_font;font-size: 1em;color: #FFE955;">J</span>&nbsp;
+                    <b>·</b>
+                    USAR YAVÜCOINS
+                  </button><!-- /button .btn .btn-success .btn-sm .UsarTicket -->
+                  <br>
+                </div><!-- /div -->
 
                 <!--
                 <div class="amplio">

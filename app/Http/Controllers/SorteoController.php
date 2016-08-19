@@ -248,24 +248,24 @@ previa confirmación por parte del equipo <a href="/">Yavu.cl</a>. Miralo <a hre
     Session::flash('message-warning', '¡Crea tu propio sorteo y promociona tu empresa!');
     return Redirect::to("/dashboard");
   }
-  public function UsarTicket($user_id, $sorteo_id){
+  public function UsarTicket(Request $request){
       if($this->getMyTickets() > 0){
 
 
-        $this->sorteo = Sorteo::findOrFail(addslashes($sorteo_id));
+        $this->sorteo = Sorteo::findOrFail(addslashes($request->sorteo_id));
 
         if($this->sorteo->user_id != $this->user->id){
 
           if($this->sorteo->estado_sorteo == 'Activo'){
 
-            $this->ticket = new Ticket(['user_id' => $user_id,'cantidad_tickets' => -1,'monto' => -100,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
+            $this->ticket = new Ticket(['user_id' => $this->user->id,'cantidad_tickets' => -1,'monto' => -100,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
             $this->user->tickets()->save($this->ticket);
 
             //Ahora rindo el ticket
 
-            $this->sorteo = Sorteo::findOrFail($sorteo_id);
+            $this->sorteo = Sorteo::findOrFail($request->sorteo_id);
 
-            $this->participante_sorteos = new ParticipanteSorteo(['user_id' => $user_id,'sorteo_id' => $sorteo_id,'nombre_sorteo' => $this->sorteo->nombre_sorteo,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
+            $this->participante_sorteos = new ParticipanteSorteo(['user_id' => $this->user->id,'sorteo_id' => $request->sorteo_id,'nombre_sorteo' => $this->sorteo->nombre_sorteo,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
             $this->user->participante_sorteos()->save($this->participante_sorteos);
             return 'Exito';
 

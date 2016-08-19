@@ -152,7 +152,7 @@ Route::group(['middleware' => 'user'], function(){
   Route::post('efectuarcompraticket', 'TicketController@EfectuarCompra');
   Route::get('verificartickets/{user_id}', 'TicketController@VerificarTickets')->where('user_id', '[0-9]+');
   Route::get('contartickets', 'TicketController@ContarTickets');
-  Route::get('usarticket/{user_id}/{sorteo_id}', 'SorteoController@UsarTicket')->where(['user_id', 'sorteo_id'], '[0-9]+');
+  Route::post('usarticket/', 'SorteoController@UsarTicket');
   /*Gestión de tickets*/
 
   /*Gestión de Notificaciones -> Pops*/

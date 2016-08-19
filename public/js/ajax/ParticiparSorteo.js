@@ -53,7 +53,12 @@ $(document).ready(function(){
 		UsarTicket($(this).val());
 		VerificarTickets();
 		ContarTickets();
-		ContarNotificaciones();
+		//ContarNotificaciones();
+		return true;
+	});
+	$(".UsarYavuCoins").click(function(){
+		UsarYavuCoins($(this).val());
+		//ContarNotificaciones();
 		return true;
 	});
 /*SELECTORES*/
@@ -260,10 +265,40 @@ $(document).ready(function(){
 		return true;
 	}
 
-	//Esto deberia insertar un ticket en negativo y dejarlo rendido para el sorteo correspondiente.
 	function UsarTicket(sorteo_id){
+		var route = "http://localhost:8000/usarticket/";
+		var token = $("#token").val();
+		$.ajax({
+			url: route,
+			headers: {'X-CSRF-TOKEN': token},
+			type: 'POST',
+			dataType: 'json',
+			data: {
+				sorteo_id: sorteo_id
+			},
+			success:function(msj){
+				$(".UsarTicket").css({width:'100%'});
+				$('#msjs'+sorteo_id).text('');
+				$('#msjs'+sorteo_id).append('<button type="button" class="close" data-dismiss="alert" aria-label="Close">'+
+					'<span aria-hidden="true">&times;</span>'+
+					'</button>');
+				$('#msjs'+sorteo_id).append(msj[1]).fadeIn();
+			},
+			error:function(msj){
+				//console.log(msj.responseText);
+				$('#msjs'+sorteo_id).text('');
+				$('#msjs'+sorteo_id).append('<button type="button" class="close" data-dismiss="alert" aria-label="Close">'+
+					'<span aria-hidden="true">&times;</span>'+
+				'</button>');
+				$('#msjs'+sorteo_id).append(msj.responseText).fadeIn();
+			}
+		});
+		return true;
+	}
+
+	function UsarYavuCoins(sorteo_id){
 		$('#myModal').modal('hide');
-		var user_id = $("#user_id").val();	
+		var user_id = $("#user_id").val();
 		var route = "http://localhost:8000/usarticket/"+user_id+"/"+sorteo_id;
 		$.ajax({
 			url: route,
@@ -287,12 +322,13 @@ $(document).ready(function(){
 				$('#msjs'+sorteo_id).text('');
 				$('#msjs'+sorteo_id).append('<button type="button" class="close" data-dismiss="alert" aria-label="Close">'+
 					'<span aria-hidden="true">&times;</span>'+
-				'</button>');
+					'</button>');
 				$('#msjs'+sorteo_id).append(msj.responseText).fadeIn();
 			}
 		});
 		return true;
 	}
+
 
 	function RegistrarParticipanteGanador(Ganador){
 		var route = "http://localhost:8000/registrarganadorsorteo/"+Ganador;
@@ -313,7 +349,7 @@ $(document).ready(function(){
 		var user_id = $("#user_id").val();
 		var route = "http://localhost:8000/verificartickets/"+user_id;
 		$.get(route, function(res){
-			if(res>0){
+			if(parseInt(res)>0){
 				$(".UsarTicket").removeAttr('style');
 				$(".UsarTicket").css({width:'100%'});
 			}else{
@@ -342,12 +378,7 @@ $(document).ready(function(){
 		var route = "http://localhost:8000/contartickets";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
-			$("#CantidadTickets").text("");
-			$(res).each(function(key,value){
-				if(parseInt(value)>0){
-					$("#CantidadTickets").text(formatNumber.new(value, "# "));
-				}
-			});
+			$(".CantidadTickets").text(formatNumber.new(parseInt(res), "# "));
 		});
 		return true;
 	}	

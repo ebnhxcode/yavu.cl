@@ -26,11 +26,13 @@ $(document).ready(function(){
 /*MÉTODOS CONSTRUCTORES*/
 
 /*SELECTORES*/
+	/*
 	$("#CantidadTickets").change(function(e){
 		CalcularTotalCompra(this.value);
 		e.preventDefault();
 		return true;
 	});
+	*/
 
 	$("#comprar").click(function(e){
 		EfectuarCompra();
@@ -55,9 +57,9 @@ $(document).ready(function(){
 		return true;
 	}
 
-	function EfectuarCompra(cantidadtickets){
-		cantidadtickets = (cantidadtickets === undefined) ? $("#cantidadtickets").val() : cantidadtickets;
-    if (cantidadtickets > 0){
+	function EfectuarCompra(cantidadcompra){
+		cantidadcompra = (cantidadcompra === undefined) ? $("#cantidadcompra").val() : cantidadcompra;
+    if (cantidadcompra > 0){
 			var user_id = $("#user_id").val();
 			var token = $("#token").val();
 			var route = "http://localhost:8000/efectuarcompraticket";
@@ -68,13 +70,14 @@ $(document).ready(function(){
 				dataType: 'json',
 				data: {
 					user_id: user_id,
-					cantidadtickets: cantidadtickets
+					cantidadtickets: cantidadcompra
 				},
 				success:function(data){
           if (data === 'Sin saldo para el servicio'){
-            $('#CantidadTickets').fadeIn(100).html(data);
+            $('.CantidadTickets').fadeIn(100).html(data);
+						$(".CantidadTickets").text(formatNumber.new(0, "# "));
           }else{
-            if(data==='Exito'){$("#UsarTicket").fadeIn(100);}
+            if(data==='Exito'){$(".UsarTicket").fadeIn(100);}
             ContarCoins();
             ContarTickets();
           }
@@ -125,12 +128,7 @@ $(document).ready(function(){
 		var route = "http://localhost:8000/contartickets";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
-			$("#CantidadTickets").text("");
-			$(res).each(function(key,value){
-				if(parseInt(value)>0){
-					$("#CantidadTickets").text(formatNumber.new(value, "# "));
-				}
-			});
+			$(".CantidadTickets").text(formatNumber.new(parseInt(res), "# "));
 		});
 		return true;
 	}
@@ -139,7 +137,7 @@ $(document).ready(function(){
 		var user_id = $("#user_id").val();
 		var route = "http://localhost:8000/verificartickets/"+user_id;
 		$.get(route, function(res){
-			console.log(res);
+			//console.log(res);
 			if(res>0){
 				$(".UsarTicket").removeAttr('style');
 				$(".UsarTicket").css({width:'100%'});

@@ -122,7 +122,7 @@
 								<!-- <img width="22px" src="/img/newGraphics/neo_tickets01_32x32.gif" alt=""> -->
 								<a href="/tickets">
 									<span data-toggle="tooltip" data-placement="right" title="Tickets" style="font-family: yavu_font;font-size: 1.6em;color:#57E5DB;">E</span>
-									<span id="CantidadTickets" style="float:right;font-size:0.5em;	box-shadow: 0px 3px 3px 1px rgba(31, 31, 31, 0.51);" class="label label-info CantidadTickets">{{isset($userSession)?'$ '.number_format($userSession->tickets()->sum('cantidad_tickets') , 0, '', ','):'0'}}</span>
+									<span id="CantidadTickets" style="float:right;font-size:0.5em;	box-shadow: 0px 3px 3px 1px rgba(31, 31, 31, 0.51);" class="label label-info CantidadTickets">{{isset($userSession)?'# '.number_format($userSession->tickets()->sum('cantidad_tickets') , 0, '', ','):'0'}}</span>
 								</a>
 							</small>
 						</div>
@@ -211,7 +211,7 @@
 									<small>
 										<!-- <img width="" src="/img/newGraphics/neo_tickets02_16x16.png" alt=""> -->
 
-										<span data-toggle="tooltip" data-placement="right" title="Yavucoins" style="font-family: yavu_font;font-size: 1.6em;color: #FFE955;">J</span>
+										<span data-toggle="tooltip" data-placement="right" title="Yavucoins" style="font-family: yavu_font;font-size: 1.6em;color: #FFE955;">J</span>&nbsp;
 										{{-- $ {{money_format('%(#10n', count($userSession->registro_coins)) . "\n"}} --}}
 
 										<span id="" style="float:right;box-shadow: 0px 2px 3px 1px rgba(31, 31, 31, 0.51);" class="label label-warning CantidadCoins">{{isset($userSession)?'$ '.number_format($userSession->coins()->sum('cantidad') , 0, '', ','):''}}</span>
@@ -219,12 +219,15 @@
 									</small>
 								</div>
 								<div class="navbar-brand hidden-xs" align="center">
+									&nbsp;&nbsp;
+								</div>
+								<div class="navbar-brand hidden-xs" align="center">
 
 									<small>
 										<!-- <img width="22px" src="/img/newGraphics/neo_tickets01_32x32.gif" alt=""> -->
 										<a href="/tickets">
-											<span data-toggle="tooltip" data-placement="right" title="Tickets" style="font-family: yavu_font;font-size: 1.6em;color:#57E5DB;">E</span>
-											<span id="CantidadTickets" style="float:right;box-shadow: 0px 2px 3px 1px rgba(31, 31, 31, 0.51);" class="label label-info CantidadTickets">{{isset($userSession)?'$ '.number_format($userSession->tickets()->sum('cantidad_tickets') , 0, '', ','):'0'}}</span>
+											<span data-toggle="tooltip" data-placement="right" title="Tickets" style="font-family: yavu_font;font-size: 1.6em;color:#57E5DB;">E</span>&nbsp;
+											<span id="CantidadTickets" style="float:right;box-shadow: 0px 2px 3px 1px rgba(31, 31, 31, 0.51);" class="label label-info CantidadTickets">{{isset($userSession)?'# '.number_format($userSession->tickets()->sum('cantidad_tickets') , 0, '', ','):'0'}}<span>
 										</a>
 									</small>
 
