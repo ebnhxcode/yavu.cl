@@ -45,7 +45,7 @@ $(document).ready(function(){
 			var user_id = $("#user_id").val();
 			var empresa_id = $("#empresa_id").val();
 			var token = $("#token").val();
-			var route = "http://yavu.cl/estadoempresa";
+			var route = "http://186.64.123.143/estadoempresa";
 			$.ajax({
 				url: route,
 				headers: {'X-CSRF-TOKEN': token},
@@ -103,7 +103,7 @@ $(document).ready(function(){
 	function ActualizarEstados(){
 		var EstadosUsuario = $("#Estados").val(); 
 		$("#Estados").value = "";
-		var route = "http://yavu.cl/estadosusuario";
+		var route = "http://186.64.123.143/estadosusuario";
 		var user_id = $("#user_id");
 		var Contador = 0;
 		$.get(route, function(res){
@@ -117,7 +117,7 @@ $(document).ready(function(){
 					"<div id='status' class='list-group'>"
 						+"<div class='list-group-item'>"	
 							+"<h4><a href='/profile' style='color:#3C5B28;'>"
-								+"<img class='media-object' src='http://yavu.cl/images/user.png' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
+								+"<img class='media-object' src='http://186.64.123.143/images/user.png' data-holder-rendered='true' style='width: 32px; height: 32px;'/>"
 								+value.nombre+" "+value.apellido
 							+"</a></h4>"
 							+"<small>"
@@ -140,7 +140,7 @@ $(document).ready(function(){
 
 	function CargarEstados(){
 		var Estados = $("#Estados");
-		var route = "http://yavu.cl/cargarfeeds/"+$("#idUltima").val();
+		var route = "http://186.64.123.143/cargarfeeds/"+$("#idUltima").val();
 		var Contador = 0;
 		var user_id = $("#user_id").val();
 		$.get(route, function(res){
@@ -230,7 +230,7 @@ $(document).ready(function(){
 /*
   function ContarInteracciones(status_id){
     status_id = status_id;
-    var route = "http://yavu.cl/contarinteracciones/"+status_id;
+    var route = "http://186.64.123.143/contarinteracciones/"+status_id;
     var user_id = $("#user_id").val();
     var Contador = 0;
     $.get(route, function(res){
@@ -251,7 +251,7 @@ $(document).ready(function(){
 	function ContarEstados(){
 		var CargarEstados = $("#CargarEstados");
 		var EstadosNuevos = ("#EstadosNuevos");
-		var route = "http://yavu.cl/contarestados";
+		var route = "http://186.64.123.143/contarestados";
 		var user_id = $("#user_id");
 		var Contador = 0;
 		$.get(route, function(res){
