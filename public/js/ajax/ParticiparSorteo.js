@@ -5,6 +5,7 @@ $(document).ready(function(){
 
 /*MÉTODOS CONSTRUCTORES*/
 	VerificarTickets();
+	VerificarYavuCoins();
 	var formatNumber = {
 		separador: ".", // separador para los miles
 		sepDecimal: ',', // separador para los decimales
@@ -58,6 +59,7 @@ $(document).ready(function(){
 	});
 	$(".UsarYavuCoins").click(function(){
 		UsarYavuCoins($(this).val());
+		ContarCoins();
 		//ContarNotificaciones();
 		return true;
 	});
@@ -297,20 +299,18 @@ $(document).ready(function(){
 	}
 
 	function UsarYavuCoins(sorteo_id){
-		$('#myModal').modal('hide');
-		var user_id = $("#user_id").val();
-		var route = "http://localhost:8000/usarticket/"+user_id+"/"+sorteo_id;
+		var route = "http://localhost:8000/usaryavucoins";
+		var token = $("#token").val();
 		$.ajax({
 			url: route,
 			headers: {'X-CSRF-TOKEN': token},
-			type: 'GET',
+			type: 'POST',
 			dataType: 'json',
 			data: {
-				user_id: user_id,
 				sorteo_id: sorteo_id
 			},
 			success:function(msj){
-				$(".UsarTicket").css({width:'100%'});
+				$(".UsarYavuCoins").css({width:'100%'});
 				$('#msjs'+sorteo_id).text('');
 				$('#msjs'+sorteo_id).append('<button type="button" class="close" data-dismiss="alert" aria-label="Close">'+
 					'<span aria-hidden="true">&times;</span>'+
@@ -353,8 +353,23 @@ $(document).ready(function(){
 				$(".UsarTicket").removeAttr('style');
 				$(".UsarTicket").css({width:'100%'});
 			}else{
-				$(".UsarTicket").fadeOut(100);
+				$(".UsarTicket").fadeOut(1000);
 				$(".UsarTicket").css({width:'100%'});//.addClass({width:'100%'});
+			}
+		});
+		return true;
+	}
+
+	function VerificarYavuCoins(){
+		var user_id = $("#user_id").val();
+		var route = "http://localhost:8000/verificaryavucoins";
+		$.get(route, function(res){
+			if(parseInt(res)>0){
+				$(".UsarYavuCoins").removeAttr('style');
+				$(".UsarYavuCoins").css({width:'100%'});
+			}else{
+				$(".UsarYavuCoins").fadeOut(1000);
+				$(".UsarYavuCoins").css({width:'100%'});//.addClass({width:'100%'});
 			}
 		});
 		return true;

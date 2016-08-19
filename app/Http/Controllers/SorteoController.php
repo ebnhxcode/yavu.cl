@@ -289,4 +289,50 @@ previa confirmación por parte del equipo <a href="/">Yavu.cl</a>. Miralo <a hre
       }
       return 'hola '.$user_id;
     }
+
+    public function UsarYavuCoins(Request $request){
+      if($this->getMyCoins() > 0){
+
+
+        $this->sorteo = Sorteo::findOrFail(addslashes($request->sorteo_id));
+
+        if($this->sorteo->user_id != $this->user->id){
+
+          if($this->sorteo->estado_sorteo == 'Activo'){
+
+            //Descuento el ticket
+            RegistroCoin::create(['user_id' => $this->user->id,'motivo' => 'Participacion con uso de coins','cantidad' => -100,'created_at' => Carbon::now(),'updated_at' => Carbon::now()])->save();
+
+            $this->ticket = new Ticket(['user_id' => $this->user->id,'cantidad_tickets' => 0,'monto' => -100,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
+            $this->user->tickets()->save($this->ticket);
+
+            //Ahora rindo el ticket
+
+            $this->sorteo = Sorteo::findOrFail($request->sorteo_id);
+
+            $this->participante_sorteos = new ParticipanteSorteo(['user_id' => $this->user->id,'sorteo_id' => $request->sorteo_id,'nombre_sorteo' => $this->sorteo->nombre_sorteo,'created_at' => Carbon::now(),'updated_at' => Carbon::now()]);
+            $this->user->participante_sorteos()->save($this->participante_sorteos);
+            return 'Exito';
+
+          }else if($this->sorteo->estado_sorteo == 'Pendiente'){
+            return response()->json(['Mensaje : ', 'Este sorteo aun no permite el uso de tickets']);
+          }else{
+            return response()->json(['Mensaje : ', 'Este sorteo ya no permite el uso de tickets']);
+          }
+
+        }else{
+          return 'No puedes participar en tu propio sorteo.';
+        }
+
+        //Ahora notifico
+        //$this->pop = new Pop(['user_id' => $user_id,'empresa_id' => 1,'tipo' => 'ticket','estado'   => 'pendiente','contenido' => 'Haz usado un ticket!','created_at' => strftime( "%Y-%m-%d-%H-%M-%S", time()),'updated_at' => strftime( "%Y-%m-%d-%H-%M-%S", time())]);
+        //$this->user->pops()->save($this->pop);
+
+
+      }else{
+        return 'sin saldo de yavücoins';
+      }
+      return 'hola '.$user_id;
+    }
+
 }

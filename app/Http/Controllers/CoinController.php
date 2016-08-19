@@ -68,4 +68,7 @@ class CoinController extends Controller{
     Session::flash('message-warning', 'No se ha encontrado la página que buscabas.');
     return Redirect::to("/dashboard");
   }
+  public function VerificarYavuCoins(Request $request){
+    return response()->json($this->user->coins->sum('cantidad'));
+  }
 }

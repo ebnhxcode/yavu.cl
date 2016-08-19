@@ -151,8 +151,10 @@ Route::group(['middleware' => 'user'], function(){
   Route::resource('tickets','TicketController');
   Route::post('efectuarcompraticket', 'TicketController@EfectuarCompra');
   Route::get('verificartickets/{user_id}', 'TicketController@VerificarTickets')->where('user_id', '[0-9]+');
+  Route::get('verificaryavucoins', 'CoinController@VerificarYavuCoins');
   Route::get('contartickets', 'TicketController@ContarTickets');
   Route::post('usarticket/', 'SorteoController@UsarTicket');
+  Route::post('usaryavucoins', 'SorteoController@UsarYavuCoins');
   /*Gestión de tickets*/
 
   /*Gestión de Notificaciones -> Pops*/

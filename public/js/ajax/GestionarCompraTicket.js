@@ -74,10 +74,10 @@ $(document).ready(function(){
 				},
 				success:function(data){
           if (data === 'Sin saldo para el servicio'){
-            $('.CantidadTickets').fadeIn(100).html(data);
+            $('.CantidadTickets').fadeIn(2000).html(data);
 						$(".CantidadTickets").text(formatNumber.new(0, "# "));
           }else{
-            if(data==='Exito'){$(".UsarTicket").fadeIn(100);}
+            if(data==='Exito'){$(".UsarTicket").fadeIn(2000);}
             ContarCoins();
             ContarTickets();
           }
@@ -142,7 +142,7 @@ $(document).ready(function(){
 				$(".UsarTicket").removeAttr('style');
 				$(".UsarTicket").css({width:'100%'});
 			}else{
-				$(".UsarTicket").fadeOut(100);
+				$(".UsarTicket").fadeOut(1200);
 				$(".UsarTicket").css({width:'100%'});
 			}
 		});
