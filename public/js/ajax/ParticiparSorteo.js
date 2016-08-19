@@ -268,7 +268,7 @@ $(document).ready(function(){
 	}
 
 	function UsarTicket(sorteo_id){
-		var route = "http://186.64.123.143/usarticket/";
+		var route = "http://186.64.123.143/usarticket";
 		var token = $("#token").val();
 		$.ajax({
 			url: route,
