@@ -65,7 +65,7 @@
           </div>
           <div>
             <label class="text-muted">Total Coins Otorgadas:<br></label>
-            <var>{!! (int) $statistics[4] * 10 !!}</var>
+            <var>{!! (int) $statistics[4] * 40 !!}</var>
           </div>
         </div>
       </div>
