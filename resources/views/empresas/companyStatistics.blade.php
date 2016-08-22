@@ -2,119 +2,29 @@
 @section('title') Company statistics @stop
 @extends('layouts.front')
 @section('content')
-
   <div class="jumbotron">
     <div class="contentMiddle">
-
-      @include('alerts.allAlerts')
-
       <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-          <div>
-            <div>
-              <div class="list-group">
 
-                @include('miniDashboard.miniDashboard')
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          @include('alerts.allAlerts')
+        </div><!-- /div col-md12-sm12-xs12 -->
 
-              </div> <!-- /list group -->
-            </div> <!-- /panel body -->
-          </div> <!-- /panel -->
-        </div>
-
-        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
           <div class="list-group">
-            <div class="list-group-item list-group-item-success">
-              ESTADISTICAS B&Aacute;SICAS
-            </div>
-              <br>
-            <div class="list-group-item">
+            @include('miniDashboard.miniDashboard')
+          </div> <!-- /div .list-group -->
+        </div><!-- /div col-lg3-md3-sm3-xs12 -->
 
-            VISITAS <i class="glyphicon glyphicon-eye-open"></i>
-            <hr>
-              <div class="row">
-               
-                <div class="col-sm-6">
-                  <div class="hero-widget well well-sm">
-                    <div>
-                     <i class="glyphicon glyphicon-eye-open"></i>
-                    </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          @include('empresas.companyStatisticsPartial.sectionCenter')
+        </div><!-- /div col-lg6-md6-sm6-xs12 -->
 
-                  <div>
-                    <label class="text-muted">Total de visitas:<br></label>
-                    <var>{!! $statistics[3] !!}</var>
-                  </div>
-                </div>
-                </div>
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+          @include('empresas.companyStatisticsPartial.sectionRight')
+        </div><!-- /div col-lg3-md3-sm3-xs12 -->
 
-                <div class="col-sm-6">
-                  <div class="hero-widget well well-sm">
-                    <div>
-                      <i class="glyphicon glyphicon-user"></i>
-                    </div>
-                      <div>
-                        <label class="text-muted">Total de visitas por sexo:<br></label>
-                            <div>
-                              <var>Visitas de sexo Masculino : {!! $statistics[0] !!}</var><br>
-                              <var>Visitas de sexo Femenino: {!! $statistics[1] !!}</var><br>
-                              <var>Visitas sin sexo definido : {!! $statistics[2] !!}</var>                              
-                            </div>
-                      </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="list-group-item">
-            ALCANCE <i class="glyphicon glyphicon-plane"></i>
-            <hr>
-              <div class="row">
-                <div class="col-sm-12">
-                  <div class="hero-widget well well-sm">
-                    <div>
-                     <i class="glyphicon glyphicon-plane"></i>
-                    </div>
-                  <div>
-                    <label class="text-muted">Total de alcance publicitario:<br></label>
-                    <var>{!! $statistics[4] !!}</var>
-                  </div>
-                </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="list-group-item">
-            BENEFICIOS OTORGADOS <i class="glyphicon glyphicon-ok" ></i>
-            <hr>
-              <div class="row">
-                <div class="col-sm-12">
-                  <div class="hero-widget well well-sm">
-                    <div>
-                     <i class="glyphicon glyphicon-ok"></i>
-                    </div>
-                  <div>
-                    <label class="text-muted">Total Coins Otorgadas:<br></label>
-                    <var>{!! (int) $statistics[4] * 10 !!}</var>
-                  </div>
-                </div>
-                </div>
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-
-                  
-
-
-
+      </div><!-- /div .row -->
+    </div><!-- /div .contentMiddle -->
+  </div><!-- /div .jumbotron -->
 @stop

@@ -87,7 +87,7 @@ class EmpresaController extends Controller{
     return Redirect::to('/');
   }
 
-  public function EstadisticasDeMiEmpresa(){
+  public function EstadisticasDeMiEmpresa($id){
     $this->empresa = Empresa::where('user_id', $this->user->id)->get();
     $this->data = $this->empresa[0]->visits()->get();
     $this->cMasculino = 0; $this->cFemenino = 0; $this->cSinDefinir = 0;
@@ -111,9 +111,8 @@ class EmpresaController extends Controller{
       3 => $this->cMasculino+$this->cFemenino+$this->cSinDefinir,
       4 => $this->coinsOtorgadas,
     ];
-
     ///dd( $this->statistics );
-    return view('empresas.companyStatistics', ['statistics' => $this->statistics, 'userSession' => $this->user]);
+    return view('empresas.companyStatistics', ['statistics'=>$this->statistics, 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);
 
   }
 

@@ -249,13 +249,18 @@
 								  @if(isset($userSession))
 									@foreach($userSession->userCompanies as $company)
 									  <li>
-										<a href="{!!URL::to('/empresas/'.$company->id)!!}">
-										  <small class="softText">Ver perfil de</small>
-										  <img id="ImagenPerfil" src="/img/users/{!!($company->imagen_perfil!='')?$company->imagen_perfil:'banner.png'!!}" alt="..." style="width: 30px; height: 30px; border-radius: 10%;">
-										  <strong>{!! $company->nombre !!}</strong><br/>
-
-										</a>
+											<a href="{!!URL::to('/empresas/'.$company->id)!!}">
+												<small class="softText">Ver perfil de</small>
+												<img id="ImagenPerfil" src="/img/users/{!!($company->imagen_perfil!='')?$company->imagen_perfil:'banner.png'!!}" alt="..." style="width: 30px; height: 30px; border-radius: 10%;">
+												<strong>{!! $company->nombre !!}</strong><br/>
+	
+											</a>
 									  </li>
+										<li>
+											<a href="{{url('/estadisticas/'.$company->id)}}">
+												<small>Estad&iacute;sticas de mi empresa</small>
+											</a>
+										</li>
 									@endforeach
 								  @endif
 									<li role="separator" class="divider"></li>
