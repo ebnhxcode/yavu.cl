@@ -95,7 +95,7 @@
   $('.request').click(function(){
     var token = $("#token").val();
     var companyRequested = this;
-    var route = "http://localhost:8000/requestaraffle";
+    var route = "http://186.64.123.143/requestaraffle";
     $.ajax({
       url: route,
       headers: {'X-CSRF-TOKEN': token},
