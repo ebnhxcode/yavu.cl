@@ -112,9 +112,29 @@ class EmpresaController extends Controller{
       4 => $this->coinsOtorgadas,
     ];
     ///dd( $this->statistics );
-    return view('empresas.companyStatistics', ['statistics'=>$this->statistics, 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);
+    return view('empresas.companyStatistics', ['statisticType' => 'followersStatistics', 'statistics'=>$this->statistics, 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);
 
   }
+
+  public function visitsStatistics($id){
+    return view('empresas.companyStatistics', ['statisticType' => 'visitsStatistics', 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);
+  }
+  public function rafflesRequestsStatistics($id){
+    return view('empresas.companyStatistics', ['statisticType' => 'rafflesRequestsStatistics', 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);
+  }
+  public function feedsStatistics($id){
+    return view('empresas.companyStatistics', ['statisticType' => 'feedsStatistics', 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);
+  }
+  public function bannersDisplaysStatistics($id){
+    return view('empresas.companyStatistics', ['statisticType' => 'bannersDisplaysStatistics', 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);
+  }
+  public function followersStatistics($id){
+    return view('empresas.companyStatistics', ['statisticType' => 'followersStatistics', 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);
+  }
+  public function chargesStatistics($id){
+    return view('empresas.companyStatistics', ['statisticType' => 'chargesStatistics', 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);
+  }
+
 
   public function RequestARaffle(Request $request){
 

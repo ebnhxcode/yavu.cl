@@ -89,6 +89,12 @@ Route::group(['middleware' => 'user'], function(){
 
   /*Gestión de Empresas*/
   Route::get('estadisticas/{id}', 'EmpresaController@EstadisticasDeMiEmpresa');
+  Route::get('estadisticas/{id}/followers', 'EmpresaController@followersStatistics');
+  Route::get('estadisticas/{id}/visits', 'EmpresaController@visitsStatistics');
+  Route::get('estadisticas/{id}/raffles-requests', 'EmpresaController@rafflesRequestsStatistics');
+  Route::get('estadisticas/{id}/feeds', 'EmpresaController@feedsStatistics');
+  Route::get('estadisticas/{id}/banners', 'EmpresaController@bannersDisplaysStatistics');
+  Route::get('estadisticas/{id}/charges', 'EmpresaController@chargesStatistics');
   //Route::get('sorteosempresa' ,'EmpresaController@SorteosEmpresa');
   Route::resource('empresas','EmpresaController');
   Route::get('empresa/{empresa}/', 'EmpresaController@MostrarEmpresaPublica');

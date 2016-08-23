@@ -67,10 +67,6 @@ class Empresa extends Model implements AuthenticatableContract,
       return $this->hasMany(Follower::class, 'empresa_id');
     }
 
-    public function ff(){
-      return $this->hasMany(Follower::class, 'empresa_id');
-    }
-
     public function feeds(){
       return $this->hasMany(EstadoEmpresa::class, 'empresa_id');
     }
@@ -90,7 +86,7 @@ class Empresa extends Model implements AuthenticatableContract,
         return $this->hasMany(Visit::class, 'empresa_id');
     }
     public function otherVisits(){
-        return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', '!=','Masculino')->where('sexo', '!=','Masculino');
+        return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', '!=','Masculino')->where('sexo', '!=','Femenino');
     }
     public function menVisits(){
         return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', 'Masculino');

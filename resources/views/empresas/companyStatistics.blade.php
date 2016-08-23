@@ -17,7 +17,7 @@
         </div><!-- /div col-lg3-md3-sm3-xs12 -->
 
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-          @include('empresas.companyStatisticsPartial.sectionCenter')
+          @include('empresas.companyStatisticsPartial.statisticsTypesPartial.'.$statisticType)
         </div><!-- /div col-lg6-md6-sm6-xs12 -->
 
         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
