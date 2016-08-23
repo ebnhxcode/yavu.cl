@@ -5,7 +5,5 @@
       <img width='32' style="border-radius: 10%;" id='ImagenPerfil' src='/img/users/{!! isset($userCompany)?($userCompany->imagen_perfil!='')?$userCompany->imagen_perfil:'banner.png':'banner.png' !!}'>
       <b>{{$userCompany->nombre}}</b>
     </a>
-  </div>
-
-
-</div>
+  </div><!-- /div .list-group-item -->
+</div><!-- /div .list-group -->

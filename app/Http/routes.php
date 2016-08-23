@@ -88,7 +88,7 @@ Route::group(['middleware' => 'user'], function(){
 
 
   /*Gestión de Empresas*/
-  Route::get('estadisticas/{id}', 'EmpresaController@EstadisticasDeMiEmpresa');
+  Route::get('estadisticas/{id}', 'EmpresaController@followersStatistics');
   Route::get('estadisticas/{id}/followers', 'EmpresaController@followersStatistics');
   Route::get('estadisticas/{id}/visits', 'EmpresaController@visitsStatistics');
   Route::get('estadisticas/{id}/raffles-requests', 'EmpresaController@rafflesRequestsStatistics');

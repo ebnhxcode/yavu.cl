@@ -87,7 +87,7 @@ class EmpresaController extends Controller{
     return Redirect::to('/');
   }
 
-  public function EstadisticasDeMiEmpresa($id){
+  /*public function EstadisticasDeMiEmpresa($id){
     $this->empresa = Empresa::where('user_id', $this->user->id)->get();
     $this->data = $this->empresa[0]->visits()->get();
     $this->cMasculino = 0; $this->cFemenino = 0; $this->cSinDefinir = 0;
@@ -114,7 +114,7 @@ class EmpresaController extends Controller{
     ///dd( $this->statistics );
     return view('empresas.companyStatistics', ['statisticType' => 'followersStatistics', 'statistics'=>$this->statistics, 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);
 
-  }
+  }*/
 
   public function visitsStatistics($id){
     return view('empresas.companyStatistics', ['statisticType' => 'visitsStatistics', 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);
@@ -129,7 +129,9 @@ class EmpresaController extends Controller{
     return view('empresas.companyStatistics', ['statisticType' => 'bannersDisplaysStatistics', 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);
   }
   public function followersStatistics($id){
-    return view('empresas.companyStatistics', ['statisticType' => 'followersStatistics', 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);
+    //falta validar si el usuario realmente tiene empresa sino arrojará error
+    return view('empresas.companyStatistics', ['statisticType' => 'followersStatistics', 'userCompany' => $this->user->empresas[0],
+      'userSession' => $this->user, 'categories' => CategoryList::all()]);
   }
   public function chargesStatistics($id){
     return view('empresas.companyStatistics', ['statisticType' => 'chargesStatistics', 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);

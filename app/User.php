@@ -89,6 +89,10 @@ class User extends Model implements AuthenticatableContract,
 		return $this->hasMany(RaffleRequest::class, 'user_id')->select('id')->where('empresa_id', $empresa_id)->get();
 	}
 
+	public function interests(){
+		return $this->hasMany(UserInterest::class, 'user_id');
+	}
+
 	public function coinsRewarded(){
 		return $this->hasMany(InteraccionEstado::class, 'user_id');
 	}
