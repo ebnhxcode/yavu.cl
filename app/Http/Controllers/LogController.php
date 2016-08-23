@@ -36,7 +36,7 @@ class LogController extends Controller{
       if( $fechaRegistro != $fechaActual ){
         DB::table('registro_coins')->insert(
           ['user_id'    => $this->user->id,
-          'cantidad'    => '100',
+          'cantidad'    => '2000',
           'motivo'      => 'Inicio sesión',
           'created_at'  => strftime( "%Y-%m-%d-%H-%M-%S", time()),
           'updated_at'  => strftime( "%Y-%m-%d-%H-%M-%S", time())]

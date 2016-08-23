@@ -48,14 +48,27 @@ class Empresa extends Model implements AuthenticatableContract,
         
         \Storage::disk('local')->put($name, \File::get($imagen_portada));
     }
+
+    public function banners(){
+      return $this->hasMany(BannerData::class, 'empresa_id');
+    }
+
+    public function charges(){
+      return $this->hasMany(InteraccionEstado::class, 'empresa_id');
+    }
+
     public function user(){
-        return $this->belongsTo(User::class);
+      return $this->belongsTo(User::class);
     }
     public function gmaps(){
-        return $this->hasOne('yavu\Gmap');
+      return $this->hasOne('yavu\Gmap');
     }
     public function followers(){
-        return $this->hasMany(Follower::class, 'empresa_id');
+      return $this->hasMany(Follower::class, 'empresa_id');
+    }
+
+    public function feeds(){
+      return $this->hasMany(EstadoEmpresa::class, 'empresa_id');
     }
 
     public function isFollowedBy($user_id){
@@ -70,8 +83,19 @@ class Empresa extends Model implements AuthenticatableContract,
     }
 
     public function visits(){
-        return $this->hasMany(Visit::class);
+        return $this->hasMany(Visit::class, 'empresa_id');
     }
+    public function otherVisits(){
+        return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', '!=','Masculino')->where('sexo', '!=','Femenino');
+    }
+    public function menVisits(){
+        return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', 'Masculino');
+    }
+
+    public function womenVisits(){
+        return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', 'Femenino');
+    }
+
 
     public function coins_otorgadas(){
         return $this->hasMany(InteraccionEstado::class, 'empresa_id');

@@ -10,4 +10,9 @@ class UserInterest extends Model
   protected $fillable = [
     'user_id', 'categorylist_id',
   ];
+
+  public function categoryList(){
+    return $this->belongsTo(CategoryList::class, 'categorylist_id');
+  }
+
 }

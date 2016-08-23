@@ -13,7 +13,10 @@ class Follower extends Model
   }
 
 	public function getUserFollow(){
-		return $this->belongsTo(User::class, 'user_id')->select('id', 'nombre', 'imagen_perfil');
+		return $this->belongsTo(User::class, 'user_id')->select('id', 'nombre', 'apellido', 'imagen_perfil');
+	}
+	public function usersFollow(){
+		return $this->belongsToMany(User::class, 'user_id')->select('id', 'nombre', 'imagen_perfil');
 	}
 
 }

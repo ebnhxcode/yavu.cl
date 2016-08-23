@@ -15,9 +15,7 @@ class BannerData extends Model
   }	
 
   public function linksBannerData (){
-
-  	return $this->hasMany(LinkBannerData::class, 'banner_data_id'); 
-
+  	return $this->hasMany(LinkBannerData::class, 'banner_data_id');
   }
 
   public function companyId(){

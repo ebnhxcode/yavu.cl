@@ -140,11 +140,12 @@
             </div><!-- /div .list-group -->
           </div><!-- /div .col-md4-sm4-xs4 -->
 
+
           @if(count($userSession->empresas)>0)
             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-              <div class="list-group" >
+              <div class="list-group">
                 <div align="center">
-                  <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/estadisticasdemiempresa')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
+                  <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/estadisticas/'.$userSession->empresas[0]->id)!!}" style="text-align:center;" class="list-group-item list-group-item-info">
                   <span>
                     <img width="80%" src= "{!!URL::to('img/dash/icono_informe01.png')!!}"/>
                   </span>

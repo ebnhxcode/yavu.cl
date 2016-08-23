@@ -87,7 +87,7 @@ class EmpresaController extends Controller{
     return Redirect::to('/');
   }
 
-  public function EstadisticasDeMiEmpresa(){
+  /*public function EstadisticasDeMiEmpresa($id){
     $this->empresa = Empresa::where('user_id', $this->user->id)->get();
     $this->data = $this->empresa[0]->visits()->get();
     $this->cMasculino = 0; $this->cFemenino = 0; $this->cSinDefinir = 0;
@@ -111,11 +111,32 @@ class EmpresaController extends Controller{
       3 => $this->cMasculino+$this->cFemenino+$this->cSinDefinir,
       4 => $this->coinsOtorgadas,
     ];
-
     ///dd( $this->statistics );
-    return view('empresas.companyStatistics', ['statistics' => $this->statistics, 'userSession' => $this->user]);
+    return view('empresas.companyStatistics', ['statisticType' => 'followersStatistics', 'statistics'=>$this->statistics, 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);
 
+  }*/
+
+  public function visitsStatistics($id){
+    return view('empresas.companyStatistics', ['statisticType' => 'visitsStatistics', 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);
   }
+  public function rafflesRequestsStatistics($id){
+    return view('empresas.companyStatistics', ['statisticType' => 'rafflesRequestsStatistics', 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);
+  }
+  public function feedsStatistics($id){
+    return view('empresas.companyStatistics', ['statisticType' => 'feedsStatistics', 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);
+  }
+  public function bannersDisplaysStatistics($id){
+    return view('empresas.companyStatistics', ['statisticType' => 'bannersDisplaysStatistics', 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);
+  }
+  public function followersStatistics($id){
+    //falta validar si el usuario realmente tiene empresa sino arrojará error
+    return view('empresas.companyStatistics', ['statisticType' => 'followersStatistics', 'userCompany' => $this->user->empresas[0],
+      'userSession' => $this->user, 'categories' => CategoryList::all()]);
+  }
+  public function chargesStatistics($id){
+    return view('empresas.companyStatistics', ['statisticType' => 'chargesStatistics', 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);
+  }
+
 
   public function RequestARaffle(Request $request){
 
