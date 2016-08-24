@@ -8,7 +8,4 @@ class CategoryList extends Model{
   protected $table = "category_lists";
   protected $fillable = ['category','description'];
 
-  public function categorizedUsers(){
-    return $this->hasMany(UserInterest::class, 'categorylist_id');
-  }
 }
