@@ -19,4 +19,11 @@ class Follower extends Model
 		return $this->belongsToMany(User::class, 'user_id')->select('id', 'nombre', 'imagen_perfil');
 	}
 
+	public function interestedIn($category_id){
+		return $this->hasOne(UserInterest::class, 'user_id')->select('id')->where('categorylist_id', $category_id)->get();
+	}
+
+	public function participatedIn($raffle_id){
+		return $this->hasMany(ParticipanteSorteo::class, 'user_id')->select('id', 'user_id')->where('sorteo_id', $raffle_id)->get();
+	}
 }
