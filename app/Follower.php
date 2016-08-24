@@ -19,4 +19,8 @@ class Follower extends Model
 		return $this->belongsToMany(User::class, 'user_id')->select('id', 'nombre', 'imagen_perfil');
 	}
 
+	public function interestedIn($category_id){
+		return $this->hasOne(UserInterest::class, 'user_id')->select('id')->where('categorylist_id', $category_id)->get();
+	}
+
 }

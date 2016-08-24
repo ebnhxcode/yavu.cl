@@ -30,19 +30,58 @@
     <!-- cuantos de sus usuarios escogieron esta categoria -->
     <!-- por cada vuelta del foreach traer los usuarios que escogieron esta categoría -->
     <!-- -->
+
+    {{--
+    De los usuarios que siguen a <b>{{$userCompany->nombre}}</b>
     Dentro de las categor&iacute;as registradas en Yavü : <br>
+    Los usuarios de cada categoria que siguen a la empresa
+    --}}
+
+    <!--
+     Traigo a los usuarios que siguen a esta empresa
+     -->
+
     @foreach($categories as $key => $category)
 
-      {{$category->category}} : <br>
+      <b>{{$category->category}}</b> <br>
+      <div class="softText-descriptions-middle">
+        {{$category->description}}
+      </div>
+      <div class="softText-descriptions">
+        <br>
+
+
+        <?php $interesteds=0; ?>
+        @foreach($userCompany->followers as $key => $follower)
+          <!-- $followe has one where category = category -->
+        <?php ( count($follower->interestedIn($category->id))>0?$interesteds++:0 ) ?>
+        @endforeach
+
+        {{$interesteds++}} de tus seguidores les interesa esta categor&iacute;a
+      </div><!-- /div .softText-descriptions -->
+
+
+
+    <hr>
+
+    @endforeach
+
+{{--
+    @foreach($categories as $key => $category)
+
+      <b>{{$category->category}}</b> <br>
       <div class="softText-descriptions">
         {{$category->description}}
       </div><!-- /div .softText-descriptions -->
-      <br>
-      De los usuarios que siguen a <b>{{$userCompany->nombre}}</b>
 
+      @foreach($category->categorizedUsers as $key => $userCategorized)
+
+      @endforeach
       <hr>
-    @endforeach
 
+
+    @endforeach
+--}}
 
   </div><!-- /div .list-group-item -->
 </div><!-- /div .list-group -->
