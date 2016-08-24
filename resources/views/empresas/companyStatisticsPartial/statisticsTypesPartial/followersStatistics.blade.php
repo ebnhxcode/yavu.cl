@@ -7,42 +7,11 @@
     </a>
   </div><!-- /div .list-group-item -->
   <div class="list-group-item">
-    {{--
-    @foreach($followers = $userCompany->followers as $key => $follower)
+    <div>
 
-      @if( $user = $follower->getUserFollow )
+      @include('empresas.companyStatisticsPartial.statisticsTypesPartial.followersStatisticsPartial.navTabs')
+      @include('empresas.companyStatisticsPartial.statisticsTypesPartial.followersStatisticsPartial.tabPanes')
 
-        <b>{{$user->nombre}}</b> : <br>
-
-        @foreach($user->interests as $key => $interest)
-
-          {{($interest->categoryList->category)}}
-
-        @endforeach
-        <hr>
-
-      @endif
-
-    @endforeach
-    --}}
-
-    {{--$categories--}}
-    <!-- cuantos de sus usuarios escogieron esta categoria -->
-    <!-- por cada vuelta del foreach traer los usuarios que escogieron esta categoría -->
-    <!-- -->
-    Dentro de las categor&iacute;as registradas en Yavü : <br>
-    @foreach($categories as $key => $category)
-
-      {{$category->category}} : <br>
-      <div class="softText-descriptions">
-        {{$category->description}}
-      </div><!-- /div .softText-descriptions -->
-      <br>
-      De los usuarios que siguen a <b>{{$userCompany->nombre}}</b>
-
-      <hr>
-    @endforeach
-
-
+    </div><!-- /div -->
   </div><!-- /div .list-group-item -->
 </div><!-- /div .list-group -->

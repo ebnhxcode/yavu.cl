@@ -15,4 +15,9 @@ class UserInterest extends Model
     return $this->belongsTo(CategoryList::class, 'categorylist_id');
   }
 
+  public function follow_this_company($empresa_id){
+    return $this->hasOne(Follower::class, 'user_id')->select('id')->where('empresa_id', $empresa_id)->get();
+
+  }
+
 }
