@@ -8,21 +8,11 @@
   </div><!-- /div .list-group-item -->
   <div class="list-group-item">
 
+    {{dd($userCompany->test)}}
 
     @foreach($followers = $userCompany->followers as $key => $follower)
 
-      @if( $user = $follower->getUserFollow )
 
-        <b>{{$user->nombre}}</b> : <br>
-
-        @foreach($user->interests as $key => $interest)
-
-          {{($interest->categoryList->category)}}
-
-        @endforeach
-        <hr>
-
-      @endif
 
     @endforeach
 
