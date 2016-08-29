@@ -121,14 +121,14 @@ class EmpresaController extends Controller{
   public function visitsStatistics($id){
     return view('empresas.companyStatistics', ['statisticType' => 'visitsStatistics', 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user, 'categories' => CategoryList::all()]);
   }
-  public function rafflesRequestsStatistics($id){
-    return view('empresas.companyStatistics', ['statisticType' => 'rafflesRequestsStatistics', 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);
+  public function rafflesStatistics($id){
+    return view('empresas.companyStatistics', ['statisticType' => 'rafflesStatistics', 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);
   }
   public function feedsStatistics($id){
     return view('empresas.companyStatistics', ['statisticType' => 'feedsStatistics', 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);
   }
-  public function bannersDisplaysStatistics($id){
-    return view('empresas.companyStatistics', ['statisticType' => 'bannersDisplaysStatistics', 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);
+  public function bannersStatistics($id){
+    return view('empresas.companyStatistics', ['statisticType' => 'bannersStatistics', 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);
   }
   public function followersStatistics($id){
     //falta validar si el usuario realmente tiene empresa sino arrojará error

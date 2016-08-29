@@ -1,27 +1,19 @@
 <div class="list-group">
   <div class="list-group-item list-group-item-success">
-    Peticiones de sorteos
+    Estad&iacute;stica de despliegues de banners
     <a style="float:right;" href="{{url('empresas/'.$userCompany->id)}}">
       <img width='32' style="border-radius: 10%;" id='ImagenPerfil' src='/img/users/{!! isset($userCompany)?($userCompany->imagen_perfil!='')?$userCompany->imagen_perfil:'banner.png':'banner.png' !!}'>
       <b>{{$userCompany->nombre}}</b>
     </a>
   </div><!-- /div .list-group-item -->
   <div class="list-group-item">
-
     <div class="row">
-      <div class="list-group">
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-          <div class="list-group-item">
-            <b>{{$userCompany->nombre}}</b>:
-            <br>
-
-            <div class="softText-descriptions">
-              Tienes {{count($raffleRaquests = $userCompany->raffleRequests)}} peticiones de sorteos.
-            </div>
-
-          </div><!-- /div .list-group-item -->
-        </div><!-- /div .col-xs12-sm6-md6-lg6 -->
-      </div><!-- /div .list-group -->
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        @include('empresas.companyStatisticsPartial.statisticsTypesPartial.bannersStatisticsPartial.navTabs')
+      </div><!-- /div .col-xs3-sm3-md3-lg3 -->
+      <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+        @include('empresas.companyStatisticsPartial.statisticsTypesPartial.bannersStatisticsPartial.tabPanes')
+      </div><!-- /div .col-xs9-sm9-md9-lg9 -->
     </div><!-- /div .row -->
   </div><!-- /div .list-group-item -->
 </div><!-- /div .list-group -->

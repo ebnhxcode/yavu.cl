@@ -47,8 +47,8 @@
     <hr>
 
     <div>
-      Peticiones de sorteos : {{count($userCompany->raffleRequests)}}
-      <a href="{{url('/estadisticas/'.$userCompany->id).'/raffles-requests'}}" style="float:right;" class="btn btn-xs btn-info">
+      Sorteos : {{count($userCompany->raffleRequests)}}
+      <a href="{{url('/estadisticas/'.$userCompany->id).'/raffles'}}" style="float:right;" class="btn btn-xs btn-info">
         <small>
           ver m&aacute;s
         </small>

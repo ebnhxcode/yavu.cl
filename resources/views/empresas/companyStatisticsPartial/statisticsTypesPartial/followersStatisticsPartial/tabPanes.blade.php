@@ -18,33 +18,31 @@
                   <?php ( count($follower->interestedIn($category->id))>0?$interesteds++:0 ) ?>
                 @endforeach
                 {{($interesteds)>0?$interesteds.' de tus seguidores les interesa esta categor&iacute;a':'no tienes seguidores en esta categor&iacute;a'}}
-                  <br>
+                <br>
 
-                  <span>
-                    <div class="progress" style="margin: 0;">
-                      &nbsp;<b>·</b>
-                      <small>
-                        {{ round($percent = (count($interesteds)/count($category->userInteresteds))*100,2) .'%'}}
-                      </small>
-                      <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: {{ ( $percent )  .'%'}};">
-                      </div><!-- /div .progress-bar .progress-bar-success .progress-bar-striped .active -->
-                    </div><!-- /div .progress -->
-                    <span class="softText-descriptions">
-                      Apuntas al {{round($percent, 2)}}% del publico en yavü para esta categor&iacute;a
-                    </span><!-- /span .softText-descriptions -->
-                    <small class="softText-descriptions" style="float:right;">
-                      {{-- ver m&aacute;s --}}
-                    </small><!-- /small .softText-descriptions -->
-                  </span>
+                <span>
+                  <div class="progress" style="margin: 0;">
+                    &nbsp;<b>·</b>
+                    <small>
+                      {{ round($percent = (count($interesteds)/count($category->userInteresteds))*100,2) .'%'}}
+                    </small>
+                    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: {{ ( $percent )  .'%'}};">
+                    </div><!-- /div .progress-bar .progress-bar-success .progress-bar-striped .active -->
+                  </div><!-- /div .progress -->
+                  <span class="softText-descriptions">
+                    Apuntas al {{round($percent, 2)}}% del publico en yavü para esta categor&iacute;a
+                  </span><!-- /span .softText-descriptions -->
+                  <small class="softText-descriptions" style="float:right;">
+                    {{-- ver m&aacute;s --}}
+                  </small><!-- /small .softText-descriptions -->
+                </span>
 
-                  <br>
-
-                  +------------------------+ <br>
-                  | <br>
-                  |  insertar gráfico <br>
-                  | <br>
-                  +------------------------+ <br>
-
+                <br>
+                +------------------------+ <br>
+                | <br>
+                |  insertar gráfico <br>
+                | <br>
+                +------------------------+ <br>
               </div><!-- /div .softText-descriptions -->
             </div><!-- /div .list-group-item -->
           </div><!-- /div .col-xs6-sm6-md6-lg6 -->
@@ -73,14 +71,14 @@
         @foreach($userCompany->rafflesEnded as $key => $raffle)
           <div style="padding-bottom: 10px;" class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <div class="list-group-item">
-            <span>
-              <b>
-                {{$raffle->nombre_sorteo}}
-              </b>
-              <small class="softText-descriptions" style="float:right;">
-                {{-- ver m&aacute;s --}}
-              </small><!-- /small .softText-descriptions -->
-            </span>
+              <span>
+                <b>
+                  {{$raffle->nombre_sorteo}}
+                </b>
+                <small class="softText-descriptions" style="float:right;">
+                  {{-- ver m&aacute;s --}}
+                </small><!-- /small .softText-descriptions -->
+              </span>
               <br>
               <div class="softText-descriptions">
 
@@ -96,8 +94,6 @@
                 |  insertar gráfico <br>
                 | <br>
                 +------------------------+ <br>
-
-
               </div><!-- /div .softText-descriptions-middle -->
             </div><!-- /div .list-group-item -->
           </div><!-- /div .col-xs12-sm6-md6-lg6 -->
