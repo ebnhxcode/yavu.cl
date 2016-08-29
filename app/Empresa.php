@@ -67,9 +67,6 @@ class Empresa extends Model implements AuthenticatableContract,
       return $this->hasMany(Follower::class, 'empresa_id');
     }
 
-    public function test(){
-        return $this->belongsToMany(Follower::class, User::class, 'user_id');
-    }
 
     public function feeds(){
       return $this->hasMany(EstadoEmpresa::class, 'empresa_id');
@@ -92,17 +89,17 @@ class Empresa extends Model implements AuthenticatableContract,
     }
 
     public function visits(){
-        return $this->hasMany(Visit::class, 'empresa_id');
+        return $this->hasMany(Visit::class, 'empresa_id')->where('created_at', Carbon::now());
     }
     public function otherVisits(){
-        return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', '!=','Masculino')->where('sexo', '!=','Femenino');
+        return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', 'Otro')->where('created_at', Carbon::now());
     }
     public function menVisits(){
-        return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', 'Masculino');
+        return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', 'Masculino')->where('created_at', Carbon::now());
     }
 
     public function womenVisits(){
-        return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', 'Femenino');
+        return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', 'Femenino')->where('created_at', Carbon::now());
     }
 
 

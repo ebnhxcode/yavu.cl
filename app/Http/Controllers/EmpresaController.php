@@ -119,7 +119,7 @@ class EmpresaController extends Controller{
   */
 
   public function visitsStatistics($id){
-    return view('empresas.companyStatistics', ['statisticType' => 'visitsStatistics', 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);
+    return view('empresas.companyStatistics', ['statisticType' => 'visitsStatistics', 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user, 'categories' => CategoryList::all()]);
   }
   public function rafflesRequestsStatistics($id){
     return view('empresas.companyStatistics', ['statisticType' => 'rafflesRequestsStatistics', 'userCompany' => $this->user->empresas[0], 'userSession' => $this->user]);
@@ -191,7 +191,7 @@ class EmpresaController extends Controller{
         //return $this->MostrarEmpresaPublica($this->empresa->nombre);
 
         if($this->empresa->user_id != $this->user->id){
-          $this->visita = new Visit(['user_id'=>$this->user->id, 'empresa_id' => $this->empresa->id, 'sexo' => $this->user->sexo, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now() ]);
+          $this->visita = new Visit(['user_id'=>$this->user->id, 'empresa_id' => $this->empresa->id, 'sexo' => dd($this->user->sexo), 'created_at' => Carbon::now(), 'updated_at' => Carbon::now() ]);
           $this->visita->save();
         }
         $mapa = $this->empresa->gmaps;
