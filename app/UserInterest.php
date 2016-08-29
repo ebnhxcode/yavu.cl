@@ -20,4 +20,8 @@ class UserInterest extends Model
 
   }
 
+  public function userInteresteds(){
+    return $this->belongsTo(CategoryList::class, 'categorylist_id');
+  }
+
 }

@@ -7,11 +7,13 @@
     </a>
   </div><!-- /div .list-group-item -->
   <div class="list-group-item">
-    <div>
-
-      @include('empresas.companyStatisticsPartial.statisticsTypesPartial.followersStatisticsPartial.navTabs')
-      @include('empresas.companyStatisticsPartial.statisticsTypesPartial.followersStatisticsPartial.tabPanes')
-
+    <div class="row">
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        @include('empresas.companyStatisticsPartial.statisticsTypesPartial.followersStatisticsPartial.navTabs')
+      </div>
+      <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+        @include('empresas.companyStatisticsPartial.statisticsTypesPartial.followersStatisticsPartial.tabPanes')
+      </div>
     </div><!-- /div -->
   </div><!-- /div .list-group-item -->
 </div><!-- /div .list-group -->
