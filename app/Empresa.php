@@ -116,3 +116,5 @@ class Empresa extends Model implements AuthenticatableContract,
     }
 }
 
+
+

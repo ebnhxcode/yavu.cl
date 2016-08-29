@@ -1,6 +1,6 @@
 <!-- Tab panes -->
 <div class="tab-content">
-  <div role="tabpanel" class="tab-pane active" id="home">
+  <div role="tabpanel" class="tab-pane active" id="categories">
     <div class="row">
       <div class="list-group">
         @foreach($categories as $key => $category)
@@ -53,12 +53,7 @@
     </div><!-- /div .row -->
   </div><!-- /div .tab-pane .fade -->
 
-{{--
-  <div role="tabpanel" class="tab-pane fade" id="profile">
-  </div><!-- /div .tab-pane .fade -->
---}}
-
-  <div role="tabpanel" class="tab-pane fade" id="messages">
+  <div role="tabpanel" class="tab-pane fade" id="raffles">
 
     <b>Resumen</b><br>
 
@@ -113,6 +108,9 @@
 
 {{--
   <div role="tabpanel" class="tab-pane fade" id="settings">
+  </div><!-- /div .tab-pane .fade -->
+
+  <div role="tabpanel" class="tab-pane fade" id="profile">
   </div><!-- /div .tab-pane .fade -->
 --}}
 

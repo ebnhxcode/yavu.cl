@@ -6,4 +6,18 @@
       <b>{{$userCompany->nombre}}</b>
     </a>
   </div><!-- /div .list-group-item -->
+  <div class="list-group-item">
+
+    <div class="row">
+      <div class="list-group">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          <div class="">
+
+
+
+          </div><!-- /div .list-group-item -->
+        </div><!-- /div .col-xs12-sm6-md6-lg6 -->
+      </div><!-- /div .list-group -->
+    </div><!-- /div .row -->
+  </div><!-- /div .list-group-item -->
 </div><!-- /div .list-group -->
