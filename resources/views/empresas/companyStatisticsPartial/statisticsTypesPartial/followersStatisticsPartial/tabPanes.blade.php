@@ -1,12 +1,23 @@
 <!-- Tab panes -->
 <div class="tab-content">
   <div role="tabpanel" class="tab-pane active" id="categories">
+
     <div class="row">
+      <br>
       <div class="list-group">
+
+        <div align="center">
+          <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-341-globe.png')}}" alt=""> Globales
+        </div>
+
+        <hr>
+
         @foreach($categories as $key => $category)
           <div style="padding-bottom: 10px;" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <div class="list-group-item">
-              <b>{{$category->category}}</b>
+              <b>
+                {{$category->category}}
+              </b>
               <br>
               <div class="softText-descriptions-middle">
                 {{--$category->description--}}
@@ -17,7 +28,7 @@
                 @foreach($followers = $userCompany->followers as $key => $follower)
                   <?php ( count($follower->interestedIn($category->id))>0?$interesteds++:0 ) ?>
                 @endforeach
-                {{($interesteds)>0?$interesteds.' de tus seguidores les interesa esta categor&iacute;a':'no tienes seguidores en esta categor&iacute;a'}}
+                {{($interesteds)>0?$interesteds.' de tus seguidores tienen intereses en esta categor&iacute;a':'no tienes seguidores interesados en esta categor&iacute;a'}}
                 <br>
 
                 <span>
@@ -30,7 +41,7 @@
                     </div><!-- /div .progress-bar .progress-bar-success .progress-bar-striped .active -->
                   </div><!-- /div .progress -->
                   <span class="softText-descriptions">
-                    Apuntas al {{round($percent, 2)}}% del publico en yavü para esta categor&iacute;a
+                    Apuntas al {{round($percent, 2)}}% del publico global para la categor&iacute;a <b>{{$category->category}}</b>
                   </span><!-- /span .softText-descriptions -->
                   <small class="softText-descriptions" style="float:right;">
                     {{-- ver m&aacute;s --}}
@@ -49,7 +60,45 @@
         @endforeach
       </div><!-- /div .list-group -->
     </div><!-- /div .row -->
+
+    <div class="row">
+      <div class="list-group">
+        <br>
+        <div align="center">
+          <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-342-briefcase.png')}}" alt=""> Categor&iacute;as de mi empresa
+        </div>
+        <br>
+
+        @foreach($userCompany->myCategories as $key => $companyCategoryObject)
+          <div style="padding-bottom: 10px;" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="list-group-item">
+              <!-- $cco -> $companyCategoryObject -->
+              <b>{{($cco = $companyCategoryObject->getCategory)?$cco->category:''  }}</b>
+              <br>
+
+              <div class="softText-descriptions">
+                {{ count($cco->userInteresteds) }}
+
+                <br>
+                +------------------------+ <br>
+                | <br>
+                |  insertar gráfico <br>
+                | <br>
+                +------------------------+ <br>
+              </div><!-- /div .softText-descriptions -->
+            </div><!-- /div .list-group-item -->
+          </div><!-- /div .col-xs6-sm6-md6-lg6 -->
+        @endforeach
+        <br>
+
+
+      </div><!-- /div .list-group -->
+    </div><!-- /div .row -->
+
+
   </div><!-- /div .tab-pane .fade -->
+
+
 
   <div role="tabpanel" class="tab-pane fade" id="raffles">
 
@@ -102,12 +151,10 @@
     </div><!-- /div .row -->
   </div><!-- /div .tab-pane .fade -->
 
-{{--
-  <div role="tabpanel" class="tab-pane fade" id="settings">
-  </div><!-- /div .tab-pane .fade -->
 
-  <div role="tabpanel" class="tab-pane fade" id="profile">
-  </div><!-- /div .tab-pane .fade -->
---}}
+  {{--
+    <div role="tabpanel" class="tab-pane fade" id="profile">
+    </div><!-- /div .tab-pane .fade -->
+  --}}
 
 </div><!-- /div .tab-content -->

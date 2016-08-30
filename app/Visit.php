@@ -18,7 +18,7 @@ class Visit extends Model
   }
 
   public function interestedIn($category_id){
-    return $this->hasOne(UserInterest::class, 'user_id')->select('id')->where('categorylist_id', $category_id)->get();
+    return $this->belongsTo(UserInterest::class, 'user_id')->where('categorylist_id', $category_id)->get();
   }
 
 }

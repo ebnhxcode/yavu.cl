@@ -1,78 +1,45 @@
 <div class="list-group">
   <div class="list-group-item list-group-item-success">
-    Test de consultas
+    Men&uacute; de estad&iacute;sticas
   </div><!-- /div .list-group-item .list-group-item-success -->
 
   <div class="list-group-item">
-    <div>
-      Seguidores : {{count($userCompany->followers)}}
-      <a href="{{url('/estadisticas/'.$userCompany->id).'/followers'}}" style="float:right;" class="btn btn-xs btn-info">
-        <small>
-          ver m&aacute;s
-        </small>
-      </a><!-- /a .btn .btn-xs .btn-info -->
-    </div>
-    <hr>
 
     <div>
-      Visitas : {{count($userCompany->visits)}}
-      <a href="{{url('/estadisticas/'.$userCompany->id).'/visits'}}" style="float:right;" class="btn btn-xs btn-info">
-        <small>
-          ver m&aacute;s
-        </small>
-      </a><!-- /a .btn .btn-xs .btn-info -->
-      <div class="softText-descriptions-middle">
-        Visitas sin sexo definido : {{count($userCompany->otherVisits)}}
-        <br>
-        Visitas del sexo Masculino : {{count($userCompany->menVisits)}}
-        <br>
-        Visitas del sexo Femenino : {{count($userCompany->womenVisits)}}
-      </div>
+      <a href="{{url('/estadisticas/'.$userCompany->id).'/followers'}}" class="btn btn-link">
+        <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-44-group.png')}}" alt="">&nbsp;Seguidores
+      </a><!-- /a .btn .btn-link -->
     </div>
-    <hr>
-    <div>
-      <a href="{{url('/estadisticas/'.$userCompany->id).'/banners'}}" style="float:right;" class="btn btn-xs btn-info">
-        <small>
-          ver m&aacute;s
-        </small>
-      </a><!-- /a .btn .btn-xs .btn-info -->
-      Despliegues de banner : <br>
-      <div class="softText-descriptions-middle">
-        @foreach($userCompany->banners as $key => $banner)
-          Banner {{ $key + 1 }} <img width='32' style="border-radius: 10%;" id='ImagenPerfil' src='/img/users/{!! isset($banner)?($banner->banner!='')?$banner->banner:'banner.png':'banner.png' !!}'> :
-          {{$banner->titulo_banner}} <small>{{count($banner->displays)}} despliegues.</small>
-        @endforeach
-      </div>
-    </div>
-    <hr>
 
     <div>
-      Sorteos : {{count($userCompany->raffleRequests)}}
-      <a href="{{url('/estadisticas/'.$userCompany->id).'/raffles'}}" style="float:right;" class="btn btn-xs btn-info">
-        <small>
-          ver m&aacute;s
-        </small>
-      </a><!-- /a .btn .btn-xs .btn-info -->
+      <a href="{{url('/estadisticas/'.$userCompany->id).'/visits'}}"  class="btn btn-link">
+        <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-35-old-man.png')}}" alt="">&nbsp;Visitas
+      </a><!-- /a .btn .btn-link -->
     </div>
-    <hr>
 
     <div>
-      Publicaciones : {{count($userCompany->feeds)}}
-      <a href="{{url('/estadisticas/'.$userCompany->id).'/feeds'}}" style="float:right;" class="btn btn-xs btn-info">
-        <small>
-          ver m&aacute;s
-        </small>
-      </a><!-- /a .btn .btn-xs .btn-info -->
+      <a href="{{url('/estadisticas/'.$userCompany->id).'/banners'}}" class="btn btn-link">
+        <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-139-picture.png')}}" alt="">&nbsp;Banners
+      </a><!-- /a .btn .btn-link-->
     </div>
-    <hr>
 
     <div>
-      Cobros : {{$cobros = count($userCompany->charges)}} ~ {{'('.'$ '.number_format( (int)$cobros*40, 0, '', ',').')'}}
-      <a href="{{url('/estadisticas/'.$userCompany->id).'/charges'}}" style="float:right;" class="btn btn-xs btn-info">
-        <small>
-          ver m&aacute;s
-        </small>
-      </a><!-- /a .btn .btn-xs .btn-info -->
+      <a href="{{url('/estadisticas/'.$userCompany->id).'/raffles'}}" class="btn btn-link">
+        <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-70-gift.png')}}" alt="">&nbsp;Sorteos
+      </a><!-- /a .btn .btn-link -->
+    </div>
+
+    <div>
+      <a href="{{url('/estadisticas/'.$userCompany->id).'/feeds'}}" class="btn btn-link">
+        <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-248-note.png')}}" alt="">&nbsp;Publicaciones
+      </a><!-- /a .btn .btn-link -->
+    </div>
+
+    <div>
+
+      <a href="{{url('/estadisticas/'.$userCompany->id).'/charges'}}" class="btn btn-link">
+        <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-38-coins.png')}}" alt="">&nbsp;Cobros de coins
+      </a><!-- /a .btn .btn-link -->
     </div>
 
   </div><!-- /div .list-group-item -->

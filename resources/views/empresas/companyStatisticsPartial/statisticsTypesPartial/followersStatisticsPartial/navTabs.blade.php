@@ -2,7 +2,7 @@
 <ul class="nav nav-pills nav-stacked" role="tablist">
   <li role="presentation" class="active">
     <a href="#categories" aria-controls="home" role="tab" data-toggle="tab">
-      Categor&iacute;a
+      Categor&iacute;as
     </a>
   </li>
 
@@ -13,11 +13,7 @@
   </li>
 
 {{--
-  <li role="presentation">
-    <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">
-      Gr&aacute;fica
-    </a>
-  </li>
+
 
   <li role="presentation">
     <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">

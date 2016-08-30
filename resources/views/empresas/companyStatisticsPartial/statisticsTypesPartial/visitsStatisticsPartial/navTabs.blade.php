@@ -1,5 +1,6 @@
 <!-- Nav tabs -->
 <ul class="nav nav-pills nav-stacked" role="tablist">
+
   <li role="presentation" class="active">
     <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
       Todos
@@ -23,5 +24,7 @@
       Sin definir
     </a>
   </li>
+
+  <br>
 
 </ul>

@@ -89,17 +89,17 @@ class Empresa extends Model implements AuthenticatableContract,
     }
 
     public function visits(){
-        return $this->hasMany(Visit::class, 'empresa_id')->where('created_at', Carbon::now());
+        return $this->hasMany(Visit::class, 'empresa_id');
     }
     public function otherVisits(){
-        return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', 'Otro')->where('created_at', Carbon::now());
+        return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', 'Otro');
     }
     public function menVisits(){
-        return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', 'Masculino')->where('created_at', Carbon::now());
+        return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', 'Masculino');
     }
 
     public function womenVisits(){
-        return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', 'Femenino')->where('created_at', Carbon::now());
+        return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', 'Femenino');
     }
 
 
@@ -108,6 +108,10 @@ class Empresa extends Model implements AuthenticatableContract,
     }
 
     public function categorias(){
+        return $this->hasMany(CompanyCategory::class, 'empresa_id');
+    }
+
+    public function myCategories(){
         return $this->hasMany(CompanyCategory::class, 'empresa_id');
     }
 

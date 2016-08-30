@@ -191,7 +191,7 @@ class EmpresaController extends Controller{
         //return $this->MostrarEmpresaPublica($this->empresa->nombre);
 
         if($this->empresa->user_id != $this->user->id){
-          $this->visita = new Visit(['user_id'=>$this->user->id, 'empresa_id' => $this->empresa->id, 'sexo' => dd($this->user->sexo), 'created_at' => Carbon::now(), 'updated_at' => Carbon::now() ]);
+          $this->visita = new Visit(['user_id'=>$this->user->id, 'empresa_id' => $this->empresa->id, 'sexo' => $this->user->sexo, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now() ]);
           $this->visita->save();
         }
         $mapa = $this->empresa->gmaps;

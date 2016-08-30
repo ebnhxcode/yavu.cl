@@ -2,7 +2,7 @@
 <div class="tab-content">
   <div role="tabpanel" class="tab-pane active" id="home">
     <div style="padding-bottom: 5px;padding-top: 5px;">
-      <b>total</b> : {{$totalVisits = (count($otherVisits = $userCompany->otherVisits)+count($womenVisits = $userCompany->womenVisits)+count($menVisits = $userCompany->menVisits))}} <br>
+      <b>Total</b> : {{$totalVisits = (count($otherVisits = $userCompany->otherVisits)+count($womenVisits = $userCompany->womenVisits)+count($menVisits = $userCompany->menVisits))}} <br>
       100% <br>
       <div class="row">
         @foreach($categories as $key => $category)
@@ -19,7 +19,7 @@
                 @foreach($userCompany->visits as $key => $visit)
                   <?php ( count($visit->interestedIn($category->id))>0?$visitantsInteresteds++:0 ) ?>
                 @endforeach
-                {{($visitantsInteresteds)>0?$visitantsInteresteds.' de tus visitantes masculinos les interesa esta categor&iacute;a':'no tienes visitantes en esta categor&iacute;a'}}
+                {{($visitantsInteresteds)>0?$visitantsInteresteds.' de tus visitas totales les interesa esta categor&iacute;a':'no tienes visitantes en esta categor&iacute;a'}}
                 <br>
 
               </div><!-- /div .softText-descriptions -->
@@ -38,7 +38,7 @@
 
   <div role="tabpanel" class="tab-pane fade" id="mens">
     <div style="padding-bottom: 5px;">
-      <b>cantidad de hombres</b> : {{count($menVisits)}} <br>
+      <b>Cantidad de hombres</b> : {{count($menVisits)}} <br>
       {{--round((count($menVisits)/$totalVisits)*100,2)--}}% de visitas de hombres <br>
       <div class="row">
         @foreach($categories as $key => $category)
@@ -55,7 +55,7 @@
                 @foreach($menVisits as $key => $men)
                   <?php ( count($men->interestedIn($category->id))>0?$visitantsInteresteds++:0 ) ?>
                 @endforeach
-                {{($visitantsInteresteds)>0?$visitantsInteresteds.' de tus visitantes masculinos les interesa esta categor&iacute;a':'no tienes visitantes en esta categor&iacute;a'}}
+                {{($visitantsInteresteds)>0?$visitantsInteresteds.' de tus visitas hombres les interesa esta categor&iacute;a':'no tienes visitas en esta categor&iacute;a'}}
                 <br>
 
               </div><!-- /div .softText-descriptions -->
@@ -92,7 +92,7 @@
                 @foreach($womenVisits as $key => $women)
                   <?php ( count($women->interestedIn($category->id))>0?$visitantsInteresteds++:0 ) ?>
                 @endforeach
-                {{($visitantsInteresteds)>0?$visitantsInteresteds.' de tus visitantes masculinos les interesa esta categor&iacute;a':'no tienes visitantes en esta categor&iacute;a'}}
+                {{($visitantsInteresteds)>0?$visitantsInteresteds.' de tus visitas mujeres les interesa esta categor&iacute;a':'no tienes visitas en esta categor&iacute;a'}}
                 <br>
 
               </div><!-- /div .softText-descriptions -->
@@ -127,7 +127,7 @@
                 @foreach($otherVisits as $key => $other)
                   <?php ( count($other->interestedIn($category->id))>0?$visitantsInteresteds++:0 ) ?>
                 @endforeach
-                {{($visitantsInteresteds)>0?$visitantsInteresteds.' de tus visitantes masculinos les interesa esta categor&iacute;a':'no tienes visitantes en esta categor&iacute;a'}}
+                {{($visitantsInteresteds)>0?$visitantsInteresteds.' de tus visitas sin genero les interesa esta categor&iacute;a':'no tienes visitas en esta categor&iacute;a'}}
                 <br>
 
               </div><!-- /div .softText-descriptions -->
