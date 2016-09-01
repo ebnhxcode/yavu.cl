@@ -53,6 +53,10 @@ class Empresa extends Model implements AuthenticatableContract,
       return $this->hasMany(BannerData::class, 'empresa_id');
     }
 
+    public function inactiveBanners(){
+        return $this->hasMany(BannerData::class, 'empresa_id')->where('estado_banner', 'Inactivo');
+    }
+
     public function charges(){
       return $this->hasMany(InteraccionEstado::class, 'empresa_id');
     }

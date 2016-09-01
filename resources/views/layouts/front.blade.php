@@ -22,10 +22,12 @@
 		</style>
 		@section('favicon') {!!Html::favicon('favicons/changeFaviconNameHere.png')!!} @stop
 		@yield('favicon')
+		{{--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>--}}
 		{!!Html::script('js/jquery.js')!!}
 		{!!Html::script('js/all.js')!!}
 
 		@if(Auth::user()->check())
+
 
 			{!!Html::script('js/vendor/jquery.timeago.js')!!}
 
@@ -38,6 +40,7 @@
 			{!!Html::script('js/ajax/GestionarCompraTicket.js')!!}
 
 			{!!Html::script('js/ajax/SeguirEmpresa.js')!!}
+
 
 		@endif
 		{!!Html::script('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')!!}
