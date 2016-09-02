@@ -1,5 +1,5 @@
 <!-- Tab panes -->
-<div class="tab-content">
+<div class="tab-content wrap">
 
   <?php $followers = $userCompany->followers ?>
 

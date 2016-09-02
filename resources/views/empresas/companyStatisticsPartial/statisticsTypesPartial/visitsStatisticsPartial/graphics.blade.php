@@ -12,7 +12,7 @@
 
 
 <div id="Graphic{!! $category->id !!}Category{{$graphicType}}" class="collapse">
-  +---------------------------------------------------------------------------------------+ <br>
+  +-----------------------------------+ <br>
   | <br>
   |  insertar gráfico <br>
   | <br>
@@ -21,7 +21,7 @@
   | <br>
   | <br>
   |  Resumenes <br>
-  +---------------------------------------------------------------------------------------+ <br>
+  +-----------------------------------+ <br>
 </div><!-- #GraphicsIdCategory .collapse -->
 
 <!-- boton que cierra y abre la caja del gráfico -->

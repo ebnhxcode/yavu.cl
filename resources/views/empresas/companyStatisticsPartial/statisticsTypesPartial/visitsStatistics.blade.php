@@ -11,7 +11,7 @@
       <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
         @include('empresas.companyStatisticsPartial.statisticsTypesPartial.visitsStatisticsPartial.navTabs')
       </div><!-- /div .col-xs3-sm3-md3-lg3 -->
-      <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+      <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
         @include('empresas.companyStatisticsPartial.statisticsTypesPartial.visitsStatisticsPartial.tabPanes')
       </div><!-- /div .col-xs9-sm9-md9-lg9 -->
     </div><!-- /div .row -->
