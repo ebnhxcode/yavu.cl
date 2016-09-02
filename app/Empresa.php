@@ -53,6 +53,10 @@ class Empresa extends Model implements AuthenticatableContract,
       return $this->hasMany(BannerData::class, 'empresa_id');
     }
 
+    public function inactiveBanners(){
+        return $this->hasMany(BannerData::class, 'empresa_id')->where('estado_banner', 'Inactivo');
+    }
+
     public function charges(){
       return $this->hasMany(InteraccionEstado::class, 'empresa_id');
     }
@@ -89,17 +93,17 @@ class Empresa extends Model implements AuthenticatableContract,
     }
 
     public function visits(){
-        return $this->hasMany(Visit::class, 'empresa_id')->where('created_at', Carbon::now());
+        return $this->hasMany(Visit::class, 'empresa_id');
     }
     public function otherVisits(){
-        return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', 'Otro')->where('created_at', Carbon::now());
+        return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', 'Otro');
     }
     public function menVisits(){
-        return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', 'Masculino')->where('created_at', Carbon::now());
+        return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', 'Masculino');
     }
 
     public function womenVisits(){
-        return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', 'Femenino')->where('created_at', Carbon::now());
+        return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', 'Femenino');
     }
 
 
@@ -111,8 +115,14 @@ class Empresa extends Model implements AuthenticatableContract,
         return $this->hasMany(CompanyCategory::class, 'empresa_id');
     }
 
+    public function myCategories(){
+        return $this->hasMany(CompanyCategory::class, 'empresa_id');
+    }
+
     public function raffleRequests(){
         return $this->hasMany(RaffleRequest::class, 'empresa_id');
     }
 }
+
+
 
