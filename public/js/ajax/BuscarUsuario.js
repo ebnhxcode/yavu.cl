@@ -27,7 +27,7 @@ $(document).ready(function(){
 /*FUNCIONES Y PROCEDIMIENTOS*/
 	function BuscarUsuario(){
 		var NombreUsuario = $("#usuario").val();
-		var route = "http://186.64.123.143/buscarusuario/"+NombreUsuario+"";
+		var route = "http://localhost:8000/buscarusuario/"+NombreUsuario+"";
 		$("#UserList").text("");
 		$.get(route, function(res){
 			$("#UserList").append(
