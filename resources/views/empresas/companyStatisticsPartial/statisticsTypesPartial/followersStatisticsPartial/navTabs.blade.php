@@ -3,13 +3,17 @@
 
   <li role="presentation" class="active">
     <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
-      Categor&iacute;as
+      <div align="center">
+        <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-371-globe-af.png')}}" alt="">
+      </div>
     </a>
   </li>
 
   <li role="presentation">
     <a href="#followers" aria-controls="messages" role="tab" data-toggle="tab">
-      Mis clientes
+      <div align="center">
+        <img width="20" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-512-copy.png')}}" alt="">
+      </div>
     </a>
   </li>
 

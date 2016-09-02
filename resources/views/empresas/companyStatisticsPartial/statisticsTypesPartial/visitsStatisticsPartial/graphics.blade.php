@@ -25,7 +25,8 @@
 </div><!-- #GraphicsIdCategory .collapse -->
 
 <!-- boton que cierra y abre la caja del gráfico -->
-<small class="btn btn-sm btn-default">
+<br>
+<small class="btn btn-xs btn-info">
   <span class="openclose" data-toggle="collapse" data-target="#Graphic{{$category->id}}Category{{$graphicType}}" style="float:right;">
     ver más detalles
   </span><!-- #openclose .btn .btn-default .btn-xs -->
