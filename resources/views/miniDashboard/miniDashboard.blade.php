@@ -6,46 +6,67 @@
 
         <ul class="nav nav-pills nav-stacked" role="tablist">
           <li role="presentation">
-            <a href="{!!URL::to('/usuarios/'.Auth::user()->get()->id.'/edit')!!}" style="margin: 0px;padding: 2px 15px;">Mi cuenta</a>
+            <a href="{!!URL::to('/usuarios/'.Auth::user()->get()->id.'/edit')!!}" style="margin: 0px;padding: 2px 15px;">
+              <small>
+                <img width="20" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-512-copy.png')}}" alt=""> · 
+                Mi cuenta
+              </small>
+            </a>
           </li>
 
             <li role="presentation" {{(Request::path() == 'feeds')?'class=active':''}}>
               <a href="/feeds" style="margin: 0px;padding: 2px 15px;" >
-                Publicaciones
+                <small>
+                  Publicaciones
+                </small>
               </a>
             </li>
 
 
             <li role="presentation" {{(Request::path() != 'empresas')?'':'class=active'}}>
               <a href="/empresas" style="margin: 0px;padding: 2px 15px;" >
-                Empresas
+                <small>
+                  Empresas
+                </small>
               </a>
             </li>
 
 
             <li role="presentation" {{(Request::path() != 'sorteos')?'':'class=active'}}>
               <a href="/sorteos" style="margin: 0px;padding: 2px 15px;" >
-                Sorteos
+                <small>
+                  Sorteos
+                </small>
               </a>
             </li>
 
 
             <li role="presentation" {{(Request::path() != 'tickets')?'':'class=active'}}>
-              <a href="/tickets" style="margin: 0px;padding: 2px 15px;">Ticktes</a>
+              <a href="/tickets" style="margin: 0px;padding: 2px 15px;">
+                <small>
+                  Ticktes
+                </small>
+              </a>
             </li>
 
-          @if((Request::path() == 'tickets/history') && (Request::path() != 'coins' && Request::path() != 'coins/history'))
-            <li role="presentation" class="active">
-              <a href="#!" data-toggle="modal" data-target="#myModal" style="margin: 0px;padding: 2px 15px;">Informes</a>
+
+            <li role="presentation" {{((Request::path() != 'tickets/history') && (Request::path() != 'coins' && Request::path() != 'coins/history'))?'':'class=active'}}>
+              <a href="#!" data-toggle="modal" data-target="#myModal" style="margin: 0px;padding: 2px 15px;">
+                <small>
+                  Informes
+                </small>
+              </a>
             </li>
-          @endif
-          @if(Request::path() == 'sorteos/create' && count($userSession->empresas)>0)
-            <li role="presentation" class="active">
-              <a href="/sorteos/create" style="margin: 0px;padding: 2px 15px;">Crear Sorteos</a>
+
+            <li role="presentation" {{(Request::path() != 'sorteos/create' && count($userSession->empresas)>0)?'':'class=active'}}>
+              <a href="/sorteos/create" style="margin: 0px;padding: 2px 15px;">
+                <small>
+                  Crear Sorteos
+                </small>
+              </a>
             </li>
-          @endif
         </ul>
-
+        <br>
 
 
       </div><!-- /row -->
