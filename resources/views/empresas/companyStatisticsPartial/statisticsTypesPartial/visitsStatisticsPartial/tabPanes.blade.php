@@ -1,5 +1,5 @@
 <!-- Tab panes -->
-<div class="tab-content wrap" style="border: dotted lightgrey 1px;">
+<div class="tab-content">
 
   <?php $totalVisits = (count($otherVisits = $userCompany->otherVisits)+count($womenVisits = $userCompany->womenVisits)+count($menVisits = $userCompany->menVisits)) ?>
 

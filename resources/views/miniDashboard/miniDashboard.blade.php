@@ -8,7 +8,7 @@
           <li role="presentation">
             <a href="{!!URL::to('/usuarios/'.Auth::user()->get()->id.'/edit')!!}" style="margin: 0px;padding: 2px 15px;">
               <small>
-                <img width="20" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-512-copy.png')}}" alt=""> · 
+                <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-522-user-lock.png')}}" alt=""> ·
                 Mi cuenta
               </small>
             </a>
@@ -17,6 +17,7 @@
             <li role="presentation" {{(Request::path() == 'feeds')?'class=active':''}}>
               <a href="/feeds" style="margin: 0px;padding: 2px 15px;" >
                 <small>
+                  <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-248-note.png')}}" alt=""> ·
                   Publicaciones
                 </small>
               </a>
@@ -26,6 +27,7 @@
             <li role="presentation" {{(Request::path() != 'empresas')?'':'class=active'}}>
               <a href="/empresas" style="margin: 0px;padding: 2px 15px;" >
                 <small>
+                  <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-342-briefcase.png')}}" alt=""> ·
                   Empresas
                 </small>
               </a>
@@ -35,6 +37,7 @@
             <li role="presentation" {{(Request::path() != 'sorteos')?'':'class=active'}}>
               <a href="/sorteos" style="margin: 0px;padding: 2px 15px;" >
                 <small>
+                  <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-70-gift.png')}}"> ·
                   Sorteos
                 </small>
               </a>
@@ -44,6 +47,7 @@
             <li role="presentation" {{(Request::path() != 'tickets')?'':'class=active'}}>
               <a href="/tickets" style="margin: 0px;padding: 2px 15px;">
                 <small>
+                  <img width="12" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-688-ticket.png')}}"> ·
                   Ticktes
                 </small>
               </a>
@@ -53,6 +57,7 @@
             <li role="presentation" {{((Request::path() != 'tickets/history') && (Request::path() != 'coins' && Request::path() != 'coins/history'))?'':'class=active'}}>
               <a href="#!" data-toggle="modal" data-target="#myModal" style="margin: 0px;padding: 2px 15px;">
                 <small>
+                  <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-41-stats.png')}}"> ·
                   Informes
                 </small>
               </a>
