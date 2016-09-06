@@ -12,37 +12,41 @@
         </div>
         <hr>
 
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 
-            @foreach($userCompany->banners as $key => $banner)
+
+        @foreach($userCompany->banners as $key => $banner)
+          <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <div class="thumbnail" style="padding: 0;">
                 <img class="img-responsive" id="ImagenPortada" src="{!! ($banner->banner!="")?'/img/users/'.$banner->banner:"/img/users/banner.png" !!}" alt="..." style="height: 140px;">
 
+                <div class="caption">
 
-                <b>{{$userCompany->nombre}}</b> <br>
-                <div class="softText-descriptions">
-                  {{count($displays = $banner->displays)}} despliegues.
-                </div><!-- /div .softText-descriptions -->
-                {{--<small class="softText-descriptions"><b>{{count($banner->displays)}}</b> despliegues</small>--}}
+                  <b>{{$userCompany->nombre}}</b> <br>
+
+
+                  <div class="softText-descriptions">
+                    {{count($displays = $banner->displays)}} despliegues.
+                  </div><!-- /div .softText-descriptions -->
+                  {{--<small class="softText-descriptions"><b>{{count($banner->displays)}}</b> despliegues</small>--}}
+
+                </div><!-- /div .caption -->
               </div><!-- /div .thumbnail -->
-            @endforeach
+            </div><!-- /div .col-xs12-sm4-md4-lg4 -->
 
-        </div><!-- /div .col-xs12-sm6-md6-lg6 -->
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+
+            </div><!-- /div .col-xs12-sm8-md8-lg8 -->
+          </div>
+
+        <hr>
+        @endforeach
+
 
 
       </div><!-- /div .list-group -->
 
     </div><!-- /div .row -->
-
-    <br>
-    +------------------------+ <br>
-    | <br>
-    |  insertar gráfico <br>
-    | <br>
-    +------------------------+ <br>
-
-
-
 
   </div><!-- /div .tab-pane .fade -->
 

@@ -2,19 +2,25 @@
 <ul class="nav nav-pills nav-stacked" role="tablist">
   <li role="presentation" class="active">
     <a href="#actives" aria-controls="home" role="tab" data-toggle="tab">
-      Activos
+      <div align="center">
+        <small>Activos</small>
+      </div>
     </a>
   </li>
 
   <li role="presentation">
     <a href="#inactives" aria-controls="messages" role="tab" data-toggle="tab">
-      Inactivos
+      <div align="center">
+        <small>Inactivos</small>
+      </div>
     </a>
   </li>
 
   <li role="presentation">
     <a href="#request-service" aria-controls="profile" role="tab" data-toggle="tab">
-      Solicitar servicio
+      <div align="center">
+        <small>Solicitar Servicio</small>
+      </div>
     </a>
   </li>
 
