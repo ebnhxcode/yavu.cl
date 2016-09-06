@@ -13,7 +13,7 @@
       </div><!-- /div .col-xs2-sm2-md2-lg2 -->
       <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
         @include('empresas.companyStatisticsPartial.statisticsTypesPartial.visitsStatisticsPartial.tabPanes')
-      </div><!-- /div .col-xs8-sm8-md8-lg8 -->
+      </div><!-- /div .col-xs10-sm10-md10-lg10 -->
     </div><!-- /div .row -->
   </div><!-- /div .list-group-item -->
 </div><!-- /div .list-group -->

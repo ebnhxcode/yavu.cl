@@ -4,7 +4,7 @@
   <li role="presentation" class="active" data-toggle="tooltip" data-placement="right" title="Global">
     <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
       <div align="center">
-        <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-371-globe-af.png')}}" alt="">
+        <small>Global</small>
       </div>
     </a>
   </li>
@@ -12,7 +12,7 @@
   <li role="presentation" data-toggle="tooltip" data-placement="right" title="Mis clientes">
     <a href="#followers" aria-controls="messages" role="tab" data-toggle="tab">
       <div align="center">
-        <img width="20" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-342-briefcase.png')}}" alt="">
+        <small>Mi rubro</small>
       </div>
     </a>
   </li>

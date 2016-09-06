@@ -88,6 +88,9 @@ class Empresa extends Model implements AuthenticatableContract,
     public function rafflesActive(){
         return $this->hasMany(Sorteo::class, 'empresa_id')->select('id','empresa_id','nombre_sorteo')->where('estado_sorteo', 'Activo');
     }
+    public function rafflesPending(){
+        return $this->hasMany(Sorteo::class, 'empresa_id')->select('id','empresa_id','nombre_sorteo')->where('estado_sorteo', 'Pendiente');
+    }
     public function estado_empresas(){
         return $this->hasMany(EstadoEmpresas::class, 'empresa_id');
     }
