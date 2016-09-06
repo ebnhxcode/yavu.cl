@@ -111,7 +111,7 @@
   font-size: 3em;
 }
 .wrap {
-  height: 60vh;
+  height: 80vh;
   display: flex;
   overflow-y: scroll;
 }

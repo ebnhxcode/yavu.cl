@@ -1,102 +1,82 @@
-<div class="list-group hidden-xs">
-  <div class="list-group-item list-group-item-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-      <span class="glyphicon glyphicon-th-large"></span>
-      Men&uacute;
-  </div><!-- /div .list-group-item .success -->
-  <div class="list-group-item">
-    <div class="collapse" id="collapseExample">
-      <div class="row">
-        <div class="col-md-4 col-sm-4 col-xs-4">
-          <div class='list-group' >
-            <div align="center">
-              <a style="padding: 2px 2px 2px 2px;" href='{!!URL::to('/usuarios/'.Auth::user()->get()->id.'/edit')!!}' style="text-align:center;" class="list-group-item list-group-item-info">
-                <img width="80%" src= "{!!URL::to('img/newGraphics/neo_icono_config.png')!!}"/>
-              </a><!-- /a .list-group-item .info styled -->
-            </div><!-- /div aligned -->
-            <div align="center"><small>Opciones</small></div>
-          </div><!-- /div .list-group -->
-        </div><!-- /div .col-md4-sm-4-xs6 -->
+<div class="hidden-xs">
+  <div class="">
+    <div {{-- class="collapse" id="collapseExample" --}}>
+      <div class="">
 
-        @if(Request::path() != 'feeds')
-          <div class="col-md-4 col-sm-4 col-xs-4">
-            <div class="list-group" >
-              <div align="center">
-                <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/feeds')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
-                  <img width="80%" src= "{!!URL::to('img/newGraphics/neo_icono_publicaciones.png')!!}"/>
-                </a><!-- /a .list-group-item .info styled -->
-              </div><!-- /div aligned -->
-              <div align="center"><small>Publicaciones</small></div>
-            </div><!-- /div .list-group -->
-          </div><!-- /div .col-md4-sm-4-xs6 -->
-        @endif
 
-        @if(Request::path() != 'empresas')
-          <div class="col-md-4 col-sm-4 col-xs-4">
-            <div class="list-group" >
-              <div align="center">
-                <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/empresas')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
-                  <img width="80%" src= "{!!URL::to('img/newGraphics/neo_icono_empresa.png')!!}"/>
-                </a><!-- /a .list-group-item .info styled -->
-              </div><!-- /div aligned -->
-              <div align="center"><small>Empresas</small></div>
-            </div><!-- /div .list-group -->
-          </div><!-- /div .col-md4-sm-4-xs6 -->
-        @endif
+        <ul class="nav nav-pills nav-stacked" role="tablist">
+          <li role="presentation">
+            <a href="{!!URL::to('/usuarios/'.Auth::user()->get()->id.'/edit')!!}" style="margin: 0px;padding: 2px 15px;">
+              <small>
+                <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-522-user-lock.png')}}" alt=""> ·
+                Mi cuenta
+              </small>
+            </a>
+          </li>
 
-        @if(Request::path() != 'sorteos')
-          <div class="col-md-4 col-sm-4 col-xs-4">
-            <div class="list-group" >
-              <div align="center">
-                <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/sorteos')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
-                  <img width="80%" src= "{!!URL::to('img/newGraphics/neo_icono_sorteo.png')!!}"/>
-                </a><!-- /a .list-group-item .info styled -->
-              </div><!-- /div aligned -->
-              <div align="center"><small>Sorteos</small></div>
-            </div><!-- /div .list-group -->
-          </div><!-- /div .col-md4-sm-4-xs6 -->
-        @endif
+            <li role="presentation" {{(Request::path() == 'feeds')?'class=active':''}}>
+              <a href="/feeds" style="margin: 0px;padding: 2px 15px;" >
+                <small>
+                  <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-248-note.png')}}" alt=""> ·
+                  Publicaciones
+                </small>
+              </a>
+            </li>
 
-        @if(Request::path() != 'tickets')
-          <div class="col-md-4 col-sm-4 col-xs-4">
-            <div class="list-group" >
-              <div align="center">
-                <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/tickets')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
-                  <img width="80%" src= "{!!URL::to('img/newGraphics/neo_icono_tickets.png')!!}"/>
-                </a><!-- /a .list-group-item .info styled -->
-              </div><!-- /div aligned -->
-              <div align="center"><small>Tickets</small></div>
-            </div><!-- /div .list-group -->
-          </div><!-- /div .col-md4-sm-4-xs6 -->
-        @endif
 
-        @if((Request::path() != 'tickets/history') && (Request::path() != 'coins' && Request::path() != 'coins/history'))
-          <div class="col-md-4 col-sm-4 col-xs-4">
-            <div class='list-group' >
-              <div align="center">
-                <a style="padding: 2px 2px 2px 2px;"  style="text-align:center;" data-toggle="modal" data-target="#myModal" class="list-group-item list-group-item-info">
-                  <img width="80%" src= "{!!URL::to('img/newGraphics/neo_icono_informe.png')!!}"/>
-                </a><!-- /a .list-group-item .info styled -->
-              </div><!-- /div aligned -->
-              <div align="center"><small>Informes</small></div>
-            </div><!-- /div .list-group -->
-          </div><!-- /div .col-md4-sm-4-xs6 -->
-        @endif
+            <li role="presentation" {{(Request::path() != 'empresas')?'':'class=active'}}>
+              <a href="/empresas" style="margin: 0px;padding: 2px 15px;" >
+                <small>
+                  <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-342-briefcase.png')}}" alt=""> ·
+                  Empresas
+                </small>
+              </a>
+            </li>
 
-        @if(Request::path() != 'sorteos/create' && count($userSession->empresas)>0)
-          <div class="col-md-4 col-sm-4 col-xs-4">
-            <div class="list-group" >
-              <div align="center">
-                <a style="padding: 2px 2px 2px 2px;" href="{!!URL::to('/sorteos/create')!!}" style="text-align:center;" class="list-group-item list-group-item-info">
-                  <img width="80%" src= "{!!URL::to('img/newGraphics/neo_icono_sorteo.png')!!}"/>
-                </a><!-- /a .list-group-item .info styled -->
-              </div><!-- /div aligned -->
-              <div align="center"><small>Crear sorteo</small></div>
-            </div><!-- /div .list-group -->
-          </div><!-- /div .col-md4-sm-4-xs6 -->
-        @endif
+
+            <li role="presentation" {{(Request::path() != 'sorteos')?'':'class=active'}}>
+              <a href="/sorteos" style="margin: 0px;padding: 2px 15px;" >
+                <small>
+                  <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-70-gift.png')}}"> ·
+                  Sorteos
+                </small>
+              </a>
+            </li>
+
+
+            <li role="presentation" {{(Request::path() != 'tickets')?'':'class=active'}}>
+              <a href="/tickets" style="margin: 0px;padding: 2px 15px;">
+                <small>
+                  <img width="12" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-688-ticket.png')}}"> ·
+                  Ticktes
+                </small>
+              </a>
+            </li>
+
+
+            <li role="presentation" {{((Request::path() != 'tickets/history') && (Request::path() != 'coins' && Request::path() != 'coins/history'))?'':'class=active'}}>
+              <a href="#!" data-toggle="modal" data-target="#myModal" style="margin: 0px;padding: 2px 15px;">
+                <small>
+                  <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-41-stats.png')}}"> ·
+                  Informes
+                </small>
+              </a>
+            </li>
+
+            <li role="presentation" {{(Request::path() != 'sorteos/create' && count($userSession->empresas)>0)?'':'class=active'}}>
+              <a href="/sorteos/create" style="margin: 0px;padding: 2px 15px;">
+                <small>
+                  Crear Sorteos
+                </small>
+              </a>
+            </li>
+        </ul>
+        <br>
+
+
       </div><!-- /row -->
     </div><!-- /div #collapseExample .collapse -->
-    <span data-toggle="collapse" data-target="#collapseExample"  class="glyphicon glyphicon-chevron-up btn"></span>
+    {{-- <span data-toggle="collapse" data-target="#collapseExample"  class="glyphicon glyphicon-chevron-up btn"></span> --}}
   </div><!-- /div .list-group-item -->
 </div><!-- /div .list-group -->
 

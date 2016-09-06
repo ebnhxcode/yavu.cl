@@ -14,7 +14,7 @@
       <div style="padding: 10px;">
         <div style="padding-bottom: 10px;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           @foreach($categories as $key => $category)
-            <div style="margin:8px; box-shadow: 2px 1px 2px #E9E9E9;">
+            <div style="margin:8px; box-shadow: 1px 2px 2px #E9E9E9; border-radius: 3px;">
               <div class="list-group-item">
                 <b>
                   {{$category->category}}
