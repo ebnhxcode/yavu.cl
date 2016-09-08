@@ -37,6 +37,11 @@ class Sorteo extends Model{
     $this->attributes['fecha_inicio_sorteo'] = ;
   }
 */
+
+  public function displays(){
+    return $this->hasMany(RaffleDisplay::class, 'sorteo_id');
+  }
+
   public function participant_to_win_id(){
     return $this->hasMany(ParticipanteSorteo::class, 'sorteo_id')->orderByRaw('RAND()')->take(1)->select('id');
   }
@@ -61,4 +66,6 @@ class Sorteo extends Model{
   public function companyAuthorRaffle(){
     return $this->belongsTo(Empresa::class, 'empresa_id')->select('imagen_perfil');
   }
+
+
 }

@@ -111,7 +111,7 @@
     });
     function ValidarRut(rut){
       console.log('click');
-      var route = 'http://localhost:8000/validarrutusuario/'+rut+'';
+      var route = 'http://192.168.1.42/validarrutusuario/'+rut+'';
       document.getElementById('FormUsuario').onsubmit = function() {
         return false;
       }

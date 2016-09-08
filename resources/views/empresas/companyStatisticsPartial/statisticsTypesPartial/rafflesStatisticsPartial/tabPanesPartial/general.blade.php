@@ -3,7 +3,7 @@
     <div class="list-group">
       <br>
       <div align="center">
-        <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-341-globe.png')}}" alt=""> General
+        <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-70-gift.png')}}" alt=""> General
       </div>
       <hr>
 
