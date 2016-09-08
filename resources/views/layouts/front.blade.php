@@ -247,7 +247,8 @@
 									<li><a href="{!!URL::to('/coins/history')!!}">Historial de coins</a></li>
 									--}}
 
-                    			<li class="hideifhasone"><a href="{!!URL::to('/empresas/create')!!}">Crear empresa</a></li>
+									<li class="hideifhasone"><a href="{!!URL::to('/empresas/create')!!}">Crear empresa</a></li>
+									<li class="hideifhasone"><a href="{!!URL::to('/sorteos/create')!!}">Crear sorteos</a></li>
 
 								  @if(isset($userSession))
 									@foreach($userSession->userCompanies as $company)

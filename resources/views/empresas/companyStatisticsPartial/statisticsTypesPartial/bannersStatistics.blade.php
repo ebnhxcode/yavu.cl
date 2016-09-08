@@ -8,10 +8,10 @@
   </div><!-- /div .list-group-item -->
   <div class="list-group-item">
     <div class="row">
-      <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+      <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
         @include('empresas.companyStatisticsPartial.statisticsTypesPartial.bannersStatisticsPartial.navTabs')
       </div><!-- /div .col-xs2-sm2-md2-lg2 -->
-      <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+      <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
         @include('empresas.companyStatisticsPartial.statisticsTypesPartial.bannersStatisticsPartial.tabPanes')
       </div><!-- /div .col-xs10-sm10-md10-lg10 -->
     </div><!-- /div .row -->
