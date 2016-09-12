@@ -13,6 +13,8 @@
     </div><!-- /div .progress -->
     <span class="softText-descriptions">
       Apuntas al {{round($percent, 2)}}% del publico global para la categor&iacute;a <b>{{$category->category}}</b>
+      <br>
+      a {{count($category->userInteresteds)}} personas les interesa esto.
     </span><!-- /span .softText-descriptions -->
     <small class="softText-descriptions" style="float:right;">
       {{-- ver m&aacute;s --}}

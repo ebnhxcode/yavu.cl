@@ -6,12 +6,11 @@
         <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-659-tick.png')}}" alt="">&nbsp;&nbsp;Sorteos <b>Activos</b>
       </div>
       <hr>
+
       <div style="padding: 10px;">
         @foreach($rafflesActive as $key => $raffle)
-
           <div class="row">
             <div style="padding-bottom: 10px;" class="col-xs-1 col-sm-2 col-md-2 col-lg-2">
-
               <a class="thumbnail">
                 <img id='RaffleImage' src='/img/users/{{ ($raffle->imagen_sorteo!='')?$raffle->imagen_sorteo:'usuario_nuevo.png' }}' class='center-block'>
               </a><!-- /div .thumbnail -->
@@ -49,17 +48,17 @@
                   |  Resumenes <br>
                   +-----------------------------------+ <br>
 
-                </div>
+                </div><!-- .btn-default -->
 
-              </div>
+              </div><!-- .softText-descriptions -->
 
             </div><!-- /div .col-xs11-sm8-md8-lg8 -->
 
-          </div>
+          </div><!-- .row -->
           <hr>
         @endforeach
       </div><!-- styled padding 10px -->
     </div><!-- /div .list-group -->
   </div><!-- /div .row -->
 
-</div><!-- /div .tab-pane .fade -->
+</div><!-- /div .tab-pane .fade #actives -->

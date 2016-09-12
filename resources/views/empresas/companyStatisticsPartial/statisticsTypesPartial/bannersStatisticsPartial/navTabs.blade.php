@@ -9,9 +9,9 @@
   </li>
 
   <li role="presentation">
-    <a href="#inactives" aria-controls="messages" role="tab" data-toggle="tab">
+    <a href="#expired" aria-controls="messages" role="tab" data-toggle="tab">
       <div>
-        <small>Inactivos</small>
+        <small>Expirados</small>
       </div>
     </a>
   </li>
