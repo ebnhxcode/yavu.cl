@@ -2,8 +2,9 @@
   <div class="row" style="padding-bottom: 5px;">
     <div class="list-group">
       <br>
-      <div align="center">
-        <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-341-globe.png')}}" alt=""> Globales
+      <div align="center" style="margin:10;">
+        <img width="20" style="float:left;" data-toggle="tooltip" data-placement="top" title="Hombres" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-4-user.png')}}" alt="">
+        <h6>ESTA ES TU INFORMACIÓN GLOBAL DE LOS USUARIOS HOMBRES</h6>
       </div>
       <hr>
       <div align="center">

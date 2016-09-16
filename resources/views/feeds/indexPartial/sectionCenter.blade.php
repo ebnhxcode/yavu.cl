@@ -58,9 +58,11 @@
 
         @if($cis = $companyStatus->statusImage()->select('company_image_status')->get())
           @foreach( $cis as $key => $image )
-            <a href=#! class="thumbnail" style="margin: 0;padding: 0; border-radius: 7px;">
-              <img style="border-radius: 5px;" src="/img/users/{!! $image->company_image_status !!}" alt="" class="img-responsive center-block">
-            </a><!-- /a .thumbnail -->
+            <div style="border-radius: 10px;box-shadow: 1px 2px 3px #d5d5c7;">
+              <a href=#! class="thumbnail" style="margin: 0;padding: 0; border-radius: 7px;">
+                <img style="border-radius: 5px;" src="/img/users/{!! $image->company_image_status !!}" alt="" class="img-responsive center-block">
+              </a><!-- /a .thumbnail -->
+            </div>
           @endforeach
         @endif
 

@@ -14,6 +14,7 @@ class Empresa extends Model implements AuthenticatableContract,
                                     CanResetPasswordContract
 {
 	use Authenticatable, Authorizable, CanResetPassword, SoftDeletes;
+
     protected $table = "empresas";
     protected $primaryKey = 'id';
     protected $fillable = ['rut', 'email', 'login', 'nombre', 'descripcion','direccion', 'ciudad', 'region', 'pais', 'fono', 'fono_2', 'fecha_creacion', 'tipo_servicio','fecha_de_pago','nombre_encargado', 'user_id', 'estado', 'imagen_perfil', 'imagen_portada'];
@@ -76,8 +77,24 @@ class Empresa extends Model implements AuthenticatableContract,
       return $this->hasMany(EstadoEmpresa::class, 'empresa_id');
     }
 
+    public function feeds_in_day(){
+      return $this->hasMany(EstadoEmpresa::class, 'empresa_id')->where('created_at', '>', Carbon::now()->subHours(24));
+    }
+
+    public function feeds_in_week(){
+      return $this->hasMany(EstadoEmpresa::class, 'empresa_id')->where('created_at', '>', Carbon::now()->subWeek());
+    }
+
+    public function feeds_in_month(){
+      return $this->hasMany(EstadoEmpresa::class, 'empresa_id')->where('created_at', '>', Carbon::now()->subMonth());
+    }
+
+    public function feeds_in_year(){
+      return $this->hasMany(EstadoEmpresa::class, 'empresa_id')->where('created_at', '>', Carbon::now()->subYear());
+    }
+
     public function isFollowedBy($user_id){
-        return $this->hasMany(Follower::class, 'empresa_id')->select('user_id')->where('user_id', $user_id)->get();
+      return $this->hasMany(Follower::class, 'empresa_id')->select('user_id')->where('user_id', $user_id)->get();
     }
     public function sorteos(){
         return $this->hasMany(Sorteo::class, 'empresa_id')->select('empresa_id')->where('estado_sorteo', 'Activo');

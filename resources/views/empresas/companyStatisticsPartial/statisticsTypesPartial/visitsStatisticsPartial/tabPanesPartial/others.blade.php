@@ -2,8 +2,9 @@
   <div class="row" style="padding-bottom: 5px;">
     <div class="list-group">
       <br>
-      <div align="center">
-        <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-341-globe.png')}}" alt=""> Globales
+      <div align="center" style="margin:10;">
+        <img width="26" style="float:left;" data-toggle="tooltip" data-placement="top" title="Sin definir" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-25-parents.png')}}" alt="">
+        <h6>ESTA ES TU INFORMACIÓN GLOBAL SIN GÉNERO DEFINIDO</h6>
       </div>
       <hr>
       <div align="center">

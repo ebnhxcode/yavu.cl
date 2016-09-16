@@ -1,38 +1,32 @@
 <!-- Tab panes -->
 <div class="tab-content">
 
-  <div role="tabpanel" class="tab-pane active" id="general">
 
 
 
-  </div><!-- /div .tab-pane .fade -->
+  <!-- ######################### -->
+  <!--         TAB PANE # 1      -->
+  <!-- ######################### -->
 
-  <div role="tabpanel" class="tab-pane fade" id="actives">
+  @include('empresas.companyStatisticsPartial.statisticsTypesPartial.feedsStatisticsPartial.tabPanesPartial.hours')
 
-  </div><!-- /div .tab-pane .fade -->
+    <!-- ######################### -->
+  <!--         TAB PANE # 2      -->
+  <!-- ######################### -->
 
-  <div role="tabpanel" class="tab-pane fade" id="inactives">
+  @include('empresas.companyStatisticsPartial.statisticsTypesPartial.feedsStatisticsPartial.tabPanesPartial.week')
 
-  </div><!-- /div .tab-pane .fade -->
+    <!-- ######################### -->
+  <!--         TAB PANE # 3      -->
+  <!-- ######################### -->
 
+  @include('empresas.companyStatisticsPartial.statisticsTypesPartial.feedsStatisticsPartial.tabPanesPartial.month')
 
-  <div role="tabpanel" class="tab-pane fade" id="requests">
+    <!-- ######################### -->
+  <!--         TAB PANE # 4      -->
+  <!-- ######################### -->
 
-    <div class="list-group">
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-        <div class="">
-
-          <div class="softText-descriptions">
-            Tienes {{count($raffleRaquests = $userCompany->raffleRequests)}} peticiones de sorteos.
-          </div><!-- /div .softText-descriptions -->
-
-        </div><!-- /div .list-group-item -->
-      </div><!-- /div .col-xs12-sm6-md6-lg6 -->
-    </div><!-- /div .list-group -->
-
-  </div><!-- /div .tab-pane .fade -->
-
-
+  @include('empresas.companyStatisticsPartial.statisticsTypesPartial.feedsStatisticsPartial.tabPanesPartial.year')
 
 
   {{--

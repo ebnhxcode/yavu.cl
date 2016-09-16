@@ -8,12 +8,12 @@
   </div><!-- /div .list-group-item -->
   <div class="list-group-item">
     <div class="row">
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+      <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
         @include('empresas.companyStatisticsPartial.statisticsTypesPartial.feedsStatisticsPartial.navTabs')
-      </div><!-- /div .col-xs3-sm3-md3-lg3 -->
-      <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+      </div><!-- /div .col-xs12-sm2-md2-lg2 -->
+      <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
         @include('empresas.companyStatisticsPartial.statisticsTypesPartial.feedsStatisticsPartial.tabPanes')
-      </div><!-- /div .col-xs9-sm9-md9-lg9 -->
+      </div><!-- /div .col-xs12-sm10-md10-lg10 -->
     </div><!-- /div .row -->
   </div><!-- /div .list-group-item -->
 </div><!-- /div .list-group -->
