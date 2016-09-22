@@ -57,7 +57,7 @@
                     @include('empresas.companyStatisticsPartial.statisticsTypesPartial.followersStatisticsPartial.graphics',
                     ['graphicType'=>'followers', 'category'=>$cco])
 
-                    <span id="{{$companyCategoryObject->id}}" class="btn btn-xs btn-default hidecat" style="float:right;">
+                    <span id="{{$companyCategoryObject->id}}" class="btn btn-sm btn-default hidecat" style="float:right;">
                       <small class="text-danger">ocultar</small>
                     </span><!-- .btn .btn-xs .btn-default -->
                     <script>

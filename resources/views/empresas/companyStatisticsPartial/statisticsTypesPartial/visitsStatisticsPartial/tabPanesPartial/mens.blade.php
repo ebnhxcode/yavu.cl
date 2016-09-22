@@ -40,7 +40,7 @@
                       @include('empresas.companyStatisticsPartial.statisticsTypesPartial.visitsStatisticsPartial.graphics',
                       ['graphicType'=>'mens'])
 
-                      <span id="{{$category->id}}" class="btn btn-xs btn-default hidecat" style="float:right;">
+                      <span id="{{$category->id}}" class="btn btn-sm btn-default hidecat" style="float:right;">
                         <small class="text-danger">ocultar</small>
                       </span><!-- .btn .btn-xs .btn-default -->
 
