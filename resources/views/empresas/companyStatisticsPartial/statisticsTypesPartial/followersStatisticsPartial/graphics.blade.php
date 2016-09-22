@@ -1,5 +1,7 @@
 <div id="Graphic{!! $category->id !!}Category{{$graphicType}}" class="collapse">
 
+  {{($interesteds)>0?$interesteds.' de tus seguidores tienen intereses en esta categor&iacute;a':'no tienes seguidores interesados en esta categor&iacute;a'}}
+
   <span>
 
 

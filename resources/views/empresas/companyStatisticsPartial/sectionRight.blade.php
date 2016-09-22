@@ -1,6 +1,8 @@
 <div class="list-group">
   <div class="list-group-item list-group-item-success">
-    Men&uacute; de estad&iacute;sticas
+    <h6>
+      MENÚ
+    </h6>
   </div><!-- /div .list-group-item .list-group-item-success -->
 
   <div class="list-group-item">

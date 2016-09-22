@@ -4,7 +4,7 @@
     <div class="list-group">
       <br>
       <div align="center">
-        <img style="float:left;" data-toggle="tooltip" data-placement="top" title="{{$userCompany->nombre}}" width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-342-briefcase.png')}}" alt="">
+        <img style="float:left;margin-left: 80px;" data-toggle="tooltip" data-placement="top" title="{{$userCompany->nombre}}" width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-342-briefcase.png')}}" alt="">
         <h6>ESTAS SON LAS CATEGORIAS A LAS QUE PERTENECE TU EMPRESA</h6>
       </div>
       <hr>
@@ -33,23 +33,22 @@
             </button>
             <small>Puedes ocultar los paneles como alternativa</small>
             <span class="btn btn-xs btn-default hidecat" style="padding: 2px;font-size: 0.74em;">
-              ocultar este panel
+              ocultar
             </span><!-- .btn .btn-xs .btn-default -->
           </div>
 
         @foreach($userCompany->myCategories as $key => $companyCategoryObject)
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <div id="cat{{$companyCategoryObject->id}}" style="margin:8px; box-shadow: 1px 2px 2px #E9E9E9; border-radius: 3px;">
               <div class="list-group-item">
                 <!-- $cco -> $companyCategoryObject -->
                 <b>{{($cco = $companyCategoryObject->getCategory)?$cco->category:''}}</b>
-                <br>
                 <div class="softText-descriptions">
                   <?php $interesteds=0; ?>
                   @foreach($followers as $key => $follower)
                     <?php ( count($follower->interestedIn($cco->id))>0?$interesteds++:0 ) ?>
                   @endforeach
-                  {{($interesteds)>0?$interesteds.' de tus seguidores tienen intereses en esta categor&iacute;a':'no tienes seguidores interesados en esta categor&iacute;a'}}
-                    <br>
+
 
                     <!-- ####################### -->
                     <!--      GRAPHIC ZONE       -->
@@ -59,7 +58,7 @@
                     ['graphicType'=>'followers', 'category'=>$cco])
 
                     <span id="{{$companyCategoryObject->id}}" class="btn btn-xs btn-default hidecat" style="float:right;">
-                      ocultar este panel
+                      ocultar
                     </span><!-- .btn .btn-xs .btn-default -->
                     <script>
                       $('.hidecat').click(function(){
@@ -67,9 +66,10 @@
                       });
                     </script>
 
-                </div><!-- /div .softText-descriptions -->
-              </div><!-- /div .list-group-item -->
-            </div><!-- styled with box-shadow -->
+                  </div><!-- /div .softText-descriptions -->
+                </div><!-- /div .list-group-item -->
+              </div><!-- styled with box-shadow -->
+            </div><!-- .col-xs6-sm6-md6-lg6 -->
           @endforeach
         </div><!-- /div .col-xs6-sm6-md6-lg6 -->
       </div><!-- styled padding 10px -->

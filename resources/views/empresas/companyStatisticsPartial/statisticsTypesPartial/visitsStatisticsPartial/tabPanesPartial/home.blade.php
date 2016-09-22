@@ -3,7 +3,7 @@
     <div class="list-group">
       <br>
       <div align="center" style="margin:10;">
-        <img width="26" style="float:left;" data-toggle="tooltip" data-placement="top" title="Global" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-341-globe.png')}}" alt="">
+        <img width="20" style="float:left;margin-left: 80px;" data-toggle="tooltip" data-placement="top" title="Global" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-341-globe.png')}}" alt="">
         <h6>ESTA ES TU INFORMACIÓN GLOBAL</h6>
       </div>
       <hr>
@@ -14,43 +14,40 @@
       <br>
       <div style="padding: 10px;">
         <div style="padding-bottom: 10px;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          @foreach($categories as $key => $category)
-            <div style="margin:8px; box-shadow: 1px 2px 2px #E9E9E9; border-radius: 3px;">
-              <div class="list-group-item">
-                <b>
-                  {{$category->category}}
-                  @if(count($category->belongs_to_this_company($userCompany->id))>0)
-                    <img style="float:right;" width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-342-briefcase.png')}}" data-toggle="tooltip" data-placement="top" title="Categor&iacute;a de mi empresa" style alt="">
-                  @endif
-                </b>
-                <br>
-                <div class="softText-descriptions-middle">
-                  {{--$category->description--}}
-                </div><!-- /div .softText-descriptions-middle -->
+          <div class="row">
+            @foreach($categories as $key => $category)
+              <div class="col-xs-12 col-sm-10 col-md-6 col-lg-6">
+                <div style="margin:8px; box-shadow: 1px 2px 2px #E9E9E9; border-radius: 3px;">
+                  <div class="list-group-item">
+                    <b>
+                      {{$category->category}}
+                      @if(count($category->belongs_to_this_company($userCompany->id))>0)
+                        <img style="float:right;" width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-342-briefcase.png')}}" data-toggle="tooltip" data-placement="top" title="Categor&iacute;a de mi empresa" alt="">
+                      @endif
+                    </b>
+                    <div class="softText-descriptions-middle">
+                      {{--$category->description--}}
+                    </div><!-- /div .softText-descriptions-middle -->
 
-                <div class="softText-descriptions" style="padding-bottom: 5px;">
-                  <?php $visitantsInteresteds=0; ?>
-                  @foreach($userCompany->visits as $key => $visit)
-                    <?php ( count($visit->interestedIn($category->id))>0?$visitantsInteresteds++:0 ) ?>
-                  @endforeach
-                  {{($visitantsInteresteds)>0?$visitantsInteresteds.' de tus visitas totales les interesa esta categor&iacute;a':'no tienes visitantes en esta categor&iacute;a'}}
-                  <br>
-                  <br>
+                    <div class="softText-descriptions" style="padding-bottom: 5px;">
+                      <?php $visitantsInteresteds=0; ?>
+                      @foreach($userCompany->visits as $key => $visit)
+                      <?php ( count($visit->interestedIn($category->id))>0?$visitantsInteresteds++:0 ) ?>
+                      @endforeach
 
+                      <!-- ####################### -->
+                      <!--      GRAPHIC ZONE       -->
+                      <!-- ####################### -->
 
+                      @include('empresas.companyStatisticsPartial.statisticsTypesPartial.visitsStatisticsPartial.graphics',
+                      ['graphicType'=>'home'])
 
-
-                    <!-- ####################### -->
-                    <!--      GRAPHIC ZONE       -->
-                    <!-- ####################### -->
-
-                  @include('empresas.companyStatisticsPartial.statisticsTypesPartial.visitsStatisticsPartial.graphics',
-                  ['graphicType'=>'home'])
-
-                </div><!-- /div .softText-descriptions -->
-              </div><!-- /div .list-group-item -->
-            </div><!-- styled with box-shadow -->
-          @endforeach
+                    </div><!-- /div .softText-descriptions -->
+                  </div><!-- /div .list-group-item -->
+                </div><!-- styled with box-shadow -->
+              </div><!-- /div .col-xs12-sm10-md6-lg6 -->
+            @endforeach
+          </div><!-- .row -->
         </div><!-- /div .col-xs12-sm12-md12-lg12 -->
       </div><!-- styled padding 10px -->
     </div><!-- /div .list-group -->
