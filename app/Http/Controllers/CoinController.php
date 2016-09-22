@@ -26,7 +26,7 @@ class CoinController extends Controller{
     }
   }
   public function index(){
-    return view('coins.index', ['historialcoins' => $this->user->registro_coins()->limit('20')->get()]);
+    return view('coins.index', ['historialcoins' => $this->user->registro_coins()->limit('20')->get(), 'userSession'=>$this->user]);
   }
   public function ContarCoins(){
     return response()->json($this->user->registro_coins->sum('cantidad'));

@@ -31,13 +31,11 @@
                 </div><!-- /div .softText-descriptions -->
                 <!--<img style="width: 16px;" src="/img/glyphicons/glyphicons-social/png/glyphicons-social-31-facebook.png" alt="Facebook">-->
                 @foreach($banner->linksBannerData as $lbd)
-                  <a class="btn-link" href="{!!$lbd->link!!}">
+                  <a target="_blank" class="btn-link" href="{{$lbd->link}}">
                     {!! $lbd->titulo_link !!}
                   </a><!-- /div .btn-link -->
                   <br>
                 @endforeach
-
-
 
               </div><!-- /div .caption -->
 

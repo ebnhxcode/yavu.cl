@@ -58,7 +58,7 @@ class TicketController extends Controller{
     $this->registro_tickets = $this->user->registro_tickets()->orderBy('created_at', 'desc')->limit('20')->get();
 
 
-    return view('tickets.history', ['registros_participante' => $this->registros_participante], ['rtickets' => $this->registro_tickets]);
+    return view('tickets.history', ['registros_participante' => $this->registros_participante, 'rtickets' => $this->registro_tickets, 'userSession'=>$this->user]);
   }
   public function index(){
     $tickets = Ticket::paginate(5);

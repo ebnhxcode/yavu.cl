@@ -50,24 +50,13 @@
 
                   <div class="softText-descriptions">
 
-                    Visualizaciones <b>{{count($displays = $banner->displays)}} </b> despliegues.<br>
+                    Visualizaciones totales → <b>{{count($displays = $banner->displays)}} </b> despliegues.
+                    <hr>
 
-                    <div class="btn-default">
+                    @include('empresas.companyStatisticsPartial.statisticsTypesPartial.bannersStatisticsPartial.graphics',
+                    ['graphicType'=>'actives'])
 
-                      +-----------------------------------+ <br>
-                      | <br>
-                      |  insertar gráfico <br>
-                      | <br>
-                      | <br>
-                      | <br>
-                      | <br>
-                      | <br>
-                      |  Resumenes <br>
-                      +-----------------------------------+ <br>
-
-                    </div>
-
-                  </div>
+                  </div><!-- .softText-descriptions -->
 
                 </div><!-- /div .col-xs12-sm8-md8-lg8 -->
               </div><!-- .row -->
