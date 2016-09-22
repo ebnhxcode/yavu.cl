@@ -3,7 +3,7 @@
 
   <li role="presentation" class="active"  data-toggle="tooltip" data-placement="right" title="Global">
 
-  <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
+  <a href="#global" aria-controls="home" role="tab" data-toggle="tab">
     <div>
       <small>Global</small>
     </div>

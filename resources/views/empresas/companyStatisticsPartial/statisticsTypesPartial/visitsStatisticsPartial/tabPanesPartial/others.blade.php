@@ -31,9 +31,11 @@
                     </div><!-- /div .softText-descriptions-middle -->
 
                     <div class="softText-descriptions" style="padding-bottom: 5px;">
-                      <?php $visitantsInteresteds=0; ?>
+                      <?php $visitantsInteresteds=[]; ?>
                       @foreach($otherVisits as $key => $other)
-                        <?php ( count($other->interestedIn($category->id))>0?$visitantsInteresteds++:0 ) ?>
+                        @if(count($other->interestedIn($category->id))>0)
+                          <?php array_push($visitantsInteresteds,$other); ?>
+                        @endif
                       @endforeach
 
                       @include('empresas.companyStatisticsPartial.statisticsTypesPartial.visitsStatisticsPartial.graphics',

@@ -30,9 +30,11 @@
                     </div><!-- /div .softText-descriptions-middle -->
 
                     <div class="softText-descriptions" style="padding-bottom: 5px;">
-                      <?php $visitantsInteresteds=0; ?>
+                      <?php $visitantsInteresteds=[]; ?>
                       @foreach($menVisits as $key => $men)
-                        <?php ( count($men->interestedIn($category->id))>0?$visitantsInteresteds++:0 ) ?>
+                        @if(count($men->interestedIn($category->id))>0)
+                          <?php array_push($visitantsInteresteds,$men); ?>
+                        @endif
                       @endforeach
 
                       @include('empresas.companyStatisticsPartial.statisticsTypesPartial.visitsStatisticsPartial.graphics',

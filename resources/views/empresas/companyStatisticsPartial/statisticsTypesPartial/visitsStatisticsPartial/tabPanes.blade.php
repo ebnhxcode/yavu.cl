@@ -7,7 +7,7 @@
   <!--         TAB PANE # 1      -->
   <!-- ######################### -->
 
-  @include('empresas.companyStatisticsPartial.statisticsTypesPartial.visitsStatisticsPartial.tabPanesPartial.home')
+  @include('empresas.companyStatisticsPartial.statisticsTypesPartial.visitsStatisticsPartial.tabPanesPartial.global')
 
   <!-- ######################### -->
   <!--         TAB PANE # 2      -->

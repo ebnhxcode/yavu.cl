@@ -93,6 +93,22 @@ class Empresa extends Model implements AuthenticatableContract,
       return $this->hasMany(EstadoEmpresa::class, 'empresa_id')->where('created_at', '>', Carbon::now()->subYear());
     }
 
+    public function visits_in_day(){
+        return $this->hasMany(Visit::class, 'empresa_id')->where('created_at', '>', Carbon::now()->subHours(24));
+    }
+
+    public function visits_in_week(){
+        return $this->hasMany(Visit::class, 'empresa_id')->where('created_at', '>', Carbon::now()->subWeek());
+    }
+
+    public function visits_in_month(){
+        return $this->hasMany(Visit::class, 'empresa_id')->where('created_at', '>', Carbon::now()->subMonth());
+    }
+
+    public function visits_in_year(){
+        return $this->hasMany(Visit::class, 'empresa_id')->where('created_at', '>', Carbon::now()->subYear());
+    }
+
     public function isFollowedBy($user_id){
       return $this->hasMany(Follower::class, 'empresa_id')->select('user_id')->where('user_id', $user_id)->get();
     }
@@ -116,7 +132,7 @@ class Empresa extends Model implements AuthenticatableContract,
         return $this->hasMany(Visit::class, 'empresa_id');
     }
     public function otherVisits(){
-        return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', 'Otro');
+        return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', 'Otro')->where('sexo', '');
     }
     public function menVisits(){
         return $this->hasMany(Visit::class, 'empresa_id')->where('sexo', 'Masculino');

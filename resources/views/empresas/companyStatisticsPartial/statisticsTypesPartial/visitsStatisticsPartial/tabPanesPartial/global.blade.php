@@ -1,4 +1,4 @@
-<div role="tabpanel" class="tab-pane active" id="home">
+<div role="tabpanel" class="tab-pane active" id="global">
   <div class="row" style="padding-bottom: 5px;">
     <div class="list-group">
       <br>
@@ -8,8 +8,15 @@
       </div>
       <hr>
       <div align="center">
-        <b>Total</b> : {{$totalVisits}}
+        <b>Total</b> : {{count($userCompany->visits)}}
         visitas
+        <div class="softText-descriptions">
+          Visitas de hoy → <b> {{count($visits_in_day=$userCompany->visits_in_day)}} </b> <br>
+          Visitas desde hace 7 días → <b> {{count($visits_in_week=$userCompany->visits_in_week)}} </b> <br>
+          Visitas desde hace de 4 semanas → <b> {{count($visits_in_month=$userCompany->visits_in_month)}} </b> <br>
+          Visitas desde hace 1 año → <b> {{count($visits_in_year=$userCompany->visits_in_year)}} </b> <br>
+        </div><!-- .softText-descriptions -->
+
       </div>
       <br>
       <div style="padding: 10px;">
@@ -30,15 +37,18 @@
                     </div><!-- /div .softText-descriptions-middle -->
 
                     <div class="softText-descriptions" style="padding-bottom: 5px;">
-                      <?php $visitantsInteresteds=0; ?>
-                      @foreach($userCompany->visits as $key => $visit)
-                      <?php ( count($visit->interestedIn($category->id))>0?$visitantsInteresteds++:0 ) ?>
-                      @endforeach
+                      <?php $visitantsInteresteds=[]; ?>
 
+                      @foreach($userCompany->visits as $key => $visit)
+
+                        @if(count($visit->interestedIn($category->id))>0)
+                          <?php array_push($visitantsInteresteds,$visit); ?>
+                        @endif
+
+                      @endforeach
                       <!-- ####################### -->
                       <!--      GRAPHIC ZONE       -->
                       <!-- ####################### -->
-
                       @include('empresas.companyStatisticsPartial.statisticsTypesPartial.visitsStatisticsPartial.graphics',
                       ['graphicType'=>'home'])
 
