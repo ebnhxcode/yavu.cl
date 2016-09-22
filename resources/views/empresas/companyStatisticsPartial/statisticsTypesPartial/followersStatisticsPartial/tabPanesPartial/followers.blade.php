@@ -58,7 +58,7 @@
                     ['graphicType'=>'followers', 'category'=>$cco])
 
                     <span id="{{$companyCategoryObject->id}}" class="btn btn-xs btn-default hidecat" style="float:right;">
-                      ocultar
+                      <small class="text-danger">ocultar</small>
                     </span><!-- .btn .btn-xs .btn-default -->
                     <script>
                       $('.hidecat').click(function(){

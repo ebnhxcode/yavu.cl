@@ -23,7 +23,7 @@
         <div style="padding-bottom: 10px;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <div class="row">
             @foreach($categories as $key => $category)
-              <div class="col-xs-12 col-sm-10 col-md-6 col-lg-6">
+              <div id="cat{{$category->id}}" class="col-xs-12 col-sm-10 col-md-6 col-lg-6">
                 <div style="margin:8px; box-shadow: 1px 2px 2px #E9E9E9; border-radius: 3px;">
                   <div class="list-group-item">
                     <b>
@@ -51,6 +51,16 @@
                       <!-- ####################### -->
                       @include('empresas.companyStatisticsPartial.statisticsTypesPartial.visitsStatisticsPartial.graphics',
                       ['graphicType'=>'home'])
+
+                      <span id="{{$category->id}}" class="btn btn-xs btn-default hidecat" style="float:right;">
+                        <small class="text-danger">ocultar</small>
+                      </span><!-- .btn .btn-xs .btn-default -->
+
+                      <script>
+                        $('.hidecat').click(function(){
+                          $("#cat"+this.id).fadeOut(500);
+                        });
+                      </script>
 
                     </div><!-- /div .softText-descriptions -->
                   </div><!-- /div .list-group-item -->

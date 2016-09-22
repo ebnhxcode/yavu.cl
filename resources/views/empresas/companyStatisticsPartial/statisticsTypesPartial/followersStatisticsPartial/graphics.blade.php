@@ -1,4 +1,4 @@
-<div id="Graphic{!! $category->id !!}Category{{$graphicType}}" class="collapse">
+<div id="Graphic{!! $category->id !!}Category{{$graphicType}}" class="collapse in">
 
   {{($interesteds)>0?$interesteds.' de tus seguidores tienen intereses en esta categor&iacute;a':'no tienes seguidores interesados en esta categor&iacute;a'}}
 
@@ -36,8 +36,8 @@
 
 <!-- boton que cierra y abre la caja del gráfico -->
 <br>
-<small class="btn btn-xs btn-info">
-  <span class="openclose" data-toggle="collapse" data-target="#Graphic{{$category->id}}Category{{$graphicType}}" style="float:right;">
-    ver más detalles
-  </span><!-- #openclose .btn .btn-default .btn-xs -->
-</small><!-- .btn .btn-xs .btn-default -->
+<span class="btn btn-xs btn-default">
+  <small class="openclose text-success" data-toggle="collapse" data-target="#Graphic{{$category->id}}Category{{$graphicType}}">
+    cerrar detalles
+  </small><!-- #openclose .btn .btn-default .btn-xs -->
+</span><!-- .btn .btn-xs .btn-default -->

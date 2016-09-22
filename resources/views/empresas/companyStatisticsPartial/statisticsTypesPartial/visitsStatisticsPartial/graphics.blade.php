@@ -78,8 +78,8 @@
 
 <!-- boton que cierra y abre la caja del gráfico -->
 <br>
-<small class="btn btn-xs btn-info">
-  <span class="openclose" data-toggle="collapse" data-target="#Graphic{{$category->id}}Category{{$graphicType}}" style="float:right;">
+<span class="btn btn-xs btn-default">
+  <small class="openclose text-success" data-toggle="collapse" data-target="#Graphic{{$category->id}}Category{{$graphicType}}">
     cerrar detalles
-  </span><!-- #openclose .btn .btn-default .btn-xs -->
-</small><!-- .btn .btn-xs .btn-default -->
+  </small><!-- #openclose .btn .btn-default .btn-xs -->
+</span><!-- .btn .btn-xs .btn-default -->

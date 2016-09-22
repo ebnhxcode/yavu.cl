@@ -41,6 +41,16 @@
                       @include('empresas.companyStatisticsPartial.statisticsTypesPartial.visitsStatisticsPartial.graphics',
                       ['graphicType'=>'others'])
 
+                      <span id="{{$category->id}}" class="btn btn-xs btn-default hidecat" style="float:right;">
+                        <small class="text-danger">ocultar</small>
+                      </span><!-- .btn .btn-xs .btn-default -->
+
+                      <script>
+                        $('.hidecat').click(function(){
+                          $("#cat"+this.id).fadeOut(500);
+                        });
+                      </script>
+
                     </div><!-- /div .softText-descriptions -->
                   </div><!-- /div .list-group-item -->
                 </div><!-- styled with box-shadow -->

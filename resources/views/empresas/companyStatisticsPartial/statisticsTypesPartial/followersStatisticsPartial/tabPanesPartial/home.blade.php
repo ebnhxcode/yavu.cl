@@ -31,7 +31,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
             <small>Puedes ocultar los paneles como alternativa</small>
-            <span class="btn btn-xs btn-default hidecat" style="padding: 2px;font-size: 0.74em;">
+            <span class="btn btn-xs btn-default" style="padding: 2px;font-size: 0.74em;">
               ocultar
             </span><!-- .btn .btn-xs .btn-default -->
           </div>
@@ -72,7 +72,7 @@
                     ['graphicType'=>'home'])
 
                     <span id="{{$category->id}}" class="btn btn-xs btn-default hidecat" style="float:right;">
-                      ocultar
+                      <small class="text-danger">ocultar</small>
                     </span><!-- .btn .btn-xs .btn-default -->
 
                     <script>
