@@ -379,7 +379,7 @@
 	});
 
 	function ValidarRut(rut){
-		var route = "http://yavu.local/validarrutempresa/"+rut+"";
+		var route = "http://192.168.0.103/validarrutempresa/"+rut+"";
 		document.getElementById('FormEmpresa').onsubmit = function() {
 		    return false;
 		}

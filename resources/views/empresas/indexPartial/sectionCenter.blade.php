@@ -95,7 +95,7 @@
   $('.request').click(function(){
     var token = $("#token").val();
     var companyRequested = this;
-    var route = "http://yavu.local/requestaraffle";
+    var route = "http://192.168.0.103/requestaraffle";
     $.ajax({
       url: route,
       headers: {'X-CSRF-TOKEN': token},
