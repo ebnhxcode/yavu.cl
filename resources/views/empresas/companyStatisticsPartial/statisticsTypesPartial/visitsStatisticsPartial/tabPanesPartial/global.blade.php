@@ -24,7 +24,7 @@
           <div class="row">
             @foreach($categories as $key => $category)
               <div id="cat{{$category->id}}" class="col-xs-12 col-sm-10 col-md-6 col-lg-6">
-                <div style="margin:8px; box-shadow: 1px 2px 2px #E9E9E9; border-radius: 3px;">
+                <div class="Displays" style="margin:8px; box-shadow: 1px 2px 2px #E9E9E9; border-radius: 3px;">
                   <div class="list-group-item">
                     <b>
                       {{$category->category}}
@@ -50,21 +50,11 @@
                       <!--      GRAPHIC ZONE       -->
                       <!-- ####################### -->
                       @include('empresas.companyStatisticsPartial.statisticsTypesPartial.visitsStatisticsPartial.graphics',
-                      ['graphicType'=>'home'])
-
-                      <span id="{{$category->id}}" class="btn btn-sm btn-default hidecat" style="float:right;">
-                        <small class="text-danger">ocultar</small>
-                      </span><!-- .btn .btn-xs .btn-default -->
-
-                      <script>
-                        $('.hidecat').click(function(){
-                          $("#cat"+this.id).fadeOut(500);
-                        });
-                      </script>
+                      ['graphicType'=>'global'])
 
                     </div><!-- /div .softText-descriptions -->
                   </div><!-- /div .list-group-item -->
-                </div><!-- styled with box-shadow -->
+                </div><!-- styled with box-shadow .Displays -->
               </div><!-- /div .col-xs12-sm10-md6-lg6 -->
             @endforeach
           </div><!-- .row -->

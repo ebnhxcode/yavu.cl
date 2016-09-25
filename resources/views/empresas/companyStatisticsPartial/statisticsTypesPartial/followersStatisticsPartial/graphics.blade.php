@@ -25,13 +25,14 @@
 
   </span>
 
+{{--
   <br>
   +------------------------+ <br>
   | <br>
   |  insertar gráfico <br>
   | <br>
   +------------------------+ <br>
-
+--}}
 </div>
 
 <!-- boton que cierra y abre la caja del gráfico -->

@@ -1,10 +1,12 @@
 <div class="list-group">
   <div class="list-group-item list-group-item-success">
-    Estad&iacute;stica de yavüposts
-    <a style="float:right;" href="{{url('empresas/'.$userCompany->id)}}">
-      <img width='32' style="border-radius: 10%;" id='ImagenPerfil' src='/img/users/{!! isset($userCompany)?($userCompany->imagen_perfil!='')?$userCompany->imagen_perfil:'banner.png':'banner.png' !!}'>
-      <b>{{$userCompany->nombre}}</b>
-    </a>
+    <h6>
+      PUBLICACIONES
+      <a style="float:right;" href="{{url('empresas/'.$userCompany->id)}}">
+        <img width='32' style="border-radius: 10%;" id='ImagenPerfil' src='/img/users/{!! isset($userCompany)?($userCompany->imagen_perfil!='')?$userCompany->imagen_perfil:'banner.png':'banner.png' !!}'>
+        <b>{{$userCompany->nombre}}</b>
+      </a>
+    </h6>
   </div><!-- /div .list-group-item -->
   <div class="list-group-item">
     <div class="row">
@@ -17,3 +19,10 @@
     </div><!-- /div .row -->
   </div><!-- /div .list-group-item -->
 </div><!-- /div .list-group -->
+<script>
+  $('.Displays').hover(function(){
+    $(this).css({'box-shadow':'1px 3px 4px #B7B7B7','-moz-transition':'.2s','-webkit-transition':'.2s'}).fadeIn('slow');
+  },function(){
+    $(this).css({'box-shadow':'1px 2px 2px #E9E9E9','-moz-transition':'.2s','-webkit-transition':'.2s'}).fadeIn('slow');
+  });
+</script>

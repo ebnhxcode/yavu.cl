@@ -14,7 +14,7 @@
       <br>
 
       <div class="list-group" align="center">
-        <div style="margin:8px; box-shadow: 1px 2px 2px #E9E9E9; border-radius: 3px;">
+        <div class="Displays" style="margin:8px; box-shadow: 1px 2px 2px #E9E9E9; border-radius: 3px;">
           <div class="list-group-item">
 
             <div class="row">
@@ -72,7 +72,7 @@
               </div><!-- .col-xs10-sm10-md10-lg10 -->
             </div><!-- .row -->
           </div><!-- .list-group-item -->
-        </div><!-- shadow-box -->
+        </div><!-- shadow-box .Displays -->
       </div><!-- .list-group -->
 
       <div style="padding-bottom: 10px;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

@@ -26,12 +26,18 @@
   --}}
 
   <div class="btn-default" id="graphic-box">
+{{--
     +-----------------------------------+ <br>
     | <br>
     |  insertar gráfico <br>
     | <br>
     | <br>
-
+    | <br>
+    | <br>
+    | <br>
+    |  Resumenes <br>
+    +-----------------------------------+ <br>
+--}}
     <?php $vsid=[];$vsiw=[];$vsiw=[];$vsim=[];$vsiy=[]; ?>
     @foreach($visitantsInteresteds as $key => $vI)
       @foreach($visits_in_day as $key => $vid)
@@ -67,11 +73,6 @@
     Visitas desde hace de 4 semanas → <b>{{count($vsim)}}</b> <br>
     Visitas desde hace 1 año → <b>{{count($vsiy)}}</b> <br>
 
-    | <br>
-    | <br>
-    | <br>
-    |  Resumenes <br>
-    +-----------------------------------+ <br>
   </div><!-- #graphic-box .btn-default -->
 
 </div><!-- #GraphicsIdCategory .collapse -->

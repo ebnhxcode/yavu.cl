@@ -19,7 +19,7 @@
 
         @foreach($userCompany->feeds_in_day as $key => $feed)
           
-          <div style="margin:8px; box-shadow: 1px 2px 2px #E9E9E9; border-radius: 3px;">
+          <div class="Displays" style="margin:8px; box-shadow: 1px 2px 2px #E9E9E9; border-radius: 3px;">
             <div class="list-group-item">
               <div class="row">
                 <div style="padding-bottom: 10px;" class="col-xs-6 col-sm-6 col-md-2 col-lg-2" align="center">
@@ -86,18 +86,11 @@
                     </div>
                   </div>
 
-
                 </div><!-- /div .col-xs4-sm4-md4-lg4 -->
-
-
-
-
-
-
 
               </div><!-- .row -->
             </div><!-- .list-group-item -->
-          </div><!-- shadow-box -->
+          </div><!-- shadow-box .Displays -->
 
         @endforeach
 

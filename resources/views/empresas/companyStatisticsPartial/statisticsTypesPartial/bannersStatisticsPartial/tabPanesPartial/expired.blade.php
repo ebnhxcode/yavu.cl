@@ -38,10 +38,12 @@
 
                   <div>
 
-                    <span style="float:right;" class="btn btn-xs btn-default">
-                      Opciones
-                      @include('alerts.betaInfo')
-                    </span>
+                    {{--
+                       <span style="float:right;" class="btn btn-xs btn-default">
+                        Opciones
+                        @include('alerts.betaInfo')
+                      </span>
+                    --}}
                     <b>{{$banner->titulo_banner}}</b>
                     <div class="softText-descriptions">
                       {{($b=$banner->descripcion_banner)?$b:'sin descripción'}} <br>

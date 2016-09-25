@@ -8,7 +8,7 @@
       <hr>
       <div style="padding: 10px;">
         @foreach($rafflesEnded as $key => $raffle)
-          <div style="margin:8px; box-shadow: 1px 2px 2px #E9E9E9; border-radius: 3px;">
+          <div class="Displays" style="margin:8px; box-shadow: 1px 2px 2px #E9E9E9; border-radius: 3px;">
             <div class="list-group-item">
               <div class="row">
                 <div style="padding-bottom: 10px;" class="col-xs-1 col-sm-2 col-md-2 col-lg-2">
@@ -21,10 +21,12 @@
                 <div style="padding-bottom: 10px;" class="col-xs-11 col-sm-8 col-md-8 col-lg-8">
                   <div>
 
-                    <span style="float:right;" class="btn btn-xs btn-default">
-                      Opciones
-                      @include('alerts.betaInfo')
-                    </span>
+                    {{--
+                       <span style="float:right;" class="btn btn-xs btn-default">
+                        Opciones
+                        @include('alerts.betaInfo')
+                      </span>
+                    --}}
                     <b>{{$raffle->nombre_sorteo}}</b>
                     <div class="softText-descriptions">
                       {{($d=$raffle->descripcion)?$d:'sin descripción'}} <br>
@@ -38,7 +40,7 @@
                     Visualizaciones <b>{{count($raffle->displays)}}</b> <br> <!-- <- le sirve a nuestros clientes para hacerle seguimiento a los sorteos -->
 
                     <div class="btn-default">
-
+                      {{--
                       +-----------------------------------+ <br>
                       | <br>
                       |  insertar gráfico <br>
@@ -49,7 +51,7 @@
                       | <br>
                       |  Resumenes <br>
                       +-----------------------------------+ <br>
-
+                      --}}
                     </div><!-- .btn-default -->
 
                   </div><!-- .softText-descriptions -->
@@ -58,7 +60,7 @@
 
               </div><!-- .row -->
             </div><!-- .list-group-item -->
-          </div><!-- shadow-box -->
+          </div><!-- shadow-box .Displays -->
           <hr>
         @endforeach
       </div><!-- styled padding 10px -->

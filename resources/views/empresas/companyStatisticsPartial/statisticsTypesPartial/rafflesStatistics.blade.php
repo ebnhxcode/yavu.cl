@@ -30,3 +30,10 @@
     </div><!-- /div .row -->
   </div><!-- /div .list-group-item -->
 </div><!-- /div .list-group -->
+<script>
+  $('.Displays').hover(function(){
+    $(this).css({'box-shadow':'1px 3px 4px #B7B7B7','-moz-transition':'.2s','-webkit-transition':'.2s'}).fadeIn('slow');
+  },function(){
+    $(this).css({'box-shadow':'1px 2px 2px #E9E9E9','-moz-transition':'.2s','-webkit-transition':'.2s'}).fadeIn('slow');
+  });
+</script>

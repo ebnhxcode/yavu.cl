@@ -1,4 +1,4 @@
-<div id="DisplaysInWeek" style="margin:8px; box-shadow: 1px 2px 2px #E9E9E9; border-radius: 3px;">
+<div id="DisplaysInWeek" class="Displays" style="margin:8px; box-shadow: 1px 2px 2px #E9E9E9; border-radius: 3px;">
   <div class="list-group-item">
     Despliegues desde hace 7 días atrás → {{$cdiw}} despliegues <br>
     <span class="softText-descriptions-middle">

@@ -39,10 +39,12 @@
 
                 <div>
 
-                  <span style="float:right;" class="btn btn-xs btn-default">
-                    Opciones
-                    @include('alerts.betaInfo')
-                  </span>
+                  {{--
+                     <span style="float:right;" class="btn btn-xs btn-default">
+                      Opciones
+                      @include('alerts.betaInfo')
+                    </span>
+                  --}}
                   <b>TITULO</b>
                   <div class="softText-descriptions">
                     DESCRIPCION <br>
@@ -56,16 +58,18 @@
 
                   <div class="btn-default">
 
-                    +-----------------------------------+ <br>
-                    | <br>
-                    |  insertar gráfico <br>
-                    | <br>
-                    | <br>
-                    | <br>
-                    | <br>
-                    | <br>
-                    |  Resumenes <br>
-                    +-----------------------------------+ <br>
+                    {{--
+                      +-----------------------------------+ <br>
+                      | <br>
+                      |  insertar gráfico <br>
+                      | <br>
+                      | <br>
+                      | <br>
+                      | <br>
+                      | <br>
+                      |  Resumenes <br>
+                      +-----------------------------------+ <br>
+                    --}}
 
                   </div>
 

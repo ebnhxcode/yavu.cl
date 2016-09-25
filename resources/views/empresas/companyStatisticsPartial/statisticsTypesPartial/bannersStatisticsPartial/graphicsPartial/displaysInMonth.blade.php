@@ -1,4 +1,4 @@
-<div id="DisplaysInMonth" style="margin:8px; box-shadow: 1px 2px 2px #E9E9E9; border-radius: 3px;">
+<div id="DisplaysInMonth" class="Displays" style="margin:8px; box-shadow: 1px 2px 2px #E9E9E9; border-radius: 3px;">
   <div class="list-group-item">
   Despliegues desde hace 4 semanas atrás → {{$total}}
 
@@ -38,21 +38,5 @@
     <small> (+{{ 100-$cdit_percentage }}% de crecimiento en comparación al resultado anterior) </small> <br>
   --}}
 
-  <hr>
-
-  Despliegues desde hace 3 meses atrás →
-
-  <hr>
-
-  Despliegues desde hace 4 meses atrás →
-
-  <hr>
-
-  Despliegues desde hace 6 meses atrás →
-
-  <hr>
-
-  Despliegues desde hace 1 año →
-  <small class="text-success">  </small> <br>
   </div><!-- .list-group-item -->
 </div><!-- #DisplaysInMonth -->

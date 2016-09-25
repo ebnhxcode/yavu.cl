@@ -37,12 +37,13 @@
       </a><!-- /a .btn .btn-link -->
     </div>
 
+    {{--
     <div>
-
       <a href="{{url('/estadisticas/'.$userCompany->id).'/charges'}}" class="btn btn-link">
         <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-38-coins.png')}}" alt="">&nbsp;Cobros de coins
       </a><!-- /a .btn .btn-link -->
     </div>
+    --}}
 
   </div><!-- /div .list-group-item -->
   {{--
