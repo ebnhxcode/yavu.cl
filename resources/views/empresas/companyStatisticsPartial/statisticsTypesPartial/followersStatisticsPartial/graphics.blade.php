@@ -25,6 +25,35 @@
 
   </span>
 
+
+  <div id="graphic-box">
+    <canvas id="Grafico{{$category->id}}Category{{$graphicType}}" width="400" height="200"></canvas>
+    <script>
+      var ctx = document.getElementById("Grafico{{$category->id}}Category{{$graphicType}}");
+      var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: [
+            "Público Alcanzado",
+            "Público Global"
+          ],
+          datasets: [
+            {
+              data: [{{round($percent, 2)}}, 100-{{round($percent, 2)}}],
+              backgroundColor: [
+                "#FF6384",
+                "#36A2EB"
+              ],
+              hoverBackgroundColor: [
+                "#FF6384",
+                "#36A2EB"
+              ]
+            }
+          ]
+        }
+      });
+    </script>
+  </div><!-- $graphic-box -->
 {{--
   <br>
   +------------------------+ <br>
