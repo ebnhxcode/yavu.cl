@@ -1,3 +1,7 @@
+@include('miniDashboard.miniDashboard')
+
+
+{{--
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <div class="panel panel-success">
     <div class="panel-heading" role="tab" id="headingOne">
@@ -399,7 +403,7 @@
     </div>
   </div>
 </div>
-  {{--
+
   <div class="panel panel-success">
     <div class="panel-heading" role="tab" id="headingThree">
       <h4 class="panel-title">
@@ -445,14 +449,6 @@
 
 
 
-
-@include('miniDashboard.miniDashboard')
-
-<div class="visible-lg visible-md">
-  @if(count($bannersRandomLeft)>0)
-    @include('listarBanner.listaBanner')
-  @endif
-</div>
 
 
 

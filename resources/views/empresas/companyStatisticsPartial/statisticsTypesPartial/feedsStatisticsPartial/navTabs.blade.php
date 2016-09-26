@@ -1,26 +1,26 @@
 <!-- Nav tabs -->
 <ul class="nav nav-pills nav-stacked" role="tablist">
   <li role="presentation" class="active">
-    <a href="#general" aria-controls="home" role="tab" data-toggle="tab">
-      General
+    <a href="#hours" aria-controls="home" role="tab" data-toggle="tab">
+      <small>Horas</small>
     </a>
   </li>
 
   <li role="presentation">
-    <a href="#actives" aria-controls="messages" role="tab" data-toggle="tab">
-      Activos
+    <a href="#week" aria-controls="messages" role="tab" data-toggle="tab">
+      <small>Semana</small>
     </a>
   </li>
 
   <li role="presentation">
-    <a href="#inactives" aria-controls="messages" role="tab" data-toggle="tab">
-      Inactivos
+    <a href="#month" aria-controls="messages" role="tab" data-toggle="tab">
+      <small>Mes</small>
     </a>
   </li>
 
   <li role="presentation">
-    <a href="#requests" aria-controls="messages" role="tab" data-toggle="tab">
-      Peticiones
+    <a href="#year" aria-controls="messages" role="tab" data-toggle="tab">
+      <small>Año</small>
     </a>
   </li>
 

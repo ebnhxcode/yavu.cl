@@ -5,7 +5,7 @@
     </div><!-- /div .col-md1-sm12-xs12 -->
     <div class="col-xs-12 col-sm-12 col-md-11 col-lg-11">
       {!!Form::open(['route'=>'estadoempresa.store', 'method'=>'POST', 'files' => 'true'])!!}
-      {!!Form::textarea('status',null,['class'=>'form-control newCompanyPost','placeholder'=>'¡Comparte una publicaci&oacute;n!', 'maxlength'=>'200', 'required'=>'required','style'=>'resize:none; padding: 15px;font-size: 1em;', 'rows'=>'2', 'id'=>'status'])!!}
+      {!!Form::textarea('status',null,['class'=>'form-control newCompanyPost box-shadow','placeholder'=>'¡Comparte una publicaci&oacute;n!', 'maxlength'=>'200', 'required'=>'required','style'=>'resize:none; padding: 15px;font-size: 1em;', 'rows'=>'2', 'id'=>'status'])!!}
 
       <div class="softText-descriptions">
 
@@ -63,7 +63,7 @@
       <div style="padding-top:10px">
         <span id="characters" value="200">200</span>
         {{-- {!!link_to('#!', $title="Publicar estado", $attributes = ['id'=>'publicar', 'class'=>'btn btn-success btn-sm'], $secure = null)!!} --}}
-        {!!Form::submit('Publicar', ['class'=>'btn btn-sm btn-success'])!!}
+        {!!Form::submit('Publicar', ['class'=>'btn btn-sm btn-success box-shadow'])!!}
       </div><!-- /div styled -->
       {!!Form::close()!!}
     </div><!-- /div .col-md11-sm12-xs12 -->

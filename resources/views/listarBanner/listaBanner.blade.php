@@ -18,7 +18,7 @@
                 <a href="/empresas/{!! $banner->empresa_id !!}">
                   <b>{!! $banner->companyName->nombre !!}
                     <span class="softText-descriptions" style="float:right;">
-                    <small>{{$bcf = count($banner->companyId->followers)}} seguidor{{($bcf>2)?'es':''}}.</small>
+                      {{-- <small>{{$bcf = count($banner->companyId->followers)}} seguidor{{($bcf>2)?'es':''}}.</small> --}}
                     </span>
                   </b><br>
                 </a>
@@ -31,13 +31,11 @@
                 </div><!-- /div .softText-descriptions -->
                 <!--<img style="width: 16px;" src="/img/glyphicons/glyphicons-social/png/glyphicons-social-31-facebook.png" alt="Facebook">-->
                 @foreach($banner->linksBannerData as $lbd)
-                  <a class="btn-link" href="{!!$lbd->link!!}">
-                    {!! $lbd->titulo_link!!}
+                  <a target="_blank" class="btn-link" href="{{$lbd->link}}">
+                    {!! $lbd->titulo_link !!}
                   </a><!-- /div .btn-link -->
                   <br>
                 @endforeach
-
-
 
               </div><!-- /div .caption -->
 

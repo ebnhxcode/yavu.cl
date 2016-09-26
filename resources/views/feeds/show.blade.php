@@ -12,9 +12,9 @@
           @include('alerts.allAlerts')
         </div><!-- /div .col-md12-sm12-xs12 -->
 
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
           @include('feeds.indexPartial.sectionLeft')
-        </div><!-- /div .col-md4-sm12-xs12 -->
+        </div><!-- /div .col-lg2-md2-sm12-xs12 -->
 
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
           @include('feeds.showPartial.sectionCenter')
@@ -53,7 +53,7 @@
     var e_id = $('#estado_' + status_id).attr('value').replace('e','');
     var user_id = $("#user_id").val();
     var token = $("#token").val();
-    var route = "http://localhost:8000/interactuar";
+    var route = "http://192.168.0.103/interactuar";
     $.ajax({
       url: route,
       headers: {'X-CSRF-TOKEN': token},
@@ -81,7 +81,7 @@
 
   function ContarInteracciones(status_id){
     status_id = status_id;
-    var route = "http://localhost:8000/contarinteracciones/"+status_id;
+    var route = "http://192.168.0.103/contarinteracciones/"+status_id;
     var user_id = $("#user_id").val();
     var Contador = 0;
     $.get(route, function(res){
@@ -102,7 +102,7 @@
   function ContarNotificaciones(){
     var user_id = $("#user_id").val();
     $.ajax({
-      url: "http://localhost:8000/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
+      url: "http://192.168.0.103/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
       type: 'GET',
       dataType: 'json',
       cache: false,
@@ -123,7 +123,7 @@
     return true;
   }
   function ContarCoins(){
-    var route = "http://localhost:8000/contarcoins";
+    var route = "http://192.168.0.103/contarcoins";
     var user_id = $("#user_id");
     $.get(route, function(res){
       $(".CantidadCoins").text("");

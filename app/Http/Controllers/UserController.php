@@ -13,6 +13,7 @@ use yavu\Pop;
 use yavu\Sorteo;
 use yavu\Empresa;
 use yavu\RegistroCoin;
+use yavu\BannerData;
 use yavu\CategoryList;
 use yavu\UserInterest;
 use yavu\User;
@@ -98,7 +99,7 @@ class UserController extends Controller{
 
   public function dashboard(){
     //['sorteos'=>Sorteo::orderByRaw('RAND()')->where('estado_sorteo','Activo')->paginate(6), 'rtickets' => $this->registro_tickets, 'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get(), ,]
-    return view('usuarios.dashboard', ['companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user,'sorteos'=>Sorteo::orderByRaw('RAND()')->where('estado_sorteo','Activo')->get()]);
+    return view('usuarios.dashboard', ['companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user,'sorteos'=>Sorteo::orderByRaw('RAND()')->where('estado_sorteo','Activo')->get(),'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get()]);
   }
 
   public function destroy($id){

@@ -25,4 +25,8 @@ class EstadoEmpresa extends Model
         return $this->hasOne(CompanyImageStatus::class, 'status_id');
     }
 
+    public function interactions(){
+        return $this->hasMany(InteraccionEstado::class, 'status_id');
+    }
+
 }

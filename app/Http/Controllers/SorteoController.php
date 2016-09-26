@@ -9,6 +9,7 @@ use yavu\Http\Requests\SorteoUpdateRequest;
 use yavu\Http\Controllers\Controller;
 use yavu\ParticipanteSorteo;
 use yavu\Pop;
+use yavu\RaffleDisplay;
 use yavu\Sorteo;
 use yavu\Empresa;
 use yavu\RegistroCoin;
@@ -143,8 +144,11 @@ class SorteoController extends Controller{
     foreach($bannersRandomCenter = BannerData::orderByRaw('RAND()')->take(3)->get() as $key => $banner )
       BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
 
+    foreach($sorteos = Sorteo::where('estado_sorteo','Activo')->orderBy('id', 'desc')->paginate(15) as $key => $sorteo)
+      RaffleDisplay::create([ 'sorteo_id' => $sorteo->id, 'user_id' => $this->user->id ])->save();
+
     $this->registro_tickets = $this->user->registro_tickets()->orderBy('created_at', 'desc')->limit('20')->get();
-    return view('sorteos.index', ['sorteos'=>Sorteo::where('estado_sorteo','Activo')->orderBy('id', 'desc')->paginate(15), 'rtickets' => $this->registro_tickets, 'bannersRandomLeft' => $bannersRandomLeft, 'bannersRandomCenter' => $bannersRandomCenter, 'userSession' => $this->user,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
+    return view('sorteos.index', ['sorteos'=>$sorteos, 'rtickets' => $this->registro_tickets, 'bannersRandomLeft' => $bannersRandomLeft, 'bannersRandomCenter' => $bannersRandomCenter, 'userSession' => $this->user,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
   }
   public function MostrarGanador($ganador){
     $ganador = ParticipanteSorteo::findOrFail($ganador)->users;

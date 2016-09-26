@@ -1,4 +1,6 @@
-<div id="Graphic{!! $category->id !!}Category{{$graphicType}}" class="collapse">
+<div id="Graphic{!! $category->id !!}Category{{$graphicType}}" class="collapse in">
+
+  {{($interesteds)>0?$interesteds.' de tus seguidores tienen intereses en esta categor&iacute;a':'no tienes seguidores interesados en esta categor&iacute;a'}}
 
   <span>
 
@@ -13,6 +15,8 @@
     </div><!-- /div .progress -->
     <span class="softText-descriptions">
       Apuntas al {{round($percent, 2)}}% del publico global para la categor&iacute;a <b>{{$category->category}}</b>
+      <br>
+      a {{count($category->userInteresteds)}} personas les interesa esto.
     </span><!-- /span .softText-descriptions -->
     <small class="softText-descriptions" style="float:right;">
       {{-- ver m&aacute;s --}}
@@ -21,19 +25,20 @@
 
   </span>
 
+{{--
   <br>
   +------------------------+ <br>
   | <br>
   |  insertar gráfico <br>
   | <br>
   +------------------------+ <br>
-
+--}}
 </div>
 
 <!-- boton que cierra y abre la caja del gráfico -->
 <br>
-<small class="btn btn-xs btn-info">
-  <span class="openclose" data-toggle="collapse" data-target="#Graphic{{$category->id}}Category{{$graphicType}}" style="float:right;">
-    ver más detalles
-  </span><!-- #openclose .btn .btn-default .btn-xs -->
-</small><!-- .btn .btn-xs .btn-default -->
+<span class="btn btn-sm btn-default">
+  <small class="openclose text-success" data-toggle="collapse" data-target="#Graphic{{$category->id}}Category{{$graphicType}}">
+    cerrar detalles
+  </small><!-- #openclose .btn .btn-default .btn-xs -->
+</span><!-- .btn .btn-xs .btn-default -->

@@ -7,7 +7,7 @@
   <!--         TAB PANE # 1      -->
   <!-- ######################### -->
 
-  @include('empresas.companyStatisticsPartial.statisticsTypesPartial.visitsStatisticsPartial.tabPanesPartial.home')
+  @include('empresas.companyStatisticsPartial.statisticsTypesPartial.visitsStatisticsPartial.tabPanesPartial.global')
 
   <!-- ######################### -->
   <!--         TAB PANE # 2      -->
@@ -32,8 +32,8 @@
 <script>
   (function(){
     $('.openclose').click(function(){
-      if($(this).text().trim() == 'ver más detalles') $(this).text('cerrar detalles');
-      else if ($(this).text().trim() == 'cerrar detalles') $(this).text('ver más detalles');
+      if($(this).text().trim() == 'cerrar detalles') $(this).text('ver más detalles');
+      else if ($(this).text().trim() == 'ver más detalles') $(this).text('cerrar detalles');
     });
   })();
 </script><!-- /script open/close 'ver más detalles' -->

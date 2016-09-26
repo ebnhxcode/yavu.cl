@@ -44,6 +44,13 @@
   <input type="hidden" name="_token" id="token" value="{!! csrf_token() !!}" >
 </div><!-- /div .list-group -->
 
+<div class="visible-lg visible-md">
+  @if(count($bannersRandomLeft)>0)
+    @include('listarBanner.listaBanner')
+  @endif
+</div>
+
+{{--
 <!-- Banner Random -->
 <div class="list-group">
   <div class="list-group-item list-heading">
@@ -63,7 +70,6 @@
               Si deseas ver m&aacute;s informacion haz click en el banner.
             </div>
 
-            {{--
             <div class="caption">
 
               <p>
@@ -80,7 +86,6 @@
               </p>
 
             </div><!-- /div .caption -->
-            --}}
 
           </div><!-- /div .col-md12-sm12-xs12 -->
 
@@ -89,3 +94,5 @@
     </div><!-- /div .row -->
   </div> <!-- /div .list-group-item styled -->
 </div><!-- /div .list-group -->
+
+--}}

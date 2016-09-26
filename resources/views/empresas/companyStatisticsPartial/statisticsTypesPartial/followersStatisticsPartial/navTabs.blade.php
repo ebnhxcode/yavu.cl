@@ -3,7 +3,7 @@
 
   <li role="presentation" class="active" data-toggle="tooltip" data-placement="right" title="Global">
     <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
-      <div align="center">
+      <div>
         <small>Global</small>
       </div>
     </a>
@@ -11,7 +11,7 @@
 
   <li role="presentation" data-toggle="tooltip" data-placement="right" title="Mis clientes">
     <a href="#followers" aria-controls="messages" role="tab" data-toggle="tab">
-      <div align="center">
+      <div>
         <small>Mi rubro</small>
       </div>
     </a>

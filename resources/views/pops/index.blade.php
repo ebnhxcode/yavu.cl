@@ -13,7 +13,7 @@
 				@include('alerts.allAlerts')
 			</div><!-- /div .col-md12-sm12-xs12 -->
 
-			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+			<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
 				@include('pops.indexPartial.panelLeft')
 			</div><!-- /div .col-md3-sm12-xs12 -->
 

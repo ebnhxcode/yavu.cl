@@ -2,7 +2,7 @@
 <ul class="nav nav-pills nav-stacked" role="tablist">
   <li role="presentation" class="active">
     <a href="#general" aria-controls="home" role="tab" data-toggle="tab">
-      <div align="center">
+      <div>
         <small>General</small>
       </div>
     </a>
@@ -10,32 +10,32 @@
 
   <li role="presentation">
     <a href="#actives" aria-controls="messages" role="tab" data-toggle="tab">
-      <div align="center">
-        <small>Activos</small>
+      <div>
+        <small>Activos (<b>{{count($rafflesActive)}}</b>)</small>
       </div>
     </a>
   </li>
 
   <li role="presentation">
     <a href="#pending" aria-controls="messages" role="tab" data-toggle="tab">
-      <div align="center">
-        <small>Pendientes</small>
+      <div>
+        <small>Pendientes (<b>{{count($rafflesPending)}}</b>)</small>
       </div>
     </a>
   </li>
 
   <li role="presentation">
     <a href="#ended" aria-controls="messages" role="tab" data-toggle="tab">
-      <div align="center">
-        <small>Finalizados</small>
+      <div>
+        <small>Finalizados (<b>{{count($rafflesEnded)}}</b>)</small>
       </div>
     </a>
   </li>
 
   <li role="presentation">
     <a href="#requests" aria-controls="messages" role="tab" data-toggle="tab">
-      <div align="center">
-        <small>Peticiones</small>
+      <div>
+        <small>Peticiones (<b>{{count($raffleRaquests)}}</b>)</small>
       </div>
     </a>
   </li>
