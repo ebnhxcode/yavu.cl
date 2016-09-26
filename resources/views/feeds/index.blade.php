@@ -67,7 +67,7 @@
 
 
 		if( user_anon == user_id){
-			var route = "http://yavu.local/eliminarfeed/"+id;
+			var route = "http://186.64.123.143/eliminarfeed/"+id;
 			$.ajax({
 				url: route,
 				type: 'GET',
@@ -89,7 +89,7 @@
 		var e_id = $('#estado_' + status_id).attr('value').replace('e','');
 		var user_id = $("#user_id").val();
 		var token = $("#token").val();
-		var route = "http://yavu.local/interactuar";
+		var route = "http://186.64.123.143/interactuar";
 		$.ajax({
 			url: route,
 			headers: {'X-CSRF-TOKEN': token},
@@ -119,7 +119,7 @@
 
 	function ContarInteracciones(status_id){
 		status_id = status_id;
-		var route = "http://yavu.local/contarinteracciones/"+status_id;
+		var route = "http://186.64.123.143/contarinteracciones/"+status_id;
 		var user_id = $("#user_id").val();
 		var Contador = 0;
 		$.get(route, function(res){
@@ -140,7 +140,7 @@
 	function ContarNotificaciones(){
 		var user_id = $("#user_id").val();
 		$.ajax({
-			url: "http://yavu.local/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
+			url: "http://186.64.123.143/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
 			type: 'GET',
 			dataType: 'json',
 			cache: false,
@@ -161,7 +161,7 @@
 		return true;
 	}
 	function ContarCoins(){
-		var route = "http://yavu.local/contarcoins";
+		var route = "http://186.64.123.143/contarcoins";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
 			$(".CantidadCoins").text("");
