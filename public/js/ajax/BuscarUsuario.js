@@ -27,7 +27,7 @@ $(document).ready(function(){
 /*FUNCIONES Y PROCEDIMIENTOS*/
 	function BuscarUsuario(){
 		var NombreUsuario = $("#usuario").val();
-		var route = "http://yavu.cl/buscarusuario/"+NombreUsuario+"";
+		var route = "http://yavu.local/buscarusuario/"+NombreUsuario+"";
 		$("#UserList").text("");
 		$.get(route, function(res){
 			$("#UserList").append(
