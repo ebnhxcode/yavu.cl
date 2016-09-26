@@ -25,7 +25,7 @@
 		{{--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>--}}
 		{!!Html::script('js/jquery.js')!!}
 		{!!Html::script('js/all.js')!!}
-
+		{!!Html::script('js/Chart.js')!!}
 		@if(Auth::user()->check())
 
 
