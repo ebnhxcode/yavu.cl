@@ -18,7 +18,7 @@
       <!-- End hidden -> usuario -->
 
       <!-- Sección izquierda -->
-      <div class='col-lg-3 col-md-3 col-sm-12 col-xs-12'>
+      <div class='col-lg-2 col-md-2 col-sm-12 col-xs-12'>
         @include('usuarios.profilePartial.sectionLeft')
       </div><!-- /div .col-lg3-md3-sm12-xs12 -->
       <!-- End Sección izquierda -->

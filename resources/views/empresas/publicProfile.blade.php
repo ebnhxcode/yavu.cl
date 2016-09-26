@@ -13,7 +13,7 @@
         @include('alerts.allAlerts')
       </div><!-- /div .col-xs12-sm12-md12-lg12-->
 
-      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3"><!--style="position:fixed;z-index:1000;"-->
+      <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2"><!--style="position:fixed;z-index:1000;"-->
         @include('empresas.publicProfilePartial.sectionLeft')
       </div><!-- /div .col-xs12-sm12-md3-lg3-->
 
@@ -23,6 +23,276 @@
 
       <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
         <!-- agregar algo aquí -->
+
+        <!-- MetisMenu CSS -->
+        {!!Html::style('/css/chat/vendor/metisMenu/metisMenu.min.css')!!}
+          <!-- Custom CSS -->
+        {!!Html::style('/css/chat/dist/css/sb-admin-2.css')!!}
+          <!-- Morris Charts CSS -->
+        {!!Html::style('/css/chat/vendor/morrisjs/morris.css')!!}
+          <!-- Custom Fonts -->
+        {!!Html::style('/css/chat/vendor/font-awesome/css/font-awesome.min.css')!!}
+
+        <div style=" width:280px; z-index: 2000; padding:0;margin:0;" class="chat-panel {{--panel--}} panel panel-default">
+
+          <div>
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs row" role="tablist">
+              <li class="col-xs-6 col-sm-6 col-md-6 col-lg-6" role="presentation" class="active">
+                <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Ahora</a>
+              </li><!-- .col-lg6-md6-sm6-xs6 -->
+              <li class="col-xs-6 col-sm-6 col-md-6 col-lg-6" role="presentation">
+                <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Promociones</a>
+              </li><!-- .col-lg6-md6-sm6-xs6 -->
+
+              @if($e->user_id == $userSession->id)
+                <li class="col-xs-6 col-sm-6 col-md-6 col-lg-6" role="presentation">
+                  <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Archivados</a>
+                </li><!-- .col-lg6-md6-sm6-xs6 -->
+
+                <li class="col-xs-6 col-sm-6 col-md-6 col-lg-6" role="presentation">
+                  <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Configuración</a>
+                </li><!-- .col-lg6-md6-sm6-xs6 -->
+
+              @endif
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+              <div role="tabpanel" class="tab-pane active" id="home">
+                <div class="panel-heading">
+                  <i class="fa fa-comments fa-fw"></i> Chat
+                  <div class="btn-group pull-right">
+                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                      <i class="fa fa-chevron-down"></i>
+                    </button>
+                    <ul class="dropdown-menu slidedown">
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-refresh fa-fw"></i> Refresh
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-check-circle fa-fw"></i> Available
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-times fa-fw"></i> Busy
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-clock-o fa-fw"></i> Away
+                        </a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-sign-out fa-fw"></i> Sign Out
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                  <ul class="chat">
+                    <li class="left clearfix">
+                <span class="chat-img pull-left">
+                    <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
+                </span>
+                      <div class="chat-body clearfix">
+                        <div class="header">
+                          <strong class="primary-font">Jack Sparrow</strong>
+                          <small class="pull-right text-muted">
+                            <i class="fa fa-clock-o fa-fw"></i> 12 mins ago
+                          </small>
+                        </div>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+                      </div>
+                    </li>
+                    <li class="right clearfix">
+                <span class="chat-img pull-right">
+                    <img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle" />
+                </span>
+                      <div class="chat-body clearfix">
+                        <div class="header">
+                          <small class=" text-muted">
+                            <i class="fa fa-clock-o fa-fw"></i> 13 mins ago</small>
+                          <strong class="pull-right primary-font">Bhaumik Patel</strong>
+                        </div>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+                      </div>
+                    </li>
+                    <li class="left clearfix">
+                <span class="chat-img pull-left">
+                    <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
+                </span>
+                      <div class="chat-body clearfix">
+                        <div class="header">
+                          <strong class="primary-font">Jack Sparrow</strong>
+                          <small class="pull-right text-muted">
+                            <i class="fa fa-clock-o fa-fw"></i> 14 mins ago</small>
+                        </div>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+                      </div>
+                    </li>
+                    <li class="right clearfix">
+                <span class="chat-img pull-right">
+                    <img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle" />
+                </span>
+                      <div class="chat-body clearfix">
+                        <div class="header">
+                          <small class=" text-muted">
+                            <i class="fa fa-clock-o fa-fw"></i> 15 mins ago</small>
+                          <strong class="pull-right primary-font">Bhaumik Patel</strong>
+                        </div>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <!-- /.panel-body -->
+                <div class="panel-footer">
+                  <div class="input-group">
+                    <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+              <span class="input-group-btn">
+                  <button class="btn btn-warning btn-sm" id="btn-chat">
+                    Send
+                  </button>
+              </span>
+                  </div>
+                </div>
+                <!-- /.panel-footer -->
+              </div>
+
+              <div role="tabpanel" class="tab-pane" id="profile">
+                <div class="panel-heading">
+                  <i class="fa fa-comments fa-fw"></i> Chat
+                  <div class="btn-group pull-right">
+                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                      <i class="fa fa-chevron-down"></i>
+                    </button>
+                    <ul class="dropdown-menu slidedown">
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-refresh fa-fw"></i> Refresh
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-check-circle fa-fw"></i> Available
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-times fa-fw"></i> Busy
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-clock-o fa-fw"></i> Away
+                        </a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-sign-out fa-fw"></i> Sign Out
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                  <ul class="chat">
+                    <li class="left clearfix">
+                <span class="chat-img pull-left">
+                    <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
+                </span>
+                      <div class="chat-body clearfix">
+                        <div class="header">
+                          <strong class="primary-font">Jack Sparrow</strong>
+                          <small class="pull-right text-muted">
+                            <i class="fa fa-clock-o fa-fw"></i> 12 mins ago
+                          </small>
+                        </div>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+                      </div>
+                    </li>
+                    <li class="right clearfix">
+                <span class="chat-img pull-right">
+                    <img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle" />
+                </span>
+                      <div class="chat-body clearfix">
+                        <div class="header">
+                          <small class=" text-muted">
+                            <i class="fa fa-clock-o fa-fw"></i> 13 mins ago</small>
+                          <strong class="pull-right primary-font">Bhaumik Patel</strong>
+                        </div>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+                      </div>
+                    </li>
+                    <li class="left clearfix">
+                <span class="chat-img pull-left">
+                    <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
+                </span>
+                      <div class="chat-body clearfix">
+                        <div class="header">
+                          <strong class="primary-font">Jack Sparrow</strong>
+                          <small class="pull-right text-muted">
+                            <i class="fa fa-clock-o fa-fw"></i> 14 mins ago</small>
+                        </div>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+                      </div>
+                    </li>
+                    <li class="right clearfix">
+                <span class="chat-img pull-right">
+                    <img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle" />
+                </span>
+                      <div class="chat-body clearfix">
+                        <div class="header">
+                          <small class=" text-muted">
+                            <i class="fa fa-clock-o fa-fw"></i> 15 mins ago</small>
+                          <strong class="pull-right primary-font">Bhaumik Patel</strong>
+                        </div>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <!-- /.panel-body -->
+                <div class="panel-footer">
+                  <div class="input-group">
+                    <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+              <span class="input-group-btn">
+                  <button class="btn btn-warning btn-sm" id="btn-chat">
+                    Send
+                  </button>
+              </span>
+                  </div>
+                </div>
+                <!-- /.panel-footer -->
+              </div>
+
+              <div role="tabpanel" class="tab-pane" id="messages">
+
+              </div>
+
+              <div role="tabpanel" class="tab-pane" id="settings">
+
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+
       </div><!-- /div .col-xs12-sm12-md3-lg3-->
 
       <br />

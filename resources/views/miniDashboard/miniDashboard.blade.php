@@ -12,6 +12,13 @@
           ],
 
           [
+            'title' => 'Dashboard',
+            'url' => 'dashboard/',
+            'image' => 'glyphicons-503-map.png',
+            'prefix' => 'dash',
+          ],
+
+          [
             'title' => 'Notificaciones',
             'url' => 'pops/',
             'image' => 'glyphicons-341-globe.png',

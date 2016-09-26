@@ -1,14 +1,3 @@
-@if(count($userSession->empresas)>0)
-  <a href="{{url('/sorteos/create')}}">
-    <div style="padding-bottom: 10px;">
-      <div class="btn btn-success btn-sm">
-        <span class="glyphicon glyphicon-plus-sign"></span>
-        Crear sorteo
-      </div><!-- /div .btn .btn-success .btn-sm -->
-    </div><!-- /div styled -->
-  </a>
-@endif
-
 <div class="list-group">
   <div class="">
     <!-- FILTRO DE BÚSQUEDA -->
@@ -29,6 +18,7 @@
     @endif
   </div><!-- /div .list-group-item -->
 </div> <!-- /list group -->
+{{--
 <div class="list-group">
   <div class="list-group-item">
     <span data-toggle="tooltip" data-placement="left" title="Tickets!" style="font-family: yavu_font;font-size: 1.6em;color:#57E5DB;">E</span>&nbsp;
@@ -46,12 +36,9 @@
   </div><!-- /div .list-group-item -->
 
 </div><!-- /div .list-group -->
+--}}
 @include('miniDashboard.miniDashboard')
-<div class="visible-lg visible-md">
-  @if(count($bannersRandomLeft)>0)
-    @include('listarBanner.listaBanner')
-  @endif
-</div>
+
 {{--
 <div class="list-group">
 

@@ -41,7 +41,6 @@
 
 			{!!Html::script('js/ajax/SeguirEmpresa.js')!!}
 
-
 		@endif
 		{!!Html::script('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')!!}
 		{!!Html::style('css/app.css')!!}

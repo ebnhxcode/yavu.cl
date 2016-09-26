@@ -1,8 +1,11 @@
+<div class="list-group">
+  @include('miniDashboard.miniDashboard')
+</div> <!-- /div .list-group -->
 @if(count($sorteos)>0)
   <div class="list-group">
 
     <div class="list-group-item">
-      <small>LISTA DE SORTEOS ACTIVOS</small>
+      <small style="font-size:0.8em;">SORTEOS ACTIVOS</small>
       <a href="/sorteos" style="float: right;">
         <b class="softText-descriptions">
           ¡{{count($sorteos)}} Sorteos!
