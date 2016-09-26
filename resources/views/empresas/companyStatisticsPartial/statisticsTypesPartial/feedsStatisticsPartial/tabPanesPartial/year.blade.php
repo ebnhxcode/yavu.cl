@@ -28,10 +28,14 @@
                   <h6>TIPO</h6>
                   @if($cis = $feed->statusImage()->select('company_image_status')->get())
                     @foreach( $cis as $key => $image )
+                      <h6><span class="text-success">Imagen</span></h6>
                       <a href=#! class="thumbnail" style="margin: 0;padding: 0; border-radius: 7px;">
                         <img style="border-radius: 5px;" src="/img/users/{{ ($image->company_image_status!='')?$image->company_image_status:'usuario_nuevo.png' }}" alt="" class="center-block">
                       </a><!-- /a .thumbnail -->
                     @endforeach
+                    @if(count($cis)<1)
+                      <h6><span class="text-warning">Texto</span></h6>
+                    @endif
                   @endif
 
                 </div><!-- /div .col-xs2-sm2-md2-lg2 -->
@@ -57,7 +61,8 @@
 
 
 
-                <div style="padding-bottom: 10px;" class="col-xs-6 col-sm-6 col-md-4 col-lg-4" align="center">
+                {{--
+<div style="padding-bottom: 10px;" class="col-xs-6 col-sm-6 col-md-4 col-lg-4" align="center">
                   <h6>ALCANCE</h6>
                   <div class="progress">
                     <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
@@ -80,8 +85,8 @@
                     </div>
                   </div>
 
-
                 </div><!-- /div .col-xs4-sm4-md4-lg4 -->
+                --}}
 
 
 

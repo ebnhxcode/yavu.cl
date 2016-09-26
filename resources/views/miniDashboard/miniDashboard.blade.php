@@ -1,57 +1,127 @@
 <div class="hidden-xs">
   <div class="">
     <div {{-- class="collapse" id="collapseExample" --}}>
-      <div class="">
+
+      <?php
+        $menu = json_decode(json_encode([
+          [
+            'title' => Auth::user()->get()->nombre,
+            'url' => 'profile/',
+            'image' => 'glyphicons-522-user-lock.png',
+            'prefix' => 'prof',
+          ],
+
+          [
+            'title' => 'Notificaciones',
+            'url' => 'pops/',
+            'image' => 'glyphicons-341-globe.png',
+            'prefix' => 'pops',
+          ],
+
+          [
+            'title' => 'Publicaciones',
+            'url' => 'feeds/',
+            'image' => 'glyphicons-248-note.png',
+            'prefix' => 'feed',
+          ],
+
+          [
+            'title' => 'Empresas',
+            'url' => 'empresas/',
+            'image' => 'glyphicons-342-briefcase.png',
+            'prefix' => 'empr',
+          ],
+
+          [
+            'title' => 'Sorteos',
+            'url' => 'sorteos/',
+            'image' => 'glyphicons-70-gift.png',
+            'prefix' => 'sort',
+          ],
+
+          [
+            'title' => 'Tickets',
+            'url' => 'tickets/',
+            'image' => 'glyphicons-688-ticket.png',
+            'prefix' => 'tick',
+          ],
+
+          [
+            'title' => 'Informes',
+            'url' => '#!/',
+            'image' => 'glyphicons-41-stats.png',
+            'prefix' => 'esta',
+          ],
+
+          [
+            'title' => 'Crear Sorteos',
+            'url' => 'sorteos/create/',
+            'image' => 'glyphicons-70-gift.png',
+            'prefix' => 'sort',
+          ],
+
+          [
+            'title' => 'Crear Empresas',
+            'url' => 'empresas/create/',
+            'image' => 'glyphicons-342-briefcase.png',
+            'prefix' => 'empr',
+          ],
+
+          [
+            'title' => 'Buscar Intereses',
+            'url' => 'i/',
+            'image' => 'glyphicons-342-briefcase.png',
+            'prefix' => 'i',
+          ],
+        ]));
+      ?>
+
+      <ul class="nav nav-pills nav-stacked" role="tablist">
+      @foreach($menu as $key => $item)
+        <li role="presentation" class="{{ (substr(Request::path(),0,4)==$item->prefix) ? 'active box-shadow':'' }} " >
+
+          <a class="link-nav-item" href="/{{$item->url}}" style="margin: 0px;padding: 1px 20px;" {{$item->title!="Informes"?:'data-toggle=modal data-target=#myModal'}} >
+            <div class="row">
+
+              <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <img width="16" src="{{url('/img/glyphicons/glyphicons/png/'.$item->image.'')}}" alt="">
+              </div><!-- .col-xs-sm-md-lg -->
+
+              <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+
+                {{$item->title}}
+
+              </div><!-- .col-xs-sm-md-lg -->
+
+            </div><!-- .row -->
+          </a>
+
+        </li>
+      @endforeach
+      </ul>
 
 
-        <ul class="nav nav-pills nav-stacked" role="tablist">
-          <li role="presentation">
-            <a href="{!!URL::to('/usuarios/'.Auth::user()->get()->id.'/edit')!!}" style="margin: 0px;padding: 2px 15px;">
-              <small>
-                <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-522-user-lock.png')}}" alt=""> ·
-                Mi cuenta
-              </small>
-            </a>
-          </li>
+      <script>
+        $('.link-nav-item').hover(function(){
+          $(this).css({'box-shadow':'1px 2px 3px #B7B7B7','-moz-transition':'.2s','-webkit-transition':'.2s'}).fadeIn('slow');
+        },function(){
+          $(this).css({'box-shadow':'1px 1px 1px #E9E9E9','-moz-transition':'.2s','-webkit-transition':'.2s'}).fadeIn('slow');
+        });
+      </script>
 
-            <li role="presentation" {{(Request::path() == 'feeds')?'class=active':''}}>
-              <a href="/feeds" style="margin: 0px;padding: 2px 15px;" >
+          {{--
+<ul class="nav nav-pills nav-stacked" role="tablist">
+
+            <li role="presentation">
+              <a href="{!!URL::to('/usuarios/'.Auth::user()->get()->id.'/edit')!!}" style="margin: 0px;padding: 2px 15px;">
                 <small>
-                  <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-248-note.png')}}" alt=""> ·
-                  Publicaciones
+                  <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-522-user-lock.png')}}" alt=""> ·
+                  Mi cuenta
                 </small>
               </a>
             </li>
 
 
-            <li role="presentation" {{(Request::path() != 'empresas')?'':'class=active'}}>
-              <a href="/empresas" style="margin: 0px;padding: 2px 15px;" >
-                <small>
-                  <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-342-briefcase.png')}}" alt=""> ·
-                  Empresas
-                </small>
-              </a>
-            </li>
-
-
-            <li role="presentation" {{(Request::path() != 'sorteos')?'':'class=active'}}>
-              <a href="/sorteos" style="margin: 0px;padding: 2px 15px;" >
-                <small>
-                  <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-70-gift.png')}}"> ·
-                  Sorteos
-                </small>
-              </a>
-            </li>
-
-
-            <li role="presentation" {{(Request::path() != 'tickets')?'':'class=active'}}>
-              <a href="/tickets" style="margin: 0px;padding: 2px 15px;">
-                <small>
-                  <img width="12" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-688-ticket.png')}}"> ·
-                  Ticktes
-                </small>
-              </a>
-            </li>
 
 
             <li role="presentation" {{((Request::path() != 'tickets/history') && (Request::path() != 'coins' && Request::path() != 'coins/history'))?'':'class=active'}}>
@@ -70,11 +140,15 @@
                 </small>
               </a>
             </li>
-        </ul>
+          </ul>
+          --}}
+
+
+
         <br>
 
 
-      </div><!-- /row -->
+
     </div><!-- /div #collapseExample .collapse -->
     {{-- <span data-toggle="collapse" data-target="#collapseExample"  class="glyphicon glyphicon-chevron-up btn"></span> --}}
   </div><!-- /div .list-group-item -->

@@ -12,9 +12,9 @@
           @include('alerts.allAlerts')
         </div><!-- /div .col-md12-sm12-xs12 -->
 
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
           @include('feeds.indexPartial.sectionLeft')
-        </div><!-- /div .col-md4-sm12-xs12 -->
+        </div><!-- /div .col-lg2-md2-sm12-xs12 -->
 
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
           @include('feeds.showPartial.sectionCenter')

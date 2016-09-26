@@ -63,7 +63,8 @@
 
 
 
-                <div style="padding-bottom: 10px;" class="col-xs-6 col-sm-6 col-md-4 col-lg-4" align="center">
+                {{--
+<div style="padding-bottom: 10px;" class="col-xs-6 col-sm-6 col-md-4 col-lg-4" align="center">
                   <h6>ALCANCE</h6>
                   <div class="progress">
                     <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
@@ -87,6 +88,7 @@
                   </div>
 
                 </div><!-- /div .col-xs4-sm4-md4-lg4 -->
+                --}}
 
               </div><!-- .row -->
             </div><!-- .list-group-item -->

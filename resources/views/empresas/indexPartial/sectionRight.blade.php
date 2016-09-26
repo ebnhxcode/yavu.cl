@@ -43,6 +43,13 @@
   @endforeach
   <input type="hidden" name="_token" id="token" value="{!! csrf_token() !!}" >
 </div><!-- /div .list-group -->
+
+<div class="visible-lg visible-md">
+  @if(count($bannersRandomLeft)>0)
+    @include('listarBanner.listaBanner')
+  @endif
+</div>
+
 {{--
 <!-- Banner Random -->
 <div class="list-group">
