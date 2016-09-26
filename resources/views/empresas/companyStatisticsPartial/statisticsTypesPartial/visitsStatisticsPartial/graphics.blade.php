@@ -86,7 +86,7 @@
           ],
           datasets: [
             {
-              data: [{{$visitantsInteresteds}}, {{$totalVisits}}],
+              data: [{{count($visitantsInteresteds)}}, {{count($vsiy)}}],
               backgroundColor: [
                 "#FF6384",
                 "#36A2EB"
@@ -100,7 +100,7 @@
         }
       });
     </script>
-    {{$totalVisits}}, {{$visitantsInteresteds}}
+    {{count($vsiy)}}, {{count($visitantsInteresteds)}}
 
   </div><!-- #graphic-box .btn-default -->
 
