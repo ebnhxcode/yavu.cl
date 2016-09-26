@@ -26,6 +26,7 @@
   --}}
 
   <div class="btn-default" id="graphic-box">
+
 {{--
     +-----------------------------------+ <br>
     | <br>
@@ -72,6 +73,34 @@
     Visitas desde hace 7 días → <b>{{count($vsiw)}}</b> <br>
     Visitas desde hace de 4 semanas → <b>{{count($vsim)}}</b> <br>
     Visitas desde hace 1 año → <b>{{count($vsiy)}}</b> <br>
+
+    <canvas id="Grafico{{$category->id}}Category{{$graphicType}}" width="400" height="200"></canvas>
+    <script>
+      var ctx = document.getElementById("Grafico{{$category->id}}Category{{$graphicType}}");
+      var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: [
+            "Visitas Interesadas",
+            "Visitas Totales"
+          ],
+          datasets: [
+            {
+              data: [{{count($visitantsInteresteds)}}, {{count($vsiy)}}],
+              backgroundColor: [
+                "#FF6384",
+                "#36A2EB"
+              ],
+              hoverBackgroundColor: [
+                "#FF6384",
+                "#36A2EB"
+              ]
+            }
+          ]
+        }
+      });
+    </script>
+    {{count($vsiy)}}, {{count($visitantsInteresteds)}}
 
   </div><!-- #graphic-box .btn-default -->
 
