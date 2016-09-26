@@ -41,7 +41,7 @@
     $(".category").click(function(){
       var selectedCategory = $('#'+this.id);
       var token = $("#token").val();
-      var route = "http://192.168.0.103/agregarcategoria";
+      var route = "http://yavu.cl/agregarcategoria";
       $.ajax({
         url: route,
         headers: {'X-CSRF-TOKEN': token},
@@ -54,7 +54,7 @@
         success:function(result){
 
           if(result[0]>2){
-            window.location.href = "http://192.168.0.103/dashboard";
+            window.location.href = "http://yavu.cl/dashboard";
           }
           if(result[0]==0){
             $(".category").removeClass('list-group-item-success').fadeIn();
