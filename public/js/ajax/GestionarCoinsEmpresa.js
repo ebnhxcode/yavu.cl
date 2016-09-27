@@ -35,7 +35,7 @@ $(document).ready(function(){
 /*FUNCIONES Y PROCEDIMIENTOS*/
 	function ContarCoins(){
 		var CargarEstados = $("#CargarEstados"); 
-		var route = "http://186.64.123.143/contarcoins";
+		var route = "http://192.168.0.103/contarcoins";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
 			$("#CantidadCoins").value = "";
@@ -49,7 +49,7 @@ $(document).ready(function(){
 	}
 
 	function InfoEmpresas(){
-		var route = "http://186.64.123.143/infoempresas/";
+		var route = "http://192.168.0.103/infoempresas/";
 		var Pendiente = false;
 		$.get(route, function(res){
 			$("#EstadoEmpresa").value = "";

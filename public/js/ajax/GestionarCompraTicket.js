@@ -62,7 +62,7 @@ $(document).ready(function(){
     if (cantidadcompra > 0){
 			var user_id = $("#user_id").val();
 			var token = $("#token").val();
-			var route = "http://186.64.123.143/efectuarcompraticket";
+			var route = "http://192.168.0.103/efectuarcompraticket";
 			$.ajax({
 				url: route,
 				headers: {'X-CSRF-TOKEN': token},
@@ -90,7 +90,7 @@ $(document).ready(function(){
 	function ContarNotificaciones(){
 		var user_id = $("#user_id").val();
 		$.ajax({
-			url: "http://186.64.123.143/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
+			url: "http://192.168.0.103/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
 			type: 'GET',
 			dataType: 'json',
 			cache: false,
@@ -111,7 +111,7 @@ $(document).ready(function(){
 		return true;
 	}
 	function ContarCoins(){
-		var route = "http://186.64.123.143/contarcoins";
+		var route = "http://192.168.0.103/contarcoins";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
 			$(".CantidadCoins").text("");
@@ -125,7 +125,7 @@ $(document).ready(function(){
 	}
 
 	function ContarTickets(){
-		var route = "http://186.64.123.143/contartickets";
+		var route = "http://192.168.0.103/contartickets";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
 			$(".CantidadTickets").text(formatNumber.new(parseInt(res), "# "));
@@ -135,7 +135,7 @@ $(document).ready(function(){
 
 	function VerificarTickets(){
 		var user_id = $("#user_id").val();
-		var route = "http://186.64.123.143/verificartickets/"+user_id;
+		var route = "http://192.168.0.103/verificartickets/"+user_id;
 		$.get(route, function(res){
 			//console.log(res);
 			if(res>0){

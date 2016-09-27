@@ -41,7 +41,7 @@
     $(".category").click(function(){
       var selectedCategory = $('#'+this.id);
       var token = $("#token").val();
-      var route = "http://186.64.123.143/agregarinteres";
+      var route = "http://192.168.0.103/agregarinteres";
       $.ajax({
         url: route,
         headers: {'X-CSRF-TOKEN': token},

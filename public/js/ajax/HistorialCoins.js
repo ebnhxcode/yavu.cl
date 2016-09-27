@@ -31,7 +31,7 @@ $(document).ready(function(){
 /*FUNCIONES Y PROCEDIMIENTOS*/
 	function ContarCoins(){
 		var CargarEstados = $("#CargarEstados"); 
-		var route = "http://186.64.123.143/contarcoins";
+		var route = "http://192.168.0.103/contarcoins";
 		var user_id = $("#user_id").val();
 		$.get(route, function(res){
 			$(".CantidadCoins").value = "";
@@ -46,7 +46,7 @@ $(document).ready(function(){
 	}
 
 	function HistorialCoins(){
-		var route = "http://186.64.123.143/historialcoins";
+		var route = "http://192.168.0.103/historialcoins";
 		var TotalCoins = 0;
 		var Contador = 0;
 		$.get(route, function(res){
