@@ -8,104 +8,134 @@
             'title' => Auth::user()->get()->nombre,
             'url' => 'profile/',
             'image' => 'glyphicons-522-user-lock.png',
+            'icon' => 'glyphicon glyphicon-link',
             'prefix' => 'prof',
+            'group' => 'user_group',
           ],
 
           [
             'title' => 'Dashboard',
             'url' => 'dashboard/',
-            'image' => 'glyphicons-503-map.png',
+            'image' => 'glyphicons-332-dashboard.png',
+            'icon' => 'glyphicon glyphicon-link',
             'prefix' => 'dash',
+            'group' => 'user_group',
           ],
 
           [
             'title' => 'Notificaciones',
             'url' => 'pops/',
             'image' => 'glyphicons-341-globe.png',
+            'icon' => 'glyphicon glyphicon-link',
             'prefix' => 'pops',
+            'group' => 'user_group',
           ],
 
           [
             'title' => 'Publicaciones',
             'url' => 'feeds/',
             'image' => 'glyphicons-248-note.png',
+            'icon' => 'glyphicon glyphicon-link',
             'prefix' => 'feed',
+            'group' => '',
           ],
 
           [
             'title' => 'Empresas',
             'url' => 'empresas/',
             'image' => 'glyphicons-342-briefcase.png',
+            'icon' => 'glyphicon glyphicon-link',
             'prefix' => 'empr',
+            'group' => '',
           ],
 
           [
-            'title' => 'Sorteos',
+            'title' => 'Sorteos Activos',
             'url' => 'sorteos/',
             'image' => 'glyphicons-70-gift.png',
+            'icon' => 'glyphicon glyphicon-link',
             'prefix' => 'sort',
+            'group' => '',
+          ],
+
+          [
+            'title' => 'Sorteos Finalizados',
+            'url' => 'sorteos/ended',
+            'image' => 'glyphicons-70-gift.png',
+            'icon' => 'glyphicon glyphicon-link',
+            'prefix' => 'sort',
+            'group' => '',
           ],
 
           [
             'title' => 'Tickets',
             'url' => 'tickets/',
-            'image' => 'glyphicons-688-ticket.png',
+            'image' => 'glyphicons-354-nameplate-alt.png',
+            'icon' => 'glyphicon glyphicon-link',
             'prefix' => 'tick',
+            'group' => 'user_group',
           ],
 
           [
             'title' => 'Informes',
             'url' => '#!/',
             'image' => 'glyphicons-41-stats.png',
+            'icon' => 'glyphicon glyphicon-link',
             'prefix' => 'esta',
+            'group' => '',
           ],
 
           [
             'title' => 'Crear Sorteos',
             'url' => 'sorteos/create/',
             'image' => 'glyphicons-70-gift.png',
+            'icon' => 'glyphicon glyphicon-link',
             'prefix' => 'sort',
+            'group' => '',
           ],
 
           [
             'title' => 'Crear Empresas',
             'url' => 'empresas/create/',
             'image' => 'glyphicons-342-briefcase.png',
+            'icon' => 'glyphicon glyphicon-link',
             'prefix' => 'empr',
+            'group' => '',
           ],
 
           [
-            'title' => 'Buscar Intereses',
+            'title' => 'Actualizar Intereses',
             'url' => 'i/',
             'image' => 'glyphicons-342-briefcase.png',
+            'icon' => 'glyphicon glyphicon-link',
             'prefix' => 'i',
+            'group' => 'user_group',
           ],
         ]));
       ?>
 
       <ul class="nav nav-pills nav-stacked" role="tablist">
-      @foreach($menu as $key => $item)
-        <li role="presentation" class="{{ (substr(Request::path(),0,4)==$item->prefix) ? 'active box-shadow':'' }} " >
+        @foreach($menu as $key => $item)
+          <li role="presentation" class="{{ (substr(Request::path(),0,4)==$item->prefix) ? 'active box-shadow':'' }} " >
 
-          <a class="link-nav-item" href="/{{$item->url}}" style="margin: 0px;padding: 1px 20px;" {{$item->title!="Informes"?:'data-toggle=modal data-target=#myModal'}} >
-            <div class="row">
+            <a class="link-nav-item" href="/{{$item->url}}" style="margin: 0px;padding: 1px 20px;" {{$item->title!="Informes"?:'data-toggle=modal data-target=#myModal'}} >
+              <div class="row">
 
-              <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                <img width="16" src="{{url('/img/glyphicons/glyphicons/png/'.$item->image.'')}}" alt="">
-              </div><!-- .col-xs-sm-md-lg -->
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                  <img width="16" src="{{url('/img/glyphicons/glyphicons/png/'.$item->image.'')}}" alt="">
+                </div><!-- .col-xs-sm-md-lg -->
 
-              <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                  <small>
+                    {{$item->title}}
+                  </small>
+                </div><!-- .col-xs-sm-md-lg -->
+              </div><!-- .row -->
+            </a><!-- .link-nav-item -->
 
-                {{$item->title}}
-
-              </div><!-- .col-xs-sm-md-lg -->
-
-            </div><!-- .row -->
-          </a>
-
-        </li>
-      @endforeach
-      </ul>
+          </li><!-- ?'.active .box-shadow' -->
+        @endforeach
+      </ul><!-- .nav .nav-pills .nav-stacked -->
 
 
       <script>
@@ -115,47 +145,7 @@
           $(this).css({'box-shadow':'1px 1px 1px #E9E9E9','-moz-transition':'.2s','-webkit-transition':'.2s'}).fadeIn('slow');
         });
       </script>
-
-          {{--
-<ul class="nav nav-pills nav-stacked" role="tablist">
-
-            <li role="presentation">
-              <a href="{!!URL::to('/usuarios/'.Auth::user()->get()->id.'/edit')!!}" style="margin: 0px;padding: 2px 15px;">
-                <small>
-                  <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-522-user-lock.png')}}" alt=""> ·
-                  Mi cuenta
-                </small>
-              </a>
-            </li>
-
-
-
-
-            <li role="presentation" {{((Request::path() != 'tickets/history') && (Request::path() != 'coins' && Request::path() != 'coins/history'))?'':'class=active'}}>
-              <a href="#!" data-toggle="modal" data-target="#myModal" style="margin: 0px;padding: 2px 15px;">
-                <small>
-                  <img width="16" src="{{url('/img/glyphicons/glyphicons/png/glyphicons-41-stats.png')}}"> ·
-                  Informes
-                </small>
-              </a>
-            </li>
-
-            <li role="presentation" {{(Request::path() != 'sorteos/create' && count($userSession->empresas)>0)?'':'class=active'}}>
-              <a href="/sorteos/create" style="margin: 0px;padding: 2px 15px;">
-                <small>
-                  Crear Sorteos
-                </small>
-              </a>
-            </li>
-          </ul>
-          --}}
-
-
-
-        <br>
-
-
-
+      <br>
     </div><!-- /div #collapseExample .collapse -->
     {{-- <span data-toggle="collapse" data-target="#collapseExample"  class="glyphicon glyphicon-chevron-up btn"></span> --}}
   </div><!-- /div .list-group-item -->

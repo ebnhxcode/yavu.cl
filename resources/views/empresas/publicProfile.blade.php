@@ -33,7 +33,7 @@
           <!-- Custom Fonts -->
         {!!Html::style('/css/chat/vendor/font-awesome/css/font-awesome.min.css')!!}
 
-        <div style=" width:280px; z-index: 2000; padding:0;margin:0;" class="chat-panel {{--panel--}} panel panel-default">
+        <div style="z-index: 2000; padding:0;margin:0;" class="chat-panel {{--panel--}} panel panel-default">
 
           <div>
 
@@ -63,7 +63,7 @@
 
               <div role="tabpanel" class="tab-pane active" id="home">
                 <div class="panel-heading">
-                  <i class="fa fa-comments fa-fw"></i> Chat
+                  <i class="fa fa-comments fa-fw"></i> Mensajes
                   <div class="btn-group pull-right">
                     <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
                       <i class="fa fa-chevron-down"></i>
@@ -329,7 +329,7 @@
   function ContarNotificaciones(){
     var user_id = $("#user_id").val();
     $.ajax({
-      url: "http://192.168.0.103/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
+      url: "http://yavu.local/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
       type: 'GET',
       dataType: 'json',
       cache: false,
@@ -350,7 +350,7 @@
     return true;
   }
   function ContarCoins(){
-    var route = "http://192.168.0.103/contarcoins";
+    var route = "http://yavu.local/contarcoins";
     var user_id = $("#user_id");
     $.get(route, function(res){
       $(".CantidadCoins").text("");
@@ -369,7 +369,7 @@
 
 
     if( user_anon == user_id){
-      var route = "http://192.168.0.103/eliminarfeed/"+id;
+      var route = "http://yavu.local/eliminarfeed/"+id;
       $.ajax({
         url: route,
         type: 'GET',
@@ -391,7 +391,7 @@
     var e_id = $('#estado_' + status_id).attr('value').replace('e','');
     var user_id = $("#user_id").val();
     var token = $("#token").val();
-    var route = "http://192.168.0.103/interactuar";
+    var route = "http://yavu.local/interactuar";
     $.ajax({
       url: route,
       headers: {'X-CSRF-TOKEN': token},
@@ -421,7 +421,7 @@
 
   function ContarInteracciones(status_id){
     status_id = status_id;
-    var route = "http://192.168.0.103/contarinteracciones/"+status_id;
+    var route = "http://yavu.local/contarinteracciones/"+status_id;
     var user_id = $("#user_id").val();
     var Contador = 0;
     $.get(route, function(res){

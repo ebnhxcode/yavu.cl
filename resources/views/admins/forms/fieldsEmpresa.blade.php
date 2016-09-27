@@ -193,7 +193,7 @@
 
     function ValidarRut(rut){
       console.log("click");
-      var route = "http://192.168.0.103/validarrutempresaadmin/"+rut+"";
+      var route = "http://yavu.local/validarrutempresaadmin/"+rut+"";
       document.getElementById('FormEmpresa').onsubmit = function() {
         return false;
       }

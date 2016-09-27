@@ -10,23 +10,15 @@
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         @include('alerts.allAlerts')
       </div><!-- /div col-md12-sm12-xs12 -->
-      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-        <div class="list-group">
-          @include('miniDashboard.miniDashboard')
-          <div class="visible-lg visible-md">
-            @if(count($bannersRandomLeft)>0)
-              @include('listarBanner.listaBanner')
-            @endif
-          </div>
-        </div><!-- /div .list-group -->
-			</div><!-- /div .col-md3-sm12-xs12 -->
-      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+      <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+        @include('sorteos.showPartial.sectionLeft')
+			</div><!-- /div .col-lg2-md2-sm12-xs12 -->
 
-        {{--
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
         <div class="list-group">
           <div class="list-group-item">
             <span data-toggle="tooltip" data-placement="left" title="Tickets!" style="font-family: yavu_font;font-size: 1.6em;color:#57E5DB;">E</span>&nbsp;
-            <small>Valor de los tickets <span class="label label-warning">$ 100</span> Yavücoins</small>
+            <small>Cada ticket tiene un valor de <span class="label label-warning">$ 100</span> Yavücoins</small>
           </div><!-- /div .list-group-item .success -->
           <div class="list-group-item">
             <div class="softText-descriptions">
@@ -39,13 +31,7 @@
             <input type="hidden" value="{!!Auth::user()->get()->id!!}" id="user_id" /><!-- /input user_id -->
           </div><!-- /div .list-group-item -->
         </div><!-- /div .list-group -->
-			</div><!-- /div .col-md6-sm12-xs12 -->
-      --}}
-
-
-      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-        @include('sorteos.showPartial.sectionLeft')
-      </div><!-- /div .col-md3-sm12-xs12 -->
+			</div><!-- /div .col-lg3-md3-sm12-xs12 -->
 
       <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
         @include('empresas.indexPartial.sectionRight')
