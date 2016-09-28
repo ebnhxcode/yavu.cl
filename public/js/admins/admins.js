@@ -4,7 +4,7 @@
 
 
 function aprobarSorteo(id){
-  var route = "http://186.64.123.143/aprobarsorteopendiente";
+  var route = "http://yavu.local/aprobarsorteopendiente";
   var token = $("#token").val();
   $.ajax({
     url: route,
@@ -20,7 +20,7 @@ function aprobarSorteo(id){
   return true;
 }
 function visualizarEmpresaSorteo(id){
-  var route = "http://186.64.123.143/visualizarempresasorteopendiente";
+  var route = "http://yavu.local/visualizarempresasorteopendiente";
   var token = $("#token").val();
   $.ajax({
     url: route,

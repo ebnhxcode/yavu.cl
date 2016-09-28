@@ -111,7 +111,7 @@
     });
     function ValidarRut(rut){
       console.log('click');
-      var route = 'http://186.64.123.143/validarrutusuario/'+rut+'';
+      var route = 'http://yavu.local/validarrutusuario/'+rut+'';
       document.getElementById('FormUsuario').onsubmit = function() {
         return false;
       }
