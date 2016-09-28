@@ -67,7 +67,7 @@ $(document).ready(function(){
 
 /*FUNCIONES Y PROCEDIMIENTOS*/
 	function CargarDetallesSorteo(sorteo_id){
-		var route = "http://yavu.local/cargardetallessorteo/"+sorteo_id;
+		var route = "http://186.64.123.143/cargardetallessorteo/"+sorteo_id;
 		$.ajax({
 			url: route,
 			type: 'GET',
@@ -110,7 +110,7 @@ $(document).ready(function(){
 	function ContarNotificaciones(){
 		var user_id = $("#user_id").val();
 		$.ajax({
-			url: "http://yavu.local/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
+			url: "http://186.64.123.143/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
 			type: 'GET',
 			dataType: 'json',
 			cache: false,
@@ -132,7 +132,7 @@ $(document).ready(function(){
 	}
 	function MostrarGanador(Ganador){
 		//console.log("este es: "+Ganador);
-		var route = "http://yavu.local/mostrarganador/"+Ganador;
+		var route = "http://186.64.123.143/mostrarganador/"+Ganador;
 		$.ajax({
 			url: route,
 			type: 'GET',
@@ -156,7 +156,7 @@ $(document).ready(function(){
 	function CanjearTicket(){
 		$('#myModal').modal('hide');
 		var user_id = $("#user_id").val();
-		var route = "http://yavu.local/canjearticket/"+user_id;
+		var route = "http://186.64.123.143/canjearticket/"+user_id;
 		$.ajax({
 			url: route,
 			headers: {'X-CSRF-TOKEN': token},
@@ -188,7 +188,7 @@ $(document).ready(function(){
 			var CantidadActual = $(this).attr('value');
 			CantidadActual = CantidadActual | 0;
 			var CantidadTicketsUsados = 0;
-			var route = "http://yavu.local/contarticketsensorteo/"+$(this).attr('id');
+			var route = "http://186.64.123.143/contarticketsensorteo/"+$(this).attr('id');
 			$.ajax({
 				url: route,
 				type: 'GET',
@@ -231,7 +231,7 @@ $(document).ready(function(){
 
 			var CantidadActual = $(this).attr('value');
 			CantidadActual = CantidadActual | 0;
-			var route = "http://yavu.local/contarticketsensorteo/"+$(this).attr('id');
+			var route = "http://186.64.123.143/contarticketsensorteo/"+$(this).attr('id');
 			$.ajax({
 				url: route,
 				type: 'GET',
@@ -268,7 +268,7 @@ $(document).ready(function(){
 	}
 
 	function UsarTicket(sorteo_id){
-		var route = "http://yavu.local/usarticket";
+		var route = "http://186.64.123.143/usarticket";
 		var token = $("#token").val();
 		$.ajax({
 			url: route,
@@ -299,7 +299,7 @@ $(document).ready(function(){
 	}
 
 	function UsarYavuCoins(sorteo_id){
-		var route = "http://yavu.local/usaryavucoins";
+		var route = "http://186.64.123.143/usaryavucoins";
 		var token = $("#token").val();
 		$.ajax({
 			url: route,
@@ -331,7 +331,7 @@ $(document).ready(function(){
 
 
 	function RegistrarParticipanteGanador(Ganador){
-		var route = "http://yavu.local/registrarganadorsorteo/"+Ganador;
+		var route = "http://186.64.123.143/registrarganadorsorteo/"+Ganador;
 		$.ajax({
 			url: route,
 			type: 'GET',
@@ -347,7 +347,7 @@ $(document).ready(function(){
 
 	function VerificarTickets(){
 		var user_id = $("#user_id").val();
-		var route = "http://yavu.local/verificartickets/"+user_id;
+		var route = "http://186.64.123.143/verificartickets/"+user_id;
 		$.get(route, function(res){
 			if(parseInt(res)>0){
 				$(".UsarTicket").removeAttr('style');
@@ -362,7 +362,7 @@ $(document).ready(function(){
 
 	function VerificarYavuCoins(){
 		var user_id = $("#user_id").val();
-		var route = "http://yavu.local/verificaryavucoins";
+		var route = "http://186.64.123.143/verificaryavucoins";
 		$.get(route, function(res){
 			if(parseInt(res)>0){
 				$(".UsarYavuCoins").removeAttr('style');
@@ -376,7 +376,7 @@ $(document).ready(function(){
 	}
 
 	function ContarCoins(){
-		var route = "http://yavu.local/contarcoins";
+		var route = "http://186.64.123.143/contarcoins";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
 			$(".CantidadCoins").text("");
@@ -390,7 +390,7 @@ $(document).ready(function(){
 	}
 
 	function ContarTickets(){
-		var route = "http://yavu.local/contartickets";
+		var route = "http://186.64.123.143/contartickets";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
 			$(".CantidadTickets").text(formatNumber.new(parseInt(res), "# "));

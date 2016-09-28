@@ -16,7 +16,7 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
     RewriteCond %{HTTP_HOST} ^www.yavu.cl [NC]
-    RewriteRule ^(.*)$ http://yavu.local/$1 [L,R=301]
+    RewriteRule ^(.*)$ http://186.64.123.143/$1 [L,R=301]
 
 </IfModule>
 
