@@ -1,6 +1,6 @@
 $(document).ready(function(){
 /*DECLARACIÓ DE VARIABLES GLOBALES*/
-	var Busqueda = "";
+	//var Busqueda = "";
 	var letter = "";
   var Refresh = 100;
 /*DECLARACIÓN DE VARIABLES GLOBALES*/
@@ -12,30 +12,33 @@ $(document).ready(function(){
   ContarTicketsEnSorteos();
   ContarMisTicketsUsados();
 
-	var Limitador = 0;
-  setInterval(function () {
-    Limitador += 10;
-    if(Limitador >= 500){
-      if(Limitador === 1050){
-        ContarTicketsEnSorteos();
-        ContarMisTicketsUsados();
-        Limitador = 0;
-        $('.progress-bar').css('width', 0+'%').attr('aria-valuenow', 0);
-      }
-    }
-    if(Limitador >= 100){
-      $('.progress-bar').css('width', Limitador/10+'%').attr('aria-valuenow', Limitador/10);
-    }
-  }, Refresh);
+/*
+ var Limitador = 0;
+ setInterval(function () {
+ Limitador += 10;
+ if(Limitador >= 500){
+ if(Limitador === 1050){
+ ContarTicketsEnSorteos();
+ ContarMisTicketsUsados();
+ Limitador = 0;
+ $('.progress-bar').css('width', 0+'%').attr('aria-valuenow', 0);
+ }
+ }
+ if(Limitador >= 100){
+ $('.progress-bar').css('width', Limitador/10+'%').attr('aria-valuenow', Limitador/10);
+ }
+ }, Refresh);
+
 
 	$("#BuscarSorteo").click(function(e){
 		//BuscarSorteo();
 		e.preventDefault();
 	});
-  
+ */
 /*MÉTODOS CONSTRUCTORES*/
 
 /*SELECTORES*/
+	/*
 	$('.buscar').keyup(function(e){
 		if(e.keyCode !== 32 && e.currentTarget.value.indexOf(String.fromCharCode(32)) > -1 ){
 			Busqueda = e.currentTarget.value;
@@ -71,26 +74,28 @@ $(document).ready(function(){
 			if(Busqueda.substring(0,1) === '+'){
 				Busqueda = Busqueda.substring(1, Busqueda.length);
 			}
-			BuscarSorteoThumb(Busqueda);
+			//BuscarSorteoThumb(Busqueda);
 		}
 	});
 
 	$('#nombre_sorteo').keydown(function (e){
 		if(e.keyCode == 13 && $("#nombre_sorteo").val()){
-			BuscarSorteo();
+			//BuscarSorteo();
 		}
 		return true;
 	})
 
 	$('#sorteothumb').keydown(function (e){
 		if(e.keyCode == 13 && $("#sorteothumb").val()){
-			BuscarSorteoThumb();
+			//BuscarSorteoThumb();
 		}
 		return true;
-	})	
+	})
+	*/
 /*SELECTORES*/
 
 /*FUNCIONES Y PROCEDIMIENTOS*/
+	/*
 	function BuscarSorteo(Busqueda){
 		var route = "http://yavu.local/buscarsorteo/"+Busqueda+"";
 		$("#SorteoList").text("");
@@ -122,6 +127,7 @@ $(document).ready(function(){
 		UsuariosJson = JSON.stringify(Usuarios);
 		return true;
 	}
+	*/
 
 	function ContarTicketsEnSorteos(){
 		var Tickets = [];
@@ -208,7 +214,7 @@ $(document).ready(function(){
 		});
 		return true;
 	}
-
+	/*
 	function BuscarSorteoThumb(Busqueda){
 		var route = "http://yavu.local/buscarsorteo/"+Busqueda+"";
 		$("#SorteoListThumb").text("");
@@ -244,6 +250,7 @@ $(document).ready(function(){
 		ContarParticipantes();				
 	}	
 
+	*/
 	function ContarParticipantes(){
 		var sorteo_id = $("#sorteo_id").val();
 		var route = "http://yavu.local/contarparticipantes/"+sorteo_id;

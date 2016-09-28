@@ -329,6 +329,7 @@ class EmpresaController extends Controller{
 
   public function BuscarEmpresas(Request $request){
 
+    /*
     foreach($bannersRandomLeft = BannerData::orderByRaw('RAND()')->take(2)->get() as $key => $banner )
       BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
 
@@ -353,8 +354,11 @@ class EmpresaController extends Controller{
       Session::flash('message-warning', 'No se encontraron resultados');
       return $this->index();
     }
+    */
 
-    /*
+    foreach($bannersRandomLeft = BannerData::orderByRaw('RAND()')->take(2)->get() as $key => $banner )
+      BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
+
     if($request->nombre!=''){
       $nombre = addslashes($request->nombre);
       $nombreCompleto="";
@@ -371,14 +375,20 @@ class EmpresaController extends Controller{
       $sqlAdd .= " OR newTable.rut like '%".$nombreCompleto."%' OR newTable.email like '%".$nombreCompleto."%' OR newTable.nombre like '%".$nombreCompleto."%' OR newTable.descripcion like '%".$value."%' OR newTable.direccion like '%".$nombreCompleto."%' OR newTable.ciudad like '%".$nombreCompleto."%' OR newTable.region like '%".$nombreCompleto."%' OR newTable.pais like '%".$nombreCompleto."%' OR newTable.estado like '%".$nombreCompleto."%'";
       $sqlAdd .= "ORDER BY newTable.created_at DESC";
       $empresas = DB::select($sqlAdd);
-      dd($empresas);
+
+
+
+
+      //dd($empresas);
     }else{
+
       $sqlAdd = 'SELECT * FROM (SELECT id, user_id, rut, email, fono, nombre, descripcion, direccion, ciudad, region, pais, estado, imagen_perfil, imagen_portada, created_at FROM empresas)newTable WHERE newTable.rut like "%7%" OR newTable.email like "%@%" OR newTable.nombre like "%empresa%" OR newTable.estado like "%activo%" ';
       $empresas = DB::select($sqlAdd);
-      return view('empresas.index', ['empresas' => $empresas, 'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get(),'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(),'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user]);
+
+      return view('empresas.indexPartial.indexForSearches', ['empresas' => json_decode(json_encode($empresas,false)), 'bannersRandomLeft' =>$bannersRandomLeft,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user]);
     }
-    return view('empresas.index', ['empresas' => $empresas, 'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get(),'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(),'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user]);
-    */
+
+    return view('empresas.indexPartial.indexForSearches', ['empresas' => json_decode(json_encode($empresas,false)), 'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get(),'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user]);
 
   }
 

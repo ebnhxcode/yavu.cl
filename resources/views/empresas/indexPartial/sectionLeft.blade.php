@@ -1,7 +1,8 @@
 @include('miniDashboard.miniDashboard')
 
-
 {{--
+
+
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <div class="panel panel-success">
     <div class="panel-heading" role="tab" id="headingOne">
@@ -404,7 +405,7 @@
   </div>
 </div>
 
-  <div class="panel panel-success">
+<div class="panel panel-success">
     <div class="panel-heading" role="tab" id="headingThree">
       <h4 class="panel-title">
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -422,9 +423,10 @@
   </div>
 
 
---}}
 
-{{--
+
+
+
 <div class="list-group">
   <div class="list-group-item list-group-item-success">
     Filtros de b&uacute;squeda

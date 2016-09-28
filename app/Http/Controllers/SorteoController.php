@@ -35,12 +35,26 @@ class SorteoController extends Controller{
 
 
   }
-  public function BuscarSorteos($nombre){
-    if(isset($nombre)){
-      $nombre = addslashes($nombre);
+  public function buscarsorteo(){
+    foreach($bannersRandomLeft = BannerData::orderByRaw('RAND()')->take(2)->get() as $key => $banner )
+      BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
+
+    foreach($bannersRandomCenter = BannerData::orderByRaw('RAND()')->take(3)->get() as $key => $banner )
+      BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
+
+    foreach($sorteos = Sorteo::where('estado_sorteo','Activo')->orderBy('id', 'desc')->paginate(15) as $key => $sorteo)
+      RaffleDisplay::create([ 'sorteo_id' => $sorteo->id, 'user_id' => $this->user->id ])->save();
+
+    $this->registro_tickets = $this->user->registro_tickets()->orderBy('created_at', 'desc')->limit('20')->get();
+
+    return view('sorteos.indexPartial.indexForSearches', ['sorteos'=>json_decode(json_encode($sorteos,false)), 'rtickets' => $this->registro_tickets, 'bannersRandomLeft' => $bannersRandomLeft, 'bannersRandomCenter' => $bannersRandomCenter, 'userSession' => $this->user,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
+  }
+  public function BuscarSorteos(Request $request){
+    if(isset($request->nombre)){
+      $nombre = addslashes($request->nombre);
       $nombreCompleto="";
       $nombre = explode('+', $nombre);
-      $sqlAdd = "SELECT * FROM (SELECT id, estado_sorteo,imagen_sorteo, nombre_sorteo, descripcion FROM sorteos)newTable";
+      $sqlAdd = "SELECT * FROM (SELECT * FROM sorteos)newTable";
       foreach ($nombre as $key => $value) {
         $nombreCompleto .= $value.' ';
         if ($key === 0){
@@ -52,9 +66,20 @@ class SorteoController extends Controller{
       $sqlAdd .= " OR newTable.nombre_sorteo like '%".$nombreCompleto."%' OR newTable.descripcion like '%".$nombreCompleto."%' OR newTable.estado_sorteo like '%".$nombreCompleto."%'";
       $sqlAdd .= "ORDER BY newTable.nombre_sorteo DESC";
       $sorteos = DB::select($sqlAdd);
-      return response()->json($sorteos);
+
+      foreach($bannersRandomLeft = BannerData::orderByRaw('RAND()')->take(2)->get() as $key => $banner )
+        BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
+
+      foreach($bannersRandomCenter = BannerData::orderByRaw('RAND()')->take(3)->get() as $key => $banner )
+        BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
+
+      $this->registro_tickets = $this->user->registro_tickets()->orderBy('created_at', 'desc')->limit('20')->get();
+
+      return view('sorteos.indexPartial.indexForSearches', ['sorteos'=>json_decode(json_encode($sorteos,false)), 'rtickets' => $this->registro_tickets, 'bannersRandomLeft' => $bannersRandomLeft, 'bannersRandomCenter' => $bannersRandomCenter, 'userSession' => $this->user,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
+
+      //return response()->json($sorteos);
     }else{
-      $sqlAdd = 'SELECT * FROM (SELECT id, estado_sorteo,imagen_sorteo, nombre_sorteo, descripcion FROM sorteos)newTable WHERE newTable.nombre_sorteo like "%sorteo%" OR newTable.descripcion like "%sorteo%" OR newTable.estado_sorteo like "%activo%" ';
+      $sqlAdd = 'SELECT * FROM (SELECT id,empresa_id, user_id, estado_sorteo,imagen_sorteo, nombre_sorteo, nombre_empresa, descripcion FROM sorteos)newTable WHERE newTable.nombre_sorteo like "%sorteo%" OR newTable.descripcion like "%sorteo%" OR newTable.estado_sorteo like "%activo%" ';
       $sorteos = DB::select($sqlAdd);
       return response()->json(
         $sorteos

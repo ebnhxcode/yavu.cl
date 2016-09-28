@@ -102,7 +102,10 @@ Route::group(['middleware' => 'user'], function(){
   Route::get('empresas/{id}/sorteos', 'EmpresaController@RaffleList');
   Route::get('listaempresas', 'EmpresaController@ListaEmpresas');
   Route::get('solicitareliminacionempresa/{id}', 'EmpresaController@SolicitarEliminacion')->where('id', '[0-9]+');
-  Route::post('buscarempresa', 'EmpresaController@BuscarEmpresas');
+
+  Route::post('buscarempresa', ['uses'=>'EmpresaController@BuscarEmpresas','as' => 'search_company_engine']);
+  Route::get('buscarempresa', 'SorteoController@buscarempresa');
+
   Route::post('searchCompanyByCity', 'EmpresaController@searchCompanyByCity');
   Route::post('agregarcategoria', 'EmpresaController@addCategory');
   /*Gestión de Empresas*/
@@ -119,7 +122,8 @@ Route::group(['middleware' => 'user'], function(){
   Route::resource('sorteos', 'SorteoController');
   Route::get('listasorteos', 'SorteoController@ListaSorteos');
 
-  Route::get('buscarsorteo/{nombre?}', 'SorteoController@BuscarSorteos');
+  Route::post('buscarsorteo', ['uses'=>'SorteoController@BuscarSorteos','as' => 'search_raffles_engine']);
+  Route::get('buscarsorteo', 'SorteoController@buscarsorteo');
   Route::get('canjearticket/{user_id}', 'SorteoController@CanjearTicket')->where('user_id', '[0-9]+');
   Route::get('contarticketsensorteo/{id}', 'SorteoController@ContarTicketsEnSorteo')->where('user_id', '[0-9]+');
   Route::get('cargardetallessorteo/{id}', 'SorteoController@CargarDetallesSorteo')->where('user_id', '[0-9]+');
