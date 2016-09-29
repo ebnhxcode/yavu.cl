@@ -10,13 +10,14 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           @include('alerts.allAlerts')
         </div><!-- /div col-lg12-md12-sm12-xs12 -->
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          @include('empresas.indexPartial.seekerCompanies')
+        </div><!-- /div col-lg12-md12-sm12-xs12 -->
         <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
           @include('empresas.indexPartial.sectionLeft')
         </div><!-- /div col-lg2-md2-sm12-xs12 -->
 
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-
-
 
           <div id="EmpresaListThumb">
             <div class="list-group">

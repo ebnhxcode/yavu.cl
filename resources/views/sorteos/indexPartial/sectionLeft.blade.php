@@ -16,8 +16,6 @@
 
         <input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
 
-        <br><button type="submit" class="btn btn-success" style="width:100%;">Buscar</button>
-
       @endif
     {!!Form::close()!!}
   </div><!-- /div .list-group-item -->
