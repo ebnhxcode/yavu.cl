@@ -359,15 +359,13 @@ class EmpresaController extends Controller{
       $category = CategoryList::findOrFail($request->category);
 
 
-      $empresas = Empresa::whereIn('id',(CompanyCategory::select('id')->where('categorylist_id', $request->category)->get()) )->get();
+      $empresas = Empresa::whereIn('id',(CompanyCategory::select('empresa_id')->where('categorylist_id', $request->category)->get()) )->get();
 
-      /*
+
       if(count($empresas)<1){
         Session::flash('message-warning', 'No se encontraron resultados en <b>'.$category->category.'</b>');
         return Redirect::to('/empresas');
       }
-      */
-
 
       return view('empresas.indexPartial.indexForSearches', ['empresas' => $empresas, 'bannersRandomLeft' => $bannersRandomLeft,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user, 'categories' => CategoryList::select('id','category')->get()]);
 

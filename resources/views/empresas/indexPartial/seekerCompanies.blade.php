@@ -1,4 +1,4 @@
-<div id="seeker" class="row">
+<div id="seekerCompanies" class="row">
 
   <div id="seekbar" class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
     <div class="list-group">
@@ -26,7 +26,7 @@
     </div> <!-- /list group -->
   </div><!-- /div col-lg6-md6-sm6-xs12 -->
 
-  <div id="filterCity" class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+  <div id="filterCityCompany" class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
     {!!Form::open(['action'=>'EmpresaController@searchCompanyByCity', 'method'=>'POST', 'id' => 'searchCompanyByCity'])!!}
     <div align="middle" class="softText-descriptions-middle text-info">
       <h6>BUSCAR POR CIUDAD</h6>
@@ -228,7 +228,7 @@
     <script>
 
       $(document).ready(function(){
-        $("#CategoryOnly").on('change', function(){
+        $("#category").on('change', function(){
           $("#searchCompanyByCategory").submit();
         });
 

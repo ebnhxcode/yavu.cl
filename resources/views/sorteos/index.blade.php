@@ -13,6 +13,10 @@
         @include('alerts.allAlerts')
       </div><!-- /div col-md12-sm12-xs12 -->
 
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        @include('sorteos.indexPartial.seekerRaffles')
+      </div><!-- /div col-lg12-md12-sm12-xs12 -->
+
       <div id="sectionLeft" class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
         @include('sorteos.indexPartial.sectionLeft')
       </div><!-- /div .col-lg2-md2-sm12-xs12 -->
