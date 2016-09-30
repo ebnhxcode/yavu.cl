@@ -35,6 +35,109 @@ class SorteoController extends Controller{
 
 
   }
+
+
+
+  public function searchRaffleByOrder(Request $request){
+
+    if(($r=(int)$request->order)<2&&$r>=1){
+
+      foreach($bannersRandomLeft = BannerData::orderByRaw('RAND()')->take(2)->get() as $key => $banner )
+        BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
+
+      foreach($bannersRandomCenter = BannerData::orderByRaw('RAND()')->take(3)->get() as $key => $banner )
+        BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
+
+      foreach($sorteos = Sorteo::where('estado_sorteo','Activo')->orderBy('id', 'desc')->paginate(15) as $key => $sorteo)
+        RaffleDisplay::create([ 'sorteo_id' => $sorteo->id, 'user_id' => $this->user->id ])->save();
+
+      $this->registro_tickets = $this->user->registro_tickets()->orderBy('created_at', 'desc')->limit('20')->get();
+
+      /*
+      <option value="1">Mayor cantidad de seguidores</option>
+      <option value="2">Últimas empresas registradas</option>
+      <option value="3">Peticiones de sorteos</option>
+      */
+
+      switch ($request->order) {
+        case 1:
+          return view('sorteos.indexPartial.indexForSearches', ['sorteos'=>Sorteo::orderBy('created_at', 'desc')->get(), 'rtickets' => $this->registro_tickets, 'bannersRandomLeft' => $bannersRandomLeft, 'bannersRandomCenter' => $bannersRandomCenter, 'userSession' => $this->user,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get()]);
+
+          break;
+        case 2:
+
+          echo "other option";
+          break;
+        case 3:
+          echo "other option";
+          break;
+      }
+
+
+
+      /*
+      if(count($empresas)<1){
+        Session::flash('message-warning', 'No se encontraron resultados en <b>'.$category->category.'</b>');
+        return Redirect::to('/empresas');
+      }
+      */
+
+
+
+
+    }else{
+      return $this->index();
+    }
+  }
+
+  public function searchRaffleByCategory(Request $request){
+
+    if($request->category!=''){
+
+      foreach($bannersRandomLeft = BannerData::orderByRaw('RAND()')->take(2)->get() as $key => $banner )
+        BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
+
+      $category = CategoryList::findOrFail($request->category);
+
+
+      $empresas = Empresa::whereIn('id',(CompanyCategory::select('empresa_id')->where('categorylist_id', $request->category)->get()) )->get();
+
+
+      if(count($empresas)<1){
+        Session::flash('message-warning', 'No se encontraron resultados en <b>'.$category->category.'</b>');
+        return Redirect::to('/empresas');
+      }
+
+      return view('empresas.indexPartial.indexForSearches', ['empresas' => $empresas, 'bannersRandomLeft' => $bannersRandomLeft,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user, 'categories' => CategoryList::select('id','category')->get()]);
+
+    }else{
+      return $this->index();
+    }
+  }
+  public function searchRaffleByCity(Request $request){
+
+    foreach($bannersRandomLeft = BannerData::orderByRaw('RAND()')->take(2)->get() as $key => $banner )
+      BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
+
+    if($request->ciudad!=''){
+      //Ojo con esta linea de abajo, si los resultados superan los mil el paginador no funciona
+      $empresas = Empresa::where('ciudad', '=', $request->ciudad)->paginate(1000);
+
+      if(count($empresas)<1){
+        Session::flash('message-warning', 'No se encontraron resultados en <b>'.$request->ciudad.'</b>');
+        return Redirect::to('/empresas');
+      }
+
+      return view('empresas.index', ['empresas' => $empresas, 'bannersRandomLeft' => $bannersRandomLeft,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(),'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user, 'categories' => CategoryList::select('id','category')->get()]);
+
+    }else{
+      return $this->index();
+    }
+
+  }
+
+
+
   public function buscarsorteo(){
     foreach($bannersRandomLeft = BannerData::orderByRaw('RAND()')->take(2)->get() as $key => $banner )
       BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();

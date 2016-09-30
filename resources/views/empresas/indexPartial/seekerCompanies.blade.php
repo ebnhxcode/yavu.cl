@@ -1,4 +1,4 @@
-<div id="seekerCompanies" class="row">
+<div id="CompanySeeker" class="row">
 
   <div id="seekbar" class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
     <div class="list-group">
@@ -26,7 +26,7 @@
     </div> <!-- /list group -->
   </div><!-- /div col-lg6-md6-sm6-xs12 -->
 
-  <div id="filterCityCompany" class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+  <div id="ComapnyFilterCity" class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
     {!!Form::open(['action'=>'EmpresaController@searchCompanyByCity', 'method'=>'POST', 'id' => 'searchCompanyByCity'])!!}
     <div align="middle" class="softText-descriptions-middle text-info">
       <h6>BUSCAR POR CIUDAD</h6>
@@ -208,9 +208,9 @@
       });
 
     </script>
-  </div><!-- /div col-lg6-md6-sm6-xs12 -->
+  </div><!-- /div col-lg3-md3-sm3-xs12 -->
 
-  <div id="CategoryOnly" class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+  <div id="CompanyCategoryOnly" class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
     {!!Form::open(['action'=>'EmpresaController@searchCompanyByCategory', 'method'=>'POST', 'id' => 'searchCompanyByCategory'])!!}
     <div align="middle" class="softText-descriptions-middle text-info">
       <h6>BUSCAR POR CATEGORÍA</h6>
@@ -235,9 +235,9 @@
       });
 
     </script>
-  </div><!-- /div col-lg6-md6-sm6-xs12 -->
+  </div><!-- /div col-lg3-md3-sm3-xs12 -->
 
-  <div id="OrderBy" class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+  <div id="CompanyOrderBy" class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
     {!!Form::open(['action'=>'EmpresaController@searchCompanyByOrder', 'method'=>'POST', 'id' => 'searchCompanyByOrder'])!!}
     <div align="middle" class="softText-descriptions-middle text-info">
       <h6>ORDENAR POR</h6>
@@ -253,13 +253,13 @@
     <script>
 
       $(document).ready(function(){
-        $("#OrderBy").on('change', function(){
+        $("#CompanyOrderBy").on('change', function(){
           $("#searchCompanyByOrder").submit();
         });
 
       });
 
     </script>
-  </div><!-- /div col-lg6-md6-sm6-xs12 -->
+  </div><!-- /div col-lg2-md2-sm2-xs12 -->
 
 </div><!-- .row -->

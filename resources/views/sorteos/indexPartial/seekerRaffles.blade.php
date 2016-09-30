@@ -27,4 +27,30 @@
     </div> <!-- /list group -->
   </div><!-- /div col-lg3-md3-sm3-xs12 -->
 
-</div><!-- .row #seeker -->
+  <div id="RaffleOrderBy" class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+    {!!Form::open(['action'=>'SorteoController@searchRaffleByOrder', 'method'=>'POST', 'id' => 'searchRaffleByOrder'])!!}
+    <div align="middle" class="softText-descriptions-middle text-info">
+      <h6>ORDENAR POR</h6>
+    </div>
+    <select name="order" id="order" class="form-control">
+      <option>Seleccione orden</option>
+      <option value="1">Las más nuevas</option>
+    </select>
+    {!! csrf_field() !!}
+
+    {!!Form::close()!!}
+
+    <script>
+
+      $(document).ready(function(){
+        $("#RaffleOrderBy").on('change', function(){
+          $("#searchRaffleByOrder").submit();
+        });
+
+      });
+
+    </script>
+  </div><!-- /div col-lg2-md2-sm2-xs12 -->
+
+
+</div><!-- .row #seekerRaffles -->

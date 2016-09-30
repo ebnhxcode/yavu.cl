@@ -126,6 +126,11 @@ Route::group(['middleware' => 'user'], function(){
 
   Route::post('buscarsorteo', ['uses'=>'SorteoController@BuscarSorteos','as' => 'search_raffles_engine']);
   Route::get('buscarsorteo', 'SorteoController@buscarsorteo');
+
+  Route::post('searchRaffleByCity', 'SorteoController@searchRaffleByCity');
+  Route::post('searchRaffleByCategory', 'SorteoController@searchRaffleByCategory');
+  Route::post('searchRaffleByOrder', 'SorteoController@searchRaffleByOrder');
+
   Route::get('canjearticket/{user_id}', 'SorteoController@CanjearTicket')->where('user_id', '[0-9]+');
   Route::get('contarticketsensorteo/{id}', 'SorteoController@ContarTicketsEnSorteo')->where('user_id', '[0-9]+');
   Route::get('cargardetallessorteo/{id}', 'SorteoController@CargarDetallesSorteo')->where('user_id', '[0-9]+');
