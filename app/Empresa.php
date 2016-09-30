@@ -158,6 +158,10 @@ class Empresa extends Model implements AuthenticatableContract,
     public function raffleRequests(){
         return $this->hasMany(RaffleRequest::class, 'empresa_id');
     }
+    public function searchCount($city){
+        return $this->where('ciudad', 'like','%'.$city.'%')->get();
+    }
+
 }
 
 

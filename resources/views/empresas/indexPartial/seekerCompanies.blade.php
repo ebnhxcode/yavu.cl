@@ -8,29 +8,32 @@
           {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'Buscar sorteo','id'=>'nombre_sorteo', 'aria-describedby' => 'sizing-addon1'])!!}
         @elseif(Auth::user()->check())
           <input id="user_id" value="{!! Auth::user()->get()->id !!}" type="hidden" />
-          Buscar empresas por referencia
+          <div align="middle" class="softText-descriptions-middle text-info">
+            <h6>BUSCAR POR REFERENCIA</h6>
+          </div>
           <div class="input-group">
-                    <span class="input-group-addon" id="sizing-addon1">
-                      <span class="glyphicon glyphicon-search">
-                      </span><!-- /span .glyphicon .glyphicon-search -->
-                    </span><!-- /span .input-group-addon #sizing-addon1 -->
+            <span class="input-group-addon" id="sizing-addon1">
+              <span class="glyphicon glyphicon-search">
+              </span><!-- /span .glyphicon .glyphicon-search -->
+            </span><!-- /span .input-group-addon #sizing-addon1 -->
             {!!Form::text('nombre',null,['class' => 'form-control buscar', 'placeholder' => 'nombre, marca, etc..','id'=>'empresathumb', 'aria-describedby' => 'sizing-addon1'])!!}
           </div><!-- /div .input-group .input-group-lg -->
 
           <input type="hidden" name="_token" value="{!!csrf_token()!!}" id="token" />
-
-
         @endif
         {!!Form::close()!!}
       </div><!-- /div .list-group-item -->
     </div> <!-- /list group -->
   </div><!-- /div col-lg6-md6-sm6-xs12 -->
 
-  <div id="filterCity" class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+  <div id="filterCity" class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
     {!!Form::open(['action'=>'EmpresaController@searchCompanyByCity', 'method'=>'POST', 'id' => 'searchCompanyByCity'])!!}
-    Buscar por ciudades
+    <div align="middle" class="softText-descriptions-middle text-info">
+      <h6>BUSCAR POR CIUDAD</h6>
+    </div>
     {!!Form::select('ciudad',
-          ['Región de Arica y Parinacota' =>
+          [''=>'Seleccione ciudad...',
+          'Región de Arica y Parinacota' =>
             ['Arica' => 'Arica',
             'Putre' => 'Putre'],
           'Región de Tarapacá' =>
@@ -207,5 +210,56 @@
     </script>
   </div><!-- /div col-lg6-md6-sm6-xs12 -->
 
+  <div id="CategoryOnly" class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+    {!!Form::open(['action'=>'EmpresaController@searchCompanyByCategory', 'method'=>'POST', 'id' => 'searchCompanyByCategory'])!!}
+    <div align="middle" class="softText-descriptions-middle text-info">
+      <h6>BUSCAR POR CATEGORÍA</h6>
+    </div>
+      <select name="category" id="category" class="form-control">
+        <option>Seleccione categoría</option>
+        @foreach($categories as $key => $category)
+          <option value="{{$category->id}}">{{$category->category}}</option>
+        @endforeach
+      </select>
+      {!! csrf_field() !!}
+
+    {!!Form::close()!!}
+
+    <script>
+
+      $(document).ready(function(){
+        $("#CategoryOnly").on('change', function(){
+          $("#searchCompanyByCategory").submit();
+        });
+
+      });
+
+    </script>
+  </div><!-- /div col-lg6-md6-sm6-xs12 -->
+
+  <div id="OrderBy" class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+    {!!Form::open(['action'=>'EmpresaController@searchCompanyByOrder', 'method'=>'POST', 'id' => 'searchCompanyByOrder'])!!}
+    <div align="middle" class="softText-descriptions-middle text-info">
+      <h6>ORDENAR POR</h6>
+    </div>
+    <select name="order" id="order" class="form-control">
+      <option>Seleccione orden</option>
+      <option value="1">Las más nuevas</option>
+    </select>
+    {!! csrf_field() !!}
+
+    {!!Form::close()!!}
+
+    <script>
+
+      $(document).ready(function(){
+        $("#OrderBy").on('change', function(){
+          $("#searchCompanyByOrder").submit();
+        });
+
+      });
+
+    </script>
+  </div><!-- /div col-lg6-md6-sm6-xs12 -->
 
 </div><!-- .row -->

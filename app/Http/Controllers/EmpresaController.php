@@ -3,6 +3,7 @@ namespace yavu\Http\Controllers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use yavu\BannerDisplay;
+use yavu\Follower;
 use yavu\Http\Requests;
 use yavu\Http\Requests\EmpresaCreateRequest;
 use yavu\Http\Requests\EmpresaUpdateRequest;
@@ -59,7 +60,7 @@ class EmpresaController extends Controller{
     foreach($bannersRandomCenter = BannerData::orderByRaw('RAND()')->take(3)->get() as $key => $banner )
       BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
 
-    return view('empresas.index', ['empresas' => Empresa::paginate(15), 'bannersRandomLeft' => $bannersRandomLeft, 'bannersRandomCenter' => $bannersRandomCenter, 'companies' => Empresa::select('id','nombre','descripcion','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user]);
+    return view('empresas.index', ['empresas' => Empresa::paginate(15), 'bannersRandomLeft' => $bannersRandomLeft, 'bannersRandomCenter' => $bannersRandomCenter, 'companies' => Empresa::select('id','nombre','descripcion','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user, 'categories' => CategoryList::select('id','category')->get()]);
   }
   
   public function create(){
@@ -305,6 +306,75 @@ class EmpresaController extends Controller{
     return response()->json(["Mensaje: " => "Acceso denegado"]);
   }
 
+  public function searchCompanyByOrder(Request $request){
+
+    if(($r=(int)$request->order)<2&&$r>=1){
+
+      foreach($bannersRandomLeft = BannerData::orderByRaw('RAND()')->take(2)->get() as $key => $banner )
+        BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
+
+      /*
+      <option value="1">Mayor cantidad de seguidores</option>
+      <option value="2">Últimas empresas registradas</option>
+      <option value="3">Peticiones de sorteos</option>
+      */
+
+      switch ($request->order) {
+        case 1:
+          return view('empresas.indexPartial.indexForSearches', ['empresas' => Empresa::orderBy('created_at', 'desc')->get(), 'bannersRandomLeft' => $bannersRandomLeft,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user, 'categories' => CategoryList::select('id','category')->get()]);
+          break;
+        case 2:
+
+          echo "other option";
+          break;
+        case 3:
+          echo "other option";
+          break;
+      }
+
+
+
+      /*
+      if(count($empresas)<1){
+        Session::flash('message-warning', 'No se encontraron resultados en <b>'.$category->category.'</b>');
+        return Redirect::to('/empresas');
+      }
+      */
+
+
+
+
+    }else{
+      return $this->index();
+    }
+  }
+
+  public function searchCompanyByCategory(Request $request){
+
+    if($request->category!=''){
+
+      foreach($bannersRandomLeft = BannerData::orderByRaw('RAND()')->take(2)->get() as $key => $banner )
+        BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
+
+      $category = CategoryList::findOrFail($request->category);
+
+
+      $empresas = Empresa::whereIn('id',(CompanyCategory::select('id')->where('categorylist_id', $request->category)->get()) )->get();
+
+      /*
+      if(count($empresas)<1){
+        Session::flash('message-warning', 'No se encontraron resultados en <b>'.$category->category.'</b>');
+        return Redirect::to('/empresas');
+      }
+      */
+
+
+      return view('empresas.indexPartial.indexForSearches', ['empresas' => $empresas, 'bannersRandomLeft' => $bannersRandomLeft,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user, 'categories' => CategoryList::select('id','category')->get()]);
+
+    }else{
+      return $this->index();
+    }
+  }
   public function searchCompanyByCity(Request $request){
 
     foreach($bannersRandomLeft = BannerData::orderByRaw('RAND()')->take(2)->get() as $key => $banner )
@@ -319,7 +389,7 @@ class EmpresaController extends Controller{
         return Redirect::to('/empresas');
       }
 
-      return view('empresas.index', ['empresas' => $empresas, 'bannersRandomLeft' => $bannersRandomLeft,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(),'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user]);
+      return view('empresas.index', ['empresas' => $empresas, 'bannersRandomLeft' => $bannersRandomLeft,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(),'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get(), 'userSession' => $this->user, 'categories' => CategoryList::select('id','category')->get()]);
 
     }else{
       return $this->index();
@@ -385,10 +455,10 @@ class EmpresaController extends Controller{
       $sqlAdd = 'SELECT * FROM (SELECT id, user_id, rut, email, fono, nombre, descripcion, direccion, ciudad, region, pais, estado, imagen_perfil, imagen_portada, created_at FROM empresas)newTable WHERE newTable.rut like "%7%" OR newTable.email like "%@%" OR newTable.nombre like "%empresa%" OR newTable.estado like "%activo%" ';
       $empresas = DB::select($sqlAdd);
 
-      return view('empresas.indexPartial.indexForSearches', ['empresas' => json_decode(json_encode($empresas,false)), 'bannersRandomLeft' =>$bannersRandomLeft,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user]);
+      return view('empresas.indexPartial.indexForSearches', ['empresas' => json_decode(json_encode($empresas,false)), 'bannersRandomLeft' =>$bannersRandomLeft,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user, 'categories' => CategoryList::select('id','category')->get()]);
     }
 
-    return view('empresas.indexPartial.indexForSearches', ['empresas' => json_decode(json_encode($empresas,false)), 'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get(),'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user]);
+    return view('empresas.indexPartial.indexForSearches', ['empresas' => json_decode(json_encode($empresas,false)), 'bannersRandomLeft' => BannerData::orderByRaw('RAND()')->take(2)->get(),'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user, 'categories' => CategoryList::select('id','category')->get()]);
 
   }
 

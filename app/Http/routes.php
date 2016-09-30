@@ -107,6 +107,8 @@ Route::group(['middleware' => 'user'], function(){
   Route::get('buscarempresa', 'SorteoController@buscarempresa');
 
   Route::post('searchCompanyByCity', 'EmpresaController@searchCompanyByCity');
+  Route::post('searchCompanyByCategory', 'EmpresaController@searchCompanyByCategory');
+  Route::post('searchCompanyByOrder', 'EmpresaController@searchCompanyByOrder');
   Route::post('agregarcategoria', 'EmpresaController@addCategory');
   /*Gestión de Empresas*/
 
