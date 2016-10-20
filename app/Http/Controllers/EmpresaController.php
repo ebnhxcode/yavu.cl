@@ -352,12 +352,10 @@ class EmpresaController extends Controller{
   public function searchCompanyByCategory(Request $request){
 
     if($request->category!=''){
+      $category = CategoryList::findOrFail($request->category);
 
       foreach($bannersRandomLeft = BannerData::orderByRaw('RAND()')->take(2)->get() as $key => $banner )
         BannerDisplay::create([ 'banner_data_id' => $banner->id, 'user_id' => $this->user->id ])->save();
-
-      $category = CategoryList::findOrFail($request->category);
-
 
       $empresas = Empresa::whereIn('id',(CompanyCategory::select('empresa_id')->where('categorylist_id', $request->category)->get()) )->get();
 
@@ -369,7 +367,7 @@ class EmpresaController extends Controller{
 
       return view('empresas.indexPartial.indexForSearches', ['empresas' => $empresas, 'bannersRandomLeft' => $bannersRandomLeft,'companies' => Empresa::select('id','nombre','imagen_perfil')->orderByRaw('RAND()')->take(4)->get(), 'userSession' => $this->user, 'categories' => CategoryList::select('id','category')->get()]);
 
-    }else{
+    }else{https://www.google.cl/?gws_rd=ssl
       return $this->index();
     }
   }

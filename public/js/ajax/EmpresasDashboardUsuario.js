@@ -12,7 +12,7 @@ $(document).ready(function(){
 /*FUNCIONES Y PROCEDIMIENTOS*/
 	function ListarEmpresasUsuarios(){
 		var user_id = $("#user_id").val();
-		var route = "http://yavu.local/infoempresas/"+user_id;
+		var route = "http://localhost:8000/infoempresas/"+user_id;
 		var Pendiente = false;
 		var Contador = 0;
 		$.get(route, function(res){
@@ -34,7 +34,7 @@ $(document).ready(function(){
 					var ImagenPerfil = "";
 					var ImagenPortada = "";
 					if (value.imagen_portada === ""){
-						ImagenPortada = "<div class='well well-sm'>No tienes un banner personal, puedes subir una editando la información de tu empresa <a class='btn-link' href='http://yavu.local/empresas/"+value.id+"/edit'>aquí</a></div>";
+						ImagenPortada = "<div class='well well-sm'>No tienes un banner personal, puedes subir una editando la información de tu empresa <a class='btn-link' href='http://localhost:8000/empresas/"+value.id+"/edit'>aquí</a></div>";
 					}else{
 						ImagenPortada = "<img src='/img/users/"+value.imagen_portada+"' alt=''>";
 					}
@@ -51,8 +51,8 @@ $(document).ready(function(){
 							+'<div class="panel-body">'
 								+"<div class='thumbnail card' style='border: 0px;'>"
 									+ImagenPortada+"<br>"
-									+"<span><a class='btn btn-primary btn-sm' href='http://yavu.local/empresa/"+value.nombre+"/'>Perfil</a></span>&nbsp;"
-									+"<span><a class='btn btn-primary btn-sm' href='http://yavu.local/empresas/"+value.id+"/edit'>Editar información</a></span>&nbsp;"
+									+"<span><a class='btn btn-primary btn-sm' href='http://localhost:8000/empresa/"+value.nombre+"/'>Perfil</a></span>&nbsp;"
+									+"<span><a class='btn btn-primary btn-sm' href='http://localhost:8000/empresas/"+value.id+"/edit'>Editar información</a></span>&nbsp;"
 									+"<p>...</p><br>"
 								+"</div>"
 							+'</div>'

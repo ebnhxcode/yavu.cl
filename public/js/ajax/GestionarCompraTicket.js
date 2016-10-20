@@ -62,7 +62,7 @@ $(document).ready(function(){
     if (cantidadcompra > 0){
 			var user_id = $("#user_id").val();
 			var token = $("#token").val();
-			var route = "http://yavu.local/efectuarcompraticket";
+			var route = "http://localhost:8000/efectuarcompraticket";
 			$.ajax({
 				url: route,
 				headers: {'X-CSRF-TOKEN': token},
@@ -90,7 +90,7 @@ $(document).ready(function(){
 	function ContarNotificaciones(){
 		var user_id = $("#user_id").val();
 		$.ajax({
-			url: "http://yavu.local/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
+			url: "http://localhost:8000/cargarpops/"+$("#idUltimaNotificacion").val()+"/"+user_id+"/novistas",
 			type: 'GET',
 			dataType: 'json',
 			cache: false,
@@ -111,7 +111,7 @@ $(document).ready(function(){
 		return true;
 	}
 	function ContarCoins(){
-		var route = "http://yavu.local/contarcoins";
+		var route = "http://localhost:8000/contarcoins";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
 			$(".CantidadCoins").text("");
@@ -125,7 +125,7 @@ $(document).ready(function(){
 	}
 
 	function ContarTickets(){
-		var route = "http://yavu.local/contartickets";
+		var route = "http://localhost:8000/contartickets";
 		var user_id = $("#user_id");
 		$.get(route, function(res){
 			$(".CantidadTickets").text(formatNumber.new(parseInt(res), "# "));
@@ -135,7 +135,7 @@ $(document).ready(function(){
 
 	function VerificarTickets(){
 		var user_id = $("#user_id").val();
-		var route = "http://yavu.local/verificartickets/"+user_id;
+		var route = "http://localhost:8000/verificartickets/"+user_id;
 		$.get(route, function(res){
 			//console.log(res);
 			if(res>0){

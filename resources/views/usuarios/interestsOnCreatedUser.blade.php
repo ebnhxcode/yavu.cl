@@ -41,7 +41,7 @@
     $(".category").click(function(){
       var selectedCategory = $('#'+this.id);
       var token = $("#token").val();
-      var route = "http://yavu.local/agregarinteres";
+      var route = "http://localhost:8000/agregarinteres";
       $.ajax({
         url: route,
         headers: {'X-CSRF-TOKEN': token},
